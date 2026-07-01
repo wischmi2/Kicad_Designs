@@ -3023,7 +3023,7 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 73.66) (xy 35.56 68.58)
+			(xy 35.56 73.66) (xy 35.56 72.39)
 		)
 		(stroke
 			(width 0)
@@ -3353,7 +3353,7 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 68.58) (xy 39.37 68.58)
+			(xy 35.56 72.39) (xy 30.48 72.39)
 		)
 		(stroke
 			(width 0)
@@ -4113,7 +4113,7 @@
 	)
 	(global_label "VDDIO"
 		(shape input)
-		(at 39.37 68.58 0)
+		(at 30.48 72.39 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4123,7 +4123,7 @@
 		)
 		(uuid "366ebc13-3049-4618-9e70-6c12fdf9bee6")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 47.9191 68.58 0)
+			(at 39.0291 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
