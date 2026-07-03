@@ -13,3 +13,6 @@ _autosave-*
 # OS files
 .DS_Store
 Thumbs.db
+
+# KiCad temporary lock files
+~*.lck
