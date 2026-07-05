@@ -40,8 +40,8 @@
         "other_text_upright": false,
         "pads": {
           "drill": 0.0,
-          "height": 0.25,
-          "width": 0.825
+          "height": 1.45,
+          "width": 0.6
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -606,6 +606,10 @@
       {
         "netclass": "PWR",
         "pattern": "Net-(U3-LX)"
+      },
+      {
+        "netclass": "PWR",
+        "pattern": "VDDIO"
       }
     ]
   },
@@ -737,7 +741,7 @@
         "uuid": "55da176d-6431-4d58-ada7-b89d931b1434"
       }
     ],
-    "used_designators": "",
+    "used_designators": "JP1,#PWR48",
     "variants": []
   },
   "sheets": [

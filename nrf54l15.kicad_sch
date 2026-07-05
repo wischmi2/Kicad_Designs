@@ -3726,10 +3726,6 @@
 		(uuid "c8d6e2bd-1e70-4f72-8c40-bb756ae269ee")
 	)
 	(no_connect
-		(at 109.22 88.9)
-		(uuid "d07a2ff3-edb0-4e5d-b02e-0012debe56df")
-	)
-	(no_connect
 		(at 109.22 139.7)
 		(uuid "d153369b-b370-4512-a4ec-0efa9c373cfa")
 	)
@@ -3740,6 +3736,10 @@
 	(no_connect
 		(at 109.22 106.68)
 		(uuid "ddf015e7-7da5-4a37-86aa-19107f8d9df4")
+	)
+	(no_connect
+		(at 109.22 78.74)
+		(uuid "e2421a6b-bb35-419e-9bbd-f162bdd76597")
 	)
 	(no_connect
 		(at 109.22 55.88)
@@ -3825,6 +3825,16 @@
 	)
 	(wire
 		(pts
+			(xy 106.68 88.9) (xy 109.22 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b4641b7-0866-4a40-b4f7-0abae98654db")
+	)
+	(wire
+		(pts
 			(xy 101.6 71.12) (xy 109.22 71.12)
 		)
 		(stroke
@@ -3852,6 +3862,16 @@
 			(type default)
 		)
 		(uuid "3c1463cc-b36b-47a9-98df-54d2763de48f")
+	)
+	(wire
+		(pts
+			(xy 82.55 63.5) (xy 106.68 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "421b3f61-091e-4916-985e-9b9d8a82565e")
 	)
 	(wire
 		(pts
@@ -3892,6 +3912,16 @@
 			(type default)
 		)
 		(uuid "507ed5fe-fa8d-4f78-b3a1-18e46fdc1916")
+	)
+	(wire
+		(pts
+			(xy 110.49 19.05) (xy 110.49 17.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "54c00fb5-e5fb-4e59-acb2-9881f07a7ef4")
 	)
 	(wire
 		(pts
@@ -3975,6 +4005,26 @@
 	)
 	(wire
 		(pts
+			(xy 106.68 68.58) (xy 109.22 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8505bfa1-2459-45dc-9767-072f810d63b0")
+	)
+	(wire
+		(pts
+			(xy 105.41 91.44) (xy 106.68 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "85a851d7-b0a8-4f2d-bcb4-f69d31333280")
+	)
+	(wire
+		(pts
 			(xy 165.1 93.98) (xy 172.72 93.98)
 		)
 		(stroke
@@ -3982,6 +4032,16 @@
 			(type default)
 		)
 		(uuid "8f1ad146-3ec6-4b6b-8fe0-14e29251920f")
+	)
+	(wire
+		(pts
+			(xy 106.68 91.44) (xy 106.68 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "91790669-bf40-4767-8884-df93b1b3dbf7")
 	)
 	(wire
 		(pts
@@ -4035,6 +4095,16 @@
 	)
 	(wire
 		(pts
+			(xy 106.68 63.5) (xy 106.68 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e5aab05-72c9-4726-ad56-846688c2f293")
+	)
+	(wire
+		(pts
 			(xy 186.69 93.98) (xy 186.69 97.79)
 		)
 		(stroke
@@ -4042,6 +4112,16 @@
 			(type default)
 		)
 		(uuid "9e9411eb-2216-4c95-ad27-fc3c04ab1af9")
+	)
+	(wire
+		(pts
+			(xy 93.98 19.05) (xy 110.49 19.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a0bad412-aae4-4b06-8439-2bffee5ec0a6")
 	)
 	(wire
 		(pts
@@ -4195,7 +4275,7 @@
 	)
 	(global_label "I2C_SDA"
 		(shape input)
-		(at 109.22 78.74 180)
+		(at 105.41 91.44 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4205,31 +4285,7 @@
 		)
 		(uuid "1127f5c9-cedc-48cc-850d-42815bdcb76c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 98.6148 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
-	(global_label "VOUT1"
-		(shape input)
-		(at 110.49 17.78 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "14ca9e1d-0003-4ac5-bfda-38af67e76fed")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 101.5781 17.78 0)
+			(at 94.8048 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4337,6 +4393,30 @@
 			)
 		)
 	)
+	(global_label "PMIC_INT"
+		(shape input)
+		(at 82.55 63.5 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b523afd3-6bce-4e85-970f-211c868ca10d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 71.0981 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "I2C_SCL"
 		(shape input)
 		(at 109.22 86.36 180)
@@ -4350,6 +4430,30 @@
 		(uuid "c6d35104-c5af-4a9b-92d5-c69a6a74b669")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 98.6753 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "VOUT2"
+		(shape input)
+		(at 93.98 19.05 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e450ab45-27c0-443e-9f95-35a19cf0bb87")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 85.0681 19.05 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
