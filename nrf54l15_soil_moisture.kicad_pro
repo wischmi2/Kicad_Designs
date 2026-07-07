@@ -741,7 +741,7 @@
         "uuid": "55da176d-6431-4d58-ada7-b89d931b1434"
       }
     ],
-    "used_designators": "U6",
+    "used_designators": "U6,R1-2,R4-8,R12-14,R16,J1",
     "variants": []
   },
   "sheets": [

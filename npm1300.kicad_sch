@@ -5,146 +5,6 @@
 	(uuid "add64d87-8ff8-4c67-a47d-58aa0f14f95e")
 	(paper "A4")
 	(lib_symbols
-		(symbol "Device:R"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "R"
-				(at 2.032 0 90)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "R"
-				(at 0 0 90)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at -1.778 0 90)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Resistor"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "R res resistor"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "R_*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "R_0_1"
-				(rectangle
-					(start -1.016 -2.54)
-					(end 1.016 2.54)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "R_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 1.27)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 1.27)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "EasyEDA2Kicad:CC0603KRX7R9BB104"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -1100,6 +960,149 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "EasyEDA2Kicad:FRC0402F5600TS"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "FRC0402F5600TS"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "easyeda2kicad:R0402"
+				(at 0 -7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.lcsc.com/datasheet/C2909370.pdf"
+				(at 0 -10.16 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer" "FOJAN(富捷)"
+				(at 0 -12.7 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "MPN" "FRC0402F5600TS"
+				(at 0 -15.24 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC Part" "C2909370"
+				(at 0 -17.78 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "FRC0402F5600TS_0_1"
+				(rectangle
+					(start -2.54 1.27)
+					(end 2.54 -1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "EasyEDA2Kicad:FRC0603F1503TS"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -1559,6 +1562,314 @@
 				(pin unspecified line
 					(at 5.08 0 180)
 					(length 1.27)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "EasyEDA2Kicad:RC0402FR-074K7L"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "RC0402FR-074K7L"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "easyeda2kicad:R0402"
+				(at 0 -7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_4-7KR-4701-1_C105871.html"
+				(at 0 -10.16 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer" "YAGEO(国巨)"
+				(at 0 -12.7 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "MPN" "RC0402FR-074K7L"
+				(at 0 -15.24 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC Part" "C105871"
+				(at 0 -17.78 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "Resistors"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "RC0402FR-074K7L_0_1"
+				(rectangle
+					(start -2.54 1.02)
+					(end 2.54 -1.02)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin input line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "EasyEDA2Kicad:RT0402BRD0710KL"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "RT0402BRD0710KL"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "easyeda2kicad:R0402"
+				(at 0 -7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_10KR-1002-0-1_C190095.html"
+				(at 0 -10.16 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer" "YAGEO(国巨)"
+				(at 0 -12.7 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "MPN" "RT0402BRD0710KL"
+				(at 0 -15.24 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC Part" "C190095"
+				(at 0 -17.78 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "Resistors"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "RT0402BRD0710KL_0_1"
+				(rectangle
+					(start -2.54 1.02)
+					(end 2.54 -1.02)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 5.08 0 180)
+					(length 2.54)
 					(name "2"
 						(effects
 							(font
@@ -2884,16 +3195,16 @@
 		(uuid "a1587f1c-36f5-412f-adbe-2c6e65cbfbb9")
 	)
 	(junction
-		(at 36.83 107.95)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a95bdcf1-ae58-4a21-942a-bd33f4a03b8d")
-	)
-	(junction
 		(at 186.69 125.73)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "adc0f66b-98aa-4636-8abb-8410579013b1")
+	)
+	(junction
+		(at 36.83 107.95)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b62e77da-a7d7-454e-9474-e8553f67b9fc")
 	)
 	(junction
 		(at 147.32 22.86)
@@ -2999,13 +3310,13 @@
 	)
 	(wire
 		(pts
-			(xy 36.83 102.87) (xy 36.83 107.95)
+			(xy 36.83 107.95) (xy 90.17 107.95)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "10959833-d4cb-4749-9f9f-8d37d88e3639")
+		(uuid "16af6164-a226-4158-a5f7-cdc909946c49")
 	)
 	(wire
 		(pts
@@ -3019,23 +3330,13 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 73.66) (xy 35.56 66.04)
+			(xy 40.64 73.66) (xy 40.64 66.04)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "18b6d8ff-4fb6-477a-9821-d8285f0c650e")
-	)
-	(wire
-		(pts
-			(xy 90.17 107.95) (xy 36.83 107.95)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1a25129c-bd29-4d0b-9ba2-98803dff0362")
 	)
 	(wire
 		(pts
@@ -3069,7 +3370,7 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 81.28) (xy 66.04 81.28)
+			(xy 59.69 77.47) (xy 63.5 77.47)
 		)
 		(stroke
 			(width 0)
@@ -3179,6 +3480,16 @@
 	)
 	(wire
 		(pts
+			(xy 40.64 83.82) (xy 35.56 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2fb63fb7-a72f-4d88-9f7d-065fde72661c")
+	)
+	(wire
+		(pts
 			(xy 173.99 77.47) (xy 189.23 77.47)
 		)
 		(stroke
@@ -3239,6 +3550,16 @@
 	)
 	(wire
 		(pts
+			(xy 74.93 77.47) (xy 73.66 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4878a2b1-9ed8-4c35-9593-3bb14e270dd3")
+	)
+	(wire
+		(pts
 			(xy 77.47 100.33) (xy 96.52 100.33)
 		)
 		(stroke
@@ -3276,16 +3597,6 @@
 			(type default)
 		)
 		(uuid "4f788382-72f6-48ba-8f06-f27ef0571108")
-	)
-	(wire
-		(pts
-			(xy 173.99 128.27) (xy 173.99 130.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4fd14d8d-f8f8-4442-82d8-6c4e6c3aa5a6")
 	)
 	(wire
 		(pts
@@ -3349,6 +3660,16 @@
 	)
 	(wire
 		(pts
+			(xy 29.21 96.52) (xy 34.29 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5c539a9c-9492-4666-a8de-53a16a9136ff")
+	)
+	(wire
+		(pts
 			(xy 67.31 95.25) (xy 67.31 91.44)
 		)
 		(stroke
@@ -3359,7 +3680,7 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 66.04) (xy 25.4 66.04)
+			(xy 40.64 66.04) (xy 25.4 66.04)
 		)
 		(stroke
 			(width 0)
@@ -3406,6 +3727,16 @@
 			(type default)
 		)
 		(uuid "64a74600-e92d-487e-b3ab-872d1e4b1a08")
+	)
+	(wire
+		(pts
+			(xy 35.56 83.82) (xy 35.56 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "666cc395-a222-43fe-8fc2-b408a4243d01")
 	)
 	(wire
 		(pts
@@ -3469,7 +3800,7 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 74.93) (xy 59.69 81.28)
+			(xy 59.69 74.93) (xy 59.69 77.47)
 		)
 		(stroke
 			(width 0)
@@ -3579,16 +3910,6 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 81.28) (xy 74.93 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "81cda5b1-e22d-4ee8-a3bc-b65cf46dce29")
-	)
-	(wire
-		(pts
 			(xy 196.85 88.9) (xy 196.85 90.17)
 		)
 		(stroke
@@ -3619,16 +3940,6 @@
 	)
 	(wire
 		(pts
-			(xy 31.75 95.25) (xy 36.83 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8f298793-3322-4858-b3f0-69ba180eefdd")
-	)
-	(wire
-		(pts
 			(xy 35.56 91.44) (xy 35.56 85.09)
 		)
 		(stroke
@@ -3636,16 +3947,6 @@
 			(type default)
 		)
 		(uuid "936bdd9a-1b83-4136-a4e4-5f2d221222c5")
-	)
-	(wire
-		(pts
-			(xy 73.66 81.28) (xy 74.93 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9604004c-13f1-43fd-876d-5c4c7d143535")
 	)
 	(wire
 		(pts
@@ -3706,6 +4007,16 @@
 			(type default)
 		)
 		(uuid "9e7f0006-c3f7-46a9-9264-ac5ca85f0d5c")
+	)
+	(wire
+		(pts
+			(xy 39.37 105.41) (xy 36.83 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f43c6e3-d425-4c0f-a91a-9a8c340a59ba")
 	)
 	(wire
 		(pts
@@ -3799,6 +4110,16 @@
 	)
 	(wire
 		(pts
+			(xy 36.83 105.41) (xy 36.83 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b53ca2b0-cc29-4dde-98c6-0297a8387903")
+	)
+	(wire
+		(pts
 			(xy 67.31 91.44) (xy 35.56 91.44)
 		)
 		(stroke
@@ -3856,16 +4177,6 @@
 			(type default)
 		)
 		(uuid "c1344362-6dcf-459e-850a-1fdd5310d364")
-	)
-	(wire
-		(pts
-			(xy 35.56 81.28) (xy 35.56 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c24416d1-9c85-4290-a3ed-9d2e7ccb5075")
 	)
 	(wire
 		(pts
@@ -3949,6 +4260,16 @@
 	)
 	(wire
 		(pts
+			(xy 34.29 95.25) (xy 39.37 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e48a74c7-383b-45ea-8eca-2d1575d3bb7c")
+	)
+	(wire
+		(pts
 			(xy 200.66 125.73) (xy 205.74 125.73)
 		)
 		(stroke
@@ -3986,6 +4307,16 @@
 			(type default)
 		)
 		(uuid "ef9ce190-2c89-4b2e-b35d-2e4c1271c823")
+	)
+	(wire
+		(pts
+			(xy 74.93 77.47) (xy 74.93 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f23b00d7-1ed1-467d-adcb-603e996a353e")
 	)
 	(wire
 		(pts
@@ -4407,7 +4738,7 @@
 	)
 	(global_label "VDDIO"
 		(shape input)
-		(at 31.75 95.25 180)
+		(at 29.21 96.52 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4417,7 +4748,7 @@
 		)
 		(uuid "df05e14e-29e6-4793-bc50-680aff80d229")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 23.2009 95.25 0)
+			(at 20.6609 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4561,99 +4892,6 @@
 			(project "nrf54l15_soil_moisture"
 				(path "/55da176d-6431-4d58-ada7-b89d931b1434/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c"
 					(reference "L10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 173.99 134.62 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0acec4b6-057c-41e2-8677-8bb85fdadcac")
-		(property "Reference" "R8"
-			(at 176.53 133.3499 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 176.53 135.8899 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 172.212 134.62 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 173.99 134.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 173.99 134.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C190095"
-			(at 173.99 134.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "48e92bde-357a-4068-b6e7-8f474c2b5571")
-		)
-		(pin "2"
-			(uuid "02a1dd80-0276-403d-8be3-9d8c62e2341a")
-		)
-		(instances
-			(project "nrf54l15_soil_moisture"
-				(path "/55da176d-6431-4d58-ada7-b89d931b1434/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c"
-					(reference "R8")
 					(unit 1)
 				)
 			)
@@ -5104,6 +5342,121 @@
 		)
 	)
 	(symbol
+		(lib_id "EasyEDA2Kicad:RC0402FR-074K7L")
+		(at 40.64 78.74 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3ac83a5a-8d78-48ed-87f1-239933592538")
+		(property "Reference" "R13"
+			(at 43.18 77.4699 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "4.7k"
+			(at 43.18 80.0099 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "easyeda2kicad:R0402"
+			(at 48.26 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_4-7KR-4701-1_C105871.html"
+			(at 50.8 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 40.64 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO(国巨)"
+			(at 53.34 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-074K7L"
+			(at 55.88 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C105871"
+			(at 58.42 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "f5b7cb48-bdb0-4ea7-83f3-304393dea207")
+		)
+		(pin "1"
+			(uuid "da9abcc9-f491-4202-8aee-853b05e2d1bf")
+		)
+		(instances
+			(project "nrf54l15_soil_moisture"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c"
+					(reference "R13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "EasyEDA2Kicad:FRC0603F4702TS")
 		(at 87.63 116.84 0)
 		(unit 1)
@@ -5211,6 +5564,121 @@
 			(project "nrf54l15_soil_moisture"
 				(path "/55da176d-6431-4d58-ada7-b89d931b1434/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c"
 					(reference "R9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "EasyEDA2Kicad:RT0402BRD0710KL")
+		(at 173.99 133.35 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "441069b5-6bc6-41d7-a17f-bc5c7afffdd3")
+		(property "Reference" "R8"
+			(at 176.53 132.0799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "10k"
+			(at 176.53 134.6199 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "easyeda2kicad:R0402"
+			(at 181.61 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_10KR-1002-0-1_C190095.html"
+			(at 184.15 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 173.99 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO(国巨)"
+			(at 186.69 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RT0402BRD0710KL"
+			(at 189.23 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C190095"
+			(at 191.77 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5dc7f154-f016-4612-987e-2892561fb67a")
+		)
+		(pin "2"
+			(uuid "cec804d9-cbce-4f60-92cc-b23c8489f420")
+		)
+		(instances
+			(project "nrf54l15_soil_moisture"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c"
+					(reference "R8")
 					(unit 1)
 				)
 			)
@@ -5759,8 +6227,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 69.85 81.28 90)
+		(lib_id "EasyEDA2Kicad:RC0402FR-074K7L")
+		(at 39.37 100.33 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5769,29 +6237,31 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "82cf1a28-b956-4e0a-97bc-baa064a90306")
-		(property "Reference" "R15"
-			(at 69.85 74.93 90)
+		(uuid "84f49732-5621-49c8-b747-ab537616167e")
+		(property "Reference" "R12"
+			(at 41.91 99.0599 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
-		(property "Value" "560"
-			(at 69.85 77.47 90)
+		(property "Value" "4.7k"
+			(at 41.91 101.5999 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 69.85 83.058 90)
+		(property "Footprint" "easyeda2kicad:R0402"
+			(at 46.99 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5801,8 +6271,8 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 69.85 81.28 0)
+		(property "Datasheet" "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_4-7KR-4701-1_C105871.html"
+			(at 49.53 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5812,8 +6282,8 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
-			(at 69.85 81.28 0)
+		(property "Description" ""
+			(at 39.37 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5823,8 +6293,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C2909370"
-			(at 69.85 81.28 0)
+		(property "Manufacturer" "YAGEO(国巨)"
+			(at 52.07 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5834,16 +6304,38 @@
 				)
 			)
 		)
-		(pin "1"
-			(uuid "30a5e803-5a08-4643-8166-29744d12efca")
+		(property "MPN" "RC0402FR-074K7L"
+			(at 54.61 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C105871"
+			(at 57.15 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
 		)
 		(pin "2"
-			(uuid "09b963b2-c2d1-4235-a140-3b45a3a52801")
+			(uuid "61107442-3ae0-43ff-8cce-3a8ad2fc00aa")
+		)
+		(pin "1"
+			(uuid "5794dea9-402b-498c-b1c7-c3b9497a1298")
 		)
 		(instances
 			(project "nrf54l15_soil_moisture"
 				(path "/55da176d-6431-4d58-ada7-b89d931b1434/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c"
-					(reference "R15")
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -5963,99 +6455,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 35.56 77.47 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8c2ce55b-a02c-4e16-96ae-a64334764e2c")
-		(property "Reference" "R14"
-			(at 38.1 76.1999 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "4.7k"
-			(at 38.1 78.7399 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 33.782 77.47 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 35.56 77.47 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 35.56 77.47 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C105871"
-			(at 35.56 77.47 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "9983ac51-5ce4-40e4-935f-231ca114e66a")
-		)
-		(pin "2"
-			(uuid "ccc3c51b-c805-46ac-89dd-40389636960d")
-		)
-		(instances
-			(project "nrf54l15_soil_moisture"
-				(path "/55da176d-6431-4d58-ada7-b89d931b1434/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c"
-					(reference "R14")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 80.01 73.66 0)
 		(unit 1)
@@ -6128,6 +6527,119 @@
 			(project "nrf54l15_soil_moisture"
 				(path "/55da176d-6431-4d58-ada7-b89d931b1434/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c"
 					(reference "#PWR06")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "EasyEDA2Kicad:FRC0402F5600TS")
+		(at 68.58 77.47 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a099178a-57c3-4b5a-97af-92255403731c")
+		(property "Reference" "R14"
+			(at 68.58 71.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "560"
+			(at 68.58 73.66 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "easyeda2kicad:R0402"
+			(at 68.58 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C2909370.pdf"
+			(at 68.58 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 68.58 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "FOJAN(富捷)"
+			(at 68.58 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "FRC0402F5600TS"
+			(at 68.58 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C2909370"
+			(at 68.58 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "282f2a76-006e-4ce6-aeb9-d8c3f537b653")
+		)
+		(pin "1"
+			(uuid "937eb12c-dc8a-4e9c-9e9d-800482f5db9e")
+		)
+		(instances
+			(project "nrf54l15_soil_moisture"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c"
+					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -7053,99 +7565,6 @@
 			(project "nrf54l15_soil_moisture"
 				(path "/55da176d-6431-4d58-ada7-b89d931b1434/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c"
 					(reference "C20")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 36.83 99.06 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ce986fe2-4831-4ea0-b6fb-370e50fdaade")
-		(property "Reference" "R13"
-			(at 39.37 97.7899 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "4.7k"
-			(at 39.37 100.3299 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 35.052 99.06 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 36.83 99.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 36.83 99.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C105871"
-			(at 36.83 99.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "56ad38b6-c2c3-485a-9bc3-3fa075d4e176")
-		)
-		(pin "2"
-			(uuid "261958ac-4c5f-4524-adc5-4e5d12c674ce")
-		)
-		(instances
-			(project "nrf54l15_soil_moisture"
-				(path "/55da176d-6431-4d58-ada7-b89d931b1434/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c"
-					(reference "R13")
 					(unit 1)
 				)
 			)
