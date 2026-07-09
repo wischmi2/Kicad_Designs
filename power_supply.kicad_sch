@@ -2230,12 +2230,6 @@
 		(uuid "75013dee-3bbb-47f9-a4a6-6dd906b9dcfd")
 	)
 	(junction
-		(at 168.91 82.55)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "75f12314-257d-4771-9537-75fca8c1d09d")
-	)
-	(junction
 		(at 107.95 107.95)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2265,6 +2259,12 @@
 		(color 0 0 0 0)
 		(uuid "d58ccb6d-1837-4842-9f48-762c469e5326")
 	)
+	(junction
+		(at 88.9 144.78)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f58dacf3-267b-491a-9cc2-2404a946c722")
+	)
 	(wire
 		(pts
 			(xy 120.65 102.87) (xy 120.65 97.79)
@@ -2287,16 +2287,6 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 144.78) (xy 127 144.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "180cef4f-361b-48c7-a885-8be5eb7bfe84")
-	)
-	(wire
-		(pts
 			(xy 88.9 97.79) (xy 78.74 97.79)
 		)
 		(stroke
@@ -2304,6 +2294,16 @@
 			(type default)
 		)
 		(uuid "1c213353-4031-4c24-b663-f623ace3b1e1")
+	)
+	(wire
+		(pts
+			(xy 107.95 144.78) (xy 127 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d329ffe-915f-4388-bbbe-36a2f44beec3")
 	)
 	(wire
 		(pts
@@ -2467,7 +2467,7 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 90.17) (xy 168.91 82.55)
+			(xy 168.91 78.74) (xy 168.91 90.17)
 		)
 		(stroke
 			(width 0)
@@ -2534,16 +2534,6 @@
 			(type default)
 		)
 		(uuid "77b28d17-1348-40af-8bfc-6aad4ba50262")
-	)
-	(wire
-		(pts
-			(xy 168.91 82.55) (xy 168.91 78.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "81e46a41-9320-4d77-86fb-f2a66bacc419")
 	)
 	(wire
 		(pts
@@ -2817,6 +2807,16 @@
 	)
 	(wire
 		(pts
+			(xy 88.9 144.78) (xy 97.79 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ea5350aa-ed49-4234-bb4a-bb49800891c7")
+	)
+	(wire
+		(pts
 			(xy 184.15 93.98) (xy 184.15 96.52)
 		)
 		(stroke
@@ -2827,7 +2827,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 144.78) (xy 97.79 144.78)
+			(xy 86.36 144.78) (xy 88.9 144.78)
 		)
 		(stroke
 			(width 0)
@@ -2923,7 +2923,7 @@
 			)
 		)
 	)
-	(global_label "SPV1040T_VOUT"
+	(global_label "CHG_IN"
 		(shape input)
 		(at 76.2 119.38 180)
 		(fields_autoplaced yes)
@@ -2935,7 +2935,7 @@
 		)
 		(uuid "8fd4c427-2874-4372-b94e-49bcbae66751")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 58.1563 119.38 0)
+			(at 66.4414 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2947,7 +2947,7 @@
 			)
 		)
 	)
-	(global_label "SPV1040T_VOUT"
+	(global_label "CHG_IN"
 		(shape input)
 		(at 190.5 76.2 0)
 		(fields_autoplaced yes)
@@ -2959,7 +2959,7 @@
 		)
 		(uuid "deee2743-6d94-4ba3-8861-246f05c1e31f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 208.5437 76.2 0)
+			(at 200.2586 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2971,7 +2971,7 @@
 			)
 		)
 	)
-	(global_label "SPV1040T_VOUT"
+	(global_label "CHG_IN"
 		(shape input)
 		(at 166.37 59.69 0)
 		(fields_autoplaced yes)
@@ -2983,7 +2983,7 @@
 		)
 		(uuid "e5811c7b-3e6f-4582-9573-564e2bc51bba")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 184.4137 59.69 0)
+			(at 176.1286 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3937,7 +3937,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 168.91 82.55 270)
+		(at 88.9 144.78 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3948,7 +3948,7 @@
 		(fields_autoplaced yes)
 		(uuid "900257ba-cbd3-4199-acf9-56663827434d")
 		(property "Reference" "#FLG01"
-			(at 170.815 82.55 0)
+			(at 88.9 146.685 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3959,18 +3959,18 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 172.72 82.5499 90)
+			(at 91.44 146.0499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Footprint" ""
-			(at 168.91 82.55 0)
+			(at 88.9 144.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3981,7 +3981,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 168.91 82.55 0)
+			(at 88.9 144.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3992,7 +3992,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 168.91 82.55 0)
+			(at 88.9 144.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4401,7 +4401,7 @@
 	)
 	(symbol
 		(lib_id "EasyEDA2Kicad:SS14_C83852")
-		(at 102.87 144.78 0)
+		(at 102.87 144.78 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4412,7 +4412,7 @@
 		(fields_autoplaced yes)
 		(uuid "c3d890a2-e7f7-4ddc-a878-b76fb0593846")
 		(property "Reference" "D1"
-			(at 102.49 138.43 0)
+			(at 103.25 138.43 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4422,7 +4422,7 @@
 			)
 		)
 		(property "Value" "SS14_C83852"
-			(at 102.49 140.97 0)
+			(at 103.25 140.97 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4432,7 +4432,7 @@
 			)
 		)
 		(property "Footprint" "easyeda2kicad:SMA_L4.3-W2.6-LS5.2-RD"
-			(at 102.87 152.4 0)
+			(at 102.87 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4443,7 +4443,7 @@
 			)
 		)
 		(property "Datasheet" "https://lcsc.com/product-detail/Schottky-Barrier-Diodes-SBD_ON-Semicon_SS14_ON-Semicon-ON-SS14_C83852.html"
-			(at 102.87 154.94 0)
+			(at 102.87 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4465,7 +4465,7 @@
 			)
 		)
 		(property "Manufacturer" "onsemi(安森美)"
-			(at 102.87 157.48 0)
+			(at 102.87 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4476,7 +4476,7 @@
 			)
 		)
 		(property "MPN" "SS14"
-			(at 102.87 160.02 0)
+			(at 102.87 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4487,7 +4487,7 @@
 			)
 		)
 		(property "LCSC Part" "C83852"
-			(at 102.87 162.56 0)
+			(at 102.87 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

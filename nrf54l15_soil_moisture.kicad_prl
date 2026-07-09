@@ -22,7 +22,7 @@
       "graphics": true,
       "keepouts": true,
       "lockedItems": true,
-      "otherItems": true,
+      "otherItems": false,
       "pads": true,
       "text": true,
       "tracks": true,
@@ -52,7 +52,7 @@
       "board_outline_area",
       "ly_points"
     ],
-    "visible_layers": "ffffffff_ffffffff_fffffff7_ffffff8f",
+    "visible_layers": "ffffffff_ffffffff_fffffff7_ffffffff",
     "zone_display_mode": 0
   },
   "git": {
