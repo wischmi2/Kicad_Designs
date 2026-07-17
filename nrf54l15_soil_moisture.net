@@ -1,8 +1,8 @@
 (export
 	(version "E")
 	(design
-		(source "C:\\Users\\Brian\\Documents\\KiCad\\nrf54l15_soil_moisture\\nrf54l15_soil_moisture\\nrf54l15_soil_moisture.kicad_sch")
-		(date "2026-06-13T19:44:32")
+		(source "c:\\Users\\Brian\\Kicad_Designs\\nrf54l15_soil_moisture.kicad_sch")
+		(date "2026-07-16T09:58:54")
 		(tool "Eeschema 10.0.0")
 		(sheet
 			(number "1")
@@ -827,8 +827,76 @@
 			)
 		)
 		(comp
+			(ref "D2")
+			(value "SS14_C83852")
+			(footprint "easyeda2kicad:SMA_L4.3-W2.6-LS5.2-RD")
+			(datasheet "https://lcsc.com/product-detail/Schottky-Barrier-Diodes-SBD_ON-Semicon_SS14_ON-Semicon-ON-SS14_C83852.html")
+			(fields
+				(field
+					(name "Manufacturer") "onsemi(安森美)")
+				(field
+					(name "MPN") "SS14")
+				(field
+					(name "LCSC Part") "C83852")
+				(field
+					(name "Footprint") "easyeda2kicad:SMA_L4.3-W2.6-LS5.2-RD")
+				(field
+					(name "Datasheet") "https://lcsc.com/product-detail/Schottky-Barrier-Diodes-SBD_ON-Semicon_SS14_ON-Semicon-ON-SS14_C83852.html")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "EasyEDA2Kicad")
+				(part "SS14_C83852")
+				(description "")
+			)
+			(property
+				(name "Manufacturer")
+				(value "onsemi(安森美)")
+			)
+			(property
+				(name "MPN")
+				(value "SS14")
+			)
+			(property
+				(name "LCSC Part")
+				(value "C83852")
+			)
+			(property
+				(name "Sheetname")
+				(value "Solar")
+			)
+			(property
+				(name "Sheetfile")
+				(value "power_supply.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "Schottky Barrier Diodes (SBD)")
+			)
+			(sheetpath
+				(names "/Solar/")
+				(tstamps "/7400a6e7-510a-4e28-84b8-c443b681fae8/")
+			)
+			(tstamps "9c089542-8145-4fde-a226-ae51a4245fce")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
 			(ref "L1")
-			(value "SDFL2012S100KTF")
+			(value "10uh")
 			(footprint "easyeda2kicad:L0805")
 			(datasheet "https://lcsc.com/product-detail/Inductors-SMD_10uH-10_C1046.html")
 			(description "10uH ±10%")
@@ -965,26 +1033,38 @@
 		(comp
 			(ref "R4")
 			(value "3.3M")
-			(footprint "Resistor_SMD:R_0402_1005Metric")
-			(description "Resistor")
+			(footprint "easyeda2kicad:R0402")
+			(datasheet "https://www.lcsc.com/datasheet/C54531078.pdf")
 			(fields
 				(field
-					(name "LCSC") "C54531078")
+					(name "Manufacturer") "SAE(世盟/世爱)")
 				(field
-					(name "Footprint") "Resistor_SMD:R_0402_1005Metric")
+					(name "MPN") "1RC0402J0335")
 				(field
-					(name "Datasheet")
+					(name "LCSC Part") "C54531078")
+				(field
+					(name "Footprint") "easyeda2kicad:R0402")
+				(field
+					(name "Datasheet") "https://www.lcsc.com/datasheet/C54531078.pdf")
+				(field
+					(name "Description")
 				)
-				(field
-					(name "Description") "Resistor")
 			)
 			(libsource
-				(lib "Device")
-				(part "R")
-				(description "Resistor")
+				(lib "EasyEDA2Kicad")
+				(part "1RC0402J0335")
+				(description "")
 			)
 			(property
-				(name "LCSC")
+				(name "Manufacturer")
+				(value "SAE(世盟/世爱)")
+			)
+			(property
+				(name "MPN")
+				(value "1RC0402J0335")
+			)
+			(property
+				(name "LCSC Part")
 				(value "C54531078")
 			)
 			(property
@@ -995,19 +1075,11 @@
 				(name "Sheetfile")
 				(value "power_supply.kicad_sch")
 			)
-			(property
-				(name "ki_keywords")
-				(value "R res resistor")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "R_*")
-			)
 			(sheetpath
 				(names "/Solar/")
 				(tstamps "/7400a6e7-510a-4e28-84b8-c443b681fae8/")
 			)
-			(tstamps "39fc5773-9e30-4a25-b017-2ab60c6e001f")
+			(tstamps "401c63da-b00d-4227-b3ac-647c5a8178ec")
 			(units
 				(unit
 					(name "A")
@@ -1025,26 +1097,38 @@
 		(comp
 			(ref "R5")
 			(value "1M")
-			(footprint "Resistor_SMD:R_0402_1005Metric")
-			(description "Resistor")
+			(footprint "easyeda2kicad:R0402")
+			(datasheet "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_1MR-105-5_C93949.html")
 			(fields
 				(field
-					(name "LCSC") "C93949")
+					(name "Manufacturer") "YAGEO(国巨)")
 				(field
-					(name "Footprint") "Resistor_SMD:R_0402_1005Metric")
+					(name "MPN") "RC0402JR-071ML")
 				(field
-					(name "Datasheet")
+					(name "LCSC Part") "C93949")
+				(field
+					(name "Footprint") "easyeda2kicad:R0402")
+				(field
+					(name "Datasheet") "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_1MR-105-5_C93949.html")
+				(field
+					(name "Description")
 				)
-				(field
-					(name "Description") "Resistor")
 			)
 			(libsource
-				(lib "Device")
-				(part "R")
-				(description "Resistor")
+				(lib "EasyEDA2Kicad")
+				(part "RC0402JR-071ML")
+				(description "")
 			)
 			(property
-				(name "LCSC")
+				(name "Manufacturer")
+				(value "YAGEO(国巨)")
+			)
+			(property
+				(name "MPN")
+				(value "RC0402JR-071ML")
+			)
+			(property
+				(name "LCSC Part")
 				(value "C93949")
 			)
 			(property
@@ -1057,17 +1141,13 @@
 			)
 			(property
 				(name "ki_keywords")
-				(value "R res resistor")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "R_*")
+				(value "Resistors")
 			)
 			(sheetpath
 				(names "/Solar/")
 				(tstamps "/7400a6e7-510a-4e28-84b8-c443b681fae8/")
 			)
-			(tstamps "42e75ef6-275d-48e5-92f5-bf18419ef0a7")
+			(tstamps "ad3ec27b-8329-4874-91da-ac065e3fa023")
 			(units
 				(unit
 					(name "A")
@@ -1084,27 +1164,39 @@
 		)
 		(comp
 			(ref "R6")
-			(value "3.9M")
-			(footprint "Resistor_SMD:R_0402_1005Metric")
-			(description "Resistor")
+			(value "3.01M")
+			(footprint "easyeda2kicad:R0402")
+			(datasheet "https://www.lcsc.com/datasheet/C3013167.pdf")
 			(fields
 				(field
-					(name "LCSC") "C3013167")
+					(name "Manufacturer") "FOJAN(富捷)")
 				(field
-					(name "Footprint") "Resistor_SMD:R_0402_1005Metric")
+					(name "MPN") "FRC0402F3904TS")
 				(field
-					(name "Datasheet")
+					(name "LCSC Part") "C3013167")
+				(field
+					(name "Footprint") "easyeda2kicad:R0402")
+				(field
+					(name "Datasheet") "https://www.lcsc.com/datasheet/C3013167.pdf")
+				(field
+					(name "Description")
 				)
-				(field
-					(name "Description") "Resistor")
 			)
 			(libsource
-				(lib "Device")
-				(part "R")
-				(description "Resistor")
+				(lib "EasyEDA2Kicad")
+				(part "FRC0402F3904TS")
+				(description "")
 			)
 			(property
-				(name "LCSC")
+				(name "Manufacturer")
+				(value "FOJAN(富捷)")
+			)
+			(property
+				(name "MPN")
+				(value "FRC0402F3904TS")
+			)
+			(property
+				(name "LCSC Part")
 				(value "C3013167")
 			)
 			(property
@@ -1115,19 +1207,11 @@
 				(name "Sheetfile")
 				(value "power_supply.kicad_sch")
 			)
-			(property
-				(name "ki_keywords")
-				(value "R res resistor")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "R_*")
-			)
 			(sheetpath
 				(names "/Solar/")
 				(tstamps "/7400a6e7-510a-4e28-84b8-c443b681fae8/")
 			)
-			(tstamps "eab90000-3a00-4030-a229-38d02a9f043d")
+			(tstamps "812bc402-dc22-4009-96fb-725413042076")
 			(units
 				(unit
 					(name "A")
@@ -1145,26 +1229,38 @@
 		(comp
 			(ref "R7")
 			(value "1M")
-			(footprint "Resistor_SMD:R_0402_1005Metric")
-			(description "Resistor")
+			(footprint "easyeda2kicad:R0402")
+			(datasheet "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_1MR-105-5_C93949.html")
 			(fields
 				(field
-					(name "LCSC") "C93949")
+					(name "Manufacturer") "YAGEO(国巨)")
 				(field
-					(name "Footprint") "Resistor_SMD:R_0402_1005Metric")
+					(name "MPN") "RC0402JR-071ML")
 				(field
-					(name "Datasheet")
+					(name "LCSC Part") "C93949")
+				(field
+					(name "Footprint") "easyeda2kicad:R0402")
+				(field
+					(name "Datasheet") "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_1MR-105-5_C93949.html")
+				(field
+					(name "Description")
 				)
-				(field
-					(name "Description") "Resistor")
 			)
 			(libsource
-				(lib "Device")
-				(part "R")
-				(description "Resistor")
+				(lib "EasyEDA2Kicad")
+				(part "RC0402JR-071ML")
+				(description "")
 			)
 			(property
-				(name "LCSC")
+				(name "Manufacturer")
+				(value "YAGEO(国巨)")
+			)
+			(property
+				(name "MPN")
+				(value "RC0402JR-071ML")
+			)
+			(property
+				(name "LCSC Part")
 				(value "C93949")
 			)
 			(property
@@ -1177,17 +1273,13 @@
 			)
 			(property
 				(name "ki_keywords")
-				(value "R res resistor")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "R_*")
+				(value "Resistors")
 			)
 			(sheetpath
 				(names "/Solar/")
 				(tstamps "/7400a6e7-510a-4e28-84b8-c443b681fae8/")
 			)
-			(tstamps "8967b9c3-359d-4ca4-aabc-b579049d26cc")
+			(tstamps "6422f90a-993b-4b30-8bc7-d700b018d9bc")
 			(units
 				(unit
 					(name "A")
@@ -1283,6 +1375,74 @@
 						)
 						(pin
 							(num "5")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U5")
+			(value "S2B-PH-K-S-GW")
+			(footprint "easyeda2kicad:CONN-TH_S2B-PH-K-S-GW")
+			(datasheet "https://lcsc.com/product-detail/PH-Connectors_JST_S2B-PH-K-S-GW_PHsocket-1-2P-Curved-needle-pitch2mm_C157932.html")
+			(fields
+				(field
+					(name "Manufacturer") "JST")
+				(field
+					(name "MPN") "S2B-PH-K-S-GW")
+				(field
+					(name "LCSC Part") "C157932")
+				(field
+					(name "Footprint") "easyeda2kicad:CONN-TH_S2B-PH-K-S-GW")
+				(field
+					(name "Datasheet") "https://lcsc.com/product-detail/PH-Connectors_JST_S2B-PH-K-S-GW_PHsocket-1-2P-Curved-needle-pitch2mm_C157932.html")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "EasyEDA2Kicad")
+				(part "S2B-PH-K-S-GW")
+				(description "")
+			)
+			(property
+				(name "Manufacturer")
+				(value "JST")
+			)
+			(property
+				(name "MPN")
+				(value "S2B-PH-K-S-GW")
+			)
+			(property
+				(name "LCSC Part")
+				(value "C157932")
+			)
+			(property
+				(name "Sheetname")
+				(value "Solar")
+			)
+			(property
+				(name "Sheetfile")
+				(value "power_supply.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "Wire To Board / Wire To Wire Connector")
+			)
+			(sheetpath
+				(names "/Solar/")
+				(tstamps "/7400a6e7-510a-4e28-84b8-c443b681fae8/")
+			)
+			(tstamps "d1e30f15-b909-4ee8-9652-fd24153ed7d5")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
 						)
 					)
 				)
@@ -1849,7 +2009,7 @@
 		(comp
 			(ref "J1")
 			(value "TYPE-C-31-M-12")
-			(footprint "TYPE-C-31-M-12:HRO_TYPE-C-31-M-12")
+			(footprint "easyeda2kicad:USB-C_SMD-TYPE-C-31-M-12_1")
 			(description "USB Connectors 24 Receptacle 1 8.94*7.3mm RoHS")
 			(fields
 				(field
@@ -1877,7 +2037,7 @@
 				(field
 					(name "MANUFACTURER") "HRO Electronics Co., Ltd.")
 				(field
-					(name "Footprint") "TYPE-C-31-M-12:HRO_TYPE-C-31-M-12")
+					(name "Footprint") "easyeda2kicad:USB-C_SMD-TYPE-C-31-M-12_1")
 				(field
 					(name "Datasheet")
 				)
@@ -1949,7 +2109,7 @@
 				(names "/USB/")
 				(tstamps "/994a507d-9817-473d-9c48-8faa2a4673bf/")
 			)
-			(tstamps "78fc8fef-f627-49e4-a043-3e7eba360fd8")
+			(tstamps "d5d97748-9248-4ad3-b1a2-bc121cccad50")
 			(units
 				(unit
 					(name "A")
@@ -2009,21 +2169,39 @@
 		(comp
 			(ref "R1")
 			(value "5.1k")
-			(footprint "EasyEDA2Kicad:R0402")
-			(description "Resistor, Generic US Symbol, Alternate KiCad Library")
+			(footprint "easyeda2kicad:R0402")
+			(datasheet "https://www.lcsc.com/datasheet/C22369457.pdf")
 			(fields
 				(field
-					(name "Footprint") "EasyEDA2Kicad:R0402")
+					(name "Manufacturer") "HKR(香港电阻)")
 				(field
-					(name "Datasheet")
+					(name "MPN") "RCA025K1FLF")
+				(field
+					(name "LCSC Part") "C22369457")
+				(field
+					(name "Footprint") "easyeda2kicad:R0402")
+				(field
+					(name "Datasheet") "https://www.lcsc.com/datasheet/C22369457.pdf")
+				(field
+					(name "Description")
 				)
-				(field
-					(name "Description") "Resistor, Generic US Symbol, Alternate KiCad Library")
 			)
 			(libsource
-				(lib "PCM_Resistor_US_AKL")
-				(part "R_Generic")
-				(description "Resistor, Generic US Symbol, Alternate KiCad Library")
+				(lib "EasyEDA2Kicad")
+				(part "RCA025K1FLF")
+				(description "")
+			)
+			(property
+				(name "Manufacturer")
+				(value "HKR(香港电阻)")
+			)
+			(property
+				(name "MPN")
+				(value "RCA025K1FLF")
+			)
+			(property
+				(name "LCSC Part")
+				(value "C22369457")
 			)
 			(property
 				(name "Sheetname")
@@ -2033,28 +2211,20 @@
 				(name "Sheetfile")
 				(value "usb.kicad_sch")
 			)
-			(property
-				(name "ki_keywords")
-				(value "R res resistor us")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "R_*")
-			)
 			(sheetpath
 				(names "/USB/")
 				(tstamps "/994a507d-9817-473d-9c48-8faa2a4673bf/")
 			)
-			(tstamps "35978e39-fc19-4375-add8-c85692b2f2a7")
+			(tstamps "dc0ae684-2032-47cd-a085-7692058ed12a")
 			(units
 				(unit
 					(name "A")
 					(pins
 						(pin
-							(num "2")
+							(num "1")
 						)
 						(pin
-							(num "1")
+							(num "2")
 						)
 					)
 				)
@@ -2063,21 +2233,39 @@
 		(comp
 			(ref "R2")
 			(value "5.1k")
-			(footprint "EasyEDA2Kicad:R0402")
-			(description "Resistor, Generic US Symbol, Alternate KiCad Library")
+			(footprint "easyeda2kicad:R0402")
+			(datasheet "https://www.lcsc.com/datasheet/C22369457.pdf")
 			(fields
 				(field
-					(name "Footprint") "EasyEDA2Kicad:R0402")
+					(name "Manufacturer") "HKR(香港电阻)")
 				(field
-					(name "Datasheet")
+					(name "MPN") "RCA025K1FLF")
+				(field
+					(name "LCSC Part") "C22369457")
+				(field
+					(name "Footprint") "easyeda2kicad:R0402")
+				(field
+					(name "Datasheet") "https://www.lcsc.com/datasheet/C22369457.pdf")
+				(field
+					(name "Description")
 				)
-				(field
-					(name "Description") "Resistor, Generic US Symbol, Alternate KiCad Library")
 			)
 			(libsource
-				(lib "PCM_Resistor_US_AKL")
-				(part "R_Generic")
-				(description "Resistor, Generic US Symbol, Alternate KiCad Library")
+				(lib "EasyEDA2Kicad")
+				(part "RCA025K1FLF")
+				(description "")
+			)
+			(property
+				(name "Manufacturer")
+				(value "HKR(香港电阻)")
+			)
+			(property
+				(name "MPN")
+				(value "RCA025K1FLF")
+			)
+			(property
+				(name "LCSC Part")
+				(value "C22369457")
 			)
 			(property
 				(name "Sheetname")
@@ -2087,28 +2275,20 @@
 				(name "Sheetfile")
 				(value "usb.kicad_sch")
 			)
-			(property
-				(name "ki_keywords")
-				(value "R res resistor us")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "R_*")
-			)
 			(sheetpath
 				(names "/USB/")
 				(tstamps "/994a507d-9817-473d-9c48-8faa2a4673bf/")
 			)
-			(tstamps "3b1d1814-e7dd-4f9a-a893-e972fe380364")
+			(tstamps "9c752308-e8cc-4323-bf18-92c1e17585f0")
 			(units
 				(unit
 					(name "A")
 					(pins
 						(pin
-							(num "2")
+							(num "1")
 						)
 						(pin
-							(num "1")
+							(num "2")
 						)
 					)
 				)
@@ -2236,6 +2416,74 @@
 				(tstamps "/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/")
 			)
 			(tstamps "b96832c3-992a-4750-a610-7982dc460b6f")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C16")
+			(value "10uF")
+			(footprint "easyeda2kicad:C0603")
+			(datasheet "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_YAGEO-CC0603MRX5R8BB106_C596327.html")
+			(fields
+				(field
+					(name "Manufacturer") "YAGEO(国巨)")
+				(field
+					(name "MPN") "CC0603MRX5R8BB106")
+				(field
+					(name "LCSC Part") "C596327")
+				(field
+					(name "Footprint") "easyeda2kicad:C0603")
+				(field
+					(name "Datasheet") "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_YAGEO-CC0603MRX5R8BB106_C596327.html")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "EasyEDA2Kicad")
+				(part "CC0603MRX5R8BB106")
+				(description "")
+			)
+			(property
+				(name "Manufacturer")
+				(value "YAGEO(国巨)")
+			)
+			(property
+				(name "MPN")
+				(value "CC0603MRX5R8BB106")
+			)
+			(property
+				(name "LCSC Part")
+				(value "C596327")
+			)
+			(property
+				(name "Sheetname")
+				(value "npm1300")
+			)
+			(property
+				(name "Sheetfile")
+				(value "npm1300.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "Multilayer Ceramic Capacitors MLCC - SMD/SMT")
+			)
+			(sheetpath
+				(names "/npm1300/")
+				(tstamps "/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/")
+			)
+			(tstamps "bdd78b60-ccc7-4045-88c8-d1067c0795fd")
 			(units
 				(unit
 					(name "A")
@@ -2523,74 +2771,6 @@
 			)
 		)
 		(comp
-			(ref "C21")
-			(value "100nF")
-			(footprint "easyeda2kicad:C0603")
-			(datasheet "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_100nF-104-10-50V_C14663.html")
-			(description "100nF (104) ±10% 50V")
-			(fields
-				(field
-					(name "Manufacturer") "YAGEO(国巨)")
-				(field
-					(name "MPN") "CC0603KRX7R9BB104")
-				(field
-					(name "LCSC Part") "C14663")
-				(field
-					(name "Footprint") "easyeda2kicad:C0603")
-				(field
-					(name "Datasheet") "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_100nF-104-10-50V_C14663.html")
-				(field
-					(name "Description") "100nF (104) ±10% 50V")
-			)
-			(libsource
-				(lib "EasyEDA2Kicad")
-				(part "CC0603KRX7R9BB104")
-				(description "100nF (104) ±10% 50V")
-			)
-			(property
-				(name "Manufacturer")
-				(value "YAGEO(国巨)")
-			)
-			(property
-				(name "MPN")
-				(value "CC0603KRX7R9BB104")
-			)
-			(property
-				(name "LCSC Part")
-				(value "C14663")
-			)
-			(property
-				(name "Sheetname")
-				(value "npm1300")
-			)
-			(property
-				(name "Sheetfile")
-				(value "npm1300.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "Multilayer Ceramic Capacitors MLCC - SMD/SMT")
-			)
-			(sheetpath
-				(names "/npm1300/")
-				(tstamps "/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/")
-			)
-			(tstamps "5d788c29-ab5d-4677-8381-fece12ec2598")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
-						)
-					)
-				)
-			)
-		)
-		(comp
 			(ref "C22")
 			(value "10uF")
 			(footprint "easyeda2kicad:C0805")
@@ -2644,210 +2824,6 @@
 				(tstamps "/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/")
 			)
 			(tstamps "b61cd25f-af75-4d40-8bcd-ba77054e83a3")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
-						)
-					)
-				)
-			)
-		)
-		(comp
-			(ref "C23")
-			(value "10uF")
-			(footprint "easyeda2kicad:C0805")
-			(datasheet "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL21A106KAYNNNE_10uF-106-10-25V_C15850.html")
-			(description "10uF (106) ±10% 25V")
-			(fields
-				(field
-					(name "Manufacturer") "SAMSUNG(三星)")
-				(field
-					(name "MPN") "CL21A106KAYNNNE")
-				(field
-					(name "LCSC Part") "C15850")
-				(field
-					(name "Footprint") "easyeda2kicad:C0805")
-				(field
-					(name "Datasheet") "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL21A106KAYNNNE_10uF-106-10-25V_C15850.html")
-				(field
-					(name "Description") "10uF (106) ±10% 25V")
-			)
-			(libsource
-				(lib "EasyEDA2Kicad")
-				(part "CL21A106KAYNNNE")
-				(description "10uF (106) ±10% 25V")
-			)
-			(property
-				(name "Manufacturer")
-				(value "SAMSUNG(三星)")
-			)
-			(property
-				(name "MPN")
-				(value "CL21A106KAYNNNE")
-			)
-			(property
-				(name "LCSC Part")
-				(value "C15850")
-			)
-			(property
-				(name "Sheetname")
-				(value "npm1300")
-			)
-			(property
-				(name "Sheetfile")
-				(value "npm1300.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "Multilayer Ceramic Capacitors MLCC - SMD/SMT")
-			)
-			(sheetpath
-				(names "/npm1300/")
-				(tstamps "/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/")
-			)
-			(tstamps "85e9e18b-7402-45a0-a169-befe09220497")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
-						)
-					)
-				)
-			)
-		)
-		(comp
-			(ref "C24")
-			(value "100nF")
-			(footprint "easyeda2kicad:C0603")
-			(datasheet "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_100nF-104-10-50V_C14663.html")
-			(description "100nF (104) ±10% 50V")
-			(fields
-				(field
-					(name "Manufacturer") "YAGEO(国巨)")
-				(field
-					(name "MPN") "CC0603KRX7R9BB104")
-				(field
-					(name "LCSC Part") "C14663")
-				(field
-					(name "Footprint") "easyeda2kicad:C0603")
-				(field
-					(name "Datasheet") "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_100nF-104-10-50V_C14663.html")
-				(field
-					(name "Description") "100nF (104) ±10% 50V")
-			)
-			(libsource
-				(lib "EasyEDA2Kicad")
-				(part "CC0603KRX7R9BB104")
-				(description "100nF (104) ±10% 50V")
-			)
-			(property
-				(name "Manufacturer")
-				(value "YAGEO(国巨)")
-			)
-			(property
-				(name "MPN")
-				(value "CC0603KRX7R9BB104")
-			)
-			(property
-				(name "LCSC Part")
-				(value "C14663")
-			)
-			(property
-				(name "Sheetname")
-				(value "npm1300")
-			)
-			(property
-				(name "Sheetfile")
-				(value "npm1300.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "Multilayer Ceramic Capacitors MLCC - SMD/SMT")
-			)
-			(sheetpath
-				(names "/npm1300/")
-				(tstamps "/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/")
-			)
-			(tstamps "feb90891-f3dd-4ccb-bcea-886db202bc54")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
-						)
-					)
-				)
-			)
-		)
-		(comp
-			(ref "C25")
-			(value "100nF")
-			(footprint "easyeda2kicad:C0603")
-			(datasheet "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_100nF-104-10-50V_C14663.html")
-			(description "100nF (104) ±10% 50V")
-			(fields
-				(field
-					(name "Manufacturer") "YAGEO(国巨)")
-				(field
-					(name "MPN") "CC0603KRX7R9BB104")
-				(field
-					(name "LCSC Part") "C14663")
-				(field
-					(name "Footprint") "easyeda2kicad:C0603")
-				(field
-					(name "Datasheet") "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_100nF-104-10-50V_C14663.html")
-				(field
-					(name "Description") "100nF (104) ±10% 50V")
-			)
-			(libsource
-				(lib "EasyEDA2Kicad")
-				(part "CC0603KRX7R9BB104")
-				(description "100nF (104) ±10% 50V")
-			)
-			(property
-				(name "Manufacturer")
-				(value "YAGEO(国巨)")
-			)
-			(property
-				(name "MPN")
-				(value "CC0603KRX7R9BB104")
-			)
-			(property
-				(name "LCSC Part")
-				(value "C14663")
-			)
-			(property
-				(name "Sheetname")
-				(value "npm1300")
-			)
-			(property
-				(name "Sheetfile")
-				(value "npm1300.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "Multilayer Ceramic Capacitors MLCC - SMD/SMT")
-			)
-			(sheetpath
-				(names "/npm1300/")
-				(tstamps "/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/")
-			)
-			(tstamps "4ef4d78c-e1f1-4056-b59d-5db55e83d20b")
 			(units
 				(unit
 					(name "A")
@@ -3129,26 +3105,38 @@
 		(comp
 			(ref "R8")
 			(value "10k")
-			(footprint "Resistor_SMD:R_0402_1005Metric")
-			(description "Resistor")
+			(footprint "easyeda2kicad:R0402")
+			(datasheet "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_10KR-1002-0-1_C190095.html")
 			(fields
 				(field
-					(name "LCSC") "C190095")
+					(name "Manufacturer") "YAGEO(国巨)")
 				(field
-					(name "Footprint") "Resistor_SMD:R_0402_1005Metric")
+					(name "MPN") "RT0402BRD0710KL")
 				(field
-					(name "Datasheet")
+					(name "LCSC Part") "C190095")
+				(field
+					(name "Footprint") "easyeda2kicad:R0402")
+				(field
+					(name "Datasheet") "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_10KR-1002-0-1_C190095.html")
+				(field
+					(name "Description")
 				)
-				(field
-					(name "Description") "Resistor")
 			)
 			(libsource
-				(lib "Device")
-				(part "R")
-				(description "Resistor")
+				(lib "EasyEDA2Kicad")
+				(part "RT0402BRD0710KL")
+				(description "")
 			)
 			(property
-				(name "LCSC")
+				(name "Manufacturer")
+				(value "YAGEO(国巨)")
+			)
+			(property
+				(name "MPN")
+				(value "RT0402BRD0710KL")
+			)
+			(property
+				(name "LCSC Part")
 				(value "C190095")
 			)
 			(property
@@ -3161,17 +3149,13 @@
 			)
 			(property
 				(name "ki_keywords")
-				(value "R res resistor")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "R_*")
+				(value "Resistors")
 			)
 			(sheetpath
 				(names "/npm1300/")
 				(tstamps "/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/")
 			)
-			(tstamps "0acec4b6-057c-41e2-8677-8bb85fdadcac")
+			(tstamps "441069b5-6bc6-41d7-a17f-bc5c7afffdd3")
 			(units
 				(unit
 					(name "A")
@@ -3319,28 +3303,40 @@
 			)
 		)
 		(comp
-			(ref "R13")
+			(ref "R12")
 			(value "4.7k")
-			(footprint "Resistor_SMD:R_0402_1005Metric")
-			(description "Resistor")
+			(footprint "easyeda2kicad:R0402")
+			(datasheet "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_4-7KR-4701-1_C105871.html")
 			(fields
 				(field
-					(name "LCSC") "C105871")
+					(name "Manufacturer") "YAGEO(国巨)")
 				(field
-					(name "Footprint") "Resistor_SMD:R_0402_1005Metric")
+					(name "MPN") "RC0402FR-074K7L")
 				(field
-					(name "Datasheet")
+					(name "LCSC Part") "C105871")
+				(field
+					(name "Footprint") "easyeda2kicad:R0402")
+				(field
+					(name "Datasheet") "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_4-7KR-4701-1_C105871.html")
+				(field
+					(name "Description")
 				)
-				(field
-					(name "Description") "Resistor")
 			)
 			(libsource
-				(lib "Device")
-				(part "R")
-				(description "Resistor")
+				(lib "EasyEDA2Kicad")
+				(part "RC0402FR-074K7L")
+				(description "")
 			)
 			(property
-				(name "LCSC")
+				(name "Manufacturer")
+				(value "YAGEO(国巨)")
+			)
+			(property
+				(name "MPN")
+				(value "RC0402FR-074K7L")
+			)
+			(property
+				(name "LCSC Part")
 				(value "C105871")
 			)
 			(property
@@ -3353,17 +3349,81 @@
 			)
 			(property
 				(name "ki_keywords")
-				(value "R res resistor")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "R_*")
+				(value "Resistors")
 			)
 			(sheetpath
 				(names "/npm1300/")
 				(tstamps "/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/")
 			)
-			(tstamps "ce986fe2-4831-4ea0-b6fb-370e50fdaade")
+			(tstamps "84f49732-5621-49c8-b747-ab537616167e")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R13")
+			(value "4.7k")
+			(footprint "easyeda2kicad:R0402")
+			(datasheet "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_4-7KR-4701-1_C105871.html")
+			(fields
+				(field
+					(name "Manufacturer") "YAGEO(国巨)")
+				(field
+					(name "MPN") "RC0402FR-074K7L")
+				(field
+					(name "LCSC Part") "C105871")
+				(field
+					(name "Footprint") "easyeda2kicad:R0402")
+				(field
+					(name "Datasheet") "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_4-7KR-4701-1_C105871.html")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "EasyEDA2Kicad")
+				(part "RC0402FR-074K7L")
+				(description "")
+			)
+			(property
+				(name "Manufacturer")
+				(value "YAGEO(国巨)")
+			)
+			(property
+				(name "MPN")
+				(value "RC0402FR-074K7L")
+			)
+			(property
+				(name "LCSC Part")
+				(value "C105871")
+			)
+			(property
+				(name "Sheetname")
+				(value "npm1300")
+			)
+			(property
+				(name "Sheetfile")
+				(value "npm1300.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "Resistors")
+			)
+			(sheetpath
+				(names "/npm1300/")
+				(tstamps "/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/")
+			)
+			(tstamps "3ac83a5a-8d78-48ed-87f1-239933592538")
 			(units
 				(unit
 					(name "A")
@@ -3380,87 +3440,39 @@
 		)
 		(comp
 			(ref "R14")
-			(value "4.7k")
-			(footprint "Resistor_SMD:R_0402_1005Metric")
-			(description "Resistor")
-			(fields
-				(field
-					(name "LCSC") "C105871")
-				(field
-					(name "Footprint") "Resistor_SMD:R_0402_1005Metric")
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "Resistor")
-			)
-			(libsource
-				(lib "Device")
-				(part "R")
-				(description "Resistor")
-			)
-			(property
-				(name "LCSC")
-				(value "C105871")
-			)
-			(property
-				(name "Sheetname")
-				(value "npm1300")
-			)
-			(property
-				(name "Sheetfile")
-				(value "npm1300.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "R res resistor")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "R_*")
-			)
-			(sheetpath
-				(names "/npm1300/")
-				(tstamps "/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/")
-			)
-			(tstamps "8c2ce55b-a02c-4e16-96ae-a64334764e2c")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
-						)
-					)
-				)
-			)
-		)
-		(comp
-			(ref "R15")
 			(value "560")
-			(footprint "Resistor_SMD:R_0402_1005Metric")
-			(description "Resistor")
+			(footprint "easyeda2kicad:R0402")
+			(datasheet "https://www.lcsc.com/datasheet/C2909370.pdf")
 			(fields
 				(field
-					(name "LCSC") "C2909370")
+					(name "Manufacturer") "FOJAN(富捷)")
 				(field
-					(name "Footprint") "Resistor_SMD:R_0402_1005Metric")
+					(name "MPN") "FRC0402F5600TS")
 				(field
-					(name "Datasheet")
+					(name "LCSC Part") "C2909370")
+				(field
+					(name "Footprint") "easyeda2kicad:R0402")
+				(field
+					(name "Datasheet") "https://www.lcsc.com/datasheet/C2909370.pdf")
+				(field
+					(name "Description")
 				)
-				(field
-					(name "Description") "Resistor")
 			)
 			(libsource
-				(lib "Device")
-				(part "R")
-				(description "Resistor")
+				(lib "EasyEDA2Kicad")
+				(part "FRC0402F5600TS")
+				(description "")
 			)
 			(property
-				(name "LCSC")
+				(name "Manufacturer")
+				(value "FOJAN(富捷)")
+			)
+			(property
+				(name "MPN")
+				(value "FRC0402F5600TS")
+			)
+			(property
+				(name "LCSC Part")
 				(value "C2909370")
 			)
 			(property
@@ -3471,19 +3483,11 @@
 				(name "Sheetfile")
 				(value "npm1300.kicad_sch")
 			)
-			(property
-				(name "ki_keywords")
-				(value "R res resistor")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "R_*")
-			)
 			(sheetpath
 				(names "/npm1300/")
 				(tstamps "/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/")
 			)
-			(tstamps "82cf1a28-b956-4e0a-97bc-baa064a90306")
+			(tstamps "a099178a-57c3-4b5a-97af-92255403731c")
 			(units
 				(unit
 					(name "A")
@@ -4586,14 +4590,14 @@
 			)
 		)
 		(comp
-			(ref "U1")
-			(value "nRF54L15-QDXX")
-			(footprint "Package_DFN_QFN:QFN-40-1EP_5x5mm_P0.4mm_EP3.6x3.6mm_ThermalVias")
+			(ref "U6")
+			(value "nRF54L15-QFXX")
+			(footprint "Package_DFN_QFN:QFN-48-1EP_6x6mm_P0.4mm_EP4.6x4.6mm_ThermalVias")
 			(datasheet "https://docs.nordicsemi.com/bundle/ps_nrf54L15")
 			(description "nRF54L Dual Core Multiprotocol BLE SoC")
 			(fields
 				(field
-					(name "Footprint") "Package_DFN_QFN:QFN-40-1EP_5x5mm_P0.4mm_EP3.6x3.6mm_ThermalVias")
+					(name "Footprint") "Package_DFN_QFN:QFN-48-1EP_6x6mm_P0.4mm_EP4.6x4.6mm_ThermalVias")
 				(field
 					(name "Datasheet") "https://docs.nordicsemi.com/bundle/ps_nrf54L15")
 				(field
@@ -4601,7 +4605,7 @@
 			)
 			(libsource
 				(lib "hlord2000")
-				(part "nRF54L15-QDXX")
+				(part "nRF54L15-QFXX")
 				(description "nRF54L Dual Core Multiprotocol BLE SoC")
 			)
 			(property
@@ -4614,26 +4618,26 @@
 			)
 			(property
 				(name "ki_keywords")
-				(value "BLE SoC nRF QFN40")
+				(value "BLE SoC nRF QFN48")
 			)
 			(property
 				(name "ki_fp_filters")
-				(value "QFN*40*1EP*5x5mm*P0.4mm*EP3.6x3.6mm*")
+				(value "QFN*48*1EP*6x6mm*P0.4mm*EP4.6x4.6mm*")
 			)
 			(sheetpath
 				(names "/nrf54l15/")
 				(tstamps "/b8c2cb22-3394-480f-839f-380498977228/")
 			)
-			(tstamps "f55d2197-a4ff-4e10-a20c-767264d041a3")
+			(tstamps "66a148b9-c07d-4efe-9af1-0a1cea5a6e1b")
 			(units
 				(unit
 					(name "A")
 					(pins
 						(pin
-							(num "29")
+							(num "34")
 						)
 						(pin
-							(num "30")
+							(num "35")
 						)
 						(pin
 							(num "1")
@@ -4642,13 +4646,19 @@
 							(num "2")
 						)
 						(pin
-							(num "20")
-						)
-						(pin
-							(num "21")
+							(num "23")
 						)
 						(pin
 							(num "24")
+						)
+						(pin
+							(num "27")
+						)
+						(pin
+							(num "28")
+						)
+						(pin
+							(num "29")
 						)
 						(pin
 							(num "3")
@@ -4669,19 +4679,25 @@
 							(num "8")
 						)
 						(pin
-							(num "32")
+							(num "9")
 						)
 						(pin
-							(num "33")
+							(num "37")
 						)
 						(pin
-							(num "34")
+							(num "38")
 						)
 						(pin
-							(num "35")
+							(num "39")
 						)
 						(pin
-							(num "10")
+							(num "40")
+						)
+						(pin
+							(num "41")
+						)
+						(pin
+							(num "42")
 						)
 						(pin
 							(num "11")
@@ -4708,49 +4724,61 @@
 							(num "18")
 						)
 						(pin
-							(num "31")
-						)
-						(pin
-							(num "9")
-						)
-						(pin
 							(num "19")
 						)
 						(pin
-							(num "40")
+							(num "20")
 						)
 						(pin
-							(num "41")
+							(num "21")
 						)
 						(pin
-							(num "37")
+							(num "10")
 						)
 						(pin
-							(num "27")
+							(num "22")
 						)
 						(pin
 							(num "36")
 						)
 						(pin
-							(num "28")
+							(num "47")
 						)
 						(pin
-							(num "38")
+							(num "48")
 						)
 						(pin
-							(num "39")
+							(num "49")
+						)
+						(pin
+							(num "44")
+						)
+						(pin
+							(num "32")
+						)
+						(pin
+							(num "43")
+						)
+						(pin
+							(num "33")
+						)
+						(pin
+							(num "45")
+						)
+						(pin
+							(num "46")
+						)
+						(pin
+							(num "31")
+						)
+						(pin
+							(num "30")
 						)
 						(pin
 							(num "26")
 						)
 						(pin
 							(num "25")
-						)
-						(pin
-							(num "23")
-						)
-						(pin
-							(num "22")
 						)
 					)
 				)
@@ -5074,40 +5102,6 @@
 			)
 		)
 		(libpart
-			(lib "Device")
-			(part "R")
-			(description "Resistor")
-			(footprints
-				(fp "R_*")
-			)
-			(fields
-				(field
-					(name "Reference") "R")
-				(field
-					(name "Value") "R")
-				(field
-					(name "Footprint")
-				)
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "Resistor")
-			)
-			(pins
-				(pin
-					(num "1")
-					(name "")
-					(type "passive")
-				)
-				(pin
-					(num "2")
-					(name "")
-					(type "passive")
-				)
-			)
-		)
-		(libpart
 			(lib "EasyEDA2Kicad")
 			(part "1206W4F1003T5E")
 			(description "100KΩ (1003) ±1%")
@@ -5140,6 +5134,42 @@
 					(num "2")
 					(name "2")
 					(type "input")
+				)
+			)
+		)
+		(libpart
+			(lib "EasyEDA2Kicad")
+			(part "1RC0402J0335")
+			(docs "https://www.lcsc.com/datasheet/C54531078.pdf")
+			(fields
+				(field
+					(name "Reference") "R")
+				(field
+					(name "Value") "1RC0402J0335")
+				(field
+					(name "Footprint") "easyeda2kicad:R0402")
+				(field
+					(name "Datasheet") "https://www.lcsc.com/datasheet/C54531078.pdf")
+				(field
+					(name "Description")
+				)
+				(field
+					(name "Manufacturer") "SAE(世盟/世爱)")
+				(field
+					(name "MPN") "1RC0402J0335")
+				(field
+					(name "LCSC Part") "C54531078")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "unspecified")
+				)
+				(pin
+					(num "2")
+					(name "2")
+					(type "unspecified")
 				)
 			)
 		)
@@ -5237,6 +5267,42 @@
 					(name "MPN") "CC0603KRX7R9BB104")
 				(field
 					(name "LCSC Part") "C14663")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "unspecified")
+				)
+				(pin
+					(num "2")
+					(name "2")
+					(type "unspecified")
+				)
+			)
+		)
+		(libpart
+			(lib "EasyEDA2Kicad")
+			(part "CC0603MRX5R8BB106")
+			(docs "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_YAGEO-CC0603MRX5R8BB106_C596327.html")
+			(fields
+				(field
+					(name "Reference") "C")
+				(field
+					(name "Value") "CC0603MRX5R8BB106")
+				(field
+					(name "Footprint") "easyeda2kicad:C0603")
+				(field
+					(name "Datasheet") "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_YAGEO-CC0603MRX5R8BB106_C596327.html")
+				(field
+					(name "Description")
+				)
+				(field
+					(name "Manufacturer") "YAGEO(国巨)")
+				(field
+					(name "MPN") "CC0603MRX5R8BB106")
+				(field
+					(name "LCSC Part") "C596327")
 			)
 			(pins
 				(pin
@@ -5493,6 +5559,78 @@
 				(pin
 					(num "6")
 					(name "VCTL")
+					(type "unspecified")
+				)
+			)
+		)
+		(libpart
+			(lib "EasyEDA2Kicad")
+			(part "FRC0402F3904TS")
+			(docs "https://www.lcsc.com/datasheet/C3013167.pdf")
+			(fields
+				(field
+					(name "Reference") "R")
+				(field
+					(name "Value") "FRC0402F3904TS")
+				(field
+					(name "Footprint") "easyeda2kicad:R0402")
+				(field
+					(name "Datasheet") "https://www.lcsc.com/datasheet/C3013167.pdf")
+				(field
+					(name "Description")
+				)
+				(field
+					(name "Manufacturer") "FOJAN(富捷)")
+				(field
+					(name "MPN") "FRC0402F3904TS")
+				(field
+					(name "LCSC Part") "C3013167")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "unspecified")
+				)
+				(pin
+					(num "2")
+					(name "2")
+					(type "unspecified")
+				)
+			)
+		)
+		(libpart
+			(lib "EasyEDA2Kicad")
+			(part "FRC0402F5600TS")
+			(docs "https://www.lcsc.com/datasheet/C2909370.pdf")
+			(fields
+				(field
+					(name "Reference") "R")
+				(field
+					(name "Value") "FRC0402F5600TS")
+				(field
+					(name "Footprint") "easyeda2kicad:R0402")
+				(field
+					(name "Datasheet") "https://www.lcsc.com/datasheet/C2909370.pdf")
+				(field
+					(name "Description")
+				)
+				(field
+					(name "Manufacturer") "FOJAN(富捷)")
+				(field
+					(name "MPN") "FRC0402F5600TS")
+				(field
+					(name "LCSC Part") "C2909370")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "unspecified")
+				)
+				(pin
+					(num "2")
+					(name "2")
 					(type "unspecified")
 				)
 			)
@@ -5967,6 +6105,150 @@
 		)
 		(libpart
 			(lib "EasyEDA2Kicad")
+			(part "RC0402FR-074K7L")
+			(docs "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_4-7KR-4701-1_C105871.html")
+			(fields
+				(field
+					(name "Reference") "R")
+				(field
+					(name "Value") "RC0402FR-074K7L")
+				(field
+					(name "Footprint") "easyeda2kicad:R0402")
+				(field
+					(name "Datasheet") "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_4-7KR-4701-1_C105871.html")
+				(field
+					(name "Description")
+				)
+				(field
+					(name "Manufacturer") "YAGEO(国巨)")
+				(field
+					(name "MPN") "RC0402FR-074K7L")
+				(field
+					(name "LCSC Part") "C105871")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "input")
+				)
+				(pin
+					(num "2")
+					(name "2")
+					(type "input")
+				)
+			)
+		)
+		(libpart
+			(lib "EasyEDA2Kicad")
+			(part "RC0402JR-071ML")
+			(docs "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_1MR-105-5_C93949.html")
+			(fields
+				(field
+					(name "Reference") "R")
+				(field
+					(name "Value") "RC0402JR-071ML")
+				(field
+					(name "Footprint") "easyeda2kicad:R0402")
+				(field
+					(name "Datasheet") "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_1MR-105-5_C93949.html")
+				(field
+					(name "Description")
+				)
+				(field
+					(name "Manufacturer") "YAGEO(国巨)")
+				(field
+					(name "MPN") "RC0402JR-071ML")
+				(field
+					(name "LCSC Part") "C93949")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "input")
+				)
+				(pin
+					(num "2")
+					(name "2")
+					(type "input")
+				)
+			)
+		)
+		(libpart
+			(lib "EasyEDA2Kicad")
+			(part "RCA025K1FLF")
+			(docs "https://www.lcsc.com/datasheet/C22369457.pdf")
+			(fields
+				(field
+					(name "Reference") "R")
+				(field
+					(name "Value") "RCA025K1FLF")
+				(field
+					(name "Footprint") "easyeda2kicad:R0402")
+				(field
+					(name "Datasheet") "https://www.lcsc.com/datasheet/C22369457.pdf")
+				(field
+					(name "Description")
+				)
+				(field
+					(name "Manufacturer") "HKR(香港电阻)")
+				(field
+					(name "MPN") "RCA025K1FLF")
+				(field
+					(name "LCSC Part") "C22369457")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "unspecified")
+				)
+				(pin
+					(num "2")
+					(name "2")
+					(type "unspecified")
+				)
+			)
+		)
+		(libpart
+			(lib "EasyEDA2Kicad")
+			(part "RT0402BRD0710KL")
+			(docs "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_10KR-1002-0-1_C190095.html")
+			(fields
+				(field
+					(name "Reference") "R")
+				(field
+					(name "Value") "RT0402BRD0710KL")
+				(field
+					(name "Footprint") "easyeda2kicad:R0402")
+				(field
+					(name "Datasheet") "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_10KR-1002-0-1_C190095.html")
+				(field
+					(name "Description")
+				)
+				(field
+					(name "Manufacturer") "YAGEO(国巨)")
+				(field
+					(name "MPN") "RT0402BRD0710KL")
+				(field
+					(name "LCSC Part") "C190095")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "unspecified")
+				)
+				(pin
+					(num "2")
+					(name "2")
+					(type "unspecified")
+				)
+			)
+		)
+		(libpart
+			(lib "EasyEDA2Kicad")
 			(part "S2B-PH-K-S-GW")
 			(docs "https://lcsc.com/product-detail/PH-Connectors_JST_S2B-PH-K-S-GW_PHsocket-1-2P-Curved-needle-pitch2mm_C157932.html")
 			(fields
@@ -6274,40 +6556,6 @@
 					(num "4")
 					(name "GND")
 					(type "input")
-				)
-			)
-		)
-		(libpart
-			(lib "PCM_Resistor_US_AKL")
-			(part "R_Generic")
-			(description "Resistor, Generic US Symbol, Alternate KiCad Library")
-			(footprints
-				(fp "R_*")
-			)
-			(fields
-				(field
-					(name "Reference") "R")
-				(field
-					(name "Value") "R_Generic")
-				(field
-					(name "Footprint")
-				)
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "Resistor, Generic US Symbol, Alternate KiCad Library")
-			)
-			(pins
-				(pin
-					(num "1")
-					(name "")
-					(type "passive")
-				)
-				(pin
-					(num "2")
-					(name "")
-					(type "passive")
 				)
 			)
 		)
@@ -6625,19 +6873,19 @@
 		)
 		(libpart
 			(lib "hlord2000")
-			(part "nRF54L15-QDXX")
+			(part "nRF54L15-QFXX")
 			(description "nRF54L Dual Core Multiprotocol BLE SoC")
 			(docs "https://docs.nordicsemi.com/bundle/ps_nrf54L15")
 			(footprints
-				(fp "QFN*40*1EP*5x5mm*P0.4mm*EP3.6x3.6mm*")
+				(fp "QFN*48*1EP*6x6mm*P0.4mm*EP4.6x4.6mm*")
 			)
 			(fields
 				(field
-					(name "Reference") "U1")
+					(name "Reference") "U")
 				(field
-					(name "Value") "nRF54L15-QDXX")
+					(name "Value") "nRF54L15-QFXX")
 				(field
-					(name "Footprint") "Package_DFN_QFN:QFN-40-1EP_5x5mm_P0.4mm_EP3.6x3.6mm_ThermalVias")
+					(name "Footprint") "Package_DFN_QFN:QFN-48-1EP_6x6mm_P0.4mm_EP4.6x4.6mm_ThermalVias")
 				(field
 					(name "Datasheet") "https://docs.nordicsemi.com/bundle/ps_nrf54L15")
 				(field
@@ -6681,171 +6929,211 @@
 				)
 				(pin
 					(num "8")
-					(name "P1.08")
+					(name "P1.07")
 					(type "bidirectional")
 				)
 				(pin
 					(num "9")
+					(name "P1.08")
+					(type "bidirectional")
+				)
+				(pin
+					(num "10")
 					(name "VDD")
 					(type "power_in")
 				)
 				(pin
-					(num "10")
+					(num "11")
 					(name "P2.00")
 					(type "bidirectional")
 				)
 				(pin
-					(num "11")
+					(num "12")
 					(name "P2.01")
 					(type "bidirectional")
 				)
 				(pin
-					(num "12")
+					(num "13")
 					(name "P2.02")
 					(type "bidirectional")
 				)
 				(pin
-					(num "13")
+					(num "14")
 					(name "P2.03")
 					(type "bidirectional")
 				)
 				(pin
-					(num "14")
+					(num "15")
 					(name "P2.04")
 					(type "bidirectional")
 				)
 				(pin
-					(num "15")
+					(num "16")
 					(name "P2.05")
 					(type "bidirectional")
 				)
 				(pin
-					(num "16")
+					(num "17")
 					(name "P2.06")
 					(type "bidirectional")
 				)
 				(pin
-					(num "17")
+					(num "18")
 					(name "P2.07")
 					(type "bidirectional")
 				)
 				(pin
-					(num "18")
+					(num "19")
 					(name "P2.08")
 					(type "bidirectional")
 				)
 				(pin
-					(num "19")
-					(name "VDD")
-					(type "passive")
-				)
-				(pin
 					(num "20")
-					(name "P0.00")
+					(name "P2.09")
 					(type "bidirectional")
 				)
 				(pin
 					(num "21")
-					(name "P0.01")
+					(name "P2.10")
 					(type "bidirectional")
 				)
 				(pin
 					(num "22")
-					(name "SWDIO")
-					(type "bidirectional")
+					(name "VDD")
+					(type "passive")
 				)
 				(pin
 					(num "23")
-					(name "SWDCLK")
-					(type "input")
+					(name "P0.00")
+					(type "bidirectional")
 				)
 				(pin
 					(num "24")
-					(name "P0.04")
+					(name "P0.01")
 					(type "bidirectional")
 				)
 				(pin
 					(num "25")
-					(name "~{RESET}")
-					(type "input")
+					(name "SWDIO")
+					(type "bidirectional")
 				)
 				(pin
 					(num "26")
-					(name "ANT")
-					(type "output")
+					(name "SWDCLK")
+					(type "input")
 				)
 				(pin
 					(num "27")
-					(name "VSS_PA")
-					(type "passive")
+					(name "P0.02")
+					(type "bidirectional")
 				)
 				(pin
 					(num "28")
-					(name "DECRF")
-					(type "passive")
+					(name "P0.03")
+					(type "bidirectional")
 				)
 				(pin
 					(num "29")
-					(name "XC1")
+					(name "P0.04")
 					(type "bidirectional")
 				)
 				(pin
 					(num "30")
-					(name "XC2")
-					(type "bidirectional")
+					(name "~{RESET}")
+					(type "input")
 				)
 				(pin
 					(num "31")
-					(name "VDD")
-					(type "passive")
+					(name "ANT")
+					(type "output")
 				)
 				(pin
 					(num "32")
-					(name "P1.11")
-					(type "bidirectional")
+					(name "VSS_PA")
+					(type "passive")
 				)
 				(pin
 					(num "33")
-					(name "P1.12")
-					(type "bidirectional")
+					(name "DECRF")
+					(type "passive")
 				)
 				(pin
 					(num "34")
-					(name "P1.13")
+					(name "XC1")
 					(type "bidirectional")
 				)
 				(pin
 					(num "35")
-					(name "P1.14")
+					(name "XC2")
 					(type "bidirectional")
 				)
 				(pin
 					(num "36")
-					(name "DECA")
-					(type "passive")
-				)
-				(pin
-					(num "37")
-					(name "VSS")
-					(type "power_in")
-				)
-				(pin
-					(num "38")
-					(name "DECD")
-					(type "passive")
-				)
-				(pin
-					(num "39")
-					(name "DCC")
-					(type "power_out")
-				)
-				(pin
-					(num "40")
 					(name "VDD")
 					(type "passive")
 				)
 				(pin
+					(num "37")
+					(name "P1.09")
+					(type "bidirectional")
+				)
+				(pin
+					(num "38")
+					(name "P1.10")
+					(type "bidirectional")
+				)
+				(pin
+					(num "39")
+					(name "P1.11")
+					(type "bidirectional")
+				)
+				(pin
+					(num "40")
+					(name "P1.12")
+					(type "bidirectional")
+				)
+				(pin
 					(num "41")
+					(name "P1.13")
+					(type "bidirectional")
+				)
+				(pin
+					(num "42")
+					(name "P1.14")
+					(type "bidirectional")
+				)
+				(pin
+					(num "43")
+					(name "DECA")
+					(type "passive")
+				)
+				(pin
+					(num "44")
+					(name "VSS")
+					(type "power_in")
+				)
+				(pin
+					(num "45")
+					(name "DECD")
+					(type "passive")
+				)
+				(pin
+					(num "46")
+					(name "DCC")
+					(type "power_out")
+				)
+				(pin
+					(num "47")
+					(name "VDD")
+					(type "passive")
+				)
+				(pin
+					(num "48")
+					(name "VDD")
+					(type "passive")
+				)
+				(pin
+					(num "49")
 					(name "VSS")
 					(type "passive")
 				)
@@ -6880,13 +7168,13 @@
 			(name "/npm1300/VSYS")
 			(class "Default")
 			(node
-				(ref "C20")
+				(ref "C16")
 				(pin "2")
 				(pinfunction "2_2")
 				(pintype "unspecified")
 			)
 			(node
-				(ref "C21")
+				(ref "C20")
 				(pin "2")
 				(pinfunction "2_2")
 				(pintype "unspecified")
@@ -6898,27 +7186,10 @@
 				(pintype "unspecified")
 			)
 			(node
-				(ref "C23")
+				(ref "R14")
 				(pin "2")
 				(pinfunction "2_2")
 				(pintype "unspecified")
-			)
-			(node
-				(ref "C24")
-				(pin "2")
-				(pinfunction "2_2")
-				(pintype "unspecified")
-			)
-			(node
-				(ref "C25")
-				(pin "2")
-				(pinfunction "2_2")
-				(pintype "unspecified")
-			)
-			(node
-				(ref "R15")
-				(pin "1")
-				(pintype "passive")
 			)
 			(node
 				(ref "U2")
@@ -6967,9 +7238,9 @@
 				(pintype "unspecified")
 			)
 			(node
-				(ref "U1")
-				(pin "21")
-				(pinfunction "P0.01_21")
+				(ref "U6")
+				(pin "24")
+				(pinfunction "P0.01_24")
 				(pintype "bidirectional")
 			)
 		)
@@ -6984,9 +7255,10 @@
 				(pintype "bidirectional")
 			)
 			(node
-				(ref "R1")
-				(pin "1")
-				(pintype "passive")
+				(ref "R2")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "unspecified")
 			)
 			(node
 				(ref "U2")
@@ -7006,9 +7278,10 @@
 				(pintype "bidirectional")
 			)
 			(node
-				(ref "R2")
-				(pin "1")
-				(pintype "passive")
+				(ref "R1")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "unspecified")
 			)
 			(node
 				(ref "U2")
@@ -7019,6 +7292,59 @@
 		)
 		(net
 			(code "6")
+			(name "CHG_IN")
+			(class "Default")
+			(node
+				(ref "C2")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "C4")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "input")
+			)
+			(node
+				(ref "D1")
+				(pin "1")
+				(pinfunction "K_1")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "D2")
+				(pin "1")
+				(pinfunction "K_1")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "R3")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "input")
+			)
+			(node
+				(ref "R6")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "U2")
+				(pin "21")
+				(pinfunction "VBUS_21")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U3")
+				(pin "4")
+				(pinfunction "VOUT_4")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "7")
 			(name "GND")
 			(class "Default")
 			(node
@@ -7064,6 +7390,12 @@
 				(pintype "unspecified")
 			)
 			(node
+				(ref "C16")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "unspecified")
+			)
+			(node
 				(ref "C17")
 				(pin "1")
 				(pinfunction "1_1")
@@ -7094,31 +7426,7 @@
 				(pintype "unspecified")
 			)
 			(node
-				(ref "C21")
-				(pin "1")
-				(pinfunction "1_1")
-				(pintype "unspecified")
-			)
-			(node
 				(ref "C22")
-				(pin "1")
-				(pinfunction "1_1")
-				(pintype "unspecified")
-			)
-			(node
-				(ref "C23")
-				(pin "1")
-				(pinfunction "1_1")
-				(pintype "unspecified")
-			)
-			(node
-				(ref "C24")
-				(pin "1")
-				(pinfunction "1_1")
-				(pintype "unspecified")
-			)
-			(node
-				(ref "C25")
 				(pin "1")
 				(pinfunction "1_1")
 				(pintype "unspecified")
@@ -7131,8 +7439,8 @@
 			)
 			(node
 				(ref "C27")
-				(pin "2")
-				(pinfunction "2_2")
+				(pin "1")
+				(pinfunction "1_1")
 				(pintype "unspecified")
 			)
 			(node
@@ -7239,7 +7547,7 @@
 			)
 			(node
 				(ref "J2")
-				(pin "4")
+				(pin "5")
 				(pintype "passive")
 			)
 			(node
@@ -7250,8 +7558,9 @@
 			)
 			(node
 				(ref "R1")
-				(pin "2")
-				(pintype "passive")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "unspecified")
 			)
 			(node
 				(ref "R10")
@@ -7267,23 +7576,27 @@
 			)
 			(node
 				(ref "R2")
-				(pin "2")
-				(pintype "passive")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "unspecified")
 			)
 			(node
 				(ref "R5")
-				(pin "2")
-				(pintype "passive")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "input")
 			)
 			(node
 				(ref "R7")
-				(pin "2")
-				(pintype "passive")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "input")
 			)
 			(node
 				(ref "R8")
-				(pin "2")
-				(pintype "passive")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "unspecified")
 			)
 			(node
 				(ref "R9")
@@ -7308,24 +7621,6 @@
 				(pin "4")
 				(pinfunction "GND_4")
 				(pintype "unspecified")
-			)
-			(node
-				(ref "U1")
-				(pin "27")
-				(pinfunction "VSS_PA_27")
-				(pintype "passive")
-			)
-			(node
-				(ref "U1")
-				(pin "37")
-				(pinfunction "VSS_37")
-				(pintype "power_in")
-			)
-			(node
-				(ref "U1")
-				(pin "41")
-				(pinfunction "VSS_41")
-				(pintype "passive")
 			)
 			(node
 				(ref "U2")
@@ -7370,6 +7665,30 @@
 				(pintype "unspecified")
 			)
 			(node
+				(ref "U5")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "U6")
+				(pin "32")
+				(pinfunction "VSS_PA_32")
+				(pintype "passive")
+			)
+			(node
+				(ref "U6")
+				(pin "44")
+				(pinfunction "VSS_44")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U6")
+				(pin "49")
+				(pinfunction "VSS_49")
+				(pintype "passive")
+			)
+			(node
 				(ref "X1")
 				(pin "2")
 				(pinfunction "GND_2")
@@ -7383,7 +7702,7 @@
 			)
 		)
 		(net
-			(code "7")
+			(code "8")
 			(name "I2C_SCL")
 			(class "Default")
 			(node
@@ -7393,15 +7712,10 @@
 				(pintype "unspecified")
 			)
 			(node
-				(ref "R13")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "U1")
-				(pin "4")
-				(pinfunction "P1.03_4")
-				(pintype "bidirectional")
+				(ref "R12")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "input")
 			)
 			(node
 				(ref "U2")
@@ -7409,9 +7723,15 @@
 				(pinfunction "SCL_14")
 				(pintype "bidirectional")
 			)
+			(node
+				(ref "U6")
+				(pin "4")
+				(pinfunction "P1.03_4")
+				(pintype "bidirectional")
+			)
 		)
 		(net
-			(code "8")
+			(code "9")
 			(name "I2C_SDA")
 			(class "Default")
 			(node
@@ -7421,15 +7741,10 @@
 				(pintype "unspecified")
 			)
 			(node
-				(ref "R14")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "U1")
-				(pin "24")
-				(pinfunction "P0.04_24")
-				(pintype "bidirectional")
+				(ref "R13")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "input")
 			)
 			(node
 				(ref "U2")
@@ -7437,9 +7752,15 @@
 				(pinfunction "SDA_13")
 				(pintype "bidirectional")
 			)
+			(node
+				(ref "U6")
+				(pin "5")
+				(pinfunction "P1.04_5")
+				(pintype "bidirectional")
+			)
 		)
 		(net
-			(code "9")
+			(code "10")
 			(name "Net-(AE1-ANT)")
 			(class "Default")
 			(node
@@ -7456,7 +7777,7 @@
 			)
 		)
 		(net
-			(code "10")
+			(code "11")
 			(name "Net-(C5-Pad2)")
 			(class "Default")
 			(node
@@ -7479,7 +7800,7 @@
 			)
 		)
 		(net
-			(code "11")
+			(code "12")
 			(name "Net-(C8-Pad2)")
 			(class "Default")
 			(node
@@ -7502,7 +7823,7 @@
 			)
 		)
 		(net
-			(code "12")
+			(code "13")
 			(name "Net-(C12-Pad2)")
 			(class "Default")
 			(node
@@ -7525,7 +7846,7 @@
 			)
 		)
 		(net
-			(code "13")
+			(code "14")
 			(name "Net-(LED1-A)")
 			(class "Default")
 			(node
@@ -7535,13 +7856,14 @@
 				(pintype "unspecified")
 			)
 			(node
-				(ref "R15")
-				(pin "2")
-				(pintype "passive")
+				(ref "R14")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "unspecified")
 			)
 		)
 		(net
-			(code "14")
+			(code "15")
 			(name "Net-(LED1-C)")
 			(class "Default")
 			(node
@@ -7558,7 +7880,7 @@
 			)
 		)
 		(net
-			(code "15")
+			(code "16")
 			(name "Net-(R11-RF1)")
 			(class "Default")
 			(node
@@ -7575,7 +7897,7 @@
 			)
 		)
 		(net
-			(code "16")
+			(code "17")
 			(name "Net-(R11-RF2)")
 			(class "Default")
 			(node
@@ -7592,8 +7914,179 @@
 			)
 		)
 		(net
-			(code "17")
-			(name "Net-(U1-ANT)")
+			(code "18")
+			(name "Net-(U2-NTC)")
+			(class "Default")
+			(node
+				(ref "R8")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "U2")
+				(pin "18")
+				(pinfunction "NTC_18")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "19")
+			(name "Net-(U2-SW1)")
+			(class "Default")
+			(node
+				(ref "L9")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "U2")
+				(pin "3")
+				(pinfunction "SW1_3")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "20")
+			(name "Net-(U2-SW2)")
+			(class "Default")
+			(node
+				(ref "L10")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "U2")
+				(pin "5")
+				(pinfunction "SW2_5")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "21")
+			(name "Net-(U2-VSET1)")
+			(class "Default")
+			(node
+				(ref "R9")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "U2")
+				(pin "17")
+				(pinfunction "VSET1_17")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "22")
+			(name "Net-(U2-VSET2)")
+			(class "Default")
+			(node
+				(ref "R10")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "U2")
+				(pin "16")
+				(pinfunction "VSET2_16")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "23")
+			(name "Net-(U3-LX)")
+			(class "Default")
+			(node
+				(ref "L1")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "U3")
+				(pin "3")
+				(pinfunction "LX_3")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "24")
+			(name "Net-(U3-MPP-SET)")
+			(class "Default")
+			(node
+				(ref "C28")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "R4")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "R5")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "input")
+			)
+			(node
+				(ref "U3")
+				(pin "1")
+				(pinfunction "MPP-SET_1")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "25")
+			(name "Net-(U3-VCTRL)")
+			(class "Default")
+			(node
+				(ref "R6")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "R7")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "input")
+			)
+			(node
+				(ref "U3")
+				(pin "5")
+				(pinfunction "VCTRL_5")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "26")
+			(name "Net-(U3-XSHUT)")
+			(class "Default")
+			(node
+				(ref "R3")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "input")
+			)
+			(node
+				(ref "U3")
+				(pin "8")
+				(pinfunction "XSHUT_8")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "27")
+			(name "Net-(U6-ANT)")
 			(class "Default")
 			(node
 				(ref "L5")
@@ -7602,15 +8095,15 @@
 				(pintype "unspecified")
 			)
 			(node
-				(ref "U1")
-				(pin "26")
-				(pinfunction "ANT_26")
+				(ref "U6")
+				(pin "31")
+				(pinfunction "ANT_31")
 				(pintype "output")
 			)
 		)
 		(net
-			(code "18")
-			(name "Net-(U1-DCC)")
+			(code "28")
+			(name "Net-(U6-DCC)")
 			(class "Default")
 			(node
 				(ref "L7")
@@ -7619,15 +8112,15 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "U1")
-				(pin "39")
-				(pinfunction "DCC_39")
+				(ref "U6")
+				(pin "46")
+				(pinfunction "DCC_46")
 				(pintype "power_out")
 			)
 		)
 		(net
-			(code "19")
-			(name "Net-(U1-DECA)")
+			(code "29")
+			(name "Net-(U6-DECA)")
 			(class "Default")
 			(node
 				(ref "C1")
@@ -7654,21 +8147,21 @@
 				(pintype "unspecified")
 			)
 			(node
-				(ref "U1")
-				(pin "28")
-				(pinfunction "DECRF_28")
+				(ref "U6")
+				(pin "33")
+				(pinfunction "DECRF_33")
 				(pintype "passive")
 			)
 			(node
-				(ref "U1")
-				(pin "36")
-				(pinfunction "DECA_36")
+				(ref "U6")
+				(pin "43")
+				(pinfunction "DECA_43")
 				(pintype "passive")
 			)
 		)
 		(net
-			(code "20")
-			(name "Net-(U1-DECD)")
+			(code "30")
+			(name "Net-(U6-DECD)")
 			(class "Default")
 			(node
 				(ref "C10")
@@ -7689,20 +8182,20 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "U1")
-				(pin "38")
-				(pinfunction "DECD_38")
+				(ref "U6")
+				(pin "45")
+				(pinfunction "DECD_45")
 				(pintype "passive")
 			)
 		)
 		(net
-			(code "21")
-			(name "Net-(U1-XC1)")
+			(code "31")
+			(name "Net-(U6-XC1)")
 			(class "Default")
 			(node
-				(ref "U1")
-				(pin "29")
-				(pinfunction "XC1_29")
+				(ref "U6")
+				(pin "34")
+				(pinfunction "XC1_34")
 				(pintype "bidirectional")
 			)
 			(node
@@ -7713,13 +8206,13 @@
 			)
 		)
 		(net
-			(code "22")
-			(name "Net-(U1-XC2)")
+			(code "32")
+			(name "Net-(U6-XC2)")
 			(class "Default")
 			(node
-				(ref "U1")
-				(pin "30")
-				(pinfunction "XC2_30")
+				(ref "U6")
+				(pin "35")
+				(pinfunction "XC2_35")
 				(pintype "bidirectional")
 			)
 			(node
@@ -7730,224 +8223,59 @@
 			)
 		)
 		(net
-			(code "23")
-			(name "Net-(U2-NTC)")
+			(code "33")
+			(name "PMIC_INT")
 			(class "Default")
-			(node
-				(ref "R8")
-				(pin "1")
-				(pintype "passive")
-			)
 			(node
 				(ref "U2")
-				(pin "18")
-				(pinfunction "NTC_18")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "24")
-			(name "Net-(U2-SW1)")
-			(class "Default")
-			(node
-				(ref "L9")
-				(pin "1")
-				(pinfunction "1_1")
-				(pintype "unspecified")
-			)
-			(node
-				(ref "U2")
-				(pin "3")
-				(pinfunction "SW1_3")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "25")
-			(name "Net-(U2-SW2)")
-			(class "Default")
-			(node
-				(ref "L10")
-				(pin "1")
-				(pinfunction "1_1")
-				(pintype "unspecified")
-			)
-			(node
-				(ref "U2")
-				(pin "5")
-				(pinfunction "SW2_5")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "26")
-			(name "Net-(U2-VSET1)")
-			(class "Default")
-			(node
-				(ref "R9")
-				(pin "2")
-				(pinfunction "2_2")
-				(pintype "unspecified")
-			)
-			(node
-				(ref "U2")
-				(pin "17")
-				(pinfunction "VSET1_17")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "27")
-			(name "Net-(U2-VSET2)")
-			(class "Default")
-			(node
-				(ref "R10")
-				(pin "2")
-				(pinfunction "2_2")
-				(pintype "unspecified")
-			)
-			(node
-				(ref "U2")
-				(pin "16")
-				(pinfunction "VSET2_16")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "28")
-			(name "Net-(U3-MPP-SET)")
-			(class "Default")
-			(node
-				(ref "C28")
-				(pin "2")
-				(pinfunction "2_2")
-				(pintype "unspecified")
-			)
-			(node
-				(ref "R4")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "R5")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "U3")
-				(pin "1")
-				(pinfunction "MPP-SET_1")
-				(pintype "unspecified")
-			)
-		)
-		(net
-			(code "29")
-			(name "Net-(U3-VCTRL)")
-			(class "Default")
-			(node
-				(ref "R6")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "R7")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "U3")
-				(pin "5")
-				(pinfunction "VCTRL_5")
-				(pintype "unspecified")
-			)
-		)
-		(net
-			(code "30")
-			(name "Net-(U3-XSHUT)")
-			(class "Default")
-			(node
-				(ref "R3")
-				(pin "1")
-				(pinfunction "1_1")
-				(pintype "input")
-			)
-			(node
-				(ref "U3")
 				(pin "8")
-				(pinfunction "XSHUT_8")
-				(pintype "unspecified")
+				(pinfunction "GPIO1_8")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "U6")
+				(pin "23")
+				(pinfunction "P0.00_23")
+				(pintype "bidirectional")
 			)
 		)
 		(net
-			(code "31")
+			(code "34")
 			(name "SOLAR_5p5V")
 			(class "Default")
 			(node
 				(ref "C27")
-				(pin "1")
-				(pinfunction "1_1")
-				(pintype "unspecified")
-			)
-			(node
-				(ref "L1")
-				(pin "1")
-				(pinfunction "1_1")
-				(pintype "unspecified")
-			)
-		)
-		(net
-			(code "32")
-			(name "SPV1040T_VOUT")
-			(class "Default")
-			(node
-				(ref "C2")
 				(pin "2")
 				(pinfunction "2_2")
 				(pintype "unspecified")
 			)
 			(node
-				(ref "D1")
+				(ref "D2")
 				(pin "2")
 				(pinfunction "A_2")
 				(pintype "unspecified")
 			)
 			(node
 				(ref "L1")
-				(pin "2")
-				(pinfunction "2_2")
+				(pin "1")
+				(pinfunction "1_1")
 				(pintype "unspecified")
-			)
-			(node
-				(ref "R3")
-				(pin "2")
-				(pinfunction "2_2")
-				(pintype "input")
 			)
 			(node
 				(ref "R4")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "R6")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "U3")
-				(pin "3")
-				(pinfunction "LX_3")
+				(pin "2")
+				(pinfunction "2_2")
 				(pintype "unspecified")
 			)
 			(node
-				(ref "U3")
-				(pin "4")
-				(pinfunction "VOUT_4")
+				(ref "U5")
+				(pin "1")
+				(pinfunction "1_1")
 				(pintype "unspecified")
 			)
 		)
 		(net
-			(code "33")
+			(code "35")
 			(name "VBAT")
 			(class "Default")
 			(node
@@ -7955,12 +8283,6 @@
 				(pin "2")
 				(pinfunction "2_2")
 				(pintype "unspecified")
-			)
-			(node
-				(ref "U2")
-				(pin "15")
-				(pinfunction "SHPHLD_15")
-				(pintype "input")
 			)
 			(node
 				(ref "U2")
@@ -7976,7 +8298,7 @@
 			)
 		)
 		(net
-			(code "34")
+			(code "36")
 			(name "VBUS")
 			(class "Default")
 			(node
@@ -7986,15 +8308,9 @@
 				(pintype "unspecified")
 			)
 			(node
-				(ref "C4")
-				(pin "2")
-				(pinfunction "2_2")
-				(pintype "input")
-			)
-			(node
 				(ref "D1")
-				(pin "1")
-				(pinfunction "K_1")
+				(pin "2")
+				(pinfunction "A_2")
 				(pintype "unspecified")
 			)
 			(node
@@ -8009,15 +8325,9 @@
 				(pinfunction "VBUS_B4_A9")
 				(pintype "power_in")
 			)
-			(node
-				(ref "U2")
-				(pin "21")
-				(pinfunction "VBUS_21")
-				(pintype "power_in")
-			)
 		)
 		(net
-			(code "35")
+			(code "37")
 			(name "VBUSOUT")
 			(class "Default")
 			(node
@@ -8034,34 +8344,17 @@
 			)
 		)
 		(net
-			(code "36")
+			(code "38")
 			(name "VDDIO")
 			(class "Default")
 			(node
+				(ref "C17")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "unspecified")
+			)
+			(node
 				(ref "C26")
-				(pin "2")
-				(pinfunction "2_2")
-				(pintype "unspecified")
-			)
-			(node
-				(ref "U2")
-				(pin "12")
-				(pinfunction "VDDIO_12")
-				(pintype "power_in")
-			)
-		)
-		(net
-			(code "37")
-			(name "VOUT1")
-			(class "Default")
-			(node
-				(ref "C15")
-				(pin "2")
-				(pinfunction "2_2")
-				(pintype "unspecified")
-			)
-			(node
-				(ref "C18")
 				(pin "2")
 				(pinfunction "2_2")
 				(pintype "unspecified")
@@ -8079,9 +8372,92 @@
 				(pintype "unspecified")
 			)
 			(node
+				(ref "CN1")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "unspecified")
+			)
+			(node
 				(ref "J2")
 				(pin "1")
 				(pintype "passive")
+			)
+			(node
+				(ref "L10")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "R12")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "input")
+			)
+			(node
+				(ref "R13")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "input")
+			)
+			(node
+				(ref "U2")
+				(pin "12")
+				(pinfunction "VDDIO_12")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U2")
+				(pin "32")
+				(pinfunction "VOUT2_32")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U6")
+				(pin "10")
+				(pinfunction "VDD_10")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U6")
+				(pin "22")
+				(pinfunction "VDD_22")
+				(pintype "passive")
+			)
+			(node
+				(ref "U6")
+				(pin "36")
+				(pinfunction "VDD_36")
+				(pintype "passive")
+			)
+			(node
+				(ref "U6")
+				(pin "47")
+				(pinfunction "VDD_47")
+				(pintype "passive")
+			)
+			(node
+				(ref "U6")
+				(pin "48")
+				(pinfunction "VDD_48")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "39")
+			(name "VOUT1")
+			(class "Default")
+			(node
+				(ref "C15")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "C18")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "unspecified")
 			)
 			(node
 				(ref "L9")
@@ -8096,40 +8472,6 @@
 				(pintype "unspecified")
 			)
 			(node
-				(ref "R13")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "R14")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "U1")
-				(pin "19")
-				(pinfunction "VDD_19")
-				(pintype "passive")
-			)
-			(node
-				(ref "U1")
-				(pin "31")
-				(pinfunction "VDD_31")
-				(pintype "passive")
-			)
-			(node
-				(ref "U1")
-				(pin "40")
-				(pinfunction "VDD_40")
-				(pintype "passive")
-			)
-			(node
-				(ref "U1")
-				(pin "9")
-				(pinfunction "VDD_9")
-				(pintype "power_in")
-			)
-			(node
 				(ref "U2")
 				(pin "1")
 				(pinfunction "VOUT1_1")
@@ -8137,53 +8479,8 @@
 			)
 		)
 		(net
-			(code "38")
-			(name "VOUT2")
-			(class "Default")
-			(node
-				(ref "C17")
-				(pin "2")
-				(pinfunction "2_2")
-				(pintype "unspecified")
-			)
-			(node
-				(ref "CN1")
-				(pin "2")
-				(pinfunction "2_2")
-				(pintype "unspecified")
-			)
-			(node
-				(ref "L10")
-				(pin "2")
-				(pinfunction "2_2")
-				(pintype "unspecified")
-			)
-			(node
-				(ref "U2")
-				(pin "32")
-				(pinfunction "VOUT2_32")
-				(pintype "power_out")
-			)
-		)
-		(net
-			(code "39")
-			(name "nRF54_RESET")
-			(class "Default")
-			(node
-				(ref "J2")
-				(pin "5")
-				(pintype "passive")
-			)
-			(node
-				(ref "U1")
-				(pin "25")
-				(pinfunction "~{RESET}_25")
-				(pintype "input")
-			)
-		)
-		(net
 			(code "40")
-			(name "nRF54_SWDCLK")
+			(name "nRF54_RESET")
 			(class "Default")
 			(node
 				(ref "J2")
@@ -8191,14 +8488,30 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "U1")
-				(pin "23")
-				(pinfunction "SWDCLK_23")
+				(ref "U6")
+				(pin "30")
+				(pinfunction "~{RESET}_30")
 				(pintype "input")
 			)
 		)
 		(net
 			(code "41")
+			(name "nRF54_SWDCLK")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "4")
+				(pintype "passive")
+			)
+			(node
+				(ref "U6")
+				(pin "26")
+				(pinfunction "SWDCLK_26")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "42")
 			(name "nRF54_SWDIO")
 			(class "Default")
 			(node
@@ -8207,80 +8520,80 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "U1")
-				(pin "22")
-				(pinfunction "SWDIO_22")
+				(ref "U6")
+				(pin "25")
+				(pinfunction "SWDIO_25")
 				(pintype "bidirectional")
 			)
 		)
 		(net
-			(code "42")
+			(code "43")
 			(name "unconnected-(J1-DN1-PadA7)")
 			(class "Default")
 			(node
 				(ref "J1")
 				(pin "A7")
 				(pinfunction "DN1_A7")
-				(pintype "bidirectional+no_connect")
+				(pintype "bidirectional")
 			)
 		)
 		(net
-			(code "43")
+			(code "44")
 			(name "unconnected-(J1-DN2-PadB7)")
 			(class "Default")
 			(node
 				(ref "J1")
 				(pin "B7")
 				(pinfunction "DN2_B7")
-				(pintype "bidirectional+no_connect")
+				(pintype "bidirectional")
 			)
 		)
 		(net
-			(code "44")
+			(code "45")
 			(name "unconnected-(J1-DP1-PadA6)")
 			(class "Default")
 			(node
 				(ref "J1")
 				(pin "A6")
 				(pinfunction "DP1_A6")
-				(pintype "bidirectional+no_connect")
+				(pintype "bidirectional")
 			)
 		)
 		(net
-			(code "45")
+			(code "46")
 			(name "unconnected-(J1-DP2-PadB6)")
 			(class "Default")
 			(node
 				(ref "J1")
 				(pin "B6")
 				(pinfunction "DP2_B6")
-				(pintype "bidirectional+no_connect")
+				(pintype "bidirectional")
 			)
 		)
 		(net
-			(code "46")
+			(code "47")
 			(name "unconnected-(J1-SBU1-PadA8)")
 			(class "Default")
 			(node
 				(ref "J1")
 				(pin "A8")
 				(pinfunction "SBU1_A8")
-				(pintype "bidirectional+no_connect")
+				(pintype "bidirectional")
 			)
 		)
 		(net
-			(code "47")
+			(code "48")
 			(name "unconnected-(J1-SBU2-PadB8)")
 			(class "Default")
 			(node
 				(ref "J1")
 				(pin "B8")
 				(pinfunction "SBU2_B8")
-				(pintype "bidirectional+no_connect")
+				(pintype "bidirectional")
 			)
 		)
 		(net
-			(code "48")
+			(code "49")
 			(name "unconnected-(J2-Pad6)")
 			(class "Default")
 			(node
@@ -8290,238 +8603,7 @@
 			)
 		)
 		(net
-			(code "49")
-			(name "unconnected-(U1-P0.00-Pad20)")
-			(class "Default")
-			(node
-				(ref "U1")
-				(pin "20")
-				(pinfunction "P0.00_20")
-				(pintype "bidirectional+no_connect")
-			)
-		)
-		(net
 			(code "50")
-			(name "unconnected-(U1-P1.00-Pad1)")
-			(class "Default")
-			(node
-				(ref "U1")
-				(pin "1")
-				(pinfunction "P1.00_1")
-				(pintype "bidirectional+no_connect")
-			)
-		)
-		(net
-			(code "51")
-			(name "unconnected-(U1-P1.01-Pad2)")
-			(class "Default")
-			(node
-				(ref "U1")
-				(pin "2")
-				(pinfunction "P1.01_2")
-				(pintype "bidirectional+no_connect")
-			)
-		)
-		(net
-			(code "52")
-			(name "unconnected-(U1-P1.02-Pad3)")
-			(class "Default")
-			(node
-				(ref "U1")
-				(pin "3")
-				(pinfunction "P1.02_3")
-				(pintype "bidirectional+no_connect")
-			)
-		)
-		(net
-			(code "53")
-			(name "unconnected-(U1-P1.04-Pad5)")
-			(class "Default")
-			(node
-				(ref "U1")
-				(pin "5")
-				(pinfunction "P1.04_5")
-				(pintype "bidirectional+no_connect")
-			)
-		)
-		(net
-			(code "54")
-			(name "unconnected-(U1-P1.05-Pad6)")
-			(class "Default")
-			(node
-				(ref "U1")
-				(pin "6")
-				(pinfunction "P1.05_6")
-				(pintype "bidirectional+no_connect")
-			)
-		)
-		(net
-			(code "55")
-			(name "unconnected-(U1-P1.06-Pad7)")
-			(class "Default")
-			(node
-				(ref "U1")
-				(pin "7")
-				(pinfunction "P1.06_7")
-				(pintype "bidirectional+no_connect")
-			)
-		)
-		(net
-			(code "56")
-			(name "unconnected-(U1-P1.08-Pad8)")
-			(class "Default")
-			(node
-				(ref "U1")
-				(pin "8")
-				(pinfunction "P1.08_8")
-				(pintype "bidirectional+no_connect")
-			)
-		)
-		(net
-			(code "57")
-			(name "unconnected-(U1-P1.11-Pad32)")
-			(class "Default")
-			(node
-				(ref "U1")
-				(pin "32")
-				(pinfunction "P1.11_32")
-				(pintype "bidirectional+no_connect")
-			)
-		)
-		(net
-			(code "58")
-			(name "unconnected-(U1-P1.12-Pad33)")
-			(class "Default")
-			(node
-				(ref "U1")
-				(pin "33")
-				(pinfunction "P1.12_33")
-				(pintype "bidirectional+no_connect")
-			)
-		)
-		(net
-			(code "59")
-			(name "unconnected-(U1-P1.13-Pad34)")
-			(class "Default")
-			(node
-				(ref "U1")
-				(pin "34")
-				(pinfunction "P1.13_34")
-				(pintype "bidirectional+no_connect")
-			)
-		)
-		(net
-			(code "60")
-			(name "unconnected-(U1-P1.14-Pad35)")
-			(class "Default")
-			(node
-				(ref "U1")
-				(pin "35")
-				(pinfunction "P1.14_35")
-				(pintype "bidirectional+no_connect")
-			)
-		)
-		(net
-			(code "61")
-			(name "unconnected-(U1-P2.00-Pad10)")
-			(class "Default")
-			(node
-				(ref "U1")
-				(pin "10")
-				(pinfunction "P2.00_10")
-				(pintype "bidirectional+no_connect")
-			)
-		)
-		(net
-			(code "62")
-			(name "unconnected-(U1-P2.01-Pad11)")
-			(class "Default")
-			(node
-				(ref "U1")
-				(pin "11")
-				(pinfunction "P2.01_11")
-				(pintype "bidirectional+no_connect")
-			)
-		)
-		(net
-			(code "63")
-			(name "unconnected-(U1-P2.02-Pad12)")
-			(class "Default")
-			(node
-				(ref "U1")
-				(pin "12")
-				(pinfunction "P2.02_12")
-				(pintype "bidirectional+no_connect")
-			)
-		)
-		(net
-			(code "64")
-			(name "unconnected-(U1-P2.03-Pad13)")
-			(class "Default")
-			(node
-				(ref "U1")
-				(pin "13")
-				(pinfunction "P2.03_13")
-				(pintype "bidirectional+no_connect")
-			)
-		)
-		(net
-			(code "65")
-			(name "unconnected-(U1-P2.04-Pad14)")
-			(class "Default")
-			(node
-				(ref "U1")
-				(pin "14")
-				(pinfunction "P2.04_14")
-				(pintype "bidirectional+no_connect")
-			)
-		)
-		(net
-			(code "66")
-			(name "unconnected-(U1-P2.05-Pad15)")
-			(class "Default")
-			(node
-				(ref "U1")
-				(pin "15")
-				(pinfunction "P2.05_15")
-				(pintype "bidirectional+no_connect")
-			)
-		)
-		(net
-			(code "67")
-			(name "unconnected-(U1-P2.06-Pad16)")
-			(class "Default")
-			(node
-				(ref "U1")
-				(pin "16")
-				(pinfunction "P2.06_16")
-				(pintype "bidirectional+no_connect")
-			)
-		)
-		(net
-			(code "68")
-			(name "unconnected-(U1-P2.07-Pad17)")
-			(class "Default")
-			(node
-				(ref "U1")
-				(pin "17")
-				(pinfunction "P2.07_17")
-				(pintype "bidirectional+no_connect")
-			)
-		)
-		(net
-			(code "69")
-			(name "unconnected-(U1-P2.08-Pad18)")
-			(class "Default")
-			(node
-				(ref "U1")
-				(pin "18")
-				(pinfunction "P2.08_18")
-				(pintype "bidirectional+no_connect")
-			)
-		)
-		(net
-			(code "70")
 			(name "unconnected-(U2-GPIO0-Pad7)")
 			(class "Default")
 			(node
@@ -8532,18 +8614,7 @@
 			)
 		)
 		(net
-			(code "71")
-			(name "unconnected-(U2-GPIO1-Pad8)")
-			(class "Default")
-			(node
-				(ref "U2")
-				(pin "8")
-				(pinfunction "GPIO1_8")
-				(pintype "bidirectional+no_connect")
-			)
-		)
-		(net
-			(code "72")
+			(code "51")
 			(name "unconnected-(U2-GPIO2-Pad9)")
 			(class "Default")
 			(node
@@ -8554,7 +8625,7 @@
 			)
 		)
 		(net
-			(code "73")
+			(code "52")
 			(name "unconnected-(U2-GPIO3-Pad10)")
 			(class "Default")
 			(node
@@ -8565,7 +8636,7 @@
 			)
 		)
 		(net
-			(code "74")
+			(code "53")
 			(name "unconnected-(U2-GPIO4-Pad11)")
 			(class "Default")
 			(node
@@ -8576,7 +8647,7 @@
 			)
 		)
 		(net
-			(code "75")
+			(code "54")
 			(name "unconnected-(U2-LED1-Pad26)")
 			(class "Default")
 			(node
@@ -8587,7 +8658,7 @@
 			)
 		)
 		(net
-			(code "76")
+			(code "55")
 			(name "unconnected-(U2-LED2-Pad27)")
 			(class "Default")
 			(node
@@ -8598,7 +8669,7 @@
 			)
 		)
 		(net
-			(code "77")
+			(code "56")
 			(name "unconnected-(U2-LSIN1{slash}VINLDO1-Pad28)")
 			(class "Default")
 			(node
@@ -8609,7 +8680,7 @@
 			)
 		)
 		(net
-			(code "78")
+			(code "57")
 			(name "unconnected-(U2-LSIN2{slash}VINLDO2-Pad30)")
 			(class "Default")
 			(node
@@ -8620,7 +8691,7 @@
 			)
 		)
 		(net
-			(code "79")
+			(code "58")
 			(name "unconnected-(U2-LSOUT1{slash}VOUTLDO1-Pad29)")
 			(class "Default")
 			(node
@@ -8631,7 +8702,7 @@
 			)
 		)
 		(net
-			(code "80")
+			(code "59")
 			(name "unconnected-(U2-LSOUT2{slash}VOUTLDO2-Pad31)")
 			(class "Default")
 			(node
@@ -8639,6 +8710,314 @@
 				(pin "31")
 				(pinfunction "LSOUT2/VOUTLDO2_31")
 				(pintype "output+no_connect")
+			)
+		)
+		(net
+			(code "60")
+			(name "unconnected-(U2-SHPHLD-Pad15)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "15")
+				(pinfunction "SHPHLD_15")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "61")
+			(name "unconnected-(U6-P0.02-Pad27)")
+			(class "Default")
+			(node
+				(ref "U6")
+				(pin "27")
+				(pinfunction "P0.02_27")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "62")
+			(name "unconnected-(U6-P0.03-Pad28)")
+			(class "Default")
+			(node
+				(ref "U6")
+				(pin "28")
+				(pinfunction "P0.03_28")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "63")
+			(name "unconnected-(U6-P0.04-Pad29)")
+			(class "Default")
+			(node
+				(ref "U6")
+				(pin "29")
+				(pinfunction "P0.04_29")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "64")
+			(name "unconnected-(U6-P1.00-Pad1)")
+			(class "Default")
+			(node
+				(ref "U6")
+				(pin "1")
+				(pinfunction "P1.00_1")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "65")
+			(name "unconnected-(U6-P1.01-Pad2)")
+			(class "Default")
+			(node
+				(ref "U6")
+				(pin "2")
+				(pinfunction "P1.01_2")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "66")
+			(name "unconnected-(U6-P1.02-Pad3)")
+			(class "Default")
+			(node
+				(ref "U6")
+				(pin "3")
+				(pinfunction "P1.02_3")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "67")
+			(name "unconnected-(U6-P1.05-Pad6)")
+			(class "Default")
+			(node
+				(ref "U6")
+				(pin "6")
+				(pinfunction "P1.05_6")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "68")
+			(name "unconnected-(U6-P1.06-Pad7)")
+			(class "Default")
+			(node
+				(ref "U6")
+				(pin "7")
+				(pinfunction "P1.06_7")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "69")
+			(name "unconnected-(U6-P1.07-Pad8)")
+			(class "Default")
+			(node
+				(ref "U6")
+				(pin "8")
+				(pinfunction "P1.07_8")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "70")
+			(name "unconnected-(U6-P1.08-Pad9)")
+			(class "Default")
+			(node
+				(ref "U6")
+				(pin "9")
+				(pinfunction "P1.08_9")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "71")
+			(name "unconnected-(U6-P1.09-Pad37)")
+			(class "Default")
+			(node
+				(ref "U6")
+				(pin "37")
+				(pinfunction "P1.09_37")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "72")
+			(name "unconnected-(U6-P1.10-Pad38)")
+			(class "Default")
+			(node
+				(ref "U6")
+				(pin "38")
+				(pinfunction "P1.10_38")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "73")
+			(name "unconnected-(U6-P1.11-Pad39)")
+			(class "Default")
+			(node
+				(ref "U6")
+				(pin "39")
+				(pinfunction "P1.11_39")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "74")
+			(name "unconnected-(U6-P1.12-Pad40)")
+			(class "Default")
+			(node
+				(ref "U6")
+				(pin "40")
+				(pinfunction "P1.12_40")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "75")
+			(name "unconnected-(U6-P1.13-Pad41)")
+			(class "Default")
+			(node
+				(ref "U6")
+				(pin "41")
+				(pinfunction "P1.13_41")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "76")
+			(name "unconnected-(U6-P1.14-Pad42)")
+			(class "Default")
+			(node
+				(ref "U6")
+				(pin "42")
+				(pinfunction "P1.14_42")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "77")
+			(name "unconnected-(U6-P2.00-Pad11)")
+			(class "Default")
+			(node
+				(ref "U6")
+				(pin "11")
+				(pinfunction "P2.00_11")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "78")
+			(name "unconnected-(U6-P2.01-Pad12)")
+			(class "Default")
+			(node
+				(ref "U6")
+				(pin "12")
+				(pinfunction "P2.01_12")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "79")
+			(name "unconnected-(U6-P2.02-Pad13)")
+			(class "Default")
+			(node
+				(ref "U6")
+				(pin "13")
+				(pinfunction "P2.02_13")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "80")
+			(name "unconnected-(U6-P2.03-Pad14)")
+			(class "Default")
+			(node
+				(ref "U6")
+				(pin "14")
+				(pinfunction "P2.03_14")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "81")
+			(name "unconnected-(U6-P2.04-Pad15)")
+			(class "Default")
+			(node
+				(ref "U6")
+				(pin "15")
+				(pinfunction "P2.04_15")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "82")
+			(name "unconnected-(U6-P2.05-Pad16)")
+			(class "Default")
+			(node
+				(ref "U6")
+				(pin "16")
+				(pinfunction "P2.05_16")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "83")
+			(name "unconnected-(U6-P2.06-Pad17)")
+			(class "Default")
+			(node
+				(ref "U6")
+				(pin "17")
+				(pinfunction "P2.06_17")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "84")
+			(name "unconnected-(U6-P2.07-Pad18)")
+			(class "Default")
+			(node
+				(ref "U6")
+				(pin "18")
+				(pinfunction "P2.07_18")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "85")
+			(name "unconnected-(U6-P2.08-Pad19)")
+			(class "Default")
+			(node
+				(ref "U6")
+				(pin "19")
+				(pinfunction "P2.08_19")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "86")
+			(name "unconnected-(U6-P2.09-Pad20)")
+			(class "Default")
+			(node
+				(ref "U6")
+				(pin "20")
+				(pinfunction "P2.09_20")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "87")
+			(name "unconnected-(U6-P2.10-Pad21)")
+			(class "Default")
+			(node
+				(ref "U6")
+				(pin "21")
+				(pinfunction "P2.10_21")
+				(pintype "bidirectional+no_connect")
 			)
 		)
 	)
