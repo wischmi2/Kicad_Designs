@@ -1,0 +1,14 @@
+identifier: soil_moisture/nrf54l15/cpuapp
+name: nRF54L15-Soil-Moisture-Application
+type: mcu
+arch: arm
+toolchain:
+  - gnuarmemb
+  - zephyr
+sysbuild: true
+ram: 188
+flash: 1428
+supported:
+  - gpio
+  - i2c
+  - watchdog

@@ -16,10 +16,3 @@ Thumbs.db
 
 # KiCad temporary lock files
 ~*.lck
-
-# Firmware / Zephyr build outputs
-build/
-build_*/
-
-# Nested clone/workspace snapshot (contains its own .git; design files copied up one level)
-nrf54l15_v2/nrf54l15_v2/
