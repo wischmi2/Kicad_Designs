@@ -1,0 +1,14 @@
+"Id";"Designator";"Footprint";"Quantity";"Designation";"Supplier and ref";
+1;"C1, C5";"C0402";2;"1uF";;;
+2;"C2, C4";"C0603";2;"100nF";;;
+3;"C3";"C0603";1;"2.2uF";;;
+4;"J1";"SMA_BAT_Wireless_BWSMA-KWE-Z001";1;"Conn_Coaxial_Small";;;
+5;"J2";"JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal";1;"Conn_01x03";;;
+6;"J3";"JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal";1;"Conn_01x02";;;
+7;"J4";"JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal";1;"Conn_01x04";;;
+8;"R1, R2, R3, R4, R6";"R0402";5;"4.7k";;;
+9;"R5";"R0402";1;"0";;;
+10;"U1";"XIAO-nRF54LM20A-SMD";1;"XIAO-nRF54LM20A-SMD";;;
+11;"U2";"Atlas_pH_OEM";1;"Atlas_pH_OEM";;;
+12;"U3";"SOIC-8_3.9x4.9mm_P1.27mm";1;"ADuM1250";;;
+13;"U4";"Converter_DCDC_Murata_NXExSxxxxMC_SMD";1;"NXE1S0303MC";;;

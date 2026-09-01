@@ -2199,6 +2199,66 @@
 			(embedded_fonts no)
 		)
 	)
+	(text_box "This rail comes from the USB."
+		(exclude_from_sim no)
+		(at 86.614 152.146 0)
+		(size 20.066 8.382)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "219fec98-c40c-44ff-a197-670f763381a1")
+	)
+	(text_box "This rail comes from the solar panel SPV1040."
+		(exclude_from_sim no)
+		(at 46.228 98.298 0)
+		(size 19.304 9.144)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "5d109c3f-99eb-4301-8748-e72bb3d0d7c0")
+	)
+	(text_box "This is the output to the npm1300."
+		(exclude_from_sim no)
+		(at 64.008 121.92 0)
+		(size 20.574 7.62)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "74ca18fe-4930-476d-85f9-5c28396f2714")
+	)
 	(junction
 		(at 69.85 95.25)
 		(diameter 0)
