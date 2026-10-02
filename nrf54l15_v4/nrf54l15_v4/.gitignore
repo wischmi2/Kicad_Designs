@@ -1,0 +1,18 @@
+# KiCad local history plugin
+.history/
+
+# Project backup archives
+*-backups/
+
+# Footprint cache (regenerated locally)
+fp-info-cache
+
+# Autosave files
+_autosave-*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# KiCad temporary lock files
+~*.lck

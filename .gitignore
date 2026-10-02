@@ -21,5 +21,12 @@ Thumbs.db
 build/
 build_*/
 
-# Nested clone/workspace snapshot (contains its own .git; design files copied up one level)
+# Nested clone/workspace snapshots (contain their own .git)
 nrf54l15_v2/nrf54l15_v2/
+nrf54l15_v3/nrf54l15_v3/nrf54l15_v2/
+
+# Editor / tool backup copies
+*.claude_bak
+*.claude_bak2
+*.bak_*
+*.bak
