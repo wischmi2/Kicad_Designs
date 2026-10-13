@@ -1506,6 +1506,10 @@
 		(color 0 0 0 0)
 		(uuid "c9586bb4-a255-4c88-9187-17719cf5560a")
 	)
+	(no_connect
+		(at 55.88 123.19)
+		(uuid "3db5f8c1-5073-497a-8990-037cf70d2353")
+	)
 	(wire
 		(pts
 			(xy 88.9 107.95) (xy 95.25 107.95)
@@ -1775,84 +1779,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 55.88 123.19 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0bc5deda-2a12-4a3a-9fcc-9f807b734cb2")
-		(property "Reference" "#PWR042"
-			(at 55.88 129.54 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 55.88 128.27 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 55.88 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 55.88 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 55.88 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "c26506ac-93c8-4583-9eff-ad5dd9b2a51b")
-		)
-		(instances
-			(project "nrf54l15_v4"
-				(path "/55da176d-6431-4d58-ada7-b89d931b1434/1978a031-5300-455a-be04-a92eb95c93f3"
-					(reference "#PWR042")
-					(unit 1)
-				)
 			)
 		)
 	)

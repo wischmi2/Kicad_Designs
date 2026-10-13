@@ -2118,7 +2118,7 @@
 		)
 		(uuid "78a80910-5f88-4593-8b94-0ca4d59bd16e")
 	)
-	(label "GND"
+	(label "VINT"
 		(at 120.65 127 270)
 		(effects
 			(font
@@ -2228,16 +2228,6 @@
 		)
 		(uuid "be6904b1-8428-4e3e-bfc7-b0efa2abdd61")
 	)
-	(label "LOAD"
-		(at 123.19 55.88 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "bfc146d1-dc55-4710-86ba-5c14fa4ba531")
-	)
 	(label "GND"
 		(at 138.43 55.88 90)
 		(effects
@@ -2298,7 +2288,7 @@
 		)
 		(uuid "ddc65374-4a1e-4b10-982e-13ce6d1e0b18")
 	)
-	(label "VINT"
+	(label "GND"
 		(at 118.11 127 270)
 		(effects
 			(font
@@ -2759,6 +2749,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 123.19 55.88 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "69e803db-e7a3-4738-904e-dcf725d68526")
+		(property "Reference" "#PWR04"
+			(at 123.19 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 123.19 50.8 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 123.19 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 123.19 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 123.19 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d4451de7-d37a-4c6b-bd39-435cac3e50b2")
+		)
+		(instances
+			(project "nrf54l15_v4"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/7400a6e7-510a-4e28-84b8-c443b681fae8"
+					(reference "#PWR04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:L")
 		(at 180.34 130.81 0)
 		(unit 1)
@@ -3013,6 +3081,28 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Murata"
+			(at 191.77 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM155R60J106ME15"
+			(at 191.77 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "58b5e67f-cc9b-435c-8b39-fad39c8f38ed")
 		)
@@ -3168,6 +3258,28 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Murata"
+			(at 180.34 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM188R61A226ME15"
+			(at 180.34 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "126b6197-c9b3-497c-8a1b-64f681e9d738")
 		)
@@ -3240,6 +3352,28 @@
 		)
 		(property "Description" ""
 			(at 208.28 106.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 208.28 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM188R60J476ME15"
+			(at 208.28 106.68 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3433,6 +3567,28 @@
 		)
 		(property "Description" ""
 			(at 224.79 106.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Taiyo Yuden"
+			(at 224.79 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "MSASJ31LBB5227MTCA01"
+			(at 224.79 106.68 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

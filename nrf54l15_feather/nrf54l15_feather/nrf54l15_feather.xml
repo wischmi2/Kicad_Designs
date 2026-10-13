@@ -1,0 +1,3435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>C:\Users\Brian\Kicad_Designs\nrf54l15_soil_moisture.kicad_sch</source>
+    <date>2026-07-13T15:19:28</date>
+    <tool>Eeschema 10.0.0</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>nrf54l15_soil_moisture.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="2" name="/battery/" tstamps="/0e47794f-f8b7-4f0c-8d7c-764001b75c0e/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>battery.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="3" name="/Solar/" tstamps="/7400a6e7-510a-4e28-84b8-c443b681fae8/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>power_supply.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="4" name="/Antenna/" tstamps="/1978a031-5300-455a-be04-a92eb95c93f3/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>antenna.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="5" name="/USB/" tstamps="/994a507d-9817-473d-9c48-8faa2a4673bf/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>usb.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="6" name="/npm1300/" tstamps="/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>npm1300.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="7" name="/nrf54l15/" tstamps="/b8c2cb22-3394-480f-839f-380498977228/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>nrf54l15.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="8" name="/SWD Debug/" tstamps="/9379cd6c-8b55-4361-8055-78c711f3c0ca/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>SWD_Debug.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="9" name="/Sensor Connector/" tstamps="/9f4015c9-bc16-4983-a249-fb3ed0079cbe/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>sensor_connector.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="10" name="/Moisture Sensor/" tstamps="/fe2ea5fc-ce63-47c3-bd94-3fdd0b559ca6/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>moisture_sensor.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="U4">
+      <value>S2B-PH-K-S-GW</value>
+      <footprint>easyeda2kicad:CONN-TH_S2B-PH-K-S-GW</footprint>
+      <datasheet>https://lcsc.com/product-detail/PH-Connectors_JST_S2B-PH-K-S-GW_PHsocket-1-2P-Curved-needle-pitch2mm_C157932.html</datasheet>
+      <fields>
+        <field name="Manufacturer">JST</field>
+        <field name="MPN">S2B-PH-K-S-GW</field>
+        <field name="LCSC Part">C157932</field>
+        <field name="Footprint">easyeda2kicad:CONN-TH_S2B-PH-K-S-GW</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/PH-Connectors_JST_S2B-PH-K-S-GW_PHsocket-1-2P-Curved-needle-pitch2mm_C157932.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="S2B-PH-K-S-GW" description=""/>
+      <property name="Manufacturer" value="JST"/>
+      <property name="MPN" value="S2B-PH-K-S-GW"/>
+      <property name="LCSC Part" value="C157932"/>
+      <property name="Sheetname" value="battery"/>
+      <property name="Sheetfile" value="battery.kicad_sch"/>
+      <property name="ki_keywords" value="Wire To Board / Wire To Wire Connector"/>
+      <sheetpath names="/battery/" tstamps="/0e47794f-f8b7-4f0c-8d7c-764001b75c0e/"/>
+      <tstamps>3aab0338-11b4-48ab-8426-911ff3ea6227</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C2">
+      <value>47uF</value>
+      <footprint>easyeda2kicad:C1206</footprint>
+      <datasheet>https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL31A476MPHNNNE_47uF-476-20-10V_C96123.html</datasheet>
+      <fields>
+        <field name="Manufacturer">SAMSUNG(三星)</field>
+        <field name="MPN">CL31A476MPHNNNE</field>
+        <field name="LCSC Part">C96123</field>
+        <field name="Footprint">easyeda2kicad:C1206</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL31A476MPHNNNE_47uF-476-20-10V_C96123.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="CL31A476MPHNNNE" description=""/>
+      <property name="Manufacturer" value="SAMSUNG(三星)"/>
+      <property name="MPN" value="CL31A476MPHNNNE"/>
+      <property name="LCSC Part" value="C96123"/>
+      <property name="Sheetname" value="Solar"/>
+      <property name="Sheetfile" value="power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="Multilayer Ceramic Capacitors MLCC - SMD/SMT"/>
+      <sheetpath names="/Solar/" tstamps="/7400a6e7-510a-4e28-84b8-c443b681fae8/"/>
+      <tstamps>4da50bac-ae82-4729-b7a5-a9b1c7ab4da5</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C27">
+      <value>10uF</value>
+      <footprint>easyeda2kicad:C0805</footprint>
+      <datasheet>https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL21A106KAYNNNE_10uF-106-10-25V_C15850.html</datasheet>
+      <description>10uF (106) ±10% 25V</description>
+      <fields>
+        <field name="Manufacturer">SAMSUNG(三星)</field>
+        <field name="MPN">CL21A106KAYNNNE</field>
+        <field name="LCSC Part">C15850</field>
+        <field name="Footprint">easyeda2kicad:C0805</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL21A106KAYNNNE_10uF-106-10-25V_C15850.html</field>
+        <field name="Description">10uF (106) ±10% 25V</field>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="CL21A106KAYNNNE" description="10uF (106) ±10% 25V"/>
+      <property name="Manufacturer" value="SAMSUNG(三星)"/>
+      <property name="MPN" value="CL21A106KAYNNNE"/>
+      <property name="LCSC Part" value="C15850"/>
+      <property name="Sheetname" value="Solar"/>
+      <property name="Sheetfile" value="power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="Multilayer Ceramic Capacitors MLCC - SMD/SMT"/>
+      <sheetpath names="/Solar/" tstamps="/7400a6e7-510a-4e28-84b8-c443b681fae8/"/>
+      <tstamps>e615e447-f6c9-4a4b-9eed-06ec7298ddb9</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C28">
+      <value>100nF</value>
+      <footprint>easyeda2kicad:C0603</footprint>
+      <datasheet>https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_100nF-104-10-50V_C14663.html</datasheet>
+      <description>100nF (104) ±10% 50V</description>
+      <fields>
+        <field name="Manufacturer">YAGEO(国巨)</field>
+        <field name="MPN">CC0603KRX7R9BB104</field>
+        <field name="LCSC Part">C14663</field>
+        <field name="Footprint">easyeda2kicad:C0603</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_100nF-104-10-50V_C14663.html</field>
+        <field name="Description">100nF (104) ±10% 50V</field>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="CC0603KRX7R9BB104" description="100nF (104) ±10% 50V"/>
+      <property name="Manufacturer" value="YAGEO(国巨)"/>
+      <property name="MPN" value="CC0603KRX7R9BB104"/>
+      <property name="LCSC Part" value="C14663"/>
+      <property name="Sheetname" value="Solar"/>
+      <property name="Sheetfile" value="power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="Multilayer Ceramic Capacitors MLCC - SMD/SMT"/>
+      <sheetpath names="/Solar/" tstamps="/7400a6e7-510a-4e28-84b8-c443b681fae8/"/>
+      <tstamps>288a77eb-2d8b-4b46-a649-484accb431d9</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D1">
+      <value>SS14_C83852</value>
+      <footprint>easyeda2kicad:SMA_L4.3-W2.6-LS5.2-RD</footprint>
+      <datasheet>https://lcsc.com/product-detail/Schottky-Barrier-Diodes-SBD_ON-Semicon_SS14_ON-Semicon-ON-SS14_C83852.html</datasheet>
+      <fields>
+        <field name="Manufacturer">onsemi(安森美)</field>
+        <field name="MPN">SS14</field>
+        <field name="LCSC Part">C83852</field>
+        <field name="Footprint">easyeda2kicad:SMA_L4.3-W2.6-LS5.2-RD</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Schottky-Barrier-Diodes-SBD_ON-Semicon_SS14_ON-Semicon-ON-SS14_C83852.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="SS14_C83852" description=""/>
+      <property name="Manufacturer" value="onsemi(安森美)"/>
+      <property name="MPN" value="SS14"/>
+      <property name="LCSC Part" value="C83852"/>
+      <property name="Sheetname" value="Solar"/>
+      <property name="Sheetfile" value="power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="Schottky Barrier Diodes (SBD)"/>
+      <sheetpath names="/Solar/" tstamps="/7400a6e7-510a-4e28-84b8-c443b681fae8/"/>
+      <tstamps>c3d890a2-e7f7-4ddc-a878-b76fb0593846</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D2">
+      <value>SS14_C83852</value>
+      <footprint>easyeda2kicad:SMA_L4.3-W2.6-LS5.2-RD</footprint>
+      <datasheet>https://lcsc.com/product-detail/Schottky-Barrier-Diodes-SBD_ON-Semicon_SS14_ON-Semicon-ON-SS14_C83852.html</datasheet>
+      <fields>
+        <field name="Manufacturer">onsemi(安森美)</field>
+        <field name="MPN">SS14</field>
+        <field name="LCSC Part">C83852</field>
+        <field name="Footprint">easyeda2kicad:SMA_L4.3-W2.6-LS5.2-RD</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Schottky-Barrier-Diodes-SBD_ON-Semicon_SS14_ON-Semicon-ON-SS14_C83852.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="SS14_C83852" description=""/>
+      <property name="Manufacturer" value="onsemi(安森美)"/>
+      <property name="MPN" value="SS14"/>
+      <property name="LCSC Part" value="C83852"/>
+      <property name="Sheetname" value="Solar"/>
+      <property name="Sheetfile" value="power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="Schottky Barrier Diodes (SBD)"/>
+      <sheetpath names="/Solar/" tstamps="/7400a6e7-510a-4e28-84b8-c443b681fae8/"/>
+      <tstamps>9c089542-8145-4fde-a226-ae51a4245fce</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="L1">
+      <value>10uh</value>
+      <footprint>easyeda2kicad:L0805</footprint>
+      <datasheet>https://lcsc.com/product-detail/Inductors-SMD_10uH-10_C1046.html</datasheet>
+      <description>10uH ±10%</description>
+      <fields>
+        <field name="Manufacturer">Sunlord(顺络)</field>
+        <field name="MPN">SDFL2012S100KTF</field>
+        <field name="LCSC Part">C1046</field>
+        <field name="Footprint">easyeda2kicad:L0805</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Inductors-SMD_10uH-10_C1046.html</field>
+        <field name="Description">10uH ±10%</field>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="SDFL2012S100KTF" description="10uH ±10%"/>
+      <property name="Manufacturer" value="Sunlord(顺络)"/>
+      <property name="MPN" value="SDFL2012S100KTF"/>
+      <property name="LCSC Part" value="C1046"/>
+      <property name="Sheetname" value="Solar"/>
+      <property name="Sheetfile" value="power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="Inductors/Coils/Transformers"/>
+      <sheetpath names="/Solar/" tstamps="/7400a6e7-510a-4e28-84b8-c443b681fae8/"/>
+      <tstamps>ee138422-3838-4b1e-baaf-d2de3d84905f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R3">
+      <value>100k</value>
+      <footprint>easyeda2kicad:R1206</footprint>
+      <datasheet>https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount-UniOhm_100KR-1003-1_C17900.html</datasheet>
+      <description>100KΩ (1003) ±1%</description>
+      <fields>
+        <field name="Manufacturer">UNI-ROYAL(厚声)</field>
+        <field name="MPN">1206W4F1003T5E</field>
+        <field name="LCSC Part">C17900</field>
+        <field name="Footprint">easyeda2kicad:R1206</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount-UniOhm_100KR-1003-1_C17900.html</field>
+        <field name="Description">100KΩ (1003) ±1%</field>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="1206W4F1003T5E" description="100KΩ (1003) ±1%"/>
+      <property name="Manufacturer" value="UNI-ROYAL(厚声)"/>
+      <property name="MPN" value="1206W4F1003T5E"/>
+      <property name="LCSC Part" value="C17900"/>
+      <property name="Sheetname" value="Solar"/>
+      <property name="Sheetfile" value="power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="Resistors"/>
+      <sheetpath names="/Solar/" tstamps="/7400a6e7-510a-4e28-84b8-c443b681fae8/"/>
+      <tstamps>dd5c1ad1-4e16-4712-bd27-86732b31c310</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R4">
+      <value>3.3M</value>
+      <footprint>easyeda2kicad:R0402</footprint>
+      <datasheet>https://www.lcsc.com/datasheet/C54531078.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">SAE(世盟/世爱)</field>
+        <field name="MPN">1RC0402J0335</field>
+        <field name="LCSC Part">C54531078</field>
+        <field name="Footprint">easyeda2kicad:R0402</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C54531078.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="1RC0402J0335" description=""/>
+      <property name="Manufacturer" value="SAE(世盟/世爱)"/>
+      <property name="MPN" value="1RC0402J0335"/>
+      <property name="LCSC Part" value="C54531078"/>
+      <property name="Sheetname" value="Solar"/>
+      <property name="Sheetfile" value="power_supply.kicad_sch"/>
+      <sheetpath names="/Solar/" tstamps="/7400a6e7-510a-4e28-84b8-c443b681fae8/"/>
+      <tstamps>401c63da-b00d-4227-b3ac-647c5a8178ec</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R5">
+      <value>1M</value>
+      <footprint>easyeda2kicad:R0402</footprint>
+      <datasheet>https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_1MR-105-5_C93949.html</datasheet>
+      <fields>
+        <field name="Manufacturer">YAGEO(国巨)</field>
+        <field name="MPN">RC0402JR-071ML</field>
+        <field name="LCSC Part">C93949</field>
+        <field name="Footprint">easyeda2kicad:R0402</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_1MR-105-5_C93949.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="RC0402JR-071ML" description=""/>
+      <property name="Manufacturer" value="YAGEO(国巨)"/>
+      <property name="MPN" value="RC0402JR-071ML"/>
+      <property name="LCSC Part" value="C93949"/>
+      <property name="Sheetname" value="Solar"/>
+      <property name="Sheetfile" value="power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="Resistors"/>
+      <sheetpath names="/Solar/" tstamps="/7400a6e7-510a-4e28-84b8-c443b681fae8/"/>
+      <tstamps>ad3ec27b-8329-4874-91da-ac065e3fa023</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R6">
+      <value>3.01M</value>
+      <footprint>easyeda2kicad:R0402</footprint>
+      <datasheet>https://www.lcsc.com/datasheet/C3013167.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">FOJAN(富捷)</field>
+        <field name="MPN">FRC0402F3904TS</field>
+        <field name="LCSC Part">C3013167</field>
+        <field name="Footprint">easyeda2kicad:R0402</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C3013167.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="FRC0402F3904TS" description=""/>
+      <property name="Manufacturer" value="FOJAN(富捷)"/>
+      <property name="MPN" value="FRC0402F3904TS"/>
+      <property name="LCSC Part" value="C3013167"/>
+      <property name="Sheetname" value="Solar"/>
+      <property name="Sheetfile" value="power_supply.kicad_sch"/>
+      <sheetpath names="/Solar/" tstamps="/7400a6e7-510a-4e28-84b8-c443b681fae8/"/>
+      <tstamps>812bc402-dc22-4009-96fb-725413042076</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R7">
+      <value>1M</value>
+      <footprint>easyeda2kicad:R0402</footprint>
+      <datasheet>https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_1MR-105-5_C93949.html</datasheet>
+      <fields>
+        <field name="Manufacturer">YAGEO(国巨)</field>
+        <field name="MPN">RC0402JR-071ML</field>
+        <field name="LCSC Part">C93949</field>
+        <field name="Footprint">easyeda2kicad:R0402</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_1MR-105-5_C93949.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="RC0402JR-071ML" description=""/>
+      <property name="Manufacturer" value="YAGEO(国巨)"/>
+      <property name="MPN" value="RC0402JR-071ML"/>
+      <property name="LCSC Part" value="C93949"/>
+      <property name="Sheetname" value="Solar"/>
+      <property name="Sheetfile" value="power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="Resistors"/>
+      <sheetpath names="/Solar/" tstamps="/7400a6e7-510a-4e28-84b8-c443b681fae8/"/>
+      <tstamps>6422f90a-993b-4b30-8bc7-d700b018d9bc</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U3">
+      <value>SPV1040T</value>
+      <footprint>easyeda2kicad:TSSOP-8_L4.4-W3.0-P0.65-LS6.4-BL</footprint>
+      <datasheet>https://www.lcsc.com/datasheet/C2969792.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">ST(意法半导体)</field>
+        <field name="MPN">SPV1040T</field>
+        <field name="LCSC Part">C2969792</field>
+        <field name="Footprint">easyeda2kicad:TSSOP-8_L4.4-W3.0-P0.65-LS6.4-BL</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C2969792.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="SPV1040T" description=""/>
+      <property name="Manufacturer" value="ST(意法半导体)"/>
+      <property name="MPN" value="SPV1040T"/>
+      <property name="LCSC Part" value="C2969792"/>
+      <property name="Sheetname" value="Solar"/>
+      <property name="Sheetfile" value="power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="Battery Management ICs"/>
+      <sheetpath names="/Solar/" tstamps="/7400a6e7-510a-4e28-84b8-c443b681fae8/"/>
+      <tstamps>4aa3b6f4-8ad7-4a31-a6d6-1e7de35bf6af</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="8"/>
+            <pin num="7"/>
+            <pin num="6"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U5">
+      <value>S2B-PH-K-S-GW</value>
+      <footprint>easyeda2kicad:CONN-TH_S2B-PH-K-S-GW</footprint>
+      <datasheet>https://lcsc.com/product-detail/PH-Connectors_JST_S2B-PH-K-S-GW_PHsocket-1-2P-Curved-needle-pitch2mm_C157932.html</datasheet>
+      <fields>
+        <field name="Manufacturer">JST</field>
+        <field name="MPN">S2B-PH-K-S-GW</field>
+        <field name="LCSC Part">C157932</field>
+        <field name="Footprint">easyeda2kicad:CONN-TH_S2B-PH-K-S-GW</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/PH-Connectors_JST_S2B-PH-K-S-GW_PHsocket-1-2P-Curved-needle-pitch2mm_C157932.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="S2B-PH-K-S-GW" description=""/>
+      <property name="Manufacturer" value="JST"/>
+      <property name="MPN" value="S2B-PH-K-S-GW"/>
+      <property name="LCSC Part" value="C157932"/>
+      <property name="Sheetname" value="Solar"/>
+      <property name="Sheetfile" value="power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="Wire To Board / Wire To Wire Connector"/>
+      <sheetpath names="/Solar/" tstamps="/7400a6e7-510a-4e28-84b8-c443b681fae8/"/>
+      <tstamps>d1e30f15-b909-4ee8-9652-fd24153ed7d5</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="AE1">
+      <value>2450AT18A100E</value>
+      <footprint>easyeda2kicad:ANT-SMD_L3.2-W1.6</footprint>
+      <datasheet>https://lcsc.com/product-detail/RF-Antenna_JOHANSON_2450AT18A100E_2450AT18A100E_C89334.html</datasheet>
+      <description>Mini 2.45 GHz Antenna, Johanson Technology</description>
+      <fields>
+        <field name="Manufacturer">JOHANSON(约翰逊)</field>
+        <field name="MPN">2450AT18A100E</field>
+        <field name="LCSC Part">C89334</field>
+        <field name="Footprint">easyeda2kicad:ANT-SMD_L3.2-W1.6</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/RF-Antenna_JOHANSON_2450AT18A100E_2450AT18A100E_C89334.html</field>
+        <field name="Description">Mini 2.45 GHz Antenna, Johanson Technology</field>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="2450AT18A100E" description="Mini 2.45 GHz Antenna, Johanson Technology"/>
+      <property name="Manufacturer" value="JOHANSON(约翰逊)"/>
+      <property name="MPN" value="2450AT18A100E"/>
+      <property name="LCSC Part" value="C89334"/>
+      <property name="Sheetname" value="Antenna"/>
+      <property name="Sheetfile" value="antenna.kicad_sch"/>
+      <property name="ki_keywords" value="Antennas"/>
+      <sheetpath names="/Antenna/" tstamps="/1978a031-5300-455a-be04-a92eb95c93f3/"/>
+      <tstamps>3b50669d-8772-4873-aec8-fe133759444f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="2"/>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C12">
+      <value>1.0pF</value>
+      <footprint>easyeda2kicad:C0201</footprint>
+      <datasheet>https://lcsc.com/product-detail/Others_Murata-Electronics_GJM0335C1E1R0WB01D_Murata-Electronics-GJM0335C1E1R0WB01D_C185624.html</datasheet>
+      <fields>
+        <field name="Manufacturer">muRata(村田)</field>
+        <field name="MPN">GJM0335C1E1R0WB01D</field>
+        <field name="LCSC Part">C185624</field>
+        <field name="Footprint">easyeda2kicad:C0201</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Others_Murata-Electronics_GJM0335C1E1R0WB01D_Murata-Electronics-GJM0335C1E1R0WB01D_C185624.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="GJM0335C1E1R0WB01D" description=""/>
+      <property name="Manufacturer" value="muRata(村田)"/>
+      <property name="MPN" value="GJM0335C1E1R0WB01D"/>
+      <property name="LCSC Part" value="C185624"/>
+      <property name="Sheetname" value="Antenna"/>
+      <property name="Sheetfile" value="antenna.kicad_sch"/>
+      <property name="ki_keywords" value="Multilayer Ceramic Capacitors MLCC - SMD/SMT"/>
+      <sheetpath names="/Antenna/" tstamps="/1978a031-5300-455a-be04-a92eb95c93f3/"/>
+      <tstamps>905ad9a9-9716-4dbc-a831-fc79093a93bc</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="2"/>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C15">
+      <value>100nF</value>
+      <footprint>easyeda2kicad:C0603</footprint>
+      <datasheet>https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_100nF-104-10-50V_C14663.html</datasheet>
+      <description>100nF (104) ±10% 50V</description>
+      <fields>
+        <field name="Manufacturer">YAGEO(国巨)</field>
+        <field name="MPN">CC0603KRX7R9BB104</field>
+        <field name="LCSC Part">C14663</field>
+        <field name="Footprint">easyeda2kicad:C0603</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_100nF-104-10-50V_C14663.html</field>
+        <field name="Description">100nF (104) ±10% 50V</field>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="CC0603KRX7R9BB104" description="100nF (104) ±10% 50V"/>
+      <property name="Manufacturer" value="YAGEO(国巨)"/>
+      <property name="MPN" value="CC0603KRX7R9BB104"/>
+      <property name="LCSC Part" value="C14663"/>
+      <property name="Sheetname" value="Antenna"/>
+      <property name="Sheetfile" value="antenna.kicad_sch"/>
+      <property name="ki_keywords" value="Multilayer Ceramic Capacitors MLCC - SMD/SMT"/>
+      <sheetpath names="/Antenna/" tstamps="/1978a031-5300-455a-be04-a92eb95c93f3/"/>
+      <tstamps>c03b1191-c26a-4687-aebd-ac76fbef4a4b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="L2">
+      <value>2.7nH</value>
+      <footprint>easyeda2kicad:L0201</footprint>
+      <datasheet>https://www.lcsc.com/datasheet/C7216765.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">muRata(村田)</field>
+        <field name="MPN">LQP03HQ2N7B02D</field>
+        <field name="LCSC Part">C7216765</field>
+        <field name="Footprint">easyeda2kicad:L0201</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C7216765.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="LQP03HQ2N7B02D" description=""/>
+      <property name="Manufacturer" value="muRata(村田)"/>
+      <property name="MPN" value="LQP03HQ2N7B02D"/>
+      <property name="LCSC Part" value="C7216765"/>
+      <property name="Sheetname" value="Antenna"/>
+      <property name="Sheetfile" value="antenna.kicad_sch"/>
+      <sheetpath names="/Antenna/" tstamps="/1978a031-5300-455a-be04-a92eb95c93f3/"/>
+      <tstamps>7f417595-e89f-4e62-8cae-6b7d4fec14d5</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="L3">
+      <value>3.9nH</value>
+      <footprint>easyeda2kicad:L0201</footprint>
+      <datasheet>https://www.lcsc.com/datasheet/C337939.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">muRata(村田)</field>
+        <field name="MPN">LQP03HQ3N9B02D</field>
+        <field name="LCSC Part">C337939</field>
+        <field name="Footprint">easyeda2kicad:L0201</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C337939.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="LQP03HQ3N9B02D" description=""/>
+      <property name="Manufacturer" value="muRata(村田)"/>
+      <property name="MPN" value="LQP03HQ3N9B02D"/>
+      <property name="LCSC Part" value="C337939"/>
+      <property name="Sheetname" value="Antenna"/>
+      <property name="Sheetfile" value="antenna.kicad_sch"/>
+      <property name="ki_keywords" value="Inductors/Coils/Transformers"/>
+      <sheetpath names="/Antenna/" tstamps="/1978a031-5300-455a-be04-a92eb95c93f3/"/>
+      <tstamps>c1a7955d-35a3-4137-b21b-14819f454d69</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R11">
+      <value>FM8625H</value>
+      <footprint>easyeda2kicad:DFN-6_L1.1-W0.7-P0.40-BL</footprint>
+      <datasheet>https://www.lcsc.com/datasheet/C2857391.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">FM(富满)</field>
+        <field name="MPN">FM8625H</field>
+        <field name="LCSC Part">C2857391</field>
+        <field name="Footprint">easyeda2kicad:DFN-6_L1.1-W0.7-P0.40-BL</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C2857391.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="FM8625H" description=""/>
+      <property name="Manufacturer" value="FM(富满)"/>
+      <property name="MPN" value="FM8625H"/>
+      <property name="LCSC Part" value="C2857391"/>
+      <property name="Sheetname" value="Antenna"/>
+      <property name="Sheetfile" value="antenna.kicad_sch"/>
+      <property name="ki_keywords" value="RF Switches"/>
+      <sheetpath names="/Antenna/" tstamps="/1978a031-5300-455a-be04-a92eb95c93f3/"/>
+      <tstamps>d3218a56-b601-43b9-b315-300424057f30</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="6"/>
+            <pin num="5"/>
+            <pin num="4"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RF1">
+      <value>ECT818000500</value>
+      <footprint>easyeda2kicad:ANT-SMD_ECT818000500</footprint>
+      <datasheet>https://lcsc.com/product-detail/RF-Connectors-Coaxial-Connectors_ECT-ECT818000500_C437254.html</datasheet>
+      <fields>
+        <field name="Manufacturer">ECT(电连)</field>
+        <field name="MPN">ECT818000500</field>
+        <field name="LCSC Part">C437254</field>
+        <field name="Footprint">easyeda2kicad:ANT-SMD_ECT818000500</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/RF-Connectors-Coaxial-Connectors_ECT-ECT818000500_C437254.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="ECT818000500" description=""/>
+      <property name="Manufacturer" value="ECT(电连)"/>
+      <property name="MPN" value="ECT818000500"/>
+      <property name="LCSC Part" value="C437254"/>
+      <property name="Sheetname" value="Antenna"/>
+      <property name="Sheetfile" value="antenna.kicad_sch"/>
+      <property name="ki_keywords" value="RF Connectors / Coaxial Connectors"/>
+      <sheetpath names="/Antenna/" tstamps="/1978a031-5300-455a-be04-a92eb95c93f3/"/>
+      <tstamps>bb7ecdc8-d83a-4e05-9cae-d18f0f948be8</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="4"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C14">
+      <value>100nF</value>
+      <footprint>easyeda2kicad:C0603</footprint>
+      <datasheet>https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_100nF-104-10-50V_C14663.html</datasheet>
+      <description>100nF (104) ±10% 50V</description>
+      <fields>
+        <field name="Manufacturer">YAGEO(国巨)</field>
+        <field name="MPN">CC0603KRX7R9BB104</field>
+        <field name="LCSC Part">C14663</field>
+        <field name="Footprint">easyeda2kicad:C0603</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_100nF-104-10-50V_C14663.html</field>
+        <field name="Description">100nF (104) ±10% 50V</field>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="CC0603KRX7R9BB104" description="100nF (104) ±10% 50V"/>
+      <property name="Manufacturer" value="YAGEO(国巨)"/>
+      <property name="MPN" value="CC0603KRX7R9BB104"/>
+      <property name="LCSC Part" value="C14663"/>
+      <property name="Sheetname" value="USB"/>
+      <property name="Sheetfile" value="usb.kicad_sch"/>
+      <property name="ki_keywords" value="Multilayer Ceramic Capacitors MLCC - SMD/SMT"/>
+      <sheetpath names="/USB/" tstamps="/994a507d-9817-473d-9c48-8faa2a4673bf/"/>
+      <tstamps>9763717b-764d-4a6d-9bf3-8bea78eb12f5</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J1">
+      <value>TYPE-C-31-M-12</value>
+      <footprint>easyeda2kicad:USB-C_SMD-TYPE-C-31-M-12_1</footprint>
+      <description>USB Connectors 24 Receptacle 1 8.94*7.3mm RoHS</description>
+      <fields>
+        <field name="MF">HRO Electronics Co., Ltd.</field>
+        <field name="MAXIMUM_PACKAGE_HEIGHT">3.26 mm</field>
+        <field name="Package">Package</field>
+        <field name="Price">None</field>
+        <field name="Check_prices">https://www.snapeda.com/parts/TYPE-C-31-M-12/HRO+Electronics+Co.%252C+Ltd./view-part/?ref=eda</field>
+        <field name="STANDARD">Manufacturer Recommendations</field>
+        <field name="PARTREV">2020.12.08</field>
+        <field name="SnapEDA_Link">https://www.snapeda.com/parts/TYPE-C-31-M-12/HRO+Electronics+Co.%252C+Ltd./view-part/?ref=snap</field>
+        <field name="MP">TYPE-C-31-M-12</field>
+        <field name="SNAPEDA_PN">TYPE-C-31-M-12</field>
+        <field name="Availability">Not in stock</field>
+        <field name="MANUFACTURER">HRO Electronics Co., Ltd.</field>
+        <field name="Footprint">easyeda2kicad:USB-C_SMD-TYPE-C-31-M-12_1</field>
+        <field name="Datasheet"/>
+        <field name="Description">USB Connectors 24 Receptacle 1 8.94*7.3mm RoHS</field>
+      </fields>
+      <libsource lib="TYPE-C-31-M-12" part="TYPE-C-31-M-12" description="USB Connectors 24 Receptacle 1 8.94*7.3mm RoHS"/>
+      <property name="MF" value="HRO Electronics Co., Ltd."/>
+      <property name="MAXIMUM_PACKAGE_HEIGHT" value="3.26 mm"/>
+      <property name="Package" value="Package"/>
+      <property name="Price" value="None"/>
+      <property name="Check_prices" value="https://www.snapeda.com/parts/TYPE-C-31-M-12/HRO+Electronics+Co.%252C+Ltd./view-part/?ref=eda"/>
+      <property name="STANDARD" value="Manufacturer Recommendations"/>
+      <property name="PARTREV" value="2020.12.08"/>
+      <property name="SnapEDA_Link" value="https://www.snapeda.com/parts/TYPE-C-31-M-12/HRO+Electronics+Co.%252C+Ltd./view-part/?ref=snap"/>
+      <property name="MP" value="TYPE-C-31-M-12"/>
+      <property name="SNAPEDA_PN" value="TYPE-C-31-M-12"/>
+      <property name="Availability" value="Not in stock"/>
+      <property name="MANUFACTURER" value="HRO Electronics Co., Ltd."/>
+      <property name="Sheetname" value="USB"/>
+      <property name="Sheetfile" value="usb.kicad_sch"/>
+      <sheetpath names="/USB/" tstamps="/994a507d-9817-473d-9c48-8faa2a4673bf/"/>
+      <tstamps>d5d97748-9248-4ad3-b1a2-bc121cccad50</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="A5"/>
+            <pin num="A6"/>
+            <pin num="A7"/>
+            <pin num="A8"/>
+            <pin num="A4_B9"/>
+            <pin num="B4_A9"/>
+            <pin num="B8"/>
+            <pin num="B7"/>
+            <pin num="B6"/>
+            <pin num="B5"/>
+            <pin num="S1"/>
+            <pin num="S2"/>
+            <pin num="S3"/>
+            <pin num="S4"/>
+            <pin num="A1_B12"/>
+            <pin num="B1_A12"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R1">
+      <value>5.1k</value>
+      <footprint>easyeda2kicad:R0402</footprint>
+      <datasheet>https://www.lcsc.com/datasheet/C22369457.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">HKR(香港电阻)</field>
+        <field name="MPN">RCA025K1FLF</field>
+        <field name="LCSC Part">C22369457</field>
+        <field name="Footprint">easyeda2kicad:R0402</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C22369457.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="RCA025K1FLF" description=""/>
+      <property name="Manufacturer" value="HKR(香港电阻)"/>
+      <property name="MPN" value="RCA025K1FLF"/>
+      <property name="LCSC Part" value="C22369457"/>
+      <property name="Sheetname" value="USB"/>
+      <property name="Sheetfile" value="usb.kicad_sch"/>
+      <sheetpath names="/USB/" tstamps="/994a507d-9817-473d-9c48-8faa2a4673bf/"/>
+      <tstamps>dc0ae684-2032-47cd-a085-7692058ed12a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R2">
+      <value>5.1k</value>
+      <footprint>easyeda2kicad:R0402</footprint>
+      <datasheet>https://www.lcsc.com/datasheet/C22369457.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">HKR(香港电阻)</field>
+        <field name="MPN">RCA025K1FLF</field>
+        <field name="LCSC Part">C22369457</field>
+        <field name="Footprint">easyeda2kicad:R0402</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C22369457.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="RCA025K1FLF" description=""/>
+      <property name="Manufacturer" value="HKR(香港电阻)"/>
+      <property name="MPN" value="RCA025K1FLF"/>
+      <property name="LCSC Part" value="C22369457"/>
+      <property name="Sheetname" value="USB"/>
+      <property name="Sheetfile" value="usb.kicad_sch"/>
+      <sheetpath names="/USB/" tstamps="/994a507d-9817-473d-9c48-8faa2a4673bf/"/>
+      <tstamps>9c752308-e8cc-4323-bf18-92c1e17585f0</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C3">
+      <value>2.2uF</value>
+      <footprint>easyeda2kicad:C0603</footprint>
+      <datasheet>https://www.lcsc.com/datasheet/C913904.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">SAMSUNG(三星)</field>
+        <field name="MPN">CL10A225KB8NNNC</field>
+        <field name="LCSC Part">C913904</field>
+        <field name="Footprint">easyeda2kicad:C0603</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C913904.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="CL10A225KB8NNNC" description=""/>
+      <property name="Manufacturer" value="SAMSUNG(三星)"/>
+      <property name="MPN" value="CL10A225KB8NNNC"/>
+      <property name="LCSC Part" value="C913904"/>
+      <property name="Sheetname" value="npm1300"/>
+      <property name="Sheetfile" value="npm1300.kicad_sch"/>
+      <property name="ki_keywords" value="Multilayer Ceramic Capacitors MLCC - SMD/SMT"/>
+      <sheetpath names="/npm1300/" tstamps="/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/"/>
+      <tstamps>7f8d865b-3acf-4d17-8d80-80b4dc592964</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C4">
+      <value>1uF</value>
+      <footprint>easyeda2kicad:C0402</footprint>
+      <datasheet>https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL05A105KO5NNNC_1uF-105-10-16V_C29266.html</datasheet>
+      <description>1uF (105) ±10% 16V</description>
+      <fields>
+        <field name="Manufacturer">SAMSUNG(三星)</field>
+        <field name="MPN">CL05A105KO5NNNC</field>
+        <field name="LCSC Part">C29266</field>
+        <field name="Footprint">easyeda2kicad:C0402</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL05A105KO5NNNC_1uF-105-10-16V_C29266.html</field>
+        <field name="Description">1uF (105) ±10% 16V</field>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="CL05A105KO5NNNC" description="1uF (105) ±10% 16V"/>
+      <property name="Manufacturer" value="SAMSUNG(三星)"/>
+      <property name="MPN" value="CL05A105KO5NNNC"/>
+      <property name="LCSC Part" value="C29266"/>
+      <property name="Sheetname" value="npm1300"/>
+      <property name="Sheetfile" value="npm1300.kicad_sch"/>
+      <property name="ki_keywords" value="Multilayer Ceramic Capacitors MLCC - SMD/SMT"/>
+      <sheetpath names="/npm1300/" tstamps="/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/"/>
+      <tstamps>b96832c3-992a-4750-a610-7982dc460b6f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C16">
+      <value>10uF</value>
+      <footprint>easyeda2kicad:C0603</footprint>
+      <datasheet>https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_YAGEO-CC0603MRX5R8BB106_C596327.html</datasheet>
+      <fields>
+        <field name="Manufacturer">YAGEO(国巨)</field>
+        <field name="MPN">CC0603MRX5R8BB106</field>
+        <field name="LCSC Part">C596327</field>
+        <field name="Footprint">easyeda2kicad:C0603</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_YAGEO-CC0603MRX5R8BB106_C596327.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="CC0603MRX5R8BB106" description=""/>
+      <property name="Manufacturer" value="YAGEO(国巨)"/>
+      <property name="MPN" value="CC0603MRX5R8BB106"/>
+      <property name="LCSC Part" value="C596327"/>
+      <property name="Sheetname" value="npm1300"/>
+      <property name="Sheetfile" value="npm1300.kicad_sch"/>
+      <property name="ki_keywords" value="Multilayer Ceramic Capacitors MLCC - SMD/SMT"/>
+      <sheetpath names="/npm1300/" tstamps="/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/"/>
+      <tstamps>bdd78b60-ccc7-4045-88c8-d1067c0795fd</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C17">
+      <value>10uF</value>
+      <footprint>easyeda2kicad:C0805</footprint>
+      <datasheet>https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL21A106KAYNNNE_10uF-106-10-25V_C15850.html</datasheet>
+      <description>10uF (106) ±10% 25V</description>
+      <fields>
+        <field name="Manufacturer">SAMSUNG(三星)</field>
+        <field name="MPN">CL21A106KAYNNNE</field>
+        <field name="LCSC Part">C15850</field>
+        <field name="Footprint">easyeda2kicad:C0805</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL21A106KAYNNNE_10uF-106-10-25V_C15850.html</field>
+        <field name="Description">10uF (106) ±10% 25V</field>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="CL21A106KAYNNNE" description="10uF (106) ±10% 25V"/>
+      <property name="Manufacturer" value="SAMSUNG(三星)"/>
+      <property name="MPN" value="CL21A106KAYNNNE"/>
+      <property name="LCSC Part" value="C15850"/>
+      <property name="Sheetname" value="npm1300"/>
+      <property name="Sheetfile" value="npm1300.kicad_sch"/>
+      <property name="ki_keywords" value="Multilayer Ceramic Capacitors MLCC - SMD/SMT"/>
+      <sheetpath names="/npm1300/" tstamps="/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/"/>
+      <tstamps>ddbb52ce-f93a-4657-8663-83e20ad53d45</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C18">
+      <value>10uF</value>
+      <footprint>easyeda2kicad:C0805</footprint>
+      <datasheet>https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL21A106KAYNNNE_10uF-106-10-25V_C15850.html</datasheet>
+      <description>10uF (106) ±10% 25V</description>
+      <fields>
+        <field name="Manufacturer">SAMSUNG(三星)</field>
+        <field name="MPN">CL21A106KAYNNNE</field>
+        <field name="LCSC Part">C15850</field>
+        <field name="Footprint">easyeda2kicad:C0805</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL21A106KAYNNNE_10uF-106-10-25V_C15850.html</field>
+        <field name="Description">10uF (106) ±10% 25V</field>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="CL21A106KAYNNNE" description="10uF (106) ±10% 25V"/>
+      <property name="Manufacturer" value="SAMSUNG(三星)"/>
+      <property name="MPN" value="CL21A106KAYNNNE"/>
+      <property name="LCSC Part" value="C15850"/>
+      <property name="Sheetname" value="npm1300"/>
+      <property name="Sheetfile" value="npm1300.kicad_sch"/>
+      <property name="ki_keywords" value="Multilayer Ceramic Capacitors MLCC - SMD/SMT"/>
+      <sheetpath names="/npm1300/" tstamps="/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/"/>
+      <tstamps>dd922893-5c51-4a54-8f62-7e6434082c5c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C19">
+      <value>1uF</value>
+      <footprint>easyeda2kicad:C0402</footprint>
+      <datasheet>https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL05A105KO5NNNC_1uF-105-10-16V_C29266.html</datasheet>
+      <description>1uF (105) ±10% 16V</description>
+      <fields>
+        <field name="Manufacturer">SAMSUNG(三星)</field>
+        <field name="MPN">CL05A105KO5NNNC</field>
+        <field name="LCSC Part">C29266</field>
+        <field name="Footprint">easyeda2kicad:C0402</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL05A105KO5NNNC_1uF-105-10-16V_C29266.html</field>
+        <field name="Description">1uF (105) ±10% 16V</field>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="CL05A105KO5NNNC" description="1uF (105) ±10% 16V"/>
+      <property name="Manufacturer" value="SAMSUNG(三星)"/>
+      <property name="MPN" value="CL05A105KO5NNNC"/>
+      <property name="LCSC Part" value="C29266"/>
+      <property name="Sheetname" value="npm1300"/>
+      <property name="Sheetfile" value="npm1300.kicad_sch"/>
+      <property name="ki_keywords" value="Multilayer Ceramic Capacitors MLCC - SMD/SMT"/>
+      <sheetpath names="/npm1300/" tstamps="/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/"/>
+      <tstamps>58a42f5a-c4de-49f6-a27f-e9267fb5f357</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C20">
+      <value>10uF</value>
+      <footprint>easyeda2kicad:C0805</footprint>
+      <datasheet>https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL21A106KAYNNNE_10uF-106-10-25V_C15850.html</datasheet>
+      <description>10uF (106) ±10% 25V</description>
+      <fields>
+        <field name="Manufacturer">SAMSUNG(三星)</field>
+        <field name="MPN">CL21A106KAYNNNE</field>
+        <field name="LCSC Part">C15850</field>
+        <field name="Footprint">easyeda2kicad:C0805</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL21A106KAYNNNE_10uF-106-10-25V_C15850.html</field>
+        <field name="Description">10uF (106) ±10% 25V</field>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="CL21A106KAYNNNE" description="10uF (106) ±10% 25V"/>
+      <property name="Manufacturer" value="SAMSUNG(三星)"/>
+      <property name="MPN" value="CL21A106KAYNNNE"/>
+      <property name="LCSC Part" value="C15850"/>
+      <property name="Sheetname" value="npm1300"/>
+      <property name="Sheetfile" value="npm1300.kicad_sch"/>
+      <property name="ki_keywords" value="Multilayer Ceramic Capacitors MLCC - SMD/SMT"/>
+      <sheetpath names="/npm1300/" tstamps="/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/"/>
+      <tstamps>cdd3d4c4-382f-44f3-bb7c-37765d8964e3</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C22">
+      <value>10uF</value>
+      <footprint>easyeda2kicad:C0805</footprint>
+      <datasheet>https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL21A106KAYNNNE_10uF-106-10-25V_C15850.html</datasheet>
+      <description>10uF (106) ±10% 25V</description>
+      <fields>
+        <field name="Manufacturer">SAMSUNG(三星)</field>
+        <field name="MPN">CL21A106KAYNNNE</field>
+        <field name="LCSC Part">C15850</field>
+        <field name="Footprint">easyeda2kicad:C0805</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL21A106KAYNNNE_10uF-106-10-25V_C15850.html</field>
+        <field name="Description">10uF (106) ±10% 25V</field>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="CL21A106KAYNNNE" description="10uF (106) ±10% 25V"/>
+      <property name="Manufacturer" value="SAMSUNG(三星)"/>
+      <property name="MPN" value="CL21A106KAYNNNE"/>
+      <property name="LCSC Part" value="C15850"/>
+      <property name="Sheetname" value="npm1300"/>
+      <property name="Sheetfile" value="npm1300.kicad_sch"/>
+      <property name="ki_keywords" value="Multilayer Ceramic Capacitors MLCC - SMD/SMT"/>
+      <sheetpath names="/npm1300/" tstamps="/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/"/>
+      <tstamps>b61cd25f-af75-4d40-8bcd-ba77054e83a3</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C26">
+      <value>100nF</value>
+      <footprint>easyeda2kicad:C0603</footprint>
+      <datasheet>https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_100nF-104-10-50V_C14663.html</datasheet>
+      <description>100nF (104) ±10% 50V</description>
+      <fields>
+        <field name="Manufacturer">YAGEO(国巨)</field>
+        <field name="MPN">CC0603KRX7R9BB104</field>
+        <field name="LCSC Part">C14663</field>
+        <field name="Footprint">easyeda2kicad:C0603</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_100nF-104-10-50V_C14663.html</field>
+        <field name="Description">100nF (104) ±10% 50V</field>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="CC0603KRX7R9BB104" description="100nF (104) ±10% 50V"/>
+      <property name="Manufacturer" value="YAGEO(国巨)"/>
+      <property name="MPN" value="CC0603KRX7R9BB104"/>
+      <property name="LCSC Part" value="C14663"/>
+      <property name="Sheetname" value="npm1300"/>
+      <property name="Sheetfile" value="npm1300.kicad_sch"/>
+      <property name="ki_keywords" value="Multilayer Ceramic Capacitors MLCC - SMD/SMT"/>
+      <sheetpath names="/npm1300/" tstamps="/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/"/>
+      <tstamps>2dc5d481-bd49-4e2e-86ab-df3f31c64ccb</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="L9">
+      <value>2.2uH</value>
+      <footprint>easyeda2kicad:L0603</footprint>
+      <datasheet>https://www.lcsc.com/datasheet/C6079477.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">TAIYO YUDEN(太诱)</field>
+        <field name="MPN">LSCNB1608HKT2R2MD</field>
+        <field name="LCSC Part">C6079477</field>
+        <field name="Footprint">easyeda2kicad:L0603</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C6079477.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="LSCNB1608HKT2R2MD" description=""/>
+      <property name="Manufacturer" value="TAIYO YUDEN(太诱)"/>
+      <property name="MPN" value="LSCNB1608HKT2R2MD"/>
+      <property name="LCSC Part" value="C6079477"/>
+      <property name="Sheetname" value="npm1300"/>
+      <property name="Sheetfile" value="npm1300.kicad_sch"/>
+      <sheetpath names="/npm1300/" tstamps="/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/"/>
+      <tstamps>c4908b0d-22ba-40d0-a732-4128ca0423ec</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="L10">
+      <value>2.2uH</value>
+      <footprint>easyeda2kicad:L0603</footprint>
+      <datasheet>https://www.lcsc.com/datasheet/C6079477.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">TAIYO YUDEN(太诱)</field>
+        <field name="MPN">LSCNB1608HKT2R2MD</field>
+        <field name="LCSC Part">C6079477</field>
+        <field name="Footprint">easyeda2kicad:L0603</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C6079477.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="LSCNB1608HKT2R2MD" description=""/>
+      <property name="Manufacturer" value="TAIYO YUDEN(太诱)"/>
+      <property name="MPN" value="LSCNB1608HKT2R2MD"/>
+      <property name="LCSC Part" value="C6079477"/>
+      <property name="Sheetname" value="npm1300"/>
+      <property name="Sheetfile" value="npm1300.kicad_sch"/>
+      <sheetpath names="/npm1300/" tstamps="/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/"/>
+      <tstamps>04ecc116-abc2-4e6a-adc8-328b039439c2</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="LED1">
+      <value>SML-P12MTT86R</value>
+      <footprint>easyeda2kicad:LED-SMD_L1.0-W0.6-RD_SML-P12YTT86RR</footprint>
+      <datasheet>https://www.lcsc.com/datasheet/C510304.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">ROHM(罗姆)</field>
+        <field name="MPN">SML-P12MTT86R</field>
+        <field name="LCSC Part">C510304</field>
+        <field name="Footprint">easyeda2kicad:LED-SMD_L1.0-W0.6-RD_SML-P12YTT86RR</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C510304.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="SML-P12MTT86R" description=""/>
+      <property name="Manufacturer" value="ROHM(罗姆)"/>
+      <property name="MPN" value="SML-P12MTT86R"/>
+      <property name="LCSC Part" value="C510304"/>
+      <property name="Sheetname" value="npm1300"/>
+      <property name="Sheetfile" value="npm1300.kicad_sch"/>
+      <property name="ki_keywords" value="Pre-ordered transistors"/>
+      <sheetpath names="/npm1300/" tstamps="/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/"/>
+      <tstamps>8533eed1-f949-4411-b73f-745986b588ac</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R8">
+      <value>10k</value>
+      <footprint>easyeda2kicad:R0402</footprint>
+      <datasheet>https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_10KR-1002-0-1_C190095.html</datasheet>
+      <fields>
+        <field name="Manufacturer">YAGEO(国巨)</field>
+        <field name="MPN">RT0402BRD0710KL</field>
+        <field name="LCSC Part">C190095</field>
+        <field name="Footprint">easyeda2kicad:R0402</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_10KR-1002-0-1_C190095.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="RT0402BRD0710KL" description=""/>
+      <property name="Manufacturer" value="YAGEO(国巨)"/>
+      <property name="MPN" value="RT0402BRD0710KL"/>
+      <property name="LCSC Part" value="C190095"/>
+      <property name="Sheetname" value="npm1300"/>
+      <property name="Sheetfile" value="npm1300.kicad_sch"/>
+      <property name="ki_keywords" value="Resistors"/>
+      <sheetpath names="/npm1300/" tstamps="/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/"/>
+      <tstamps>441069b5-6bc6-41d7-a17f-bc5c7afffdd3</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R9">
+      <value>47k</value>
+      <footprint>easyeda2kicad:R0603</footprint>
+      <datasheet>https://www.lcsc.com/datasheet/C2907042.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">FOJAN(富捷)</field>
+        <field name="MPN">FRC0603F4702TS</field>
+        <field name="LCSC Part">C2907042</field>
+        <field name="Footprint">easyeda2kicad:R0603</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C2907042.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="FRC0603F4702TS" description=""/>
+      <property name="Manufacturer" value="FOJAN(富捷)"/>
+      <property name="MPN" value="FRC0603F4702TS"/>
+      <property name="LCSC Part" value="C2907042"/>
+      <property name="Sheetname" value="npm1300"/>
+      <property name="Sheetfile" value="npm1300.kicad_sch"/>
+      <property name="ki_keywords" value="Chip Resistor - Surface Mount"/>
+      <sheetpath names="/npm1300/" tstamps="/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/"/>
+      <tstamps>410ec2cd-5e9d-44cd-97ad-c30048556036</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R10">
+      <value>150k</value>
+      <footprint>easyeda2kicad:R0603</footprint>
+      <datasheet>https://www.lcsc.com/datasheet/C2906993.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">FOJAN(富捷)</field>
+        <field name="MPN">FRC0603F1503TS</field>
+        <field name="LCSC Part">C2906993</field>
+        <field name="Footprint">easyeda2kicad:R0603</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C2906993.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="FRC0603F1503TS" description=""/>
+      <property name="Manufacturer" value="FOJAN(富捷)"/>
+      <property name="MPN" value="FRC0603F1503TS"/>
+      <property name="LCSC Part" value="C2906993"/>
+      <property name="Sheetname" value="npm1300"/>
+      <property name="Sheetfile" value="npm1300.kicad_sch"/>
+      <sheetpath names="/npm1300/" tstamps="/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/"/>
+      <tstamps>b9a14023-71fa-49a0-b11c-018540fdf2c1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R12">
+      <value>4.7k</value>
+      <footprint>easyeda2kicad:R0402</footprint>
+      <datasheet>https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_4-7KR-4701-1_C105871.html</datasheet>
+      <fields>
+        <field name="Manufacturer">YAGEO(国巨)</field>
+        <field name="MPN">RC0402FR-074K7L</field>
+        <field name="LCSC Part">C105871</field>
+        <field name="Footprint">easyeda2kicad:R0402</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_4-7KR-4701-1_C105871.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="RC0402FR-074K7L" description=""/>
+      <property name="Manufacturer" value="YAGEO(国巨)"/>
+      <property name="MPN" value="RC0402FR-074K7L"/>
+      <property name="LCSC Part" value="C105871"/>
+      <property name="Sheetname" value="npm1300"/>
+      <property name="Sheetfile" value="npm1300.kicad_sch"/>
+      <property name="ki_keywords" value="Resistors"/>
+      <sheetpath names="/npm1300/" tstamps="/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/"/>
+      <tstamps>84f49732-5621-49c8-b747-ab537616167e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R13">
+      <value>4.7k</value>
+      <footprint>easyeda2kicad:R0402</footprint>
+      <datasheet>https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_4-7KR-4701-1_C105871.html</datasheet>
+      <fields>
+        <field name="Manufacturer">YAGEO(国巨)</field>
+        <field name="MPN">RC0402FR-074K7L</field>
+        <field name="LCSC Part">C105871</field>
+        <field name="Footprint">easyeda2kicad:R0402</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_4-7KR-4701-1_C105871.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="RC0402FR-074K7L" description=""/>
+      <property name="Manufacturer" value="YAGEO(国巨)"/>
+      <property name="MPN" value="RC0402FR-074K7L"/>
+      <property name="LCSC Part" value="C105871"/>
+      <property name="Sheetname" value="npm1300"/>
+      <property name="Sheetfile" value="npm1300.kicad_sch"/>
+      <property name="ki_keywords" value="Resistors"/>
+      <sheetpath names="/npm1300/" tstamps="/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/"/>
+      <tstamps>3ac83a5a-8d78-48ed-87f1-239933592538</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R14">
+      <value>560</value>
+      <footprint>easyeda2kicad:R0402</footprint>
+      <datasheet>https://www.lcsc.com/datasheet/C2909370.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">FOJAN(富捷)</field>
+        <field name="MPN">FRC0402F5600TS</field>
+        <field name="LCSC Part">C2909370</field>
+        <field name="Footprint">easyeda2kicad:R0402</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C2909370.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="FRC0402F5600TS" description=""/>
+      <property name="Manufacturer" value="FOJAN(富捷)"/>
+      <property name="MPN" value="FRC0402F5600TS"/>
+      <property name="LCSC Part" value="C2909370"/>
+      <property name="Sheetname" value="npm1300"/>
+      <property name="Sheetfile" value="npm1300.kicad_sch"/>
+      <sheetpath names="/npm1300/" tstamps="/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/"/>
+      <tstamps>a099178a-57c3-4b5a-97af-92255403731c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U2">
+      <value>nPM1300-QEXX</value>
+      <footprint>Package_DFN_QFN:QFN-32-1EP_5x5mm_P0.5mm_EP3.6x3.6mm_ThermalVias</footprint>
+      <datasheet>https://docs.nordicsemi.com/bundle/ps_npm1300</datasheet>
+      <description>PMIC, LED Driver, Battery Charger, QFN-32</description>
+      <fields>
+        <field name="Footprint">Package_DFN_QFN:QFN-32-1EP_5x5mm_P0.5mm_EP3.6x3.6mm_ThermalVias</field>
+        <field name="Datasheet">https://docs.nordicsemi.com/bundle/ps_npm1300</field>
+        <field name="Description">PMIC, LED Driver, Battery Charger, QFN-32</field>
+      </fields>
+      <libsource lib="hlord2000" part="nPM1300-QEXX" description="PMIC, LED Driver, Battery Charger, QFN-32"/>
+      <property name="Sheetname" value="npm1300"/>
+      <property name="Sheetfile" value="npm1300.kicad_sch"/>
+      <property name="ki_keywords" value="PMIC Regulator LED Driver Battery Charger"/>
+      <property name="ki_fp_filters" value="QFN*32*1EP*5x5mm*P0.5mm*EP3.6x3.6mm*"/>
+      <sheetpath names="/npm1300/" tstamps="/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/"/>
+      <tstamps>14ddc521-0989-41d8-b77c-e08ae250b207</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="21"/>
+            <pin num="23"/>
+            <pin num="24"/>
+            <pin num="25"/>
+            <pin num="26"/>
+            <pin num="27"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="9"/>
+            <pin num="10"/>
+            <pin num="11"/>
+            <pin num="13"/>
+            <pin num="14"/>
+            <pin num="17"/>
+            <pin num="16"/>
+            <pin num="15"/>
+            <pin num="12"/>
+            <pin num="4"/>
+            <pin num="33"/>
+            <pin num="20"/>
+            <pin num="22"/>
+            <pin num="1"/>
+            <pin num="3"/>
+            <pin num="2"/>
+            <pin num="32"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="28"/>
+            <pin num="29"/>
+            <pin num="30"/>
+            <pin num="31"/>
+            <pin num="19"/>
+            <pin num="18"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C1">
+      <value>2.2uF</value>
+      <footprint>easyeda2kicad:C0201</footprint>
+      <datasheet>https://lcsc.com/product-detail/Others_Murata-Electronics_GRM033R61A225KE47D_Murata-Electronics-GRM033R61A225KE47D_C335106.html</datasheet>
+      <fields>
+        <field name="Manufacturer">muRata(村田)</field>
+        <field name="MPN">GRM033R61A225KE47D</field>
+        <field name="LCSC Part">C335106</field>
+        <field name="Footprint">easyeda2kicad:C0201</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Others_Murata-Electronics_GRM033R61A225KE47D_Murata-Electronics-GRM033R61A225KE47D_C335106.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="GRM033R61A225KE47D" description=""/>
+      <property name="Manufacturer" value="muRata(村田)"/>
+      <property name="MPN" value="GRM033R61A225KE47D"/>
+      <property name="LCSC Part" value="C335106"/>
+      <property name="Sheetname" value="nrf54l15"/>
+      <property name="Sheetfile" value="nrf54l15.kicad_sch"/>
+      <property name="ki_keywords" value="Multilayer Ceramic Capacitors MLCC - SMD/SMT"/>
+      <sheetpath names="/nrf54l15/" tstamps="/b8c2cb22-3394-480f-839f-380498977228/"/>
+      <tstamps>ffe7b4fb-bd9a-4cb0-9995-baab9a0ebcdf</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="2"/>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C5">
+      <value>2.0pF</value>
+      <footprint>easyeda2kicad:C0201</footprint>
+      <datasheet>https://www.lcsc.com/datasheet/C668326.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">muRata(村田)</field>
+        <field name="MPN">GJM0335C1E2R0WB01D</field>
+        <field name="LCSC Part">C668326</field>
+        <field name="Footprint">easyeda2kicad:C0201</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C668326.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="GJM0335C1E2R0WB01D" description=""/>
+      <property name="Manufacturer" value="muRata(村田)"/>
+      <property name="MPN" value="GJM0335C1E2R0WB01D"/>
+      <property name="LCSC Part" value="C668326"/>
+      <property name="Sheetname" value="nrf54l15"/>
+      <property name="Sheetfile" value="nrf54l15.kicad_sch"/>
+      <sheetpath names="/nrf54l15/" tstamps="/b8c2cb22-3394-480f-839f-380498977228/"/>
+      <tstamps>ba83aca4-7930-4cf6-ac3f-0a0acc94e65b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C6">
+      <value>100nF</value>
+      <footprint>easyeda2kicad:C0603</footprint>
+      <datasheet>https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_100nF-104-10-50V_C14663.html</datasheet>
+      <description>100nF (104) ±10% 50V</description>
+      <fields>
+        <field name="Manufacturer">YAGEO(国巨)</field>
+        <field name="MPN">CC0603KRX7R9BB104</field>
+        <field name="LCSC Part">C14663</field>
+        <field name="Footprint">easyeda2kicad:C0603</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_100nF-104-10-50V_C14663.html</field>
+        <field name="Description">100nF (104) ±10% 50V</field>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="CC0603KRX7R9BB104" description="100nF (104) ±10% 50V"/>
+      <property name="Manufacturer" value="YAGEO(国巨)"/>
+      <property name="MPN" value="CC0603KRX7R9BB104"/>
+      <property name="LCSC Part" value="C14663"/>
+      <property name="Sheetname" value="nrf54l15"/>
+      <property name="Sheetfile" value="nrf54l15.kicad_sch"/>
+      <property name="ki_keywords" value="Multilayer Ceramic Capacitors MLCC - SMD/SMT"/>
+      <sheetpath names="/nrf54l15/" tstamps="/b8c2cb22-3394-480f-839f-380498977228/"/>
+      <tstamps>a4b66d3c-a0ca-452e-9eb1-6cf7bd1c3312</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C7">
+      <value>10uF</value>
+      <footprint>easyeda2kicad:C0805</footprint>
+      <datasheet>https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL21A106KAYNNNE_10uF-106-10-25V_C15850.html</datasheet>
+      <description>10uF (106) ±10% 25V</description>
+      <fields>
+        <field name="Manufacturer">SAMSUNG(三星)</field>
+        <field name="MPN">CL21A106KAYNNNE</field>
+        <field name="LCSC Part">C15850</field>
+        <field name="Footprint">easyeda2kicad:C0805</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL21A106KAYNNNE_10uF-106-10-25V_C15850.html</field>
+        <field name="Description">10uF (106) ±10% 25V</field>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="CL21A106KAYNNNE" description="10uF (106) ±10% 25V"/>
+      <property name="Manufacturer" value="SAMSUNG(三星)"/>
+      <property name="MPN" value="CL21A106KAYNNNE"/>
+      <property name="LCSC Part" value="C15850"/>
+      <property name="Sheetname" value="nrf54l15"/>
+      <property name="Sheetfile" value="nrf54l15.kicad_sch"/>
+      <property name="ki_keywords" value="Multilayer Ceramic Capacitors MLCC - SMD/SMT"/>
+      <sheetpath names="/nrf54l15/" tstamps="/b8c2cb22-3394-480f-839f-380498977228/"/>
+      <tstamps>c2bf63a4-981e-406a-875c-3f965c01ceac</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C8">
+      <value>1.5pF</value>
+      <footprint>easyeda2kicad:C0201</footprint>
+      <datasheet>https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Murata-Electronics-GJM0335C1E1R5WB01D_C435397.html</datasheet>
+      <fields>
+        <field name="Manufacturer">muRata(村田)</field>
+        <field name="MPN">GJM0335C1E1R5WB01D</field>
+        <field name="LCSC Part">C435397</field>
+        <field name="Footprint">easyeda2kicad:C0201</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Murata-Electronics-GJM0335C1E1R5WB01D_C435397.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="GJM0335C1E1R5WB01D" description=""/>
+      <property name="Manufacturer" value="muRata(村田)"/>
+      <property name="MPN" value="GJM0335C1E1R5WB01D"/>
+      <property name="LCSC Part" value="C435397"/>
+      <property name="Sheetname" value="nrf54l15"/>
+      <property name="Sheetfile" value="nrf54l15.kicad_sch"/>
+      <property name="ki_keywords" value="Multilayer Ceramic Capacitors MLCC - SMD/SMT"/>
+      <sheetpath names="/nrf54l15/" tstamps="/b8c2cb22-3394-480f-839f-380498977228/"/>
+      <tstamps>87121fd7-06c2-4781-87ca-655112a1fb63</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C9">
+      <value>10nF</value>
+      <footprint>easyeda2kicad:C0402</footprint>
+      <datasheet>https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_muRata_GCM155R71H103KA55D_10nF-103-10-50V_C91601.html</datasheet>
+      <fields>
+        <field name="Manufacturer">muRata(村田)</field>
+        <field name="MPN">GCM155R71H103KA55D</field>
+        <field name="LCSC Part">C91601</field>
+        <field name="Footprint">easyeda2kicad:C0402</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_muRata_GCM155R71H103KA55D_10nF-103-10-50V_C91601.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="GCM155R71H103KA55D" description=""/>
+      <property name="Manufacturer" value="muRata(村田)"/>
+      <property name="MPN" value="GCM155R71H103KA55D"/>
+      <property name="LCSC Part" value="C91601"/>
+      <property name="Sheetname" value="nrf54l15"/>
+      <property name="Sheetfile" value="nrf54l15.kicad_sch"/>
+      <property name="ki_keywords" value="Multilayer Ceramic Capacitors MLCC - SMD/SMT"/>
+      <sheetpath names="/nrf54l15/" tstamps="/b8c2cb22-3394-480f-839f-380498977228/"/>
+      <tstamps>2e75b343-ad0c-487c-a043-50f227cd6547</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C10">
+      <value>2.2uF</value>
+      <footprint>easyeda2kicad:C0201</footprint>
+      <datasheet>https://lcsc.com/product-detail/Others_Murata-Electronics_GRM033R61A225KE47D_Murata-Electronics-GRM033R61A225KE47D_C335106.html</datasheet>
+      <fields>
+        <field name="Manufacturer">muRata(村田)</field>
+        <field name="MPN">GRM033R61A225KE47D</field>
+        <field name="LCSC Part">C335106</field>
+        <field name="Footprint">easyeda2kicad:C0201</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Others_Murata-Electronics_GRM033R61A225KE47D_Murata-Electronics-GRM033R61A225KE47D_C335106.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="GRM033R61A225KE47D" description=""/>
+      <property name="Manufacturer" value="muRata(村田)"/>
+      <property name="MPN" value="GRM033R61A225KE47D"/>
+      <property name="LCSC Part" value="C335106"/>
+      <property name="Sheetname" value="nrf54l15"/>
+      <property name="Sheetfile" value="nrf54l15.kicad_sch"/>
+      <property name="ki_keywords" value="Multilayer Ceramic Capacitors MLCC - SMD/SMT"/>
+      <sheetpath names="/nrf54l15/" tstamps="/b8c2cb22-3394-480f-839f-380498977228/"/>
+      <tstamps>7a086b7c-e4c7-499b-a21e-e404bb8ea1b7</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="2"/>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C11">
+      <value>2.2pF</value>
+      <footprint>easyeda2kicad:C0201</footprint>
+      <datasheet>https://www.lcsc.com/datasheet/C710732.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">muRata(村田)</field>
+        <field name="MPN">GJM0335C1E2R2WB01D</field>
+        <field name="LCSC Part">C710732</field>
+        <field name="Footprint">easyeda2kicad:C0201</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C710732.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="GJM0335C1E2R2WB01D" description=""/>
+      <property name="Manufacturer" value="muRata(村田)"/>
+      <property name="MPN" value="GJM0335C1E2R2WB01D"/>
+      <property name="LCSC Part" value="C710732"/>
+      <property name="Sheetname" value="nrf54l15"/>
+      <property name="Sheetfile" value="nrf54l15.kicad_sch"/>
+      <property name="ki_keywords" value="Multilayer Ceramic Capacitors MLCC - SMD/SMT"/>
+      <sheetpath names="/nrf54l15/" tstamps="/b8c2cb22-3394-480f-839f-380498977228/"/>
+      <tstamps>00c51118-5d50-4bad-ac59-dd3ef5baa40f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C13">
+      <value>0.3pF</value>
+      <footprint>easyeda2kicad:C0201</footprint>
+      <datasheet>https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_MuRata_GJM0335C1ER30WB01D_0-3pF-R30-0-05pF-25V_C161289.html</datasheet>
+      <fields>
+        <field name="Manufacturer">muRata(村田)</field>
+        <field name="MPN">GJM0335C1ER30WB01D</field>
+        <field name="LCSC Part">C161289</field>
+        <field name="Footprint">easyeda2kicad:C0201</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_MuRata_GJM0335C1ER30WB01D_0-3pF-R30-0-05pF-25V_C161289.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="GJM0335C1ER30WB01D" description=""/>
+      <property name="Manufacturer" value="muRata(村田)"/>
+      <property name="MPN" value="GJM0335C1ER30WB01D"/>
+      <property name="LCSC Part" value="C161289"/>
+      <property name="Sheetname" value="nrf54l15"/>
+      <property name="Sheetfile" value="nrf54l15.kicad_sch"/>
+      <property name="ki_keywords" value="Multilayer Ceramic Capacitors MLCC - SMD/SMT"/>
+      <sheetpath names="/nrf54l15/" tstamps="/b8c2cb22-3394-480f-839f-380498977228/"/>
+      <tstamps>fb9ba449-5a04-4cc8-a4ff-eaf98809a1d1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="2"/>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="L4">
+      <value>CBG100505U121T</value>
+      <footprint>easyeda2kicad:L0402</footprint>
+      <datasheet>https://lcsc.com/product-detail/Ferrite-Beads-And-Chips_120R-25-100MHz_C92616.html</datasheet>
+      <fields>
+        <field name="Manufacturer">FH(风华)</field>
+        <field name="MPN">CBG100505U121T</field>
+        <field name="LCSC Part">C92616</field>
+        <field name="Footprint">easyeda2kicad:L0402</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Ferrite-Beads-And-Chips_120R-25-100MHz_C92616.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="CBG100505U121T" description=""/>
+      <property name="Manufacturer" value="FH(风华)"/>
+      <property name="MPN" value="CBG100505U121T"/>
+      <property name="LCSC Part" value="C92616"/>
+      <property name="Sheetname" value="nrf54l15"/>
+      <property name="Sheetfile" value="nrf54l15.kicad_sch"/>
+      <property name="ki_keywords" value="Ferrite Beads"/>
+      <sheetpath names="/nrf54l15/" tstamps="/b8c2cb22-3394-480f-839f-380498977228/"/>
+      <tstamps>9aa9f838-a309-482f-90a5-e844d7251151</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="L5">
+      <value>2.7nH</value>
+      <footprint>easyeda2kicad:L0201</footprint>
+      <datasheet>https://www.lcsc.com/datasheet/C7216765.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">muRata(村田)</field>
+        <field name="MPN">LQP03HQ2N7B02D</field>
+        <field name="LCSC Part">C7216765</field>
+        <field name="Footprint">easyeda2kicad:L0201</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C7216765.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="LQP03HQ2N7B02D" description=""/>
+      <property name="Manufacturer" value="muRata(村田)"/>
+      <property name="MPN" value="LQP03HQ2N7B02D"/>
+      <property name="LCSC Part" value="C7216765"/>
+      <property name="Sheetname" value="nrf54l15"/>
+      <property name="Sheetfile" value="nrf54l15.kicad_sch"/>
+      <sheetpath names="/nrf54l15/" tstamps="/b8c2cb22-3394-480f-839f-380498977228/"/>
+      <tstamps>d78bd938-b2d8-4578-96aa-a5de1507f2c3</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="L6">
+      <value>3.5nH</value>
+      <footprint>easyeda2kicad:L0201</footprint>
+      <datasheet>https://www.lcsc.com/datasheet/C3911055.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">muRata(村田)</field>
+        <field name="MPN">LQP03HQ3N5B02D</field>
+        <field name="LCSC Part">C3911055</field>
+        <field name="Footprint">easyeda2kicad:L0201</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C3911055.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="LQP03HQ3N5B02D" description=""/>
+      <property name="Manufacturer" value="muRata(村田)"/>
+      <property name="MPN" value="LQP03HQ3N5B02D"/>
+      <property name="LCSC Part" value="C3911055"/>
+      <property name="Sheetname" value="nrf54l15"/>
+      <property name="Sheetfile" value="nrf54l15.kicad_sch"/>
+      <sheetpath names="/nrf54l15/" tstamps="/b8c2cb22-3394-480f-839f-380498977228/"/>
+      <tstamps>b74e2546-cfa6-44ea-bc79-951181c4e656</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="L7">
+      <value>4.7uH</value>
+      <footprint>EasyEDA2Kicad:L0603</footprint>
+      <datasheet>https://www.lcsc.com/datasheet/C1858257.pdf?spm=wm.sxq.inf.ggs___wm.fly.bg.0.xh&amp;lcsc_vid=RgIPAQcFRQQPXwJSFFlYBAZXRVJWAQFXQAQLA1UCTwcxVlNeRlNWV1deQVRYUTsOAxUeFF5JWBYZEEoKFBINSQcJGk4eFQsCAgIaSgADAwAHC0sgEhMcDhADWiMLBgAVWiAAA0klHwgeFDtXRVE8SlZTWlBeVykuDT4tXlZQRldADxALGw%3D%3D</datasheet>
+      <description>muRata LQM18PH4R7MFRL</description>
+      <fields>
+        <field name="MPN">LQM18PH4R7MFRL</field>
+        <field name="LCSC Number">C1858257</field>
+        <field name="Size">0603</field>
+        <field name="Footprint">EasyEDA2Kicad:L0603</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C1858257.pdf?spm=wm.sxq.inf.ggs___wm.fly.bg.0.xh&amp;lcsc_vid=RgIPAQcFRQQPXwJSFFlYBAZXRVJWAQFXQAQLA1UCTwcxVlNeRlNWV1deQVRYUTsOAxUeFF5JWBYZEEoKFBINSQcJGk4eFQsCAgIaSgADAwAHC0sgEhMcDhADWiMLBgAVWiAAA0klHwgeFDtXRVE8SlZTWlBeVykuDT4tXlZQRldADxALGw%3D%3D</field>
+        <field name="Description">muRata LQM18PH4R7MFRL</field>
+      </fields>
+      <libsource lib="Device" part="L" description="Inductor"/>
+      <property name="MPN" value="LQM18PH4R7MFRL"/>
+      <property name="LCSC Number" value="C1858257"/>
+      <property name="Size" value="0603"/>
+      <property name="Sheetname" value="nrf54l15"/>
+      <property name="Sheetfile" value="nrf54l15.kicad_sch"/>
+      <property name="ki_keywords" value="inductor choke coil reactor magnetic"/>
+      <property name="ki_fp_filters" value="Choke_* *Coil* Inductor_* L_*"/>
+      <sheetpath names="/nrf54l15/" tstamps="/b8c2cb22-3394-480f-839f-380498977228/"/>
+      <tstamps>d158e710-7810-4135-8f2e-8dcab7617a54</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="L8">
+      <value>3.5nH</value>
+      <footprint>easyeda2kicad:L0201</footprint>
+      <datasheet>https://www.lcsc.com/datasheet/C3911055.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">muRata(村田)</field>
+        <field name="MPN">LQP03HQ3N5B02D</field>
+        <field name="LCSC Part">C3911055</field>
+        <field name="Footprint">easyeda2kicad:L0201</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C3911055.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="LQP03HQ3N5B02D" description=""/>
+      <property name="Manufacturer" value="muRata(村田)"/>
+      <property name="MPN" value="LQP03HQ3N5B02D"/>
+      <property name="LCSC Part" value="C3911055"/>
+      <property name="Sheetname" value="nrf54l15"/>
+      <property name="Sheetfile" value="nrf54l15.kicad_sch"/>
+      <sheetpath names="/nrf54l15/" tstamps="/b8c2cb22-3394-480f-839f-380498977228/"/>
+      <tstamps>d1824488-9a6a-47e5-8e9f-72f1219980bf</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U6">
+      <value>nRF54L15-QFXX</value>
+      <footprint>Package_DFN_QFN:QFN-48-1EP_6x6mm_P0.4mm_EP4.6x4.6mm_ThermalVias</footprint>
+      <datasheet>https://docs.nordicsemi.com/bundle/ps_nrf54L15</datasheet>
+      <description>nRF54L Dual Core Multiprotocol BLE SoC</description>
+      <fields>
+        <field name="Footprint">Package_DFN_QFN:QFN-48-1EP_6x6mm_P0.4mm_EP4.6x4.6mm_ThermalVias</field>
+        <field name="Datasheet">https://docs.nordicsemi.com/bundle/ps_nrf54L15</field>
+        <field name="Description">nRF54L Dual Core Multiprotocol BLE SoC</field>
+      </fields>
+      <libsource lib="hlord2000" part="nRF54L15-QFXX" description="nRF54L Dual Core Multiprotocol BLE SoC"/>
+      <property name="Sheetname" value="nrf54l15"/>
+      <property name="Sheetfile" value="nrf54l15.kicad_sch"/>
+      <property name="ki_keywords" value="BLE SoC nRF QFN48"/>
+      <property name="ki_fp_filters" value="QFN*48*1EP*6x6mm*P0.4mm*EP4.6x4.6mm*"/>
+      <sheetpath names="/nrf54l15/" tstamps="/b8c2cb22-3394-480f-839f-380498977228/"/>
+      <tstamps>66a148b9-c07d-4efe-9af1-0a1cea5a6e1b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="34"/>
+            <pin num="35"/>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="23"/>
+            <pin num="24"/>
+            <pin num="27"/>
+            <pin num="28"/>
+            <pin num="29"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="9"/>
+            <pin num="37"/>
+            <pin num="38"/>
+            <pin num="39"/>
+            <pin num="40"/>
+            <pin num="41"/>
+            <pin num="42"/>
+            <pin num="11"/>
+            <pin num="12"/>
+            <pin num="13"/>
+            <pin num="14"/>
+            <pin num="15"/>
+            <pin num="16"/>
+            <pin num="17"/>
+            <pin num="18"/>
+            <pin num="19"/>
+            <pin num="20"/>
+            <pin num="21"/>
+            <pin num="10"/>
+            <pin num="22"/>
+            <pin num="36"/>
+            <pin num="47"/>
+            <pin num="48"/>
+            <pin num="49"/>
+            <pin num="44"/>
+            <pin num="32"/>
+            <pin num="43"/>
+            <pin num="33"/>
+            <pin num="45"/>
+            <pin num="46"/>
+            <pin num="31"/>
+            <pin num="30"/>
+            <pin num="26"/>
+            <pin num="25"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="X1">
+      <value>XL7EL89CKI-111YLC-32M</value>
+      <footprint>easyeda2kicad:CRYSTAL-SMD_4P-L2.0-W1.6-BL</footprint>
+      <datasheet>https://www.lcsc.com/datasheet/C2965582.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">YXC(扬兴晶振)</field>
+        <field name="MPN">XL7EL89CKI-111YLC-32M</field>
+        <field name="LCSC Part">C2965582</field>
+        <field name="Footprint">easyeda2kicad:CRYSTAL-SMD_4P-L2.0-W1.6-BL</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C2965582.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="XL7EL89CKI-111YLC-32M" description=""/>
+      <property name="Manufacturer" value="YXC(扬兴晶振)"/>
+      <property name="MPN" value="XL7EL89CKI-111YLC-32M"/>
+      <property name="LCSC Part" value="C2965582"/>
+      <property name="Sheetname" value="nrf54l15"/>
+      <property name="Sheetfile" value="nrf54l15.kicad_sch"/>
+      <property name="ki_keywords" value="Crystals"/>
+      <sheetpath names="/nrf54l15/" tstamps="/b8c2cb22-3394-480f-839f-380498977228/"/>
+      <tstamps>c4b04cd0-5392-4074-8c22-ee0e6ef0706e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="4"/>
+            <pin num="1"/>
+            <pin num="3"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CN1">
+      <value>SM04B-SRSS-TB</value>
+      <footprint>easyeda2kicad:CONN-SMD_4P-P1.00_SM04B-SRSS-TB-LF-SN</footprint>
+      <datasheet>https://lcsc.com/product-detail/Others_JST-Sales-America__JST-Sales-America-SM04B-SRSS-TB-LF-SN_C160404.html</datasheet>
+      <fields>
+        <field name="Manufacturer">JST</field>
+        <field name="MPN">SM04B-SRSS-TB(LF)(SN)</field>
+        <field name="LCSC Part">C160404</field>
+        <field name="Footprint">easyeda2kicad:CONN-SMD_4P-P1.00_SM04B-SRSS-TB-LF-SN</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Others_JST-Sales-America__JST-Sales-America-SM04B-SRSS-TB-LF-SN_C160404.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="EasyEDA2Kicad" part="SM04B-SRSS-TB" description=""/>
+      <property name="Manufacturer" value="JST"/>
+      <property name="MPN" value="SM04B-SRSS-TB(LF)(SN)"/>
+      <property name="LCSC Part" value="C160404"/>
+      <property name="Sheetname" value="Sensor Connector"/>
+      <property name="Sheetfile" value="sensor_connector.kicad_sch"/>
+      <property name="ki_keywords" value="Wire To Board / Wire To Wire Connector"/>
+      <sheetpath names="/Sensor Connector/" tstamps="/9f4015c9-bc16-4983-a249-fb3ed0079cbe/"/>
+      <tstamps>6ab04ceb-f4af-4b1c-a2b3-5166ed9553c6</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="6"/>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Connector" part="TC2030">
+      <description>Tag-Connect’s 6-pins connector</description>
+      <docs>https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/2019/12/TC2030-IDC-NL-Datasheet-Rev-B.pdf</docs>
+      <footprints>
+        <fp>*TC2030*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">TC2030</field>
+        <field name="Footprint">Connector:Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical</field>
+        <field name="Datasheet">https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/2019/12/TC2030-IDC-NL-Datasheet-Rev-B.pdf</field>
+        <field name="Description">Tag-Connect’s 6-pins connector</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+        <pin num="3" name="" type="passive"/>
+        <pin num="4" name="" type="passive"/>
+        <pin num="5" name="" type="passive"/>
+        <pin num="6" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="L">
+      <description>Inductor</description>
+      <footprints>
+        <fp>Choke_*</fp>
+        <fp>*Coil*</fp>
+        <fp>Inductor_*</fp>
+        <fp>L_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">L</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Inductor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="1206W4F1003T5E">
+      <description>100KΩ (1003) ±1%</description>
+      <docs>https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount-UniOhm_100KR-1003-1_C17900.html</docs>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">1206W4F1003T5E</field>
+        <field name="Footprint">easyeda2kicad:R1206</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount-UniOhm_100KR-1003-1_C17900.html</field>
+        <field name="Description">100KΩ (1003) ±1%</field>
+        <field name="Manufacturer">UNI-ROYAL(厚声)</field>
+        <field name="MPN">1206W4F1003T5E</field>
+        <field name="LCSC Part">C17900</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="input"/>
+        <pin num="2" name="2" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="1RC0402J0335">
+      <docs>https://www.lcsc.com/datasheet/C54531078.pdf</docs>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">1RC0402J0335</field>
+        <field name="Footprint">easyeda2kicad:R0402</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C54531078.pdf</field>
+        <field name="Description"/>
+        <field name="Manufacturer">SAE(世盟/世爱)</field>
+        <field name="MPN">1RC0402J0335</field>
+        <field name="LCSC Part">C54531078</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="2450AT18A100E">
+      <description>Mini 2.45 GHz Antenna, Johanson Technology</description>
+      <docs>https://lcsc.com/product-detail/RF-Antenna_JOHANSON_2450AT18A100E_2450AT18A100E_C89334.html</docs>
+      <fields>
+        <field name="Reference">AE</field>
+        <field name="Value">2450AT18A100E</field>
+        <field name="Footprint">easyeda2kicad:ANT-SMD_L3.2-W1.6</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/RF-Antenna_JOHANSON_2450AT18A100E_2450AT18A100E_C89334.html</field>
+        <field name="Description">Mini 2.45 GHz Antenna, Johanson Technology</field>
+        <field name="Manufacturer">JOHANSON(约翰逊)</field>
+        <field name="MPN">2450AT18A100E</field>
+        <field name="LCSC Part">C89334</field>
+      </fields>
+      <pins>
+        <pin num="1" name="ANT" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="CBG100505U121T">
+      <docs>https://lcsc.com/product-detail/Ferrite-Beads-And-Chips_120R-25-100MHz_C92616.html</docs>
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">CBG100505U121T</field>
+        <field name="Footprint">easyeda2kicad:L0402</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Ferrite-Beads-And-Chips_120R-25-100MHz_C92616.html</field>
+        <field name="Description"/>
+        <field name="Manufacturer">FH(风华)</field>
+        <field name="MPN">CBG100505U121T</field>
+        <field name="LCSC Part">C92616</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="CC0603KRX7R9BB104">
+      <description>100nF (104) ±10% 50V</description>
+      <docs>https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_100nF-104-10-50V_C14663.html</docs>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">CC0603KRX7R9BB104</field>
+        <field name="Footprint">easyeda2kicad:C0603</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_100nF-104-10-50V_C14663.html</field>
+        <field name="Description">100nF (104) ±10% 50V</field>
+        <field name="Manufacturer">YAGEO(国巨)</field>
+        <field name="MPN">CC0603KRX7R9BB104</field>
+        <field name="LCSC Part">C14663</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="CC0603MRX5R8BB106">
+      <docs>https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_YAGEO-CC0603MRX5R8BB106_C596327.html</docs>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">CC0603MRX5R8BB106</field>
+        <field name="Footprint">easyeda2kicad:C0603</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_YAGEO-CC0603MRX5R8BB106_C596327.html</field>
+        <field name="Description"/>
+        <field name="Manufacturer">YAGEO(国巨)</field>
+        <field name="MPN">CC0603MRX5R8BB106</field>
+        <field name="LCSC Part">C596327</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="CL05A105KO5NNNC">
+      <description>1uF (105) ±10% 16V</description>
+      <docs>https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL05A105KO5NNNC_1uF-105-10-16V_C29266.html</docs>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">CL05A105KO5NNNC</field>
+        <field name="Footprint">easyeda2kicad:C0402</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL05A105KO5NNNC_1uF-105-10-16V_C29266.html</field>
+        <field name="Description">1uF (105) ±10% 16V</field>
+        <field name="Manufacturer">SAMSUNG(三星)</field>
+        <field name="MPN">CL05A105KO5NNNC</field>
+        <field name="LCSC Part">C29266</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="input"/>
+        <pin num="2" name="2" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="CL10A225KB8NNNC">
+      <docs>https://www.lcsc.com/datasheet/C913904.pdf</docs>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">CL10A225KB8NNNC</field>
+        <field name="Footprint">easyeda2kicad:C0603</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C913904.pdf</field>
+        <field name="Description"/>
+        <field name="Manufacturer">SAMSUNG(三星)</field>
+        <field name="MPN">CL10A225KB8NNNC</field>
+        <field name="LCSC Part">C913904</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="CL21A106KAYNNNE">
+      <description>10uF (106) ±10% 25V</description>
+      <docs>https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL21A106KAYNNNE_10uF-106-10-25V_C15850.html</docs>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">CL21A106KAYNNNE</field>
+        <field name="Footprint">easyeda2kicad:C0805</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL21A106KAYNNNE_10uF-106-10-25V_C15850.html</field>
+        <field name="Description">10uF (106) ±10% 25V</field>
+        <field name="Manufacturer">SAMSUNG(三星)</field>
+        <field name="MPN">CL21A106KAYNNNE</field>
+        <field name="LCSC Part">C15850</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="CL31A476MPHNNNE">
+      <docs>https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL31A476MPHNNNE_47uF-476-20-10V_C96123.html</docs>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">CL31A476MPHNNNE</field>
+        <field name="Footprint">easyeda2kicad:C1206</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL31A476MPHNNNE_47uF-476-20-10V_C96123.html</field>
+        <field name="Description"/>
+        <field name="Manufacturer">SAMSUNG(三星)</field>
+        <field name="MPN">CL31A476MPHNNNE</field>
+        <field name="LCSC Part">C96123</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="ECT818000500">
+      <docs>https://lcsc.com/product-detail/RF-Connectors-Coaxial-Connectors_ECT-ECT818000500_C437254.html</docs>
+      <fields>
+        <field name="Reference">RF</field>
+        <field name="Value">ECT818000500</field>
+        <field name="Footprint">easyeda2kicad:ANT-SMD_ECT818000500</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/RF-Connectors-Coaxial-Connectors_ECT-ECT818000500_C437254.html</field>
+        <field name="Description"/>
+        <field name="Manufacturer">ECT(电连)</field>
+        <field name="MPN">ECT818000500</field>
+        <field name="LCSC Part">C437254</field>
+      </fields>
+      <pins>
+        <pin num="1" name="GND" type="unspecified"/>
+        <pin num="2" name="CONT" type="unspecified"/>
+        <pin num="3" name="GND" type="unspecified"/>
+        <pin num="4" name="GND" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="FM8625H">
+      <docs>https://www.lcsc.com/datasheet/C2857391.pdf</docs>
+      <fields>
+        <field name="Reference">R11</field>
+        <field name="Value">FM8625H</field>
+        <field name="Footprint">easyeda2kicad:DFN-6_L1.1-W0.7-P0.40-BL</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C2857391.pdf</field>
+        <field name="Description"/>
+        <field name="Manufacturer">FM(富满)</field>
+        <field name="MPN">FM8625H</field>
+        <field name="LCSC Part">C2857391</field>
+      </fields>
+      <pins>
+        <pin num="1" name="RF2" type="unspecified"/>
+        <pin num="2" name="GND" type="unspecified"/>
+        <pin num="3" name="RF1" type="unspecified"/>
+        <pin num="4" name="VDD" type="unspecified"/>
+        <pin num="5" name="ANT" type="unspecified"/>
+        <pin num="6" name="VCTL" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="FRC0402F3904TS">
+      <docs>https://www.lcsc.com/datasheet/C3013167.pdf</docs>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">FRC0402F3904TS</field>
+        <field name="Footprint">easyeda2kicad:R0402</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C3013167.pdf</field>
+        <field name="Description"/>
+        <field name="Manufacturer">FOJAN(富捷)</field>
+        <field name="MPN">FRC0402F3904TS</field>
+        <field name="LCSC Part">C3013167</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="FRC0402F5600TS">
+      <docs>https://www.lcsc.com/datasheet/C2909370.pdf</docs>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">FRC0402F5600TS</field>
+        <field name="Footprint">easyeda2kicad:R0402</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C2909370.pdf</field>
+        <field name="Description"/>
+        <field name="Manufacturer">FOJAN(富捷)</field>
+        <field name="MPN">FRC0402F5600TS</field>
+        <field name="LCSC Part">C2909370</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="FRC0603F1503TS">
+      <docs>https://www.lcsc.com/datasheet/C2906993.pdf</docs>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">FRC0603F1503TS</field>
+        <field name="Footprint">easyeda2kicad:R0603</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C2906993.pdf</field>
+        <field name="Description"/>
+        <field name="Manufacturer">FOJAN(富捷)</field>
+        <field name="MPN">FRC0603F1503TS</field>
+        <field name="LCSC Part">C2906993</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="FRC0603F4702TS">
+      <docs>https://www.lcsc.com/datasheet/C2907042.pdf</docs>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">FRC0603F4702TS</field>
+        <field name="Footprint">easyeda2kicad:R0603</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C2907042.pdf</field>
+        <field name="Description"/>
+        <field name="Manufacturer">FOJAN(富捷)</field>
+        <field name="MPN">FRC0603F4702TS</field>
+        <field name="LCSC Part">C2907042</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="GCM155R71H103KA55D">
+      <docs>https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_muRata_GCM155R71H103KA55D_10nF-103-10-50V_C91601.html</docs>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">GCM155R71H103KA55D</field>
+        <field name="Footprint">easyeda2kicad:C0402</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_muRata_GCM155R71H103KA55D_10nF-103-10-50V_C91601.html</field>
+        <field name="Description"/>
+        <field name="Manufacturer">muRata(村田)</field>
+        <field name="MPN">GCM155R71H103KA55D</field>
+        <field name="LCSC Part">C91601</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="GJM0335C1E1R0WB01D">
+      <docs>https://lcsc.com/product-detail/Others_Murata-Electronics_GJM0335C1E1R0WB01D_Murata-Electronics-GJM0335C1E1R0WB01D_C185624.html</docs>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">GJM0335C1E1R0WB01D</field>
+        <field name="Footprint">easyeda2kicad:C0201</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Others_Murata-Electronics_GJM0335C1E1R0WB01D_Murata-Electronics-GJM0335C1E1R0WB01D_C185624.html</field>
+        <field name="Description"/>
+        <field name="Manufacturer">muRata(村田)</field>
+        <field name="MPN">GJM0335C1E1R0WB01D</field>
+        <field name="LCSC Part">C185624</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="GJM0335C1E1R5WB01D">
+      <docs>https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Murata-Electronics-GJM0335C1E1R5WB01D_C435397.html</docs>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">GJM0335C1E1R5WB01D</field>
+        <field name="Footprint">easyeda2kicad:C0201</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Murata-Electronics-GJM0335C1E1R5WB01D_C435397.html</field>
+        <field name="Description"/>
+        <field name="Manufacturer">muRata(村田)</field>
+        <field name="MPN">GJM0335C1E1R5WB01D</field>
+        <field name="LCSC Part">C435397</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="GJM0335C1E2R0WB01D">
+      <docs>https://www.lcsc.com/datasheet/C668326.pdf</docs>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">GJM0335C1E2R0WB01D</field>
+        <field name="Footprint">easyeda2kicad:C0201</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C668326.pdf</field>
+        <field name="Description"/>
+        <field name="Manufacturer">muRata(村田)</field>
+        <field name="MPN">GJM0335C1E2R0WB01D</field>
+        <field name="LCSC Part">C668326</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="GJM0335C1E2R2WB01D">
+      <docs>https://www.lcsc.com/datasheet/C710732.pdf</docs>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">GJM0335C1E2R2WB01D</field>
+        <field name="Footprint">easyeda2kicad:C0201</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C710732.pdf</field>
+        <field name="Description"/>
+        <field name="Manufacturer">muRata(村田)</field>
+        <field name="MPN">GJM0335C1E2R2WB01D</field>
+        <field name="LCSC Part">C710732</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="GJM0335C1ER30WB01D">
+      <docs>https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_MuRata_GJM0335C1ER30WB01D_0-3pF-R30-0-05pF-25V_C161289.html</docs>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">GJM0335C1ER30WB01D</field>
+        <field name="Footprint">easyeda2kicad:C0201</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_MuRata_GJM0335C1ER30WB01D_0-3pF-R30-0-05pF-25V_C161289.html</field>
+        <field name="Description"/>
+        <field name="Manufacturer">muRata(村田)</field>
+        <field name="MPN">GJM0335C1ER30WB01D</field>
+        <field name="LCSC Part">C161289</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="GRM033R61A225KE47D">
+      <docs>https://lcsc.com/product-detail/Others_Murata-Electronics_GRM033R61A225KE47D_Murata-Electronics-GRM033R61A225KE47D_C335106.html</docs>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">GRM033R61A225KE47D</field>
+        <field name="Footprint">easyeda2kicad:C0201</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Others_Murata-Electronics_GRM033R61A225KE47D_Murata-Electronics-GRM033R61A225KE47D_C335106.html</field>
+        <field name="Description"/>
+        <field name="Manufacturer">muRata(村田)</field>
+        <field name="MPN">GRM033R61A225KE47D</field>
+        <field name="LCSC Part">C335106</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="LQP03HQ2N7B02D">
+      <docs>https://www.lcsc.com/datasheet/C7216765.pdf</docs>
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">LQP03HQ2N7B02D</field>
+        <field name="Footprint">easyeda2kicad:L0201</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C7216765.pdf</field>
+        <field name="Description"/>
+        <field name="Manufacturer">muRata(村田)</field>
+        <field name="MPN">LQP03HQ2N7B02D</field>
+        <field name="LCSC Part">C7216765</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="LQP03HQ3N5B02D">
+      <docs>https://www.lcsc.com/datasheet/C3911055.pdf</docs>
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">LQP03HQ3N5B02D</field>
+        <field name="Footprint">easyeda2kicad:L0201</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C3911055.pdf</field>
+        <field name="Description"/>
+        <field name="Manufacturer">muRata(村田)</field>
+        <field name="MPN">LQP03HQ3N5B02D</field>
+        <field name="LCSC Part">C3911055</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="LQP03HQ3N9B02D">
+      <docs>https://www.lcsc.com/datasheet/C337939.pdf</docs>
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">LQP03HQ3N9B02D</field>
+        <field name="Footprint">easyeda2kicad:L0201</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C337939.pdf</field>
+        <field name="Description"/>
+        <field name="Manufacturer">muRata(村田)</field>
+        <field name="MPN">LQP03HQ3N9B02D</field>
+        <field name="LCSC Part">C337939</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="LSCNB1608HKT2R2MD">
+      <docs>https://www.lcsc.com/datasheet/C6079477.pdf</docs>
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">LSCNB1608HKT2R2MD</field>
+        <field name="Footprint">easyeda2kicad:L0603</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C6079477.pdf</field>
+        <field name="Description"/>
+        <field name="Manufacturer">TAIYO YUDEN(太诱)</field>
+        <field name="MPN">LSCNB1608HKT2R2MD</field>
+        <field name="LCSC Part">C6079477</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="RC0402FR-074K7L">
+      <docs>https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_4-7KR-4701-1_C105871.html</docs>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">RC0402FR-074K7L</field>
+        <field name="Footprint">easyeda2kicad:R0402</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_4-7KR-4701-1_C105871.html</field>
+        <field name="Description"/>
+        <field name="Manufacturer">YAGEO(国巨)</field>
+        <field name="MPN">RC0402FR-074K7L</field>
+        <field name="LCSC Part">C105871</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="input"/>
+        <pin num="2" name="2" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="RC0402JR-071ML">
+      <docs>https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_1MR-105-5_C93949.html</docs>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">RC0402JR-071ML</field>
+        <field name="Footprint">easyeda2kicad:R0402</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_1MR-105-5_C93949.html</field>
+        <field name="Description"/>
+        <field name="Manufacturer">YAGEO(国巨)</field>
+        <field name="MPN">RC0402JR-071ML</field>
+        <field name="LCSC Part">C93949</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="input"/>
+        <pin num="2" name="2" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="RCA025K1FLF">
+      <docs>https://www.lcsc.com/datasheet/C22369457.pdf</docs>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">RCA025K1FLF</field>
+        <field name="Footprint">easyeda2kicad:R0402</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C22369457.pdf</field>
+        <field name="Description"/>
+        <field name="Manufacturer">HKR(香港电阻)</field>
+        <field name="MPN">RCA025K1FLF</field>
+        <field name="LCSC Part">C22369457</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="RT0402BRD0710KL">
+      <docs>https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_10KR-1002-0-1_C190095.html</docs>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">RT0402BRD0710KL</field>
+        <field name="Footprint">easyeda2kicad:R0402</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_10KR-1002-0-1_C190095.html</field>
+        <field name="Description"/>
+        <field name="Manufacturer">YAGEO(国巨)</field>
+        <field name="MPN">RT0402BRD0710KL</field>
+        <field name="LCSC Part">C190095</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="S2B-PH-K-S-GW">
+      <docs>https://lcsc.com/product-detail/PH-Connectors_JST_S2B-PH-K-S-GW_PHsocket-1-2P-Curved-needle-pitch2mm_C157932.html</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">S2B-PH-K-S-GW</field>
+        <field name="Footprint">easyeda2kicad:CONN-TH_S2B-PH-K-S-GW</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/PH-Connectors_JST_S2B-PH-K-S-GW_PHsocket-1-2P-Curved-needle-pitch2mm_C157932.html</field>
+        <field name="Description"/>
+        <field name="Manufacturer">JST</field>
+        <field name="MPN">S2B-PH-K-S-GW</field>
+        <field name="LCSC Part">C157932</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="SDFL2012S100KTF">
+      <description>10uH ±10%</description>
+      <docs>https://lcsc.com/product-detail/Inductors-SMD_10uH-10_C1046.html</docs>
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">SDFL2012S100KTF</field>
+        <field name="Footprint">easyeda2kicad:L0805</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Inductors-SMD_10uH-10_C1046.html</field>
+        <field name="Description">10uH ±10%</field>
+        <field name="Manufacturer">Sunlord(顺络)</field>
+        <field name="MPN">SDFL2012S100KTF</field>
+        <field name="LCSC Part">C1046</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="SM04B-SRSS-TB">
+      <docs>https://lcsc.com/product-detail/Others_JST-Sales-America__JST-Sales-America-SM04B-SRSS-TB-LF-SN_C160404.html</docs>
+      <fields>
+        <field name="Reference">CN</field>
+        <field name="Value">SM04B-SRSS-TB</field>
+        <field name="Footprint">easyeda2kicad:CONN-SMD_4P-P1.00_SM04B-SRSS-TB-LF-SN</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Others_JST-Sales-America__JST-Sales-America-SM04B-SRSS-TB-LF-SN_C160404.html</field>
+        <field name="Description"/>
+        <field name="Manufacturer">JST</field>
+        <field name="MPN">SM04B-SRSS-TB(LF)(SN)</field>
+        <field name="LCSC Part">C160404</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+        <pin num="3" name="3" type="unspecified"/>
+        <pin num="4" name="4" type="unspecified"/>
+        <pin num="5" name="5" type="unspecified"/>
+        <pin num="6" name="6" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="SML-P12MTT86R">
+      <docs>https://www.lcsc.com/datasheet/C510304.pdf</docs>
+      <fields>
+        <field name="Reference">LED</field>
+        <field name="Value">SML-P12MTT86R</field>
+        <field name="Footprint">easyeda2kicad:LED-SMD_L1.0-W0.6-RD_SML-P12YTT86RR</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C510304.pdf</field>
+        <field name="Description"/>
+        <field name="Manufacturer">ROHM(罗姆)</field>
+        <field name="MPN">SML-P12MTT86R</field>
+        <field name="LCSC Part">C510304</field>
+      </fields>
+      <pins>
+        <pin num="1" name="C" type="unspecified"/>
+        <pin num="2" name="A" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="SPV1040T">
+      <docs>https://www.lcsc.com/datasheet/C2969792.pdf</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">SPV1040T</field>
+        <field name="Footprint">easyeda2kicad:TSSOP-8_L4.4-W3.0-P0.65-LS6.4-BL</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C2969792.pdf</field>
+        <field name="Description"/>
+        <field name="Manufacturer">ST(意法半导体)</field>
+        <field name="MPN">SPV1040T</field>
+        <field name="LCSC Part">C2969792</field>
+      </fields>
+      <pins>
+        <pin num="1" name="MPP-SET" type="unspecified"/>
+        <pin num="2" name="GND" type="unspecified"/>
+        <pin num="3" name="LX" type="unspecified"/>
+        <pin num="4" name="VOUT" type="unspecified"/>
+        <pin num="5" name="VCTRL" type="unspecified"/>
+        <pin num="6" name="ICTRL_MINUS" type="unspecified"/>
+        <pin num="7" name="ICTRL_PLUS" type="unspecified"/>
+        <pin num="8" name="XSHUT" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="SS14_C83852">
+      <docs>https://lcsc.com/product-detail/Schottky-Barrier-Diodes-SBD_ON-Semicon_SS14_ON-Semicon-ON-SS14_C83852.html</docs>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">SS14_C83852</field>
+        <field name="Footprint">easyeda2kicad:SMA_L4.3-W2.6-LS5.2-RD</field>
+        <field name="Datasheet">https://lcsc.com/product-detail/Schottky-Barrier-Diodes-SBD_ON-Semicon_SS14_ON-Semicon-ON-SS14_C83852.html</field>
+        <field name="Description"/>
+        <field name="Manufacturer">onsemi(安森美)</field>
+        <field name="MPN">SS14</field>
+        <field name="LCSC Part">C83852</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="unspecified"/>
+        <pin num="2" name="A" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="EasyEDA2Kicad" part="XL7EL89CKI-111YLC-32M">
+      <docs>https://www.lcsc.com/datasheet/C2965582.pdf</docs>
+      <fields>
+        <field name="Reference">X</field>
+        <field name="Value">XL7EL89CKI-111YLC-32M</field>
+        <field name="Footprint">easyeda2kicad:CRYSTAL-SMD_4P-L2.0-W1.6-BL</field>
+        <field name="Datasheet">https://www.lcsc.com/datasheet/C2965582.pdf</field>
+        <field name="Description"/>
+        <field name="Manufacturer">YXC(扬兴晶振)</field>
+        <field name="MPN">XL7EL89CKI-111YLC-32M</field>
+        <field name="LCSC Part">C2965582</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="input"/>
+        <pin num="2" name="GND" type="input"/>
+        <pin num="3" name="3" type="input"/>
+        <pin num="4" name="GND" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="TYPE-C-31-M-12" part="TYPE-C-31-M-12">
+      <description>USB Connectors 24 Receptacle 1 8.94*7.3mm RoHS</description>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">TYPE-C-31-M-12</field>
+        <field name="Footprint">TYPE-C-31-M-12:HRO_TYPE-C-31-M-12</field>
+        <field name="Datasheet"/>
+        <field name="Description">USB Connectors 24 Receptacle 1 8.94*7.3mm RoHS</field>
+        <field name="MF">HRO Electronics Co., Ltd.</field>
+        <field name="MAXIMUM_PACKAGE_HEIGHT">3.26 mm</field>
+        <field name="Package">Package</field>
+        <field name="Price">None</field>
+        <field name="Check_prices">https://www.snapeda.com/parts/TYPE-C-31-M-12/HRO+Electronics+Co.%252C+Ltd./view-part/?ref=eda</field>
+        <field name="STANDARD">Manufacturer Recommendations</field>
+        <field name="PARTREV">2020.12.08</field>
+        <field name="SnapEDA_Link">https://www.snapeda.com/parts/TYPE-C-31-M-12/HRO+Electronics+Co.%252C+Ltd./view-part/?ref=snap</field>
+        <field name="MP">TYPE-C-31-M-12</field>
+        <field name="SNAPEDA_PN">TYPE-C-31-M-12</field>
+        <field name="Availability">Not in stock</field>
+        <field name="MANUFACTURER">HRO Electronics Co., Ltd.</field>
+      </fields>
+      <pins>
+        <pin num="A1_B12" name="GND" type="power_in"/>
+        <pin num="A4_B9" name="VBUS" type="power_in"/>
+        <pin num="A5" name="CC1" type="bidirectional"/>
+        <pin num="A6" name="DP1" type="bidirectional"/>
+        <pin num="A7" name="DN1" type="bidirectional"/>
+        <pin num="A8" name="SBU1" type="bidirectional"/>
+        <pin num="B1_A12" name="GND" type="power_in"/>
+        <pin num="B4_A9" name="VBUS" type="power_in"/>
+        <pin num="B5" name="CC2" type="bidirectional"/>
+        <pin num="B6" name="DP2" type="bidirectional"/>
+        <pin num="B7" name="DN2" type="bidirectional"/>
+        <pin num="B8" name="SBU2" type="bidirectional"/>
+        <pin num="S1" name="SHIELD" type="passive"/>
+        <pin num="S2" name="SHIELD" type="passive"/>
+        <pin num="S3" name="SHIELD" type="passive"/>
+        <pin num="S4" name="SHIELD" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="hlord2000" part="nPM1300-QEXX">
+      <description>PMIC, LED Driver, Battery Charger, QFN-32</description>
+      <docs>https://docs.nordicsemi.com/bundle/ps_npm1300</docs>
+      <footprints>
+        <fp>QFN*32*1EP*5x5mm*P0.5mm*EP3.6x3.6mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">nPM1300-QEXX</field>
+        <field name="Footprint">Package_DFN_QFN:QFN-32-1EP_5x5mm_P0.5mm_EP3.6x3.6mm_ThermalVias</field>
+        <field name="Datasheet">https://docs.nordicsemi.com/bundle/ps_npm1300</field>
+        <field name="Description">PMIC, LED Driver, Battery Charger, QFN-32</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VOUT1" type="power_out"/>
+        <pin num="2" name="PVSS1" type="power_in"/>
+        <pin num="3" name="SW1" type="passive"/>
+        <pin num="4" name="PVDD" type="power_in"/>
+        <pin num="5" name="SW2" type="passive"/>
+        <pin num="6" name="PVSS2" type="power_in"/>
+        <pin num="7" name="GPIO0" type="bidirectional"/>
+        <pin num="8" name="GPIO1" type="bidirectional"/>
+        <pin num="9" name="GPIO2" type="bidirectional"/>
+        <pin num="10" name="GPIO3" type="bidirectional"/>
+        <pin num="11" name="GPIO4" type="bidirectional"/>
+        <pin num="12" name="VDDIO" type="power_in"/>
+        <pin num="13" name="SDA" type="bidirectional"/>
+        <pin num="14" name="SCL" type="bidirectional"/>
+        <pin num="15" name="SHPHLD" type="input"/>
+        <pin num="16" name="VSET2" type="passive"/>
+        <pin num="17" name="VSET1" type="passive"/>
+        <pin num="18" name="NTC" type="passive"/>
+        <pin num="19" name="VBAT" type="power_in"/>
+        <pin num="20" name="VSYS" type="power_out"/>
+        <pin num="21" name="VBUS" type="power_in"/>
+        <pin num="22" name="VBUSOUT" type="power_out"/>
+        <pin num="23" name="CC1" type="bidirectional"/>
+        <pin num="24" name="CC2" type="bidirectional"/>
+        <pin num="25" name="LED0" type="open_collector"/>
+        <pin num="26" name="LED1" type="open_collector"/>
+        <pin num="27" name="LED2" type="open_collector"/>
+        <pin num="28" name="LSIN1/VINLDO1" type="input"/>
+        <pin num="29" name="LSOUT1/VOUTLDO1" type="output"/>
+        <pin num="30" name="LSIN2/VINLDO2" type="input"/>
+        <pin num="31" name="LSOUT2/VOUTLDO2" type="output"/>
+        <pin num="32" name="VOUT2" type="power_out"/>
+        <pin num="33" name="AVSS" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="hlord2000" part="nRF54L15-QFXX">
+      <description>nRF54L Dual Core Multiprotocol BLE SoC</description>
+      <docs>https://docs.nordicsemi.com/bundle/ps_nrf54L15</docs>
+      <footprints>
+        <fp>QFN*48*1EP*6x6mm*P0.4mm*EP4.6x4.6mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">nRF54L15-QFXX</field>
+        <field name="Footprint">Package_DFN_QFN:QFN-48-1EP_6x6mm_P0.4mm_EP4.6x4.6mm_ThermalVias</field>
+        <field name="Datasheet">https://docs.nordicsemi.com/bundle/ps_nrf54L15</field>
+        <field name="Description">nRF54L Dual Core Multiprotocol BLE SoC</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1.00" type="bidirectional"/>
+        <pin num="2" name="P1.01" type="bidirectional"/>
+        <pin num="3" name="P1.02" type="bidirectional"/>
+        <pin num="4" name="P1.03" type="bidirectional"/>
+        <pin num="5" name="P1.04" type="bidirectional"/>
+        <pin num="6" name="P1.05" type="bidirectional"/>
+        <pin num="7" name="P1.06" type="bidirectional"/>
+        <pin num="8" name="P1.07" type="bidirectional"/>
+        <pin num="9" name="P1.08" type="bidirectional"/>
+        <pin num="10" name="VDD" type="power_in"/>
+        <pin num="11" name="P2.00" type="bidirectional"/>
+        <pin num="12" name="P2.01" type="bidirectional"/>
+        <pin num="13" name="P2.02" type="bidirectional"/>
+        <pin num="14" name="P2.03" type="bidirectional"/>
+        <pin num="15" name="P2.04" type="bidirectional"/>
+        <pin num="16" name="P2.05" type="bidirectional"/>
+        <pin num="17" name="P2.06" type="bidirectional"/>
+        <pin num="18" name="P2.07" type="bidirectional"/>
+        <pin num="19" name="P2.08" type="bidirectional"/>
+        <pin num="20" name="P2.09" type="bidirectional"/>
+        <pin num="21" name="P2.10" type="bidirectional"/>
+        <pin num="22" name="VDD" type="passive"/>
+        <pin num="23" name="P0.00" type="bidirectional"/>
+        <pin num="24" name="P0.01" type="bidirectional"/>
+        <pin num="25" name="SWDIO" type="bidirectional"/>
+        <pin num="26" name="SWDCLK" type="input"/>
+        <pin num="27" name="P0.02" type="bidirectional"/>
+        <pin num="28" name="P0.03" type="bidirectional"/>
+        <pin num="29" name="P0.04" type="bidirectional"/>
+        <pin num="30" name="~{RESET}" type="input"/>
+        <pin num="31" name="ANT" type="output"/>
+        <pin num="32" name="VSS_PA" type="passive"/>
+        <pin num="33" name="DECRF" type="passive"/>
+        <pin num="34" name="XC1" type="bidirectional"/>
+        <pin num="35" name="XC2" type="bidirectional"/>
+        <pin num="36" name="VDD" type="passive"/>
+        <pin num="37" name="P1.09" type="bidirectional"/>
+        <pin num="38" name="P1.10" type="bidirectional"/>
+        <pin num="39" name="P1.11" type="bidirectional"/>
+        <pin num="40" name="P1.12" type="bidirectional"/>
+        <pin num="41" name="P1.13" type="bidirectional"/>
+        <pin num="42" name="P1.14" type="bidirectional"/>
+        <pin num="43" name="DECA" type="passive"/>
+        <pin num="44" name="VSS" type="power_in"/>
+        <pin num="45" name="DECD" type="passive"/>
+        <pin num="46" name="DCC" type="power_out"/>
+        <pin num="47" name="VDD" type="passive"/>
+        <pin num="48" name="VDD" type="passive"/>
+        <pin num="49" name="VSS" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Connector">
+      <uri>${KICAD9_SYMBOL_DIR}/Connector.kicad_sym</uri>
+    </library>
+    <library logical="Device">
+      <uri>${KICAD9_SYMBOL_DIR}/Device.kicad_sym</uri>
+    </library>
+    <library logical="EasyEDA2Kicad">
+      <uri>C:/Users/Brian/Documents/KiCad/easyeda2kicad</uri>
+    </library>
+    <library logical="TYPE-C-31-M-12">
+      <uri>C:/Users/Brian/Documents/KiCad/10.0/download/TYPE-C-31-M-12.kicad_sym</uri>
+    </library>
+    <library logical="hlord2000">
+      <uri>C:/Users/Brian/Documents/KiCad/10.0/3rdparty/symbols/com_github_hlord2000_nordic-lib-kicad</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/npm1300/VSYS" class="Default">
+      <node ref="C16" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="C20" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="C22" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="R14" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="U2" pin="20" pinfunction="VSYS_20" pintype="power_out"/>
+      <node ref="U2" pin="4" pinfunction="PVDD_4" pintype="power_in"/>
+    </net>
+    <net code="2" name="ANT" class="Default">
+      <node ref="C13" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="L8" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="R11" pin="5" pinfunction="ANT_5" pintype="unspecified"/>
+    </net>
+    <net code="3" name="ANT_SEL" class="Default">
+      <node ref="R11" pin="6" pinfunction="VCTL_6" pintype="unspecified"/>
+      <node ref="U6" pin="24" pinfunction="P0.01_24" pintype="bidirectional"/>
+    </net>
+    <net code="4" name="CC1" class="Default">
+      <node ref="J1" pin="A5" pinfunction="CC1_A5" pintype="bidirectional"/>
+      <node ref="R2" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="U2" pin="23" pinfunction="CC1_23" pintype="bidirectional"/>
+    </net>
+    <net code="5" name="CC2" class="Default">
+      <node ref="J1" pin="B5" pinfunction="CC2_B5" pintype="bidirectional"/>
+      <node ref="R1" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="U2" pin="24" pinfunction="CC2_24" pintype="bidirectional"/>
+    </net>
+    <net code="6" name="CHG_IN" class="Default">
+      <node ref="C2" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="C4" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="D1" pin="1" pinfunction="K_1" pintype="unspecified"/>
+      <node ref="D2" pin="1" pinfunction="K_1" pintype="unspecified"/>
+      <node ref="R3" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="R6" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="U2" pin="21" pinfunction="VBUS_21" pintype="power_in"/>
+      <node ref="U3" pin="4" pinfunction="VOUT_4" pintype="unspecified"/>
+    </net>
+    <net code="7" name="GND" class="Default">
+      <node ref="AE1" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="C1" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="C10" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="C11" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="C13" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="C14" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="C15" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="C16" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="C17" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="C18" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="C19" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="C2" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="C20" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="C22" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="C26" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="C27" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="C28" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="C3" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="C4" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="C5" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="C6" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="C7" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="C8" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="C9" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="CN1" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="CN1" pin="5" pinfunction="5_5" pintype="unspecified"/>
+      <node ref="CN1" pin="6" pinfunction="6_6" pintype="unspecified"/>
+      <node ref="J1" pin="A1_B12" pinfunction="GND_A1_B12" pintype="power_in"/>
+      <node ref="J1" pin="B1_A12" pinfunction="GND_B1_A12" pintype="power_in"/>
+      <node ref="J1" pin="S1" pinfunction="SHIELD_S1" pintype="passive"/>
+      <node ref="J1" pin="S2" pinfunction="SHIELD_S2" pintype="passive"/>
+      <node ref="J1" pin="S3" pinfunction="SHIELD_S3" pintype="passive"/>
+      <node ref="J1" pin="S4" pinfunction="SHIELD_S4" pintype="passive"/>
+      <node ref="L2" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="R1" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="R10" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="R11" pin="2" pinfunction="GND_2" pintype="unspecified"/>
+      <node ref="R2" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="R5" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="R7" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="R8" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="R9" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="RF1" pin="1" pinfunction="GND_1" pintype="unspecified"/>
+      <node ref="RF1" pin="3" pinfunction="GND_3" pintype="unspecified"/>
+      <node ref="RF1" pin="4" pinfunction="GND_4" pintype="unspecified"/>
+      <node ref="U2" pin="2" pinfunction="PVSS1_2" pintype="power_in"/>
+      <node ref="U2" pin="33" pinfunction="AVSS_33" pintype="power_in"/>
+      <node ref="U2" pin="6" pinfunction="PVSS2_6" pintype="power_in"/>
+      <node ref="U3" pin="2" pinfunction="GND_2" pintype="unspecified"/>
+      <node ref="U3" pin="6" pinfunction="ICTRL_MINUS_6" pintype="unspecified"/>
+      <node ref="U3" pin="7" pinfunction="ICTRL_PLUS_7" pintype="unspecified"/>
+      <node ref="U4" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="U5" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="U6" pin="32" pinfunction="VSS_PA_32" pintype="passive"/>
+      <node ref="U6" pin="44" pinfunction="VSS_44" pintype="power_in"/>
+      <node ref="U6" pin="49" pinfunction="VSS_49" pintype="passive"/>
+      <node ref="X1" pin="2" pinfunction="GND_2" pintype="input"/>
+      <node ref="X1" pin="4" pinfunction="GND_4" pintype="input"/>
+    </net>
+    <net code="8" name="I2C_SCL" class="Default">
+      <node ref="CN1" pin="4" pinfunction="4_4" pintype="unspecified"/>
+      <node ref="R12" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="U2" pin="14" pinfunction="SCL_14" pintype="bidirectional"/>
+      <node ref="U6" pin="4" pinfunction="P1.03_4" pintype="bidirectional"/>
+    </net>
+    <net code="9" name="I2C_SDA" class="Default">
+      <node ref="CN1" pin="3" pinfunction="3_3" pintype="unspecified"/>
+      <node ref="R13" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="U2" pin="13" pinfunction="SDA_13" pintype="bidirectional"/>
+      <node ref="U6" pin="5" pinfunction="P1.04_5" pintype="bidirectional"/>
+    </net>
+    <net code="10" name="Net-(AE1-ANT)" class="Default">
+      <node ref="AE1" pin="1" pinfunction="ANT_1" pintype="unspecified"/>
+      <node ref="L3" pin="1" pinfunction="1_1" pintype="unspecified"/>
+    </net>
+    <net code="11" name="Net-(C5-Pad2)" class="Default">
+      <node ref="C5" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="L6" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="L8" pin="1" pinfunction="1_1" pintype="unspecified"/>
+    </net>
+    <net code="12" name="Net-(C8-Pad2)" class="Default">
+      <node ref="C8" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="L5" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="L6" pin="1" pinfunction="1_1" pintype="unspecified"/>
+    </net>
+    <net code="13" name="Net-(C12-Pad2)" class="Default">
+      <node ref="C12" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="L2" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="L3" pin="2" pinfunction="2_2" pintype="unspecified"/>
+    </net>
+    <net code="14" name="Net-(LED1-A)" class="Default">
+      <node ref="LED1" pin="2" pinfunction="A_2" pintype="unspecified"/>
+      <node ref="R14" pin="1" pinfunction="1_1" pintype="unspecified"/>
+    </net>
+    <net code="15" name="Net-(LED1-C)" class="Default">
+      <node ref="LED1" pin="1" pinfunction="C_1" pintype="unspecified"/>
+      <node ref="U2" pin="25" pinfunction="LED0_25" pintype="open_collector"/>
+    </net>
+    <net code="16" name="Net-(R11-RF1)" class="Default">
+      <node ref="C12" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="R11" pin="3" pinfunction="RF1_3" pintype="unspecified"/>
+    </net>
+    <net code="17" name="Net-(R11-RF2)" class="Default">
+      <node ref="R11" pin="1" pinfunction="RF2_1" pintype="unspecified"/>
+      <node ref="RF1" pin="2" pinfunction="CONT_2" pintype="unspecified"/>
+    </net>
+    <net code="18" name="Net-(U2-NTC)" class="Default">
+      <node ref="R8" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="U2" pin="18" pinfunction="NTC_18" pintype="passive"/>
+    </net>
+    <net code="19" name="Net-(U2-SW1)" class="Default">
+      <node ref="L9" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="U2" pin="3" pinfunction="SW1_3" pintype="passive"/>
+    </net>
+    <net code="20" name="Net-(U2-SW2)" class="Default">
+      <node ref="L10" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="U2" pin="5" pinfunction="SW2_5" pintype="passive"/>
+    </net>
+    <net code="21" name="Net-(U2-VSET1)" class="Default">
+      <node ref="R9" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="U2" pin="17" pinfunction="VSET1_17" pintype="passive"/>
+    </net>
+    <net code="22" name="Net-(U2-VSET2)" class="Default">
+      <node ref="R10" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="U2" pin="16" pinfunction="VSET2_16" pintype="passive"/>
+    </net>
+    <net code="23" name="Net-(U3-LX)" class="Default">
+      <node ref="L1" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="U3" pin="3" pinfunction="LX_3" pintype="unspecified"/>
+    </net>
+    <net code="24" name="Net-(U3-MPP-SET)" class="Default">
+      <node ref="C28" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="R4" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="R5" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="U3" pin="1" pinfunction="MPP-SET_1" pintype="unspecified"/>
+    </net>
+    <net code="25" name="Net-(U3-VCTRL)" class="Default">
+      <node ref="R6" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="R7" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="U3" pin="5" pinfunction="VCTRL_5" pintype="unspecified"/>
+    </net>
+    <net code="26" name="Net-(U3-XSHUT)" class="Default">
+      <node ref="R3" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="U3" pin="8" pinfunction="XSHUT_8" pintype="unspecified"/>
+    </net>
+    <net code="27" name="Net-(U6-ANT)" class="Default">
+      <node ref="L5" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="U6" pin="31" pinfunction="ANT_31" pintype="output"/>
+    </net>
+    <net code="28" name="Net-(U6-DCC)" class="Default">
+      <node ref="L7" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U6" pin="46" pinfunction="DCC_46" pintype="power_out"/>
+    </net>
+    <net code="29" name="Net-(U6-DECA)" class="Default">
+      <node ref="C1" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="C11" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="C9" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="L4" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="U6" pin="33" pinfunction="DECRF_33" pintype="passive"/>
+      <node ref="U6" pin="43" pinfunction="DECA_43" pintype="passive"/>
+    </net>
+    <net code="30" name="Net-(U6-DECD)" class="Default">
+      <node ref="C10" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="L4" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="L7" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="U6" pin="45" pinfunction="DECD_45" pintype="passive"/>
+    </net>
+    <net code="31" name="Net-(U6-XC1)" class="Default">
+      <node ref="U6" pin="34" pinfunction="XC1_34" pintype="bidirectional"/>
+      <node ref="X1" pin="1" pinfunction="1_1" pintype="input"/>
+    </net>
+    <net code="32" name="Net-(U6-XC2)" class="Default">
+      <node ref="U6" pin="35" pinfunction="XC2_35" pintype="bidirectional"/>
+      <node ref="X1" pin="3" pinfunction="3_3" pintype="input"/>
+    </net>
+    <net code="33" name="PMIC_INT" class="Default">
+      <node ref="U2" pin="8" pinfunction="GPIO1_8" pintype="bidirectional"/>
+      <node ref="U6" pin="23" pinfunction="P0.00_23" pintype="bidirectional"/>
+    </net>
+    <net code="34" name="SOLAR_5p5V" class="Default">
+      <node ref="C27" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="D2" pin="2" pinfunction="A_2" pintype="unspecified"/>
+      <node ref="L1" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="R4" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="U5" pin="1" pinfunction="1_1" pintype="unspecified"/>
+    </net>
+    <net code="35" name="VBAT" class="Default">
+      <node ref="C3" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="U2" pin="19" pinfunction="VBAT_19" pintype="power_in"/>
+      <node ref="U4" pin="1" pinfunction="1_1" pintype="unspecified"/>
+    </net>
+    <net code="36" name="VBUS" class="Default">
+      <node ref="C14" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="D1" pin="2" pinfunction="A_2" pintype="unspecified"/>
+      <node ref="J1" pin="A4_B9" pinfunction="VBUS_A4_B9" pintype="power_in"/>
+      <node ref="J1" pin="B4_A9" pinfunction="VBUS_B4_A9" pintype="power_in"/>
+    </net>
+    <net code="37" name="VBUSOUT" class="Default">
+      <node ref="C19" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="U2" pin="22" pinfunction="VBUSOUT_22" pintype="power_out"/>
+    </net>
+    <net code="38" name="VDDIO" class="Default">
+      <node ref="C17" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="C26" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="C6" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="C7" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="CN1" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="L10" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="R12" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="R13" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="U2" pin="12" pinfunction="VDDIO_12" pintype="power_in"/>
+      <node ref="U2" pin="32" pinfunction="VOUT2_32" pintype="power_out"/>
+      <node ref="U6" pin="10" pinfunction="VDD_10" pintype="power_in"/>
+      <node ref="U6" pin="22" pinfunction="VDD_22" pintype="passive"/>
+      <node ref="U6" pin="36" pinfunction="VDD_36" pintype="passive"/>
+      <node ref="U6" pin="47" pinfunction="VDD_47" pintype="passive"/>
+      <node ref="U6" pin="48" pinfunction="VDD_48" pintype="passive"/>
+    </net>
+    <net code="39" name="VOUT1" class="PWR,Default">
+      <node ref="C15" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="C18" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="L9" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="R11" pin="4" pinfunction="VDD_4" pintype="unspecified"/>
+      <node ref="U2" pin="1" pinfunction="VOUT1_1" pintype="power_out"/>
+    </net>
+    <net code="40" name="nRF54_RESET" class="Default">
+      <node ref="U6" pin="30" pinfunction="~{RESET}_30" pintype="input"/>
+    </net>
+    <net code="41" name="nRF54_SWDCLK" class="Default">
+      <node ref="U6" pin="26" pinfunction="SWDCLK_26" pintype="input"/>
+    </net>
+    <net code="42" name="nRF54_SWDIO" class="Default">
+      <node ref="U6" pin="25" pinfunction="SWDIO_25" pintype="bidirectional"/>
+    </net>
+    <net code="43" name="unconnected-(J1-DN1-PadA7)" class="Default">
+      <node ref="J1" pin="A7" pinfunction="DN1_A7" pintype="bidirectional"/>
+    </net>
+    <net code="44" name="unconnected-(J1-DN2-PadB7)" class="Default">
+      <node ref="J1" pin="B7" pinfunction="DN2_B7" pintype="bidirectional"/>
+    </net>
+    <net code="45" name="unconnected-(J1-DP1-PadA6)" class="Default">
+      <node ref="J1" pin="A6" pinfunction="DP1_A6" pintype="bidirectional"/>
+    </net>
+    <net code="46" name="unconnected-(J1-DP2-PadB6)" class="Default">
+      <node ref="J1" pin="B6" pinfunction="DP2_B6" pintype="bidirectional"/>
+    </net>
+    <net code="47" name="unconnected-(J1-SBU1-PadA8)" class="Default">
+      <node ref="J1" pin="A8" pinfunction="SBU1_A8" pintype="bidirectional"/>
+    </net>
+    <net code="48" name="unconnected-(J1-SBU2-PadB8)" class="Default">
+      <node ref="J1" pin="B8" pinfunction="SBU2_B8" pintype="bidirectional"/>
+    </net>
+    <net code="50" name="unconnected-(U2-GPIO0-Pad7)" class="Default">
+      <node ref="U2" pin="7" pinfunction="GPIO0_7" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="51" name="unconnected-(U2-GPIO2-Pad9)" class="Default">
+      <node ref="U2" pin="9" pinfunction="GPIO2_9" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="52" name="unconnected-(U2-GPIO3-Pad10)" class="Default">
+      <node ref="U2" pin="10" pinfunction="GPIO3_10" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="53" name="unconnected-(U2-GPIO4-Pad11)" class="Default">
+      <node ref="U2" pin="11" pinfunction="GPIO4_11" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="54" name="unconnected-(U2-LED1-Pad26)" class="Default">
+      <node ref="U2" pin="26" pinfunction="LED1_26" pintype="open_collector+no_connect"/>
+    </net>
+    <net code="55" name="unconnected-(U2-LED2-Pad27)" class="Default">
+      <node ref="U2" pin="27" pinfunction="LED2_27" pintype="open_collector+no_connect"/>
+    </net>
+    <net code="56" name="unconnected-(U2-LSIN1/VINLDO1-Pad28)" class="Default">
+      <node ref="U2" pin="28" pinfunction="LSIN1/VINLDO1_28" pintype="input+no_connect"/>
+    </net>
+    <net code="57" name="unconnected-(U2-LSIN2/VINLDO2-Pad30)" class="Default">
+      <node ref="U2" pin="30" pinfunction="LSIN2/VINLDO2_30" pintype="input+no_connect"/>
+    </net>
+    <net code="58" name="unconnected-(U2-LSOUT1/VOUTLDO1-Pad29)" class="Default">
+      <node ref="U2" pin="29" pinfunction="LSOUT1/VOUTLDO1_29" pintype="output+no_connect"/>
+    </net>
+    <net code="59" name="unconnected-(U2-LSOUT2/VOUTLDO2-Pad31)" class="Default">
+      <node ref="U2" pin="31" pinfunction="LSOUT2/VOUTLDO2_31" pintype="output+no_connect"/>
+    </net>
+    <net code="60" name="unconnected-(U2-SHPHLD-Pad15)" class="Default">
+      <node ref="U2" pin="15" pinfunction="SHPHLD_15" pintype="input"/>
+    </net>
+    <net code="61" name="unconnected-(U6-P0.02-Pad27)" class="Default">
+      <node ref="U6" pin="27" pinfunction="P0.02_27" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="62" name="unconnected-(U6-P0.03-Pad28)" class="Default">
+      <node ref="U6" pin="28" pinfunction="P0.03_28" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="63" name="unconnected-(U6-P0.04-Pad29)" class="Default">
+      <node ref="U6" pin="29" pinfunction="P0.04_29" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="64" name="unconnected-(U6-P1.00-Pad1)" class="Default">
+      <node ref="U6" pin="1" pinfunction="P1.00_1" pintype="bidirectional"/>
+    </net>
+    <net code="65" name="unconnected-(U6-P1.01-Pad2)" class="Default">
+      <node ref="U6" pin="2" pinfunction="P1.01_2" pintype="bidirectional"/>
+    </net>
+    <net code="66" name="unconnected-(U6-P1.02-Pad3)" class="Default">
+      <node ref="U6" pin="3" pinfunction="P1.02_3" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="67" name="unconnected-(U6-P1.05-Pad6)" class="Default">
+      <node ref="U6" pin="6" pinfunction="P1.05_6" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="68" name="unconnected-(U6-P1.06-Pad7)" class="Default">
+      <node ref="U6" pin="7" pinfunction="P1.06_7" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="69" name="unconnected-(U6-P1.07-Pad8)" class="Default">
+      <node ref="U6" pin="8" pinfunction="P1.07_8" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="70" name="unconnected-(U6-P1.08-Pad9)" class="Default">
+      <node ref="U6" pin="9" pinfunction="P1.08_9" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="71" name="unconnected-(U6-P1.09-Pad37)" class="Default">
+      <node ref="U6" pin="37" pinfunction="P1.09_37" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="72" name="unconnected-(U6-P1.10-Pad38)" class="Default">
+      <node ref="U6" pin="38" pinfunction="P1.10_38" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="73" name="unconnected-(U6-P1.11-Pad39)" class="Default">
+      <node ref="U6" pin="39" pinfunction="P1.11_39" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="74" name="unconnected-(U6-P1.12-Pad40)" class="Default">
+      <node ref="U6" pin="40" pinfunction="P1.12_40" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="75" name="unconnected-(U6-P1.13-Pad41)" class="Default">
+      <node ref="U6" pin="41" pinfunction="P1.13_41" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="76" name="unconnected-(U6-P1.14-Pad42)" class="Default">
+      <node ref="U6" pin="42" pinfunction="P1.14_42" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="77" name="unconnected-(U6-P2.00-Pad11)" class="Default">
+      <node ref="U6" pin="11" pinfunction="P2.00_11" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="78" name="unconnected-(U6-P2.01-Pad12)" class="Default">
+      <node ref="U6" pin="12" pinfunction="P2.01_12" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="79" name="unconnected-(U6-P2.02-Pad13)" class="Default">
+      <node ref="U6" pin="13" pinfunction="P2.02_13" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="80" name="unconnected-(U6-P2.03-Pad14)" class="Default">
+      <node ref="U6" pin="14" pinfunction="P2.03_14" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="81" name="unconnected-(U6-P2.04-Pad15)" class="Default">
+      <node ref="U6" pin="15" pinfunction="P2.04_15" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="82" name="unconnected-(U6-P2.05-Pad16)" class="Default">
+      <node ref="U6" pin="16" pinfunction="P2.05_16" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="83" name="unconnected-(U6-P2.06-Pad17)" class="Default">
+      <node ref="U6" pin="17" pinfunction="P2.06_17" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="84" name="unconnected-(U6-P2.07-Pad18)" class="Default">
+      <node ref="U6" pin="18" pinfunction="P2.07_18" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="85" name="unconnected-(U6-P2.08-Pad19)" class="Default">
+      <node ref="U6" pin="19" pinfunction="P2.08_19" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="86" name="unconnected-(U6-P2.09-Pad20)" class="Default">
+      <node ref="U6" pin="20" pinfunction="P2.09_20" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="87" name="unconnected-(U6-P2.10-Pad21)" class="Default">
+      <node ref="U6" pin="21" pinfunction="P2.10_21" pintype="bidirectional+no_connect"/>
+    </net>
+  </nets>
+</export>

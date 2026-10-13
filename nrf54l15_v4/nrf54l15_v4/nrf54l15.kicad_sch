@@ -3758,6 +3758,16 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "Sensor flex port\nP1.10 SENS_SDA    P1.11 SENS_SCL (clock pin)\nP2.01 SENS_SCK    P2.02 SENS_MOSI / UART TX\nP2.04 SENS_MISO (SPIM00 SDI)\nP2.00 SENS_MISO (UARTE00 RXD) - tied; FW leaves unused pin disconnected\nP2.05 SENS_CS\nP1.07 SENS_INT\nP1.05 SENS_AIN (AIN1)\nP1.06 SENS_ID (AIN2)\nPMIC I2C stays on P1.03 / P1.04"
+		(exclude_from_sim no)
+		(at 91.44 168.656 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "8b54e0cf-f3fb-4f81-a071-2f58aa32dbf4")
+	)
 	(junction
 		(at 185.42 48.26)
 		(diameter 0)
@@ -3819,20 +3829,12 @@
 		(uuid "fd6d7061-1855-4040-93d9-8dd523cb4735")
 	)
 	(no_connect
-		(at 109.22 101.6)
-		(uuid "0bae01e0-6d98-4df3-8a8d-a12bcfb84d17")
-	)
-	(no_connect
 		(at 109.22 83.82)
 		(uuid "0c755832-0220-4803-aa8a-df4fce970a4f")
 	)
 	(no_connect
-		(at 109.22 124.46)
-		(uuid "1baf3e27-9129-42d8-9a13-3121043d0438")
-	)
-	(no_connect
-		(at 109.22 121.92)
-		(uuid "35be8efc-bf58-404a-8488-1e1368665c47")
+		(at 109.22 101.6)
+		(uuid "31b11fa8-d675-42ed-a177-47f77b53a7df")
 	)
 	(no_connect
 		(at 109.22 76.2)
@@ -3843,20 +3845,8 @@
 		(uuid "42630caf-8111-4c4a-b886-40f9d1e2b922")
 	)
 	(no_connect
-		(at 109.22 132.08)
-		(uuid "472db8b8-6bf8-40a7-85ac-e92912a7ef6e")
-	)
-	(no_connect
-		(at 109.22 96.52)
-		(uuid "548bed24-fe4e-4e24-85bc-1b4252ec243f")
-	)
-	(no_connect
 		(at 109.22 111.76)
 		(uuid "5f5b1f16-02b0-4588-98e2-e12d06c4efcd")
-	)
-	(no_connect
-		(at 109.22 104.14)
-		(uuid "60ed0316-0ef3-4abb-ba2b-bfa8ae9f3765")
 	)
 	(no_connect
 		(at 109.22 139.7)
@@ -3875,24 +3865,8 @@
 		(uuid "98bf3874-cd95-4b33-8ec0-0fe1ae001146")
 	)
 	(no_connect
-		(at 109.22 91.44)
-		(uuid "99b67fa4-6d16-48bd-bec6-b5a5f78450f5")
-	)
-	(no_connect
-		(at 109.22 119.38)
-		(uuid "9b5f29cd-24ec-4e69-bef4-4f4b6efd708d")
-	)
-	(no_connect
 		(at 109.22 114.3)
 		(uuid "a0cc1346-7aa8-4387-beaf-7d125da25841")
-	)
-	(no_connect
-		(at 109.22 106.68)
-		(uuid "a56b088b-e317-4c17-92c6-f14972035305")
-	)
-	(no_connect
-		(at 109.22 129.54)
-		(uuid "b23a0b1a-25ce-4fb7-9648-1b45b15484d0")
 	)
 	(no_connect
 		(at 109.22 144.78)
@@ -3909,10 +3883,6 @@
 	(no_connect
 		(at 109.22 127)
 		(uuid "e7b38c1f-bad7-4fb7-9c57-72b0b202c222")
-	)
-	(no_connect
-		(at 109.22 93.98)
-		(uuid "ee5b2248-8bb5-4fcd-9165-df3c7d413838")
 	)
 	(no_connect
 		(at 109.22 109.22)
@@ -4020,6 +3990,16 @@
 	)
 	(wire
 		(pts
+			(xy 109.22 106.68) (xy 96.52 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33d6a490-6159-4a41-b59a-372f28b91b75")
+	)
+	(wire
+		(pts
 			(xy 198.12 73.66) (xy 198.12 48.26)
 		)
 		(stroke
@@ -4037,6 +4017,16 @@
 			(type default)
 		)
 		(uuid "421b3f61-091e-4916-985e-9b9d8a82565e")
+	)
+	(wire
+		(pts
+			(xy 109.22 129.54) (xy 96.52 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "486648e3-f32f-43b8-8575-e89fab585677")
 	)
 	(wire
 		(pts
@@ -4080,6 +4070,16 @@
 	)
 	(wire
 		(pts
+			(xy 109.22 104.14) (xy 96.52 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "514f432c-a089-466d-b025-9ef6faaf1a98")
+	)
+	(wire
+		(pts
 			(xy 110.49 19.05) (xy 110.49 17.78)
 		)
 		(stroke
@@ -4087,6 +4087,16 @@
 			(type default)
 		)
 		(uuid "54c00fb5-e5fb-4e59-acb2-9881f07a7ef4")
+	)
+	(wire
+		(pts
+			(xy 109.22 96.52) (xy 96.52 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5818d86d-5e3a-4b3b-b2ef-e879aa5b2fe3")
 	)
 	(wire
 		(pts
@@ -4180,13 +4190,13 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 91.44) (xy 106.68 91.44)
+			(xy 109.22 119.38) (xy 96.52 119.38)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "85a851d7-b0a8-4f2d-bcb4-f69d31333280")
+		(uuid "8cf669d5-1d52-4fb9-90c2-7f50eb3262f1")
 	)
 	(wire
 		(pts
@@ -4197,16 +4207,6 @@
 			(type default)
 		)
 		(uuid "8f1ad146-3ec6-4b6b-8fe0-14e29251920f")
-	)
-	(wire
-		(pts
-			(xy 106.68 91.44) (xy 106.68 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "91790669-bf40-4767-8884-df93b1b3dbf7")
 	)
 	(wire
 		(pts
@@ -4237,6 +4237,36 @@
 			(type default)
 		)
 		(uuid "949df3c0-aec9-4f1f-9c1a-84045e3c995b")
+	)
+	(wire
+		(pts
+			(xy 109.22 121.92) (xy 96.52 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "96e4e314-deab-4a29-b8f0-fbb3d9acbaa0")
+	)
+	(wire
+		(pts
+			(xy 109.22 93.98) (xy 96.52 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9701f11b-e6cd-4bc2-81ec-479850aa81ec")
+	)
+	(wire
+		(pts
+			(xy 109.22 124.46) (xy 96.52 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9b6d1f52-5d73-4e2f-b28d-2196c1dc9719")
 	)
 	(wire
 		(pts
@@ -4300,6 +4330,16 @@
 	)
 	(wire
 		(pts
+			(xy 109.22 132.08) (xy 96.52 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aa055afd-a566-489f-8010-020b14c09b57")
+	)
+	(wire
+		(pts
 			(xy 204.47 93.98) (xy 209.55 93.98)
 		)
 		(stroke
@@ -4327,6 +4367,16 @@
 			(type default)
 		)
 		(uuid "b67a15e8-9cc7-4870-97fd-b8f10754856c")
+	)
+	(wire
+		(pts
+			(xy 109.22 91.44) (xy 96.52 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b83b13d3-1611-44f3-a044-9e7f6170e1f6")
 	)
 	(wire
 		(pts
@@ -4428,9 +4478,57 @@
 		)
 		(uuid "e8626749-3a5a-4cb5-b074-fea1aa72893b")
 	)
+	(global_label "SENS_MISO"
+		(shape input)
+		(at 96.52 119.38 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "033b4187-da7f-4a4f-961f-62a4a6e33a76")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 96.52 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "SENS_SCK"
+		(shape input)
+		(at 96.52 121.92 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "10debe50-116d-4941-9715-0edc1d655589")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 96.52 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "I2C_SDA"
 		(shape input)
-		(at 105.41 91.44 180)
+		(at 106.68 88.9 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4440,7 +4538,31 @@
 		)
 		(uuid "1127f5c9-cedc-48cc-850d-42815bdcb76c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 94.8048 91.44 0)
+			(at 96.0748 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "SENS_CS"
+		(shape input)
+		(at 96.52 132.08 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "29cab244-899d-4fba-9a64-77aef675aa43")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 96.52 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4476,6 +4598,54 @@
 			)
 		)
 	)
+	(global_label "SENS_MISO"
+		(shape input)
+		(at 96.52 129.54 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3f5ac518-7ebe-4c46-b7af-13836a7779db")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 96.52 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "SENS_INT"
+		(shape input)
+		(at 96.52 96.52 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "439ce1fe-266f-4088-9231-4d7ef578fa1c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 96.52 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "nRF54_SWDIO"
 		(shape input)
 		(at 165.1 144.78 0)
@@ -4497,6 +4667,30 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+	)
+	(global_label "SENS_SCL"
+		(shape input)
+		(at 96.52 106.68 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "709ce25a-b2e7-4dad-91bc-c85b30d10c09")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 96.52 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 	)
@@ -4548,6 +4742,54 @@
 			)
 		)
 	)
+	(global_label "SENS_SDA"
+		(shape input)
+		(at 96.52 104.14 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "96299bbd-b01b-4c10-bce0-db2cc514ca3e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 96.52 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "SENS_MOSI"
+		(shape input)
+		(at 96.52 124.46 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a42e4a96-1238-45ca-9b01-9557cd85f8da")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 96.52 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "PMIC_INT"
 		(shape input)
 		(at 82.55 63.5 180)
@@ -4572,6 +4814,30 @@
 			)
 		)
 	)
+	(global_label "SENS_AIN"
+		(shape input)
+		(at 96.52 91.44 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b6369bcf-cbea-434f-8e51-d5e4f07cd9f1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 96.52 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "I2C_SCL"
 		(shape input)
 		(at 109.22 86.36 180)
@@ -4585,6 +4851,30 @@
 		(uuid "c6d35104-c5af-4a9b-92d5-c69a6a74b669")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 98.6753 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "SENS_ID"
+		(shape input)
+		(at 96.52 93.98 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e27c7d07-69d7-4491-8769-644f4785be4b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 96.52 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
