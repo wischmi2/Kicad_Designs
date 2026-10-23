@@ -364,7 +364,7 @@
 			(uuid "c7634610-b113-4b25-9f9b-6040dcfc7363")
 		)
 		(embedded_fonts no)
-		(model "C:/Users/Brian/Documents/KiCad/easyeda2kicad/easyeda2kicad.3dshapes/R0402_L1.0-W0.5-H0.4.wrl"
+		(model "${EASYEDA}/R0402_L1.0-W0.5-H0.4.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -1388,7 +1388,7 @@
 			(uuid "c30e968c-7ea8-4f6f-b521-4ed6f6f893ca")
 		)
 		(embedded_fonts no)
-		(model "C:/Users/Brian/Documents/KiCad/easyeda2kicad/easyeda2kicad.3dshapes/C0603_L1.6-W0.8-H0.8.wrl"
+		(model "${EASYEDA}/C0603_L1.6-W0.8-H0.8.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -1563,19 +1563,7 @@
 			(uuid "2fac388d-fbb2-415a-b71c-467925fb87bd")
 		)
 		(embedded_fonts no)
-		(model "C:/Users/Brian/Documents/KiCad/easyeda2kicad/pH_OEM.step"
-			(hide yes)
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-		(model "C:/Users/Brian/Documents/KiCad/easyeda2kicad/pH_OEM.step"
+		(model "${EASYEDA2KICAD}/pH_OEM.step"
 			(offset
 				(xyz -120.5 10 1.5)
 			)
@@ -1825,7 +1813,7 @@
 			(uuid "7e21253d-24b7-4fa5-b61d-c0945b1192aa")
 		)
 		(embedded_fonts no)
-		(model "C:/Users/Brian/Documents/KiCad/easyeda2kicad/easyeda2kicad.3dshapes/R0402_L1.0-W0.5-H0.4.wrl"
+		(model "${EASYEDA}/R0402_L1.0-W0.5-H0.4.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -2075,7 +2063,7 @@
 			(uuid "98216e69-f48b-4915-9285-94de7a3c11a1")
 		)
 		(embedded_fonts no)
-		(model "C:/Users/Brian/Documents/KiCad/easyeda2kicad/easyeda2kicad.3dshapes/R0402_L1.0-W0.5-H0.4.wrl"
+		(model "${EASYEDA}/R0402_L1.0-W0.5-H0.4.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -2370,7 +2358,7 @@
 			(uuid "fcef01ac-48d1-4e72-a1af-32a336cecf10")
 		)
 		(embedded_fonts no)
-		(model "C:/Users/Brian/Documents/KiCad/easyeda2kicad/easyeda2kicad.3dshapes/C0603_L1.6-W0.8-H0.8.wrl"
+		(model "${EASYEDA}/C0603_L1.6-W0.8-H0.8.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -2915,7 +2903,7 @@
 			(uuid "fceba8c6-d4ac-4d79-9352-82b50a002478")
 		)
 		(embedded_fonts no)
-		(model "C:/Users/Brian/Documents/KiCad/easyeda2kicad/easyeda2kicad.3dshapes/C0603_L1.6-W0.8-H0.8.wrl"
+		(model "${EASYEDA}/C0603_L1.6-W0.8-H0.8.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -26590,7 +26578,7 @@
 			(uuid "8a6cdfe4-3395-419f-8190-00f72de0cea6")
 		)
 		(embedded_fonts no)
-		(model "C:/Users/Brian/Documents/KiCad/easyeda2kicad/XIAO nRF54LM20A.step"
+		(model "${EASYEDA2KICAD}/XIAO nRF54LM20A.step"
 			(offset
 				(xyz -0 -0 0)
 			)
@@ -26884,7 +26872,7 @@
 			(uuid "ea04ea27-1b54-49a0-bee9-109bf876eccf")
 		)
 		(embedded_fonts no)
-		(model "C:/Users/Brian/Documents/KiCad/easyeda2kicad/easyeda2kicad.3dshapes/C0402_L1.0-W0.5-H0.5.wrl"
+		(model "${EASYEDA}/C0402_L1.0-W0.5-H0.5.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -27134,7 +27122,7 @@
 			(uuid "5382eee1-f257-4d7e-8555-870a84001f1e")
 		)
 		(embedded_fonts no)
-		(model "C:/Users/Brian/Documents/KiCad/easyeda2kicad/easyeda2kicad.3dshapes/R0402_L1.0-W0.5-H0.4.wrl"
+		(model "${EASYEDA}/R0402_L1.0-W0.5-H0.4.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -28025,7 +28013,7 @@
 			(uuid "d091f442-9e3f-4d38-905e-84640a249a9c")
 		)
 		(embedded_fonts no)
-		(model "C:/Users/Brian/Documents/KiCad/easyeda2kicad/easyeda2kicad.3dshapes/R0402_L1.0-W0.5-H0.4.wrl"
+		(model "${EASYEDA}/R0402_L1.0-W0.5-H0.4.wrl"
 			(offset
 				(xyz 0 0 0)
 			)

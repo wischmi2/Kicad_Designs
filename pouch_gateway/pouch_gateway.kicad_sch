@@ -1,0 +1,1398 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "cf640be9-8fdc-40eb-a490-46c9008f2025")
+	(paper "A4")
+	(lib_symbols
+		(symbol "Mechanical:MountingHole"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "H"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole"
+				(at 0 3.175 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Mounting Hole without connection"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "MountingHole_0_1"
+				(circle
+					(center 0 0)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(wire
+		(pts
+			(xy 177.8 119.38) (xy 226.06 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "039a7275-39ac-43fd-ab78-7f4329d75cbf")
+	)
+	(wire
+		(pts
+			(xy 78.74 45.72) (xy 127 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "09b88548-0f8c-4e15-9e6a-1c1bbb6eb969")
+	)
+	(wire
+		(pts
+			(xy 177.8 132.08) (xy 226.06 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1108e462-ac7c-4619-9e11-581f6d508710")
+	)
+	(wire
+		(pts
+			(xy 78.74 48.26) (xy 127 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2d696074-11ac-4c53-88fa-171afb1a93bc")
+	)
+	(wire
+		(pts
+			(xy 177.8 116.84) (xy 226.06 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b0af553-3e84-4cca-80ba-b5049914179e")
+	)
+	(wire
+		(pts
+			(xy 177.8 124.46) (xy 226.06 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "423e4dd9-360a-4dfe-b970-1ae9057aa2f0")
+	)
+	(wire
+		(pts
+			(xy 177.8 45.72) (xy 226.06 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "536a97a9-30c3-4699-85c1-28203609a945")
+	)
+	(wire
+		(pts
+			(xy 177.8 114.3) (xy 226.06 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "62574260-8522-4b39-8924-dff0b787dc86")
+	)
+	(wire
+		(pts
+			(xy 177.8 101.6) (xy 226.06 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6f791412-0ad9-43e5-962c-f046241e8eed")
+	)
+	(wire
+		(pts
+			(xy 177.8 121.92) (xy 226.06 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7724cded-8832-4df7-8777-d4f097211b92")
+	)
+	(wire
+		(pts
+			(xy 177.8 129.54) (xy 226.06 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80f106b1-9508-4261-88c4-58dd247c6205")
+	)
+	(wire
+		(pts
+			(xy 177.8 48.26) (xy 226.06 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9049d350-086b-4e8a-b1c6-464dcad5cf7d")
+	)
+	(wire
+		(pts
+			(xy 177.8 53.34) (xy 226.06 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a850ddd1-57ac-4067-83af-3945a57b1386")
+	)
+	(wire
+		(pts
+			(xy 177.8 55.88) (xy 226.06 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ad83bf26-268c-4204-a919-75849529cd47")
+	)
+	(wire
+		(pts
+			(xy 177.8 50.8) (xy 226.06 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1621be2-f755-47a4-b51e-f097b30e7bd2")
+	)
+	(wire
+		(pts
+			(xy 177.8 127) (xy 226.06 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b6ffab7c-4d73-4f8f-80fc-40fba02a535e")
+	)
+	(wire
+		(pts
+			(xy 78.74 101.6) (xy 127 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bc2b80cf-48eb-4a9c-9220-46117851b8e2")
+	)
+	(wire
+		(pts
+			(xy 78.74 104.14) (xy 127 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cf4ee5f2-4af0-4bdb-a932-e65454b0a76a")
+	)
+	(wire
+		(pts
+			(xy 78.74 106.68) (xy 127 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d18a5767-0fa7-4a01-a174-1788bfed6c62")
+	)
+	(wire
+		(pts
+			(xy 177.8 104.14) (xy 226.06 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d4d32c48-bb79-4b3e-9567-b5167629743b")
+	)
+	(wire
+		(pts
+			(xy 177.8 106.68) (xy 226.06 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df80e1be-b7c0-45ac-9cfa-4761a8607615")
+	)
+	(wire
+		(pts
+			(xy 177.8 111.76) (xy 226.06 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e0ed8228-9892-4ffb-843d-ea58988503eb")
+	)
+	(wire
+		(pts
+			(xy 177.8 109.22) (xy 226.06 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ebf4d985-c899-4799-9b57-fc6b5f653a36")
+	)
+	(wire
+		(pts
+			(xy 78.74 50.8) (xy 127 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f5701f68-c6a3-4ee3-85da-70dcf9c58794")
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 60.96 160.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5c1c673e-4285-40fa-b521-5a22e4eb0b43")
+		(property "Reference" "H2"
+			(at 60.96 157.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "M2"
+			(at 60.96 162.56 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
+			(at 60.96 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 60.96 160.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "pouch_gateway"
+				(path "/cf640be9-8fdc-40eb-a490-46c9008f2025"
+					(reference "H2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 91.44 160.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6e433077-c1bd-4580-9824-cb1487d90ae1")
+		(property "Reference" "H4"
+			(at 91.44 157.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "M2"
+			(at 91.44 162.56 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
+			(at 91.44 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 91.44 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 91.44 160.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "pouch_gateway"
+				(path "/cf640be9-8fdc-40eb-a490-46c9008f2025"
+					(reference "H4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 45.72 160.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "95f4c541-99c8-426b-b602-c60c1bbbd2b8")
+		(property "Reference" "H1"
+			(at 45.72 157.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "M2"
+			(at 45.72 162.56 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
+			(at 45.72 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 45.72 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 45.72 160.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "pouch_gateway"
+				(path "/cf640be9-8fdc-40eb-a490-46c9008f2025"
+					(reference "H1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 76.2 160.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "bc021b8f-8153-4569-80ee-e993cef75b6f")
+		(property "Reference" "H3"
+			(at 76.2 157.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "M2"
+			(at 76.2 162.56 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
+			(at 76.2 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 76.2 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 76.2 160.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "pouch_gateway"
+				(path "/cf640be9-8fdc-40eb-a490-46c9008f2025"
+					(reference "H3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet
+		(at 226.06 38.1)
+		(size 40.64 22.86)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "2fb29901-cf16-4a96-9a27-4a600d688b3f")
+		(property "Sheetname" "Reset_Debug_Boot"
+			(at 226.06 37.39 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "reset_debug.kicad_sch"
+			(at 226.06 61.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "PDN" passive
+			(at 226.06 45.72 180)
+			(uuid "f79132c1-3434-47d5-94e4-c8a030165b3b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SWCLK" passive
+			(at 226.06 48.26 180)
+			(uuid "a821338d-e61c-4b63-b414-4352a410999f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SWDIO" passive
+			(at 226.06 50.8 180)
+			(uuid "eff07390-6306-4b55-b2f1-6682c942e8f1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "RF_CNTL_2" passive
+			(at 226.06 53.34 180)
+			(uuid "84828c69-a4ea-4deb-919d-ba9ef43baf48")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "EXT_REQ" passive
+			(at 226.06 55.88 180)
+			(uuid "eb168243-24ff-463a-8f3a-fe74d81b39b2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "pouch_gateway"
+				(path "/cf640be9-8fdc-40eb-a490-46c9008f2025"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 38.1 96.52)
+		(size 40.64 15.24)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "72c98b6a-dcd1-4397-965c-e67291812d60")
+		(property "Sheetname" "RF"
+			(at 38.1 95.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "rf.kicad_sch"
+			(at 38.1 112.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "RF_MAIN" passive
+			(at 78.74 101.6 0)
+			(uuid "a13cda10-7d79-4c50-a8bc-d7cd83ddb74f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "BT_OUT" passive
+			(at 78.74 104.14 0)
+			(uuid "6d71fbef-7bd9-49e6-87ac-6b2f17da6b39")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "BT_IN" passive
+			(at 78.74 106.68 0)
+			(uuid "bf498806-43dd-4e81-9a39-697822bad097")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "pouch_gateway"
+				(path "/cf640be9-8fdc-40eb-a490-46c9008f2025"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 127 38.1)
+		(size 50.8 99.06)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "c6206072-17c0-4928-b172-202bc006911b")
+		(property "Sheetname" "MCU"
+			(at 127 37.39 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "mcu.kicad_sch"
+			(at 127 137.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "USB_DP" passive
+			(at 127 45.72 180)
+			(uuid "b702a757-6a7f-44d1-9b17-8b6dbac4e7da")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "USB_DM" passive
+			(at 127 48.26 180)
+			(uuid "757fbac3-87ff-4e17-8dd5-f4160e1f0f30")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "USB_VBUS_SNS" passive
+			(at 127 50.8 180)
+			(uuid "72b445ae-ae4c-4acd-a9ec-f31df0eb6c42")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "PDN" passive
+			(at 177.8 45.72 0)
+			(uuid "8e5c2060-2ffe-4996-bc49-c2ef390b960b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SWCLK" passive
+			(at 177.8 48.26 0)
+			(uuid "fee78cf6-d4c9-4a08-8e92-ae6a86157fc2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SWDIO" passive
+			(at 177.8 50.8 0)
+			(uuid "edd176ad-4f9b-480d-9b76-6b5dd772ebdc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "RF_CNTL_2" passive
+			(at 177.8 53.34 0)
+			(uuid "2e085407-6314-4c42-b288-bd3f161699ad")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "EXT_REQ" passive
+			(at 177.8 55.88 0)
+			(uuid "8c9713b0-8b51-475d-ba5d-0194329f6277")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "RF_MAIN" passive
+			(at 127 101.6 180)
+			(uuid "e2445b32-7478-43bb-bda8-975e7150f4f1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "BT_OUT" passive
+			(at 127 104.14 180)
+			(uuid "079db155-6abf-48d4-b483-235017085757")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "BT_IN" passive
+			(at 127 106.68 180)
+			(uuid "705adad1-f9d9-4a77-817b-1651bebfc982")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LED_R" passive
+			(at 177.8 101.6 0)
+			(uuid "14c08185-6513-4b1a-acb8-c4f3b5e19ec1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "LED_G" passive
+			(at 177.8 104.14 0)
+			(uuid "efbbfe03-ede2-4f41-b8eb-af7870f51cc6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "LED_B" passive
+			(at 177.8 106.68 0)
+			(uuid "df61c46e-e4f4-401c-9de9-714784508ed4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "BTN_USER" passive
+			(at 177.8 109.22 0)
+			(uuid "2050e5ef-4c1d-47b5-9652-1aee6b9c6f00")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "UART_TX" passive
+			(at 177.8 111.76 0)
+			(uuid "fd705a1b-01e3-4f14-bc7e-1faccf08f860")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "UART_RX" passive
+			(at 177.8 114.3 0)
+			(uuid "00d6beaf-b5d6-4afe-8795-b00e1e17614a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "LCD_BL" passive
+			(at 177.8 116.84 0)
+			(uuid "48e59dac-a1e2-452e-8a85-b630b4bdfb3f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "LCD_CS" passive
+			(at 177.8 119.38 0)
+			(uuid "c1184d28-d5ea-4ea6-9471-7c6d48c87186")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "LCD_DC" passive
+			(at 177.8 121.92 0)
+			(uuid "1fa5cfd2-d3c1-4646-a542-91f817c1dd94")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "LCD_DIN" passive
+			(at 177.8 124.46 0)
+			(uuid "a5491181-4cb7-4d37-96d3-1c2842050f58")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "LCD_RST" passive
+			(at 177.8 127 0)
+			(uuid "5a4de4d9-6eca-4a76-90e5-c33779b52451")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "LCD_SCK" passive
+			(at 177.8 129.54 0)
+			(uuid "9ba94b53-81a2-4be2-b209-3d826885bcc8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "LCD_TE" passive
+			(at 177.8 132.08 0)
+			(uuid "39fcca71-0c24-4748-8f22-0107af61306d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "pouch_gateway"
+				(path "/cf640be9-8fdc-40eb-a490-46c9008f2025"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 38.1 38.1)
+		(size 40.64 20.32)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "d43cadb9-4347-45dd-a5df-cdb1cccd0490")
+		(property "Sheetname" "USB"
+			(at 38.1 37.39 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "usb.kicad_sch"
+			(at 38.1 59 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "USB_DP" passive
+			(at 78.74 45.72 0)
+			(uuid "ed3a3f42-d934-4871-adb9-939326d44f0d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "USB_DM" passive
+			(at 78.74 48.26 0)
+			(uuid "198d6bfb-7313-41de-9278-ebc3d79e93df")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "USB_VBUS_SNS" passive
+			(at 78.74 50.8 0)
+			(uuid "681e8c8e-44d5-4155-927f-154b25abc765")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "pouch_gateway"
+				(path "/cf640be9-8fdc-40eb-a490-46c9008f2025"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 226.06 96.52)
+		(size 40.64 40.64)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "edb2e030-b78a-4f7a-b192-d8bfc22d98ee")
+		(property "Sheetname" "UI_IO"
+			(at 226.06 95.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "ui_io.kicad_sch"
+			(at 226.06 137.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "LED_R" passive
+			(at 226.06 101.6 180)
+			(uuid "9030e1dc-6648-4a68-9613-f42c99939fa6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LED_G" passive
+			(at 226.06 104.14 180)
+			(uuid "269c3aa3-4a71-4f05-966b-aa69c1fcb8dc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LED_B" passive
+			(at 226.06 106.68 180)
+			(uuid "af6718b6-c228-4433-8d26-539e87cc8e15")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "BTN_USER" passive
+			(at 226.06 109.22 180)
+			(uuid "523b9023-8542-4eee-8fe8-b51dc9380e23")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "UART_TX" passive
+			(at 226.06 111.76 180)
+			(uuid "462b3692-6623-40e4-8553-3cc7b7ea04e2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "UART_RX" passive
+			(at 226.06 114.3 180)
+			(uuid "a6c9de79-d1ba-42e1-9637-a7eaeb8125ec")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LCD_BL" passive
+			(at 226.06 116.84 180)
+			(uuid "35e7ae12-39d5-4758-94b5-029d56c57189")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LCD_CS" passive
+			(at 226.06 119.38 180)
+			(uuid "dc19deea-9711-49ca-8b25-d33caf47b083")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LCD_DC" passive
+			(at 226.06 121.92 180)
+			(uuid "e9acba4d-ee82-43d9-bc5d-3bab9367974b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LCD_DIN" passive
+			(at 226.06 124.46 180)
+			(uuid "b06862a8-3172-4c1f-b472-4330ab5ebd23")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LCD_RST" passive
+			(at 226.06 127 180)
+			(uuid "a9df8941-3647-439f-b8fd-8aeb2716a34e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LCD_SCK" passive
+			(at 226.06 129.54 180)
+			(uuid "a4150dc3-8d05-4b31-a4c1-a1621b198e42")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LCD_TE" passive
+			(at 226.06 132.08 180)
+			(uuid "28e307c3-45e8-4140-b30f-ddc48ab49778")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "pouch_gateway"
+				(path "/cf640be9-8fdc-40eb-a490-46c9008f2025"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 38.1 68.58)
+		(size 40.64 15.24)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "f6162209-4d83-4b16-8abf-d68b9b2f80d0")
+		(property "Sheetname" "Power"
+			(at 38.1 67.87 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "power.kicad_sch"
+			(at 38.1 84.4 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "pouch_gateway"
+				(path "/cf640be9-8fdc-40eb-a490-46c9008f2025"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

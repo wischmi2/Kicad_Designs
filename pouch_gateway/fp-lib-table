@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "pouch_gateway")(type "KiCad")(uri "C:/Users/Brian/Kicad_Designs/pouch_gateway/pouch_gateway.pretty")(options "")(descr ""))
+)

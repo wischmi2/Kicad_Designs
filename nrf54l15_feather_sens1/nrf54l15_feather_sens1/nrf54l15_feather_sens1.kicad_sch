@@ -1,0 +1,106 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "55da176d-6431-4d58-ada7-b89d931b1434")
+	(paper "A4")
+	(lib_symbols)
+	(sheet
+		(at 26.162 25.654)
+		(size 41.148 40.132)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "9f4015c9-bc16-4983-a249-fb3ed0079cbe")
+		(property "Sheetname" "Sensor Connector"
+			(at 26.162 24.9424 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "sensor_connector.kicad_sch"
+			(at 26.162 66.3706 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "nrf54l15_feather_sens1"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434"
+					(page "9")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 85.09 27.432)
+		(size 40.64 39.624)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "fe2ea5fc-ce63-47c3-bd94-3fdd0b559ca6")
+		(property "Sheetname" "pH Sensor"
+			(at 85.09 26.7204 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "ph_sensor.kicad_sch"
+			(at 85.09 67.6406 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "nrf54l15_feather_sens1"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434"
+					(page "11")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
