@@ -1,0 +1,49 @@
+{
+  "enabledMcpjsonServers": ["kicad", "kicad-pro", "fusion"],
+  "permissions": {
+    "additionalDirectories": ["C:\\Personal-Agents\\shared"],
+    "allow": [
+      "mcp__kicad",
+      "mcp__kicad-pro",
+      "mcp__fusion",
+      "Bash(kicad-cli sch *)",
+      "Bash(kicad-cli pcb drc *)",
+      "Bash(kicad-cli pcb export step *)",
+      "Bash(kicad-cli pcb export svg *)",
+      "Bash(kicad-cli pcb render *)",
+      "Bash(kicad-cli version*)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git show*)",
+      "Bash(git branch*)",
+      "Bash(git fetch*)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git rev-parse*)",
+      "Bash(git worktree list*)",
+      "Edit(/**)",
+      "Edit(//c/Personal-Agents/shared/**)",
+      "WebFetch(domain:lcsc.com)",
+      "WebFetch(domain:www.lcsc.com)",
+      "WebFetch(domain:jlcpcb.com)"
+    ],
+    "ask": [
+      "Bash(git push*)",
+      "Bash(git merge*)",
+      "Bash(git rebase*)",
+      "Bash(kicad-cli pcb export gerbers *)",
+      "Bash(kicad-cli pcb export gerber *)",
+      "Bash(kicad-cli pcb export drill *)",
+      "Bash(kicad-cli pcb export pos *)",
+      "Bash(kicad-cli jobset *)"
+    ],
+    "deny": [
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
+      "Bash(git push * --force*)",
+      "Bash(git reset --hard*)",
+      "Bash(git clean *)"
+    ]
+  }
+}

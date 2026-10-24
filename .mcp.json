@@ -1,0 +1,26 @@
+{
+  "mcpServers": {
+    "kicad": {
+      "command": "node",
+      "args": ["C:\\Users\\Brian\\KiCAD-MCP-Server\\dist\\index.js"],
+      "env": {
+        "PYTHONPATH": "C:\\Program Files\\KiCad\\10.0\\lib\\python3\\dist-packages",
+        "NODE_ENV": "production",
+        "LOG_LEVEL": "info"
+      }
+    },
+    "kicad-pro": {
+      "command": "uvx",
+      "args": ["kicad-mcp-pro", "--profile", "agent_full", "--mode", "write"],
+      "env": {
+        "KICAD_MCP_PROJECT_DIR": "C:\\Personal-Agents\\worktrees",
+        "KICAD_MCP_WORKSPACE_ROOT": "C:\\Personal-Agents"
+      }
+    },
+    "fusion": {
+      "command": "REPLACE_WITH_FUSION_MCP_COMMAND",
+      "args": ["REPLACE_WITH_FUSION_MCP_ARGS"],
+      "env": {}
+    }
+  }
+}

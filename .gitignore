@@ -38,3 +38,12 @@ nrf54l15_v3/nrf54l15_v3/nrf54l15_v2/
 *_drc_violations.json
 *.bak_*
 *.bak
+
+# Local backup snapshots and editor folders (keep out of agent view)
+_baseline/
+_pre_*/
+_verify_orig/
+.vscode/
+
+# Personal Claude Code overrides and secrets
+.claude/settings.local.json
