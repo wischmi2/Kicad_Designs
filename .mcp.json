@@ -11,7 +11,7 @@
     },
     "kicad-pro": {
       "command": "uvx",
-      "args": ["--python", "3.12", "kicad-mcp-pro", "--profile", "agent_full", "--mode", "write"],
+      "args": ["kicad-mcp-pro", "--profile", "agent_full", "--mode", "write"],
       "env": {
         "KICAD_MCP_PROJECT_DIR": "C:\\Personal-Agents\\worktrees",
         "KICAD_MCP_WORKSPACE_ROOT": "C:\\Personal-Agents"
