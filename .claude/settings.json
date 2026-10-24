@@ -1,11 +1,11 @@
 {
-  "enabledMcpjsonServers": ["kicad", "kicad-pro", "fusion"],
+  "enabledMcpjsonServers": ["kicad", "kicad-pro", "fusion-essentials"],
   "permissions": {
     "additionalDirectories": ["C:\\Personal-Agents\\shared"],
     "allow": [
       "mcp__kicad",
       "mcp__kicad-pro",
-      "mcp__fusion",
+      "mcp__fusion-essentials",
       "Bash(kicad-cli sch *)",
       "Bash(kicad-cli pcb drc *)",
       "Bash(kicad-cli pcb export step *)",
