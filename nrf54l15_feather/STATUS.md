@@ -1,7 +1,7 @@
 # nRF54L15 feather - Status
 
 Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\nrf54l15_feather\nrf54l15_feather\nrf54l15_feather.kicad_pro
-Last reviewed: 2026-10-23
+Last reviewed: 2026-10-24
 
 **State: ACTIVE main board (2026-10-23, per Brian).** It replaces nrf54l15_v4. The active sensor board for it is nrf54l15_feather_sens1 (pH).
 
@@ -30,7 +30,14 @@ Board in Feather form factor built around the nRF54L15 (U6, nRF54L15-QFXX) with 
 - Enclosure / STEP: there's a vendor STEP for the 503480-1400 connector (5034801400_0.stp). No board STEP is in C:\Personal-Agents\shared\handoff\ yet.
 
 ## Open work
-- Add four mounting holes (in progress, per CLAUDE.md).
+- **Feather-size rework (study done 2026-10-24, waiting on Brian).** Full write-up: feather-size-study.md. Baseline tag: `feather-pre-resize`.
+  - The board has no Feather headers or pinout yet; only the USB-C position matches.
+  - Standard 50.8 x 22.86 mm fits on area, but the edges run out: no edge left for CN1, U5 or J3.
+  - Options: (a) true Feather, drop CN1, about 3 to 4 days; (b) Feather outline with connectors on the bottom, not recommended; (c) Feather headers and holes on a longer board (22.86 x about 60 to 66 mm), about 2 to 3 days.
+  - Every option is a full re-place and re-route.
+- Add four mounting holes (in progress, per CLAUDE.md). Hole positions depend on the Feather-size decision; the Feather spec uses M2.5.
+- Check SENS_MISO: it's on two U6 pins (pad 11 and pad 15). Possible schematic bug.
+- Check the AE1 keepout (3.1 x 5.9 mm now) against the 2450AT18A100E datasheet ground clearance before the antenna moves.
 - Clear the ERC errors above, or document why they're acceptable.
 - Fix the co-located or too-close GND vias and the dangling tracks.
 - Export a board STEP for fusion-enclosure once the holes are placed.
@@ -41,7 +48,8 @@ Board in Feather form factor built around the nRF54L15 (U6, nRF54L15-QFXX) with 
   - Do these before fab.
 
 ## Questions for Brian
-- Mounting holes: what size (M2, M2.5 or M3), and where? The standard Feather pattern, or something else? The outline is 66.04 x 25.40 mm, which isn't the standard 50.8 x 22.86 mm Feather size. Is that intentional?
+- Feather size (see feather-size-study.md, "Decisions needed"): option (a), (b) or (c)? Drop or keep CN1? Where do VSENS and solar go? SWD as Tag-Connect or pads? What does the Feather EN pin drive?
+- Mounting holes: M2.5 per the Feather spec, plated at the USB end and NPTH at the antenna end? Positions follow the option chosen above.
 - Are the USB D+/D- pins left unconnected on purpose (charge-only USB)?
 - Is moisture_sensor.kicad_sch meant to be empty?
 - Do the Gerbers and the 7z in the folder match the current layout, or are they from an earlier revision? Was this revision ordered?
