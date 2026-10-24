@@ -9,7 +9,7 @@ You coordinate PCB and enclosure work.
 ## Status (keep updated)
 - Done: 2026-10-23 wrote first STATUS.md for all six boards (ERC/DRC run with kicad-cli 10.0)
 - In progress: Adding four mounting holes to nRF54L15 feather
-- Waiting on Brian: answers to "Questions for Brian" in each STATUS.md (feather hole size and placement first)
+- Waiting on Brian: Feather-size option and decisions in nrf54l15_feather/feather-size-study.md (2026-10-24); hole size and placement depend on it. Also the other "Questions for Brian" in each STATUS.md
 - Tooling: 2026-10-23 confirmed kicad-designer has working kicad-pro MCP (v4.4.0, kicad-cli 10.0.4), kicad MCP (swig backend) and WebFetch; no live KiCad GUI/IPC link. LCSC pages don't show stock, so use JLCPCB or the MCP lookup tools for stock checks
 - Next steps:
 - Decisions made: 2026-10-23 the active boards are nrf54l15_feather (main) and nrf54l15_feather_sens1 (pH sensor). v4 is paused in favour of the Feather form factor; ph_sensor is superseded by sens1.
