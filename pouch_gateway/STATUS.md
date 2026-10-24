@@ -42,6 +42,9 @@ Golioth Pouch BLE to Wi-Fi gateway, Rev A.
 - Is the buck regulator decided (TLV62569DBVR)? DESIGN_NOTES.md still lists it as open.
 - Are the Gerbers and the 7z current, and were they sent to fab?
 
+## Decisions
+- 2026-10-24 (Brian): the gateway PCB has no battery circuit. It's powered only by USB-C. A battery, if used, needs an external charger/5 V boost module feeding J1, inside the enclosure. The PCB is fixed and on order.
+
 ## Decisions (from DESIGN_NOTES.md)
 - 4 layers. M2 holes on the display hole pattern, which replaces the earlier mounting plan.
 - SWD selected with a 5.1 kohm pull-down on RF_CNTL_2. RF_CNTL_0 left open (40 MHz XOSC).
