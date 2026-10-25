@@ -24,7 +24,7 @@ Stages from the 2026-10-24 task. Each stage is its own commit on agent/nrf54l15-
 3. [done] Placement per Proposal C, all 64 parts on top (J3, U4, U5 flipped from the bottom). All old tracks and vias (1055 items) were ripped up; the board is unrouted after this stage.
    - J1 USB-C: origin (95.32, 121.43) rot -90, centred on the USB short edge, mouth at x = 90.
    - U5 solar JST: (101.95, 116.42) rot 0, opening on the top long edge. U4 battery JST: (101.95, 126.44) rot 180, opening on the bottom long edge.
-   - **CN1: origin (138.39, 121.43) rot -90, centred on the far short edge** (same edge offset and pad orientation as the old board, signal pads toward the edge at x = 139.71). Feather coordinates: centre (48.39, 11.43); courtyard fx 46.07 to 50.71, fy 6.73 to 16.13. Pin 1 is at board y 118.18 (top side of the connector), pin 14 at y 124.68.
+   - **CN1 (superseded by run 2 stage 1, see below): origin (138.39, 121.43) rot -90, centred on the far short edge** (same edge offset and pad orientation as the old board, signal pads toward the edge at x = 139.71). Feather coordinates: centre (48.39, 11.43); courtyard fx 46.07 to 50.71, fy 6.73 to 16.13. Pin 1 is at board y 118.18 (top side of the connector), pin 14 at y 124.68.
    - AE1 chip antenna: (131.55, 130.23) rot 0 on the bottom long edge, feed pad 1 at (129.97, 130.23). Keep-out moved to x 128.55 to 134.55, y 128.75 to the edge (same 5.9 x 3.1 size as before, now running to the edge); pads allowed (AE1's own), tracks allowed for the feed line, no vias, no pours.
    - RF chain (L5, C8, L6, C5, L8, C13, R11 switch, C12, L2, L3) runs straight down from U6 pin 31 at x 128.6, then C12/L3 to the antenna feed. RF1 U.FL + R11 ANT_SEL kept, RF1 at (126, 127.9) to the left of the switch.
    - U6 nRF54L15 at (128.4, 117.9) rot -90 (ANT, XTAL and SWD pins face down). X1 bottom-right of U6. DCC/DECD/DECA parts (L7, C10, L4, C1, C11, C9, C26) between U6 and CN1. Sensor pull-ups (R15 to R19) and C45 between X1 and CN1.
@@ -57,6 +57,14 @@ Stages from the 2026-10-24 task. Each stage is its own commit on agent/nrf54l15-
    - Warnings: 199 silk overlap and 170 silk over copper (reference text not moved yet), 55 lib_footprint_issues (EasyEDA library not configured in kicad-cli), 8 silk edge clearance, 4 dangling vias.
    - ERC unchanged: 1 error (C4, accepted), 204 warnings.
    - This is autorouter-quality routing. Check the AEM10330 loop (DS section 10), the nPM1300 buck loops and the RF chain by hand before fab.
+
+## Feather rework run 2 (2026-10-25, kicad-designer)
+1. [done] CN1 turned 180 degrees so the FFC opening faces the far short edge. **Orientation verified against SD-503480-001 by coordinator 2026-10-25** (back-flip: signal tails at the back, FFC enters from the front on the mounting-tab side).
+   - CN1 origin **(138.475, 121.43), rotation +90**. Signal pads at x = 137.15: **pin 1 (GND) at (137.15, 124.68)**, **pin 14 (GND) at (137.15, 118.18)**; pin order runs from pin 1 at the bottom (U4 long edge side) to pin 14 at the top. MP tabs at (139.80, 117.39) and (139.80, 125.47).
+   - **Housing front (FFC opening) at x = 140.45**, 0.35 mm inside the board edge (x 140.8). The limit is the MP tab copper: its outer edge is at x 140.30, which is the board's DRC copper-to-edge rule of 0.5 mm (the 0.45 mm figure was only the Freerouting keep-out; 0.45 would give a DRC error). Housing front = MP outer edge + 0.15 mm per the datasheet land pattern. Courtyard reaches x 140.795.
+   - 3D model checked with kicad-cli pcb render: the model's contact tails sit over the signal pads (inner side), and the black actuator (modelled closed) covers the front 1.65 mm on the edge side, with the FFC slot facing the edge. That matches the datasheet top view (closed actuator over the front, tails visible at the back), so the model offset/rotation in the footprint was left unchanged.
+   - Fan-out: pins 2 (VSENS) and 4 (SCL) go straight left on F.Cu to R16; pins 1 and 14 go on F.Cu to the MP tabs and a GND via each; every other pin has a 0.15 mm F.Cu stub to a 0.6/0.3 via in a three-column staircase under the connector body (x 138.05 / 138.80 / 139.55, all tented, inside the body outline). From there the nets run on In2.Cu / B.Cu (and short F.Cu pieces) to the old routes. The CN1 GND pads (1, 12, 14) use a solid zone connection.
+   - All CN1 nets connected. DRC: 15 errors (4 J1 accepted, 2 VINT hole clearance, 5 starved thermal, 4 mask bridge, all pre-existing), 27 unconnected (none on CN1), 0 parity. ERC: 0 errors, 204 warnings (kicad-cli 10.0.4 now reports the C4 power-pin case as a warning).
 
 ### Next steps (for the next run)
 1. Hand-route the 8 unconnected signals around U2. The left and right faces of U2 are where it's congested; moving L9/L10 and the VSYS caps 0.5 mm out from U2 should free a path.
@@ -104,7 +112,6 @@ Stages from the 2026-10-24 task. Each stage is its own commit on agent/nrf54l15-
 ## Questions for Brian
 - (2026-10-25) The mounting holes use the Feather M0 sizes: 2.5 mm drill, plated with a 3.2 mm pad at the USB end, NPTH at the far end. M2.5 screws fit snugly; a 2.7 mm clearance drill is the usual alternative. Keep 2.5 or switch to 2.7?
 - (2026-10-25) Should the plated USB-end holes H1/H2 be tied to GND (the screws would then ground the board to the enclosure), or left floating as they are now?
-- (2026-10-25) Please confirm CN1's (503480-1400) orientation. It keeps the old board's orientation, with the signal pads toward the board edge. If the FFC actually enters from the other side, CN1 has to turn 180 degrees.
 - (2026-10-25) The antenna keep-out is still the old 5.9 x 3.1 mm area, now running to the edge. The Johanson datasheet PDF is image-only and couldn't be read automatically, so the datasheet's ground-clearance figure is still unchecked.
 - (closed 2026-10-24) Feather size: standard outline, keep all connectors, Proposal C (see Decisions).
 - (closed 2026-10-24) USB is charge-only; D+/D-/SBU now carry no-connect flags.
