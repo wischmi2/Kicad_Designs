@@ -520,7 +520,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "feather_sensor_template.kicad_pro",
+    "filename": "feather_water_level.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -849,8 +849,8 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "feather_sensor_template.kicad_sch",
-        "name": "Root",
+        "filename": "feather_water_level.kicad_sch",
+        "name": "feather_water_level",
         "uuid": "55da176d-6431-4d58-ada7-b89d931b1434"
       }
     ],
