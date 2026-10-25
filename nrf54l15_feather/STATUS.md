@@ -1,7 +1,7 @@
 # nRF54L15 feather - Status
 
 Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\nrf54l15_feather\nrf54l15_feather\nrf54l15_feather.kicad_pro
-Last reviewed: 2026-10-25
+Last reviewed: 2026-10-25 (run 3)
 
 **State: ACTIVE main board (2026-10-23, per Brian).** It replaces nrf54l15_v4. The active sensor board for it is nrf54l15_feather_sens1 (pH).
 
@@ -83,20 +83,48 @@ Stages from the 2026-10-24 task. Each stage is its own commit on agent/nrf54l15-
    - **Still open (stopped after 3 attempts each, see Next steps):** VBUS from U2.21 (trapped between the VSYS and VBUSOUT fan-out vias on U2's left side; the dense via column there leaves no 0.2 mm channel), VSENS from U2.29 (no escape from the U2 bottom row and no via site within reach), SENS_SCL from U6.39 (boxed in by the SDA fan-out, C1/C9 and their GND links), I2C_SCL between U6.4 and R12/U2.14 (R12.1 sits in a closed F.Cu pocket with no via site), GND on IC1.18 + C42.2 (the /Solar/LOAD track runs between IC1's bottom pins and its EP) and GND on C13.2 (RF area), plus one small F.Cu pour island.
 3. [done] DRC error fixes (commit 2fdadd7): VDDIO track moved from y 129.04 (inside J3's bottom pad row) to y 128.6 between the rows; /Solar/VINT moved from B.Cu (it ran between IC1's thermal vias) to In2; solid zone connection on the EPs/thermal vias of IC1, U2, U6 and on the GND pads of R1, R2, R8, C44, C11 (and CN1 pins 1/12/14). Result: only the 4 accepted J1 hole-clearance errors remain.
 4. [done] Silkscreen and vias (commit 9014b25): 33 references re-placed at 0.8 mm, clear of pads, copper and the edge; 31 references in the dense passive clusters are hidden on silk (still on F.Fab for the assembly drawing); H1-H4 references and all silk values hidden. The 4 dangling vias (VBUS, VSENS, SENS_SCL, I2C_SCL leftovers) and their stubs removed. The remaining 170 silk_overlap / 95 silk_over_copper / 2 silk_edge warnings are all footprint outline graphics (EasyEDA footprints), not text.
-5. [done] STEP exported: C:\Personal-Agents\shared\handoff
-rf54l15_feather
-rf54l15_feather_2026-10-25b.step (CN1 rotated, AE1 moved, holes 2.7 mm). EasyEDA 3D models are still missing on this PC, so most parts have no body.
+5. [done] STEP exported: C:\Personal-Agents\shared\handoff\nrf54l15_feather\nrf54l15_feather_2026-10-25b.step (CN1 rotated, AE1 moved, holes 2.7 mm). EasyEDA 3D models are still missing on this PC, so most parts have no body.
    - **Final checks (kicad-cli 10.0.4): ERC 0 errors, 204 warnings (77 pin_to_pin, 57 lib_symbol_issues, 55 footprint_link_issues, 5 off-grid, 5 lib_symbol_mismatch, 3 same local/global label, 2 multiple net names). DRC 4 errors (J1 footprint hole clearance, accepted), 322 warnings (170 silk_overlap, 95 silk_over_copper, 55 lib_footprint_issues, 2 silk_edge), 7 unconnected, 0 parity.**
 
+## Feather rework run 3 (2026-10-25, kicad-designer): the 7 unconnected items
+Brian approved small placement changes (small passives and vias, about 1 mm or less) to clear the 7 unconnected items from run 2. Each step was checked with kicad-cli 10.0.4 DRC (zones refilled). No new DRC errors. Routing used a small clearance-checked grid router (scratch script, not committed).
+1. [done] **VBUS** (U2.21 to C14.1/J1), commit 8dbaf71. The VSYS F.Cu path from U2.20 boxed in pins 21-24, so the VSYS via moved out of that pocket and the fan-out vias were spaced along x 114.62:
+   - VSYS via (114.70, 116.80) -> (114.10, 116.80). VSYS F.Cu now runs straight left from U2.20 along y 116.75, then down x 114.05 (the old diagonal is gone). The In2 VSYS tie to U2.4/C22 gets about 0.6 mm longer. The F.Cu VSYS path to C16/C20 is about the same length.
+   - VBAT F.Cu from U2.19 now runs left along y 116.25 to x 113.5, then down to the existing (113.4, 117.1) node. The old diagonal is gone, and the path is about 0.5 mm longer.
+   - VBUS: new via (114.62, 117.30). B.Cu 0.25 mm down x 113.95 to a new via (114.15, 123.30), then F.Cu to C14.1.
+   - VBUSOUT via (114.70, 117.75) -> (114.62, 118.00). CC1 via (114.646, 118.478) -> (114.62, 118.72). CC2 via (114.919, 119.281) -> (114.62, 119.42). The CC2 In2 lead-in was re-drawn.
+2. [done] **VSENS** (U2.29 to C45/R15-R18), commit e8a6ac8.
+   - C3 (118.10, 121.60) -> (118.10, 121.80), 0.2 mm down, to make room for a new VSENS via at (118.15, 120.10) under U2.29.
+   - VDDIO via (120.18, 119.748) -> (120.18, 119.65).
+   - VBUSOUT B.Cu re-routed: (114.62, 118.0) -> (114.85, 118.0) -> diagonal -> (119.1, 122.25) -> via (120.307, 122.261).
+   - VSENS runs on In2 along y 120.2 to x 125, then down to y 124.15 (moved there in item 7) and up to a new via (134.0, 123.05) next to C45.
+3. [OPEN] **SENS_SCL** (U6.39 to R16.2/CN1.4). Stopped after 3 attempts. C1 (0201 DECA cap at (132.696, 119.2)) sits directly in front of U6.39: C1.1 is 0.49 mm from the pin end. The SDA fan-out (pin 38) closes the path below, and the DECA via (132.203, 117.801) with its pin-43 stub closes the 0.15 mm channel above.
+   - The router found no path, even in a what-if with the C1/C9 GND links and the C1 DECA links removed. The only via site would be where C1 is.
+   - Fix needs: move C1 (and C11) about 0.3-0.5 mm up/right and re-route the DECA bridge (C1.1-C11.1-L4.2) and the C1/C9 GND links, or move SENS_SCL to another U6 pin (schematic + firmware change). This changes the DECA decoupling loop, so it was left for review.
+4. [done] **I2C_SCL** (U6.4 to R12.1/U2.14), commit 01ed624.
+   - R12 (117.53, 112.70) -> (117.60, 112.20). New SCL via (117.60, 113.20) under R12.1. The VDDIO R12.2-R13.2 link was re-drawn.
+   - SENS_AIN fan-out via (130.362, 113.539) -> (130.75, 113.50), so a new SCL via (129.85, 113.70) fits above U6.4.
+   - SCL runs on B.Cu: diagonal to y 111.5, west along y 111.5, then a diagonal to (117.6, 113.2).
+   - R13 reference text moved to (119.30, 111.105), clear of R12's silk.
+5. [done] **GND IC1.18/C42.2**, commit 7a82fe7.
+   - New GND via (112.40, 117.55) next to C42.2, inside the LOAD/VBAT pocket. /Solar/LOAD is unchanged.
+   - VSET1 B.Cu re-routed to clear the via: diagonal from (114.653, 114.955) to (113.4, 116.208), down x 113.4 to 118.9, then a diagonal back to x 112.511.
+6. [done] **GND C13.2** (RF shunt cap), commit fa66dce.
+   - C13 rotated 0 -> 180 deg in place at (127.55, 125.70), so its GND pad faces away from the ANT node. The ANT branch is now a 0.38 mm stub from the main ANT path.
+   - C13.2 (now at 127.28, 125.70) goes to a new GND via (126.62, 125.75). The AE1 keep-out is untouched.
+7. [done, review] **F.Cu pour island**, commit 9f9f2c1. The island was X1 pad 4 (crystal case GND) plus a 0.25 mm2 pour fragment. It's boxed in by VDDIO/DECA on F.Cu, SENS_INT on B.Cu, and VDDIO/MOSI on In2, and there is no legal via site outside the pad.
+   - A GND via (0.6/0.3) sits **inside X1.4** at (131.35, 123.05). This is via-in-pad, so check the solder wicking risk, or have the fab fill/cap it.
+   - The VSENS In2 tail moved from y 123.05 to y 124.15 to clear the via.
+8. [done] Final checks (kicad-cli 10.0.4):
+   - **ERC** (default severity, as before): 0 errors, 204 warnings (77 pin_to_pin, 57 lib_symbol_issues, 55 footprint_link_issues, 5 off-grid, 5 lib_symbol_mismatch, 3 same local/global label, 2 multiple net names). With --severity-all the known C4 power_pin_not_driven false positive shows as 1 error. The schematic was not changed.
+   - **DRC**: 4 errors (J1 hole clearance, accepted), 323 warnings (164 silk_overlap, 102 silk_over_copper, 55 lib_footprint_issues, 2 silk_edge), **1 unconnected (SENS_SCL)**, 0 parity. The +8 silk_over_copper are R12's EasyEDA outline over R10/R13 pads after the R12 move.
+   - STEP: C:\Personal-Agents\shared\handoff\nrf54l15_feather\nrf54l15_feather_2026-10-25c.step. Outline and connectors are unchanged from 2026-10-25b; only small parts moved.
+
 ### Next steps (for the next run)
-1. Finish the 7 unconnected items; each needs a small placement change, not just routing:
-   - VBUS (U2.21 to C14.1/J1): move the VSYS via (now about (114.7, 116.8)) and the VBUSOUT via (about (114.7, 117.75)) apart by about 0.3 mm, or move CC1/CC2's fan-out vias down, to open a 0.25 mm channel left from U2.21.
-   - VSENS (U2.29 to C45/R15-R18): needs a via site near U2's bottom-right; consider moving C3/C19 or the VBAT via below U2.
-   - SENS_SCL (U6.39 to R16.2/CN1 pin 4): shift C9 right about 0.4 mm or re-route the C9 GND link so U6.39 can reach a via.
-   - I2C_SCL (U6.4 to R12.1/U2.14): move R12 so its pad 1 is not in a closed pocket, then go on B.Cu/In2 along the free band at y 111-112.
-   - GND on IC1.18/C42.2 (re-route /Solar/LOAD so pin 18 can stub into the EP) and on C13.2; one F.Cu pour island.
-2. Check the AEM10330 loop (DS section 10), the nPM1300 buck loops (L9 now flipped) and the RF chain by hand before fab; tune the AE1 match on the real board.
-3. Install the EasyEDA 3D models (or map them to KiCad models) so the STEP has part bodies.
+1. SENS_SCL (see run 3 item 3): needs a DECA-area rework around C1/C11/L4, or a pin change. Ask Brian which.
+2. Review the via-in-pad on X1.4 (run 3 item 7).
+3. Check the AEM10330 loop (DS section 10), the nPM1300 buck loops (L9 flipped; the VSYS via moved 0.6 mm in run 3) and the RF chain (C13 turned 180 deg) by hand before fab. Tune the AE1 match on the real board.
+4. Install the EasyEDA 3D models (or map them to KiCad models) so the STEP has part bodies.
 
 ## Current state (before the rework, 2026-10-23)
 - Schematic: 9 sub-sheets.
