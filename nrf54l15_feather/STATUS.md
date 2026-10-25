@@ -38,7 +38,32 @@ Stages from the 2026-10-24 task. Each stage is its own commit on agent/nrf54l15-
    - H3 (138.26, 112.54) and H4 (138.26, 130.32), far end: NPTH 2.5 mm, for nylon screws next to the antenna and CN1.
    - DRC: same 4 J1 errors, 432 warnings, 193 unconnected, 0 parity. No hole or courtyard conflicts.
    - STEP exported: C:\Personal-Agents\shared\handoff\nrf54l15_feather\nrf54l15_feather_2026-10-25.step (board, holes and CN1). The EasyEDA 3D models (${EASYEDA} path) aren't on this PC, so 56 parts have no body in the STEP; heights for J1, U4/U5 and J3 must come from their datasheets for now.
-5. [next] Route (Freerouting), DRC.
+5. [partial] Routing, commit d3aea86. Done with Freerouting 2.5.0, run from a portable Temurin 25 JRE in the agent scratch folder (nothing installed).
+   - Settings: GND left out of the autorouter (pours + stitching vias instead); In1.Cu kept as a solid GND plane with no routing; signals on F.Cu / In2.Cu / B.Cu; 0.2 mm tracks (0.25 mm for VBAT/VBUS/VSYS/SW1/SW2/solar); 0.6/0.3 vias so the 0.25 mm hole clearance holds; 0.45 mm edge keep-out; antenna keep-out closed to tracks during routing.
+   - Five autorouter runs; the best one (route5) is imported.
+   - Then a scripted GND via + stub went next to each GND pad the pours can't reach (50 added), and the antenna feed from L3 to AE1 pad 1 was drawn by hand (0.2 mm, F.Cu, inside the keep-out).
+   - All four GND pours refilled.
+   - DRC now: **16 errors, 438 warnings, 28 unconnected, 0 parity.**
+   - Errors:
+     - 4 hole clearance inside the J1 footprint (accepted, see stage 3).
+     - 2 hole clearance: /Solar/VINT on B.Cu passes IC1's EP thermal vias.
+     - 6 starved thermal: the GND pads of R1, R2, R8, C44 and C11 on F.Cu, and IC1's EP on B.Cu, get 1 spoke instead of 2.
+     - 4 solder-mask bridge: a VDDIO F.Cu track runs under J3 between pads 03/05/07/09.
+     - All of these need fixing by hand.
+   - Unconnected signals (8): VBUS (U2 pin 21), VSENS (U2 pin 29 to C45/CN1), SENS_SCL (U6 pin 39), U2-SW1 (U2 pin 3 to L9), VSYS (U2 pin 4 and C20, 2 links), I2C_SCL (U2 to U6), U2-NTC (U2 pin 18 to R8).
+   - Unconnected GND (20 pad links):
+     - Mostly QFN GND pins with no room for a via (IC1 x8, U2 x3, U6 x3). These should get short F.Cu stubs into their exposed pads.
+     - The rest are decoupling caps around U2/U6 (C1, C6, C9, C10, C13, C14, C16, C17, C22, C26, C42) and CN1 pin 12.
+   - Warnings: 199 silk overlap and 170 silk over copper (reference text not moved yet), 55 lib_footprint_issues (EasyEDA library not configured in kicad-cli), 8 silk edge clearance, 4 dangling vias.
+   - ERC unchanged: 1 error (C4, accepted), 204 warnings.
+   - This is autorouter-quality routing. Check the AEM10330 loop (DS section 10), the nPM1300 buck loops and the RF chain by hand before fab.
+
+### Next steps (for the next run)
+1. Hand-route the 8 unconnected signals around U2. The left and right faces of U2 are where it's congested; moving L9/L10 and the VSYS caps 0.5 mm out from U2 should free a path.
+2. Add QFN GND stubs into the EPs (IC1, U2, U6) and vias for the remaining GND caps. Fix the 6 starved thermals.
+3. Move the VDDIO track out from under J3, and re-route /Solar/VINT on B.Cu away from IC1's thermal vias.
+4. Clean up the silkscreen (reference positions; hide the H1-H4 references).
+5. If anything moves, re-export the STEP to C:\Personal-Agents\shared\handoff\nrf54l15_feather\.
 
 ## Current state (before the rework, 2026-10-23)
 - Schematic: 9 sub-sheets.
@@ -77,9 +102,12 @@ Stages from the 2026-10-24 task. Each stage is its own commit on agent/nrf54l15-
   - Do these before fab.
 
 ## Questions for Brian
-- Feather size (see feather-size-study.md, "Decisions needed"): option (a), (b) or (c)? Drop or keep CN1? Where do VSENS and solar go? SWD as Tag-Connect or pads? What does the Feather EN pin drive?
-- Mounting holes: M2.5 per the Feather spec, plated at the USB end and NPTH at the antenna end? Positions follow the option chosen above.
-- Are the USB D+/D- pins left unconnected on purpose (charge-only USB)?
+- (2026-10-25) The mounting holes use the Feather M0 sizes: 2.5 mm drill, plated with a 3.2 mm pad at the USB end, NPTH at the far end. M2.5 screws fit snugly; a 2.7 mm clearance drill is the usual alternative. Keep 2.5 or switch to 2.7?
+- (2026-10-25) Should the plated USB-end holes H1/H2 be tied to GND (the screws would then ground the board to the enclosure), or left floating as they are now?
+- (2026-10-25) Please confirm CN1's (503480-1400) orientation. It keeps the old board's orientation, with the signal pads toward the board edge. If the FFC actually enters from the other side, CN1 has to turn 180 degrees.
+- (2026-10-25) The antenna keep-out is still the old 5.9 x 3.1 mm area, now running to the edge. The Johanson datasheet PDF is image-only and couldn't be read automatically, so the datasheet's ground-clearance figure is still unchecked.
+- (closed 2026-10-24) Feather size: standard outline, keep all connectors, Proposal C (see Decisions).
+- (closed 2026-10-24) USB is charge-only; D+/D-/SBU now carry no-connect flags.
 - Is moisture_sensor.kicad_sch meant to be empty?
 - Do the Gerbers and the 7z in the folder match the current layout, or are they from an earlier revision? Was this revision ordered?
 
