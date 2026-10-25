@@ -21,8 +21,19 @@ Stages from the 2026-10-24 task. Each stage is its own commit on agent/nrf54l15-
    - Warnings: 77 pin_to_pin, 57 lib_symbol_issues and 55 footprint_link_issues (the easyeda2kicad / EasyEDA2Kicad / TYPE-C-31-M-12 libraries aren't in the kicad-cli library tables on this PC; environment, not design), 5 off-grid, 5 lib_symbol_mismatch, 3 same local/global label, 2 multiple net names.
 2. [done] Board outline: Edge.Cuts is now 50.8 x 22.86 mm with R2.54 corners, top-left at (90, 110) in board coordinates, so the board spans x 90 to 140.8 and y 110 to 132.86. The USB end is x = 90. To convert from Feather coordinates (origin bottom-left at the USB end, y up): X = 90 + fx, Y = 132.86 - fy. The four GND pours were reshaped to the new outline (unfilled).
    - DRC after this stage is an intermediate state (parts still at the old positions, many off-board): 120 errors (114 copper-edge clearance), 420 warnings, 132 unconnected, 0 parity.
-3. [next] Connector placement per Proposal C, then all other parts, all on top.
-4. [todo] Four M2.5 holes at the Feather positions (plated at the USB end, NPTH at the far end).
+3. [done] Placement per Proposal C, all 64 parts on top (J3, U4, U5 flipped from the bottom). All old tracks and vias (1055 items) were ripped up; the board is unrouted after this stage.
+   - J1 USB-C: origin (95.32, 121.43) rot -90, centred on the USB short edge, mouth at x = 90.
+   - U5 solar JST: (101.95, 116.42) rot 0, opening on the top long edge. U4 battery JST: (101.95, 126.44) rot 180, opening on the bottom long edge.
+   - **CN1: origin (138.39, 121.43) rot -90, centred on the far short edge** (same edge offset and pad orientation as the old board, signal pads toward the edge at x = 139.71). Feather coordinates: centre (48.39, 11.43); courtyard fx 46.07 to 50.71, fy 6.73 to 16.13. Pin 1 is at board y 118.18 (top side of the connector), pin 14 at y 124.68.
+   - AE1 chip antenna: (131.55, 130.23) rot 0 on the bottom long edge, feed pad 1 at (129.97, 130.23). Keep-out moved to x 128.55 to 134.55, y 128.75 to the edge (same 5.9 x 3.1 size as before, now running to the edge); pads allowed (AE1's own), tracks allowed for the feed line, no vias, no pours.
+   - RF chain (L5, C8, L6, C5, L8, C13, R11 switch, C12, L2, L3) runs straight down from U6 pin 31 at x 128.6, then C12/L3 to the antenna feed. RF1 U.FL + R11 ANT_SEL kept, RF1 at (126, 127.9) to the left of the switch.
+   - U6 nRF54L15 at (128.4, 117.9) rot -90 (ANT, XTAL and SWD pins face down). X1 bottom-right of U6. DCC/DECD/DECA parts (L7, C10, L4, C1, C11, C9, C26) between U6 and CN1. Sensor pull-ups (R15 to R19) and C45 between X1 and CN1.
+   - U2 nPM1300 at (117.9, 117.0) rot 180 (bucks face U6, VBUS/VBAT/VSYS face the AEM). L9/L10 and VOUT1/VDDIO caps right of U2; VSYS/VBUS/VBAT caps below it.
+   - IC1 AEM10330 at (111.35, 114.0) with L11 and C40 to its left (next to U5), C41 on the VINT pins, C42/C43 below.
+   - J3 SWD at (108.85, 128.6), bottom edge next to U4. SW1 at the bottom edge (116.4, 130.9) with LED1/R14 next to it.
+   - Proposal C drew SW1 on top of U4, so SW1 moved to the bottom edge in the middle.
+   - DRC after placement: 4 errors, 430 warnings, 193 unconnected (unrouted), 0 parity. The 4 errors are hole_clearance inside the J1 footprint (its own NPTH pegs vs pads A1B12/A4B9/B1A12/B4A9, 0.185 to 0.217 mm vs 0.25). They are in the 2026-10-23 board too when checked with kicad-cli 10.0.4 (the old board actually had 6 errors, not 0), so they're from the footprint and acceptable.
+4. [next] Four M2.5 holes at the Feather positions (plated at the USB end, NPTH at the far end).
 5. [todo] Route, DRC, STEP export.
 
 ## Current state (before the rework, 2026-10-23)
