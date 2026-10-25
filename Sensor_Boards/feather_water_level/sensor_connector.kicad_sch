@@ -8,7 +8,7 @@
 		(title "Sensor connector CN1 + host-side parts")
 		(date "2026-10-25")
 		(rev "0.1")
-		(company "Feather sensor template")
+		(company "Feather water level")
 		(comment 1 "Do not change CN1 position, pinout or footprint")
 	)
 	(lib_symbols
@@ -378,6 +378,7 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "power:PWR_FLAG"			(power global)			(pin_numbers				(hide yes)			)			(pin_names				(offset 0)				(hide yes)			)			(exclude_from_sim no)			(in_bom yes)			(on_board yes)			(in_pos_files yes)			(duplicate_pin_numbers_are_jumpers no)			(property "Reference" "#FLG"				(at 0 1.905 0)				(show_name no)				(do_not_autoplace no)				(hide yes)				(effects					(font						(size 1.27 1.27)					)				)			)			(property "Value" "PWR_FLAG"				(at 0 3.81 0)				(show_name no)				(do_not_autoplace no)				(effects					(font						(size 1.27 1.27)					)				)			)			(property "Footprint" ""				(at 0 0 0)				(show_name no)				(do_not_autoplace no)				(hide yes)				(effects					(font						(size 1.27 1.27)					)				)			)			(property "Datasheet" ""				(at 0 0 0)				(show_name no)				(do_not_autoplace no)				(hide yes)				(effects					(font						(size 1.27 1.27)					)				)			)			(property "Description" "Special symbol for telling ERC where power comes from"				(at 0 0 0)				(show_name no)				(do_not_autoplace no)				(hide yes)				(effects					(font						(size 1.27 1.27)					)				)			)			(property "ki_keywords" "flag power"				(at 0 0 0)				(show_name no)				(do_not_autoplace no)				(hide yes)				(effects					(font						(size 1.27 1.27)					)				)			)			(symbol "PWR_FLAG_0_0"				(pin power_out line					(at 0 0 90)					(length 0)					(name ""						(effects							(font								(size 1.27 1.27)							)						)					)					(number "1"						(effects							(font								(size 1.27 1.27)							)						)					)				)			)			(symbol "PWR_FLAG_0_1"				(polyline					(pts						(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)					)					(stroke						(width 0)						(type default)					)					(fill						(type none)					)				)			)			(embedded_fonts no)		)
 		(symbol "power:GND"
 			(power global)
 			(pin_numbers
@@ -1577,7 +1578,7 @@
 			)
 		)
 	)
-	(global_label "SENS_MOSI"
+	(global_label "SENS_TX"
 		(shape input)
 		(at 215.9 111.76 0)
 		(fields_autoplaced yes)
@@ -1649,7 +1650,7 @@
 			)
 		)
 	)
-	(global_label "SENS_MISO"
+	(global_label "SENS_RX"
 		(shape input)
 		(at 215.9 109.22 0)
 		(fields_autoplaced yes)
@@ -2160,6 +2161,56 @@
 			(project "feather_water_level"
 				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9f4015c9-bc16-4983-a249-fb3ed0079cbe"
 					(reference "#PWR052")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 190.5 90.17 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7a1c2b3e-5d4f-4e6a-8b9c-0d1e2f3a4b5c")
+		(property "Reference" "#FLG01"
+			(at 190.5 92.075 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Value" "PWR_FLAG"
+			(at 193.04 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 190.5 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "~"
+			(at 190.5 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "1"
+			(uuid "9b8a7c6d-5e4f-4a3b-8c2d-1e0f9a8b7c6d")
+		)
+		(instances
+			(project "feather_water_level"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9f4015c9-bc16-4983-a249-fb3ed0079cbe"
+					(reference "#FLG01")
 					(unit 1)
 				)
 			)

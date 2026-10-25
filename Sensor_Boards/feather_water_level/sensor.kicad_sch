@@ -5,14 +5,14 @@
 	(uuid "0c5e6578-0c9f-40e5-832f-fad6dbf55769")
 	(paper "A4")
 	(title_block
-		(title "Sensor (isolated side) - fill per board")
+		(title "Sensor (water level, non-isolated)")
 		(date "2026-10-25")
 		(rev "0.1")
-		(company "Feather sensor template")
-		(comment 1 "Template: empty")
+		(company "Feather water level")
+		(comment 1 "Circuit not drawn yet")
 	)
 	(lib_symbols)
-	(hierarchical_label "VDD_ISO"
+	(hierarchical_label "VSENS"
 		(shape input)
 		(at 50.8 60.96 180)
 		(effects
@@ -23,7 +23,7 @@
 		)
 		(uuid "5d0f4395-c4c8-4028-a888-9d7aa1996fc0")
 	)
-	(hierarchical_label "GND_ISO"
+	(hierarchical_label "GND"
 		(shape passive)
 		(at 50.8 66.04 180)
 		(effects
@@ -34,8 +34,8 @@
 		)
 		(uuid "85eebbc7-6113-494c-8a67-5a283971d3e2")
 	)
-	(hierarchical_label "SDA_ISO"
-		(shape bidirectional)
+	(hierarchical_label "VBAT"
+		(shape input)
 		(at 50.8 71.12 180)
 		(effects
 			(font
@@ -45,8 +45,8 @@
 		)
 		(uuid "5dee9d0f-3f9d-4c14-a0ea-9fe1437d3884")
 	)
-	(hierarchical_label "SCL_ISO"
-		(shape bidirectional)
+	(hierarchical_label "SENS_TX"
+		(shape input)
 		(at 50.8 76.2 180)
 		(effects
 			(font
@@ -56,7 +56,7 @@
 		)
 		(uuid "93758ae7-5db1-45d5-91de-dc28927563f1")
 	)
-	(hierarchical_label "INT_ISO"
+	(hierarchical_label "SENS_RX"
 		(shape output)
 		(at 50.8 81.28 180)
 		(effects
@@ -67,7 +67,7 @@
 		)
 		(uuid "04dad4c2-4665-48a1-becb-0997f7eed395")
 	)
-	(text "SENSOR CIRCUIT GOES HERE (isolated side). Leave this sheet empty in the template.\nAvailable nets (all isolated from host GND):\n  VDD_ISO  3.3 V from U4 (about 300 mA max from the 1 W module, less the isolator side 2)\n  GND_ISO  isolated ground: probe connector shell/shield goes here, never to host GND\n  SDA_ISO / SCL_ISO  I2C through U3, already pulled up (R3/R4 4.7k to VDD_ISO): do not add more pull-ups\n  INT_ISO  sensor interrupt, goes to test pad J5 only (does not cross the barrier)\nRules: parts go in the isolated placement area on the PCB (x 90 to 122.5, outside the NPTH keep-outs).\nProbe connector at the left short edge (x = 90), opposite CN1. Add decoupling per the sensor datasheet.\nSet R1 (R_ID, Sensor Connector sheet) for this sensor type."
+	(text "SENSOR CIRCUIT GOES HERE (non-isolated). Not drawn yet.\nNets: VSENS (switched 3.0 V, 100 mA max), GND, VBAT (raw battery, behind the enabled buck-boost only),\nSENS_TX (CN1 pin 6, host TX out -> sensor RX), SENS_RX (CN1 pin 7, host RX in <- sensor TX).\nSensor connector on the x = 90 short edge."
 		(exclude_from_sim no)
 		(at 60.96 50.8 0)
 		(effects

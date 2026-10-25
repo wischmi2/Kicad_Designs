@@ -5,11 +5,11 @@
 	(uuid "55da176d-6431-4d58-ada7-b89d931b1434")
 	(paper "A4")
 	(title_block
-		(title "Feather sensor board template")
+		(title "Feather water level sensor board")
 		(date "2026-10-25")
 		(rev "0.1")
-		(company "Feather sensor template")
-		(comment 1 "Set the board name, R_ID and sensor type per board")
+		(company "Feather water level")
+		(comment 1 "Non-isolated, UART sensor; circuit not drawn yet")
 	)
 	(lib_symbols)
 	(sheet
@@ -59,52 +59,6 @@
 		)
 	)
 	(sheet
-		(at 85.09 27.432)
-		(size 40.64 39.624)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "fe2ea5fc-ce63-47c3-bd94-3fdd0b559ca6")
-		(property "Sheetname" "Isolation"
-			(at 85.09 26.7204 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "isolation.kicad_sch"
-			(at 85.09 67.6406 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "feather_water_level"
-				(path "/55da176d-6431-4d58-ada7-b89d931b1434"
-					(page "3")
-				)
-			)
-		)
-	)
-	(sheet
 		(at 140.97 27.94)
 		(size 40.64 38.1)
 		(exclude_from_sim no)
@@ -142,7 +96,7 @@
 				(justify left top)
 			)
 		)
-		(pin "VDD_ISO" input
+		(pin "VSENS" input
 			(at 140.97 35.56 180)
 			(uuid "0b13331d-41c6-4095-9303-aa88eb11efc7")
 			(effects
@@ -152,7 +106,7 @@
 				(justify left)
 			)
 		)
-		(pin "GND_ISO" passive
+		(pin "GND" passive
 			(at 140.97 40.64 180)
 			(uuid "6f21c4a1-6f27-4bd1-b648-d59d8256de4e")
 			(effects
@@ -162,7 +116,7 @@
 				(justify left)
 			)
 		)
-		(pin "SDA_ISO" bidirectional
+		(pin "VBAT" input
 			(at 140.97 45.72 180)
 			(uuid "f47ba151-625a-4d21-ac1c-f8b64b359a9d")
 			(effects
@@ -172,7 +126,7 @@
 				(justify left)
 			)
 		)
-		(pin "SCL_ISO" bidirectional
+		(pin "SENS_TX" input
 			(at 140.97 50.8 180)
 			(uuid "506a04c5-223c-4411-9077-3e1da1e791dd")
 			(effects
@@ -182,7 +136,7 @@
 				(justify left)
 			)
 		)
-		(pin "INT_ISO" output
+		(pin "SENS_RX" output
 			(at 140.97 55.88 180)
 			(uuid "a376a956-1deb-4076-a6f4-13b909463511")
 			(effects
@@ -255,7 +209,7 @@
 		)
 		(uuid "d8554652-7174-4338-82e7-caad694ff3ab")
 	)
-	(global_label "VDD_ISO"
+	(global_label "VSENS"
 		(shape bidirectional)
 		(at 133.35 35.56 180)
 		(fields_autoplaced yes)
@@ -279,7 +233,7 @@
 			)
 		)
 	)
-	(global_label "GND_ISO"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 133.35 40.64 180)
 		(fields_autoplaced yes)
@@ -303,7 +257,7 @@
 			)
 		)
 	)
-	(global_label "SDA_ISO"
+	(global_label "VBAT"
 		(shape bidirectional)
 		(at 133.35 45.72 180)
 		(fields_autoplaced yes)
@@ -327,7 +281,7 @@
 			)
 		)
 	)
-	(global_label "SCL_ISO"
+	(global_label "SENS_TX"
 		(shape bidirectional)
 		(at 133.35 50.8 180)
 		(fields_autoplaced yes)
@@ -351,7 +305,7 @@
 			)
 		)
 	)
-	(global_label "INT_ISO"
+	(global_label "SENS_RX"
 		(shape bidirectional)
 		(at 133.35 55.88 180)
 		(fields_autoplaced yes)
@@ -375,7 +329,7 @@
 			)
 		)
 	)
-	(text "feather_sensor_template rev 0.1 - one sensor board per nRF54L15 feather, stacked underneath, linked by CN1 (14-way FFC).\nSensor Connector: CN1 + host-side parts (VSENS decoupling, R_ID).  Isolation: ADuM1250 + NXE1S0303MC across the barrier.\nSensor: the board-specific circuit on the isolated side (empty in the template).  See README.md."
+	(text "feather_water_level rev 0.1 - non-isolated sensor board (DFRobot A02YYUW ultrasonic, UART 9600 on CN1 pins 6/7), stacked under the nRF54L15 feather.\nSensor Connector: CN1 + host-side parts (VSENS decoupling, R_ID).  Sensor: water-level circuit (not drawn yet, see STATUS.md)."
 		(exclude_from_sim no)
 		(at 25.4 80 0)
 		(effects
