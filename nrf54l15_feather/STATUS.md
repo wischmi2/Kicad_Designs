@@ -65,6 +65,7 @@ Stages from the 2026-10-24 task. Each stage is its own commit on agent/nrf54l15-
    - 3D model checked with kicad-cli pcb render: the model's contact tails sit over the signal pads (inner side), and the black actuator (modelled closed) covers the front 1.65 mm on the edge side, with the FFC slot facing the edge. That matches the datasheet top view (closed actuator over the front, tails visible at the back), so the model offset/rotation in the footprint was left unchanged.
    - Fan-out: pins 2 (VSENS) and 4 (SCL) go straight left on F.Cu to R16; pins 1 and 14 go on F.Cu to the MP tabs and a GND via each; every other pin has a 0.15 mm F.Cu stub to a 0.6/0.3 via in a three-column staircase under the connector body (x 138.05 / 138.80 / 139.55, all tented, inside the body outline). From there the nets run on In2.Cu / B.Cu (and short F.Cu pieces) to the old routes. The CN1 GND pads (1, 12, 14) use a solid zone connection.
    - All CN1 nets connected. DRC: 15 errors (4 J1 accepted, 2 VINT hole clearance, 5 starved thermal, 4 mask bridge, all pre-existing), 27 unconnected (none on CN1), 0 parity. ERC: 0 errors, 204 warnings (kicad-cli 10.0.4 now reports the C4 power-pin case as a warning).
+1b. [done] Holes per Brian's answers: H1-H4 drill 2.5 -> 2.7 mm; H1/H2 pad 3.2 -> 3.4 mm and net GND (0.84 mm from pad to the R2.54 corner edge); H3/H4 NPTH 2.7 mm, no net. DRC unchanged (15 errors, all pre-existing; 27 unconnected; 0 parity).
 
 ### Next steps (for the next run)
 1. Hand-route the 8 unconnected signals around U2. The left and right faces of U2 are where it's congested; moving L9/L10 and the VSYS caps 0.5 mm out from U2 should free a path.
@@ -110,8 +111,6 @@ Stages from the 2026-10-24 task. Each stage is its own commit on agent/nrf54l15-
   - Do these before fab.
 
 ## Questions for Brian
-- (2026-10-25) The mounting holes use the Feather M0 sizes: 2.5 mm drill, plated with a 3.2 mm pad at the USB end, NPTH at the far end. M2.5 screws fit snugly; a 2.7 mm clearance drill is the usual alternative. Keep 2.5 or switch to 2.7?
-- (2026-10-25) Should the plated USB-end holes H1/H2 be tied to GND (the screws would then ground the board to the enclosure), or left floating as they are now?
 - (2026-10-25) The antenna keep-out is still the old 5.9 x 3.1 mm area, now running to the edge. The Johanson datasheet PDF is image-only and couldn't be read automatically, so the datasheet's ground-clearance figure is still unchecked.
 - (closed 2026-10-24) Feather size: standard outline, keep all connectors, Proposal C (see Decisions).
 - (closed 2026-10-24) USB is charge-only; D+/D-/SBU now carry no-connect flags.
@@ -125,3 +124,5 @@ Stages from the 2026-10-24 task. Each stage is its own commit on agent/nrf54l15-
 - 2026-10-24 (Brian): connector layout is Proposal C (C:\Personal-Agents\shared\design\nrf54l15_feather\feather_connector_layouts.html). USB-C centred on one short edge; CN1 centred on the far short edge so the FFC folds straight down to sens1, which stacks underneath; U5 solar and U4 battery on opposite long edges near the USB end; the antenna moves to a long edge near the far end. RF risk accepted, to be minimised in layout.
 - 2026-10-24 (Brian): **all parts on the top side**, including J3, U4 and U5, so the bottom is flat and sens1 can stack close underneath. The RF1 U.FL + R11 switch (ANT_SEL) is the fallback if the chip antenna's range suffers on the long edge. Defaults accepted: M2.5 holes (plated at the USB end, NPTH + nylon at the far end), USB stays charge-only, no fab output without approval.
 - 2026-10-24 (Brian): SENS_MISO on two U6 pins (pad 11 and pad 15) is intentional, not a bug.
+- 2026-10-25 (Brian): mounting holes use a 2.7 mm drill (M2.5 clearance) at the same Feather positions. Done in run 2: H1/H2 plated with a 3.4 mm pad, H3/H4 NPTH 2.7 mm. (The footprint names still read MountingHole_2.5mm*; only the pads changed.)
+- 2026-10-25 (Brian): the plated USB-end holes H1/H2 are tied to GND (thermal-relief connection to the F.Cu/B.Cu pours and the In1 plane). H3/H4 stay NPTH and unconnected.
