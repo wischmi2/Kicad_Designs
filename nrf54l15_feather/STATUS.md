@@ -76,12 +76,27 @@ Stages from the 2026-10-24 task. Each stage is its own commit on agent/nrf54l15-
    - R19 (ID pull-up) moved out of the corner to (130.4, 131.3); SENS_ID, VDDIO and the CN1 VBAT link re-routed around the keep-out.
    - DRC after this step: 15 errors (all pre-existing: 4 J1, 2 VINT, 5 starved thermal, 4 J3 mask bridge), 23 unconnected, 0 parity.
 
+2. [partial] Hand-finishing the routing (commits 90ea263, b20a3b7). Done with a small clearance-checked grid router written for this run (scratch script, not committed) plus hand-placed tracks; every step DRC-checked with kicad-cli.
+   - U2 buck side reworked: L9 turned 180 deg to (121.7, 119.15) so SW1 (U2.3) and VOUT1 (U2.1) no longer cross; L10 moved up 0.5 mm to (121.7, 115.99). SW1, SW2 (0.3 mm) and U2.4 VSYS (0.25 mm, F.Cu to C22.2) now connected. PMIC_INT re-routed via B.Cu from a via next to U2.8; the VDDIO link from the L10/C7 group to the U6/J3 group re-routed on B.Cu.
+   - U2 left side: VSYS (U2.20) and VBUSOUT (U2.22) fan-out vias re-placed; LED1-C moved to B.Cu so C16.2 and C20.2 (VSYS) join on F.Cu (0.4 mm). U2-NTC routed (In2).
+   - QFN GND pins stubbed on F.Cu into their exposed pads: U2 pins 2 and 6, U6 pins 32 and 44, IC1 pins 24, 25, 26 and 39. GND vias/links added for C14, C16, C22, C6/C17, C26, C9, C10 and C1 (the U6-DECA loop under C1 was re-routed above it so C1.2 can reach GND).
+   - **Still open (stopped after 3 attempts each, see Next steps):** VBUS from U2.21 (trapped between the VSYS and VBUSOUT fan-out vias on U2's left side; the dense via column there leaves no 0.2 mm channel), VSENS from U2.29 (no escape from the U2 bottom row and no via site within reach), SENS_SCL from U6.39 (boxed in by the SDA fan-out, C1/C9 and their GND links), I2C_SCL between U6.4 and R12/U2.14 (R12.1 sits in a closed F.Cu pocket with no via site), GND on IC1.18 + C42.2 (the /Solar/LOAD track runs between IC1's bottom pins and its EP) and GND on C13.2 (RF area), plus one small F.Cu pour island.
+3. [done] DRC error fixes (commit 2fdadd7): VDDIO track moved from y 129.04 (inside J3's bottom pad row) to y 128.6 between the rows; /Solar/VINT moved from B.Cu (it ran between IC1's thermal vias) to In2; solid zone connection on the EPs/thermal vias of IC1, U2, U6 and on the GND pads of R1, R2, R8, C44, C11 (and CN1 pins 1/12/14). Result: only the 4 accepted J1 hole-clearance errors remain.
+4. [done] Silkscreen and vias (commit 9014b25): 33 references re-placed at 0.8 mm, clear of pads, copper and the edge; 31 references in the dense passive clusters are hidden on silk (still on F.Fab for the assembly drawing); H1-H4 references and all silk values hidden. The 4 dangling vias (VBUS, VSENS, SENS_SCL, I2C_SCL leftovers) and their stubs removed. The remaining 170 silk_overlap / 95 silk_over_copper / 2 silk_edge warnings are all footprint outline graphics (EasyEDA footprints), not text.
+5. [done] STEP exported: C:\Personal-Agents\shared\handoff
+rf54l15_feather
+rf54l15_feather_2026-10-25b.step (CN1 rotated, AE1 moved, holes 2.7 mm). EasyEDA 3D models are still missing on this PC, so most parts have no body.
+   - **Final checks (kicad-cli 10.0.4): ERC 0 errors, 204 warnings (77 pin_to_pin, 57 lib_symbol_issues, 55 footprint_link_issues, 5 off-grid, 5 lib_symbol_mismatch, 3 same local/global label, 2 multiple net names). DRC 4 errors (J1 footprint hole clearance, accepted), 322 warnings (170 silk_overlap, 95 silk_over_copper, 55 lib_footprint_issues, 2 silk_edge), 7 unconnected, 0 parity.**
+
 ### Next steps (for the next run)
-1. Hand-route the 8 unconnected signals around U2. The left and right faces of U2 are where it's congested; moving L9/L10 and the VSYS caps 0.5 mm out from U2 should free a path.
-2. Add QFN GND stubs into the EPs (IC1, U2, U6) and vias for the remaining GND caps. Fix the 6 starved thermals.
-3. Move the VDDIO track out from under J3, and re-route /Solar/VINT on B.Cu away from IC1's thermal vias.
-4. Clean up the silkscreen (reference positions; hide the H1-H4 references).
-5. If anything moves, re-export the STEP to C:\Personal-Agents\shared\handoff\nrf54l15_feather\.
+1. Finish the 7 unconnected items; each needs a small placement change, not just routing:
+   - VBUS (U2.21 to C14.1/J1): move the VSYS via (now about (114.7, 116.8)) and the VBUSOUT via (about (114.7, 117.75)) apart by about 0.3 mm, or move CC1/CC2's fan-out vias down, to open a 0.25 mm channel left from U2.21.
+   - VSENS (U2.29 to C45/R15-R18): needs a via site near U2's bottom-right; consider moving C3/C19 or the VBAT via below U2.
+   - SENS_SCL (U6.39 to R16.2/CN1 pin 4): shift C9 right about 0.4 mm or re-route the C9 GND link so U6.39 can reach a via.
+   - I2C_SCL (U6.4 to R12.1/U2.14): move R12 so its pad 1 is not in a closed pocket, then go on B.Cu/In2 along the free band at y 111-112.
+   - GND on IC1.18/C42.2 (re-route /Solar/LOAD so pin 18 can stub into the EP) and on C13.2; one F.Cu pour island.
+2. Check the AEM10330 loop (DS section 10), the nPM1300 buck loops (L9 now flipped) and the RF chain by hand before fab; tune the AE1 match on the real board.
+3. Install the EasyEDA 3D models (or map them to KiCad models) so the STEP has part bodies.
 
 ## Current state (before the rework, 2026-10-23)
 - Schematic: 9 sub-sheets.
