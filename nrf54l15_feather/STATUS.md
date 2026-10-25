@@ -33,8 +33,14 @@ Stages from the 2026-10-24 task. Each stage is its own commit on agent/nrf54l15-
    - J3 SWD at (108.85, 128.6), bottom edge next to U4. SW1 at the bottom edge (116.4, 130.9) with LED1/R14 next to it.
    - Proposal C drew SW1 on top of U4, so SW1 moved to the bottom edge in the middle.
    - DRC after placement: 4 errors, 430 warnings, 193 unconnected (unrouted), 0 parity. The 4 errors are hole_clearance inside the J1 footprint (its own NPTH pegs vs pads A1B12/A4B9/B1A12/B4A9, 0.185 to 0.217 mm vs 0.25). They are in the 2026-10-23 board too when checked with kicad-cli 10.0.4 (the old board actually had 6 errors, not 0), so they're from the footprint and acceptable.
-4. [next] Four M2.5 holes at the Feather positions (plated at the USB end, NPTH at the far end).
-5. [todo] Route, DRC, STEP export.
+4. [done] Mounting holes at the Feather positions, board-only footprints (excluded from BOM and position files):
+   - H1 (92.54, 112.54) and H2 (92.54, 130.32), USB end: plated, 2.5 mm drill, 3.2 mm pad (Feather M0 values), no net.
+   - H3 (138.26, 112.54) and H4 (138.26, 130.32), far end: NPTH 2.5 mm, for nylon screws next to the antenna and CN1.
+   - DRC: same 4 J1 errors, 432 warnings, 193 unconnected, 0 parity. No hole or courtyard conflicts.
+   - STEP exported: C:\Personal-Agents\shared\handoff
+rf54l15_feather
+rf54l15_feather_2026-10-25.step (board, holes and CN1). The EasyEDA 3D models (${EASYEDA} path) aren't on this PC, so 56 parts have no body in the STEP; heights for J1, U4/U5 and J3 must come from their datasheets for now.
+5. [next] Route (Freerouting), DRC.
 
 ## Current state (before the rework, 2026-10-23)
 - Schematic: 9 sub-sheets.
