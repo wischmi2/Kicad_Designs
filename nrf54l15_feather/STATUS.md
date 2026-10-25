@@ -37,9 +37,7 @@ Stages from the 2026-10-24 task. Each stage is its own commit on agent/nrf54l15-
    - H1 (92.54, 112.54) and H2 (92.54, 130.32), USB end: plated, 2.5 mm drill, 3.2 mm pad (Feather M0 values), no net.
    - H3 (138.26, 112.54) and H4 (138.26, 130.32), far end: NPTH 2.5 mm, for nylon screws next to the antenna and CN1.
    - DRC: same 4 J1 errors, 432 warnings, 193 unconnected, 0 parity. No hole or courtyard conflicts.
-   - STEP exported: C:\Personal-Agents\shared\handoff
-rf54l15_feather
-rf54l15_feather_2026-10-25.step (board, holes and CN1). The EasyEDA 3D models (${EASYEDA} path) aren't on this PC, so 56 parts have no body in the STEP; heights for J1, U4/U5 and J3 must come from their datasheets for now.
+   - STEP exported: C:\Personal-Agents\shared\handoff\nrf54l15_feather\nrf54l15_feather_2026-10-25.step (board, holes and CN1). The EasyEDA 3D models (${EASYEDA} path) aren't on this PC, so 56 parts have no body in the STEP; heights for J1, U4/U5 and J3 must come from their datasheets for now.
 5. [next] Route (Freerouting), DRC.
 
 ## Current state (before the rework, 2026-10-23)
