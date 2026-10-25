@@ -25,7 +25,7 @@ Stages from the 2026-10-24 task. Each stage is its own commit on agent/nrf54l15-
    - J1 USB-C: origin (95.32, 121.43) rot -90, centred on the USB short edge, mouth at x = 90.
    - U5 solar JST: (101.95, 116.42) rot 0, opening on the top long edge. U4 battery JST: (101.95, 126.44) rot 180, opening on the bottom long edge.
    - **CN1 (superseded by run 2 stage 1, see below): origin (138.39, 121.43) rot -90, centred on the far short edge** (same edge offset and pad orientation as the old board, signal pads toward the edge at x = 139.71). Feather coordinates: centre (48.39, 11.43); courtyard fx 46.07 to 50.71, fy 6.73 to 16.13. Pin 1 is at board y 118.18 (top side of the connector), pin 14 at y 124.68.
-   - AE1 chip antenna: (131.55, 130.23) rot 0 on the bottom long edge, feed pad 1 at (129.97, 130.23). Keep-out moved to x 128.55 to 134.55, y 128.75 to the edge (same 5.9 x 3.1 size as before, now running to the edge); pads allowed (AE1's own), tracks allowed for the feed line, no vias, no pours.
+   - (superseded by run 2 step 1c) AE1 chip antenna: (131.55, 130.23) rot 0 on the bottom long edge, feed pad 1 at (129.97, 130.23). Keep-out moved to x 128.55 to 134.55, y 128.75 to the edge (same 5.9 x 3.1 size as before, now running to the edge); pads allowed (AE1's own), tracks allowed for the feed line, no vias, no pours.
    - RF chain (L5, C8, L6, C5, L8, C13, R11 switch, C12, L2, L3) runs straight down from U6 pin 31 at x 128.6, then C12/L3 to the antenna feed. RF1 U.FL + R11 ANT_SEL kept, RF1 at (126, 127.9) to the left of the switch.
    - U6 nRF54L15 at (128.4, 117.9) rot -90 (ANT, XTAL and SWD pins face down). X1 bottom-right of U6. DCC/DECD/DECA parts (L7, C10, L4, C1, C11, C9, C26) between U6 and CN1. Sensor pull-ups (R15 to R19) and C45 between X1 and CN1.
    - U2 nPM1300 at (117.9, 117.0) rot 180 (bucks face U6, VBUS/VBAT/VSYS face the AEM). L9/L10 and VOUT1/VDDIO caps right of U2; VSYS/VBUS/VBAT caps below it.
@@ -66,6 +66,15 @@ Stages from the 2026-10-24 task. Each stage is its own commit on agent/nrf54l15-
    - Fan-out: pins 2 (VSENS) and 4 (SCL) go straight left on F.Cu to R16; pins 1 and 14 go on F.Cu to the MP tabs and a GND via each; every other pin has a 0.15 mm F.Cu stub to a 0.6/0.3 via in a three-column staircase under the connector body (x 138.05 / 138.80 / 139.55, all tented, inside the body outline). From there the nets run on In2.Cu / B.Cu (and short F.Cu pieces) to the old routes. The CN1 GND pads (1, 12, 14) use a solid zone connection.
    - All CN1 nets connected. DRC: 15 errors (4 J1 accepted, 2 VINT hole clearance, 5 starved thermal, 4 mask bridge, all pre-existing), 27 unconnected (none on CN1), 0 parity. ERC: 0 errors, 204 warnings (kicad-cli 10.0.4 now reports the C4 power-pin case as a warning).
 1b. [done] Holes per Brian's answers: H1-H4 drill 2.5 -> 2.7 mm; H1/H2 pad 3.2 -> 3.4 mm and net GND (0.84 mm from pad to the R2.54 corner edge); H3/H4 NPTH 2.7 mm, no net. DRC unchanged (15 errors, all pre-existing; 27 unconnected; 0 parity).
+
+1c. [done] AE1 moved to the far corner (Brian's decision, see Decisions).
+   - **AE1 at (134.67, 130.08), rotation -90**: long axis at right angles to the bottom edge, pad 1 (feed) at (134.67, 128.50) toward the ground, NC pad 2 at (134.67, 131.66) pointing into the corner. Its centre x is limited by H4: the AE1 body (right edge x 135.47) just touches H4's courtyard (r 2.79 mm, screw-head/washer allowance); moving AE1 further right would put the body under the nylon screw head.
+   - New rule area **AE1_keepout: x 132.15 to the board edge, y 126.40 to the board edge** (rectangle clipped by the outline, so it follows the R2.54 corner), all four copper layers: no pours, no vias; footprints/pads allowed; the only track inside is the 0.17 mm feed line. The old keep-out (x 128.55-134.55) is deleted and GND fills that area again. The left edge sits at 132.15 rather than 134.3 because the pad must be 1.6 mm from ground on that side too.
+   - **Measured ground-to-pad-1 clearance: 1.60 mm** (In1 GND plane at the keep-out's top edge; the F.Cu pour on the left is 1.645 mm away). Pad 2 to nearest ground: 1.645 mm. H4 (NPTH) and CN1 unchanged.
+   - Inside the keep-out besides AE1: R17.1/R18.1 (VSENS pull-up pads, not ground) reach about 0.15/0.26 mm over the top edge, about 1.35 mm from pad 1. They were left in place because moving them up makes their courtyards overlap R16/C45.
+   - RF chain: C12 (1.0 pF, series) at (129.6, 128.5), L2 (2.7 nH shunt to GND) at (130.35, 129.0), L3 (3.9 nH series) at (131.1, 128.5); 0.17 mm F.Cu line (about 50 ohm over In1 at 0.1 mm dielectric, closed-form estimate) from the R11 switch RF1 pin through C12/L3 to pad 1 at y 128.5; 2.5 mm of it runs inside the keep-out. GND stitching vias at (129.9, 127.75), (131.5, 127.8), (131.6, 129.3) and the L2 GND via (130.35, 129.85). **Match values must be tuned on the real board.** RF1 U.FL + R11 unchanged as the fallback.
+   - R19 (ID pull-up) moved out of the corner to (130.4, 131.3); SENS_ID, VDDIO and the CN1 VBAT link re-routed around the keep-out.
+   - DRC after this step: 15 errors (all pre-existing: 4 J1, 2 VINT, 5 starved thermal, 4 J3 mask bridge), 23 unconnected, 0 parity.
 
 ### Next steps (for the next run)
 1. Hand-route the 8 unconnected signals around U2. The left and right faces of U2 are where it's congested; moving L9/L10 and the VSYS caps 0.5 mm out from U2 should free a path.
@@ -111,7 +120,6 @@ Stages from the 2026-10-24 task. Each stage is its own commit on agent/nrf54l15-
   - Do these before fab.
 
 ## Questions for Brian
-- (2026-10-25) The antenna keep-out is still the old 5.9 x 3.1 mm area, now running to the edge. The Johanson datasheet PDF is image-only and couldn't be read automatically, so the datasheet's ground-clearance figure is still unchecked.
 - (closed 2026-10-24) Feather size: standard outline, keep all connectors, Proposal C (see Decisions).
 - (closed 2026-10-24) USB is charge-only; D+/D-/SBU now carry no-connect flags.
 - Is moisture_sensor.kicad_sch meant to be empty?
@@ -126,3 +134,4 @@ Stages from the 2026-10-24 task. Each stage is its own commit on agent/nrf54l15-
 - 2026-10-24 (Brian): SENS_MISO on two U6 pins (pad 11 and pad 15) is intentional, not a bug.
 - 2026-10-25 (Brian): mounting holes use a 2.7 mm drill (M2.5 clearance) at the same Feather positions. Done in run 2: H1/H2 plated with a 3.4 mm pad, H3/H4 NPTH 2.7 mm. (The footprint names still read MountingHole_2.5mm*; only the pads changed.)
 - 2026-10-25 (Brian): the plated USB-end holes H1/H2 are tied to GND (thermal-relief connection to the F.Cu/B.Cu pours and the In1 plane). H3/H4 stay NPTH and unconnected.
+- 2026-10-25 (Brian): AE1 moved to the far corner with a ~6.5 x 6.5 mm no-ground area, per the Johanson datasheet/EVB (checked by coordinator). Done in run 2 step 1c; the pi-match values must be tuned on the real board.
