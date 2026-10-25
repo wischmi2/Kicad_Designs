@@ -973,6 +973,30 @@
 			(embedded_fonts no)
 		)
 	)
+	(no_connect
+		(at 104.14 88.9)
+		(uuid "0dca926a-e99a-4dc7-91d2-42f2ee20788b")
+	)
+	(no_connect
+		(at 104.14 91.44)
+		(uuid "3c4298e4-4078-440b-8238-2874e19cb37d")
+	)
+	(no_connect
+		(at 104.14 93.98)
+		(uuid "7831ead4-a5c7-439e-b3e9-6e4d34028f4d")
+	)
+	(no_connect
+		(at 139.7 86.36)
+		(uuid "adce736a-b685-4aca-8fad-b8826c857d46")
+	)
+	(no_connect
+		(at 139.7 88.9)
+		(uuid "0a4ea85e-3c76-46a3-9740-bf8223193812")
+	)
+	(no_connect
+		(at 139.7 91.44)
+		(uuid "54848ca2-3bdb-4b49-882d-29893c43d9dd")
+	)
 	(junction
 		(at 182.88 72.39)
 		(diameter 0)

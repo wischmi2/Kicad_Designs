@@ -3548,16 +3548,6 @@
 	)
 	(wire
 		(pts
-			(xy 127 33.02) (xy 128.27 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1b9a3302-7f31-4720-986f-d51becb7eac2")
-	)
-	(wire
-		(pts
 			(xy 59.69 77.47) (xy 63.5 77.47)
 		)
 		(stroke
@@ -6158,84 +6148,6 @@
 			(project "nrf54l15_feather"
 				(path "/55da176d-6431-4d58-ada7-b89d931b1434/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c"
 					(reference "#PWR034")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 125.73 48.26 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4703736b-fc2a-4f1d-b012-d49d34270e31")
-		(property "Reference" "#FLG04"
-			(at 125.73 46.355 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 125.73 43.18 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 125.73 48.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 125.73 48.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 125.73 48.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b201fbb9-1ea7-40e4-afb9-5a8ab86d1bdc")
-		)
-		(instances
-			(project "nrf54l15_feather"
-				(path "/55da176d-6431-4d58-ada7-b89d931b1434/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c"
-					(reference "#FLG04")
 					(unit 1)
 				)
 			)
