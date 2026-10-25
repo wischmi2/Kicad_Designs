@@ -17,11 +17,12 @@ You coordinate PCB and enclosure work.
 - Done: 2026-10-23 wrote first STATUS.md for all six boards (ERC/DRC run with kicad-cli 10.0)
 - Done: 2026-10-24 pouch gateway enclosure (Ledger, Abyss navy) modelled in Fusion; notes in shared\design\pouch_gateway\enclosure_ledger\. Waiting on Brian: brow print approach (fine layers, supports, or separate cap)
 - Done: 2026-10-25 feather run 3: 6 of 7 unconnected fixed (SENS_SCL open), STEP 2026-10-25c. sens1 re-laid on the Feather outline, fully routed, STEP 2026-10-25. Feather enclosure concepts in shared\design\nrf54l15_feather\enclosure_concepts\. Report: shared\reports\2026-10-25-coordinator-feather-sens1-enclosure.md
+- Done: 2026-10-25 sensor board template built (Sensor_Boards\feather_sensor_template, STEP 2026-10-25). Report: shared\reports\2026-10-25-coordinator-sensor-template.md. Waiting on Brian: H4 plating, isolated-supply default, SENSORS.md ID register, 3-ch isolator, FFC type
 - Waiting on Brian (2026-10-25): SENS_SCL fix route, X1.4 via-in-pad, sens1 antenna-corner keep-out, sens1 gap/standoffs/R5/interrupt, enclosure concept and use environment (full list in the report)
 - Waiting on Brian: the other "Questions for Brian" in each STATUS.md
 - Tooling: 2026-10-23 confirmed kicad-designer has working kicad-pro MCP (v4.4.0, kicad-cli 10.0.4), kicad MCP (swig backend) and WebFetch; no live KiCad GUI/IPC link. LCSC pages don't show stock, so use JLCPCB or the MCP lookup tools for stock checks
 - Next steps:
-- Decisions made: 2026-10-23 the active boards are nrf54l15_feather (main) and nrf54l15_feather_sens1 (pH sensor). v4 is paused in favour of the Feather form factor; ph_sensor is superseded by sens1.
+- Decisions made: 2026-10-23 the active boards are nrf54l15_feather (main) and nrf54l15_feather_sens1 (pH sensor). v4 is paused in favour of the Feather form factor; ph_sensor is superseded by sens1. 2026-10-25 (Brian): one sensor board per feather, each node in its own enclosure (e.g. pH node, salinity node). CN1 stays point-to-point and the SENS_ID resistor tells firmware the board type. New sensor boards start from Sensor_Boards\feather_sensor_template (built 2026-10-25).
 
 ## Boards
 Read a board's STATUS.md before working on it. Update it at the end of every session.
@@ -35,4 +36,5 @@ Read a board's STATUS.md before working on it. Update it at the end of every ses
 | nRF54L15 v2 (earlier rev, SPV1040) | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\nrf54l15_v2 | STATUS.md |
 | nRF54L15 v4 (paused, replaced by feather) | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\nrf54l15_v4 | STATUS.md |
 | pH sensor (superseded by sens1) | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\ph_sensor | STATUS.md |
+| Feather sensor template | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\Sensor_Boards\feather_sensor_template | STATUS.md |
 | XIAO pogo stack | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\xiao_breakout | STATUS.md |
