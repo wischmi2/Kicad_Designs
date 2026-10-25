@@ -36,6 +36,7 @@ Golioth Pouch BLE to Wi-Fi gateway, Rev A.
   - Zephyr console UART pins
 - Layout to-dos listed in DESIGN_NOTES.md: physical stackup and 50 ohm CPWG, RF feed length, zone fill, silkscreen cleanup.
 - Update the "Layout status" section of DESIGN_NOTES.md.
+- Next rev (possible upgrade, Brian 2026-10-24): on-board 1S LiPo charger with power path, JST PH 2-pin battery connector and an "on battery"/battery-voltage signal to a GPIO, for power-cut ride-through. See concepts.md section 8.
 
 ## Questions for Brian
 - Was the physical stackup set and the RF feed sized for 50 ohm? I didn't check the stackup in the file.
@@ -44,6 +45,15 @@ Golioth Pouch BLE to Wi-Fi gateway, Rev A.
 
 ## Decisions
 - 2026-10-24 (Brian): the gateway PCB has no battery circuit. It's powered only by USB-C. A battery, if used, needs an external charger/5 V boost module feeding J1, inside the enclosure. The PCB is fixed and on order.
+- 2026-10-24 (Brian): enclosure placement is a shelf or desk with AC (USB) power available all the time. This answers question 1 in shared\design\pouch_gateway\concepts\2026-10-24-enclosure\concepts.md and points to the Ledger concept.
+- 2026-10-24 (Brian): printer is a Snapmaker U1 (4-toolhead toolchanger, 270 x 270 x 270 mm, 300 °C nozzle, 100 °C bed, no top cover mentioned). Open to filament suggestions; proposed PETG body + translucent PETG/PCTG light pipe + TPU feet (answers question 8).
+- 2026-10-24 (Brian): Rev A is wall (USB-C) power only, with no battery, PowerBoost or pigtail in the enclosure. This replaces the earlier "small pack for power cuts" answer. External USB-C keeps data, and the USB_VBUS 0 ohm stays fitted (closes concepts questions 2, 3 and 7). Checked the schematic: no charger, battery connector or power path on the board.
+- 2026-10-24 (Brian): enclosure concept is Ledger (concepts.md section 5). Desk/shelf placement means the wedge stand; no wall keyholes needed.
+- 2026-10-24 (Brian): antenna is the Molex 146153 FPC as proposed (concepts question 6).
+- 2026-10-24 (Brian): open window over the LCD, no cover lens (concepts question 10).
+- 2026-10-24 (Brian): J2 (SWD) and J4 (UART) are not fitted on the build; Tag-Connect J6 is the debug path (concepts question 5).
+- 2026-10-24 (Brian): colourway is Abyss navy with a coral key (concepts question 9).
+- 2026-10-24: LCD module dimensions taken from Waveshare's STEP model, so no hand measurement is needed (concepts question 4). See shared\design\pouch_gateway\lcd_module\MEASUREMENTS.md. Active area is 1.71 mm off-centre towards the connector end; the module is 4.0 mm thick; the PH connector on its back is 5.6 mm tall.
 
 ## Decisions (from DESIGN_NOTES.md)
 - 4 layers. M2 holes on the display hole pattern, which replaces the earlier mounting plan.
