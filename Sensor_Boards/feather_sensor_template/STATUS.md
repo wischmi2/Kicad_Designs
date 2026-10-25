@@ -18,7 +18,7 @@ One sensor board per feather, each pair in its own enclosure. CN1 is a point-to-
 - ERC (kicad-cli 10.0.4): **0 errors**, 44 warnings: 10 pin_to_pin (EasyEDA passives with unspecified/input pins, same as sens1), 10 isolated_pin_label (the 7 unused CN1 signals SENS_SCK/MOSI/MISO/CS/INT/AIN + VBAT, and INT_ISO which only has J5 until a sensor is added), 8 lib_symbol_issues and 7 footprint_link_issues (EasyEDA2Kicad / easyeda2kicad / Parts_1 / Connector_FFC-FPC libraries not registered on this PC), 4 lib_symbol_mismatch (GND power symbols), 5 unconnected_wire_endpoint (the intentional stubs on the empty Sensor sheet's hierarchical labels; they keep ERC from flagging the labels as dangling errors and go away when the sensor circuit is wired).
 - DRC (kicad-cli 10.0.4, --refill-zones and without, schematic parity on): **0 errors, 0 unconnected, 0 parity**, 11 warnings: 7 lib_footprint_issues (easyeda2kicad library not registered) and 4 silk_over_copper (EasyEDA pin-1 dots on R1/R3/R4/C1 touch their pads; the fab clips them).
 - Unconnected items: none. The empty sensor area has no pads, so nothing is reported.
-- STEP: C:\Personal-Agents\shared\handoffeather_sensor_templateeather_sensor_template_2026-10-25.step (board, holes, CN1, U3, U4). The EasyEDA passives (C1-C4, R1, R3, R4) have no 3D model on this PC and are missing; J5 is a flat pad.
+- STEP: C:\Personal-Agents\shared\handoff\feather_sensor_template\feather_sensor_template_2026-10-25.step (board, holes, CN1, U3, U4). The EasyEDA passives (C1-C4, R1, R3, R4) have no 3D model on this PC and are missing; J5 is a flat pad.
 - Fab outputs: none, and none to be made from the template.
 
 ## Layout (origin = outline top-left corner at 90, 110, same as the feather and sens1)
