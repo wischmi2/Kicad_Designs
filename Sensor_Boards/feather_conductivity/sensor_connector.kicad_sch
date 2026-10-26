@@ -8,7 +8,7 @@
 		(title "Sensor connector CN1 + host-side parts")
 		(date "2026-10-25")
 		(rev "0.1")
-		(company "Feather sensor template")
+		(company "Feather sensor conductivity")
 		(comment 1 "Do not change CN1 position, pinout or footprint")
 	)
 	(lib_symbols

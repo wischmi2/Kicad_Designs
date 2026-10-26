@@ -5,11 +5,11 @@
 	(uuid "55da176d-6431-4d58-ada7-b89d931b1434")
 	(paper "A4")
 	(title_block
-		(title "Feather sensor board template")
+		(title "Feather sensor board: conductivity (Atlas EC OEM)")
 		(date "2026-10-25")
 		(rev "0.1")
-		(company "Feather sensor template")
-		(comment 1 "Set the board name, R_ID and sensor type per board")
+		(company "Feather sensor conductivity")
+		(comment 1 "Isolated EC board from feather_sensor_template; R_ID not set (no SENSORS.md register yet)")
 	)
 	(lib_symbols)
 	(sheet

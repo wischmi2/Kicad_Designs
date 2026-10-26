@@ -5,132 +5,1264 @@
 	(uuid "0c5e6578-0c9f-40e5-832f-fad6dbf55769")
 	(paper "A4")
 	(title_block
-		(title "Sensor (isolated side) - fill per board")
-		(date "2026-10-25")
+		(title "Sensor: Atlas EC OEM conductivity (isolated side)")
+		(date "2026-10-26")
 		(rev "0.1")
-		(company "Feather sensor template")
-		(comment 1 "Template: empty")
+		(company "Feather sensor conductivity")
+		(comment 1 "U2 EC OEM, J1 SMA probe input (BNC-to-SMA adapter cable), C5/C6 decoupling")
 	)
-	(lib_symbols)
-	(hierarchical_label "VDD_ISO"
-		(shape input)
-		(at 50.8 60.96 180)
-		(effects
-			(font
-				(size 1.27 1.27)
+	(lib_symbols
+		(symbol "feather_conductivity:Atlas_EC_OEM"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at 2.54 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
 			)
-			(justify right)
+			(property "Value" "Atlas_EC_OEM"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "feather_conductivity:Atlas_EC_OEM"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://files.atlas-scientific.com/EC_oem_datasheet.pdf"
+				(at 0 -7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Atlas Scientific EC OEM (OEM-EC) embedded conductivity circuit, SMBus/I2C only (10-100 kHz), default addr 0x64, 3.0-5.5 V, 10.6-26 mA at 3.3 V (rises with conductivity). Pins 4/5 are the two probe electrodes (no probe ground)"
+				(at 0 -10.16 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "EC conductivity salinity TDS OEM Atlas Scientific I2C sensor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Atlas_EC_OEM_0_1"
+				(rectangle
+					(start -7.62 7.62)
+					(end 7.62 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "Atlas_EC_OEM_1_1"
+				(pin bidirectional line
+					(at -10.16 5.08 0)
+					(length 2.54)
+					(name "SDA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -10.16 2.54 0)
+					(length 2.54)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -10.16 0 0)
+					(length 2.54)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 -2.54 0)
+					(length 2.54)
+					(name "PRB1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 -5.08 0)
+					(length 2.54)
+					(name "PRB2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 10.16 -5.08 180)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 10.16 -2.54 180)
+					(length 2.54)
+					(name "INT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 10.16 0 180)
+					(length 2.54)
+					(name "SCL"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 10.16 5.08 180)
+					(length 2.54)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
 		)
-		(uuid "5d0f4395-c4c8-4028-a888-9d7aa1996fc0")
+		(symbol "Connector:Conn_Coaxial_Small"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0.254 3.048 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_Coaxial_Small"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "small coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "BNC SMA SMB SMC LEMO coaxial connector CINCH RCA MCX MMCX U.FL UMRF"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "*BNC* *SMA* *SMB* *SMC* *Cinch* *LEMO* *UMRF* *MCX* *U.FL*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_Coaxial_Small_0_1"
+				(polyline
+					(pts
+						(xy -2.54 0) (xy -0.508 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 0.508)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Conn_Coaxial_Small_1_1"
+				(arc
+					(start 1.3484 0.0039)
+					(mid 0.327 -1.308)
+					(end -1.1916 -0.6311)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -1.1916 0.6311)
+					(mid 0.327 1.3081)
+					(end 1.3484 -0.0039)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -2.54 0 0)
+					(length 1.27)
+					(name "In"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 0 180)
+					(length 1.27)
+					(name "Ext"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C"
+				(at 0.635 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Unpolarized capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
-	(hierarchical_label "GND_ISO"
-		(shape passive)
-		(at 50.8 66.04 180)
-		(effects
-			(font
-				(size 1.27 1.27)
+	(symbol
+		(lib_id "feather_conductivity:Atlas_EC_OEM")
+		(at 127 88.9 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "58fee277-2a16-49e3-81a9-53f4ddd3ef2b")
+		(property "Reference" "U2"
+			(at 119.38 78.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
-			(justify right)
 		)
-		(uuid "85eebbc7-6113-494c-8a67-5a283971d3e2")
+		(property "Value" "Atlas_EC_OEM"
+			(at 119.38 99.06 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "feather_conductivity:Atlas_EC_OEM"
+			(at 127 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://files.atlas-scientific.com/EC_oem_datasheet.pdf"
+			(at 127 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Atlas Scientific EC OEM conductivity circuit, I2C 0x64, 3.0-5.5 V, 10.6-26 mA at 3.3 V"
+			(at 127 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Atlas Scientific"
+			(at 127 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "OEM-EC"
+			(at 127 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7db068fa-0d9d-46e3-bfa3-5031fa2e92ce")
+		)
+		(pin "2"
+			(uuid "cd230525-89a5-4fcd-a838-c2331ac17f91")
+		)
+		(pin "3"
+			(uuid "5823f5be-434a-40ed-a1a2-403af6367547")
+		)
+		(pin "4"
+			(uuid "f51f44d8-8705-4820-89c6-490989ea8b03")
+		)
+		(pin "5"
+			(uuid "f661e89d-6da3-4a27-8d35-d879d63c88c3")
+		)
+		(pin "6"
+			(uuid "0b014538-e977-40b1-ba8a-2e6e329035a1")
+		)
+		(pin "7"
+			(uuid "47bb06ec-62dd-46b0-b5a4-00f5ca8662ef")
+		)
+		(pin "8"
+			(uuid "cc4d5aa6-bf91-4665-a027-26c701b098f3")
+		)
+		(pin "9"
+			(uuid "4e296296-ff4d-4340-89d5-a557b7628471")
+		)
+		(pin "10"
+			(uuid "f91cf43f-b163-40ab-8406-d235dd68271f")
+		)
+		(instances
+			(project "feather_conductivity"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(hierarchical_label "SDA_ISO"
 		(shape bidirectional)
-		(at 50.8 71.12 180)
+		(at 116.84 83.82 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "5dee9d0f-3f9d-4c14-a0ea-9fe1437d3884")
+		(uuid "7458e402-8ad5-4bdf-a7a6-cadebf09447a")
 	)
-	(hierarchical_label "SCL_ISO"
-		(shape bidirectional)
-		(at 50.8 76.2 180)
+	(no_connect
+		(at 116.84 86.36)
+		(uuid "4f9e3ea1-24d9-41b1-9fad-6429b8183384")
+	)
+	(hierarchical_label "VDD_ISO"
+		(shape input)
+		(at 116.84 88.9 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "93758ae7-5db1-45d5-91de-dc28927563f1")
+		(uuid "1075f167-f224-4cb1-ad77-96abea5232ef")
+	)
+	(label "EC_PRB1"
+		(at 116.84 91.44 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "dc13f5c4-dea5-4b6b-b961-3059cc2bc04c")
+	)
+	(label "EC_PRB2"
+		(at 116.84 93.98 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "713fcb40-a9f9-4362-9546-a1570993b119")
+	)
+	(hierarchical_label "GND_ISO"
+		(shape passive)
+		(at 137.16 93.98 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7dfc4380-3594-4157-940f-cf39d2c53dad")
 	)
 	(hierarchical_label "INT_ISO"
 		(shape output)
-		(at 50.8 81.28 180)
+		(at 137.16 91.44 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "873dd183-8a57-4db8-91ea-3ec46afb99eb")
+	)
+	(hierarchical_label "SCL_ISO"
+		(shape bidirectional)
+		(at 137.16 88.9 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ccbe55a4-799b-441c-a822-adb33085590b")
+	)
+	(no_connect
+		(at 137.16 86.36)
+		(uuid "1fae7ed7-0209-4b30-adde-2e0063559e3d")
+	)
+	(no_connect
+		(at 137.16 83.82)
+		(uuid "ae76c4f6-9f02-46d1-9740-72b93bd712bb")
+	)
+	(symbol
+		(lib_id "Connector:Conn_Coaxial_Small")
+		(at 91.44 91.44 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c952ad36-6ed5-48fc-b5f7-fd4d924dceda")
+		(property "Reference" "J1"
+			(at 88.9 86.36 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SMA (EC probe)"
+			(at 88.9 96.52 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_Coaxial:SMA_BAT_Wireless_BWSMA-KWE-Z001"
+			(at 91.44 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 91.44 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "SMA female PCB jack, right angle through-hole, EC probe input (centre = PRB1, shell = PRB2, not ground)"
+			(at 91.44 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "BAT WIRELESS"
+			(at 91.44 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BWSMA-KWE-Z001"
+			(at 91.44 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C496551"
+			(at 91.44 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e6b522e9-1177-4e29-9c0e-e7a0db1acbcb")
+		)
+		(pin "2"
+			(uuid "fe9e62db-8d04-4ae7-bae1-b09afe512431")
+		)
+		(instances
+			(project "feather_conductivity"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "EC_PRB1"
+		(at 88.9 91.44 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "04dad4c2-4665-48a1-becb-0997f7eed395")
+		(uuid "94447eae-f5ae-4160-b02f-e3b15f1e0edd")
 	)
-	(text "SENSOR CIRCUIT GOES HERE (isolated side). Leave this sheet empty in the template.\nAvailable nets (all isolated from host GND):\n  VDD_ISO  3.3 V from U4 (about 300 mA max from the 1 W module, less the isolator side 2)\n  GND_ISO  isolated ground: probe connector shell/shield goes here, never to host GND\n  SDA_ISO / SCL_ISO  I2C through U3, already pulled up (R3/R4 4.7k to VDD_ISO): do not add more pull-ups\n  INT_ISO  sensor interrupt, goes to test pad J5 only (does not cross the barrier)\nRules: parts go in the isolated placement area on the PCB (x 90 to 122.5, outside the NPTH keep-outs).\nProbe connector at the left short edge (x = 90), opposite CN1. Add decoupling per the sensor datasheet.\nSet R1 (R_ID, Sensor Connector sheet) for this sensor type."
+	(label "EC_PRB2"
+		(at 93.98 91.44 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "353d4c1d-0a75-42c6-957a-d0894a36cf28")
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 101.6 66.04 0)
+		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
-		(at 60.96 50.8 0)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d5588b92-b76f-4754-b36b-a14de9e07ca7")
+		(property "Reference" "C5"
+			(at 104.14 64.77 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1uF"
+			(at 104.14 67.31 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 101.6 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C29266.html"
+			(at 101.6 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "1uF 10% 16V X5R 0402, U2 VCC bulk decoupling"
+			(at 101.6 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 101.6 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05A105KO5NNNC"
+			(at 101.6 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C29266"
+			(at 101.6 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e3ee5cee-8c64-43f5-9d34-5ee1bff01ef7")
+		)
+		(pin "2"
+			(uuid "f73a7821-3fbc-43e3-bc09-74d735e54474")
+		)
+		(instances
+			(project "feather_conductivity"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "C5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(hierarchical_label "VDD_ISO"
+		(shape input)
+		(at 101.6 62.23 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c5839c13-3596-4b80-b357-5d219829d746")
+	)
+	(hierarchical_label "GND_ISO"
+		(shape passive)
+		(at 101.6 69.85 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a8f7e4eb-212f-45f0-a191-2bf2a79cd307")
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 111.76 66.04 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "73a25589-aecb-4bfe-8fa4-e2da75aea821")
+		(property "Reference" "C6"
+			(at 114.30000000000001 64.77 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 114.30000000000001 67.31 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 111.76 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C1525.html"
+			(at 111.76 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "100nF 10% 16V X7R 0402, U2 VCC decoupling"
+			(at 111.76 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 111.76 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 111.76 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C1525"
+			(at 111.76 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "dbcd8fce-9bc7-430a-a86a-b3e7b721acb4")
+		)
+		(pin "2"
+			(uuid "a1d8e7aa-e24f-4e32-ae1f-ee4c750fe7de")
+		)
+		(instances
+			(project "feather_conductivity"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "C6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(hierarchical_label "VDD_ISO"
+		(shape input)
+		(at 111.76 62.23 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "1bb13790-69df-4985-bdb9-fecac77732b7")
+	)
+	(hierarchical_label "GND_ISO"
+		(shape passive)
+		(at 111.76 69.85 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f6601312-7165-48e0-ac65-a93af8e975e0")
+	)
+	(text "CONDUCTIVITY (isolated side)\nU2 Atlas EC OEM (datasheet v3.4): SMBus/I2C only, 10-100 kHz, default address 0x64. VCC 3.0-5.5 V; current 10.6 mA (0 uS) to 26 mA (>=100,000 uS) at 3.3 V.\nVCC from VDD_ISO (U4 NXE1S0303MC, unregulated, about 3.0-3.3 V from VSENS 3.0 V): at the EC OEM 3.0 V minimum, see STATUS.md question.\nSDA/SCL pulled up on the Isolation sheet (R3/R4 4.7k to VDD_ISO): no pull-ups here. INT (pin 7) goes to test pad J5 only; firmware polls register 0x07.\nNC pins 2, 9, 10 float. Pins 4 and 5 are the two probe electrodes (both labelled PRB in the datasheet); the EC OEM has no probe-ground pin,\nso there is no AGND link: J1 centre = EC_PRB1 (pin 4), J1 shell = EC_PRB2 (pin 5). The SMA shell is NOT ground: keep it off GND_ISO and enclosure metal.\nLayout (datasheet p.34): probe traces on top, 0.4 mm, as short as possible, 1 mm from other traces, GND_ISO plane (pin 6) under and around them,\nno vias or exposed metal under U2 (rule area in the footprint). Lost at power-off: active/hibernate, LED, interrupt control (re-write after each VSENS cycle)."
+		(exclude_from_sim no)
+		(at 88.9 27.94 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left top)
 		)
-		(uuid "d0aabdec-1826-404d-9f41-4804632c6211")
+		(uuid "b5bff4d4-a85a-4e95-9bc6-d3981948cd0f")
 	)
-	(wire
-		(pts
-			(xy 50.8 60.96)
-			(xy 55.88 60.96)
+	(text "EC probe input (SMA; Atlas probes ship with BNC: BNC-to-SMA adapter cable)"
+		(exclude_from_sim no)
+		(at 76.2 104.14 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
 		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9c2f5a60-d251-4acb-9355-67ac5405769a")
+		(uuid "fe504181-9922-457b-baf3-450f1046f038")
 	)
-	(wire
-		(pts
-			(xy 50.8 66.04)
-			(xy 55.88 66.04)
+	(text "U2 VCC decoupling, next to pin 3"
+		(exclude_from_sim no)
+		(at 119.38 64.77 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
 		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "93df6f10-b034-4dfc-bc04-f2b6ab4ca2ad")
-	)
-	(wire
-		(pts
-			(xy 50.8 71.12)
-			(xy 55.88 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d0fbab9d-e36b-45be-be31-03a08ca85f70")
-	)
-	(wire
-		(pts
-			(xy 50.8 76.2)
-			(xy 55.88 76.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "68821a45-fd9b-440d-af92-a813ad414608")
-	)
-	(wire
-		(pts
-			(xy 50.8 81.28)
-			(xy 55.88 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "21a0c55a-a1ed-4da9-bf71-09428545964b")
+		(uuid "45683f99-3b2b-4403-9cfe-97d4e589a9d5")
 	)
 )
