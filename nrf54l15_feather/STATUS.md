@@ -1,7 +1,7 @@
 # nRF54L15 feather - Status
 
 Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\nrf54l15_feather\nrf54l15_feather\nrf54l15_feather.kicad_pro
-Last reviewed: 2026-10-25 (run 3)
+Last reviewed: 2026-10-26 (run 4)
 
 **State: ACTIVE main board (2026-10-23, per Brian).** It replaces nrf54l15_v4. The active sensor board for it is nrf54l15_feather_sens1 (pH).
 
@@ -98,7 +98,7 @@ Brian approved small placement changes (small passives and vias, about 1 mm or l
    - VDDIO via (120.18, 119.748) -> (120.18, 119.65).
    - VBUSOUT B.Cu re-routed: (114.62, 118.0) -> (114.85, 118.0) -> diagonal -> (119.1, 122.25) -> via (120.307, 122.261).
    - VSENS runs on In2 along y 120.2 to x 125, then down to y 124.15 (moved there in item 7) and up to a new via (134.0, 123.05) next to C45.
-3. [OPEN] **SENS_SCL** (U6.39 to R16.2/CN1.4). Stopped after 3 attempts. C1 (0201 DECA cap at (132.696, 119.2)) sits directly in front of U6.39: C1.1 is 0.49 mm from the pin end. The SDA fan-out (pin 38) closes the path below, and the DECA via (132.203, 117.801) with its pin-43 stub closes the 0.15 mm channel above.
+3. [done in run 4 by Brian] **SENS_SCL** (U6.39 to R16.2/CN1.4). Stopped after 3 attempts. C1 (0201 DECA cap at (132.696, 119.2)) sits directly in front of U6.39: C1.1 is 0.49 mm from the pin end. The SDA fan-out (pin 38) closes the path below, and the DECA via (132.203, 117.801) with its pin-43 stub closes the 0.15 mm channel above.
    - The router found no path, even in a what-if with the C1/C9 GND links and the C1 DECA links removed. The only via site would be where C1 is.
    - Fix needs: move C1 (and C11) about 0.3-0.5 mm up/right and re-route the DECA bridge (C1.1-C11.1-L4.2) and the C1/C9 GND links, or move SENS_SCL to another U6 pin (schematic + firmware change). This changes the DECA decoupling loop, so it was left for review.
 4. [done] **I2C_SCL** (U6.4 to R12.1/U2.14), commit 01ed624.
@@ -120,10 +120,29 @@ Brian approved small placement changes (small passives and vias, about 1 mm or l
    - **DRC**: 4 errors (J1 hole clearance, accepted), 323 warnings (164 silk_overlap, 102 silk_over_copper, 55 lib_footprint_issues, 2 silk_edge), **1 unconnected (SENS_SCL)**, 0 parity. The +8 silk_over_copper are R12's EasyEDA outline over R10/R13 pads after the R12 move.
    - STEP: C:\Personal-Agents\shared\handoff\nrf54l15_feather\nrf54l15_feather_2026-10-25c.step. Outline and connectors are unchanged from 2026-10-25b; only small parts moved.
 
-### Next steps (for the next run)
+### Next steps after run 3 (superseded by run 4)
 1. SENS_SCL (see run 3 item 3): needs a DECA-area rework around C1/C11/L4, or a pin change. Ask Brian which.
 2. Review the via-in-pad on X1.4 (run 3 item 7).
 3. Check the AEM10330 loop (DS section 10), the nPM1300 buck loops (L9 flipped; the VSYS via moved 0.6 mm in run 3) and the RF chain (C13 turned 180 deg) by hand before fab. Tune the AE1 match on the real board.
+4. Install the EasyEDA 3D models (or map them to KiCad models) so the STEP has part bodies.
+
+## Feather rework run 4 (2026-10-26, kicad-designer)
+1. [done] **SENS_SCL routed by Brian** in the KiCad GUI (hand edit, committed as-is in 309ab2e). U6.39 goes to a 0.5/0.3 via at (132.16, 119.29), B.Cu to a via at (135.2, 122.2), then F.Cu to CN1.4. This closes run 3 item 3; C1/C11/L4 were not moved.
+2. [done] Three DRC errors from that edit fixed (commit 2a074ab):
+   - SENS_SCL via (135.22, 122.18) moved to (135.20, 122.20), with its F.Cu and B.Cu track ends. Clearance to the U6-DECA B.Cu track goes from 0.097 to about 0.125 mm (rule 0.1 mm).
+   - C45 pad 2 and C10 pad 1 (GND): solid zone connection, which clears the starved thermals (same fix as run 2 for R1, R2, R8, C44, C11).
+   - Zones refilled.
+3. [done] Final checks (kicad-cli 10.0.4):
+   - **DRC** (--schematic-parity --refill-zones): **4 errors (J1 hole clearance, accepted), 327 warnings (165 silk_overlap, 105 silk_over_copper, 55 lib_footprint_issues, 2 silk_edge), 0 unconnected, 0 parity.** Warnings are the same as before the fixes.
+   - **ERC**: 0 errors, 204 warnings (schematic not changed).
+   - STEP: C:\Personal-Agents\shared\handoff
+rf54l15_feather
+rf54l15_feather_2026-10-26.step. Outline and connectors are unchanged from 2026-10-25c.
+
+### Next steps (for the next run)
+1. Review the via-in-pad on X1.4 (run 3 item 7).
+2. Check the AEM10330 loop (DS section 10), the nPM1300 buck loops and the RF chain by hand before fab. Tune the AE1 match on the real board.
+3. Check Brian's SENS_SCL route in the design review (it runs on B.Cu under the DECA area).
 4. Install the EasyEDA 3D models (or map them to KiCad models) so the STEP has part bodies.
 
 ## Current state (before the rework, 2026-10-23)
