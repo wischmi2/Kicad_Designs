@@ -1,0 +1,4 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "feather_sensor_template") (type "KiCad") (uri "${KIPRJMOD}/feather_sensor_template.pretty") (options "") (descr "Project-local footprints (CN1 Molex 503480-1400)"))
+)
