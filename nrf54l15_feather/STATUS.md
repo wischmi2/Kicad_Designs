@@ -135,9 +135,7 @@ Brian approved small placement changes (small passives and vias, about 1 mm or l
 3. [done] Final checks (kicad-cli 10.0.4):
    - **DRC** (--schematic-parity --refill-zones): **4 errors (J1 hole clearance, accepted), 327 warnings (165 silk_overlap, 105 silk_over_copper, 55 lib_footprint_issues, 2 silk_edge), 0 unconnected, 0 parity.** Warnings are the same as before the fixes.
    - **ERC**: 0 errors, 204 warnings (schematic not changed).
-   - STEP: C:\Personal-Agents\shared\handoff
-rf54l15_feather
-rf54l15_feather_2026-10-26.step. Outline and connectors are unchanged from 2026-10-25c.
+   - STEP: C:\Personal-Agents\shared\handoff\nrf54l15_feather\nrf54l15_feather_2026-10-26.step. Outline and connectors are unchanged from 2026-10-25c.
 
 ### Next steps (for the next run)
 1. Review the via-in-pad on X1.4 (run 3 item 7).
