@@ -5,11 +5,11 @@
 	(uuid "55da176d-6431-4d58-ada7-b89d931b1434")
 	(paper "A4")
 	(title_block
-		(title "Feather sensor board template")
+		(title "Feather sensor DO (dissolved oxygen)")
 		(date "2026-10-25")
 		(rev "0.1")
-		(company "Feather sensor template")
-		(comment 1 "Set the board name, R_ID and sensor type per board")
+		(company "Feather sensor DO")
+		(comment 1 "Atlas DO OEM, isolated. R_ID R1 = 2.2k 1 % (board type 2). From feather_sensor_template")
 	)
 	(lib_symbols)
 	(sheet

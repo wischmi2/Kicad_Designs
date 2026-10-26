@@ -8,7 +8,7 @@
 		(title "Isolation: I2C isolator + isolated DC-DC")
 		(date "2026-10-25")
 		(rev "0.1")
-		(company "Feather sensor template")
+		(company "Feather sensor DO")
 		(comment 1 "Straddles the 3 mm barrier at x = 124 on the PCB")
 	)
 	(lib_symbols

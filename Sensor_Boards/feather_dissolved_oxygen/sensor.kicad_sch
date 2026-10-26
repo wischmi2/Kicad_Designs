@@ -5,132 +5,1535 @@
 	(uuid "0c5e6578-0c9f-40e5-832f-fad6dbf55769")
 	(paper "A4")
 	(title_block
-		(title "Sensor (isolated side) - fill per board")
+		(title "Dissolved oxygen sensor (isolated side)")
 		(date "2026-10-25")
 		(rev "0.1")
-		(company "Feather sensor template")
-		(comment 1 "Template: empty")
+		(company "Feather sensor DO")
+		(comment 1 "Atlas DO OEM, galvanic probe on SMA J1")
 	)
-	(lib_symbols)
-	(hierarchical_label "VDD_ISO"
-		(shape input)
-		(at 50.8 60.96 180)
-		(effects
-			(font
-				(size 1.27 1.27)
+	(lib_symbols
+		(symbol "Connector:Conn_Coaxial_Small"
+			(pin_numbers
+				(hide yes)
 			)
-			(justify right)
-		)
-		(uuid "5d0f4395-c4c8-4028-a888-9d7aa1996fc0")
-	)
-	(hierarchical_label "GND_ISO"
-		(shape passive)
-		(at 50.8 66.04 180)
-		(effects
-			(font
-				(size 1.27 1.27)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
 			)
-			(justify right)
-		)
-		(uuid "85eebbc7-6113-494c-8a67-5a283971d3e2")
-	)
-	(hierarchical_label "SDA_ISO"
-		(shape bidirectional)
-		(at 50.8 71.12 180)
-		(effects
-			(font
-				(size 1.27 1.27)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0.254 3.048 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
 			)
-			(justify right)
-		)
-		(uuid "5dee9d0f-3f9d-4c14-a0ea-9fe1437d3884")
-	)
-	(hierarchical_label "SCL_ISO"
-		(shape bidirectional)
-		(at 50.8 76.2 180)
-		(effects
-			(font
-				(size 1.27 1.27)
+			(property "Value" "Conn_Coaxial_Small"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
 			)
-			(justify right)
-		)
-		(uuid "93758ae7-5db1-45d5-91de-dc28927563f1")
-	)
-	(hierarchical_label "INT_ISO"
-		(shape output)
-		(at 50.8 81.28 180)
-		(effects
-			(font
-				(size 1.27 1.27)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
 			)
-			(justify right)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "small coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "BNC SMA SMB SMC LEMO coaxial connector CINCH RCA MCX MMCX U.FL UMRF"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "*BNC* *SMA* *SMB* *SMC* *Cinch* *LEMO* *UMRF* *MCX* *U.FL*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_Coaxial_Small_0_1"
+				(polyline
+					(pts
+						(xy -2.54 0) (xy -0.508 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 0.508)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Conn_Coaxial_Small_1_1"
+				(arc
+					(start 1.3484 0.0039)
+					(mid 0.327 -1.308)
+					(end -1.1916 -0.6311)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -1.1916 0.6311)
+					(mid 0.327 1.3081)
+					(end 1.3484 -0.0039)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -2.54 0 0)
+					(length 1.27)
+					(name "In"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 0 180)
+					(length 1.27)
+					(name "Ext"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
 		)
-		(uuid "04dad4c2-4665-48a1-becb-0997f7eed395")
+		(symbol "Device:C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C"
+				(at 0.635 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Unpolarized capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:R"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "feather_dissolved_oxygen:Atlas_DO_OEM"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at 2.54 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Atlas_DO_OEM"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "feather_sensor_template:Atlas_DO_OEM"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://files.atlas-scientific.com/DO_OEM_Datasheet.pdf"
+				(at 0 -7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Atlas Scientific Dissolved Oxygen OEM embedded circuit (OEM-DO), I2C/SMBus default addr 0x67, 3.0-5.5 V, 10-pad castellated 12 x 11 mm"
+				(at 0 -10.16 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "dissolved oxygen DO OEM Atlas Scientific I2C galvanic"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Atlas_DO_OEM_0_1"
+				(rectangle
+					(start -7.62 7.62)
+					(end 7.62 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "Atlas_DO_OEM_1_1"
+				(pin bidirectional line
+					(at -10.16 5.08 0)
+					(length 2.54)
+					(name "SDA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -10.16 2.54 0)
+					(length 2.54)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -10.16 0 0)
+					(length 2.54)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 -2.54 0)
+					(length 2.54)
+					(name "PRB"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 -5.08 0)
+					(length 2.54)
+					(name "PRB_GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 10.16 -5.08 180)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 10.16 -2.54 180)
+					(length 2.54)
+					(name "INT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 10.16 0 180)
+					(length 2.54)
+					(name "SCL"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 10.16 5.08 180)
+					(length 2.54)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
-	(text "SENSOR CIRCUIT GOES HERE (isolated side). Leave this sheet empty in the template.\nAvailable nets (all isolated from host GND):\n  VDD_ISO  3.3 V from U4 (about 300 mA max from the 1 W module, less the isolator side 2)\n  GND_ISO  isolated ground: probe connector shell/shield goes here, never to host GND\n  SDA_ISO / SCL_ISO  I2C through U3, already pulled up (R3/R4 4.7k to VDD_ISO): do not add more pull-ups\n  INT_ISO  sensor interrupt, goes to test pad J5 only (does not cross the barrier)\nRules: parts go in the isolated placement area on the PCB (x 90 to 122.5, outside the NPTH keep-outs).\nProbe connector at the left short edge (x = 90), opposite CN1. Add decoupling per the sensor datasheet.\nSet R1 (R_ID, Sensor Connector sheet) for this sensor type."
+	(text "DISSOLVED OXYGEN (isolated side)\nU2 Atlas DO OEM: I2C addr 0x67, VCC 3.0-5.5 V (about 2.5 mA at 3.3 V), from VDD_ISO (NXE1S0303MC, about 3.0-3.3 V).\nSDA/SCL pulled up on the Isolation sheet (R3/R4 4.7k): no pull-ups here. INT goes to test pad J5 only; firmware polls register 0x07.\nProbe: galvanic DO probe on J1 SMA (Atlas ENV-40-DOX, male SMA). PRB (pin 4) to J1 centre, PRB GND (pin 5) to J1 shell.\nLayout (DO datasheet p31): probe traces on top, 0.4 mm, as short as possible, 1 mm from other traces, GND_ISO plane (pin 6)\nunder and around the probe traces and connector on all layers, no vias or exposed copper under U2.\nR5 0R DNP: optional PRB GND to GND_ISO link for bring-up."
 		(exclude_from_sim no)
-		(at 60.96 50.8 0)
+		(at 60.96 40.64 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left top)
 		)
-		(uuid "d0aabdec-1826-404d-9f41-4804632c6211")
+		(uuid "ff446bb4-d119-4ae2-8643-6dcb1c5b8e18")
+	)
+	(symbol
+		(lib_id "feather_dissolved_oxygen:Atlas_DO_OEM")
+		(at 127.0 88.9 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a96c68f8-1741-4e42-b840-d6c05048da4c")
+		(property "Reference" "U2"
+			(at 124.46 78.74000000000001 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Atlas_DO_OEM"
+			(at 121.92 99.06 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "feather_sensor_template:Atlas_DO_OEM"
+			(at 127.0 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://files.atlas-scientific.com/DO_OEM_Datasheet.pdf"
+			(at 127.0 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Atlas Scientific Dissolved Oxygen OEM embedded circuit (OEM-DO), I2C/SMBus default addr 0x67, 3.0-5.5 V, 10-pad castellated 12 x 11 mm"
+			(at 127.0 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Atlas Scientific"
+			(at 127.0 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "OEM-DO (Dissolved Oxygen OEM)"
+			(at 127.0 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Supplier" "atlas-scientific.com (not stocked by LCSC/JLCPCB)"
+			(at 127.0 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c14fe53f-23e3-41fc-8495-f57cefee619c")
+		)
+		(pin "2"
+			(uuid "5f6a62e0-c3db-4c34-8be5-7489828ef2a7")
+		)
+		(pin "3"
+			(uuid "c41b33e5-e9ae-45ce-b540-b47c03d1e198")
+		)
+		(pin "4"
+			(uuid "3d481c71-39b3-4275-a67b-229dd9fa5225")
+		)
+		(pin "5"
+			(uuid "104331db-1c8e-443b-982e-d067e3708ee3")
+		)
+		(pin "6"
+			(uuid "bb62ea32-155a-41df-a9cb-4511c7e09e77")
+		)
+		(pin "7"
+			(uuid "f19ae0fa-afce-4d87-a3a7-0be3b11a673b")
+		)
+		(pin "8"
+			(uuid "e26d81f9-bbf0-4ce8-9406-1e2d6f4b586c")
+		)
+		(pin "9"
+			(uuid "87190a00-db27-425b-8904-13693d615ec2")
+		)
+		(pin "10"
+			(uuid "32948e6c-991c-437c-b0ed-11a1aa3ad5a2")
+		)
+		(instances
+			(project "feather_dissolved_oxygen"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(wire
 		(pts
-			(xy 50.8 60.96)
-			(xy 55.88 60.96)
+			(xy 116.84 83.82)
+			(xy 111.76 83.82)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9c2f5a60-d251-4acb-9355-67ac5405769a")
+		(uuid "26d96d3a-4691-48a9-abb7-b857103a3fae")
+	)
+	(hierarchical_label "SDA_ISO"
+		(shape bidirectional)
+		(at 111.76 83.82 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "77ad44dd-1fcb-48df-85c9-cc340b461108")
 	)
 	(wire
 		(pts
-			(xy 50.8 66.04)
-			(xy 55.88 66.04)
+			(xy 116.84 88.9)
+			(xy 111.76 88.9)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "93df6f10-b034-4dfc-bc04-f2b6ab4ca2ad")
+		(uuid "9b067f97-1601-4883-9543-d904e61b1c7f")
+	)
+	(hierarchical_label "VDD_ISO"
+		(shape input)
+		(at 111.76 88.9 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f470443c-e777-4432-b3f8-18c5ed4a9736")
 	)
 	(wire
 		(pts
-			(xy 50.8 71.12)
-			(xy 55.88 71.12)
+			(xy 116.84 91.44)
+			(xy 111.76 91.44)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d0fbab9d-e36b-45be-be31-03a08ca85f70")
+		(uuid "0b7b804a-1ec3-43b3-a00c-5d8de305a61a")
+	)
+	(label "DO_PRB"
+		(at 111.76 91.44 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "10160043-15fa-4e12-9391-195e6faac51d")
 	)
 	(wire
 		(pts
-			(xy 50.8 76.2)
-			(xy 55.88 76.2)
+			(xy 116.84 93.98)
+			(xy 111.76 93.98)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "68821a45-fd9b-440d-af92-a813ad414608")
+		(uuid "76e93613-f709-4eae-a29d-fbcea1d59ffb")
+	)
+	(label "DO_PRB_GND"
+		(at 111.76 93.98 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3e3c5421-37ff-4d4d-bb41-b01bd4ac2f32")
 	)
 	(wire
 		(pts
-			(xy 50.8 81.28)
-			(xy 55.88 81.28)
+			(xy 137.16 93.98)
+			(xy 142.24 93.98)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "21a0c55a-a1ed-4da9-bf71-09428545964b")
+		(uuid "7f5f4834-3858-46fa-af8c-a21bade5d6bf")
+	)
+	(hierarchical_label "GND_ISO"
+		(shape passive)
+		(at 142.24 93.98 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "dd38dbd9-2e7a-40d3-b8ce-45ea7f83c396")
+	)
+	(wire
+		(pts
+			(xy 137.16 91.44)
+			(xy 142.24 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0973fc60-a906-4a24-bf55-c79b76de4a4e")
+	)
+	(hierarchical_label "INT_ISO"
+		(shape output)
+		(at 142.24 91.44 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8c1b00d8-64fe-4070-b5b5-5ef1f60ea33d")
+	)
+	(wire
+		(pts
+			(xy 137.16 88.9)
+			(xy 142.24 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e8ea48c1-cc9c-482e-81d0-3ecf17c0264f")
+	)
+	(hierarchical_label "SCL_ISO"
+		(shape bidirectional)
+		(at 142.24 88.9 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a0f5daa4-62d8-4e8a-a6a4-f32a8eb17f36")
+	)
+	(no_connect
+		(at 116.84 86.36)
+		(uuid "88ef52f8-b715-44e6-9738-a9977d509d2c")
+	)
+	(no_connect
+		(at 137.16 86.36)
+		(uuid "500d65aa-a41a-476e-a271-412ad31ede88")
+	)
+	(no_connect
+		(at 137.16 83.82)
+		(uuid "4d37feab-7085-4967-a2af-19f04306f5fd")
+	)
+	(symbol
+		(lib_id "Connector:Conn_Coaxial_Small")
+		(at 91.44 106.68 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "41bff58b-d561-4236-8c83-dfa1422c5646")
+		(property "Reference" "J1"
+			(at 90.17 101.60000000000001 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SMA BWSMA-KWE-Z001"
+			(at 90.17 102.87 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_Coaxial:SMA_BAT_Wireless_BWSMA-KWE-Z001"
+			(at 91.44 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C496551.pdf"
+			(at 91.44 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "SMA female jack, right angle, through hole. DO probe input (Atlas ENV-40-DOX has a male SMA)"
+			(at 91.44 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "BAT Wireless"
+			(at 91.44 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BWSMA-KWE-Z001"
+			(at 91.44 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C496551"
+			(at 91.44 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8b77b832-e610-4ac1-b035-bf1b37ac57b8")
+		)
+		(pin "2"
+			(uuid "a05ec172-79cc-441c-bd82-d0e0b143f0ac")
+		)
+		(instances
+			(project "feather_dissolved_oxygen"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 88.9 106.68)
+			(xy 83.82 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eeda2847-3aaf-4a7e-abae-f89f0effbde6")
+	)
+	(label "DO_PRB"
+		(at 83.82 106.68 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d14e8463-3da8-4f98-9938-9c6432e31a1b")
+	)
+	(wire
+		(pts
+			(xy 93.98 106.68)
+			(xy 99.06 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "64fde9b3-d6f5-4308-8573-1bfbb0935e5c")
+	)
+	(label "DO_PRB_GND"
+		(at 99.06 106.68 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3a21a1f8-3a9c-4dbd-a1b4-5a735c6efec3")
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 157.48 88.9 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "42c21d3b-f28d-4597-9230-276b29ba5232")
+		(property "Reference" "C5"
+			(at 160.01999999999998 87.63000000000001 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1uF"
+			(at 160.01999999999998 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 157.48 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C52923.pdf"
+			(at 157.48 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "1uF 25V X5R 0402, U2 VCC decoupling"
+			(at 157.48 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung"
+			(at 157.48 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05A105KA5NQNC"
+			(at 157.48 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C52923"
+			(at 157.48 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e3513fa5-c8e0-4f3b-901e-c34061072e63")
+		)
+		(pin "2"
+			(uuid "d7f1b92b-9640-4556-beff-58b9d0fb14b3")
+		)
+		(instances
+			(project "feather_dissolved_oxygen"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "C5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 157.48 85.09)
+			(xy 157.48 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cb964676-1e2d-41b6-9d9f-420fe6ba6425")
+	)
+	(hierarchical_label "VDD_ISO"
+		(shape input)
+		(at 157.48 82.55 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "24817b00-9163-41aa-9985-a10861600e0b")
+	)
+	(wire
+		(pts
+			(xy 157.48 92.71)
+			(xy 157.48 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0418ec0e-03c8-4493-ae79-b51c40d10389")
+	)
+	(hierarchical_label "GND_ISO"
+		(shape passive)
+		(at 157.48 95.25 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "48881aba-5a14-4fd4-8808-9452f5e9d173")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 170.18 88.9 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp yes)
+		(uuid "55f5a4e4-742c-4bad-a50e-849de72acf45")
+		(property "Reference" "R5"
+			(at 172.72 87.63000000000001 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0R DNP"
+			(at 172.72 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 170.18 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 170.18 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Optional link DO_PRB_GND to GND_ISO. Not fitted by default (DO datasheet does not tie PRB GND to GND)"
+			(at 170.18 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 170.18 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF0000TCE"
+			(at 170.18 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C17168"
+			(at 170.18 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "439160eb-144c-43b9-b26d-cb99f9dcd9ce")
+		)
+		(pin "2"
+			(uuid "2a847ccf-216c-470c-9a50-a088bed50bd0")
+		)
+		(instances
+			(project "feather_dissolved_oxygen"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 170.18 85.09)
+			(xy 170.18 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ad040748-f30b-4cc6-9840-2cd1fe77d3d5")
+	)
+	(label "DO_PRB_GND"
+		(at 170.18 82.55 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0c9ae112-a61f-4b67-9011-a00bc238cf75")
+	)
+	(wire
+		(pts
+			(xy 170.18 92.71)
+			(xy 170.18 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a5c6716d-60a8-424d-8733-4d057f152de3")
+	)
+	(hierarchical_label "GND_ISO"
+		(shape passive)
+		(at 170.18 95.25 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "965d18a5-b786-48d0-8dd0-038bcc7c29c9")
 	)
 )
