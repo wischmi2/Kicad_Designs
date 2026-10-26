@@ -510,7 +510,7 @@
 					)
 				)
 			)
-			(property "Footprint" "feather_sensor_template:Atlas_DO_OEM"
+			(property "Footprint" "feather_dissolved_oxygen:Atlas_DO_OEM"
 				(at 0 -5.08 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -796,7 +796,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "feather_sensor_template:Atlas_DO_OEM"
+		(property "Footprint" "feather_dissolved_oxygen:Atlas_DO_OEM"
 			(at 127.0 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -1077,7 +1077,7 @@
 		(dnp no)
 		(uuid "41bff58b-d561-4236-8c83-dfa1422c5646")
 		(property "Reference" "J1"
-			(at 90.17 101.60000000000001 0)
+			(at 91.44 104.14 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1088,7 +1088,7 @@
 			)
 		)
 		(property "Value" "SMA BWSMA-KWE-Z001"
-			(at 90.17 102.87 0)
+			(at 91.44 102.87 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

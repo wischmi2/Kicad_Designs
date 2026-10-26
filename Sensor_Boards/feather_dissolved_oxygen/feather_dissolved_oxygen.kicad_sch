@@ -9,7 +9,7 @@
 		(date "2026-10-25")
 		(rev "0.1")
 		(company "Feather sensor DO")
-		(comment 1 "Atlas DO OEM, isolated. R_ID R1 = 2.2k 1 % (board type 2). From feather_sensor_template")
+		(comment 1 "Atlas DO OEM, isolated. R_ID R1 not assigned yet (no SENSORS.md). From feather_sensor_template")
 	)
 	(lib_symbols)
 	(sheet

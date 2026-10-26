@@ -1,4 +1,5 @@
 (fp_lib_table
 	(version 7)
-	(lib (name "feather_sensor_template") (type "KiCad") (uri "${KIPRJMOD}/feather_sensor_template.pretty") (options "") (descr "Project-local footprints (CN1 Molex 503480-1400)"))
+	(lib (name "feather_sensor_template") (type "KiCad") (uri "${KIPRJMOD}/feather_sensor_template.pretty") (options "") (descr "Template footprints (CN1 Molex 503480-1400)"))
+	(lib (name "feather_dissolved_oxygen") (type "KiCad") (uri "${KIPRJMOD}/feather_dissolved_oxygen.pretty") (options "") (descr "Project-local footprints (Atlas DO OEM)"))
 )

@@ -3,7 +3,7 @@
 		(generator "pcbnew")
 		(layer "F.Cu")
 		(uuid "5090dcb5-23bf-4eb9-af47-ee9efac87550")
-		(descr "Atlas Scientific Dissolved Oxygen OEM (OEM-DO) - 10-pad castellated carrier, 12 x 11 mm. Pads: 1 SDA, 2 NC, 3 VCC, 4 PRB, 5 PRB_GND, 6 GND, 7 INT, 8 SCL, 9 NC, 10 NC. Geometry copied from the sens1 pH OEM footprint (Atlas OEM Footprint.dxf); the DO OEM datasheet v3.5 p6/p32 gives the same 12 x 11 mm body, 11.9 mm row centres, 2.3 mm pitch and pad layout. No vias or exposed copper under the module (datasheet p31).")
+		(descr "Atlas Scientific Dissolved Oxygen OEM (OEM-DO) - 10-pad castellated carrier, 12 x 11 mm. Pads: 1 SDA, 2 NC, 3 VCC, 4 PRB, 5 PRB_GND, 6 GND, 7 INT, 8 SCL, 9 NC, 10 NC. Geometry copied from the sens1 pH OEM footprint (Atlas OEM Footprint.dxf); the DO OEM datasheet v3.5 p6/p32 gives the same 12 x 11 mm body, 11.9 mm row centres, 2.3 mm pitch and pad layout. No vias or exposed copper under the module (datasheet p31). Note: pad pitch 2.2/2.3 mm as in the Atlas DXF used for sens1; datasheet nominal is 2.3 mm.")
 		(tags "Atlas DO OEM dissolved oxygen castellated module")
 		(property "Reference" "U2"
 			(at 0 -7.2 0)
@@ -51,6 +51,67 @@
 			)
 		)
 		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start -6 -5.5)
+			(end 6 5.5)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "dfbe686b-0160-4b26-aeac-1c925e3db776")
+		)
+		(fp_line
+			(start -6 -4.5)
+			(end -5 -5.5)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(layer "F.Fab")
+			(uuid "1856c2a8-28f0-4ad8-80a4-8d122ed76efa")
+		)
+		(fp_line
+			(start -4.6 -5.7)
+			(end 4.6 -5.7)
+			(stroke
+				(width 0.12)
+				(type default)
+			)
+			(layer "F.SilkS")
+			(uuid "fa11dcc7-f8e4-470b-ac88-7f48d2d1771b")
+		)
+		(fp_line
+			(start -4.6 5.7)
+			(end 4.6 5.7)
+			(stroke
+				(width 0.12)
+				(type default)
+			)
+			(layer "F.SilkS")
+			(uuid "220c3e48-b92c-4dc3-8b85-7ad55a062fad")
+		)
+		(fp_line
+			(start -7.65 -5.5)
+			(end -7.65 -6.2)
+			(stroke
+				(width 0.12)
+				(type default)
+			)
+			(layer "F.SilkS")
+			(uuid "ef9e579f-a9f0-4a65-b39f-b82dbe1ffca3")
+		)
+		(fp_line
+			(start -7.65 -6.2)
+			(end -6.9 -6.2)
+			(stroke
+				(width 0.12)
+				(type default)
+			)
+			(layer "F.SilkS")
+			(uuid "5867c0f7-8132-411d-ab56-4f736c132515")
+		)
 		(fp_rect
 			(start -8.15 -6.5)
 			(end 8.15 6.5)
