@@ -8,7 +8,7 @@
 		(title "Feather sensor ORP (Atlas ORP OEM)")
 		(date "2026-10-25")
 		(rev "0.1")
-		(company "Feather sensor template")
+		(company "Feather sensor ORP")
 		(comment 1 "Board type 3: ORP, R_ID = 4.7k 1 %")
 	)
 	(lib_symbols)
