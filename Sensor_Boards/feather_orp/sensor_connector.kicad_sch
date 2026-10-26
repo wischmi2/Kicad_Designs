@@ -2417,7 +2417,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7k 1%"
+		(property "Value" "10k (set per SENSORS.md)"
 			(at 93.98 132.08 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2450,42 +2450,8 @@
 				)
 			)
 		)
-		(property "Description" "R_ID: SENS_ID to GND, board type 3 = ORP"
+		(property "Description" ""
 			(at 91.44 130.81 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" "UNI-ROYAL"
-			(at 91.44 130.81 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0402WGF4701TCE"
-			(at 91.44 130.81 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part" "C25900"
-			(at 91.44 130.81 0)
-			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2664,7 +2630,7 @@
 		)
 		(uuid "de6bddfc-8e2c-4fd1-aea6-20fc2d5574dd")
 	)
-	(text "Host-side parts (keep on every sensor board):\nC1 1uF + C2 100nF: VSENS decoupling at CN1 (also the U4 / U3 side-1 input caps on the isolated variant).\nR1 = R_ID, SENS_ID (pin 11) to GND, 1 %. Value is SET PER SENSOR TYPE from the ID table in\nv4-sensor-connector.md / SENSORS.md. This board: 4.7k 1 % = board type 3 (ORP)."
+	(text "Host-side parts (keep on every sensor board):\nC1 1uF + C2 100nF: VSENS decoupling at CN1 (also the U4 / U3 side-1 input caps on the isolated variant).\nR1 = R_ID, SENS_ID (pin 11) to GND, 1 %. Value is SET PER SENSOR TYPE from the ID table in\nv4-sensor-connector.md / SENSORS.md. 10k is only a placeholder (10k = type 4)."
 		(exclude_from_sim no)
 		(at 40.64 105.41 0)
 		(effects
