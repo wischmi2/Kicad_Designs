@@ -1312,7 +1312,7 @@
 			)
 		)
 	)
-	(global_label "VOUT2"
+	(global_label "VSENS"
 		(shape input)
 		(at 33.02 48.26 180)
 		(fields_autoplaced yes)
@@ -2051,7 +2051,7 @@
 				)
 			)
 		)
-		(property "Description" "ID pull-up to VOUT2. Sensor board has the resistor to GND."
+		(property "Description" "SENS_ID pull-up, now from VSENS (was VDDIO) so it draws no current while the sensor rail is off (review S6, Brian 2026-10-27)."
 			(at 40.64 48.26 0)
 			(hide yes)
 			(show_name no)
