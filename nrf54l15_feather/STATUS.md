@@ -375,7 +375,8 @@ Board edits with pcbnew Python (scratch scripts), each step checked with kicad-c
 ## F1 placed (2026-10-28 evening, Brian + coordinator)
 - Brian placed F1 (Bourns MF-FSMF020X, 0603, C210356, same part as the schematic) at (130.23, 111.37) on F.Cu and routed VBAT -> F1.1, F1.2 -> VBAT_CN1 -> CN1.13. Commit 37d3a6f.
 - Coordinator removed an old VBAT stub that ended nowhere, about 8.6 mm: 3 B.Cu segments from the branch point (120.15, 120.77), via (118.51, 124.36), 4 F.Cu segments to (114.25, 127.7). Each removal was checked with DRC so nothing connected was cut.
-- **DRC** (kicad-cli 10.0.4, --schematic-parity --refill-zones): **0 errors, 424 warnings, 0 unconnected, 0 parity.** Warnings are the same set as stage 3.6: 199 silk_overlap, 167 silk_over_copper, 55 lib_footprint_issues, 2 silk_edge_clearance, 1 via_dangling (VBAT via at (138.8, 118.68), the old CN1.13 fan-out end; still to remove).
+- **DRC** (kicad-cli 10.0.4, --schematic-parity --refill-zones): **0 errors, 424 warnings, 0 unconnected, 0 parity.** Warnings are the same set as stage 3.6: 199 silk_overlap, 167 silk_over_copper, 55 lib_footprint_issues, 2 silk_edge_clearance, 1 via_dangling (VBAT via at (138.8, 118.68), the old CN1.13 fan-out end).
+- Then the coordinator removed that via (it only dropped onto an In2 VBAT track that runs straight through, so no track was left dangling). DRC now: **0 errors, 423 warnings (no dangling items), 0 unconnected, 0 parity.** STEP not re-exported for a via removal.
 - ERC not re-run (no schematic change).
 - **STEP:** C:\Personal-Agents\shared\handoff\nrf54l15_feather\nrf54l15_feather_2026-10-28b.step, with F1 on the board. Outline and connectors unchanged, so no new enclosure handoff. F1 is in the Tidemark zone (x >= 116) but a 0603 PTC is well under SW1's 1.6 mm.
 

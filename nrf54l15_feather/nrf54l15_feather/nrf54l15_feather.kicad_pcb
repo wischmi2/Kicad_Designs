@@ -26725,14 +26725,6 @@
 		(uuid "49baf697-923d-4503-922c-ceabb5447848")
 	)
 	(via
-		(at 138.8 118.68)
-		(size 0.6)
-		(drill 0.3)
-		(layers "F.Cu" "B.Cu")
-		(net "VBAT")
-		(uuid "8048d335-519e-4d05-a88b-6e05cd2a7087")
-	)
-	(via
 		(at 113.0237 120.523)
 		(size 0.6)
 		(drill 0.3)
