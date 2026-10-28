@@ -155,13 +155,13 @@
 		(uuid "00464714-aaa2-4330-8a9c-753ec3f9c921")
 		(at 112 123.3 90)
 		(property "Reference" "C4"
-			(at 0 -1.545 0)
+			(at 0 -0.94381 90)
 			(layer "F.SilkS")
 			(uuid "b095dc91-5418-41f1-977e-3823585e1621")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -586,13 +586,13 @@
 		(at 132.9 113.595)
 		(descr "100nF (104) ±10% 50V")
 		(property "Reference" "C26"
-			(at 0 -1.495 0)
+			(at 0 -1.27 0)
 			(layer "F.SilkS")
 			(uuid "c8f095f2-ec37-403f-9fa0-450975066fab")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -881,13 +881,13 @@
 		(at 113.4 124.8315 90)
 		(descr "24Ω (24R0) ±1%")
 		(property "Reference" "R9"
-			(at 0 1.695 0)
+			(at -2.07 0 0)
 			(layer "F.SilkS")
 			(uuid "bd1b5a94-e609-44ca-8961-0e859ae96a33")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -1145,13 +1145,13 @@
 		(descr "Capacitor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor")
 		(property "Reference" "C43"
-			(at 0 -2.195 0)
+			(at 0 -1.84381 90)
 			(layer "F.SilkS")
 			(uuid "528f6ad2-ba31-46b3-8d1b-590857b918df")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -1319,6 +1319,7 @@
 		(property "Reference" "C49"
 			(at 0 -1.05 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "2ffa72c0-8ed7-42a8-bad6-481fb3102448")
 			(effects
 				(font
@@ -1500,8 +1501,8 @@
 			(uuid "739a0476-d3c4-4a8f-a219-c7ad1f6528e8")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -2227,13 +2228,13 @@
 		(at 134.67 130.08 -90)
 		(descr "Mini 2.45 GHz Antenna, Johanson Technology")
 		(property "Reference" "AE1"
-			(at -2.695 0 0)
+			(at -0.000001 1.67 90)
 			(layer "F.SilkS")
 			(uuid "58b6d6a2-69ad-442c-8c5c-8753537fefd4")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -2479,13 +2480,13 @@
 		(descr "QFN, 32 Pin (http://infocenter.nordicsemi.com/pdf/nRF52810_PS_v1.1.pdf#page=468)")
 		(tags "QFN NoLead")
 		(property "Reference" "U2"
-			(at 3.845 0 0)
+			(at 3.77 0 90)
 			(layer "F.SilkS")
 			(uuid "c8b50324-d21e-4b1b-bac2-7c0f09bf2717")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -3406,13 +3407,13 @@
 		(at 104 122.018 90)
 		(descr "5.1KΩ (5101) ±1%")
 		(property "Reference" "R1"
-			(at -1.595 0 0)
+			(at 0.818 1 90)
 			(layer "F.SilkS")
 			(uuid "9f707bdd-15ba-43ad-b233-c30255156a8b")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -3938,6 +3939,7 @@
 		(property "Reference" "F1"
 			(at 0 -1.43 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "c19c6528-b258-49d4-b009-a29ad7a656a0")
 			(effects
 				(font
@@ -4126,8 +4128,8 @@
 			(uuid "71000af3-a0d3-4379-a2de-997f5976191f")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -4693,8 +4695,8 @@
 			(uuid "9a8e2ab9-6202-4bb9-8284-7238d8c02737")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -5631,13 +5633,13 @@
 		(at 124.7992 112.945 90)
 		(descr "100nF (104) ±10% 50V")
 		(property "Reference" "C6"
-			(at 0 1.695 0)
+			(at 0 1.27 90)
 			(layer "F.SilkS")
 			(uuid "e6942dcd-d8df-4ae4-a10f-60268de4b728")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -5927,13 +5929,13 @@
 		(descr "QFN 40-pin 5x5mm")
 		(tags "Integrated Circuit")
 		(property "Reference" "IC1"
-			(at -4.17 3.67 0)
+			(at -6.34 4.595 0)
 			(layer "F.SilkS")
 			(uuid "e12da9e6-e5a6-4785-8a7a-22f217c5b784")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -6783,8 +6785,8 @@
 			(uuid "c0390cac-cd3a-4f0f-88d9-0fab75c86a9e")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -6916,6 +6918,7 @@
 		(property "Reference" "C48"
 			(at 0 -1.16 270)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "324a7f4f-833c-4126-9113-3e0b45e0ba31")
 			(effects
 				(font
@@ -7098,13 +7101,14 @@
 		(uuid "40133426-95dd-42e7-b6c2-ffec3167e7ba")
 		(at 131.199999 123.5)
 		(property "Reference" "X1"
-			(at 2.095 0 90)
+			(at 2.094999 0 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "fada84b8-699e-47c4-93fb-027d634a6d01")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -7378,13 +7382,13 @@
 		(uuid "419b39ba-b299-4de4-9cbd-cb2bcb1cc760")
 		(at 126 127.9 90)
 		(property "Reference" "RF1"
-			(at 1.395 -1.895 0)
+			(at 0.000001 -1.92 90)
 			(layer "F.SilkS")
 			(uuid "dad5315e-9acf-406e-be3c-0498c8ce7491")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -7621,6 +7625,7 @@
 		(property "Reference" "C46"
 			(at 0 -1.43 270)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "b78456cd-7c7a-4d8c-a248-f567f0527edb")
 			(effects
 				(font
@@ -7804,7 +7809,7 @@
 		(descr "D_SOD-123F")
 		(tags "D_SOD-123F")
 		(property "Reference" "D3"
-			(at -0.127 -1.905 0)
+			(at 0 1.82 0)
 			(layer "F.SilkS")
 			(uuid "8b6719cd-285e-40a8-8f43-6095aa72834b")
 			(effects
@@ -8582,13 +8587,13 @@
 		(at 106.9 122.9431)
 		(descr "10uF (106) ±10% 25V")
 		(property "Reference" "C44"
-			(at 0 -1.715 0)
+			(at 0 1.513809 0)
 			(layer "F.SilkS")
 			(uuid "3063f1e6-ac28-4f9c-a8b3-09a5f60e01ad")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -8889,13 +8894,13 @@
 		(uuid "5a1d8743-624d-429e-8b1d-a5af7e9b63ab")
 		(at 120.6 127.6)
 		(property "Reference" "LED1"
-			(at 0 1.394999 0)
+			(at 0 1.169999 0)
 			(layer "F.SilkS")
 			(uuid "8c75aede-5d99-415c-bc20-6ea42655a873")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -9209,7 +9214,7 @@
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor")
 		(property "Reference" "C51"
-			(at 0 -1.16 0)
+			(at 0.955 1.33 0)
 			(layer "F.SilkS")
 			(uuid "8eccdd79-48cf-4ddb-a2cc-bc74664af8b1")
 			(effects
@@ -9687,6 +9692,7 @@
 		(property "Reference" "C47"
 			(at 0 -1.16 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "56f47b27-6b62-458c-b8f7-d810d1a058c6")
 			(effects
 				(font
@@ -10275,13 +10281,13 @@
 		(uuid "721e5419-a9af-4fff-a7c7-2198a01aece7")
 		(at 130.4 131.3)
 		(property "Reference" "R19"
-			(at -2.145 0 0)
+			(at -1.77 -0.595 90)
 			(layer "F.SilkS")
 			(uuid "6b178026-2ca2-4dc6-b246-ca1fe858d943")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -10422,13 +10428,13 @@
 		(uuid "7a02ba6a-3a52-46ea-9403-4d63accc7ca5")
 		(at 101.95 116.42)
 		(property "Reference" "U5"
-			(at 0 2.025 0)
+			(at -3.8 -2.45 90)
 			(layer "F.SilkS")
 			(uuid "663c888d-d386-4780-a871-e2f421a76101")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -10912,6 +10918,7 @@
 		(property "Reference" "R20"
 			(at 0 -1.17 270)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "c2f7661d-8721-46d0-8673-ea35686f26da")
 			(effects
 				(font
@@ -11394,6 +11401,7 @@
 		(property "Reference" "C52"
 			(at 0 -1.05 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "f570f3f3-d986-42ff-a997-405421ff0684")
 			(effects
 				(font
@@ -11999,13 +12007,13 @@
 		(at 121.9171 113 90)
 		(descr "10uF (106) ±10% 25V")
 		(property "Reference" "C7"
-			(at 0 -1.915 0)
+			(at 0 -1.799524 0)
 			(layer "F.SilkS")
 			(uuid "5d7d47f3-b353-427a-a7ba-b5c25d4af5f2")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -12300,8 +12308,8 @@
 			(uuid "d451cc9c-54a3-482e-9656-e174a5a84b50")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -13475,13 +13483,13 @@
 		(at 120.6 126.5)
 		(descr "5.1KΩ (5101) ±1%")
 		(property "Reference" "R14"
-			(at 0 -1.345 0)
+			(at -2.19381 0 90)
 			(layer "F.SilkS")
 			(uuid "9ab7f6fd-5ac5-4ca7-acd5-ad05780c964e")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -13725,13 +13733,13 @@
 		(uuid "893243a1-78f2-41ce-a013-adc9bded7992")
 		(at 101.95 126.44 180)
 		(property "Reference" "U4"
-			(at 0 2.025 0)
+			(at 3.82381 -2.45 90)
 			(layer "F.SilkS")
 			(uuid "e39c5778-4569-4dc0-b5bd-7f0133eac0be")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -14217,8 +14225,8 @@
 			(uuid "345030e9-a812-49e2-a872-911a0329c635")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -14669,8 +14677,8 @@
 			(uuid "0c88a120-ee71-42b7-9a0e-b162ceaeff03")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -15078,13 +15086,13 @@
 		(uuid "95d186b5-1af4-4eaf-8afd-cb6c9632ae24")
 		(at 120.5 123.75 90)
 		(property "Reference" "C19"
-			(at -2.094999 0 90)
+			(at -1.57 0 0)
 			(layer "F.SilkS")
 			(uuid "42dbda24-b0c7-4113-b9aa-add550a015d6")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -15372,13 +15380,13 @@
 		(uuid "9c20157f-593e-421b-a5f4-638b99261e32")
 		(at 131.1 128.5 180)
 		(property "Reference" "L3"
-			(at 0 1.245 0)
+			(at -0.689999 -1.186666 90)
 			(layer "F.SilkS")
 			(uuid "1b85283b-dc7c-405f-bc93-4383e8d9051f")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -15668,8 +15676,8 @@
 			(uuid "3c2079bb-1f8e-4ee8-984f-786032e33ea5")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -16289,13 +16297,13 @@
 		(uuid "b51a6472-d96c-4939-969b-27a47b83921e")
 		(at 127.63 123.65)
 		(property "Reference" "C5"
-			(at -1.595 0 0)
+			(at -0.69 -1.305714 90)
 			(layer "F.SilkS")
 			(uuid "3cd93e9a-2162-4258-8e39-e4bff41d2223")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -16588,6 +16596,7 @@
 		(property "Reference" "R21"
 			(at 0 -1.17 270)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "183817ec-241f-43cc-8041-bec05a5a201c")
 			(effects
 				(font
@@ -16881,6 +16890,7 @@
 		(property "Reference" "U7"
 			(at 0 -1.8 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "078814f2-d0ee-49cf-88cc-b8af9d116313")
 			(effects
 				(font
@@ -18479,13 +18489,13 @@
 		(uuid "c1293f7c-42b9-4529-ab11-b08b8b648062")
 		(at 133.8734 125.85 90)
 		(property "Reference" "R17"
-			(at 0 -1.095 90)
+			(at -2.4 -0.5734 90)
 			(layer "F.SilkS")
 			(uuid "3444fbfb-6370-43d4-9525-3aaaa9acc293")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -18630,6 +18640,7 @@
 		(property "Reference" "C50"
 			(at 0 -1.05 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "f56f5ac3-b718-4554-a04a-b5e6904ea2ec")
 			(effects
 				(font
@@ -18808,7 +18819,7 @@
 		(descr "X1SON 2 pin 0.6x1mm 0.375mm height package, https://www.ti.com/lit/ml/mpss034c/mpss034c.pdf, https://www.ti.com/lit/ds/symlink/tpd6e05u06.pdf")
 		(tags "X1SON")
 		(property "Reference" "D1"
-			(at 0 -1.25 90)
+			(at 0 1.12 90)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "c6bb1cb0-e1e7-4dd1-a626-194d0f2ffa82")
@@ -19007,13 +19018,13 @@
 		(at 104 120.382 90)
 		(descr "5.1KΩ (5101) ±1%")
 		(property "Reference" "R2"
-			(at 1.595 0 0)
+			(at 0.002 -1.1 90)
 			(layer "F.SilkS")
 			(uuid "e721288f-5e93-46c7-8cba-85b281fb00f4")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -19563,13 +19574,13 @@
 		(uuid "d85c3f02-b312-4b2d-a15a-d78caed39e31")
 		(at 135.2734 125.9625 90)
 		(property "Reference" "R18"
-			(at -1.645 1.595 0)
+			(at -0.0375 0.9266 90)
 			(layer "F.SilkS")
 			(uuid "209e78f7-5bb2-4412-a4cf-cda70ff50e6e")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -22588,6 +22599,7 @@
 		(property "Reference" "C53"
 			(at 0 -1.05 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "34bcbc0c-dd20-4a73-91ec-123e880446f2")
 			(effects
 				(font
@@ -23026,7 +23038,7 @@
 		(descr "X1SON 2 pin 0.6x1mm 0.375mm height package, https://www.ti.com/lit/ml/mpss034c/mpss034c.pdf, https://www.ti.com/lit/ds/symlink/tpd6e05u06.pdf")
 		(tags "X1SON")
 		(property "Reference" "D2"
-			(at 0 -1.25 90)
+			(at 1.581905 0 90)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "986a1ecd-1944-4155-80a3-64cd006e5ccd")
@@ -23226,11 +23238,12 @@
 		(property "Reference" "C8"
 			(at -1.595 0 270)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "1914ba56-7669-4084-8ca4-9f4a315b222f")
 			(effects
 				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)

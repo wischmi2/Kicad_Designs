@@ -1,0 +1,10 @@
+(version 1)
+
+# Accepted exception (run 5 stage 3.5, 2026-10-28): the USB-C receptacle J1
+# (TYPE-C-31-M-12 library footprint) has its two NPTH locating holes 0.185 mm
+# (VBUS/GND pins A1B12, B1A12) and 0.217 mm (A4B9, B4A9) from its own SMD pads.
+# That is the vendor land pattern, so the 0.25 mm board hole clearance is
+# relaxed to 0.18 mm for items inside J1 only. See ../STATUS.md.
+(rule "J1_NPTH_to_pad"
+	(constraint hole_clearance (min 0.18mm))
+	(condition "A.memberOfFootprint('J1') && B.memberOfFootprint('J1')"))
