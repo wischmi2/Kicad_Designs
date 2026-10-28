@@ -380,6 +380,13 @@ Board edits with pcbnew Python (scratch scripts), each step checked with kicad-c
 - ERC not re-run (no schematic change).
 - **STEP:** C:\Personal-Agents\shared\handoff\nrf54l15_feather\nrf54l15_feather_2026-10-28b.step, with F1 on the board. Outline and connectors unchanged, so no new enclosure handoff. F1 is in the Tidemark zone (x >= 116) but a 0603 PTC is well under SW1's 1.6 mm.
 
+## Pre-fab review (2026-10-28 evening, design-reviewer on Opus, HEAD c4b617e)
+Full report: C:\Personal-Agents\shared\reports\2026-10-28-review-nrf54l15-feather-prefab.md. Verdict: **not ready for fab, close.** B1, B3, B4 fixed; B2 fixed except C5's ground (S1); B5 open.
+- **Blockers:** BL1 old 10-23 Gerbers/drill/7z/PCBWay BOM still in the project folder (66.04 x 25.40 outline) - archive and regenerate. BL2 BOM not ready for JLC assembly: LCSC split over "LCSC" and "LCSC Part" fields; 15 fitted parts have none (C40-C43, C45, CN1, IC1, J1, J3, L7, R15, R16, SW1, U2, U6; numbers are in parts_2026-10-27.md); U2, IC1 and C43 had 0 JLC stock on 10-27 (C43 alt C412252).
+- **Should fix:** S1 C5 shunt ground shares a via with C48/C13 through ~3.2 mm of 0.15 mm track (~1.1 nH), needs its own via (move VRF/VBAT In2 ~0.5 mm near (126.9,123.6)). S2 no local cap at U2.28/U2.30 (LDO inputs); add 1-10 uF. S3 U2.32 VOUT2 reaches L10 via 17.8 mm / 3 vias. S4 R21 DNP pads leave a 3.3 mm stub on ANT (~0.4 pF). S5 F1 branch 0.15 mm; widen to >= 0.3 mm, In2 piece (x 139.2, y 115.7-117.9) first. S6 R17 reference on AE1 pad 1. S7 order JLC04161H-3313 + ENIG, BOM/CPL with --exclude-dnp, MPN fixes (C41, J3, IC1, J1).
+- **Notes:** F1 drop 55-260 mV at 70 mA (too much for VBAT-fed isolated supply option (c), fine for water level). VRF always on adds 50-90 uA sleep. X2 not on board, so firmware uses LFRC. 56 parts have no 3D model on this PC. C4 still fitted (dropping it also clears the only ERC error); L9/C18 still fitted.
+- Not checked: FM8625H datasheet, nPM1300 pin table/layout pages, live JLC stock, D1-D3/R11/IC1/J1 land patterns.
+
 ## Current state (before the rework, 2026-10-23)
 - Schematic: 9 sub-sheets.
 - PCB: rectangular outline, about 66.04 x 25.40 mm. 4 layers (F.Cu / In1.Cu / In2.Cu / B.Cu). 64 footprints, 831 track segments, 213 vias, 13 zones. **No mounting holes yet.**
