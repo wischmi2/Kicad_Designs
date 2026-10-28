@@ -1,7 +1,7 @@
 # nRF54L15 feather - Status
 
 Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\nrf54l15_feather\nrf54l15_feather\nrf54l15_feather.kicad_pro
-Last reviewed: 2026-10-27 (run 5 stage 1: schematic changes, PCB updated, not yet placed or routed)
+Last reviewed: 2026-10-28 (run 5 stage 2: RF corner and antenna-switch area placed and routed; stages 3-7 pending)
 
 **State: ACTIVE main board (2026-10-23, per Brian).** It replaces nrf54l15_v4. The active sensor board for it is nrf54l15_feather_sens1 (pH).
 
@@ -199,6 +199,63 @@ All new parts are 1.1 mm or lower (SMF12A 1.1 mm max per Littelfuse; SC70-5 and 
 2. Place and route the new parts: C46 at U2.31 and the VRF run to R11 with C47/C15 at R11.4; U7 + C48 (+ R20 pads) near R11; R21 bypass pads beside R11; C52/C53 on the match line; D1/D2/D3 at J1; C51 at U2.21; C49/C50 at U6.22/U6.36; X2 above U6 only if it fits; F1 next to CN1.13; R8 (NTC) next to U4.
 3. The U6 RF corner (B1, B2, S2) per Nordic config 1, as planned.
 4. Firmware notes for firmware-dev: LDSW2 in LDO mode at 2.5 V (LDSW2LDOSEL, LDSW2VOUTSEL), on before radio TX/RX, off after, and the switch needs about 10 µs after power-up (review decision); drive P0.01 before VRF turns on; never enable BUCK1; configure the 10k B3380 NTC; read SENS_ID only with VSENS on.
+
+## Run 5 stage 2 (2026-10-28, kicad-designer on Fable 5.1): RF corner and antenna-switch area
+Scope was cut by the coordinator to stages 2.1 and 2.2 only (usage limit); stages 3-7 (power parts, split-net routing, VBUS/VBAT widths, silk, J1 rule, final checks, STEP) go to a separate run. Board edits with pcbnew Python (scratch scripts), every step checked with kicad-cli 10.0.4 DRC (--schematic-parity --refill-zones). Schematic not changed. Commits: 436e86a (2.1), see git log for 2.2.
+
+Sources read today (2026-10-28):
+- nRF54L15 PS, PCB layout example (ref_circuitry.html-layout): "The PCB layout in the following figure is a reference layout for Circuit configuration no. 1 for QFAA QFN48." "Note: Pay attention to how the capacitor C6 is grounded. It is not directly connected to the ground plane, but grounded via pin 32 and to the VSS die pad. This is done to create additional filtering of harmonic components." The five layout figures (Figures 3-7) are images served from docs.nordicsemi.com/api/khub; a plain download returned an HTML page, and a download with browser headers was blocked by the tool policy, so **I could not read the reference layout images**. The corner below is laid out from the QFN48 pin geometry, the config 1 figure labels (C4/C7/C8/C10 100 nF 0201, C6 GJM0335C1E1R5WB01, C9 GJM0335C1E2R0WB01, L2 LQP03HQ2N7B02, L3 LQP03HQ3N5B02, L4 = L3, X2 32 MHz XTAL_2016) and the grounding note.
+- nRF54L15 PS, Reference circuitry: "To ensure good RF performance when designing PCBs, it is highly recommended to use the PCB layouts and component values provided by Nordic Semiconductor."
+- nPM1300 PS, PCB guidelines: "The BUCK supply voltage should be decoupled with high performance capacitors as close as possible to the supply pins." "All device grounds, VDD connections, and VDD bypass capacitors must be connected as close as possible to the device." "Long power supply lines on the PCB should be avoided." The nPM1300 layout example page has only figure captions (Figures 7-11, QFN) and "Note: No components on the bottom layer."
+- Johanson 2450AT18A100 datasheet (pdftotext of the PDF): "It is recommended that the designer leave available slots for a "pi" (or shunt-series-shunt) network. The antenna matching network values here are used when antenna is mounted on Johanson's evaluation board. The matching values and topology on clinet's PCB will be different." "* Line width should be designed to provide 50 ohm impedance matching characteristics." EVB: "6.5mm Antenna ... No Ground", "This 50 Feedline can be as short as needed".
+- e-peas DS-AEM10330 v1.5 section 10.1: "Connection between VINT and CINT must be moderately short for AEM10330 stability, even though this pins does not carry large currents. Same for connection between CINT to GND." (for stage 3, C41).
+
+### Stage 2.1 (commit 436e86a): U6 RF corner per config 1
+What moved and why (all in board mm; Feather fx = x - 90, fy = 132.86 - y):
+- **DECRF (U6.33) to DECA (U6.43)**: C1 (2.2 uF 0201) now sits 0.5 mm below pin 33 at (129.35,122.67) with its GND via at (128.9,123.6); the DECRF-DECA link is a 0.45/0.25 via at (129.36,121.85), a straight In2 track and a 0.5/0.3 via at (132.3,118.15) next to pin 43. C9 (10 nF) at (133.0,118.1) and C11 (DNP) at (133.65,118.02) sit on pin 43's F.Cu stub, which then runs on to L4.2 (the DECD ferrite). An F.Cu link is impossible: pins 34/35 (XC1/XC2) sit between pin 33 and the chip corner, so any F.Cu path would cross the crystal lines. SENS_CS (In2) and SENS_INT (B.Cu) were re-routed around the new link; the SENS_SCL via that Brian placed was not moved.
+- **Match network**: L5, C8, L6, C5, L8 now sit in flow order down x 128.3 (rot -90, pad 1 upstream), nothing doubles back. C8's GND pad faces pin 32 and is tied to it with a 0.15 mm stub (pin 32 keeps its stub into the exposed pad), per the Nordic note. C5 (2.0 pF shunt) hangs 0.6 mm off the L6/L8 node to the left; its GND goes down the right side of C48 to the C48/C13 GND via (see 2.2).
+- **X1**: rot 0 at (131.2,123.5). Pads 4/3 are the top row, 1/2 the bottom row; XC1 drops straight down x 129.85 into pad 1, XC2 goes right along y 121.75 and down into pad 3; no track between or under the pads; the X1.4 via-in-pad is gone (pad 4 has a 0.45 via at (130.5,122.25), pad 2 is tied to the C15/C53 GND via at (132.55,125.68)).
+- **C50** (100 nF 0201) at (132.45,121.35) on pin 36 (1.97 mm), **C49** at (124.0,119.0) under C22 on pin 22 (1.34 mm). The pin-36 VDDIO now goes through a 0.45 via at (131.1,121.25) to In2 (y 122.75) and the pin-22 In2 run; the old pin 36 -> R19 F.Cu/In2 run is gone (R19 is on VSENS now).
+- SENS_SDA moved from B.Cu to an F.Cu run along y 119.8 (pin 38 -> R15.2) to free the pin-36 via site; SENS_MOSI In2 moved to y 123.05; RESET F.Cu leaves pin 30 diagonally; GND via at C10.1 (135.23,114.1).
+- Measurements (pad centre to pad centre along copper, own script; the verifier's figures used pad edges, hence 16.9 vs 17.8 before):
+
+| Path | Before | After |
+| --- | --- | --- |
+| U6.33 DECRF -> nearest DECA cap (C1.1) | 17.79 mm, 2 vias | 1.57 mm, 0 vias |
+| U6.33 -> U6.43 | 19.71 mm, 2 vias | 6.97 mm, 2 vias |
+| C5.2 stub to L6.2 / L8.1 | 8.91 / 7.39 mm, 2 vias | 0.66 / 0.60 mm, 0 vias |
+| XC1 U6.34 -> X1.1 | 2.24 mm, 0 vias | 3.86 mm, 0 vias |
+| XC2 U6.35 -> X1.3 | 5.64 mm, 2 vias | 3.30 mm, 0 vias |
+| U6.31 ANT -> L5.1 | 2.38 mm | 1.22 mm |
+| C8.1 -> U6.32 (GND, via pin 32) | no copper path | 1.19 mm |
+| U6.36 -> nearest VDDIO cap | 33.26 mm (C26), 3 vias | 1.97 mm (C50), 0 vias |
+| U6.22 -> nearest VDDIO cap | 14.34 mm (C6), 2 vias | 1.34 mm (C49), 0 vias |
+
+- DRC after 2.1: 14 errors (4 J1 hole clearance accepted, 5 shorting_items + 5 solder_mask_bridge on the stage-1 split-net stubs), 34 unconnected, 0 parity.
+
+### Stage 2.2: antenna-switch area
+- **U7** (SN74AUP1G34, SC70-5) at (124.99,124.9) rot 0, left of the match chain and above RF1: pin 5 VCC top-right, pin 4 Y bottom-right, pin 2 A middle-left, pin 3 GND bottom-left. **C48** (100 nF) at (127.0,124.8) rot -90, 1.18 mm from VCC. **R20** (1M DNP) at (122.5,125.9) left of U7, pad 1 on the ANT_SEL via, pad 2 to a GND via at (122.5,127.0).
+- ANT_SEL: U6.24 -> existing via (125.442,120.604) -> B.Cu -> via (123.5,124.9) touching U7.A (6.69 mm, 2 vias). ANT_VCTL: U7.Y -> via (125.83,124.9) under the body -> B.Cu -> via (127.5,127.25) -> F.Cu to R11.6 (5.28 mm, 2 vias). The old ANT_SEL via at (127.483,126.42) is gone.
+- **VRF**: U7 VCC via (126.0,123.5) sits on the VRF inner trunk. The trunk is the old VOUT1 In2 diagonal (124.443,121.102)->(129.313,125.972) and its via (124.054,121.102), re-netted to VRF and cut from VOUT1 at C18.2 (VOUT1 now has only U2.1, L9, C18, as the schematic says). The trunk continues on In2 to a via at (129.75,126.6) for C47/R11.4 and to a via at (131.75,125.1) for C15.2. **C47** (100 pF) at (129.75,125.75) rot 90, 1.30 mm from R11.4, GND via (130.1,125.3). **C15** (100 nF) at (131.7,125.8) rot 90, 5.1 mm / 2 vias from R11.4 (no F.Cu site next to pad 4: R21 and the ANT branch take the space). **The VRF trunk is still open between the via (124.054,121.102) and U2.31 (stage 3).**
+- **R21** (0R DNP bypass) at (130.8,126.25) rot -90, right of R11: pad 1 ANT fed by a branch from the chain node L8.2 along y 124.75 (above X1), pad 2 ANT_CHIP from R11.3 along y 127.2. Fitting R21 (and removing R11) gives ANT -> 5.1 mm branch -> R21 -> 2.1 mm -> ANT_CHIP; both pads are open stubs when DNP (2.5 mm on ANT off the chain node, 1.3 mm on ANT_CHIP).
+- **C13** (0.3 pF) nudged to (127.6,125.9) (0.2 mm down) to clear C48; its ANT stub re-drawn at y 125.9. C48.2, C13.2 and C5.1 share the GND via at (126.9,126.35).
+- **C52** (DNP pi shunt) at (128.7,128.2) rot 90, pad 1 0.63 mm from C12.1, pad 2 on the GND via (128.6,127.84). **C53** at (131.75,127.4) rot 90, pad 1 0.94 mm from L3.1 (0.17 mm stub), outside the AE1 keep-out (pads end at x 131.98); its GND pad overlaps C15.1 and both go to the via at (132.55,125.68) together with X1.2. The keep-out rule area (x 132.15-140.8, y 126.4-132.86) and the ANT_FEED line are unchanged; no new track or via inside it.
+- Stitching vias deleted in the area: (125.945,123.458), (126.572,124.21), (126.08,126.05), (126.62,125.75), (130.508,125.263), (130.571,126.551), (131.35,123.05), (132.84,119.61), (131.5,127.8), (131.9,125.15).
+- Tidemark zone (fx >= 26, x >= 116): U7 SC70-5 is 1.1 mm max (TI), all the new passives 0201/0402/0603 are below 0.9 mm, so nothing new exceeds SW1's 1.6 mm. D3 (SMF, 1.1 mm), F1 (0603) and X2 are not placed yet.
+- **DRC now (kicad-cli 10.0.4, --schematic-parity --refill-zones): 6 errors, 451 warnings, 17 unconnected, 0 parity.** Errors: 4 hole_clearance in J1 (accepted), 1 shorting_items + 1 solder_mask_bridge at CN1.13 (VBAT track still on the VBAT_CN1 pad; stage 5). Warnings: 199 silk_overlap, 194 silk_over_copper, 55 lib_footprint_issues, 2 silk_edge, 1 via_dangling (the VRF via (124.054,121.102), waiting for stage 3). Unconnected: VRF U2.31 -> trunk, VRF C46, VDDIO U2.30, VSENS R19.1, VBAT F1.1, VBAT_CN1 F1.2 -> CN1.13, VBUS D3/C51, CC1 D1, CC2 D2, XL1/XL2 X2, GND on the off-board parts (C46, C51, D1, D2, D3).
+- ERC: not re-run (schematic unchanged since 1.14: 0 errors, 208 warnings).
+
+### Hand-off for stages 3-7 (next run)
+1. **VRF to U2.31**: the trunk ends at the via (124.054,121.102) (In2 west end (124.443,121.102)). Planned path, checked against the copper but not drawn: pin 31 (119.15,119.45) down x 119.1 to y 120.25, east along y 120.25 under pin 32 to x 120.66, down x 120.66 (0.11 mm from a VBAT via moved to (120.15,120.773) and 0.135 mm from C18.2) to y 122.06, east between C18's pads to x 122.52, up to y 121.15 and east along y 120.9 to the via. This needs: C19 moved to (120.5,123.75) rot 90 with its VBUSOUT via moved to (120.307,123.0) and the B.Cu lead re-drawn; C3 moved 0.3 mm down to (118.1,122.1) with its VBAT link re-drawn along y 121.4 to the VBAT via; the old C3 VBAT F.Cu (y 120.465) deleted. C46 (10 uF) fits at C15's old spot (123.2,121.6) rot 90 on that y 120.9 run (pad 1 GND reuses the via (122.568,123.394)); nothing closer to pin 31 fits.
+2. **U2.30 (LSIN2, VDDIO)**: boxed by pins 29/31; route F.Cu (118.65,119.45)->(118.75,119.55)->(118.75,120.65)->(117.387,120.65) joining the pin-28 VDDIO drop (passes 0.15 mm right of the VSENS via (118.15,120.1); C3 must be at y >= 122.1 first). No via site exists under U2's bottom row: VSENS In2 (y 120.2) and VBAT In2 (y 120.65) forbid it (0.25 mm hole clearance).
+3. **C51 at U2.21**: no 0402 site within 2 mm of pin 21 (VBUS/VBUSOUT/CC1/CC2 via column at x 114.62, VSYS drop x 114.05, VBAT drop x 113.02). Best found: (114.85,123.6) rot 0 with pad 1 on the VBUS via (114.15,123.3), about 6.5 mm by track; C4 (1 uF at (112,123.3)) is then redundant (report only).
+4. **C41 to IC1.13**: site (110.55,117.2) rot 0 with pad 1 over the VINT via (110.564,117.29); move the /Solar/LOAD F.Cu jog to (111.95,117.55)->(111.589,117.911) first; GND via for pad 2 at about (110.3,118.0) after the NTC via (110.998,118.196) is removed (R8 moves).
+5. **D1/D2/D3 at J1**: CC1 pad A5 (97.79,120.18) has F.Cu to R2 at (104,120.4); CC2 pad B5 (97.79,123.18) to R1; VBUS runs along y 123.845 from (97.8,123.85) to C44. Space right of J1 (x 98.5-103.5, y 118-125) holds only those tracks and GND vias at (98.813,117.639)/(98.813,125.22).
+6. **F1 at CN1.13**: C9's old site is free: x 134.5-136.3, y 117.8-119.4 (SDA F.Cu at x 136.46, GND via (134.65,118.75)). CN1.13 fan-out track runs east from the pad to (138.8,118.68) (VBAT net, to be cut/renamed).
+7. **R8 (NTC) near U4**: site (104.6,124.2) rot 90 clear of U4/J3/C44/R1 courtyards. The NTC net ends at the via (110.998,118.196)/In2 (113.5,115.7)->(111.0,118.2); the In2 CC1/CC2 diagonals (105.9-114.4, y 118.7/119.2) and the SHPHLD B.Cu wall at x 111.65 (y 117-127.2) block a direct west route; B.Cu along y >= 127.3 under J3 is the likely path.
+8. **X2**: the area above U6 pins 1/2 (x 129-132, y 112.3-114.5) holds the I2C_SCL via (129.85,113.7), I2C_SDA via (129.161,114.067), SENS_AIN via (130.75,113.5) and F.Cu, SENS_ID F.Cu/via (131.166,112.924) and the VDDIO F.Cu at y 112.41; X2's courtyard is 3.09 x 2.29 mm. It does not fit "without moving more than a cap or two": delete X2 from the PCB and note it (the DNP symbol then shows as 1 parity issue unless Brian sets "exclude from board").
+9. **Stage 5 routing**: VSENS R19.1 (the VDDIO stub is gone; R19.1 at (129.97,131.3) needs VSENS from the R17/R18 group, SENS_ID B.Cu via (130.95,130.3) is next to it); CN1.13 VBAT_CN1 via F1; VBUS/VBAT widening (VBAT In2 still y 120.651 / diagonal (124.367,120.564)->(128.292,124.489) / y 124.489, 0.25 mm; note vias in the U2-bottom and crystal areas were placed to its current position).
+10. Stages 6-7 as in the task (silk 1.0/0.15, J1 .kicad_dru rule, ERC/DRC, STEP, STATUS).
 
 ### Open questions from run 5 stage 1
 - Unused BUCK1 pin handling is not in the nPM1300 PS text. Keep L9/C18 (current state) or ask Nordic, then remove them?
