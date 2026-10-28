@@ -3548,12 +3548,6 @@
 		(uuid "ba76cf51-8c9d-4d65-a659-dc230c430ae4")
 	)
 	(junction
-		(at 80.01 62.23)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d2b24d11-06d1-4d96-9b3b-73cd1e31c0cd")
-	)
-	(junction
 		(at 87.63 62.23)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4722,16 +4716,6 @@
 			(type default)
 		)
 		(uuid "f23b00d7-1ed1-467d-adcb-603e996a353e")
-	)
-	(wire
-		(pts
-			(xy 80.01 69.85) (xy 80.01 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f411e133-ea23-4555-b8d6-f6538b6293ba")
 	)
 	(wire
 		(pts
@@ -7015,84 +6999,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 80.01 73.66 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "93456e22-cd25-4ec7-8ce9-607af971da6e")
-		(property "Reference" "#PWR06"
-			(at 80.01 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 80.01 78.74 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 80.01 73.66 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 80.01 73.66 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 80.01 73.66 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "891ce64b-17a2-444f-ad54-567b98309d41")
-		)
-		(instances
-			(project "nrf54l15_feather"
-				(path "/55da176d-6431-4d58-ada7-b89d931b1434/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c"
-					(reference "#PWR06")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "EasyEDA2Kicad:CL21A106KAYNNNE")
 		(at 87.63 67.31 90)
 		(unit 1)
@@ -7689,120 +7595,6 @@
 			(project "nrf54l15_feather"
 				(path "/55da176d-6431-4d58-ada7-b89d931b1434/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c"
 					(reference "C22")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "EasyEDA2Kicad:CL05A105KO5NNNC")
-		(at 80.01 66.04 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "b96832c3-992a-4750-a610-7982dc460b6f")
-		(property "Reference" "C4"
-			(at 74.93 63.754 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "1uF"
-			(at 72.898 65.786 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "easyeda2kicad:C0402"
-			(at 87.63 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL05A105KO5NNNC_1uF-105-10-16V_C29266.html"
-			(at 90.17 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "1uF (105) ±10% 16V"
-			(at 80.01 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" "SAMSUNG(三星)"
-			(at 92.71 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "CL05A105KO5NNNC"
-			(at 95.25 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part" "C29266"
-			(at 97.79 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "71feea64-bd80-4337-ab4e-72cad418a9ef")
-		)
-		(pin "2"
-			(uuid "87693baf-dc4a-4851-9358-6403eef369bb")
-		)
-		(instances
-			(project "nrf54l15_feather"
-				(path "/55da176d-6431-4d58-ada7-b89d931b1434/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c"
-					(reference "C4")
 					(unit 1)
 				)
 			)
