@@ -7,6 +7,10 @@
 
 #include "fuel_gauge.h"
 
+#ifdef CONFIG_BOARD_NRF54L15_FEATHER
+#include "feather_run5.h"
+#endif
+
 LOG_MODULE_REGISTER(main, LOG_LEVEL_INF);
 
 #define SLEEP_TIME_MS 1000
@@ -67,6 +71,19 @@ int main(void)
 	if (err) {
 		return 0;
 	}
+
+#ifdef CONFIG_BOARD_NRF54L15_FEATHER
+	/* VRF (LDSW2) comes up in the regulator driver init, after the ANT_SEL gpio-hog. */
+	if (feather_vrf_check() == 0) {
+		int32_t id_mv;
+		uint32_t rid;
+
+		/* SENS_ID is only valid while VSENS is on; the helper switches it back off. */
+		if (feather_read_sens_id(&id_mv, &rid) == 0) {
+			LOG_INF("SENS_ID %d mV, Rid about %u ohm (0 = open or invalid)", id_mv, rid);
+		}
+	}
+#endif
 
 	if (!device_is_ready(pmic)) {
 		LOG_ERR("PMIC device not ready");

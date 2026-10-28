@@ -11,3 +11,7 @@ target_sources(app PRIVATE
 	src/main.c
 	src/fuel_gauge.c
 )
+
+if(CONFIG_BOARD_NRF54L15_FEATHER)
+	target_sources(app PRIVATE src/feather_run5.c)
+endif()
