@@ -1,7 +1,7 @@
 # nRF54L15 feather - Status
 
 Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\nrf54l15_feather\nrf54l15_feather\nrf54l15_feather.kicad_pro
-Last reviewed: 2026-10-28 (run 5 stage 2: RF corner and antenna-switch area placed and routed; stages 3-7 pending)
+Last reviewed: 2026-10-28 (run 5 stage 3: all parts placed and routed except F1, which has no legal site at CN1.13, so CN1.13 is unpowered; DRC 0 errors / 2 unconnected (F1) / 0 parity; STEP 2026-10-28)
 
 **State: ACTIVE main board (2026-10-23, per Brian).** It replaces nrf54l15_v4. The active sensor board for it is nrf54l15_feather_sens1 (pH).
 
@@ -257,6 +257,115 @@ What moved and why (all in board mm; Feather fx = x - 90, fy = 132.86 - y):
 9. **Stage 5 routing**: VSENS R19.1 (the VDDIO stub is gone; R19.1 at (129.97,131.3) needs VSENS from the R17/R18 group, SENS_ID B.Cu via (130.95,130.3) is next to it); CN1.13 VBAT_CN1 via F1; VBUS/VBAT widening (VBAT In2 still y 120.651 / diagonal (124.367,120.564)->(128.292,124.489) / y 124.489, 0.25 mm; note vias in the U2-bottom and crystal areas were placed to its current position).
 10. Stages 6-7 as in the task (silk 1.0/0.15, J1 .kicad_dru rule, ERC/DRC, STEP, STATUS).
 
+## Run 5 stage 3 (2026-10-28, kicad-designer on Opus): power parts, USB protection, routing, silk, final checks
+Board edits with pcbnew Python (scratch scripts), each step checked with kicad-cli 10.0.4 DRC (--schematic-parity --refill-zones). The RF corner and antenna-switch area from stage 2 were not moved or re-routed; the only touch is the VRF trunk joined at its west via (124.054,121.102), as planned. Schematic: only X2's "exclude from board" flag. No new parts, so no LCSC checks were needed. Commits: 2ab0dfe (3.1), f90f68a (3.2), 4668e84 (3.3), 0fb7bb5 (3.4), a48caf0 (3.5), e9a0d10 (3.6), then this file (3.7).
+
+### 3.1 Power parts (2ab0dfe)
+- **VRF U2.31 -> trunk, with C46.** Hand-off path used: pin 31 down x 119.15 to y 120.25, east to x 120.66, down to y 122.06, east between C18's pads, up x 122.505 to y 121.15, along y 120.9 through C46.1 to the trunk via (124.054,121.102).
+  - U2.31 -> C46.1 is about 7.7 mm of 0.2 mm F.Cu. The x 122.505 piece is 0.18 mm wide for 0.9 mm, between C18.2 and C46.2. Nothing closer to pin 31 fits.
+  - **C46** (10 uF 0603) at (123.18,121.6) rot 270, GND to the via (122.568,123.394).
+  - Done as planned: C3 moved 0.3 mm down to (118.1,122.1). Its VBAT link was redrawn along y 121.4 (0.5 mm) to the VBAT via, which moved from (120.275,120.773) to (120.15,120.773). The old C3 VBAT F.Cu (y 120.465) was deleted. C19 moved to (120.5,123.75) rot 90.
+  - **Deviation:** the hand-off missed the VOUT1 track at x 120.918 (the L9.2 -> C18.2 drop plus diagonal). It was 0.06 mm from the planned VRF run, so I redrew it as a direct 0.3 mm link (121.7,119.85)-(121.6,121.06). The pin-1 stub stays.
+  - **Deviation:** the planned C19 VBUSOUT via site (120.307,123.0) shorts the SWDIO In2 track (y 122.763) and the VDDIO B.Cu diagonal. I put the via (0.45/0.25) at (119.1,122.25) instead, where the existing B.Cu lead ends, plus an F.Cu link to C19.2.
+  - C46 is at x 123.18, not 123.2, to keep hole clearance to the SWDIO via (124.07,122.527).
+- **U2.30 LSIN2 -> VDDIO**: as in the hand-off, (118.65,119.45) -> (118.75,119.55) -> (118.75,120.65) -> (117.387,120.65), onto the pin-28 VDDIO drop.
+- **C51 at U2.21**: placed at the hand-off site (114.85,123.6) rot 0.
+  - Pad 1 sits on the VBUS via (114.15,123.3); the via is half on the pad edge and tented.
+  - Pad 2 goes to the GND track at x 114.9 and the GND via (115.105,124.255).
+  - U2.21 -> C51 is about 6.5 mm: pin, via (114.62,117.3), 0.5 mm B.Cu, via.
+  - **C4 is now redundant (report only, not deleted).** C4 (1 uF at (112,123.3)) is on the same VBUS node, 2.3 mm further from that via. It adds bulk but no local decoupling. VBUS total is 4.7 + 1 + 1 + 0.1 = 6.8 uF.
+- **C41 at IC1.13 (VINT). Deviation:** the hand-off site (110.55,117.2) rot 0 overlaps the IC1 and C43 courtyards (DRC errors). It would also put the VINT via between the two pads, touching the GND pad.
+  - Placed at (110.75,118.4) rot 270, below pin 13. Pad 1 is 0.6 mm from the VINT via (110.564,117.29). Pin 13 -> C41.1 is about 1.4 mm (was 9 mm through 2 vias).
+  - Pad 2 goes to a new GND via (110.75,119.75, 0.45/0.25) and is also tied to C43.2.
+  - To make room, **C43 moved 0.6 mm left to (109.0,119.71)** and its tracks were redrawn.
+  - The old C41 tracks at IC1.29/30 were removed. Pins 29/30 (STO_PRIO, T_MPP[0]) stay on VINT through the In2 link.
+- **R8 (NTC) next to U4. Deviation:** the hand-off site (104.6,124.2) rot 90 puts pad 1 on the VBUS track (y 123.845).
+  - Placed at (103.6,124.5) rot 0, between VBUS and U4, about 1.9 mm from U4's body. R8.1 (GND) goes to U4.2.
+  - NTC route: the old NTC via (110.998,118.196) collided with C41 and was removed. In2 now runs west along y 118.2 to a new via (106.0,118.2), then B.Cu down x 106.0 to a via (104.85,124.7), then F.Cu to R8.2.
+  - U2.18 -> R8 is about 18 mm. Nothing else is on the NTC net (PS limit: 100 pF in parallel).
+
+### 3.2 USB protection, CN1, VSENS (f90f68a)
+- **D1 (CC1)** at (101.0,119.68) rot 90, pad 1 on the CC1 track (y 120.03), GND via (101.0,118.65). It is about 3.3 mm from J1 A5.
+- **D2 (CC2)** at (99.8,120.8) rot 90, pad 1 on CC2 (y 121.15), GND via (100.55,120.58). It is about 2.0 mm from B5.
+- **D3 (VBUS)** at (101.0,122.7) rot 0, about 1.8 mm from B4A9. Pad 1 joins the VBUS track (y 123.845) with a 0.5 mm stub. Pad 2 goes to the R1 GND via (103.416,123.032) with 0.4 mm.
+- **CC2 re-routed** to make room for D3: from B5 straight up x 98.766 to y 121.15, east to 101.5, then back to y 121.588 into R1. The old diagonal was removed.
+- **F1 NOT placed (blocked; stopped after 3 approaches).** The courtyard (3.06 x 1.56 mm, KiCad Fuse_0603) does not fit anywhere next to CN1.13:
+  - **C9's old site (the hand-off pick):** only the pads fit. The courtyard hits C11/C9/CN1 at rot 0 and R15/CN1 at rot 90. The pads also hit the DECA trace C9 -> L4.2 (frozen) and SENS_SDA at x 136.46.
+  - **Above CN1:** the band below H3 is 1.4 mm high and blocked by the H3 courtyard circle.
+  - **Below CN1:** this is the AE1 keep-out.
+  - **Fit scan of the right half** (pads clear of all copper, courtyard clear of all courtyards): the nearest legal site is (134.6,112.5) rot 90. That is 6.7 mm from CN1.13, and both of its routes would cross the SENS_* B.Cu/In2 bundle. Nothing along the VBAT In2 branch (x 120-140) is legal either.
+  - **What was done:** the CN1.13 VBAT stub was cut, which clears the shorting_items and solder_mask_bridge errors. **CN1.13 is unpowered** until F1 is resolved.
+  - The VBAT In2 branch (via (120.15,120.773) ... via (138.8,118.68)) stays in place for the fix and gives 1 via_dangling warning.
+  - F1 stays below the outline at (104,141.5) and is left out of the STEP.
+  - Options are in Questions for Brian.
+- **VSENS -> R19.1:** route, about 10 mm at 0.2 mm:
+  - F.Cu from R17.1 to a via at (133.2,125.6).
+  - B.Cu to (132.9,125.25), then west along y 124.5 (under X1, beside the SENS_INT B.Cu) to x 130.95.
+  - Down x 130.6/130.45, between the VRF/GND vias and the SENS_ID B.Cu, to (129.6,129.2).
+  - Via at (129.5,130.6), then F.Cu to R19.1.
+  - Both vias are outside the AE1 keep-out. No stage-2 part, track or via was moved. It is a new B.Cu track under the antenna-switch area, with In1 GND in between.
+
+### 3.3 X2 (4668e84)
+- X2 deleted from the PCB. In nrf54l15.kicad_sch the symbol is now `(on_board no)` ("exclude from board"), with DNP kept, so **parity is 0**.
+- U6.1/U6.2 (XL1/XL2) are single-pad nets. Fitting X2 later needs a re-route above U6 pins 1/2 (stage 2 hand-off, item 8).
+
+### 3.4 Routing and VBUS/VBAT widths (0fb7bb5)
+- Unconnected: 2, both F1 (F1.1 VBAT, F1.2 -> CN1.13 VBAT_CN1). Everything else is routed.
+- Widening used a clearance script (0.1 mm copper, 0.25 mm hole, 0.5 mm edge), segment by segment.
+  - Around C44.1 the VBUS run now jogs to y 124.05 to stay at 0.5 mm.
+  - The NTC via moved from (104.8,124.5) to (104.85,124.7) to allow this.
+- **VBUS** (J1 -> U2.21) is mostly 0.5 mm. The narrower parts:
+
+| Section | Width | Length |
+| --- | --- | --- |
+| Inside J1's pad field (top VBUS pad) | 0.3 mm | 0.64 mm |
+| Inside J1's pad field | 0.35 mm | 0.5 mm |
+| C44 -> C4 (y 122.943) | 0.35 mm | 3.54 mm |
+| **B.Cu (114.62,117.3) -> (113.95,117.65), at the U2 via column (narrowest)** | **0.25 mm** | **0.81 mm** |
+
+- **VBAT** (U4 -> U2.19):
+  - In2 runs 0.5 mm to the C43 via (x 108.289), 0.4 mm to the U2 via (x 113.024), then 0.3 mm to the C3 via (x 120.15).
+  - **The F.Cu riser from the via (113.024,120.523) to U2.19 stays 0.25 mm, about 6.6 mm in total.** Its longest segment is x 113.024 (3.42 mm), pinched by C42's pads. The feed into pin 19 along y 116.25 is 1.95 mm.
+  - Estimated resistance is 13 mOhm at 1 oz, about 4 mV at 300 mA. So the 300 mA firmware cap on charge and input current is a choice, not a copper limit.
+  - C3 and C43 VBAT links are 0.5 mm. The dangling CN1 branch is 0.25-0.3 mm.
+
+### 3.5 Silk and the J1 rule (a48caf0)
+- All visible reference designators are now 1.0 mm / 0.15 mm.
+  - A script moved each one to the nearest spot within about 1.3 mm of its courtyard that clears every pad (0.1 mm) and every other reference. R1, R2, R17 and R18 were placed by hand.
+  - Hidden, like the neighbouring stage-2 parts, because they sit in dense clusters: C8, C46, C47, C48, C49, C50, C52, C53, R20, R21, U7, X1. F1 is hidden because it is off the board.
+  - 33 references stay visible.
+  - Silk warnings caused by reference text dropped from about 180 to about 38. The remaining 167 silk_over_copper and 199 silk_overlap come from footprint graphics and were there before.
+- **J1 exception:** new `nrf54l15_feather.kicad_dru` with the rule "J1_NPTH_to_pad": hole_clearance min 0.18 mm, applied only when both items belong to J1. The actual values from the vendor land pattern are 0.185 mm (A1B12, B1A12) and 0.217 mm (A4B9, B4A9). **Accepted exception**; see Decisions.
+
+### 3.6 Final checks (e9a0d10)
+- Zones refilled with pcbnew ZONE_FILLER and saved.
+- **DRC** (kicad-cli 10.0.4, --schematic-parity, run both with and without --refill-zones): **0 errors, 424 warnings, 2 unconnected, 0 parity.**
+  - Warnings: 199 silk_overlap, 167 silk_over_copper, 55 lib_footprint_issues, 2 silk_edge_clearance, 1 via_dangling (the end of the CN1 VBAT branch at (138.8,118.68)).
+  - Unconnected: F1.1 VBAT, F1.2 -> CN1.13.
+- **ERC** (kicad-cli 10.0.4): **1 error, 208 warnings.**
+  - The error is power_pin_not_driven on C4 pin 1 (npm1300 sheet). It is the same at HEAD 0787191 (checked with X2's flag reverted). It is the "C4 pin 1 has no power driver" item from 2026-10-23, so stage 1's "0 errors" did not reproduce.
+  - Not fixed: the only schematic edit allowed was X2's flag.
+  - Warnings, unchanged by type: 80 pin_to_pin, 57 lib_symbol_issues, 55 footprint_link_issues, 6 lib_symbol_mismatch, 5 endpoint_off_grid, 3 same_local_global_label, 2 multiple_net_names.
+- **STEP:** C:\Personal-Agents\shared\handoff\nrf54l15_feather\nrf54l15_feather_2026-10-28.step.
+  - F1 is left out with --component-filter because it is off the board.
+  - The outline and connectors have not changed since 2026-10-26.
+- **Tidemark zone (fx >= 26, x >= 116):** the only new or moved parts there are:
+
+| Part | Package | Height |
+| --- | --- | --- |
+| C46 | 0603 MLCC | nominal 0.8 mm (datasheet not opened) |
+| C19 | 0402 | under 1.6 mm |
+| C3 | 0603, moved 0.3 mm | under 1.6 mm |
+
+  - All are well under SW1's 1.6 mm.
+  - D1, D2, D3 (SMF12A, 1.1 mm max), C51, C41 and R8 are all at x < 116. F1 is not placed.
+
+### Not done / next
+1. **F1** (see 3.2 and Questions for Brian). Once F1 is placed, route VBAT -> F1 -> VBAT_CN1 -> CN1.13 and reconnect or remove the In2 branch.
+2. C4: keep or remove? It is redundant with C51 at the same node.
+3. ERC power_pin_not_driven on C4 pin 1 (EasyEDA C0402 symbol pin type, or add a PWR_FLAG). This needs a schematic edit.
+4. Before fab, a design review of the stage 2/3 layout: VRF 7.7 mm to C46, the 18 mm NTC run, and the VSENS B.Cu under the switch area. Also the footprints and the EasyEDA 3D models.
+
 ### Open questions from run 5 stage 1
 - Unused BUCK1 pin handling is not in the nPM1300 PS text. Keep L9/C18 (current state) or ask Nordic, then remove them?
 - C4 and C51 are both 1 µF on VBUS: drop C4 in stage 2?
@@ -300,12 +409,21 @@ What moved and why (all in board mm; Feather fx = x - 90, fy = 132.86 - y):
   - Do these before fab.
 
 ## Questions for Brian
+- (2026-10-28, run 5 stage 3) **The F1 polyfuse has no legal site next to CN1.13**: courtyard, DECA and SENS_SDA conflicts (details in Run 5 stage 3, 3.2). Options:
+  - (a) a smaller PTC (0402) with a smaller footprint; needs a part check and may still need room.
+  - (b) put F1 at the U2 end of the CN1 VBAT branch and rebuild that branch; In2 is full there, so it is a real re-route.
+  - (c) move R15 and re-route SENS_SDA near CN1; still conflicts with the frozen DECA trace, so not promising.
+  - (d) drop F1 on the host (0R or direct) and fuse on the sensor board.
+  - CN1.13 is unpowered until this is decided.
+- (2026-10-28) C4 (1 uF on VBUS) is redundant with C51 at the same node. Remove it?
 - (closed 2026-10-24) Feather size: standard outline, keep all connectors, Proposal C (see Decisions).
 - (closed 2026-10-24) USB is charge-only; D+/D-/SBU now carry no-connect flags.
 - Is moisture_sensor.kicad_sch meant to be empty?
 - Do the Gerbers and the 7z in the folder match the current layout, or are they from an earlier revision? Was this revision ordered?
 
 ## Decisions
+- 2026-10-28 (coordinator task, run 5 stage 3): the J1 NPTH-to-pad hole clearance is an accepted exception. The vendor land pattern gives 0.185/0.217 mm, so a J1-only rule "J1_NPTH_to_pad" (hole_clearance min 0.18 mm) is in nrf54l15_feather.kicad_dru. Board-wide hole clearance stays 0.25 mm.
+- 2026-10-28 (run 5 stage 3): X2 (32.768 kHz, DNP) is excluded from the board (`on_board no`) because it does not fit above U6 pins 1/2.
 - 2026-10-23 (Brian): this is the active main board. Feather form factor replaces v4.
 - From v4: EN_SLEEP to GND, MPPT 70 %, and the CN1 14-pin Molex 503480-1400 pinout is fixed on the host.
 - 2026-10-24 (Brian): resize to the standard Feather outline (50.8 x 22.86 mm, Feather mounting-hole positions) but **without the Feather header rows or pinout**. Keep every current connector: J1 USB-C, CN1, J3 SWD, U4 battery JST, U5 solar JST. Not FeatherWing-compatible. This is a variant of option (a) in feather-size-study.md and closes its questions 1-3, 5 and 6. Placement questions still open (see Questions for Brian).
