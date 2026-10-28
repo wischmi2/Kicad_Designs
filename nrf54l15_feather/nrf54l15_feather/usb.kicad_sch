@@ -1749,7 +1749,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "9c752308-e8cc-4323-bf18-92c1e17585f0")
 		(property "Reference" "R2"
@@ -1831,6 +1831,17 @@
 		)
 		(property "LCSC Part" "C22369457"
 			(at 200.66 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "DNP Reason" "nPM1300 has internal Rd 5.1k on CC1/CC2 (PS USB port detection). Fit only if dead-battery attach fails."
+			(at 182.88 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2131,7 +2142,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "dc0ae684-2032-47cd-a085-7692058ed12a")
 		(property "Reference" "R1"
@@ -2213,6 +2224,17 @@
 		)
 		(property "LCSC Part" "C22369457"
 			(at 187.96 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "DNP Reason" "nPM1300 has internal Rd 5.1k on CC1/CC2 (PS USB port detection). Fit only if dead-battery attach fails."
+			(at 170.18 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
