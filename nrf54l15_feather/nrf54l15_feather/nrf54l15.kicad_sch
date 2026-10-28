@@ -3912,6 +3912,195 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:Crystal"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "Y"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Crystal"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Two pin crystal"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "quartz ceramic resonator oscillator"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Crystal*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Crystal_0_1"
+				(polyline
+					(pts
+						(xy -2.54 0) (xy -1.905 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.905 -1.27) (xy -1.905 1.27)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.143 2.54)
+					(end 1.143 -2.54)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.905 -1.27) (xy 1.905 1.27)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 1.905 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Crystal_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 1.27)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 1.27)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
 	(text "Sensor flex port\nP1.10 SENS_SDA    P1.11 SENS_SCL (clock pin)\nP2.01 SENS_SCK    P2.02 SENS_MOSI / UART TX\nP2.04 SENS_MISO (SPIM00 SDI)\nP2.00 SENS_MISO (UARTE00 RXD) - tied; FW leaves unused pin disconnected\nP2.05 SENS_CS\nP1.07 SENS_INT\nP1.05 SENS_AIN (AIN1)\nP1.06 SENS_ID (AIN2)\nPMIC I2C stays on P1.03 / P1.04"
 		(exclude_from_sim no)
@@ -4028,20 +4217,12 @@
 		(uuid "b5ce1e1f-c091-41bc-a168-57b07df5ed9c")
 	)
 	(no_connect
-		(at 109.22 55.88)
-		(uuid "c2720016-32e4-4034-9613-5beb9f014dac")
-	)
-	(no_connect
 		(at 109.22 137.16)
 		(uuid "d0e0d0c1-59c2-4e5e-8430-118c23e51586")
 	)
 	(no_connect
 		(at 109.22 142.24)
 		(uuid "d5428d6a-d6ef-4586-ab38-530f4cace7b5")
-	)
-	(no_connect
-		(at 109.22 60.96)
-		(uuid "d978c5d1-859e-4f7e-86c9-c4df76b9c6e4")
 	)
 	(no_connect
 		(at 109.22 127)
@@ -8434,6 +8615,221 @@
 					(reference "#PWR066")
 					(unit 1)
 				)
+			)
+		)
+	)
+
+	(global_label "XL1"
+		(shape bidirectional)
+		(at 109.22 55.88 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4ac409c3-4569-4026-8b9e-2986a9c02556")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 109.22 55.88 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+
+	(global_label "XL2"
+		(shape bidirectional)
+		(at 109.22 60.96 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "267189ca-5f60-4dfa-938b-168ad56d5e9d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 109.22 60.96 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+
+	(symbol
+		(lib_id "Device:Crystal")
+		(at 127 177.8 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp yes)
+		(uuid "6c13b0af-8d67-4593-93b6-bf5cc0a5e953")
+		(property "Reference" "X2"
+			(at 129.54 176.53 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "32.768kHz"
+			(at 129.54 179.07 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Crystal:Crystal_SMD_2012-2Pin_2.0x1.2mm"
+			(at 127 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C96341.pdf"
+			(at 127 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "DNP LFXO footprint (nRF54L15 PS circuit config 1: X1 32.768kHz XTAL_2012). No external load caps: the LFXO has internal caps CINT, OSCILLATORS.XOSC32KI.INTCAP, 3-18 pF in 0.65 pF steps (PS LFXO). Part FC-12M, CL 9 pF, 2.0x1.2 mm. Stage 2: above U6 only if it fits without moving more than a cap or two."
+			(at 127 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "X1A0000610008"
+			(at 127 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Seiko Epson"
+			(at 127 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C96341"
+			(at 127 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9ed93755-9f6a-4047-a4ee-38a490538a57")
+		)
+		(pin "2"
+			(uuid "4c92f914-761c-442f-98f3-96002a325f2b")
+		)
+		(instances
+			(project "nrf54l15_feather"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/b8c2cb22-3394-480f-839f-380498977228"
+					(reference "X2")
+					(unit 1)
+				)
+			)
+		)
+	)
+
+	(global_label "XL1"
+		(shape bidirectional)
+		(at 123.19 177.8 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e403c32d-01e5-4e85-b108-2b7c05ab7521")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 123.19 177.8 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+
+	(global_label "XL2"
+		(shape bidirectional)
+		(at 130.81 177.8 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7b21ac21-8d54-4735-8f2b-a1747515939c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 130.81 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
