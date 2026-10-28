@@ -1,7 +1,7 @@
 # nRF54L15 feather - Status
 
 Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\nrf54l15_feather\nrf54l15_feather\nrf54l15_feather.kicad_pro
-Last reviewed: 2026-10-28 (run 5 stage 3: all parts placed and routed except F1, which has no legal site at CN1.13, so CN1.13 is unpowered; DRC 0 errors / 2 unconnected (F1) / 0 parity; STEP 2026-10-28)
+Last reviewed: 2026-10-28 evening (F1 placed and routed by Brian, CN1.13 now powered; DRC 0 errors / 0 unconnected / 0 parity; STEP 2026-10-28b)
 
 **State: ACTIVE main board (2026-10-23, per Brian).** It replaces nrf54l15_v4. The active sensor board for it is nrf54l15_feather_sens1 (pH).
 
@@ -361,7 +361,7 @@ Board edits with pcbnew Python (scratch scripts), each step checked with kicad-c
   - D1, D2, D3 (SMF12A, 1.1 mm max), C51, C41 and R8 are all at x < 116. F1 is not placed.
 
 ### Not done / next
-1. **F1** (see 3.2 and Questions for Brian). Once F1 is placed, route VBAT -> F1 -> VBAT_CN1 -> CN1.13 and reconnect or remove the In2 branch.
+1. [done 2026-10-28 evening] **F1** placed and routed by Brian; see "F1 placed" below.
 2. C4: keep or remove? It is redundant with C51 at the same node.
 3. ERC power_pin_not_driven on C4 pin 1 (EasyEDA C0402 symbol pin type, or add a PWR_FLAG). This needs a schematic edit.
 4. Before fab, a design review of the stage 2/3 layout: VRF 7.7 mm to C46, the 18 mm NTC run, and the VSENS B.Cu under the switch area. Also the footprints and the EasyEDA 3D models.
@@ -371,6 +371,13 @@ Board edits with pcbnew Python (scratch scripts), each step checked with kicad-c
 - C4 and C51 are both 1 µF on VBUS: drop C4 in stage 2?
 - X2 CL 9 pF vs the LFXO INTCAP range (3-18 pF "CAPACITANCE"): confirm before fitting.
 - The library copies of the nPM1300 symbol (pin 31 now power_out in the schematic) and of the EasyEDA symbols reused for R8/R9/C44 (their lib_id names still read the old MPNs) are not updated.
+
+## F1 placed (2026-10-28 evening, Brian + coordinator)
+- Brian placed F1 (Bourns MF-FSMF020X, 0603, C210356, same part as the schematic) at (130.23, 111.37) on F.Cu and routed VBAT -> F1.1, F1.2 -> VBAT_CN1 -> CN1.13. Commit 37d3a6f.
+- Coordinator removed an old VBAT stub that ended nowhere, about 8.6 mm: 3 B.Cu segments from the branch point (120.15, 120.77), via (118.51, 124.36), 4 F.Cu segments to (114.25, 127.7). Each removal was checked with DRC so nothing connected was cut.
+- **DRC** (kicad-cli 10.0.4, --schematic-parity --refill-zones): **0 errors, 424 warnings, 0 unconnected, 0 parity.** Warnings are the same set as stage 3.6: 199 silk_overlap, 167 silk_over_copper, 55 lib_footprint_issues, 2 silk_edge_clearance, 1 via_dangling (VBAT via at (138.8, 118.68), the old CN1.13 fan-out end; still to remove).
+- ERC not re-run (no schematic change).
+- **STEP:** C:\Personal-Agents\shared\handoff\nrf54l15_feather\nrf54l15_feather_2026-10-28b.step, with F1 on the board. Outline and connectors unchanged, so no new enclosure handoff. F1 is in the Tidemark zone (x >= 116) but a 0603 PTC is well under SW1's 1.6 mm.
 
 ## Current state (before the rework, 2026-10-23)
 - Schematic: 9 sub-sheets.
@@ -409,7 +416,7 @@ Board edits with pcbnew Python (scratch scripts), each step checked with kicad-c
   - Do these before fab.
 
 ## Questions for Brian
-- (2026-10-28, run 5 stage 3) **The F1 polyfuse has no legal site next to CN1.13**: courtyard, DECA and SENS_SDA conflicts (details in Run 5 stage 3, 3.2). Options:
+- (closed 2026-10-28 evening: Brian placed the 0603 F1 at (130.23, 111.37)) **The F1 polyfuse has no legal site next to CN1.13**: courtyard, DECA and SENS_SDA conflicts (details in Run 5 stage 3, 3.2). Options:
   - (a) a smaller PTC (0402) with a smaller footprint; needs a part check and may still need room.
   - (b) put F1 at the U2 end of the CN1 VBAT branch and rebuild that branch; In2 is full there, so it is a real re-route.
   - (c) move R15 and re-route SENS_SDA near CN1; still conflicts with the frozen DECA trace, so not promising.
