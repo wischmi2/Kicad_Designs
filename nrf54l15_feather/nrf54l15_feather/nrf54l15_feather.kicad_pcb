@@ -18981,6 +18981,192 @@
 			)
 		)
 	)
+	(footprint "Capacitor_SMD:C_0402_1005Metric"
+		(layer "F.Cu")
+		(uuid "c7e2c378-f631-4206-a2cf-7c404576d568")
+		(at 118.067 124.1)
+		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
+		(tags "capacitor")
+		(property "Reference" "C54"
+			(at 0.955 1.33 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "4eb092a1-58ed-442f-b1ff-04e9f235218d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "10uF"
+			(at 0 1.16 0)
+			(layer "F.Fab")
+			(uuid "74635930-f2b4-4740-83da-6d2dc54800b9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C15525.pdf"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4dd3aaac-849b-48ee-b3c4-a0bcde687424")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "U2 LSIN1/LSIN2 (U2.28/U2.30, VSENS and VRF LDO/load-switch inputs) local decoupling, 10 uF X5R 0402 (nPM1300 PS config 1 shows 10 uF at each LDO input). Run 6 S2. Place at U2 pins 28/30."
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6df06372-d4dd-4cf4-8555-e177879f9f61")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "cb1db3b5-d734-40ce-8d05-92c72dee25d5")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL05A106MQ5NUNC"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "bfbd7fb6-2b29-4d4b-a48c-c673c0996902")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "7f7ed358-cefe-48da-94df-aadedc9c1faa")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C15525"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "94cc20dd-e50e-4919-a018-67e8dd9aeefd")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/34d91bf1-2bbe-4b96-8a85-3a6b7923a31c/58c593e2-1ce0-4668-9be6-aedc49ba8d9c")
+		(sheetname "/npm1300/")
+		(sheetfile "npm1300.kicad_sch")
+		(attr smd)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -0.107836 -0.36)
+			(end 0.107836 -0.36)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "e4305e53-f65e-464c-9203-ea20a78756bb")
+		)
+		(fp_line
+			(start -0.107836 0.36)
+			(end 0.107836 0.36)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "c39dbb6c-92c6-4d6a-9bd9-2077b0c4264c")
+		)
+		(fp_rect
+			(start -0.91 -0.46)
+			(end 0.91 0.46)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "e1499fed-8d63-45e6-9c7b-ad61f6dd71a4")
+		)
+		(fp_rect
+			(start -0.5 -0.25)
+			(end 0.5 0.25)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "93d1a3ac-dca7-4f76-89a6-c5624bfa6147")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "11d6c2ef-314d-4eb8-b657-6dc40695678d")
+			(effects
+				(font
+					(size 0.25 0.25)
+					(thickness 0.04)
+				)
+			)
+		)
+		(pad "1" smd roundrect
+			(at -0.48 0)
+			(size 0.56 0.62)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.25)
+			(net "VDDIO")
+			(uuid "83a493eb-3650-479d-890e-5533264989b8")
+		)
+		(pad "2" smd roundrect
+			(at 0.48 0)
+			(size 0.56 0.62)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.25)
+			(net "GND")
+			(uuid "e30eb89f-a7e1-4b5a-a13b-f14eb5727bc6")
+		)
+		(embedded_fonts no)
+		(model "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
 	(footprint "EasyEDA2Kicad:L0603"
 		(layer "F.Cu")
 		(uuid "cb8d9bd6-bf8b-4fb8-8c9b-3536156f8238")
@@ -24517,6 +24703,14 @@
 		(uuid "b65c598a-0da1-45f3-8332-512c714dbb0f")
 	)
 	(segment
+		(start 118.547 124.1)
+		(end 118.9 124.1)
+		(width 0.3)
+		(layer "F.Cu")
+		(net "GND")
+		(uuid "b754f58c-3f45-49e2-b414-a2685e90af36")
+	)
+	(segment
 		(start 112 121.954)
 		(end 113.275922 121.217346)
 		(width 0.25)
@@ -25149,6 +25343,14 @@
 		(uuid "cdfff3cd-c9b4-4151-8618-4a8ae006030c")
 	)
 	(via
+		(at 118.9 124.1)
+		(size 0.45)
+		(drill 0.25)
+		(layers "F.Cu" "B.Cu")
+		(net "GND")
+		(uuid "cfeb311c-2b95-4d8c-89c3-264f756331ba")
+	)
+	(via
 		(at 133.5 118.9)
 		(size 0.5)
 		(drill 0.3)
@@ -25748,6 +25950,14 @@
 		(layer "F.Cu")
 		(net "VDDIO")
 		(uuid "fe4f2649-c0a9-419c-8e8c-9758c8aad1d7")
+	)
+	(segment
+		(start 117.387 123.816)
+		(end 117.587 124.1)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "VDDIO")
+		(uuid "ff5cd4d1-79b5-4a21-a75b-4cd40eae78e1")
 	)
 	(via
 		(at 120.18 119.65)
