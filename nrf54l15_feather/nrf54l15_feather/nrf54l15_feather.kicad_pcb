@@ -26016,6 +26016,14 @@
 		(uuid "2d3d35d0-e428-4b78-9cc0-114f88292e1e")
 	)
 	(segment
+		(start 120.9 113.3)
+		(end 120.9 112.05)
+		(width 0.25)
+		(layer "B.Cu")
+		(net "VDDIO")
+		(uuid "48535de1-cbd7-4451-bf6e-ac7656dbbd2e")
+	)
+	(segment
 		(start 120.9 112.05)
 		(end 123.35 114.5)
 		(width 0.2)
@@ -26032,6 +26040,22 @@
 		(uuid "5ab6443f-26da-4fd0-b61e-1066d594e94a")
 	)
 	(segment
+		(start 119.9 119.37)
+		(end 119.9 114.3)
+		(width 0.25)
+		(layer "B.Cu")
+		(net "VDDIO")
+		(uuid "608846bf-9db2-4d42-80eb-0877b5f8736d")
+	)
+	(segment
+		(start 120.18 119.65)
+		(end 119.9 119.37)
+		(width 0.25)
+		(layer "B.Cu")
+		(net "VDDIO")
+		(uuid "6b897c91-3075-48a0-b760-c122de2501fe")
+	)
+	(segment
 		(start 112.1653 129.0383)
 		(end 114.8281 129.0383)
 		(width 0.2)
@@ -26046,6 +26070,14 @@
 		(layer "B.Cu")
 		(net "VDDIO")
 		(uuid "d3f748a1-42af-4f34-8317-58f4420e388f")
+	)
+	(segment
+		(start 119.9 114.3)
+		(end 120.9 113.3)
+		(width 0.25)
+		(layer "B.Cu")
+		(net "VDDIO")
+		(uuid "d49f4d3e-9743-453e-b62f-66b7ba25518b")
 	)
 	(segment
 		(start 124.6447 119.2217)
