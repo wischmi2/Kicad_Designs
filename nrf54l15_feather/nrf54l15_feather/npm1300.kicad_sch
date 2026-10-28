@@ -7115,7 +7115,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "10uF"
+		(property "Value" "4.7uF"
 			(at 91.44 68.5799 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7137,7 +7137,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL21A106KAYNNNE_10uF-106-10-25V_C15850.html"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C1779.pdf"
 			(at 97.79 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -7148,7 +7148,7 @@
 				)
 			)
 		)
-		(property "Description" "10uF (106) ±10% 25V"
+		(property "Description" "VBUS bulk, 4.7 uF 25 V X5R 0805 (was 10 uF). Keeps VBUS total under the USB 2.0 7.2.4.1 10 uF limit with C4, C51 and C14 (review N7)."
 			(at 87.63 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -7159,7 +7159,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "SAMSUNG(三星)"
+		(property "Manufacturer" "Samsung Electro-Mechanics"
 			(at 100.33 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -7170,7 +7170,7 @@
 				)
 			)
 		)
-		(property "MPN" "CL21A106KAYNNNE"
+		(property "MPN" "CL21A475KAQNNNE"
 			(at 102.87 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -7181,8 +7181,19 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C15850"
+		(property "LCSC Part" "C1779"
 			(at 105.41 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C1779"
+			(at 87.63 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

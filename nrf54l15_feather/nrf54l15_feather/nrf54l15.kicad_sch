@@ -4951,7 +4951,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "00c51118-5d50-4bad-ac59-dd3ef5baa40f")
 		(property "Reference" "C11"
@@ -5033,6 +5033,17 @@
 		)
 		(property "LCSC Part" "C710732"
 			(at 222.25 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "DNP Reason" "Not in nRF54L15 circuit config 1 (review N2). Pads kept."
+			(at 204.47 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
