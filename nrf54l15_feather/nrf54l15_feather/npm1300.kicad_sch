@@ -2859,7 +2859,7 @@
 						)
 					)
 				)
-				(pin output line
+				(pin power_out line
 					(at 35.56 -17.78 180)
 					(length 5.08)
 					(name "LSOUT2/VOUTLDO2"
@@ -9135,4 +9135,5 @@
 			)
 		)
 	)
+
 )
