@@ -6016,7 +6016,7 @@
 				)
 			)
 		)
-		(property "Value" "47k"
+		(property "Value" "0R"
 			(at 87.63 113.03 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6037,7 +6037,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/C2907042.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C21189.pdf"
 			(at 87.63 127 0)
 			(hide yes)
 			(show_name no)
@@ -6048,7 +6048,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "VSET1 grounded (<100 ohm) = BUCK1 off at power-up (nPM1300 PS BUCK Output voltage selection / On-Off control). Was 47k (1.8 V)."
 			(at 87.63 116.84 0)
 			(hide yes)
 			(show_name no)
@@ -6059,7 +6059,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "FOJAN(富捷)"
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
 			(at 87.63 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -6070,7 +6070,7 @@
 				)
 			)
 		)
-		(property "MPN" "FRC0603F4702TS"
+		(property "MPN" "0603WAF0000T5E"
 			(at 87.63 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -6081,8 +6081,19 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C2907042"
+		(property "LCSC Part" "C21189"
 			(at 87.63 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C21189"
+			(at 87.63 116.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
