@@ -6141,7 +6141,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "10k NTC B3380"
 			(at 176.53 134.6199 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6163,7 +6163,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_10KR-1002-0-1_C190095.html"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C77131.pdf"
 			(at 184.15 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -6174,7 +6174,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Battery NTC on nPM1300 NTC pin: 10k, B25/50 3380 K +-1 %, 0402 (nPM1300 PS Monitor battery temperature, Table 2). No cap in parallel (max 100 pF). Stage 2: place next to U4 battery JST."
 			(at 173.99 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -6185,7 +6185,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "YAGEO(国巨)"
+		(property "Manufacturer" "Murata Electronics"
 			(at 186.69 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -6196,7 +6196,7 @@
 				)
 			)
 		)
-		(property "MPN" "RT0402BRD0710KL"
+		(property "MPN" "NCP15XH103F03RC"
 			(at 189.23 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -6207,8 +6207,19 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C190095"
+		(property "LCSC Part" "C77131"
 			(at 191.77 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C77131"
+			(at 173.99 133.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
