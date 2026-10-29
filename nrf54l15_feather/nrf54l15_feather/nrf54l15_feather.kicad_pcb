@@ -18196,6 +18196,7 @@
 		(property "Reference" "R17"
 			(at -2.4 -0.5734 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "3444fbfb-6370-43d4-9525-3aaaa9acc293")
 			(effects
 				(font
