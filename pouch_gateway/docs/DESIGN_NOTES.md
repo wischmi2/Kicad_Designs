@@ -176,11 +176,13 @@ Added to the schematic as LCSC / Manufacturer / MPN fields (J5 also has Mating_C
 - **Waveshare 2inch LCD Module, SKU 17344** (240x320 IPS, ST7789VW, SPI, PH2.0 8-pin, 58 x 35 mm, M2 holes on a 53 x 30 mm pattern).
 - The module ships with a PH2.0 8-pin to Dupont lead, which does **not** fit J5.
 
-### LCD cable (J5 ↔ module), 8-pin JST PH, wired 1:1 (pin 1 → pin 1)
+### LCD cable W1 (J5 ↔ module), 8-pin JST PH, probably REVERSED (J5 slot n → module slot 9−n)
+Updated 2026-10-29. Full wiring table and continuity check: C:\Personal-Agents\shared\design\pouch_gateway\lcd_module\cable_W1_wiring.md.
+
 | Qty | Part | Manufacturer | MPN | Source |
 |---|---|---|---|---|
-| 2 | PH 8-pin receptacle housing | JST | PHR-8 | LCSC C157950 |
-| 8 | Pre-crimped lead, SPH socket both ends, 24 AWG, 152 mm | JST | ASPHSPH24K152 | Digi-Key / Mouser / Future |
+| 2 (+1 spare) | PH 8-pin receptacle housing | JST | PHR-8 | DigiKey 455-1189-ND, Mouser 306-PHR-8 |
+| 8 (+2 spare) | Pre-crimped lead, SPH socket both ends, 24 AWG, 102 mm | JST | ASPHSPH24K102 | DigiKey 455-3358-ND, Mouser 306-ASPHSPH24K102 |
 
-- No off-the-shelf 8-pin PH-to-PH cable found (Pololu stops at 6 pins; LCSC has none). Building from JST pre-crimped leads avoids needing the JST crimp tool. ASPHSPH24K series also comes in other lengths if 152 mm is wrong for the enclosure.
-- Wire it straight-through so J5 pin n reaches module pin n. J5 pins 1–8 are VCC, GND, DIN, CLK, CS, DC, RST, BL, the same order the Waveshare wiki lists; the wiki doesn't say which physical pin on the module's socket is pin 1. Before the first power-up, check with a meter that J5.1 (+3V3) reaches the module's VCC pin and J5.2 reaches its GND pin.
+- No off-the-shelf 8-pin PH-to-PH cable found (Pololu stops at 6 pins; LCSC has none; the DigiKey Digital View one is obsolete). Building from JST pre-crimped leads avoids needing the JST crimp tool. 102 mm suits the Ledger enclosure (60-80 mm run, slack folds beside J5); 51 mm is too short.
+- J5 pins 1–8 are +3V3, GND, DIN, CLK, CS, DC, RST, BL. Waveshare's module schematic numbers its PH socket the other way (8 = VCC … 1 = BL), so the cable is reversed: J5.1 → module 8 (VCC), J5.2 → 7 (GND), … J5.8 → 1 (BL). A 1:1 cable would put +3V3 on BL and BL on VCC. Waveshare's drawings don't mark physical pin 1, so before fitting the second housing, beep each lead to the module's labelled 2.54 mm header holes (VCC…BL) and build to what the meter says.
