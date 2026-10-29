@@ -1,0 +1,17 @@
+Mfr Part Number,Qty_per_board,Qty_x5,References,Mouser Part Number,Stock,Unit_USD_1board,Unit_USD_5boards,Stock_covers_1_board,Stock_covers_5_boards,Cheapest_split_buy_here_1board,Cheapest_split_buy_here_5boards,Note
+CL05A105KO5NNNC,2,10,"C1,C5",187-CL05A105KO5NNNC,20834,0.16,0.06,Y,Y,N,N,"DK package 0402, 16 V, X5R, +-10%."
+CC0603KRX7R9BB104,2,10,"C2,C4",603-CC603KRX7R9BB104,46544313,0.18,0.07,Y,Y,N,Y,"0603, 50 V, X7R."
+GRM188R71A225KE15D,1,5,C3,81-GRM188R71A225KE15,76494,0.22,0.22,Y,Y,N,N,"0603, 10 V, X7R, +-10%."
+GRM155R71C104KA88D,3,15,"C6,C9,C12",81-GRM155R71C104KA88,7189064,0.12,0.03,Y,Y,Y,Y,DigiKey shows 0 in every packaging (17 week lead); Mouser has 7.2 M. Buy at Mouser. Yageo CC0402KRX7R7BB104 is the fall-back (both distributors).
+GRM21BR61E106MA73L,2,10,"C7,C8",81-GRM21BR61E106MA3L,303452,0.25,0.15,Y,Y,Y,Y,"DigiKey 0 (17 week lead), Mouser 303,452. 0805, 25 V, X5R, +-20%."
+GRM155R71H103KA88D,1,5,C10,81-GRM155R71H103KA8D,894087,0.10,0.10,Y,Y,N,N,"0402, 50 V, X7R."
+GRM188R61E475KE11D,1,5,C11,81-GRM188R61E475KE1D,3118,0.41,0.41,Y,Y,N,N,"0603, 25 V, X5R, +-10%. Mouser only 3,118 on hand at 0.41; DK 521 k at 0.26."
+503480-1400,1,5,CN1,538-503480-1400,16839,1.40,1.40,Y,Y,N,N,"DK lists it under 5034801400 (WM1442CT-ND). 14 positions, 0.50 mm."
+BAT54CLT1G,1,5,D1,863-BAT54CLT1G,0,0.26,0.26,N,N,N,N,"Common cathode pair, SOT-23-3 (pin check was done in the board STATUS). Mouser shows 0 stock (364 day lead): buy at DigiKey."
+BLM18PG221SN1D,1,5,FB1,81-BLM18PG221SN1D,233661,0.14,0.14,Y,Y,N,N,"0603, 220 ohm at 100 MHz."
+RC0402FR-074K7L,1,5,R1,603-RC0402FR-074K7L,5547669,0.10,0.10,Y,Y,N,N,SENS_ID resistor (ORP ID 4.7k).
+CRCW04024K70FKED,2,10,"R3,R4",71-CRCW0402-4.7K-E3,701704,0.10,0.02,Y,Y,N,Y,I2C pull-ups. Could be the same Yageo part as R1 (one line): RC0402FR-074K7L.
+760390015,1,5,T1,710-760390015,29042,2.02,2.02,Y,Y,N,N,"DK 3125 Vrms listing; Wurth datasheet rated 2500 Vac. Footprint was drawn from the Wurth land pattern, not compared again here."
+ISO1540DR,1,5,U3,595-ISO1540DR,55,4.79,4.79,Y,Y,Y,Y,"DigiKey 0 (20 week lead), Mouser 55 in stock. SOIC-8 3.9 mm, 2 channels, 2500 Vrms. Mouser stock covers 5 boards (5) but only 55 left."
+SN6505BDBVR,1,5,U5,595-SN6505BDBVR,108,2.59,2.59,Y,Y,Y,Y,"DigiKey 0 (20 week lead), Mouser 108. SOT-23-6, 2.25-5.5 V."
+LP2985-33DBVR,1,5,U6,595-LP2985-33DBVR,0,0.64,0.64,N,N,N,N,"DK SOT-23-5, 16 V in max, 150 mA. Mouser shows 0 (140 day lead): buy at DigiKey."
