@@ -14,7 +14,7 @@ CC0603MRX5R8BB106,1,5,C16,603-CC0603MRX58BB106,0,1.94,1.94,N,N,"Pricey at DK ($1
 CL10A226MP8NUNE,1,5,C40,187-CL10A226MP8NUNE,1215,0.31,0.31,Y,Y,Murata part is 0 at DK and unstocked at Mouser. Samsung 22uF 10V X5R 0603 (Mouser 1215; DK 0).
 GRM155R60J106ME15D,2,10,"C41,C54",81-GRM155R60J106ME5D,3061511,0.17,0.067,Y,Y,"Schematic C41 MPN lacks the trailing D. Schematic C54 (new LDO-input cap) is CL05A106MQ5NUNC: 0 at DK, on order at Mouser; using C41's Murata part for both."
 GRM188R60J476ME15D,1,5,C42,81-GRM188R60J476ME5D,1740,0.72,0.72,Y,Y,0 at DK; Mouser 1740.
-GRM31CR60J227ME11L,1,5,C43,81-GRM31CR60J227ME1L,0,2.01,2.01,N,N,BLOCKER: 0 at DK; Mouser shows it on order only (0 on hand). The -K variant is also 0 at DK and unstocked at Mouser. No same-footprint alternative found.
+MSASJ31LBB5227MTCA01,1,5,C43,963-MSASJ31LBB5227MT,85,8.61,8.61,Y,N,"Exact schematic part, Mouser 85 in stock (DK is cheaper, 1,556 at 5.42). See c43_substitutes_2026-10-28.md."
 CL21A475KAQNNNE,1,5,C44,187-CL21A475KAQNNNE,9804,0.16,0.16,Y,Y,0 at DK; Mouser 9804.
 GCM155R71C104KA55D,2,10,"C45,C48",81-GCM155R71C104KA5D,0,0.11,0.034,N,N,"Samsung part is 0 at DK, on order at Mouser. Murata 16V X7R 0402 (DK 7.58 M). Also OK: Yageo CC0402KRX7R7BB104 (both distributors)."
 GRM188R61C106MA73D,1,5,C46,81-GRM188R61C106MA3D,1572963,0.26,0.26,Y,Y,Samsung part 0 at DK and unstocked at Mouser. Murata 16V X5R 0603 +-20% (Mouser 1.57 M; DK 0).
@@ -30,23 +30,23 @@ TYPE-C-31-M-12,1,5,J1,,,,,N,N,"BLOCKER: not listed at DK or Mouser. LCSC C165948
 FTSH-105-01-L-DV-K,1,5,J3,200-FTSH10501LDVK,59922,1.18,1.18,Y,Y,Schematic MPN has -TR (reel); the non-TR code is right for hand assembly.
 LQP03HQ2N7B02D,2,10,"L2,L5",81-LQP03HQ2N7B02D,35689,0.12,0.10,Y,N,"RF match, keep exact."
 LQP03HQ3N9B02D,1,5,L3,81-LQP03HQ3N9B02D,29189,0.12,0.12,Y,N,"RF match, keep exact."
-BLM15AG121SN1D,1,5,L4,81-BLM15AG121SN1D,280471,0.10,0.10,Y,N,Murata 120R@100MHz 0402. Original is a Chinese brand not at DK/Mouser. Check DCR/current vs use (datasheet not read).
+BLM15AG121SN1D,1,5,L4,81-BLM15AG121SN1D,280471,0.10,0.10,Y,N,"Murata BLM15AG121SN1D checked: 120 ohm +-25% at 100 MHz, 550 mA rated at 85C, DCR 0.19 ohm typ / 0.29 ohm max, 1.0x0.5 mm. Fine for the DECA filter (milliamp level). Original CBG100505U121T datasheet not obtainable, so no side-by-side."
 LQP03HQ3N5B02D,2,10,"L6,L8",81-LQP03HQ3N5B02D,88147,0.12,0.10,Y,N,"RF match, keep exact."
-LQM18PN4R7MFRL,1,5,L7,81-LQM18PN4R7MFRL,182094,0.25,0.25,Y,N,"LQM18PH4R7MFRL is 0 at DK and Mouser. PN series is the same 0603 size and 4.7uH, but check Isat/DCR against the converter (datasheet not read)."
-LQM18PN2R2MFRL,2,10,"L9,L10",81-LQM18PN2R2MFRL,90871,0.25,0.21,Y,N,Taiyo part 0 at DK and unstocked at Mouser. Murata 2.2uH 0603; check Isat/DCR (datasheet not read). L9 may go DNP.
+LQM18PN4R7MFRL,1,5,L7,81-LQM18PN4R7MFRL,182094,0.25,0.25,Y,N,"LQM18PN4R7MFRL is the non-automotive twin of the schematic LQM18PH4R7MFRL: same table (4.7 uH +-20%, DCR 0.44 ohm typ / 0.55 max, SRF 40 MHz, 620 mA rated). Electrically identical, no regression."
+LSCND1608HKT2R2MF,2,10,"L9,L10",963-LSCND1608HKT2R2M,46848,0.30,0.244,Y,Y,"Original LSCNB1608HKT2R2MD (Isat 1.5 A, DCR 292 mohm max) is unstocked. Murata LQM18PN2R2MFRL FAILS as a drop-in (rated 750 mA thermal, inductance-drop current about 150 mA, DCR 375 mohm max). Taiyo LSCND1608HKT2R2MF: same family and 1608 size, Isat 1.3 A, DCR 250 mohm max; 0 at DK, Mouser 46,848. L9 carries no current (BUCK1 off) and may go DNP."
 DFE252010F-100M=P2,1,5,L11,81-DFE252010F-100MP2,5328,0.25,0.25,Y,N,
 SML-P12MTT86R,1,5,LED1,755-SML-P12MTT86R,163,0.58,0.58,Y,N,DK has only 8 on hand (enough for 5 boards only); Mouser 163 at $0.58.
-NCP15XH103F03RC,1,5,R8,81-NCP15XH103F03RC,80837,0.10,0.10,Y,N,"NRND at DK, End of Life at Mouser, but stocked. Successor candidate NCU15XH103F60RC (DK 43k, Mouser 279k, same price) - confirm B constant and tolerance."
+NCU15XH103F60RC,1,5,R8,81-NCU15XH103F60RC,279028,0.10,0.10,Y,N,"NCU15XH103F60RC checked against the Murata NCU15 sheet: 10k +-1%, B25/50 3380 K +-1% (B25/85 3434 K), same as NCP15XH103F03RC (NRND). Firmware dts already uses thermistor-ohms 10000 and thermistor-beta 3380, so no firmware change."
 ERJ-3GEY0R00V,1,5,R9,667-ERJ-3GEY0R00V,2236883,0.10,0.10,Y,N,
 RC0603FR-07150KL,1,5,R10,603-RC0603FR-07150KL,362012,0.10,0.10,Y,N,
 FM8625H,1,5,R11,,,,,N,N,"BLOCKER: not listed at DK or Mouser. LCSC C2857391 (JLC price 0.0753 USD, 30,982 in stock on 2026-10-27). Design fallback: omit R11 and fit R21 0R per the schematic note."
 RC0402FR-074K7L,4,20,"R12,R13,R15,R16",603-RC0402FR-074K7L,5547669,0.10,0.011,Y,Y,
 RC0402FR-07560RL,1,5,R14,603-RC0402FR-07560RL,1497952,0.10,0.10,Y,N,
 RT0402BRD0710KL,3,15,"R17,R18,R19",603-RT0402BRD0710KL,466593,0.10,0.074,Y,Y,RC0402FR-0710KL (1%) is cheaper if 0.1% is not needed.
-U.FL-R-SMT-1(10),1,5,RF1,798-U.FL-R-SMT-110,150504,1.67,1.67,Y,N,ECT part not at DK/Mouser. Hirose genuine U.FL; pad compatibility with the ECT footprint not checked.
+U.FL-R-SMT-1(10),1,5,RF1,798-U.FL-R-SMT-110,150504,1.67,1.67,Y,N,"FAIL as drop-in: Hirose U.FL-R-SMT-1(10) land pattern is about 4.1x4.0 mm (KiCad Hirose footprint), the current RF1 footprint (ECT818000500, body 1.7x1.7x0.8 mm) lands in about 3.5x2.5 mm with a different pad layout. Price here is a placeholder. Need the ECT818000500 datasheet to pick the mating type (MHF4 20449-001E-03 DK 78,260 0.74 and MHF I 20279-001E-03 DK 151,959 1.06 are candidates, pads unchecked)."
 B3U-1000P,1,5,SW1,653-B3U-1000P,53274,1.12,1.12,Y,Y,
 nPM1300-QEAA-R7,1,5,U2,949-NPM1300-QEAA-R7,5641,3.42,3.42,Y,N,"DK 6145 at $2.95, Mouser 5641 at $3.42. Not the WLCSP."
 S2B-PH-K-S(LF)(SN),2,10,"U4,U5",306-S2BPHKSLFSNPP,41114,0.12,0.099,Y,N,DK lists it as S2B-PH-K-S (455-1719-ND); Mouser 306-S2BPHKSLFSNPP. The schematic -GW suffix is an LCSC name.
 nRF54L15-QFAA-R,1,5,U6,949-NRF54L15-QFAA-R,2177,4.38,4.38,Y,N,"DK 1054 (cut tape), Mouser 2177. DK package 48-QFN 6x6 confirmed. The -R7 variant is 0 at DK."
 SN74AUP1G34DCKR,1,5,U7,595-SN74AUP1G34DCKR,6569,0.44,0.44,Y,N,
-XRCGB32M000F1S2AR0,1,5,X1,81-XRCGB32M000F1S2AR,2699,0.33,0.33,Y,N,"YXC part not at DK/Mouser. Murata XRCGB32M000F1S2AR0: 32 MHz 8 pF +-10 ppm 2.0x1.6 mm (DK 7007, Mouser 2699). Also NDK CS11336-32M (8 pF +-10 ppm, DK 51k, $0.52). Do NOT use NDK CS11213/CS10925 (6 pF). ESR and pad layout not checked."
+XRCGB32M000F1S2AR0,1,5,X1,81-XRCGB32M000F1S2AR,2699,0.33,0.33,Y,N,"Murata XRCGB32M000F1S2AR0 checked: 32 MHz, CL 8.0 pF, +-10 ppm initial, +-20 ppm over -40..105C, aging +-2 ppm/yr, ESR 50 ohm max, drive 300 uW max, 2.0x1.6x0.65 mm. Its land pattern (4 x 0.75x0.70 mm) fits inside the current X1 pads; pads 2 and 4 are no-connect on the part (GND on the board is fine). Nordic ESR/tolerance limit not retrieved, see sheet."
