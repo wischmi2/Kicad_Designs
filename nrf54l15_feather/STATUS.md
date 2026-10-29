@@ -571,6 +571,7 @@ Reference plane: checking the In1 fill under the new line showed two holes from 
 - Do the Gerbers and the 7z in the folder match the current layout, or are they from an earlier revision? Was this revision ordered?
 
 ## Decisions
+- 2026-10-29 (Brian): C43 stays the single Taiyo 220 uF 1206 (option a of final-review B2). It derates to about 54 uF typical / 43 uF worst at 4.2 V, below the AEM10330 100 uF STO minimum, so the battery must stay on STO: **connect the battery before the solar panel, and never unplug the battery while solar is connected.** No board change. Matches e-peas's own minimal BOM (220 uF 1206 X5R).
 - 2026-10-28 (Brian): order the PCBWay standard 4-layer 1.6 mm stackup and re-size the RF line for it (run 7: 0.30 mm microstrip over In1).
 - 2026-10-28 (coordinator task, run 5 stage 3): the J1 NPTH-to-pad hole clearance is an accepted exception. The vendor land pattern gives 0.185/0.217 mm, so a J1-only rule "J1_NPTH_to_pad" (hole_clearance min 0.18 mm) is in nrf54l15_feather.kicad_dru. Board-wide hole clearance stays 0.25 mm.
 - 2026-10-28 (run 5 stage 3): X2 (32.768 kHz, DNP) is excluded from the board (`on_board no`) because it does not fit above U6 pins 1/2.
