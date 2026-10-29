@@ -1,7 +1,7 @@
 # nRF54L15 feather - Status
 
 Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\nrf54l15_feather\nrf54l15_feather\nrf54l15_feather.kicad_pro
-Last reviewed: 2026-10-28 night (run 7: stackup set to PCBWay standard 4L, RF line re-routed at 0.30 mm = 50 Ohm, no parts moved; DRC 0 errors / 0 unconnected / 0 parity; ERC 0 errors; STEP unchanged, 2026-10-28b)
+Last reviewed: 2026-10-28 night (run 9: 30 vias enlarged to a 0.15 mm annular ring for PCBWay, 22 to 0.6/0.3 and 8 to 0.55/0.25, min annular rule now 0.15; no via or part moved; DRC 0 errors / 0 unconnected / 0 parity; ERC 0 errors; STEP unchanged, 2026-10-28b)
 
 **State: ACTIVE main board (2026-10-23, per Brian).** It replaces nrf54l15_v4. The active sensor board for it is nrf54l15_feather_sens1 (pH).
 
@@ -681,3 +681,52 @@ Brian approved on 2026-10-28 (B1 of shared\reports\2026-10-28-review-orp-ph-pref
 | 30 | CN1 | GND | (135.23,114.10) | 0.5/0.3 | C10.1 | 0.160 / 0.110 (VBAT_CN1) | 1.085 / 1.036 |
 
 Notes: no via is inside the AE1 keep-out. The RF stitching vias along the 0.30 mm line are #14-#17 (the other four, (128.6,127.84), (129.9,127.75), (131.6,129.3), (130.35,129.85), are already 0.6/0.3); enlarging in place keeps the spacing. Only #1 would go under 0.1 mm at 0.6 mm (0.091 to the XC1 track), so it is the 0.55/0.25 candidate. Signal vias in the In1/In1_RF zones (#8-#13, #19, #20) get a 0.05 mm (0.6) or 0.025 mm (0.55) bigger antipad; the In1 reference under the RF line is re-checked in stage 2.
+
+### Stage 2: vias enlarged (commit 4f97681)
+pcbnew Python (board loaded next to its own .kicad_pro, saved to scratch, only the .kicad_pcb copied back). **No via moved, no track moved, no part moved**; only via size/drill changed, then all zones refilled. All 22 at 0.6/0.3 were tried first; the 8 that clashed at 0.6 (6 DRC clearance errors) were set to 0.55/0.25 instead, which clears every one without a nudge.
+
+| # | Net | Position | Old | New | Why 0.55/0.25 |
+|---|---|---|---|---|---|
+| 1 | Net-(U6-DECA) | (129.36,121.85) | 0.45/0.25 | **0.55/0.25** | 0.6 gives 0.090 mm to the XC1 F.Cu track; now 0.115 |
+| 2 | Net-(U6-DECA) | (132.30,118.15) | 0.5/0.3 | 0.6/0.3 | |
+| 3 | SENS_SCL | (132.162,119.289) | 0.5/0.3 | 0.6/0.3 | |
+| 4 | VDDIO | (131.10,121.25) | 0.45/0.25 | 0.6/0.3 | |
+| 5 | GND | (130.50,122.25) | 0.45/0.25 | 0.6/0.3 | |
+| 6 | GND | (133.50,118.90) | 0.5/0.3 | 0.6/0.3 | |
+| 7 | GND | (133.74,121.47) | 0.5/0.3 | 0.6/0.3 | |
+| 8 | ANT_VCTL | (127.35,126.85) | 0.5/0.3 | **0.55/0.25** | pair with #15 (0.673 mm centre to centre): 0.6+0.6 gives 0.073 mm, 0.55+0.55 gives 0.123 |
+| 9 | ANT_VCTL | (125.83,124.90) | 0.5/0.3 | 0.6/0.3 | |
+| 10 | ANT_SEL | (123.50,124.90) | 0.5/0.3 | 0.6/0.3 | |
+| 11 | VRF | (126.00,123.50) | 0.5/0.3 | 0.6/0.3 | |
+| 12 | VRF | (129.75,126.60) | 0.5/0.3 | 0.6/0.3 | |
+| 13 | VRF | (131.75,125.10) | 0.5/0.3 | 0.6/0.3 | |
+| 14 | GND (RF stitch) | (126.75,123.60) | 0.45/0.25 | **0.55/0.25** | 0.6 gives 0.080 mm to the In2 VBAT track; now 0.105 |
+| 15 | GND (RF stitch) | (126.90,126.35) | 0.5/0.3 | **0.55/0.25** | pair with #8 |
+| 16 | GND (RF stitch) | (128.90,123.60) | 0.5/0.3 | 0.6/0.3 | |
+| 17 | GND (RF stitch) | (130.10,125.30) | 0.5/0.3 | 0.6/0.3 | |
+| 18 | GND | (132.55,125.68) | 0.5/0.3 | **0.55/0.25** | pair with #19 (0.655 mm centre to centre): 0.6+0.6 gives 0.055, 0.55+0.55 gives 0.105 |
+| 19 | VSENS | (133.20,125.60) | 0.45/0.25 | **0.55/0.25** | pair with #18 |
+| 20 | VSENS | (129.50,130.60) | 0.45/0.25 | 0.6/0.3 | |
+| 21 | GND | (122.50,127.00) | 0.5/0.3 | 0.6/0.3 | |
+| 22 | GND | (118.90,124.10) | 0.45/0.25 | 0.6/0.3 | |
+| 23 | VBUSOUT | (119.10,122.25) | 0.45/0.25 | **0.55/0.25** | 0.6 gives 0.090 mm to the In2 nRF54_SWDCLK track; now 0.115 |
+| 24 | GND | (110.75,119.75) | 0.45/0.25 | 0.6/0.3 | |
+| 25 | Net-(U2-NTC) | (104.85,124.70) | 0.45/0.25 | 0.6/0.3 | |
+| 26 | Net-(U2-NTC) | (106.00,118.20) | 0.45/0.25 | **0.55/0.25** | 0.6 gives 0.098 mm to the In2 CC1 track; now 0.123 |
+| 27 | GND | (100.55,120.58) | 0.45/0.25 | 0.6/0.3 | |
+| 28 | GND | (101.00,118.65) | 0.45/0.25 | 0.6/0.3 | |
+| 29 | VBAT | (138.84,115.34) | 0.5/0.3 | 0.6/0.3 | |
+| 30 | GND | (135.23,114.10) | 0.5/0.3 | 0.6/0.3 | |
+
+Totals: 17 x 0.5/0.3 -> 13 to 0.6/0.3 and 4 to 0.55/0.25; 13 x 0.45/0.25 -> 9 to 0.6/0.3 and 4 to 0.55/0.25. Board now: **139 vias 0.6/0.3, 8 vias 0.55/0.25, none under a 0.15 mm ring. None left non-compliant.** Five vias that were 0.5/0.3 now have a 0.25 mm drill (#8, #15, #18 and the two 0.45s stay 0.25): PCBWay's standard minimum drill is 0.2 mm, so 0.25 is fine.
+- Rules (.kicad_pro): min_via_annular_width 0.1 -> **0.15**, min_via_diameter 0.4 -> 0.55, Default and PWR net-class via 0.5/0.3 -> **0.6/0.3**. With the new rule and the old vias, DRC flagged exactly the 30 vias (30 annular_width + 30 via_diameter) and no footprint PTH pad, so all the footprint PTH rings already meet 0.15 mm.
+- RF corner: no via inside the AE1 keep-out; the stitching vias along the 0.30 mm line (#14-#17) are enlarged in place, so the 1.2-1.7 mm spacing is unchanged. Bigger vias give 0.025-0.05 mm bigger antipads on In1. Same check as run 7 (In1 GND fill, cut across the line every 0.05 mm): solid In1 at least **0.55 mm** either side of every 0.30 mm segment centre outside the keep-out (before: 0.58; the only drop is on the R11 -> RF1 run, from the ANT_VCTL via #8 antipad, 0.60 -> 0.58 and 0.58 -> 0.55; ANT 1.00 -> 0.98; all others 1.00). Run 7 criterion was 0.5 mm.
+- DEC path (B1/B2): the DECA In2 run and its two vias (#1, #2) are not moved; #1 grew to 0.55 only.
+- The pcbnew save also normalised the hidden "DigiKey PN"/"Mouser PN" properties that run 8 added as text (text thickness added, uuids regenerated, property order). Values unchanged; KiCad's GUI would do the same on its first save.
+
+### Stage 3: checks and renders
+- DRC (kicad-cli 10.0.4, --schematic-parity --refill-zones --severity-all, with min annular 0.15): **0 errors, 0 unconnected, 0 parity, 413 warnings** (192 silk_overlap, 165 silk_over_copper, 54 lib_footprint_issues, 2 silk_edge_clearance), same warnings as run 8.
+- ERC (--severity-all): **0 errors, 206 warnings** (schematic not changed).
+- Renders (changed vias ringed in yellow): C:\Personal-Agents\shared\design\nrf54l15_feather\vias_2026-10-28\ - before_/after_ U6_FCu_BCu.png, RF_corner_FCu_BCu.png, RF_corner_In1.png, U2_FCu_BCu.png.
+- STEP not exported: no part, outline or connector moved (latest is still nrf54l15_feather_2026-10-28b.step). No fab output.
+- B1 (annular ring) of the 2026-10-28 ORP/pH pre-fab review is closed for the feather. ORP (40 vias) and sens1 (36) still have 0.10/0.125 mm rings.
