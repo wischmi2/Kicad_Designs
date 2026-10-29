@@ -1338,7 +1338,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "UNI-ROYAL"
+		(property "Manufacturer" "Panasonic"
 			(at 101.6 111.76 0)
 			(hide yes)
 			(show_name no)
@@ -1349,7 +1349,7 @@
 				)
 			)
 		)
-		(property "MPN" "0402WGF0000TCE"
+		(property "MPN" "ERJ-2GE0R00X"
 			(at 101.6 111.76 0)
 			(hide yes)
 			(show_name no)
@@ -1360,7 +1360,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C17168"
+		(property "LCSC Part" ""
 			(at 101.6 111.76 0)
 			(hide yes)
 			(show_name no)

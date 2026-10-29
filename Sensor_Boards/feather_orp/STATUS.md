@@ -33,6 +33,17 @@ Last reviewed: 2026-10-28
 - Side assignment is unchanged and right for the same reason as before: the isolated side (Atlas, pull-ups R3/R4, side 1 with the offset VOL1 about 0.65 V) is side 1, and the host (nRF, VIL 0.9 V) is side 2 whose VOL2 is 0.4 V max. Atlas side is the same as with the ISO1640.
 - **Caveat (not a pinout problem): VCC2 recommended minimum is 3.0 V** (ISO1640 allowed 2.25 V). VSENS is BUCK2 at 3.0 V nominal; with the 5 % tolerance used elsewhere in this file (2.85 V) it sits 0.15 V below the ISO1540 recommended range. The UVLO is 1.7-2.5 V so the part will run, but it is out of the datasheet's guaranteed range at the bottom of the tolerance. Measure VSENS on the bench, or move to a 3.3 V host supply, or accept. Side 1 gets 3.3 V regulated, fine.
 - Verdict: straight swap electrically and physically. Same footprint, same net assignment, no re-layout.
+### Stages 2-4 (done)
+- Stage 2: U3 is now ISO1540DR (TI, SOIC-8). Symbol renamed feather_orp:ISO1540DR (library, Isolation sheet cache and instance), Value/MPN/Description updated in the schematic, library and PCB footprint fields. Same footprint, same nets, no placement or routing change. Silkscreen: U3 shows only the reference (no part-number text on silk), nothing to change. Commit 4d5d0b5.
+- Stage 3 (MPN fields only, schematic and PCB; no footprint changes, packages checked: GRM21B = 0805, GRM188 = 0603, ERJ-2 = 0402):
+  - C7 and C8 -> Murata GRM21BR61E106MA73L (10 uF 25 V X5R 0805). C7 value 10uF 16V -> 10uF 25V.
+  - C11 -> Murata GRM188R61E475KE11D (4.7 uF 25 V X5R 0603); value 4.7uF 10V -> 4.7uF 25V.
+  - R5 -> Panasonic ERJ-2GE0R00X (0402 0R, stays DNP); the old LCSC Part C17168 (UNI-ROYAL) field was blanked because it no longer matches the MPN.
+  - D1 -> onsemi BAT54CLT1G. Pin check: onsemi datasheet (SOT-23 CASE 318, style 9) is pin 1 anode, pin 2 anode, pin 3 common cathode; the board has D1 pin 3 on VISO_RAW (cathode) and pins 1 and 2 on XFMR_S_A / XFMR_S_B, and the BAT54C,215 footprint is the same SOT-23, so the pins match. Value and Manufacturer updated too.
+  - Higher-voltage caps (25 V parts for the 16 V and 10 V ones) lose less capacitance under DC bias, so the electrical numbers above only get better.
+- Stage 4: ERC (kicad-cli sch erc) 0 errors, 38 warnings (same set as before). DRC (--schematic-parity --refill-zones) 0 errors, 0 unconnected, 0 parity, 25 warnings (9 lib_footprint_issues, 9 silk_overlap, 7 silk_over_copper, unchanged).
+- The older sections of this file that say ISO1640BDR (trial section, parts table, bench list) describe the 2026-10-28 trial as built; U3 is now ISO1540DR as above. Bench item 5 should be repeated for the ISO1540 (VOL1 about 0.65 V into the Atlas, VCC2 at VSENS low end).
+- Open: VSENS tolerance against ISO1540 VCC2 min 3.0 V (see stage 1). Mouser ISO1540DR stock 55 on 2026-10-28; DigiKey 0.
 
 ## Isolated supply trial (2026-10-28)
 Trial of option (c') from Sensor_Boards\feather_sensor_template\isolated_supply_options.md, so Brian can see the SN6505B transformer supply on a real board before it goes on the template / DO / EC. Commits: 27c8c7d (stage 1 schematic), 5f9f497 (stage 2 footprint), a7d1704 (stage 3 PCB), then stage 4 (exports) and stage 5 (this section).
