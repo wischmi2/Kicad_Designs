@@ -2034,9 +2034,9 @@
 			)
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/feather_orp.3dshapes/Atlas_ORP_OEM_block.step"
+		(model "${KIPRJMOD}/feather_orp.3dshapes/Atlas_OEM_module.step"
 			(offset
-				(xyz 0 0 0)
+				(xyz -120.38 10.04 1.567)
 			)
 			(scale
 				(xyz 1 1 1)
