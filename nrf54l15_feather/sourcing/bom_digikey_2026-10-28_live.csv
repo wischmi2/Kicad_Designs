@@ -1,0 +1,52 @@
+Mfr Part Number,Qty_per_board,Qty_x5,References,Distributor PN,Stock,Unit_USD_1board,Unit_USD_5boards,Stock_covers_5_boards,Cheapest_split_buy_here_5boards,Note
+2450AT18A0100001E,1,5,AE1,712-2450AT18A0100001ECT-ND,184515,0.52,0.52,Y,Y,"Old MPN is marked 'Part Number Change' at Mouser (points to global MPN 2450AT18A0100001E). Same Johanson chip antenna, new number; DK package data not compared with the footprint."
+GRM033R61A225ME47D,2,10,"C1,C10",490-13228-1-ND,0,0.17,0.097,N,N,KE47D (+-10%) is 0 at DK and unstocked at Mouser. ME47D is the same part at +-20%.
+GRM188R61H225KE11D,1,5,C3,490-10733-1-ND,0,0.23,0.23,N,N,"Samsung part is NRND, 0 at DK, unstocked at Mouser. Murata 2.2uF 50V X5R 0603. DK shows 0 for the Murata too; Mouser has 231,827."
+CL05A105KO5NNNC,1,5,C19,1276-1067-1-ND,22889,0.10,0.10,Y,Y,
+GJM0335C1E2R0WB01D,1,5,C5,490-12592-1-ND,277248,0.12,0.12,Y,Y,"RF match, keep exact."
+CC0603KRX7R9BB104,4,20,"C6,C14,C15,C26",311-1344-1-ND,3890838,0.14,0.080,Y,N,
+GRM21BR61E106MA73L,5,25,"C7,C17,C18,C20,C22",490-10748-1-ND,0,0.17,0.095,N,N,"CL21A106KAYNNNE is 0 at DK and on order only at Mouser. Murata 25V X5R 0805, +-20% (Mouser 303,452; DK 0). C18 may go DNP."
+GJM0335C1E1R5WB01D,1,5,C8,490-11176-1-ND,165338,0.11,0.11,Y,Y,"RF match, keep exact."
+GCM155R71H103KA55D,1,5,C9,490-4762-1-ND,1852815,0.10,0.10,Y,Y,
+GJM0335C1E1R0WB01D,1,5,C12,490-10677-1-ND,208856,0.11,0.11,Y,Y,"RF match, keep exact."
+GJM0335C1ER30WB01D,1,5,C13,490-8073-1-ND,4839,0.11,0.11,Y,Y,"RF match, keep exact."
+CC0603MRX5R8BB106,1,5,C16,311-3494-1-ND,50188,1.35,1.35,Y,Y,"Pricey at DK ($1.35); Mouser lists it with no stock. Cheaper if the rail is 5 V or less: GRM188R61C106MA73D (16V, Mouser 1.57 M, $0.26)."
+CL10A226MP8NUNE,1,5,C40,1276-1274-1-ND,0,0.19,0.19,N,N,Murata part is 0 at DK and unstocked at Mouser. Samsung 22uF 10V X5R 0603 (Mouser 1215; DK 0).
+GRM155R60J106ME15D,2,10,"C41,C54",490-13238-1-ND,2411767,0.17,0.095,Y,N,"Schematic C41 MPN lacks the trailing D. Schematic C54 (new LDO-input cap) is CL05A106MQ5NUNC: 0 at DK, on order at Mouser; using C41's Murata part for both."
+GRM188R60J476ME15D,1,5,C42,490-13247-1-ND,0,0.43,0.43,N,N,0 at DK; Mouser 1740.
+GRM31CR60J227ME11L,1,5,C43,490-13970-1-ND,0,1.14,1.14,N,N,BLOCKER: 0 at DK; Mouser shows it on order only (0 on hand). The -K variant is also 0 at DK and unstocked at Mouser. No same-footprint alternative found.
+CL21A475KAQNNNE,1,5,C44,1276-1244-1-ND,0,0.13,0.13,N,N,0 at DK; Mouser 9804.
+GCM155R71C104KA55D,2,10,"C45,C48",490-4759-1-ND,7580291,0.11,0.034,Y,Y,"Samsung part is 0 at DK, on order at Mouser. Murata 16V X7R 0402 (DK 7.58 M). Also OK: Yageo CC0402KRX7R7BB104 (both distributors)."
+GRM188R61C106MA73D,1,5,C46,490-7201-1-ND,0,0.26,0.26,N,N,Samsung part 0 at DK and unstocked at Mouser. Murata 16V X5R 0603 +-20% (Mouser 1.57 M; DK 0).
+CL05C101JB5NNNC,1,5,C47,1276-1025-1-ND,0,0.10,0.10,N,N,"0 at DK; Mouser 15,351."
+CL03A104KQ3NNNC,2,10,"C49,C50",1276-1013-1-ND,4267100,0.10,0.019,Y,Y,
+CL05A105KA5NQNC,1,5,C51,1276-1445-1-ND,2196661,0.19,0.19,Y,Y,
+5034801400,1,5,CN1,WM1442CT-ND,29488,1.40,1.40,Y,Y,DK WM1442CT-ND; Mouser 538-503480-1400.
+TPD1E10B06DPYR,2,10,"D1,D2",296-30406-1-ND,120000,0.41,0.25,Y,N,
+SMF12A,1,5,D3,F5747CT-ND,66159,0.52,0.52,Y,N,Littelfuse at DK (F5747CT-ND). Mouser 821-SMF12A is a different brand listing; check the manufacturer before ordering.
+MF-FSMF020X-2,1,5,F1,MF-FSMF020X-2CT-ND,117251,0.54,0.45,Y,Y,
+AEM10330-QFN,1,5,IC1,,,,,N,N,"Resolved: Mouser 120-AEM10330-QFN, 725 in stock, $4.22 (e-peas). DK lists only the evaluation kit (IN1BN-DKA0-AEM100-C1, $63.07, 0 stock), not the IC. The earlier '0 stock' was JLC only. Package not compared with the footprint beyond the QFN-40 name."
+TYPE-C-31-M-12,1,5,J1,,,,,N,N,"BLOCKER: not listed at DK or Mouser. LCSC C165948 (JLC price 0.187 USD, 2026-10-27). A DK/Mouser USB-C part (e.g. GCT USB4105-GF-A, DK 85,282, $0.80) is a different footprint, so it needs a board change."
+FTSH-105-01-L-DV-K,1,5,J3,SAM8799-ND,104787,1.37,1.37,Y,N,Schematic MPN has -TR (reel); the non-TR code is right for hand assembly.
+LQP03HQ2N7B02D,2,10,"L2,L5",490-13909-1-ND,12639,0.12,0.10,Y,Y,"RF match, keep exact."
+LQP03HQ3N9B02D,1,5,L3,490-13933-1-ND,16502,0.12,0.12,Y,Y,"RF match, keep exact."
+BLM15AG121SN1D,1,5,L4,490-1005-1-ND,407700,0.10,0.10,Y,Y,Murata 120R@100MHz 0402. Original is a Chinese brand not at DK/Mouser. Check DCR/current vs use (datasheet not read).
+LQP03HQ3N5B02D,2,10,"L6,L8",490-13925-1-ND,374693,0.12,0.10,Y,Y,"RF match, keep exact."
+LQM18PN4R7MFRL,1,5,L7,490-12065-1-ND,48432,0.25,0.25,Y,Y,"LQM18PH4R7MFRL is 0 at DK and Mouser. PN series is the same 0603 size and 4.7uH, but check Isat/DCR against the converter (datasheet not read)."
+LQM18PN2R2MFRL,2,10,"L9,L10",490-10764-1-ND,51847,0.25,0.21,Y,Y,Taiyo part 0 at DK and unstocked at Mouser. Murata 2.2uH 0603; check Isat/DCR (datasheet not read). L9 may go DNP.
+DFE252010F-100M=P2,1,5,L11,490-13039-1-ND,16454,0.25,0.25,Y,Y,
+SML-P12MTT86R,1,5,LED1,846-1201-1-ND,8,0.28,0.28,Y,Y,DK has only 8 on hand (enough for 5 boards only); Mouser 163 at $0.58.
+NCP15XH103F03RC,1,5,R8,490-4801-1-ND,123848,0.12,0.10,Y,Y,"NRND at DK, End of Life at Mouser, but stocked. Successor candidate NCU15XH103F60RC (DK 43k, Mouser 279k, same price) - confirm B constant and tolerance."
+ERJ-3GEY0R00V,1,5,R9,P0.0GCT-ND,4531263,0.10,0.10,Y,Y,
+RC0603FR-07150KL,1,5,R10,311-150KHRCT-ND,176869,0.10,0.10,Y,Y,
+FM8625H,1,5,R11,,,,,N,N,"BLOCKER: not listed at DK or Mouser. LCSC C2857391 (JLC price 0.0753 USD, 30,982 in stock on 2026-10-27). Design fallback: omit R11 and fit R21 0R per the schematic note."
+RC0402FR-074K7L,4,20,"R12,R13,R15,R16",311-4.7KLRCT-ND,832503,0.10,0.021,Y,N,
+RC0402FR-07560RL,1,5,R14,311-560LRCT-ND,181947,0.10,0.10,Y,Y,
+RT0402BRD0710KL,3,15,"R17,R18,R19",YAG1346CT-ND,400800,0.10,0.084,Y,N,RC0402FR-0710KL (1%) is cheaper if 0.1% is not needed.
+U.FL-R-SMT-1(10),1,5,RF1,H11891CT-ND,351552,1.67,1.67,Y,Y,ECT part not at DK/Mouser. Hirose genuine U.FL; pad compatibility with the ECT footprint not checked.
+B3U-1000P,1,5,SW1,SW1020CT-ND,112002,1.17,1.17,Y,N,
+nPM1300-QEAA-R7,1,5,U2,4823-NPM1300-QEAA-R7CT-ND,6145,2.95,2.95,Y,Y,"DK 6145 at $2.95, Mouser 5641 at $3.42. Not the WLCSP."
+S2B-PH-K-S(LF)(SN),2,10,"U4,U5",455-1719-ND,613988,0.12,0.099,Y,Y,DK lists it as S2B-PH-K-S (455-1719-ND); Mouser 306-S2BPHKSLFSNPP. The schematic -GW suffix is an LCSC name.
+nRF54L15-QFAA-R,1,5,U6,4823-NRF54L15-QFAA-RCT-ND,1054,4.38,4.38,Y,Y,"DK 1054 (cut tape), Mouser 2177. DK package 48-QFN 6x6 confirmed. The -R7 variant is 0 at DK."
+SN74AUP1G34DCKR,1,5,U7,296-19081-1-ND,17205,0.44,0.44,Y,Y,
+XRCGB32M000F1S2AR0,1,5,X1,490-XRCGB32M000F1S2AR0CT-ND,7007,0.33,0.33,Y,Y,"YXC part not at DK/Mouser. Murata XRCGB32M000F1S2AR0: 32 MHz 8 pF +-10 ppm 2.0x1.6 mm (DK 7007, Mouser 2699). Also NDK CS11336-32M (8 pF +-10 ppm, DK 51k, $0.52). Do NOT use NDK CS11213/CS10925 (6 pF). ESR and pad layout not checked."
