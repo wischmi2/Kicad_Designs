@@ -1,7 +1,7 @@
 # Pouch gateway - Status
 
 Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\pouch_gateway\pouch_gateway.kicad_pro
-Last reviewed: 2026-10-23
+Last reviewed: 2026-10-28 (pre-fab fixes from the 2026-10-28 design review)
 Design notes: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\pouch_gateway\docs\DESIGN_NOTES.md (Rev A)
 
 ## Summary
@@ -18,20 +18,39 @@ Golioth Pouch BLE to Wi-Fi gateway, Rev A.
 - Sub-sheets: mcu, power, reset_debug, rf, ui_io, usb.
 
 ## Current state
-- PCB: 58.0 x 35.0 mm, 4 layers. 70 footprints, 710 track segments, 229 vias, 11 zones. Four M2 mounting holes (H1-H4) on the Waveshare 53 x 30 mm pattern.
-- ERC (2026-10-23): 0 errors, 195 warnings (140 endpoint_off_grid, 53 lib_symbol_mismatch, 2 unconnected wire endpoints).
-- DRC (schematic parity on, 2026-10-23): 0 errors, 22 warnings, 0 unconnected items.
-  - Parity: SW1/SW2/SW3 show up as both missing and extra footprints. The footprint references look like they are "RESET", "ISP" and "USER" instead of SW1-3, so the board and schematic references are probably out of sync.
-  - Silkscreen: 10 overlap, 6 over copper.
-- DESIGN_NOTES.md "Layout status" (2026-10-18) describes partial routing (119 segments). The board has changed a lot since then, so those notes are out of date.
-- Fab outputs: Gerbers (4-layer), drill file, CPL (pouch_gateway.csv), PCBWay BOM xlsx and pouch_gateway.7z are in the folder. I couldn't tell whether they match the current PCB.
-- Enclosure / STEP: none in C:\Personal-Agents\shared\handoff\.
+- **Not on order yet.** Brian will resubmit to PCBWay once he approves new fab output: standard 4L 1.6 mm, ENIG, stencil. Bare boards only, parts from DigiKey/Mouser, self-assembly.
+- PCB: 58.0 x 35.0 mm, 4 layers, 70 footprints, 13 zones. Four M2 mounting holes (H1-H4) on the Waveshare 53 x 30 mm pattern. Outline, holes and connectors unchanged on 2026-10-28.
+- ERC (2026-10-28): 0 errors, 195 warnings (140 endpoint_off_grid, 53 lib_symbol_mismatch, 2 unconnected wire endpoints; all cosmetic, unchanged).
+- DRC (2026-10-28, --schematic-parity --refill-zones --severity-all): 0 errors, 0 warnings, 0 unconnected, 0 parity.
+- STEP: C:\Personal-Agents\shared\handoff\pouch_gateway\pouch_gateway_2026-10-28.step (outline and connectors unchanged; U1 and J1 have no 3D model).
+- **Fab files in this folder are stale** (Gerbers, .drl, .gbrjob, pouch_gateway.7z from 2026-10-20, pouch_gateway.csv and the two PCBWay BOM xlsx). They predate the 2026-10-28 fixes and the xlsx/csv are for the old PCBWay turnkey route. Don't upload them. Left in place on purpose; regenerating fab output needs Brian's approval.
+
+### 2026-10-28 pre-fab fixes (review: C:\Personal-Agents\shared\reports\2026-10-28-review-pouch-gateway-prefab.md)
+- S3: footprint references are now SW1/SW2/SW3 (were RESET/ISP/USER); the function text RESET/ISP/USER stays on silk as the visible Value field, the SW refs sit inside the switch outlines. Parity 6 -> 0.
+- S6 (part): J2 (SWD header) and J4 (UART) marked DNP in schematic and board. J6 Tag-Connect is the debug path.
+- S1: +3V3 pour on In2 ("In2 3V3", priority 5) from the L1/C4/C5 corner up the left of U1 to the VCC33 corner; kept about 1 mm off the In2 USB DP/DM lines and clear of the RF lines and U.FLs (In1 stays solid GND). F.Cu +3V3 slab from C6/C12 to U1.26/27, extra vias at L1.2 (2) and between C6 and C12. L1.2 -> U1.26/27 resistance (finite-difference estimate, 35 um Cu, about 1.2 mohm per via): **about 9 mohm (8.7), 5 mV at 576 mA (DPD peak), 4 mV at 469 mA**. Before the fix the same model gives about 280-300 mohm (the old path was one ~115 mm run of 0.2 mm track at 2.45 mohm/mm), i.e. about 160 mV at 576 mA; the review's 92 mohm looks about 3x low. Worst case at U1 is now about 3.24 - 0.005 = 3.23 V vs the 3.14 V minimum. DC estimate only (no pad/solder/module-internal resistance, no load-step droop).
+- N3: In1/In2 GND zone clearance 0.5 -> 0.25 mm.
+- S2: C2 (100 nF 0402, same part) moved right next to U2.4; its GND pad returns on a 0.3 mm F.Cu track straight to U2.2 under the package. The under-body +5V diagonal is gone; C1/C2 are fed by a 0.5 mm B.Cu track from the +5V feed. R3/C3 +3V3 via moved. +5V F.Cu 0.5 mm, SW_3V3 0.6 mm, L1.2 -> C4/C5 0.8 mm. No new parts.
+- N1: D1 reference moved off U2 pin 1, R6 reference moved. R13 (was on J3 pad 1), R12, R21, C11, C16, C17 references hidden on silk because there is no free spot within 3 mm in the module/RF area; they still print on F.Fab (assembly drawing). Silk DRC warnings 16 -> 0.
+- S5 (part): stackup copper finish set to ENIG.
+- S4: R5 0R stays fitted (direct VBUS link as on the EVK), Brian 2026-10-28. No change.
+- LCD stack check (report only, no change): see "LCD clearance" below.
+
+### LCD clearance (stacked on the shared M2 standoffs, 2026-10-28)
+Inputs: shared\design\pouch_gateway\lcd_module\MEASUREMENTS.md (Waveshare STEP): PH2.0 8-pin SMT side-entry on the LCD's back, 5.6 mm tall, body 4.25-12.75 mm in from the LCD's connector end, centred across the short axis over 19.9 mm (y 77.55-97.45 on this board). Standoffs M2 x 6 (Waveshare wiki and STEP), so the LCD back is 6.0 mm above the gateway top and the connector leaves **0.4 mm** above the gateway surface. The LCD can only sit with its back towards the gateway, so its connector end is over either the right (J5) end or the left (J1) end. Gateway heights are datasheet/model values, not measured: J5 4.85 mm (board STEP, per enclosure_ledger\NOTES.md), J1 about 3.2-3.3 mm (enclosure placeholder 3.3), 0603 about 0.9, 0402 about 0.35-0.5, SOT-143 about 1.1.
+- **Connector end over the right edge (J5 end): clash.** LCD connector x 155.25-163.75 overlaps J5 (courtyard x 158.4-167.1) over x 158.4-163.75 by y 77.55-94.97 (5.35 x 17.4 mm). 4.85 + 5.6 = 10.45 mm in a 6.0 mm gap: **4.45 mm interference**. C20 (0603) and C21 (0402) are also under it and taller than 0.4 mm. The LCD cable plug would also sit right on top of J5 and its cable.
+- **Connector end over the left edge (J1 end): clash.** LCD connector x 114.25-122.75 overlaps J1 (courtyard x 110.2-119.7) over x 114.25-119.69 by y 87.98-97.45 (5.4 x 9.5 mm). 3.3 + 5.6 = 8.9 mm: **about 2.9 mm interference**. FB1 (0603), D1 edge (SOT-143, 0.06 mm overlap), R1/R2 (0402, borderline) and the J6 Tag-Connect pads are also under it; J2 is pads only (DNP).
+- Rest of the LCD footprint at 6 mm: fine for the parts outside the connector zone (J5 4.85, L1 about 2.0, KMR2 about 1.9, mated U.FL about 2.4, U1 about 1.6). Only the connector was modelled on the LCD back; other back-side parts were not checked.
+- Other consequences of stacking: J6 Tag-Connect can't be used with the LCD fitted (the TC2030 head needs top access), and SW1/SW2/SW3 and D3-D5 are covered (concepts.md 2.4).
+- Note: the current Fusion Ledger model (shared\design\pouch_gateway\enclosure_ledger\NOTES.md) does **not** stack them; it mounts the LCD above the gateway, side by side with a 5 mm offset, so this clash does not occur there. The 2026-10-28 task says the LCD sits over the board on the shared standoffs; which is intended needs confirming.
+- Options (no connector moved): (1) longer standoffs: LCD connector over J1 with M2 x 10 (about 0.8-1.1 mm margin over J1) or over J5 with M2 x 12 (about 1.5 mm margin); (2) remove the LCD's PH connector and solder the cable to its pads, then M2 x 6 works (cable exit to be checked); (3) side by side as in the Ledger model; (4) next rev: J5 and the LCD connector at opposite ends, or a J5 top-entry/FPC.
 
 ## Open work
-- Fix the SW1-3 reference mismatch, then re-run DRC.
+- Brian: decide the LCD stack (standoff length or LCD orientation, see LCD clearance), then approve new fab output (Gerbers + drill only; archive the old fab files first).
+- parts-sourcing: DigiKey/Mouser BOM by MPN (U1 LBES0ZZ2FR stock/MOQ first); J2/J4 now DNP.
+- Review items not done (nice to have): N2 RF width 0.30-0.32 mm, N4 USB as a 90 ohm pair, N5 D4 resistor 470R-1k, N6 CC ESD, N7 long low-speed routes.
 - Open items listed in DESIGN_NOTES.md:
   - Antenna part from the HSW2FR FCC filing
-  - Buck part check (TLV62569 is now in the design, so this may be done)
   - pSRAM requirement for the Golioth gateway
   - Zephyr console UART pins
 - Layout to-dos listed in DESIGN_NOTES.md: physical stackup and 50 ohm CPWG, RF feed length, zone fill, silkscreen cleanup.
@@ -39,12 +58,14 @@ Golioth Pouch BLE to Wi-Fi gateway, Rev A.
 - Next rev (possible upgrade, Brian 2026-10-24): on-board 1S LiPo charger with power path, JST PH 2-pin battery connector and an "on battery"/battery-voltage signal to a GPIO, for power-cut ride-through. See concepts.md section 8.
 
 ## Questions for Brian
-- Was the physical stackup set and the RF feed sized for 50 ohm? I didn't check the stackup in the file.
-- Is the buck regulator decided (TLV62569DBVR)? DESIGN_NOTES.md still lists it as open.
-- Are the Gerbers and the 7z current, and were they sent to fab?
+- LCD: stacked on the shared M2 standoffs (then pick M2 x 10 with the LCD connector over J1, M2 x 12 over J5, or remove the LCD's PH connector) or side by side as in the Ledger Fusion model? See LCD clearance.
+- OK that R13, R12, R21, C11, C16 and C17 have no silk reference (they print on F.Fab)? The alternative is overlapping silk that the fab clips.
+- OK to archive the old Gerbers/7z/csv/xlsx and generate new Gerbers + drill for PCBWay?
+- (Answered by the 2026-10-28 review: the stackup matches PCBWay standard 4L and RF is about 51-55 ohm; the buck is TLV62569DBVR; the old Gerbers are stale.)
 
 ## Decisions
-- 2026-10-24 (Brian): the gateway PCB has no battery circuit. It's powered only by USB-C. A battery, if used, needs an external charger/5 V boost module feeding J1, inside the enclosure. The PCB is fixed and on order.
+- 2026-10-24 (Brian): the gateway PCB has no battery circuit. It's powered only by USB-C. A battery, if used, needs an external charger/5 V boost module feeding J1, inside the enclosure.
+- 2026-10-28 (Brian): Rev A is not on order yet (this replaces "the PCB is fixed and on order"). Fix S1, S2, S3, the J2/J4 DNP part of S6 and the silkscreen (N1); keep R5 0R fitted (S4); order PCBWay standard 4L 1.6 mm, ENIG, stencil. The LCD sits over the board on the shared M2 standoffs.
 - 2026-10-24 (Brian): enclosure placement is a shelf or desk with AC (USB) power available all the time. This answers question 1 in shared\design\pouch_gateway\concepts\2026-10-24-enclosure\concepts.md and points to the Ledger concept.
 - 2026-10-24 (Brian): printer is a Snapmaker U1 (4-toolhead toolchanger, 270 x 270 x 270 mm, 300 °C nozzle, 100 °C bed, no top cover mentioned). Open to filament suggestions; proposed PETG body + translucent PETG/PCTG light pipe + TPU feet (answers question 8).
 - 2026-10-24 (Brian): Rev A is wall (USB-C) power only, with no battery, PowerBoost or pigtail in the enclosure. This replaces the earlier "small pack for power cuts" answer. External USB-C keeps data, and the USB_VBUS 0 ohm stays fitted (closes concepts questions 2, 3 and 7). Checked the schematic: no charger, battery connector or power path on the board.
