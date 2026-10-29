@@ -102,3 +102,10 @@ This is the same rectangle as the main board's AE1_keepout rule area (132.15-141
 - 2026-10-25 (Brian): J5 to be traced. It is the INT_ISO test pad; kept.
 - 2026-10-27 (Brian): Tidemark R1 antenna keep-out on sens1 only (template and other sensor boards when next revised). Done 2026-10-28; H4 made NPTH as a consequence.
 - 2026-10-25: probe J1 on the short edge opposite CN1 (the USB-C end of the stack), so the probe cable exits that end of the enclosure.
+
+## Pre-fab edits 2026-10-28 (Brian's decisions)
+- Decisions: R_ID = 10k for pH (register: Sensor_Boards\SENSORS.md). sens1 keeps its existing NXE1S0303MC supply (ORP is the trial of the SN6505B supply). H4 NPTH approved. Fab is PCBWay standard 4-layer 1.6 mm.
+- R1 was already 10k; added Manufacturer YAGEO / MPN RC0402FR-0710KL (DigiKey 311-10.0KLRCT-ND, 8.6 M in stock 2026-10-28) in ph_sensor.kicad_sch and the PCB.
+- H4 confirmed NPTH (np_thru_hole, drill 2.7, board_only). The H4 nylon-hardware note stands.
+- Stackup was 0.1 / 1.24 / 0.1 mm with 35 um inner copper; changed to PCBWay standard 4L 1.6 mm: prepreg 0.1855, core 1.1, prepreg 0.1855, inner copper 17.5 um, outer 35 um (copper_finish left at None). No RF on this board, so no width changes.
+- ERC (kicad-cli): 0 errors, 40 warnings. DRC (--schematic-parity --refill-zones): 0 errors, 0 unconnected, 0 parity, 15 warnings (9 lib_footprint_issues, 6 silk_over_copper). Commit 72be7fc.

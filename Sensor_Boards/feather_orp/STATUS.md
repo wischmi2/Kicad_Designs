@@ -124,3 +124,11 @@ Trial of option (c') from Sensor_Boards\feather_sensor_template\isolated_supply_
 - 2026-10-26: placement and guard-pour approach copied from sens1 (same OEM family, same SMA), with U2 at y 119.13 so PRB lines up with the SMA centre pin.
 - 2026-10-26: R_ID left at the template placeholder because no SENSORS.md register exists (the previous run's 4.7k was reverted).
 - 2026-10-26: ORP OEM land pattern taken from the ORP datasheet v3.3 rather than the sens1 DXF footprint (flagged as a question).
+
+## Pre-fab edits 2026-10-28 (Brian's decisions)
+- Decisions: R_ID = 4.7k for ORP (register: Sensor_Boards\SENSORS.md). Keep the new SN6505B isolated supply as is. R5 (0R AGND_ISO to GND_ISO link) is DNP. Fab is PCBWay standard 4-layer 1.6 mm.
+- R1 = 4.7k 1 % 0402, Yageo RC0402FR-074K7L (DigiKey 311-4.7KLRCT-ND, 842 k in stock 2026-10-28). Manufacturer/MPN fields added in the schematic and the PCB; B.SilkS line now reads "SENSOR TYPE: ORP   R_ID: 4.7k". This supersedes the earlier "R1 placeholder" notes above (R_ID question closed).
+- R5 set DNP (schematic dnp yes, PCB attr dnp; still in BOM/pos files, flagged DNP, so use --exclude-dnp or skip it when ordering). With R5 open, AGND_ISO has no link to GND_ISO on this board: the probe ground and the guard rely on the Atlas module's own AGND/GND connection. Confirm on the bench; fit R5 (0R) if the reading is noisy or floating.
+- Stackup in the board file was 0.1 / 1.24 / 0.1 mm with 35 um inner copper; changed to PCBWay standard 4L 1.6 mm: prepreg 0.1855, core 1.1, prepreg 0.1855, inner copper 17.5 um, outer 35 um (epsilon_r 4.5 unchanged; copper_finish left at None). No RF on this board, so no trace width changes.
+- Edits were made as text edits to the .kicad_sch/.kicad_pcb (no netlist change, so no schematic-to-board sync was needed; parity is 0), not with KiCad Python, to avoid the .kicad_pro overwrite problem.
+- ERC (kicad-cli): 0 errors, 38 warnings. DRC (--schematic-parity --refill-zones): 0 errors, 0 unconnected, 0 parity, 25 warnings (9 lib_footprint_issues, 9 silk_overlap, 7 silk_over_copper). Commits 109904e, c34e627.
