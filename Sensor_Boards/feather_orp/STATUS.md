@@ -167,3 +167,8 @@ Trial of option (c') from Sensor_Boards\feather_sensor_template\isolated_supply_
 - Cost per board (cheapest split): 9.16 USD for 1 board, 41.38 USD for 5 boards, excluding U3, J1 (SMA, LCSC only) and U2 (Atlas OEM-ORP, buy from Atlas). Add 4.79 USD per board if U3 is ISO1540DR.
 - Stock blockers: U3 ISO1640BDR is 0 at DigiKey and Mouser (Mouser due 21,775 on 2026-12-18; ISO1540DR has 55 at Mouser, pinout and drive unverified); U5 SN6505BDBVR is 0 at DigiKey but Mouser has 108.
 - Other: C7 and C8 (10uF 0805) and C11 (obsolete) need new MPNs (see the file); T1 760390015, U6 LP2985-33DBVR, D1 (use BAT54CLT1G after a pin check), FB1 are in stock.
+
+## BOM pricing (live, 2026-10-28, full BOM; supersedes the section above)
+- Files: Sensor_Boards\feather_orp\sourcing\bom_digikey_mouser_2026-10-28_live.md plus bom_digikey_ and bom_mouser_2026-10-28_live.csv (copies in C:\Personal-Agents\shared\design\feather_orp\). Priced for the current BOM (U3 ISO1540DR, C7/C8 GRM21BR61E106MA73L, C11 GRM188R61E475KE11D, D1 BAT54CLT1G, R1 4.7k), R5 DNP skipped.
+- Cheapest split, excluding U2 and J1: 13.85 USD for 1 board, 64.83 USD for 5 boards; two orders needed (Mouser for C6/C9/C12, C7/C8, U3 55 on hand, U5 108 on hand; DigiKey for D1, U6). With U2 Atlas OEM-ORP (45.99 each) and J1 SMA (LCSC C496551, 0.51): 60.35 USD for 1, 297.35 USD for 5.
+- LCSC/Atlas only: J1 BWSMA-KWE-Z001 (not at DK/Mouser), U2 OEM-ORP.

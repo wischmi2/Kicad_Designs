@@ -109,3 +109,8 @@ This is the same rectangle as the main board's AE1_keepout rule area (132.15-141
 - H4 confirmed NPTH (np_thru_hole, drill 2.7, board_only). The H4 nylon-hardware note stands.
 - Stackup was 0.1 / 1.24 / 0.1 mm with 35 um inner copper; changed to PCBWay standard 4L 1.6 mm: prepreg 0.1855, core 1.1, prepreg 0.1855, inner copper 17.5 um, outer 35 um (copper_finish left at None). No RF on this board, so no width changes.
 - ERC (kicad-cli): 0 errors, 40 warnings. DRC (--schematic-parity --refill-zones): 0 errors, 0 unconnected, 0 parity, 15 warnings (9 lib_footprint_issues, 6 silk_over_copper). Commit 72be7fc.
+
+## BOM pricing (live, 2026-10-28)
+- Files: nrf54l15_feather_sens1\sourcing\bom_digikey_mouser_2026-10-28_live.md plus bom_digikey_ and bom_mouser_2026-10-28_live.csv (copies in C:\Personal-Agents\shared\design\nrf54l15_feather_sens1\).
+- All DigiKey, one order: 13.96 USD for 1 board, 67.33 USD for 5 boards, excluding U2 Atlas pH OEM (45.99 each) and J1 SMA (LCSC C496551, 0.51). With both: 60.46 USD for 1, 299.85 USD for 5. No stock blockers.
+- Empty schematic MPNs (J1, R5, U2, U3, U4): proposals are in the file (U3 ADUM1250ARZ-RL7, U4 NXE1S0303MC-R13, R5 ERJ-2GE0R00X, J1 BWSMA-KWE-Z001). J1 is not at DigiKey/Mouser (LCSC only).
