@@ -24283,30 +24283,6 @@
 			(justify mirror)
 		)
 	)
-	(gr_text "P1"
-		(at 151 112.44 90)
-		(layer "F.SilkS")
-		(uuid "52462498-d411-48b4-b464-89a6ffb386ae")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "P14"
-		(at 151.01 121.2 90)
-		(layer "F.SilkS")
-		(uuid "8fbb7ff2-6104-41eb-85cd-505c96865e0d")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-			(justify left bottom)
-		)
-	)
 	(segment
 		(start 137.15 124.18)
 		(end 135.55 124.18)
