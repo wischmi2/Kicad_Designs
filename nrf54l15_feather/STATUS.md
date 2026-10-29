@@ -640,3 +640,44 @@ kicad-cli 10.0.4: ERC 0 errors; DRC (--schematic-parity --refill-zones --severit
 - X1: check ESR 50 ohm max and C0 of XRCGB32M000F1S2AR0 against Figure 5 of the Nordic PS (image, "Crystal selection"), see stage 1.
 - The live BOM and its two CSVs in sourcing\ still show the old schematic MPNs; regenerate them from the schematic (parts-sourcing).
 - LCSC numbers for the changed parts are empty on purpose; refill only if LCSC is used as a source.
+
+## Run 9 (2026-10-28 night, kicad-designer on Opus): vias to PCBWay's 0.15 mm annular ring
+Brian approved on 2026-10-28 (B1 of shared\reports\2026-10-28-review-orp-ph-prefab.md). PCBWay capabilities: "Min width for Annular Ring is 0.15mm(6mil)". The project rule min_via_annular_width was 0.1, so DRC did not flag these.
+
+### Stage 1: non-compliant vias (before the change)
+147 vias: 117 at 0.6/0.3 (0.15 ring, OK), **17 at 0.5/0.3 and 13 at 0.45/0.25 (0.10 ring)**. All 30 are through vias F.Cu-B.Cu. "Gap" = closest other-net copper edge on F.Cu / B.Cu now and if grown to 0.6 mm (own pcbnew script, items within 4 mm; zones not counted, they re-fill). Board minimum clearance 0.1 mm, hole clearance 0.25 mm.
+
+| # | Area | Net | Position | Size | Next to | F.Cu gap now / at 0.6 | B.Cu gap now / at 0.6 |
+|---|---|---|---|---|---|---|---|
+| 1 | U6 DEC (B1 path) | Net-(U6-DECA) | (129.36,121.85) | 0.45/0.25 | C1.1, C8.1, L5 | 0.166 / **0.091** (XC1 track) | 0.265 / 0.190 (SENS_INT) |
+| 2 | U6 DEC | Net-(U6-DECA) | (132.30,118.15) | 0.5/0.3 | C9, U6.42 | 0.198 / 0.146 (C9.2 GND) | 0.649 / 0.599 |
+| 3 | U6 fan-out | SENS_SCL | (132.162,119.289) | 0.5/0.3 | U6.38-40 (Brian's hand route) | 0.161 / 0.111 (SENS_SDA) | 0.649 / 0.599 |
+| 4 | U6 fan-out | VDDIO | (131.10,121.25) | 0.45/0.25 | U6.36, C50 | 0.176 / 0.101 (XC2 track) | 0.716 / 0.642 |
+| 5 | U6 / X1 | GND | (130.50,122.25) | 0.45/0.25 | X1.4, C1 | 0.179 / 0.103 (XC2 track) | 0.226 / 0.151 (SENS_INT) |
+| 6 | U6 DEC | GND | (133.50,118.90) | 0.5/0.3 | C9.2, C11.2 | 0.221 / 0.171 (SENS_SDA) | 0.705 / 0.655 |
+| 7 | U6 | GND | (133.74,121.47) | 0.5/0.3 | R15.1, C50 | 0.391 / 0.341 | 0.182 / 0.130 (SENS_SCL) |
+| 8 | RF corner | ANT_VCTL | (127.35,126.85) | 0.5/0.3 | R11.1/R11.6, C13.2 (run 7 move, In1_RF zone) | 0.173 / 0.123 (GND via 126.9,126.35) | same |
+| 9 | RF corner | ANT_VCTL | (125.83,124.90) | 0.5/0.3 | U7.4/U7.5 | 0.226 / 0.176 (U7.5 VRF) | 0.911 / 0.861 |
+| 10 | RF corner | ANT_SEL | (123.50,124.90) | 0.5/0.3 | U7.1/U7.2, R20 | 0.270 / 0.220 | 0.832 / 0.782 |
+| 11 | RF corner | VRF | (126.00,123.50) | 0.5/0.3 | U7.5, C48.1, C5 | 0.283 / 0.233 | 0.283 / 0.233 |
+| 12 | RF corner | VRF | (129.75,126.60) | 0.5/0.3 | C47.1, R11.3/R11.4 (next to ANT_CHIP 0.30 mm line) | 0.250 / 0.201 (ANT_CHIP) | 0.350 / 0.300 |
+| 13 | RF corner | VRF | (131.75,125.10) | 0.5/0.3 | C15.2 (via at pad edge), X1.2 | 0.250 / 0.201 | 0.250 / 0.201 (VSENS) |
+| 14 | RF stitching | GND | (126.75,123.60) | 0.45/0.25 | C5.1, C48.1 (match network) | 0.221 / 0.146 (C48.1 VRF) | 0.283 / 0.208 |
+| 15 | RF stitching | GND | (126.90,126.35) | 0.5/0.3 | C13.2, RF1.3 | 0.173 / 0.123 (ANT_VCTL via) | 0.151 / 0.101 (ANT_VCTL B.Cu track) |
+| 16 | RF stitching | GND | (128.90,123.60) | 0.5/0.3 | L6.2, L8.1, C1.2 | 0.189 / 0.139 (L6.2) | 0.860 / 0.810 |
+| 17 | RF stitching | GND | (130.10,125.30) | 0.5/0.3 | C47.2, R21.1 (ANT line) | 0.201 / 0.151 (ANT) | 0.151 / 0.101 (VSENS) |
+| 18 | RF corner | GND | (132.55,125.68) | 0.5/0.3 | C15, R17 (just outside the AE1 keep-out) | 0.180 / 0.130 (VSENS via) | 0.167 / 0.117 (VSENS) |
+| 19 | RF corner | VSENS | (133.20,125.60) | 0.45/0.25 | R17.2 (just outside the AE1 keep-out, x>=132.15 y>=126.4) | 0.179 / 0.104 (R17.2 SENS_INT) | 0.180 / 0.105 (GND via) |
+| 20 | RF corner | VSENS | (129.50,130.60) | 0.45/0.25 | R19.1, L2 | 0.609 / 0.535 | 0.609 / 0.535 |
+| 21 | LED / RF | GND | (122.50,127.00) | 0.5/0.3 | R20.2, LED1 | 0.959 / 0.910 | 1.827 / 1.777 |
+| 22 | U2 (S2 fix) | GND | (118.90,124.10) | 0.45/0.25 | C54.2 | 0.809 / 0.734 | 0.289 / 0.214 (VDDIO) |
+| 23 | U2 | VBUSOUT | (119.10,122.25) | 0.45/0.25 | C3.1 | 0.346 / 0.271 | 0.794 / 0.719 |
+| 24 | U2 | GND | (110.75,119.75) | 0.45/0.25 | C41.2, C42, C43 | 0.688 / 0.614 | 0.577 / 0.502 |
+| 25 | U2 | Net-(U2-NTC) | (104.85,124.70) | 0.45/0.25 | R8.2 | 0.176 / 0.101 (VBUS) | 0.319 / 0.245 |
+| 26 | U2 | Net-(U2-NTC) | (106.00,118.20) | 0.45/0.25 | L11, R2 | 1.425 / 1.351 | 1.667 / 1.592 |
+| 27 | USB | GND | (100.55,120.58) | 0.45/0.25 | D1.1, D2 | 0.246 / 0.171 (CC2) | - |
+| 28 | USB | GND | (101.00,118.65) | 0.45/0.25 | D1.2 | 1.006 / 0.930 | 2.038 / 1.963 |
+| 29 | CN1 | VBAT | (138.84,115.34) | 0.5/0.3 | CN1.MP, H3, L4 | 0.797 / 0.747 | 0.797 / 0.747 |
+| 30 | CN1 | GND | (135.23,114.10) | 0.5/0.3 | C10.1 | 0.160 / 0.110 (VBAT_CN1) | 1.085 / 1.036 |
+
+Notes: no via is inside the AE1 keep-out. The RF stitching vias along the 0.30 mm line are #14-#17 (the other four, (128.6,127.84), (129.9,127.75), (131.6,129.3), (130.35,129.85), are already 0.6/0.3); enlarging in place keeps the spacing. Only #1 would go under 0.1 mm at 0.6 mm (0.091 to the XC1 track), so it is the 0.55/0.25 candidate. Signal vias in the In1/In1_RF zones (#8-#13, #19, #20) get a 0.05 mm (0.6) or 0.025 mm (0.55) bigger antipad; the In1 reference under the RF line is re-checked in stage 2.
