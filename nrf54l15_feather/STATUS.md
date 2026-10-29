@@ -731,3 +731,33 @@ Totals: 17 x 0.5/0.3 -> 13 to 0.6/0.3 and 4 to 0.55/0.25; 13 x 0.45/0.25 -> 9 to
 - Renders (changed vias ringed in yellow): C:\Personal-Agents\shared\design\nrf54l15_feather\vias_2026-10-28\ - before_/after_ U6_FCu_BCu.png, RF_corner_FCu_BCu.png, RF_corner_In1.png, U2_FCu_BCu.png.
 - STEP not exported: no part, outline or connector moved (latest is still nrf54l15_feather_2026-10-28b.step). No fab output.
 - B1 (annular ring) of the 2026-10-28 ORP/pH pre-fab review is closed for the feather. ORP (40 vias) and sens1 (36) still have 0.10/0.125 mm rings.
+
+## Fab output 2026-10-29 (kicad-designer, Sonnet)
+Brian's 2026-10-29 decisions applied: C43 option (a), S1 silk, AE1 as-is, 4/4 mil PCBWay option, "BATT FIRST" silk note. Branch agent/nrf54l15-feather, not pushed.
+
+### Changes
+- Stage 1 (38e4769): "P1"/"P14" silk stroke 0.10 -> 0.15 mm (size stays 1.0 mm). Project min_text_thickness 0.08 -> 0.15 mm (and default silk text thickness 0.1 -> 0.15); DRC flagged no other text. Silk note **"BATT FIRST"** on **B.SilkS** (mirrored, reads from the bottom), 0.8 mm high, 0.15 mm stroke, centred at (101.95, 121.43) between U4 (battery JST) and U5 (solar JST). F.SilkS had no room: a scan of 28 positions between the JSTs and several beside them all gave new silk/pad violations, and the only clean F.SilkS spot (vertical at x 96, over J1's silk) crossed J1's silk bracket. The B side is empty there. No copper changed.
+- NOTE: the "P1"/"P14" silk texts sit at x = 151, about 10 mm outside the board (right edge x 140.8). They are leftovers from the old board and end up in the F_Silkscreen Gerber outside the outline. Harmless to the board but PCBWay's viewer may show them; delete them in the GUI if you want a cleaner file (not done: out of the task scope).
+- Stage 2 (0519a02): old fab files (all 2026-10-21 or earlier) moved with git mv to nrf54l15_feather\archive\fab_2026-10-21\: 11 Gerbers (B_Cu, B_Mask, B_Paste, B_Silkscreen, Edge_Cuts, F_Cu, F_Mask, F_Paste, F_Silkscreen, In1_Cu, In2_Cu), nrf54l15_feather-job.gbrjob, nrf54l15_feather.drl, nrf54l15_feather.7z, nrf54l15_feather_BOM_PCBWay.xlsx, nrf54l15_feather.net, nrf54l15_feather.xml. Nothing else in the folder was old fab output. CN1 vendor files kept.
+
+### Checks (kicad-cli 10.0.4, before and after: identical)
+- DRC (--schematic-parity --refill-zones --severity-all): 0 errors, 0 unconnected, 0 parity, 413 warnings (192 silk_overlap, 165 silk_over_copper, 54 lib_footprint_issues, 2 silk_edge_clearance), same as run 9.
+- ERC (--severity-all): 0 errors, 206 warnings.
+
+### Fab output
+- Folder: nrf54l15_feather\nrf54l15_feather\fab_2026-10-29\ (kicad-cli from the committed board, Protel extensions, subtract soldermask from silkscreen, zones checked).
+- Zip: C:\Personal-Agents\shared\handoff\nrf54l15_feather\nrf54l15_feather_fab_2026-10-29.zip (185 kB). Not uploaded, nothing ordered.
+- Files: nrf54l15_feather-F_Cu.gtl, -In1_Cu.g1, -In2_Cu.g2, -B_Cu.gbl, -F_Mask.gts, -B_Mask.gbs, -F_Silkscreen.gto, -B_Silkscreen.gbo, -F_Paste.gtp, -B_Paste.gbp, -Edge_Cuts.gm1, nrf54l15_feather-job.gbrjob, nrf54l15_feather-PTH.drl, -NPTH.drl, -PTH-drl_map.pdf, -NPTH-drl_map.pdf. No pos, no BOM.
+- gbrjob: 4 layers, 1.6 mm, finish ENIG, size 50.85 x 22.91 mm (the 50.8 x 22.86 outline plus the 0.05 mm Edge.Cuts line width, which KiCad adds).
+- Drill (Excellon, mm, PTH and NPTH split): PTH 191 hits = 147 vias (139 x 0.30, 8 x 0.25) + 44 footprint pads (25 x 0.20, 9 x 0.30, 4 x 0.80 slots/ovals, 4 x 0.90, 2 x 2.70 for H1/H2). NPTH 4 hits (2 x 0.75 J1 pegs, 2 x 2.70 H3/H4). Total 195 = board's 147 vias + 48 hole pads, counted from the .kicad_pcb.
+- **Smallest drill is 0.20 mm (25 footprint pad holes, the exposed-pad thermal holes of the QFN parts)**, exactly PCBWay's 0.2 mm minimum, no margin. Smallest via drill is 0.25 mm.
+
+### PCBWay order notes
+- Standard 4-layer, 1.6 mm, stackup 0.1855 / 1.03 / 0.1855 mm (L1-L2 prepreg 0.1855; the RF line is 0.30 mm for 50 ohm on that stackup, run 7), 1 oz outer / 1 oz inner.
+- Surface finish ENIG. Board 50.8 x 22.86 mm, R2.54 corners.
+- Min track/spacing option 4/4 mil (no layout change needed; the layout's rule is 0.15 mm clearance, 0.15 mm annular ring).
+- Min hole 0.2 mm (smallest drill 0.20 mm, see above).
+- Silk text 0.15 mm stroke minimum; "BATT FIRST" is on the bottom side.
+
+### Bring-up rule (C43, Brian 2026-10-29 option a)
+C43 is the single 220 uF 1206 and derates to about 54 uF at 4.2 V, below the AEM10330 100 uF STO minimum. **Connect the battery before the solar panel; never unplug the battery while solar is connected.** Silk "BATT FIRST" on the back between U4 and U5 reminds of it.
