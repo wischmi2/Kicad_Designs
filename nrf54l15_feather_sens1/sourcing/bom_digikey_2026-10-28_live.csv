@@ -1,0 +1,10 @@
+Mfr Part Number,Qty_per_board,Qty_x5,References,DK Part Number,Stock,Unit_USD_1board,Unit_USD_5boards,Stock_covers_1_board,Stock_covers_5_boards,Cheapest_split_buy_here_1board,Cheapest_split_buy_here_5boards,Note
+CL05A105KO5NNNC,2,10,"C1,C5",1276-1067-1-ND,22489,0.10,0.04,Y,Y,Y,Y,"DK package 0402, 16 V, X5R, +-10%."
+CC0603KRX7R9BB104,2,10,"C2,C4",311-1344-1-ND,4099456,0.14,0.08,Y,Y,Y,N,"0603, 50 V, X7R."
+GRM188R71A225KE15D,1,5,C3,490-4520-1-ND,326995,0.16,0.16,Y,Y,Y,Y,"0603, 10 V, X7R, +-10%."
+503480-1400,1,5,CN1,WM1442CT-ND,29488,1.40,1.40,Y,Y,Y,Y,"DK lists it under 5034801400 (WM1442CT-ND). 14 positions, 0.50 mm."
+RC0402FR-0710KL,1,5,R1,311-10.0KLRCT-ND,8629234,0.10,0.10,Y,Y,Y,Y,SENS_ID resistor.
+CRCW04024K70FKED,2,10,"R3,R4",541-4.70KLCT-ND,2706888,0.10,0.03,Y,Y,Y,N,I2C pull-ups.
+ERJ-2GE0R00X,1,5,R5,P0.0JCT-ND,14773138,0.10,0.10,Y,Y,Y,Y,"Schematic MPN is empty and the part is NOT marked DNP on this board, so it is priced (the ORP board uses the same ERJ-2GE0R00X). Field needs filling."
+ADUM1250ARZ-RL7,1,5,U3,505-ADUM1250ARZ-RL7CT-ND,4503,8.22,8.22,Y,Y,Y,Y,"Schematic MPN is empty. ADUM1250ARZ (tube) is 0 at DigiKey; the reel version ADUM1250ARZ-RL7 is the same die and package, 4,503 on hand as cut tape (SOIC-8 3.9 mm, 2 channels, 2500 Vrms, 3-5.5 V). Mouser lists it without stock or price."
+NXE1S0303MC-R13,1,5,U4,811-3902-1-ND,1633,3.30,3.18,Y,Y,Y,Y,"Schematic MPN is empty. The DK numbers are NXE1S0303MC-R7 (7 in. reel, 2,937) and -R13 (13 in. reel, 1,633); same part, only the reel differs. R13 is 0.19 cheaper as cut tape (3.30 vs 3.49). Mouser shows 0 stock for both. 3.3 V in/out, 1 W, 3 kV."
