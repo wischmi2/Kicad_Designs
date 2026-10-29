@@ -49,6 +49,7 @@ You coordinate PCB and enclosure work.
 rf54l15_feather
 rf54l15_feather_fab_2026-10-29.zip. Order notes: PCBWay std 4L 1.6 mm, ENIG, 4/4 mil, min hole 0.2 mm (25 pad holes at exactly 0.20). AE1 left as-is for bench tuning
 - Tooling: 2026-10-28 SSH sessions from the laptop die when it sleeps and kill background agents; tmux guide in shared\how-to\run-claude-in-tmux.md (WSL disabled on the desktop, untested). Judge agent liveness from ~/.claude/projects/<project>/<session>/subagents/agent-<id>.jsonl mtime
+- Decision 2026-10-29 (Brian): first prints of all enclosures are drafts in plain PETG, single material (no TPU co-print, fuzzy skin or colourway); TPU parts stay separate bodies in the model. Full CMF from the second print
 - Decisions made: 2026-10-23 the active boards are nrf54l15_feather (main) and nrf54l15_feather_sens1 (pH sensor). v4 is paused in favour of the Feather form factor; ph_sensor is superseded by sens1. 2026-10-25 (Brian): one sensor board per feather, each node in its own enclosure (e.g. pH node, salinity node). CN1 stays point-to-point and the SENS_ID resistor tells firmware the board type. New sensor boards start from Sensor_Boards\feather_sensor_template (built 2026-10-25). 2026-10-25 (Brian): first new sensor board is feather_water_level (ultrasonic from above, A02YYUW, UART), non-isolated, sensor on a 3.3 V buck-boost from VBAT with EN = VSENS; enclosure gets several options in the same family as the other enclosures.
 
 ## Boards
