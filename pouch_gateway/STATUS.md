@@ -31,10 +31,22 @@ Golioth Pouch BLE to Wi-Fi gateway, Rev A.
 - S1: +3V3 pour on In2 ("In2 3V3", priority 5) from the L1/C4/C5 corner up the left of U1 to the VCC33 corner; kept about 1 mm off the In2 USB DP/DM lines and clear of the RF lines and U.FLs (In1 stays solid GND). F.Cu +3V3 slab from C6/C12 to U1.26/27, extra vias at L1.2 (2) and between C6 and C12. L1.2 -> U1.26/27 resistance (finite-difference estimate, 35 um Cu, about 1.2 mohm per via): **about 9 mohm (8.7), 5 mV at 576 mA (DPD peak), 4 mV at 469 mA**. Before the fix the same model gives about 280-300 mohm (the old path was one ~115 mm run of 0.2 mm track at 2.45 mohm/mm), i.e. about 160 mV at 576 mA; the review's 92 mohm looks about 3x low. Worst case at U1 is now about 3.24 - 0.005 = 3.23 V vs the 3.14 V minimum. DC estimate only (no pad/solder/module-internal resistance, no load-step droop).
 - N3: In1/In2 GND zone clearance 0.5 -> 0.25 mm.
 - S2: C2 (100 nF 0402, same part) moved right next to U2.4; its GND pad returns on a 0.3 mm F.Cu track straight to U2.2 under the package. The under-body +5V diagonal is gone; C1/C2 are fed by a 0.5 mm B.Cu track from the +5V feed. R3/C3 +3V3 via moved. +5V F.Cu 0.5 mm, SW_3V3 0.6 mm, L1.2 -> C4/C5 0.8 mm. No new parts.
-- N1: D1 reference moved off U2 pin 1, R6 reference moved. R13 (was on J3 pad 1), R12, R21, C11, C16, C17 references hidden on silk because there is no free spot within 3 mm in the module/RF area; they still print on F.Fab (assembly drawing). Silk DRC warnings 16 -> 0.
+- N1: D1 reference moved off U2 pin 1, R6 reference moved. R13 (was on J3 pad 1) moved. R12, R21, C11, C16, C17 refs were hidden at first (no free spot within 3 mm); see the silk follow-up below. Silk DRC warnings 16 -> 0.
 - S5 (part): stackup copper finish set to ENIG.
 - S4: R5 0R stays fitted (direct VBUS link as on the EVK), Brian 2026-10-28. No change.
 - LCD stack check (report only, no change): see "LCD clearance" below.
+
+### 2026-10-28 silk follow-up: hidden references made visible
+- R12, R13, R21, C11, C16, C17 references are visible on F.SilkS again (0.8 mm high, 0.15 mm stroke), each with a 0.15 mm F.SilkS leader line to its part. Silk only: no copper, no part moved. Text and leaders keep clear of all pads (including J3 pad 1 and the RF pads); leaders cross covered tracks only, no exposed copper.
+  - R21: label at (154.2, 81.5), straight leader along y 82.3 from R21 to the label (looks like an underline of TP1, but it is the R21 leader).
+  - C17: label at (154.3, 86.5), leader along y 87.3-87.5 from the label to C17 (passes between R23 and C18).
+  - R13: label (vertical) at (153.9, 93.9) below-right of J3, leader runs from R13 round the J3 right side.
+  - C11: label at (146.4, 76.4) above C15/R7, leader down the right side of C15 to C11.
+  - C16: label (vertical) at (148.7, 80.1), leader down past C11's right side to C16.
+  - R12: label (vertical) at (140.7, 95.9), short leader to R12.
+- DRC (--schematic-parity --refill-zones --severity-all): 0 errors, 0 warnings, 0 unconnected, 0 parity (no silk warnings). Render: C:\Personal-Agents\shared\design\pouch_gateway\silk_2026-10-28.png.
+- Leaders in the C11/C16/R13 area are long and bendy because the module/RF area is dense. If Brian wants it tidier, the alternative is moving the R20/R22/R23 reference texts to open space.
+- Decision 2026-10-28 (Brian): the LCD mounts in its own holder in the Ledger enclosure, offset from the board as in the 2026-10-24 Fusion model, not stacked on the M2x6 standoffs. The J5/J1 clash found in the "LCD clearance" check above therefore does not apply; that section is kept as a record only.
 
 ### LCD clearance (stacked on the shared M2 standoffs, 2026-10-28)
 Inputs: shared\design\pouch_gateway\lcd_module\MEASUREMENTS.md (Waveshare STEP): PH2.0 8-pin SMT side-entry on the LCD's back, 5.6 mm tall, body 4.25-12.75 mm in from the LCD's connector end, centred across the short axis over 19.9 mm (y 77.55-97.45 on this board). Standoffs M2 x 6 (Waveshare wiki and STEP), so the LCD back is 6.0 mm above the gateway top and the connector leaves **0.4 mm** above the gateway surface. The LCD can only sit with its back towards the gateway, so its connector end is over either the right (J5) end or the left (J1) end. Gateway heights are datasheet/model values, not measured: J5 4.85 mm (board STEP, per enclosure_ledger\NOTES.md), J1 about 3.2-3.3 mm (enclosure placeholder 3.3), 0603 about 0.9, 0402 about 0.35-0.5, SOT-143 about 1.1.
