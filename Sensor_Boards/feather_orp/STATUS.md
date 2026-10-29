@@ -16,6 +16,24 @@ Last reviewed: 2026-10-28
 - I2C pull-ups: R3/R4 4.7k to VDD_ISO on the Isolation sheet (template), no extra pull-ups on the Sensor sheet. Host side has its own pull-ups.
 - LCSC numbers checked on 2026-10-26 against the JLCPCB catalogue (part search API): C496551 BWSMA-KWE-Z001 "Plugin", 125,098 in stock (extended); C29266 CL05A105KO5NNNC 0402, 2,544,745 in stock (extended); C17168 0402WGF0000TCE 0402, 9,034,566 in stock (basic). All match their footprints. U2 is bought from Atlas Scientific (no LCSC number).
 
+## U3 swap ISO1640BDR -> ISO1540DR (2026-10-28, Brian: ISO1640BDR out of stock at DigiKey/Mouser, ISO1540DR 55 at Mouser)
+### Stage 1: datasheet comparison (TI ISO154x SLLSEB6F rev Dec 2022, ISO164x SLLSFC2D rev Sep 2021)
+| Item | ISO1640BDR | ISO1540DR | Straight swap? |
+| --- | --- | --- | --- |
+| Package | SOIC-8 D, 4.90 x 3.91 mm | SOIC-8 D, 4.90 x 3.91 mm | yes |
+| Pins | 1 VCC1, 2 SDA1, 3 SCL1, 4 GND1, 5 GND2, 6 SCL2, 7 SDA2, 8 VCC2 | identical | yes |
+| Side 1 (offset/buffered, 3.5 mA sink) | VCC1 3.0-5.5 V, VOL1 about 0.65 V | VCC1 3.0-5.5 V, VOL1 about 0.57-0.8 V (VOIT1 50 mV min) | yes, same side for the isolated Atlas bus |
+| Side 2 (strong, no offset) | VCC2 **2.25**-5.5 V, VOL2 0.4 V max at up to 50 mA | VCC2 **3.0**-5.5 V, VOL2 0.4 V max at up to 35 mA | yes for the nRF (VIL 0.9 V), see supply caveat |
+| I2C speed | up to 1.7 MHz | up to 1 MHz (100 kHz needed here) | yes |
+| Max bus C | 80 pF side 1 / 400 pF side 2 | 40 pF side 1 / 400 pF side 2 (datasheet test loads) | yes at 100 kHz |
+| Hot-swap (SDA/SCL) | yes | no | n/a, CN1 is not a live-insert port |
+| Isolation | 3 kVrms basic (UL 1577), 450 Vrms working | 2.5 kVrms, 300 Vrms working (CSA) | yes: the barrier is functional, T1 is rated 2.5 kVac anyway |
+| Supply current | about 7 mA max side 1 | 3.6-7.1 mA max side 1, 1.7-4 mA side 2 at 3-3.6 V | yes |
+| Bypass | 0.1 uF per side | 0.1 uF per side (min recommended) | yes: C4 (VCC1, VDD_ISO) and C12 (VCC2, VSENS) already 100 nF |
+- Side assignment is unchanged and right for the same reason as before: the isolated side (Atlas, pull-ups R3/R4, side 1 with the offset VOL1 about 0.65 V) is side 1, and the host (nRF, VIL 0.9 V) is side 2 whose VOL2 is 0.4 V max. Atlas side is the same as with the ISO1640.
+- **Caveat (not a pinout problem): VCC2 recommended minimum is 3.0 V** (ISO1640 allowed 2.25 V). VSENS is BUCK2 at 3.0 V nominal; with the 5 % tolerance used elsewhere in this file (2.85 V) it sits 0.15 V below the ISO1540 recommended range. The UVLO is 1.7-2.5 V so the part will run, but it is out of the datasheet's guaranteed range at the bottom of the tolerance. Measure VSENS on the bench, or move to a 3.3 V host supply, or accept. Side 1 gets 3.3 V regulated, fine.
+- Verdict: straight swap electrically and physically. Same footprint, same net assignment, no re-layout.
+
 ## Isolated supply trial (2026-10-28)
 Trial of option (c') from Sensor_Boards\feather_sensor_template\isolated_supply_options.md, so Brian can see the SN6505B transformer supply on a real board before it goes on the template / DO / EC. Commits: 27c8c7d (stage 1 schematic), 5f9f497 (stage 2 footprint), a7d1704 (stage 3 PCB), then stage 4 (exports) and stage 5 (this section).
 
