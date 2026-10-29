@@ -35,9 +35,9 @@
 	(pad "5" smd roundrect (at 4.57 0) (size 1.12 0.96) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.15) (uuid "dd37a31e-8840-46b9-b904-6af57db2b896"))
 	(pad "4" smd roundrect (at 4.57 2.54) (size 1.12 0.96) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.15) (uuid "643953e5-2f73-45b0-929e-7506d558bb14"))
 	(model "${KIPRJMOD}/feather_orp.3dshapes/WE-PPTI_760390015_250-1109.step"
-		(offset (xyz 0 0 0))
+		(offset (xyz 5 -3.24 0))
 		(scale (xyz 1 1 1))
-		(rotate (xyz 0 0 0))
+		(rotate (xyz -90 0 0))
 	)
 	(embedded_fonts no)
 )
