@@ -1149,20 +1149,20 @@
 		(at 128.59 73.36 180)
 		(descr "CK components KMR2 tactile switch http://www.ckswitches.com/media/1479/kmr2.pdf")
 		(tags "tactile switch kmr2")
-		(property "Reference" "RESET"
-			(at 0 -2.45 0)
+		(property "Reference" "SW1"
+			(at 0 0 0)
 			(layer "F.SilkS")
 			(uuid "a582313d-6eec-4282-9b0b-d6a79c1d23ba")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
 		)
 		(property "Value" "RESET"
-			(at 0 2.55 0)
-			(layer "F.Fab")
+			(at 0 -2.45 0)
+			(layer "F.SilkS")
 			(uuid "8ae28a9c-f684-4c90-b68a-0bc752e060ee")
 			(effects
 				(font
@@ -6337,20 +6337,20 @@
 		(at 151.68 73.4 180)
 		(descr "CK components KMR2 tactile switch http://www.ckswitches.com/media/1479/kmr2.pdf")
 		(tags "tactile switch kmr2")
-		(property "Reference" "ISP"
-			(at -4.31 0.51 0)
+		(property "Reference" "SW2"
+			(at 0 0 0)
 			(layer "F.SilkS")
 			(uuid "e4569658-4ee5-4f72-a105-cfcac0bffd68")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
 		)
 		(property "Value" "ISP"
-			(at 0 2.55 0)
-			(layer "F.Fab")
+			(at -4.31 0.51 0)
+			(layer "F.SilkS")
 			(uuid "602cffa2-1d65-46cf-a83f-d0866ada6e28")
 			(effects
 				(font
@@ -8248,7 +8248,7 @@
 				(pins "7" "9" "1" "3" "5" "10" "4" "2" "6" "8")
 			)
 		)
-		(attr smd)
+		(attr smd dnp)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -3.09 -3.22)
@@ -10001,7 +10001,7 @@
 				(pins "1" "2" "3")
 			)
 		)
-		(attr through_hole)
+		(attr through_hole dnp)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -1.38 -1.38)
@@ -13407,20 +13407,20 @@
 		(at 139.72 73.27)
 		(descr "CK components KMR2 tactile switch http://www.ckswitches.com/media/1479/kmr2.pdf")
 		(tags "tactile switch kmr2")
-		(property "Reference" "USER"
-			(at 0 -2.45 0)
+		(property "Reference" "SW3"
+			(at 0 0 0)
 			(layer "F.SilkS")
 			(uuid "dd911ee3-f15d-40c4-816b-378fa92e84f6")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
 		)
 		(property "Value" "USER"
-			(at 0 2.55 0)
-			(layer "F.Fab")
+			(at 0 -2.45 0)
+			(layer "F.SilkS")
 			(uuid "0e08289e-082f-4b6b-a218-59b602ddb899")
 			(effects
 				(font
@@ -19663,6 +19663,46 @@
 		(uuid "fa416ac7-8ae5-4599-8bc9-6c0b4c14b943")
 	)
 	(segment
+		(start 127.26 75.83)
+		(end 127.25 75.84)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Reset_Debug_Boot/RST_SW")
+		(uuid "13813af5-89b3-4c3d-aabc-e84123a8edea")
+	)
+	(segment
+		(start 126.54 74.16)
+		(end 126.54 75.11)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Reset_Debug_Boot/RST_SW")
+		(uuid "47cee005-62ff-498f-b9aa-e31763da5cc5")
+	)
+	(segment
+		(start 130.64 74.16)
+		(end 126.54 74.16)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Reset_Debug_Boot/RST_SW")
+		(uuid "9200f254-1242-4076-a057-e140c786f66f")
+	)
+	(segment
+		(start 127.25 75.84)
+		(end 127.25 77.18)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Reset_Debug_Boot/RST_SW")
+		(uuid "ae88a52f-38db-443b-8b12-2ec1e8c3d73e")
+	)
+	(segment
+		(start 126.54 75.11)
+		(end 127.26 75.83)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Reset_Debug_Boot/RST_SW")
+		(uuid "ea2a4ace-c4ba-4a16-bfa3-747fb918d260")
+	)
+	(segment
 		(start 137.36 96.7)
 		(end 137.35 96.69)
 		(width 0.27)
@@ -21285,46 +21325,6 @@
 		(layer "F.Cu")
 		(net "/USB/CC2")
 		(uuid "a590b66b-5fc6-4a0a-804d-8ade82d02792")
-	)
-	(segment
-		(start 127.26 75.83)
-		(end 127.25 75.84)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Reset_Debug_Boot/RST_SW")
-		(uuid "13813af5-89b3-4c3d-aabc-e84123a8edea")
-	)
-	(segment
-		(start 126.54 74.16)
-		(end 126.54 75.11)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Reset_Debug_Boot/RST_SW")
-		(uuid "47cee005-62ff-498f-b9aa-e31763da5cc5")
-	)
-	(segment
-		(start 130.64 74.16)
-		(end 126.54 74.16)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Reset_Debug_Boot/RST_SW")
-		(uuid "9200f254-1242-4076-a057-e140c786f66f")
-	)
-	(segment
-		(start 127.25 75.84)
-		(end 127.25 77.18)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Reset_Debug_Boot/RST_SW")
-		(uuid "ae88a52f-38db-443b-8b12-2ec1e8c3d73e")
-	)
-	(segment
-		(start 126.54 75.11)
-		(end 127.26 75.83)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Reset_Debug_Boot/RST_SW")
-		(uuid "ea2a4ace-c4ba-4a16-bfa3-747fb918d260")
 	)
 	(segment
 		(start 139.74 90.27)

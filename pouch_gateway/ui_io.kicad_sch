@@ -3480,7 +3480,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "9982e0a1-066e-495d-add7-a6b7f5844af4")
 		(property "Reference" "J4"
 			(at 187.43 132.25 0)
