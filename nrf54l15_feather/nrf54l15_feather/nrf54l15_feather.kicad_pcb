@@ -24271,6 +24271,18 @@
 		(layer "Edge.Cuts")
 		(uuid "bd988538-53a9-4df2-9546-fde3aa5f39da")
 	)
+	(gr_text "BATT FIRST"
+		(at 101.95 121.43 0)
+		(layer "B.SilkS")
+		(uuid "37403406-b4ce-4404-8992-9589d22a695c")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
 	(gr_text "P1"
 		(at 151 112.44 90)
 		(layer "F.SilkS")
@@ -24278,7 +24290,7 @@
 		(effects
 			(font
 				(size 1 1)
-				(thickness 0.1)
+				(thickness 0.15)
 			)
 			(justify left bottom)
 		)
@@ -24290,7 +24302,7 @@
 		(effects
 			(font
 				(size 1 1)
-				(thickness 0.1)
+				(thickness 0.15)
 			)
 			(justify left bottom)
 		)
