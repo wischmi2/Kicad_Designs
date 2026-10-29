@@ -101,7 +101,7 @@
 			(layer "B.SilkS"
 				(type "Bottom Silk Screen")
 			)
-			(copper_finish "None")
+			(copper_finish "ENIG")
 			(dielectric_constraints yes)
 		)
 		(pad_to_mask_clearance 0)
@@ -689,12 +689,13 @@
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor")
 		(property "Reference" "C17"
-			(at 0 -0.94 270)
+			(at 1.148051 2.771638 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "af03ed0e-6a01-4683-92a7-810954b0cbbc")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -1818,12 +1819,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R12"
-			(at 0.64 1.92 180)
+			(at 1.148051 2.771638 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "7b0b362f-67d0-4341-8ae2-c30ae13e528e")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -2292,12 +2294,13 @@
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor")
 		(property "Reference" "C11"
-			(at -0.82 -0.79 90)
+			(at -1.148051 -2.771638 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "e9a6fdf8-d5e8-4a20-8025-9a5db2ff9025")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -2450,7 +2453,7 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R6"
-			(at -0.09 0.98 90)
+			(at 0 -1.6 0)
 			(layer "F.SilkS")
 			(uuid "69cba4b2-6bd7-42c1-b28f-620ab630d7c6")
 			(effects
@@ -3206,7 +3209,7 @@
 		(descr "SOT-143 https://www.nxp.com/docs/en/package-information/SOT143B.pdf")
 		(tags "SOT-143")
 		(property "Reference" "D1"
-			(at 2.38 -0.13 180)
+			(at 0 -2.8 90)
 			(layer "F.SilkS")
 			(uuid "60a3f412-7f56-4733-b849-fd954b65b93f")
 			(effects
@@ -4086,12 +4089,13 @@
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor")
 		(property "Reference" "C16"
-			(at -0.65 0.92 90)
+			(at 1.148051 2.771638 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "0537a138-a58e-4de9-932d-bf7b79da03d1")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -4648,12 +4652,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R13"
-			(at 0.24 1.19 0)
+			(at 2.771638 -1.148051 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "1088264b-aeae-4b4e-96ec-fa00c5417876")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -5596,12 +5601,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R21"
-			(at 2.4 -0.09 0)
+			(at 2.771638 -1.148051 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "43a29b8a-a4b2-4fe1-9511-b72ba4122ca3")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
