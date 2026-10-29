@@ -1,7 +1,7 @@
 # nRF54L15 feather - Status
 
 Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\nrf54l15_feather\nrf54l15_feather\nrf54l15_feather.kicad_pro
-Last reviewed: 2026-10-28 evening (F1 placed and routed by Brian, CN1.13 now powered; DRC 0 errors / 0 unconnected / 0 parity; STEP 2026-10-28b)
+Last reviewed: 2026-10-28 night (run 6: C4 dropped, S1/S2/S3/S5/S6 fixed; DRC 0 errors / 0 unconnected / 0 parity; ERC 0 errors; STEP unchanged, 2026-10-28b)
 
 **State: ACTIVE main board (2026-10-23, per Brian).** It replaces nrf54l15_v4. The active sensor board for it is nrf54l15_feather_sens1 (pH).
 
@@ -387,6 +387,70 @@ Full report: C:\Personal-Agents\shared\reports\2026-10-28-review-nrf54l15-feathe
 - **Notes:** F1 drop 55-260 mV at 70 mA (too much for VBAT-fed isolated supply option (c), fine for water level). VRF always on adds 50-90 uA sleep. X2 not on board, so firmware uses LFRC. 56 parts have no 3D model on this PC. C4 still fitted (dropping it also clears the only ERC error); L9/C18 still fitted.
 - Not checked: FM8625H datasheet, nPM1300 pin table/layout pages, live JLC stock, D1-D3/R11/IC1/J1 land patterns.
 
+## Run 6 (2026-10-28 night, kicad-designer on Opus): fixes from the pre-fab review
+Scope: drop C4, S1, S2, S3, S5, S6 (Brian approved). S4 (R21 stub) is left for bench tuning. No fab output. LCSC/MPN fields were touched only for the new C54. Board edits were made with pcbnew Python (scratch scripts) and schematic edits as text (no MCP symbol placement). Every stage was checked with kicad-cli 10.0.4 (pcb drc --schematic-parity --refill-zones --severity-all, sch erc --severity-all). The RF corner was not touched except for the S1 via and its In2 clearances.
+
+| Stage | Commit | Change |
+| --- | --- | --- |
+| 1 Drop C4 | 58703df | C4, its GND symbol and wire stub deleted (npm1300 sheet). On the PCB: footprint, GND stub and GND via (111.06,123.97) deleted. VBUS is now 4.7 + 1 (C51) + 0.1 uF. The only ERC error (C4 power_pin_not_driven) is gone. |
+| 2 S1 C5 own GND via | b330751 | New GND via 0.45/0.25 at (126.75,123.6), 0.61 mm from C5.1 by a 0.25 mm F.Cu link. Removed the old 0.15 mm C5.1 -> C48.2 link (3.2 mm, sharing a via with C48/C13). C48/C13 keep their via (126.9,126.35). To clear the new via on In2: the VBAT diagonal moved 0.07 mm NE (y = x - 3.9). The VRF diagonal past the via was re-drawn from the VRF via (126,123.5) on a parallel diagonal about 0.6 mm SW, joining y 125.972 at x 128.27. No RF part moved. |
+| 3 S2 C54 | 909f735 | **C54 10 uF X5R 6.3 V 0402, Samsung CL05A106MQ5NUNC** (LCSC C15525). Checked on jlcpcb.com: 0402, 10 uF, 6.3 V, X5R; jlcsearch shows 0 JLC stock. **DigiKey/Mouser stock NOT verified**: digikey.com returned 403, mouser.com timed out twice, and there are no DigiKey API credentials. Fields: Value, Footprint C_0402_1005Metric, MPN, Manufacturer, LCSC, Datasheet, Description. Placed at (118.067,124.1) rot 0 at the end of the U2.28/U2.30 F.Cu link (the x 117.387 run), with its own GND via 0.45/0.25 at (118.9,124.1). Copper: U2.28 -> C54.1 4.8 mm, U2.30 -> C54.1 6.1 mm (was 29.9 mm to the nearest VDDIO cap). Nothing closer fits: the band under U2 pins 28-30 (y 120.14-121.25) holds the VSENS via, the LSIN link and the C3/C20 courtyards, with only 0.69 mm between those courtyards. Reference hidden (dense area). |
+| 4 S3 VOUT2 | cb28a87 | **No short F.Cu link is possible.** The 0.55 mm column between U2's right pads and L9/L10 carries the pin 1-8 escapes (VOUT1, SW1, VSYS, SW2, PMIC_INT). No via fits next to L10.2 (PMIC_INT via 0.53 mm away, C7 GND pad, In2 SENS_MISO/I2C_SDA). Added a 0.25 mm B.Cu link from the U2.32 via (120.18,119.65) to the existing VDDIO via (120.9,112.05) at C7.2. **U2.32 -> L10.2 is now 13.0 mm / 2 vias (was 17.8 / 3); -> C7.2 9.6 mm (was 14.4); -> C17.2 11.65 mm.** The bench VDDIO ripple / BUCK2 check is still worth doing. |
+| 5 S5 F1 branch | 0a8a59f | Widths are listed below. The In2 VBAT run was re-drawn at y 124.53 (was 124.49), with a new jog at x 135.3-136.3 (y 124.3) around the SENS_CS via. The F.Cu VBAT diagonal moved to x - y = 22.4, with a +0.12 jog between y 112.0 and 114.4. The VBAT_CN1 diagonal jogs +0.12 between y 112.6 and 114.2 so it passes the C10 GND via at 0.3 mm. |
+| 6 S6 R17 ref | 7c5d1a0 | Hidden (it was on AE1 pad 1 at (133.3,128.25)). Moving it beside R17 at (132.7,125.85) added 6 silk overlaps on C15/X1 and 2 silk-over-pad warnings, so it is hidden like its neighbours C15, X1 and R16. |
+| 7 Final | (this commit) | Zones refilled (pcbnew ZONE_FILLER) and saved; this STATUS section. |
+
+**S5 final widths (pad to pad):**
+- VBAT, from the U2 trunk to F1.1 (branch starts at (123.65,120.65)):
+  - In2: (123.65,120.65)-(123.917,120.564) 0.3.
+  - **(123.917-124.282, y 120.564) 0.25 for 0.36 mm**, limited by the hole clearance to the VRF via (124.054,121.102).
+  - (124.282-124.464) 0.3; diagonal to (128.43,124.53) 0.3 (5.61 mm); y 124.53 to x 135.3 0.3 (6.87 mm).
+  - Jog (135.3,124.53)-(135.53,124.3)-(136.05,124.3)-(136.3,124.55) 0.3; y 124.55 to x 138.45 0.3; diagonal to (140.1,122.9) 0.3; x 140.1 down to y 120.5 0.3.
+  - (140.1,120.5)-(139.45,119.85) 0.35 (unchanged).
+  - **(139.45,119.85)-(139.32,119.72) 0.3, (139.32,119.72)-(139.06,119.46) 0.25 for 0.37 mm** (hole clearance to the CN1 GND via), (139.06,119.46)-(138.8,119.2) 0.3.
+  - (138.8,119.2)-(138.8,118.68) 0.5 (unchanged); (138.8,118.68)-(138.8,118.26) 0.4; (138.8,118.26)-(139.2,117.86) 0.4.
+  - **x 139.2, y 117.86-115.7: 0.4 (was 0.15).**
+  - (139.2,115.7) to the via (138.84,115.34) 0.4.
+  - F.Cu: via -> (137.74,115.34) 0.3; diagonal -> (136.8,114.4) 0.3; jog -> (136.92,114.4) 0.3; diagonal -> (134.52,112.0) 0.3; jog -> (134.4,112.0) 0.3; diagonal -> (133.185,110.785) 0.3.
+  - **(133.185,110.785)-(133.05,110.65) 0.25; y 110.65 from x 133.05 to 130.16 0.25 (2.89 mm); (130.16,110.65)-(130.04,110.77) 0.25.** The 0.5 mm board-edge rule above and the F1.2 pad below leave room for 0.25 at most.
+  - (130.04,110.77) -> F1.1 0.3.
+- VBAT_CN1, F1.2 -> CN1.13: all F.Cu, all 0.3 mm, 13.0 mm. Path: F1.2 -> (133.172,111.37) -> (134.402,112.6) -> jog (134.52,112.6) -> (136.12,114.2) -> jog (136.002,114.2) -> (137.64,115.838) -> (137.64,117.29) -> (137.37,117.56) -> (136.87,117.56) -> (136.31,118.12) -> (136.31,118.32) -> (136.67,118.68) -> CN1.13.
+- The narrowest pieces on the branch are now 0.25 mm: three short necks plus the 2.89 mm F.Cu run next to F1 (the 0.25 mm F.Cu run is 3 pieces). Nothing is 0.15 mm any more. Copper estimate (1 oz outer / 0.5 oz inner): about 60 mOhm from the U2 node to CN1.13 (was about 230 mOhm), plus F1.
+
+**Final checks (kicad-cli 10.0.4, after zone refill):**
+- DRC (--schematic-parity --refill-zones --severity-all): **0 errors, 413 warnings, 0 unconnected, 0 parity.**
+  - Warnings: 192 silk_overlap, 165 silk_over_copper, 54 lib_footprint_issues, 2 silk_edge_clearance.
+  - Same result without --refill-zones.
+- ERC (--severity-all): **0 errors, 206 warnings.**
+  - Warnings: 80 pin_to_pin, 56 lib_symbol_issues, 54 footprint_link_issues, 6 lib_symbol_mismatch, 5 endpoint_off_grid, 3 same_local_global_label, 2 multiple_net_names.
+- STEP not exported: the outline and connectors did not move (C4 removed, C54 added). The latest STEP is still nrf54l15_feather_2026-10-28b.step.
+
+**Stackup in the board file vs PCBWay (report only, no width changes):**
+- Board file:
+  - Layers: F.Mask 0.01 / F.Cu 0.035 / prepreg 0.1 mm (FR4, eps_r 4.5, tan d 0.02) / In1.Cu 0.035 / core 1.24 / In2.Cu 0.035 / prepreg 0.1 / B.Cu 0.035 / B.Mask 0.01, about 1.6 mm in total.
+  - copper_finish is "None".
+  - The RF lines (0.17 mm ANT_CHIP/ANT_FEED, 0.2 mm match chain) are F.Cu microstrip over the In1 GND plane, 0.1 mm below.
+- PCBWay standard 4-layer 1.6 mm (pcbway.com/multi-layer-laminated-structure.html, fetched 2026-10-28):
+  - L1: 0.5 oz plated to 1 oz.
+  - **L1-L2 prepreg: 7628 RC46 %, 0.196 mm (0.1855 mm after lamination), DK 4.74.**
+  - Core 1.03 mm, DK 4.6. L3-L4 is the same as L1-L2.
+  - The page says: "If you need custom stackup or control impedance, we will manufacture according to your requirement" (under "Customized Services and Advanced Options").
+- Closed-form microstrip estimates (kicad-pro IPC-2141/Wheeler, 1 oz, about 5-10 % from a field solver; the reviewer's Hammerstad estimate gave 52-55 Ohm for 0.17 mm at 0.1 mm / eps_r 4.1):
+  - Board-file stackup: 0.17 mm = 46 Ohm, 0.2 mm = 42 Ohm.
+  - **PCBWay standard stackup: 0.17 mm = 62 Ohm, 0.2 mm = 58 Ohm. 50 Ohm would need about 0.28 mm.**
+  - At 0.12 mm / eps_r 4.4, a 0.18 mm line is 50 Ohm.
+- **Recommendation:** don't order the PCBWay standard stackup.
+  - Order with impedance control / custom stackup: 4 layers, 1.6 mm, L1-L2 (and L3-L4) dielectric about 0.1-0.12 mm (e.g. 2116, 1080 or 3313 prepreg).
+  - State "50 Ohm single-ended microstrip on L1 referenced to L2, 0.17 mm design width" so PCBWay can adjust the prepreg or the width within tolerance.
+  - The line runs are short (a few mm against an effective wavelength of about 66 mm at 2.44 GHz), so a 60 Ohm line by itself costs little.
+  - The bigger effect is that a 0.19 mm dielectric lowers the pad-to-plane capacitance of the 0201 match parts, which moves the network away from the Nordic values. The match gets tuned on the bench either way.
+  - Also ask for ENIG (copper_finish is "None" in the file).
+
+**Not done / notes**
+- S4 (R21 DNP stub) not done, per the task (bench tuning).
+- The U2.28/U2.30 LSIN node still reaches the rest of VDDIO only by the long path (it now has C54 locally). Linking the LSIN run to the new U2.32 B.Cu route would need a via under U2 pins 28-30, and there is no site there (VSENS via at (118.15,120.1)).
+- C54 DigiKey/Mouser stock is unverified (sites blocked from the agent). parts-sourcing should confirm CL05A106MQ5NUNC or swap it for an equivalent 10 uF 0402 X5R >= 6.3 V (e.g. Murata GRM155R60J106ME15D, also unverified).
+
 ## Current state (before the rework, 2026-10-23)
 - Schematic: 9 sub-sheets.
 - PCB: rectangular outline, about 66.04 x 25.40 mm. 4 layers (F.Cu / In1.Cu / In2.Cu / B.Cu). 64 footprints, 831 track segments, 213 vias, 13 zones. **No mounting holes yet.**
@@ -430,7 +494,7 @@ Full report: C:\Personal-Agents\shared\reports\2026-10-28-review-nrf54l15-feathe
   - (c) move R15 and re-route SENS_SDA near CN1; still conflicts with the frozen DECA trace, so not promising.
   - (d) drop F1 on the host (0R or direct) and fuse on the sensor board.
   - CN1.13 is unpowered until this is decided.
-- (2026-10-28) C4 (1 uF on VBUS) is redundant with C51 at the same node. Remove it?
+- (closed 2026-10-28, run 6: C4 removed) C4 (1 uF on VBUS) is redundant with C51 at the same node. Remove it?
 - (closed 2026-10-24) Feather size: standard outline, keep all connectors, Proposal C (see Decisions).
 - (closed 2026-10-24) USB is charge-only; D+/D-/SBU now carry no-connect flags.
 - Is moisture_sensor.kicad_sch meant to be empty?
