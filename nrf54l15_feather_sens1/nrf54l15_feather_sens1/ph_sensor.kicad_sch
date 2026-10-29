@@ -6457,6 +6457,28 @@
 				)
 			)
 		)
+		(property "Manufacturer" "YAGEO"
+			(at 113.792 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-0710KL"
+			(at 113.792 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "e701003a-bed3-4b55-b3cf-054495a5ffbf")
 		)
