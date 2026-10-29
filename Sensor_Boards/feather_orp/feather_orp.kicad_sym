@@ -269,7 +269,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(symbol "ISO1640BDR"
+	(symbol "ISO1540DR"
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -285,7 +285,7 @@
 				)
 			)
 		)
-		(property "Value" "ISO1640BDR"
+		(property "Value" "ISO1540DR"
 			(at 3.81 6.35 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -317,7 +317,7 @@
 				)
 			)
 		)
-		(property "Description" "Hot-swappable bidirectional I2C isolator, 2 channels, 3 kVrms, side 1 VCC1 3.0-5.5 V, side 2 VCC2 2.25-5.5 V (VOL2 0.4 V), SOIC-8 (TI ISO1640BDR)"
+		(property "Description" "Bidirectional I2C isolator, 2 channels, 2.5 kVrms, VCC1 and VCC2 3.0-5.5 V, side 1 buffered VOL1 about 0.65 V, side 2 VOL2 0.4 V, SOIC-8 (TI ISO1540DR)"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -328,7 +328,7 @@
 				)
 			)
 		)
-		(property "ki_keywords" "I2C isolator digital ISO1640"
+		(property "ki_keywords" "I2C isolator digital ISO1540"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -350,7 +350,7 @@
 				)
 			)
 		)
-		(symbol "ISO1640BDR_0_1"
+		(symbol "ISO1540DR_0_1"
 			(rectangle
 				(start -7.62 5.08)
 				(end 7.62 -7.62)
@@ -471,7 +471,7 @@
 				)
 			)
 		)
-		(symbol "ISO1640BDR_1_1"
+		(symbol "ISO1540DR_1_1"
 			(polyline
 				(pts
 					(xy -0.635 -1.905)

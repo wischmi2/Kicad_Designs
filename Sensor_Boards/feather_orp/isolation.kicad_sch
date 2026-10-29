@@ -925,7 +925,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "feather_orp:ISO1640BDR"
+		(symbol "feather_orp:ISO1540DR"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -941,7 +941,7 @@
 					)
 				)
 			)
-			(property "Value" "ISO1640BDR"
+			(property "Value" "ISO1540DR"
 				(at 3.81 6.35 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -973,7 +973,7 @@
 					)
 				)
 			)
-			(property "Description" "Hot-swappable bidirectional I2C isolator, 2 channels, 3 kVrms, side 1 VCC1 3.0-5.5 V, side 2 VCC2 2.25-5.5 V (VOL2 0.4 V), SOIC-8 (TI ISO1640BDR)"
+			(property "Description" "Bidirectional I2C isolator, 2 channels, 2.5 kVrms, VCC1 and VCC2 3.0-5.5 V, side 1 buffered VOL1 about 0.65 V, side 2 VOL2 0.4 V, SOIC-8 (TI ISO1540DR)"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -984,7 +984,7 @@
 					)
 				)
 			)
-			(property "ki_keywords" "I2C isolator digital ISO1640"
+			(property "ki_keywords" "I2C isolator digital ISO1540"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1006,7 +1006,7 @@
 					)
 				)
 			)
-			(symbol "ISO1640BDR_0_1"
+			(symbol "ISO1540DR_0_1"
 				(rectangle
 					(start -7.62 5.08)
 					(end 7.62 -7.62)
@@ -1127,7 +1127,7 @@
 					)
 				)
 			)
-			(symbol "ISO1640BDR_1_1"
+			(symbol "ISO1540DR_1_1"
 				(polyline
 					(pts
 						(xy -0.635 -1.905)
@@ -3633,7 +3633,7 @@
 			)
 		)
 	)
-	(text "ISOLATION BLOCK (SN6505B option c', 2026-10-28 trial on feather_orp). Host side = GND, isolated side = GND_ISO.\nU3 ISO1640BDR 2-ch I2C isolator: side 1 (pins 1-4) = isolated, VDD_ISO; side 2 (pins 5-8) = host, VSENS (VOL2 0.4 V for the nRF).\nU5 SN6505B push-pull driver from VSENS via FB1 (EN tied to VCC, CLK to GND), T1 Wurth 760390015 1:2 CT/CT, D1 BAT54C full-wave,\nU6 LP2985-33: VDD_ISO 3.3 V regulated. VISO_RAW about 4.9-5.5 V loaded, about 6.6 V max at no load (LP2985 16 V max).\nR3/R4 4.7k: I2C pull-ups on the ISOLATED side only. J5: INT_ISO test pad (2-channel isolator, INT is poll-only).\nNon-isolated board: delete this sheet, tie the Sensor sheet pins to VSENS / GND / SENS_SDA / SENS_SCL / SENS_INT instead (see README.md)."
+	(text "ISOLATION BLOCK (SN6505B option c', 2026-10-28 trial on feather_orp). Host side = GND, isolated side = GND_ISO.\nU3 ISO1540DR 2-ch I2C isolator: side 1 (pins 1-4) = isolated, VDD_ISO; side 2 (pins 5-8) = host, VSENS (VOL2 0.4 V for the nRF).\nU5 SN6505B push-pull driver from VSENS via FB1 (EN tied to VCC, CLK to GND), T1 Wurth 760390015 1:2 CT/CT, D1 BAT54C full-wave,\nU6 LP2985-33: VDD_ISO 3.3 V regulated. VISO_RAW about 4.9-5.5 V loaded, about 6.6 V max at no load (LP2985 16 V max).\nR3/R4 4.7k: I2C pull-ups on the ISOLATED side only. J5: INT_ISO test pad (2-channel isolator, INT is poll-only).\nNon-isolated board: delete this sheet, tie the Sensor sheet pins to VSENS / GND / SENS_SDA / SENS_SCL / SENS_INT instead (see README.md)."
 		(exclude_from_sim no)
 		(at 40.64 25.4 0)
 		(effects
@@ -3645,7 +3645,7 @@
 		(uuid "79e3e9d2-c5be-49c2-8942-04aa2bfa730d")
 	)
 	(symbol
-		(lib_id "feather_orp:ISO1640BDR")
+		(lib_id "feather_orp:ISO1540DR")
 		(at 109.22 72.39 0)
 		(unit 1)
 		(body_style 1)
@@ -3666,7 +3666,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "ISO1640BDR"
+		(property "Value" "ISO1540DR"
 			(at 109.22 64.77 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3699,7 +3699,7 @@
 				)
 			)
 		)
-		(property "Description" "Hot-swappable bidirectional I2C isolator, 2 channels, 3 kVrms, side 1 VCC1 3.0-5.5 V, side 2 VCC2 2.25-5.5 V (VOL2 0.4 V), SOIC-8 (TI ISO1640BDR)"
+		(property "Description" "Bidirectional I2C isolator, 2 channels, 2.5 kVrms, VCC1 and VCC2 3.0-5.5 V, side 1 buffered VOL1 about 0.65 V, side 2 VOL2 0.4 V, SOIC-8 (TI ISO1540DR)"
 			(at 109.22 72.39 0)
 			(hide yes)
 			(show_name no)
@@ -3721,7 +3721,7 @@
 				)
 			)
 		)
-		(property "MPN" "ISO1640BDR"
+		(property "MPN" "ISO1540DR"
 			(at 109.22 72.39 0)
 			(hide yes)
 			(show_name no)

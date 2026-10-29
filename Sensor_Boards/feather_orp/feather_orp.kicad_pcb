@@ -3545,7 +3545,7 @@
 				)
 			)
 		)
-		(property "Value" "ISO1640BDR"
+		(property "Value" "ISO1540DR"
 			(at 0 3.4 0)
 			(layer "F.Fab")
 			(uuid "00a1186b-c3d0-4da3-a685-13e917a5e592")
@@ -3567,7 +3567,7 @@
 				)
 			)
 		)
-		(property "Description" "Hot-swappable bidirectional I2C isolator, 2 channels, 3 kVrms, side 1 VCC1 3.0-5.5 V, side 2 VCC2 2.25-5.5 V (VOL2 0.4 V), SOIC-8 (TI ISO1640BDR)"
+		(property "Description" "Bidirectional I2C isolator, 2 channels, 2.5 kVrms, VCC1 and VCC2 3.0-5.5 V, side 1 buffered VOL1 about 0.65 V, side 2 VOL2 0.4 V, SOIC-8 (TI ISO1540DR)"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -3590,7 +3590,7 @@
 				)
 			)
 		)
-		(property "MPN" "ISO1640BDR"
+		(property "MPN" "ISO1540DR"
 			(at 0 0 180)
 			(layer "F.SilkS")
 			(hide yes)
