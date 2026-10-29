@@ -546,3 +546,10 @@ What is a 50 Ohm segment (stage 3): the R11 common port (ANT, L8.2 -> R11.5), R1
 - 2026-10-25 (Brian): mounting holes use a 2.7 mm drill (M2.5 clearance) at the same Feather positions. Done in run 2: H1/H2 plated with a 3.4 mm pad, H3/H4 NPTH 2.7 mm. (The footprint names still read MountingHole_2.5mm*; only the pads changed.)
 - 2026-10-25 (Brian): the plated USB-end holes H1/H2 are tied to GND (thermal-relief connection to the F.Cu/B.Cu pours and the In1 plane). H3/H4 stay NPTH and unconnected.
 - 2026-10-25 (Brian): AE1 moved to the far corner with a ~6.5 x 6.5 mm no-ground area, per the Johanson datasheet/EVB (checked by coordinator). Done in run 2 step 1c; the pi-match values must be tuned on the real board.
+
+## BOM pricing (live, 2026-10-28, parts-sourcing)
+- Files: C:\Personal-Agents\shared\design\nrf54l15_feather\bom_digikey_mouser_2026-10-28_live.md plus bom_digikey_2026-10-28_live.csv and bom_mouser_2026-10-28_live.csv (copies in nrf54l15_feather\sourcing\). Live DigiKey and Mouser API data, cut-tape prices, no shipping or tax.
+- Cost per board (cheapest DK/Mouser split): 1 board 30.29 USD, 5 boards 138.46 USD total (27.69 per board). Excludes the three lines below that cannot be bought from DK/Mouser (about 1.4 to 2.3 USD more).
+- Stock blockers: C43 220uF 1206 (DK 0, Mouser on order only, no same-footprint alternative); J1 HRO TYPE-C-31-M-12 and R11 FM8625H (not at DK or Mouser, LCSC only); X1 YXC crystal (not at DK/Mouser, Murata XRCGB32M000F1S2AR0 8 pF is the proposed drop-in, ESR/pads unchecked).
+- Resolved: IC1 AEM10330-QFN is at Mouser (725, $4.22); U2 and U6 are in stock at DK and Mouser; AE1 MPN changed to 2450AT18A0100001E.
+- About 14 schematic MPNs should change (out-of-stock Samsung/Murata caps, L4, L7, L9/L10, RF1); the list is in the live BOM file. Substituted inductors, bead, crystal and U.FL need a datasheet or pad check first.

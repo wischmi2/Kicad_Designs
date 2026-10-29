@@ -132,3 +132,9 @@ Trial of option (c') from Sensor_Boards\feather_sensor_template\isolated_supply_
 - Stackup in the board file was 0.1 / 1.24 / 0.1 mm with 35 um inner copper; changed to PCBWay standard 4L 1.6 mm: prepreg 0.1855, core 1.1, prepreg 0.1855, inner copper 17.5 um, outer 35 um (epsilon_r 4.5 unchanged; copper_finish left at None). No RF on this board, so no trace width changes.
 - Edits were made as text edits to the .kicad_sch/.kicad_pcb (no netlist change, so no schematic-to-board sync was needed; parity is 0), not with KiCad Python, to avoid the .kicad_pro overwrite problem.
 - ERC (kicad-cli): 0 errors, 38 warnings. DRC (--schematic-parity --refill-zones): 0 errors, 0 unconnected, 0 parity, 25 warnings (9 lib_footprint_issues, 9 silk_overlap, 7 silk_over_copper). Commits 109904e, c34e627.
+
+## BOM pricing (live, 2026-10-28, parts-sourcing)
+- File: C:\Personal-Agents\shared\design\feather_orp\iso_supply_parts_live_2026-10-28.md (copy in Sensor_Boards\feather_orp\sourcing\). Replaces the "DigiKey/Mouser stock is not verified" note in the isolated supply trial section.
+- Cost per board (cheapest split): 9.16 USD for 1 board, 41.38 USD for 5 boards, excluding U3, J1 (SMA, LCSC only) and U2 (Atlas OEM-ORP, buy from Atlas). Add 4.79 USD per board if U3 is ISO1540DR.
+- Stock blockers: U3 ISO1640BDR is 0 at DigiKey and Mouser (Mouser due 21,775 on 2026-12-18; ISO1540DR has 55 at Mouser, pinout and drive unverified); U5 SN6505BDBVR is 0 at DigiKey but Mouser has 108.
+- Other: C7 and C8 (10uF 0805) and C11 (obsolete) need new MPNs (see the file); T1 760390015, U6 LP2985-33DBVR, D1 (use BAT54CLT1G after a pin check), FB1 are in stock.
