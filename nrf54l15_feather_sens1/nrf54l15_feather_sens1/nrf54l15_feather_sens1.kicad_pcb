@@ -5674,7 +5674,7 @@
 		(uuid "c3f7d120-7c97-419b-857a-807a2d44c2cf")
 	)
 	(segment
-		(start 127.9 113.93)
+		(start 127.8 113.98)
 		(end 128.3 113.38)
 		(width 0.3)
 		(layer "F.Cu")
@@ -5698,7 +5698,7 @@
 		(uuid "65759fd8-9879-452d-bd7b-dc5b4c2cf292")
 	)
 	(via
-		(at 127.9 113.93)
+		(at 127.8 113.98)
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
@@ -5707,7 +5707,7 @@
 	)
 	(segment
 		(start 127.9 119.8)
-		(end 127.9 113.93)
+		(end 127.8 113.98)
 		(width 0.3)
 		(layer "B.Cu")
 		(net "VSENS")
