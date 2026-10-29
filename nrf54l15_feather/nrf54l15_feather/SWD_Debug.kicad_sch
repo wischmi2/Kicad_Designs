@@ -838,7 +838,40 @@
 				)
 			)
 		)
-		(property "MPN" "FTSH-105-01-L-DV-K-TR"
+		(property "Mouser PN" "200-FTSH10501LDVK"
+			(at 128.27 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "DigiKey PN" "SAM8799-ND"
+			(at 128.27 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samtec"
+			(at 128.27 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "FTSH-105-01-L-DV-K"
 			(at 128.27 118.11 0)
 			(hide yes)
 			(show_name no)
@@ -968,7 +1001,7 @@
 				(justify bottom)
 			)
 		)
-		(property "MP" "FTSH-105-01-L-DV-K-TR"
+		(property "MP" "FTSH-105-01-L-DV-K"
 			(at 128.27 128.27 0)
 			(hide yes)
 			(show_name no)

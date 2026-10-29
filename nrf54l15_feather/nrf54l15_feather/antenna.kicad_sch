@@ -2366,8 +2366,30 @@
 				)
 			)
 		)
-		(property "Value" "2450AT18A100E"
+		(property "Value" "2450AT18A0100001E"
 			(at 64.135 116.84 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Mouser PN" "609-2450AT18A0100001"
+			(at 64.77 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "DigiKey PN" "712-2450AT18A0100001ECT-ND"
+			(at 64.77 121.92 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2409,7 +2431,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "JOHANSON(约翰逊)"
+		(property "Manufacturer" "Johanson Technology"
 			(at 82.55 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -2420,7 +2442,7 @@
 				)
 			)
 		)
-		(property "MPN" "2450AT18A100E"
+		(property "MPN" "2450AT18A0100001E"
 			(at 85.09 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -4083,6 +4105,28 @@
 				(justify left)
 			)
 		)
+		(property "Mouser PN" "81-GCM155R71C104KA5D"
+			(at 238.76 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "DigiKey PN" "490-4759-1-ND"
+			(at 238.76 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 238.76 78.74 0)
 			(hide yes)
@@ -4116,7 +4160,7 @@
 				)
 			)
 		)
-		(property "MPN" "CL05B104KO5NNNC"
+		(property "MPN" "GCM155R71C104KA55D"
 			(at 238.76 78.74 0)
 			(hide yes)
 			(show_name no)
@@ -4127,7 +4171,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "Murata"
 			(at 238.76 78.74 0)
 			(hide yes)
 			(show_name no)
@@ -4138,7 +4182,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C1525"
+		(property "LCSC" ""
 			(at 238.76 78.74 0)
 			(hide yes)
 			(show_name no)

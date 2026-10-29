@@ -2446,6 +2446,28 @@
 				)
 			)
 		)
+		(property "MPN" "AEM10330-QFN"
+			(at 110.49 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "e-peas"
+			(at 110.49 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Footprint" "Parts_2:QFN40P500X500X85-41N-D"
 			(at 147.32 158.42 0)
 			(hide yes)
@@ -3049,6 +3071,28 @@
 				(justify left)
 			)
 		)
+		(property "Mouser PN" "81-GRM155R60J106ME5D"
+			(at 191.77 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "DigiKey PN" "490-13238-1-ND"
+			(at 191.77 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 192.735 104.14 0)
 			(hide yes)
@@ -3092,7 +3136,7 @@
 				)
 			)
 		)
-		(property "MPN" "GRM155R60J106ME15"
+		(property "MPN" "GRM155R60J106ME15D"
 			(at 191.77 107.95 0)
 			(hide yes)
 			(show_name no)
@@ -3226,6 +3270,28 @@
 				(justify left)
 			)
 		)
+		(property "Mouser PN" "187-CL10A226MP8NUNE"
+			(at 180.34 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "DigiKey PN" "1276-1274-1-ND"
+			(at 180.34 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 181.305 60.96 0)
 			(hide yes)
@@ -3258,7 +3324,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Murata"
+		(property "Manufacturer" "Samsung Electro-Mechanics"
 			(at 180.34 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -3269,7 +3335,7 @@
 				)
 			)
 		)
-		(property "MPN" "GRM188R61A226ME15D"
+		(property "MPN" "CL10A226MP8NUNE"
 			(at 180.34 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -3419,8 +3485,30 @@
 				)
 			)
 		)
-		(property "Value" "S2B-PH-K-S-GW"
+		(property "Value" "S2B-PH-K-S"
 			(at 40.64 71.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Mouser PN" "306-S2BPHKSLFSNPP"
+			(at 41.91 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "DigiKey PN" "455-1719-ND"
+			(at 41.91 77.47 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3473,7 +3561,7 @@
 				)
 			)
 		)
-		(property "MPN" "S2B-PH-K-S-GW"
+		(property "MPN" "S2B-PH-K-S(LF)(SN)"
 			(at 41.91 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -3541,6 +3629,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+		(property "Mouser PN" "963-MSASJ31LBB5227MT"
+			(at 224.79 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "DigiKey PN" "587-MSASJ31LBB5227MTCA01CT-ND"
+			(at 224.79 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"

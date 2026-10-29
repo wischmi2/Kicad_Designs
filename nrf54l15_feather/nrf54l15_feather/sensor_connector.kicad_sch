@@ -1964,6 +1964,39 @@
 				)
 			)
 		)
+		(property "Mouser PN" "81-GCM155R71C104KA5D"
+			(at 39.37 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "DigiKey PN" "490-4759-1-ND"
+			(at 39.37 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 39.37 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Footprint" "easyeda2kicad:C0402"
 			(at 39.37 102.87 0)
 			(hide yes)
@@ -1997,7 +2030,7 @@
 				)
 			)
 		)
-		(property "MPN" "CL05B104KO5NNNC"
+		(property "MPN" "GCM155R71C104KA55D"
 			(at 39.37 102.87 0)
 			(hide yes)
 			(show_name no)

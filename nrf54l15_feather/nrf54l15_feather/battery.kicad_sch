@@ -373,7 +373,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "S2B-PH-K-S-GW"
+		(property "Value" "S2B-PH-K-S"
 			(at 210.82 55.8799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -382,6 +382,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+		(property "Mouser PN" "306-S2BPHKSLFSNPP"
+			(at 204.47 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "DigiKey PN" "455-1719-ND"
+			(at 204.47 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(property "Footprint" "easyeda2kicad:CONN-TH_S2B-PH-K-S-GW"
@@ -428,7 +450,7 @@
 				)
 			)
 		)
-		(property "MPN" "S2B-PH-K-S-GW"
+		(property "MPN" "S2B-PH-K-S(LF)(SN)"
 			(at 204.47 71.12 0)
 			(hide yes)
 			(show_name no)
