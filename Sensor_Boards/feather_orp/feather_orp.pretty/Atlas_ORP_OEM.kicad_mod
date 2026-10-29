@@ -207,4 +207,15 @@
 		)
 	)
 	(embedded_fonts no)
+	(model "${KIPRJMOD}/feather_orp.3dshapes/Atlas_ORP_OEM_block.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
 )
