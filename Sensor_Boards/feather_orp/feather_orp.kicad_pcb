@@ -2113,7 +2113,7 @@
 				)
 			)
 		)
-		(property "Value" "10k (set per SENSORS.md)"
+		(property "Value" "4.7k"
 			(at 0 4 180)
 			(layer "F.Fab")
 			(uuid "d94c4aaf-5c4f-46bf-a376-c5c2d68dac20")
@@ -2140,6 +2140,28 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "8dd91cc0-7ae3-4924-aac4-0ed925ae45ef")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f0f6906e-933b-4273-b440-41b93ca05252")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-074K7L"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "08d790d9-6bb3-48fb-a5bd-679b3d4d6025")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5213,7 +5235,7 @@
 		(path "/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b/72b6be1c-5fa7-4493-baba-8e4cf6201566")
 		(sheetname "/Sensor/")
 		(sheetfile "sensor.kicad_sch")
-		(attr smd)
+		(attr smd dnp)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -0.94 -0.5)
@@ -7507,7 +7529,7 @@
 			)
 		)
 	)
-	(gr_text "SENSOR TYPE: ORP   R_ID: ______"
+	(gr_text "SENSOR TYPE: ORP   R_ID: 4.7k"
 		(at 109.5 115.4 0)
 		(layer "B.SilkS")
 		(uuid "fb98bc8d-c138-482c-b729-c0cb51b1af2f")

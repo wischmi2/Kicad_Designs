@@ -2417,7 +2417,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10k (set per SENSORS.md)"
+		(property "Value" "4.7k"
 			(at 93.98 132.08 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2452,6 +2452,28 @@
 		)
 		(property "Description" ""
 			(at 91.44 130.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 91.44 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-074K7L"
+			(at 91.44 130.81 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
