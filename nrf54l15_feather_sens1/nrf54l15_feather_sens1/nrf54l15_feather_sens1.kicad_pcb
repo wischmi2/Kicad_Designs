@@ -163,7 +163,7 @@
 			(effects
 				(font
 					(size 0.8 0.8)
-					(thickness 0.12)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -263,7 +263,7 @@
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor")
 		(property "Reference" "C6"
-			(at 0 -1.16 90)
+			(at -0.7 0.899999 0)
 			(layer "F.SilkS")
 			(uuid "5e0c9af7-6044-4431-891b-241a527f1b88")
 			(effects
@@ -271,6 +271,7 @@
 					(size 1 1)
 					(thickness 0.15)
 				)
+				(justify left)
 			)
 		)
 		(property "Value" "100nF"
@@ -441,7 +442,7 @@
 			(effects
 				(font
 					(size 0.8 0.8)
-					(thickness 0.12)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -548,7 +549,7 @@
 			(effects
 				(font
 					(size 0.8 0.8)
-					(thickness 0.12)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -681,17 +682,6 @@
 			(layer "F.SilkS")
 			(uuid "bceac283-d933-42e8-8b34-4c53cda8dbe6")
 		)
-		(fp_circle
-			(center -0.5 0.25)
-			(end -0.47 0.25)
-			(stroke
-				(width 0.06)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "01d20445-cc80-4817-81c6-69257c6d2d29")
-		)
 		(fp_line
 			(start -0.5 -0.25)
 			(end 0.5 -0.25)
@@ -783,7 +773,7 @@
 			(effects
 				(font
 					(size 0.8 0.8)
-					(thickness 0.12)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -973,17 +963,6 @@
 			(layer "F.SilkS")
 			(uuid "952722c9-cede-4e24-b611-48d22c962bdb")
 		)
-		(fp_circle
-			(center -0.8 0.4)
-			(end -0.77 0.4)
-			(stroke
-				(width 0.06)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "b211021c-b682-40b0-9143-54596923a351")
-		)
 		(fp_line
 			(start 0.8 -0.4)
 			(end 0.8 0.4)
@@ -1071,13 +1050,13 @@
 		(uuid "4e81225e-df64-4650-8a2c-293dbae07266")
 		(at 119.3 113.295 180)
 		(property "Reference" "C4"
-			(at 2.4 0.9 0)
+			(at 0 1.445 0)
 			(layer "F.SilkS")
 			(uuid "65c71173-acd8-439b-8855-14bf0449d8b6")
 			(effects
 				(font
 					(size 0.8 0.8)
-					(thickness 0.12)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -1213,16 +1192,6 @@
 			(layer "F.SilkS")
 			(uuid "0a1dc909-d118-4cf3-9d69-9496223c810c")
 		)
-		(fp_line
-			(start -1.39 0.4)
-			(end -1.39 -0.4)
-			(stroke
-				(width 0.25)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "e92bbdc6-bbb1-4be9-a3d7-9673a88bdfcd")
-		)
 		(fp_arc
 			(start 1.39 0.4)
 			(mid 1.299203 0.619203)
@@ -1244,39 +1213,6 @@
 			)
 			(layer "F.SilkS")
 			(uuid "9721d84d-1bf8-4e80-ae2e-19d0ab7e58cd")
-		)
-		(fp_arc
-			(start -1.08 0.71)
-			(mid -1.299203 0.619203)
-			(end -1.39 0.4)
-			(stroke
-				(width 0.25)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "8243db8e-efbc-4134-8fa8-fdfcc6ed5320")
-		)
-		(fp_arc
-			(start -1.39 -0.4)
-			(mid -1.299203 -0.619203)
-			(end -1.08 -0.71)
-			(stroke
-				(width 0.25)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "b68f1403-5b53-483c-bdf1-7c5c3c106848")
-		)
-		(fp_circle
-			(center -0.8 0.4)
-			(end -0.77 0.4)
-			(stroke
-				(width 0.06)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "d0bc0674-55d4-4ad2-bf90-778b5fefda02")
 		)
 		(fp_line
 			(start 0.8 0.4)
@@ -1792,7 +1728,7 @@
 			(effects
 				(font
 					(size 0.8 0.8)
-					(thickness 0.12)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -2200,7 +2136,7 @@
 			(effects
 				(font
 					(size 0.8 0.8)
-					(thickness 0.12)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -2390,17 +2326,6 @@
 			(layer "F.SilkS")
 			(uuid "3fd8a789-b669-4caf-8a9a-a1de48fdca61")
 		)
-		(fp_circle
-			(center -0.5 0.25)
-			(end -0.47 0.25)
-			(stroke
-				(width 0.06)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "fbc12ec9-6f09-483e-9afe-c8c3f793c30c")
-		)
 		(fp_line
 			(start 0.5 -0.25)
 			(end 0.5 0.25)
@@ -2494,7 +2419,7 @@
 			(effects
 				(font
 					(size 0.8 0.8)
-					(thickness 0.12)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -2627,17 +2552,6 @@
 			(layer "F.SilkS")
 			(uuid "23f8614c-7b4b-45fb-b49d-eba3b11f7c1d")
 		)
-		(fp_circle
-			(center -0.5 0.25)
-			(end -0.47 0.25)
-			(stroke
-				(width 0.06)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "ad18f9f7-2f25-4247-87bd-fdd9b89645dd")
-		)
 		(fp_line
 			(start 0.5 0.25)
 			(end -0.5 0.25)
@@ -2729,7 +2643,7 @@
 			(effects
 				(font
 					(size 0.8 0.8)
-					(thickness 0.12)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -2875,17 +2789,6 @@
 			(layer "F.SilkS")
 			(uuid "cb889a27-eaa0-4dea-b2a4-e315999fdf7b")
 		)
-		(fp_circle
-			(center -0.5 0.25)
-			(end -0.47 0.25)
-			(stroke
-				(width 0.06)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "06bc543f-ea37-4b75-8b48-fd423d049bcb")
-		)
 		(fp_line
 			(start -0.5 0.25)
 			(end -0.5 -0.25)
@@ -2981,7 +2884,7 @@
 			(effects
 				(font
 					(size 0.8 0.8)
-					(thickness 0.12)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -3668,7 +3571,7 @@
 			(effects
 				(font
 					(size 0.8 0.8)
-					(thickness 0.12)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -4081,7 +3984,7 @@
 			(effects
 				(font
 					(size 0.8 0.8)
-					(thickness 0.12)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -4185,7 +4088,7 @@
 			(effects
 				(font
 					(size 0.8 0.8)
-					(thickness 0.12)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -4375,17 +4278,6 @@
 			(layer "F.SilkS")
 			(uuid "a85b99c3-b110-45f9-9dc0-652cc385c371")
 		)
-		(fp_circle
-			(center -0.5 0.25)
-			(end -0.47 0.25)
-			(stroke
-				(width 0.06)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "5eea4b39-2044-4e86-9d79-8940f2b93b68")
-		)
 		(fp_line
 			(start 0.5 -0.25)
 			(end 0.5 0.25)
@@ -4479,7 +4371,7 @@
 			(effects
 				(font
 					(size 0.8 0.8)
-					(thickness 0.12)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -4625,17 +4517,6 @@
 			(layer "F.SilkS")
 			(uuid "392a4ac5-342c-48a2-ad74-b245414c4637")
 		)
-		(fp_circle
-			(center -0.5 0.25)
-			(end -0.47 0.25)
-			(stroke
-				(width 0.06)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "ad053bb7-3b26-4594-b2be-2955bb96aabb")
-		)
 		(fp_line
 			(start 0.5 0.25)
 			(end -0.5 0.25)
@@ -4723,14 +4604,15 @@
 		(uuid "c898206a-2ac4-45df-ab92-e401f3483a6f")
 		(at 129 118.3 90)
 		(property "Reference" "C2"
-			(at -5.6 -1.4 0)
+			(at -0.15 -1 0)
 			(layer "F.SilkS")
 			(uuid "943cdd84-3f77-48e4-9dc9-7f9c38b12990")
 			(effects
 				(font
 					(size 0.8 0.8)
-					(thickness 0.12)
+					(thickness 0.15)
 				)
+				(justify right)
 			)
 		)
 		(property "Value" "100nF"
@@ -4919,17 +4801,6 @@
 			(layer "F.SilkS")
 			(uuid "2d050836-3218-4f05-bf06-201cfb875f5e")
 		)
-		(fp_circle
-			(center -0.8 0.4)
-			(end -0.77 0.4)
-			(stroke
-				(width 0.06)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "18e854c3-8df6-4bcc-a694-fac777a40b09")
-		)
 		(fp_line
 			(start 0.8 -0.4)
 			(end 0.8 0.4)
@@ -5025,7 +4896,7 @@
 			(effects
 				(font
 					(size 0.8 0.8)
-					(thickness 0.12)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -5135,7 +5006,7 @@
 			(effects
 				(font
 					(size 0.8 0.8)
-					(thickness 0.12)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -5530,7 +5401,7 @@
 			(effects
 				(font
 					(size 0.8 0.8)
-					(thickness 0.12)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -5714,8 +5585,44 @@
 		(effects
 			(font
 				(size 1 1)
-				(thickness 0.1)
+				(thickness 0.15)
 			)
+		)
+	)
+	(gr_text "SENSOR TYPE: pH   R_ID: 10k"
+		(at 109.5 115.4 0)
+		(layer "B.SilkS")
+		(uuid "91e2d6b0-c452-4782-b077-5421a399b765")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "NYLON STANDOFFS ONLY"
+		(at 99 121.43 90)
+		(layer "B.SilkS")
+		(uuid "712b6f13-49fe-46c5-9a23-2250bc9c36ba")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "FEATHER pH  rev 0.1"
+		(at 109.5 113.2 0)
+		(layer "B.SilkS")
+		(uuid "82378fad-2692-4f70-a282-4c469708fb5e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify mirror)
 		)
 	)
 	(segment
