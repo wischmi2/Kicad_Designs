@@ -1,7 +1,7 @@
 # nRF54L15 feather - Status
 
 Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\nrf54l15_feather\nrf54l15_feather\nrf54l15_feather.kicad_pro
-Last reviewed: 2026-10-28 night (run 6: C4 dropped, S1/S2/S3/S5/S6 fixed; DRC 0 errors / 0 unconnected / 0 parity; ERC 0 errors; STEP unchanged, 2026-10-28b)
+Last reviewed: 2026-10-28 night (run 7: stackup set to PCBWay standard 4L, RF line re-routed at 0.30 mm = 50 Ohm, no parts moved; DRC 0 errors / 0 unconnected / 0 parity; ERC 0 errors; STEP unchanged, 2026-10-28b)
 
 **State: ACTIVE main board (2026-10-23, per Brian).** It replaces nrf54l15_v4. The active sensor board for it is nrf54l15_feather_sens1 (pH).
 
@@ -459,7 +459,7 @@ Source: pcbway.com/multi-layer-laminated-structure.html, fetched 2026-10-28, "4-
 - Board file now: F.Mask 0.01 / F.Cu 0.035 / prepreg 0.1855 (FR4 7628 RC46 %, eps_r 4.74, tan d 0.02) / In1.Cu 0.035 / core 1.03 (eps_r 4.6) / In2.Cu 0.035 / prepreg 0.1855 (eps_r 4.74) / B.Cu 0.035 / B.Mask 0.01. Board thickness setting stays 1.6 mm.
 - copper_finish is still "None": ENIG is recommended (0.4 mm QFN48, 0201s) but not decided by Brian, so it is not set in the file.
 
-### Stage 2: 50 Ohm geometry (this note)
+### Stage 2: 50 Ohm geometry (commit 3c9c83b)
 Inputs: h = 0.1855 mm (F.Cu to In1 GND), eps_r 4.74, t = 0.035 mm, F.Cu GND pour clearance 0.5 mm (Top GND zone), solid In1 GND.
 
 | Geometry | Hammerstad-Jensen, t = 35 um (own script) | t = 0 | kicad-pro si (IPC-2141/Wheeler) |
@@ -484,6 +484,42 @@ Grounded coplanar (CPWG), Wadell conformal mapping (t = 0, own script; the kicad
 - 0.30 mm is close to the 0201 pad width (0.324 mm across the line), so the pads are almost no discontinuity. The R11 (FM8625H DFN-6, 0.22 mm pads at 0.4 mm pitch) and U6 (0.2 mm pin) pads need a short 0.2 mm neck either way.
 
 What is a 50 Ohm segment (stage 3): the R11 common port (ANT, L8.2 -> R11.5), R11 RF2 -> RF1 U.FL, R11 RF1 (ANT_CHIP) -> C12, C12 -> L3 (with the L2 shunt tap), and L3 -> AE1 pad 1 (ANT_FEED). Not changed: the Nordic match network between U6.31 and L8 (L5/C8/L6/C5/L8 in 0201 pads that touch or are 0.3-0.5 mm apart, electrically about 0.01 wavelength, a lumped network per Nordic config 1; U6.31 is a 0.2 mm pin) and the DNP R21 bypass branch (a wider stub would add capacitance to the S4 stub; 0.30 mm also does not clear C47 on the y 124.75 run). The last 2.5 mm of ANT_FEED is inside the AE1 keep-out (no ground on any layer, by design), so it is part of the antenna feed, not a 50 Ohm line; it is drawn at 0.30 mm too.
+
+### Stage 3: re-route at 0.30 mm (commit f7e2958)
+Board edits with pcbnew Python (loaded next to its own .kicad_pro, saved to scratch, only the .kicad_pcb copied back). **No part moved**, so the RF corner placement and the B1/B2 work (DECRF-DECA path, match network order, C8 via pin 32, C5 own via) are unchanged, and the outline, connectors and AE1 keep-out are untouched.
+
+| Net / segment | Before | After |
+| --- | --- | --- |
+| ANT: L8.2 (128.3,124.39) -> (128.3,125.75) -> (128.6,126.05) | 0.20 mm | **0.30 mm** |
+| ANT: (128.6,126.05) -> R11.5 (FM8625H common port) | 0.20 | 0.20 neck, 0.37 mm (DFN pads 0.22 mm at 0.4 mm pitch) |
+| ANT: C13.1 tap (128.3,125.9) -> (127.87,125.9) | 0.20 from (128.5,125.9) | 0.20, now leaves the straight run |
+| Net-(R11-RF2): R11.1 -> neck (128.2,127.45) | 0.20 | 0.20 neck, 0.37 mm |
+| Net-(R11-RF2): (128.2,127.45) -> (127.75,127.9) -> RF1.2 U.FL (126.95,127.9) | 0.20 | **0.30** |
+| ANT_CHIP: R11.3 -> (129.2,127.28) | 0.17/0.20 | 0.20 neck, 0.28 mm |
+| ANT_CHIP: (129.2,127.28) -> (129.2,128.37) -> C12.1; C52.1 -> C12.1 | 0.17 | **0.30** |
+| Net-(C12-Pad2): C12.2 -> L3.2, L2.2 on the line | 0.17 | **0.30** |
+| ANT_FEED: L3.1 (131.37,128.5) -> AE1.1 (134.67,128.5) | 0.17 | **0.30** (2.5 mm of it inside the AE1 keep-out, no ground by design) |
+| ANT_FEED: C53.1 tap | 0.17, 3 pieces via (131.37,128.38) | 0.20, straight down x 131.75 (0.4 mm shorter) |
+| Not changed: U6.31 -> L5 -> C8/L6 -> C5 -> L8 (Nordic lumped match, 0.2 mm), ANT -> R21.1 and ANT_CHIP -> R21.2 (DNP bypass stubs, 0.2 mm) | | |
+
+Reference plane: checking the In1 fill under the new line showed two holes from the In1 zone's 0.5 mm via clearance: the ANT_VCTL via at (127.5,127.25) put a 0.75 mm radius void right under the R11 -> RF1 run (no In1 copper under the line centre), and the VRF via (129.75,126.6) bit into the area next to R11.3. Fixes:
+- **New In1 GND zone "In1_RF"** (priority 5, clearance 0.2 mm, other settings copied from the In1 zone) over x 124.5-133.5, y 120.5-130.5. Same net as the In1 plane, so it only shrinks the via antipads in the RF corner from 0.75 to 0.45 mm radius. The AE1 keep-out rule area still blocks it (checked: no In1 copper at x >= 132.15, y >= 126.4).
+- **ANT_VCTL via moved** (127.5,127.25) -> (127.35,126.85), with its F.Cu link to R11.6 and B.Cu link re-drawn (2 + 3 segments, 0.2 mm). Its void is now 0.6 mm clear of the R11 -> RF1 line edge.
+- Result (own script, cut across the line every 0.05 mm): solid In1 at least 0.5 mm either side of every 0.30 mm segment centre outside the keep-out (1.0 mm on ANT, ANT_CHIP vertical, C12-L3 and ANT_FEED; 0.6 mm on R11 -> RF1).
+- F.Cu GND pour keeps its 0.5 mm clearance from the line (as assumed in the impedance number). Closest copper to the 0.30 mm line: R11 pads 0.17-0.18 mm (DFN pitch), GND vias 0.11-0.35 mm, C52.2/L2.1 GND pads 0.15-0.21 mm.
+- Stitching vias along the line (unchanged): (128.9,123.6), (126.75,123.6), (126.9,126.35), (130.1,125.3), (128.6,127.84), (129.9,127.75), (131.6,129.3), (130.35,129.85), RF1 vias. Gaps along the line are 1.2-1.7 mm, under lambda/20 (3.4 mm at eps_eff 3.36). One extra via above ANT_FEED at (131.1,127.85) was tried and dropped: it lands on the SENS_ID B.Cu run (x 130.95).
+
+### Stage 4: checks and renders
+- DRC (kicad-cli 10.0.4, --schematic-parity --refill-zones --severity-all): **0 errors, 0 unconnected, 0 parity, 413 warnings** (192 silk_overlap, 165 silk_over_copper, 54 lib_footprint_issues, 2 silk_edge_clearance), the same warnings as run 6.
+- ERC (--severity-all): **0 errors, 206 warnings** (schematic not changed).
+- Renders: C:\Personal-Agents\shared\design\nrf54l15_feather\rf_50ohm_2026-10-28\ (rf_corner_FCu.png, rf_corner_FCu_silk.png, rf_corner_In1_GND.png, rf_corner_overview_FCu_silk.png, rf_corner_FCu_over_In1.png).
+- STEP not exported: no part, outline or connector moved. The latest STEP is still nrf54l15_feather_2026-10-28b.step.
+- The run 6 recommendation "don't order the PCBWay standard stackup" is superseded: the board is now drawn for it. Order note for PCBWay: standard 4L 1.6 mm, 1 oz outer finished / 1 oz inner, no impedance control needed (the line is a few mm long; the match is tuned on the bench). Optional: ask for impedance control "50 Ohm single-ended, L1 ref L2, 0.30 mm" if the price is the same.
+
+### Open after run 7
+- Bench-tune the match (as before). The 0201 pad-to-plane capacitance is now lower (0.1855 mm vs 0.1 mm), so the Nordic values are a starting point only.
+- Copper finish not set (ENIG recommended for the 0.4 mm QFN48 and 0201s; Brian to decide at order time).
+- S4 (R21 DNP stub on the ANT node) still open, for bench tuning.
 
 ## Current state (before the rework, 2026-10-23)
 - Schematic: 9 sub-sheets.
@@ -535,6 +571,7 @@ What is a 50 Ohm segment (stage 3): the R11 common port (ANT, L8.2 -> R11.5), R1
 - Do the Gerbers and the 7z in the folder match the current layout, or are they from an earlier revision? Was this revision ordered?
 
 ## Decisions
+- 2026-10-28 (Brian): order the PCBWay standard 4-layer 1.6 mm stackup and re-size the RF line for it (run 7: 0.30 mm microstrip over In1).
 - 2026-10-28 (coordinator task, run 5 stage 3): the J1 NPTH-to-pad hole clearance is an accepted exception. The vendor land pattern gives 0.185/0.217 mm, so a J1-only rule "J1_NPTH_to_pad" (hole_clearance min 0.18 mm) is in nrf54l15_feather.kicad_dru. Board-wide hole clearance stays 0.25 mm.
 - 2026-10-28 (run 5 stage 3): X2 (32.768 kHz, DNP) is excluded from the board (`on_board no`) because it does not fit above U6 pins 1/2.
 - 2026-10-23 (Brian): this is the active main board. Feather form factor replaces v4.
