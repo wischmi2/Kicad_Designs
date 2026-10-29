@@ -413,6 +413,28 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Panasonic"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "acf3502e-7da9-435b-b02f-e695fcbc93f8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "ERJ-2GE0R00X"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f8ebea2d-f872-4835-a164-19467c2471e7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/fe2ea5fc-ce63-47c3-bd94-3fdd0b559ca6/7676c5cb-9f87-4c64-abc9-8b9382567a8b")
 		(sheetname "/pH Sensor/")
@@ -423,7 +445,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr smd)
+		(attr smd dnp)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -0.94 -0.5)
@@ -621,6 +643,28 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d25df059-6210-4bde-a8b1-d35b542f41dd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Atlas Scientific"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8d363336-f515-48cb-bb89-a0a8e972c0f1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "OEM-pH"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a169ebf4-5c32-44f2-91ef-0c1ad31b87d4")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1393,6 +1437,28 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "09f2f3ed-01b6-4c86-bccb-60c1370f9d74")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "NXE1S0303MC-R13"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d2cf1b30-6373-46e9-a20b-80ccbd3d3011")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(path "/fe2ea5fc-ce63-47c3-bd94-3fdd0b559ca6/bb9338aa-075f-4ee7-89a6-f44d06161edb")
 		(sheetname "/pH Sensor/")
 		(sheetfile "ph_sensor.kicad_sch")
@@ -2075,6 +2141,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -2086,6 +2153,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -2546,6 +2614,28 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "96536778-a10e-4c49-b7e2-d52cf4b04d86")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Analog Devices"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "44ee382f-1f0e-44cd-bfd6-a22bb698fc74")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "ADUM1250ARZ-RL7"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3eeda2a0-b353-420d-b337-69ca93e7d7c8")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4293,6 +4383,7 @@
 				(pins "1")
 			)
 		)
+		(attr exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -4389,6 +4480,39 @@
 				(font
 					(size 1.27 1.27)
 					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "BAT Wireless"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "51982da3-ae1a-4666-b353-6a26d572e107")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BWSMA-KWE-Z001"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0cb9a409-5dfe-4302-a8d5-1f7682bc22d7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C496551"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6286db4a-dee9-4e3c-8095-02f428949036")
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
