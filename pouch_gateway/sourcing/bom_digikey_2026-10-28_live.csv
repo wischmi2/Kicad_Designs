@@ -1,0 +1,25 @@
+Mfr Part Number,Qty_per_board,Qty_x5,References,Distributor PN,Stock,Order_qty_1board,Cost_USD_1board,Order_qty_5boards,Cost_USD_5boards,Stock_covers_5_boards,Cheapest_split_buy_here_1board,Cheapest_split_buy_here_5boards,Note
+LBES0ZZ2FR-580,1,5,U1,490-LBES0ZZ2FR-580CT-ND,103,1,23.41,5,117.05,Y,Y,Y,Sch MPN LBES0ZZ2FR-580. DK cut tape only; Mouser has no stock (266-day lead).
+TLV62569DBVR,1,5,U2,296-47360-1-ND,240901,1,0.28,5,1.40,Y,Y,Y,
+8240026,1,5,D1,732-4470-1-ND,3343,1,1.09,5,5.45,Y,Y,Y,"Nexperia PRTR5V0U2X is 0 at DigiKey and Mouser (Mouser 365-day lead). Substitute Wurth 8240026 (checked in datasheet: SOT143-4L, pin 1 GND, 2 I/O1, 3 I/O2, 4 VDD, 5 V working, 1.2 pF, 6 V max VDD, 6 A 8/20us). Same pinout as D1 usage (1 GND, 2 D+, 3 D-, 4 VBUS). Land pattern on the datasheet is the standard SOT-143 (pitch 1.92 / 0.96 bsc); not overlaid on the KiCad footprint."
+RB521S30-AU_R1_000A1,1,5,D2,3757-RB521S30-AU_R1_000A1CT-ND,51375,1,0.14,5,0.70,Y,Y,N,"onsemi RB521S30T1G is 0 at DK and Mouser. Panjit RB521S30-AU: SOD-523, 30 V, 200 mA, Vf 500 mV at 200 mA (DK parametric data), same as the schematic part. Second choice onsemi NSVRB521S30T1G (DK 1516, Mouser 16311, 0.37)."
+LTST-C191KRKT,1,5,D3,160-1447-1-ND,1366477,1,0.15,5,0.75,Y,Y,Y,
+LTST-C170KGKT,1,5,D4,160-1414-1-ND,440975,1,0.19,5,0.95,Y,Y,Y,
+LTST-C190TBKT,1,5,D5,160-1646-1-ND,391693,1,0.26,5,1.30,Y,Y,Y,"Schematic part. Blue Vf is about 3.1-3.3 V at 20 mA from a 3.3 V rail with 100 R: expect a very dim LED (design note, not a sourcing issue)."
+BLM18KG221SN1D,1,5,FB1,490-5255-1-ND,420145,1,0.14,5,0.70,Y,Y,Y,
+U.FL-R-SMT-1(10),1,5,J3,H11891CT-ND,351552,1,1.67,5,8.35,Y,Y,Y,"J7 is DNP. KiCad footprint is the Hirose one, so (10) is a drop-in."
+S8B-PH-K-S(LF)(SN),1,5,J5,455-1725-ND,19309,1,0.33,5,1.65,Y,Y,Y,DigiKey lists it as S8B-PH-K-S 455-1725-ND (bulk).
+SWPA4020S2R2NT,1,5,L1,3442-SWPA4020S2R2NTCT-ND,1395,1,0.34,5,1.70,Y,Y,Y,"Schematic MT (+-20%) is 0 at DK and Mouser. NT is the same series and size, +-30%; DK data: 2.2 uH, Isat 3.7 A, rated 1.85 A, DCR 52 mohm max, 4.0 x 4.0 x 2.0 mm. Mouser has no NT."
+KMR221GLFS,3,15,"SW1,SW2,SW3",108-KMR221GLFSCT-ND,107334,3,2.01,15,8.64,Y,Y,Y,
+CL10A106MA8NRNC,6,30,"C1,C4,C5,C7,C15,C20",1276-1869-1-ND,170829,10,1.87,30,5.61,Y,Y,Y,"Schematic LCSC parts are CL10A106MA8NRNC (C1, 25 V) and CL10A106KP8NNNC (others, 10 V). One 25 V part covers all six (higher voltage rating, better bias derating)."
+GCM155R71C104KA55D,11,55,"C2,C8,C9,C10,C11,C12,C13,C14,C16,C19,C21",490-4759-1-ND,7580115,11,0.37,55,1.26,Y,Y,Y,"Schematic LCSC part is CL05B104KO5NNNC (0 at DK, on order at Mouser)."
+CL21A226MOQNNNE,1,5,C6,1276-2909-1-ND,0,,,,,N,N,N,"Schematic LCSC part CL21A226MAQNNNE (25 V) is 0 at both. 16 V Samsung sister part is in stock at Mouser (134,784); 10 V and 25 V alternatives all 0. Better bias derating than a 6.3 V part on 3.3 V."
+RC0402FR-075K1L,4,20,"R1,R2,R10,R11",311-5.10KLRCT-ND,595903,10,0.21,25,0.38,Y,N,N,
+RC0402FR-07100KL,1,5,R3,311-100KLRCT-ND,5497576,1,0.10,10,0.21,Y,Y,N,
+ERJ-2RKF2202X,1,5,R4,P22.0KLCT-ND,726745,1,0.11,10,0.33,Y,Y,Y,"Yageo RC0402FR-0722KL (schematic LCSC C25768 class) is 0 at DK, 68,652 at Mouser. Panasonic ERJ-2RKF2202X is 22k 1% 0402 and in stock at DK (726,745), 0 at Mouser. Mouser alternative: RC0402FR-0722KL 603-RC0402FR-0722KL."
+ERJ-2GE0R00X,5,25,"R5,R6,R12,R13,R23",P0.0JCT-ND,14762508,10,0.15,25,0.31,Y,N,N,R5 stays fitted (Brian 2026-10-28); R24 is DNP. Yageo RC0402JR-070RL is 0 at DK (Mouser 10.1 M); Panasonic ERJ-2GE0R00X is in stock at both.
+RC0402FR-0710KL,3,15,"R7,R8,R18",311-10.0KLRCT-ND,8629234,3,0.30,15,0.32,Y,Y,N,
+RC0402FR-07100RL,4,20,"R9,R15,R16,R17",311-100LRCT-ND,3401057,10,0.21,25,0.38,Y,N,N,
+RC0402FR-07470RL,1,5,R14,311-470LRCT-ND,590427,1,0.10,10,0.21,Y,Y,N,
+RC0402FR-0733RL,3,15,"R20,R21,R22",311-33.0LRCT-ND,1371592,3,0.30,15,0.32,Y,Y,N,
+146153-0100,1,5,ANT,WM12218-ND,44175,1,2.59,5,12.95,Y,Y,Y,146153-0100 is the 100 mm lead version named in the Ledger notes (3.0 dBi at 2.4 GHz); the 50 mm version 146153-0050 is the default in concepts.md. Same price. Murata FCC antenna list (HSW2FR) not checked.
