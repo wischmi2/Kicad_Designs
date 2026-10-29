@@ -57,6 +57,9 @@ Inputs: shared\design\pouch_gateway\lcd_module\MEASUREMENTS.md (Waveshare STEP):
 - Note: the current Fusion Ledger model (shared\design\pouch_gateway\enclosure_ledger\NOTES.md) does **not** stack them; it mounts the LCD above the gateway, side by side with a 5 mm offset, so this clash does not occur there. The 2026-10-28 task says the LCD sits over the board on the shared standoffs; which is intended needs confirming.
 - Options (no connector moved): (1) longer standoffs: LCD connector over J1 with M2 x 10 (about 0.8-1.1 mm margin over J1) or over J5 with M2 x 12 (about 1.5 mm margin); (2) remove the LCD's PH connector and solder the cable to its pads, then M2 x 6 works (cable exit to be checked); (3) side by side as in the Ledger model; (4) next rev: J5 and the LCD connector at opposite ends, or a J5 top-entry/FPC.
 
+### LCD cable W1 (2026-10-29)
+- Cable W1 (J5 to LCD, PHR-8 x2 + ASPHSPH24K102 x8) is in the live BOM (sourcingom_digikey_mouser_2026-10-28_live.md, section "Cable assembly W1"). Wiring map: C:\Personal-Agents\shared\design\pouch_gateway\lcd_module\cable_W1_wiring.md. All nets match the module; the module schematic numbers its PH connector VCC=8 to BL=1, so the cable is probably reversed (slot n to slot 9-n), not 1:1 as DESIGN_NOTES says. Confirm with continuity first.
+
 ### BOM pricing (live, 2026-10-28)
 - Files: sourcingom_digikey_mouser_2026-10-28_live.md plus DigiKey and Mouser CSVs (copies in shared\design\pouch_gateway\). parts-sourcing, DigiKey/Mouser API.
 - U1 LBES0ZZ2FR-580 is available singly: DigiKey 103 in stock, MOQ 1, 23.41 USD (Mouser 0 stock, 266-day lead). Single DigiKey stock line is the supply risk.
