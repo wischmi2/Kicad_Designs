@@ -23,3 +23,5 @@ RC0402FR-07100RL,4,20,"R9,R15,R16,R17",311-100LRCT-ND,3401057,10,0.21,25,0.38,Y,
 RC0402FR-07470RL,1,5,R14,311-470LRCT-ND,590427,1,0.10,10,0.21,Y,Y,N,
 RC0402FR-0733RL,3,15,"R20,R21,R22",311-33.0LRCT-ND,1371592,3,0.30,15,0.32,Y,Y,N,
 146153-0100,1,5,ANT,WM12218-ND,44175,1,2.59,5,12.95,Y,Y,Y,146153-0100 is the 100 mm lead version named in the Ledger notes (3.0 dBi at 2.4 GHz); the 50 mm version 146153-0050 is the default in concepts.md. Same price. Murata FCC antenna list (HSW2FR) not checked.
+PHR-8,2,10,"W1 (2 housings)",455-1189-ND,4520,3,0.33,13,1.24,Y,Y,Y,"Off-board cable assembly W1 (J5 to LCD). Checked 2026-10-29. JST PH 8-pin crimp housing. Buy 3 (2 + 1 spare) for 1 board, 13 for 5 boards. Price 0.11 at 1, 0.095 at 10. DK flags tariff active."
+ASPHSPH24K102,8,40,"W1 (8 leads)",455-3358-ND,41677,10,3.42,45,14.44,Y,Y,Y,"Off-board cable assembly W1 (J5 to LCD). Checked 2026-10-29. JST PH socket-socket lead 24 AWG 102 mm (4 in). 8 per cable. Buy 10 (2 spares, hits the 10 price break 0.342) for 1 board; 45 for 5 boards at 0.3208. Contacts at both ends so it cannot be shortened. Bulk packaging."

@@ -22,7 +22,7 @@ Only 103 pieces are on DigiKey and 5 boards use 5, so quantity is fine today. Th
 | 1 board | 36.32 USD, 2 lines not orderable (C6, J1) | 14.21 USD, 5 lines not orderable (U1, L1, 100 nF caps, R4, J1) | 36.71 USD | 36.95 USD | J1 0.19 USD (LCSC) + LCD 10.99 USD (Waveshare, includes the 8-pin cable) |
 | 5 boards (total) | 170.91 USD, 2 lines not orderable | 57.98 USD, 5 lines not orderable | 173.14 USD | 174.06 USD | J1 0.93 USD + LCD 54.95 USD |
 
-**All-in (cheapest split + J1 + LCD): 1 board about 47.89 USD; 5 boards about 229.02 USD (45.80 per board).** U1 is 23.41 USD per board (117.05 for 5), the LCD 10.99, the antenna 2.59 and the U.FL 1.67; everything else is under 9 USD in total. Mouser-only is not possible because U1 is DigiKey only. Single-distributor totals are partial, so use the split. The split sends about six penny lines to Mouser to save a few cents; the practical column puts everything except C6 on DigiKey (one Mouser line, 0.63 USD, 3.15 for 5) and costs about 0.25 to 0.9 USD more. Shipping, tax, tariffs, minimum-order and Digi-Reel fees are not included, nor is LCSC shipping for J1.
+**All-in (cheapest split + J1 + LCD, without the W1 cable, see its section below for +3.75 / +15.68): 1 board about 47.89 USD; 5 boards about 229.02 USD (45.80 per board).** U1 is 23.41 USD per board (117.05 for 5), the LCD 10.99, the antenna 2.59 and the U.FL 1.67; everything else is under 9 USD in total. Mouser-only is not possible because U1 is DigiKey only. Single-distributor totals are partial, so use the split. The split sends about six penny lines to Mouser to save a few cents; the practical column puts everything except C6 on DigiKey (one Mouser line, 0.63 USD, 3.15 for 5) and costs about 0.25 to 0.9 USD more. Shipping, tax, tariffs, minimum-order and Digi-Reel fees are not included, nor is LCSC shipping for J1.
 
 Pricing rule: unit price at the break for the order quantity; where buying up to the next break (at most 3x the need) is cheaper in total, the table orders that quantity (for example 10 resistors for a need of 4). Order quantities are in the CSVs.
 
@@ -63,6 +63,24 @@ Package check is by MPN/datasheet package against the KiCad footprint name (size
 
 TP1 is a copper pad and J6 (TC2030) is footprint pads only; neither has a part.
 
+## Cable assembly W1 (J5 to LCD), added 2026-10-29
+
+Off-board cable for the Ledger enclosure, where the LCD sits in its own bosses beside the board. PH2.0 8-pin to PH2.0 8-pin, built by hand from pre-crimped leads. It replaces the 20 cm cable that comes with the Waveshare module (the LCD price above is unchanged). Wiring map: shared\design\pouch_gateway\lcd_module\cable_W1_wiring.md. Live check 2026-10-29 (DigiKey API and Mouser API, USD).
+
+| Item | MPN | Qty per cable | DK PN | DK stock | Mouser PN | Mouser stock | Unit price (1 / 10 / 25 / 50) |
+|---|---|---|---|---|---|---|---|
+| PH 8-pin crimp housing | PHR-8 (JST) | 2 | 455-1189-ND (bulk) | 4,520 | 306-PHR-8 | 42,717 | 0.11 / 0.095 / 0.0892 / 0.085 (DK); Mouser 0.11 / 0.095 |
+| PH socket-socket lead 24 AWG 102 mm black, tin | ASPHSPH24K102 (JST) | 8 | 455-3358-ND (bulk) | 41,677 | 306-ASPHSPH24K102 | 829 | 0.40 / 0.342 / 0.3208 / 0.3054 (DK); Mouser 0.40 / 0.342 |
+
+- Minimum for one cable: 8 leads + 2 housings = 3.20 + 0.22 = 3.42 USD at the 1-piece price.
+- **Recommended buy for 1 board: 10 leads (3.42 USD, the 10-piece price break is 0.342) + 3 housings (0.33 USD) = 3.75 USD.** Ten leads cost the same as the 8 needed, so the 2 spares are free. Why spares: a lead pushed into the wrong housing slot has to be pulled out again, and a contact that has been pulled out of a PHR housing can be bent or lose its retention; one housing latch can also crack. Spare housings are 0.11 each. The leads are crimped at both ends and cannot be shortened.
+- Length: the 102 mm lead is 20-40 mm longer than the 60-80 mm asked for. The next shorter lead, ASPHSPH24K51 (2 in, 51 mm, 455-3081-ND, 6,351 in stock, 0.37), is too short for that range, so use 102 mm and tuck the slack inside the enclosure (or ASPHSPH24K152 would be longer still).
+- For 5 boards: 45 leads (5 cables x 8 + 5 spares) at 0.3208 = 14.44 USD + 13 housings at 0.095 = 1.24 USD = **15.68 USD**.
+- Mouser has only 829 of the lead, so DigiKey is the primary source. Prices at DigiKey are bulk packaging, MOQ 1. DigiKey flags a tariff on PHR-8.
+- Tools: a PH crimp tool is not needed (the leads come crimped). The housings latch with the detent; insert each lead until it clicks.
+
+**Updated all-in totals (cheapest split + J1 + LCD + W1 recommended buy): 1 board about 51.64 USD (47.89 + 3.75); 5 boards about 244.70 USD (229.02 + 15.68).** The BOM CSVs carry two new rows (PHR-8, ASPHSPH24K102) with order quantities of 5 / 10 for 1 board and 13 / 45 for 5 boards.
+
 ## Problem parts and alternatives
 
 | Ref | Problem | Alternative (buy MPN) | Drop-in / what changes | Stock | Price USD | Source |
@@ -87,7 +105,7 @@ TP1 is a copper pad and J6 (TC2030) is footprint pads only; neither has a part.
 
 - Debug cable for J6 (Tag-Connect footprint, schematic value TC2030-CTX): DigiKey TC2030-CTX-ND 748 in stock at 56.05; TC2030-IDC-ND 405 in stock at 44.58 (one-off tool). Which cable matches the footprint and the RW612 SWD pins was not verified.
 - Four M2 standoffs and screws for H1-H4: not in the schematic BOM and not priced; length depends on the open LCD-stack decision in STATUS.md.
-- A spare JST PH 8-pin cable is not listed.
+- A spare JST PH 8-pin cable: the W1 cable parts (housings and leads) are now listed in the Cable assembly W1 section.
 
 ## DNP parts (not priced)
 

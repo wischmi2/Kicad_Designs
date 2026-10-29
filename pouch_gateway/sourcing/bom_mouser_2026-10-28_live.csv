@@ -22,3 +22,5 @@ RC0402FR-07100RL,4,20,"R9,R15,R16,R17",603-RC0402FR-07100RL,6886391,10,0.11,20,0
 RC0402FR-07470RL,1,5,R14,603-RC0402FR-07470RL,682207,1,0.10,10,0.11,Y,N,Y,
 RC0402FR-0733RL,3,15,"R20,R21,R22",603-RC0402FR-0733RL,1068177,3,0.30,15,0.16,Y,N,Y,
 146153-0100,1,5,ANT,538-146153-0100,25611,1,2.59,5,12.95,Y,N,N,146153-0100 is the 100 mm lead version named in the Ledger notes (3.0 dBi at 2.4 GHz); the 50 mm version 146153-0050 is the default in concepts.md. Same price. Murata FCC antenna list (HSW2FR) not checked.
+PHR-8,2,10,"W1 (2 housings)",306-PHR-8,42717,3,0.33,13,1.24,Y,N,N,"Off-board cable assembly W1 (J5 to LCD). Checked 2026-10-29. Mouser stock 42717 at 0.11 (0.095 at 10), same price as DigiKey; DigiKey used as the primary source so the cable parts ship in one order."
+ASPHSPH24K102,8,40,"W1 (8 leads)",306-ASPHSPH24K102,829,10,3.42,45,14.44,Y,N,N,"Off-board cable assembly W1 (J5 to LCD). Checked 2026-10-29. Mouser stock only 829 vs 41677 at DigiKey; same price 0.40 / 0.342 at 10."
