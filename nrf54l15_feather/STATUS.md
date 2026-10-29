@@ -451,6 +451,40 @@ Scope: drop C4, S1, S2, S3, S5, S6 (Brian approved). S4 (R21 stub) is left for b
 - The U2.28/U2.30 LSIN node still reaches the rest of VDDIO only by the long path (it now has C54 locally). Linking the LSIN run to the new U2.32 B.Cu route would need a via under U2 pins 28-30, and there is no site there (VSENS via at (118.15,120.1)).
 - C54 DigiKey/Mouser stock is unverified (sites blocked from the agent). parts-sourcing should confirm CL05A106MQ5NUNC or swap it for an equivalent 10 uF 0402 X5R >= 6.3 V (e.g. Murata GRM155R60J106ME15D, also unverified).
 
+## Run 7 (2026-10-28 night, kicad-designer on Opus): RF line re-sized to 50 Ohm on the PCBWay standard 4L stackup
+Brian approved on 2026-10-28 ordering the PCBWay standard 4-layer 1.6 mm stackup and re-sizing the RF line for it (instead of a custom impedance stackup).
+
+### Stage 1: board stackup (commit 9c81cd6)
+Source: pcbway.com/multi-layer-laminated-structure.html, fetched 2026-10-28, "4-layers PCB Regular": L1 0.5 oz plated to 1 oz; PP 7628 RC46 % 0.196 mm (0.1855 mm after lamination), DK 4.74; L2/L3 1 oz; core 1.03 mm, DK 4.6; PP and L4 as L1-L2; 1.51 mm after lamination, 1.61 mm finished (+-10 %). No solder mask thickness is published, so F.Mask/B.Mask stay at 0.01 mm.
+- Board file now: F.Mask 0.01 / F.Cu 0.035 / prepreg 0.1855 (FR4 7628 RC46 %, eps_r 4.74, tan d 0.02) / In1.Cu 0.035 / core 1.03 (eps_r 4.6) / In2.Cu 0.035 / prepreg 0.1855 (eps_r 4.74) / B.Cu 0.035 / B.Mask 0.01. Board thickness setting stays 1.6 mm.
+- copper_finish is still "None": ENIG is recommended (0.4 mm QFN48, 0201s) but not decided by Brian, so it is not set in the file.
+
+### Stage 2: 50 Ohm geometry (this note)
+Inputs: h = 0.1855 mm (F.Cu to In1 GND), eps_r 4.74, t = 0.035 mm, F.Cu GND pour clearance 0.5 mm (Top GND zone), solid In1 GND.
+
+| Geometry | Hammerstad-Jensen, t = 35 um (own script) | t = 0 | kicad-pro si (IPC-2141/Wheeler) |
+| --- | --- | --- | --- |
+| Microstrip 0.17 mm (old) | 66.5 Ohm | 71.7 | about 65 (run 6: 62) |
+| Microstrip 0.20 mm | 61.9 | 66.3 | 61.0 |
+| Microstrip 0.28 mm | 52.5 | 55.5 | 50.0 (si width synthesis: 0.2816 mm) |
+| **Microstrip 0.30 mm** | **50.6** (eps_eff 3.36) | 53.4 | **48.5** |
+| Microstrip 0.33 mm | 48.1 | 50.5 | 46.0 |
+
+Grounded coplanar (CPWG), Wadell conformal mapping (t = 0, own script; the kicad-pro "coplanar" model has no bottom ground and gives 77-123 Ohm, so it is not usable for CPWG):
+
+| w / gap | 0.10 | 0.127 | 0.15 | 0.20 | 0.50 |
+| --- | --- | --- | --- | --- | --- |
+| 0.20 mm | 58.4 | 60.6 | 61.9 | 64.0 | 68.6 |
+| 0.25 mm | 52.5 | 54.3 | 55.4 | 57.2 | 61.1 |
+| 0.30 mm | 47.8 | 49.3 | 50.3 | 51.8 | 55.2 |
+
+**Choice: 0.30 mm microstrip on F.Cu over the solid In1 GND, with the F.Cu GND pour kept at its 0.5 mm (2.7 h) clearance.** Calculated 50.6 Ohm (H-J with 35 um copper) / 48.5 Ohm (IPC-2141); solder mask and the 0.5 mm side pour each pull it down by roughly 1-2 Ohm, so expect about 48-50 Ohm, within the +-10 % that the PCBWay +-10 % dielectric tolerance gives anyway. Why not CPWG:
+- On this thin (0.1855 mm) dielectric the In1 plane dominates, so CPWG barely narrows the line: 50 Ohm at w = 0.30 needs g = 0.15 (same width as microstrip), and w = 0.25 needs g of about 0.08 mm, below PCBWay's standard 0.1 mm (4 mil) spacing and very sensitive to etch.
+- CPWG needs a continuous coplanar ground at a fixed gap on both sides, with a via fence. The line runs between 0201/0402 pads (C13, C52, C53, L2, R21, C47) and the R11 DFN, so the side ground would be broken every 0.5 mm and the impedance would be undefined; it would also need a special zone rule for the RF nets (the Top GND zone has a 0.5 mm clearance).
+- 0.30 mm is close to the 0201 pad width (0.324 mm across the line), so the pads are almost no discontinuity. The R11 (FM8625H DFN-6, 0.22 mm pads at 0.4 mm pitch) and U6 (0.2 mm pin) pads need a short 0.2 mm neck either way.
+
+What is a 50 Ohm segment (stage 3): the R11 common port (ANT, L8.2 -> R11.5), R11 RF2 -> RF1 U.FL, R11 RF1 (ANT_CHIP) -> C12, C12 -> L3 (with the L2 shunt tap), and L3 -> AE1 pad 1 (ANT_FEED). Not changed: the Nordic match network between U6.31 and L8 (L5/C8/L6/C5/L8 in 0201 pads that touch or are 0.3-0.5 mm apart, electrically about 0.01 wavelength, a lumped network per Nordic config 1; U6.31 is a 0.2 mm pin) and the DNP R21 bypass branch (a wider stub would add capacitance to the S4 stub; 0.30 mm also does not clear C47 on the y 124.75 run). The last 2.5 mm of ANT_FEED is inside the AE1 keep-out (no ground on any layer, by design), so it is part of the antenna feed, not a 50 Ohm line; it is drawn at 0.30 mm too.
+
 ## Current state (before the rework, 2026-10-23)
 - Schematic: 9 sub-sheets.
 - PCB: rectangular outline, about 66.04 x 25.40 mm. 4 layers (F.Cu / In1.Cu / In2.Cu / B.Cu). 64 footprints, 831 track segments, 213 vias, 13 zones. **No mounting holes yet.**
