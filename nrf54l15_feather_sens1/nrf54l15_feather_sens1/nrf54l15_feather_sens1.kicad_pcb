@@ -54,30 +54,30 @@
 			(layer "dielectric 1"
 				(type "prepreg")
 				(thickness 0.1855)
-				(material "FR4")
-				(epsilon_r 4.5)
+				(material "FR4 7628 RC46%")
+				(epsilon_r 4.74)
 				(loss_tangent 0.02)
 			)
 			(layer "In1.Cu"
 				(type "copper")
-				(thickness 0.0175)
+				(thickness 0.035)
 			)
 			(layer "dielectric 2"
 				(type "core")
-				(thickness 1.1)
+				(thickness 1.03)
 				(material "FR4")
-				(epsilon_r 4.5)
+				(epsilon_r 4.6)
 				(loss_tangent 0.02)
 			)
 			(layer "In2.Cu"
 				(type "copper")
-				(thickness 0.0175)
+				(thickness 0.035)
 			)
 			(layer "dielectric 3"
 				(type "prepreg")
 				(thickness 0.1855)
-				(material "FR4")
-				(epsilon_r 4.5)
+				(material "FR4 7628 RC46%")
+				(epsilon_r 4.74)
 				(loss_tangent 0.02)
 			)
 			(layer "B.Cu"
@@ -94,7 +94,7 @@
 			(layer "B.SilkS"
 				(type "Bottom Silk Screen")
 			)
-			(copper_finish "None")
+			(copper_finish "ENIG")
 			(dielectric_constraints no)
 		)
 		(pad_to_mask_clearance 0)
