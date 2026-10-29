@@ -138,3 +138,7 @@ The NXE1S0303MC needs about 10 % load (30 mA); below about 5 % its output can ri
 - Files: nrf54l15_feather_sens1\sourcing\bom_digikey_mouser_2026-10-28_live.md plus bom_digikey_ and bom_mouser_2026-10-28_live.csv (copies in C:\Personal-Agents\shared\design\nrf54l15_feather_sens1\).
 - All DigiKey, one order: 13.96 USD for 1 board, 67.33 USD for 5 boards, excluding U2 Atlas pH OEM (45.99 each) and J1 SMA (LCSC C496551, 0.51). With both: 60.46 USD for 1, 299.85 USD for 5. No stock blockers.
 - Empty schematic MPNs (J1, R5, U2, U3, U4): written into the schematic and PCB 2026-10-28 evening (U3 ADUM1250ARZ-RL7, U4 NXE1S0303MC-R13, R5 ERJ-2GE0R00X (now DNP), J1 BWSMA-KWE-Z001 / LCSC C496551, U2 Atlas Scientific OEM-pH). J1 is not at DigiKey/Mouser (LCSC only). New lines since the pricing run: C6 CC0402KRX7R7BB104 (fitted, about 0.10 USD) and DNP R6/D1; R5 is now DNP (the pricing file still counts it).
+
+## Clearance nudge 2026-10-28 night (follow-up review S1)
+- min_clearance and the Default/PWR net-class clearance raised 0.1 -> 0.15 mm; DRC (--schematic-parity --refill-zones --severity-all) 0 errors, 0 unconnected, 0 parity, 9 warnings (lib_footprint_issues only). Barrier unchanged (3.000 mm).
+- S1: VSENS via (127.9,113.93) -> (127.8,113.98); gap to C6.1 (same net) about 0.03 -> 0.07 mm, to U3.7 still >= 0.15. 0.15 to C6.1 is not reachable: the U3.8 to U3.7 pad gap (0.67 mm) is barely wider than the 0.6 mm via. Moving it further would break 0.15 to U3.7 (SDA).

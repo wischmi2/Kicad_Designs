@@ -190,3 +190,9 @@ Review: C:\Personal-Agents\shared\reports\2026-10-28-review-orp-ph-prefab.md. Bo
 - **Barrier** (min copper gap host nets to isolated nets, pads/tracks/vias/zone fills, all layers): F.Cu 3.00 mm (U3.1 to U3.8), In1 3.00 mm and B.Cu 3.00 mm (GND/GND_ISO zone edges), In2 3.35 mm (VDD_ISO track to host GND). Unchanged.
 - Outline, holes, CN1, barrier, keep-outs unchanged, so no new STEP. No fab outputs made.
 - Still open from the review: N5 (C5 next to U2.3), N6 (assembly notes: wash the OEM, F.Fab assembly drawing), N9 (nylon standoffs at H1/H2), N10 (firmware: release the TWI pins while VSENS is off), Q5 bench check, U3 ISO1540DR stock thin (Mouser 55, DigiKey 0).
+
+## Clearance nudges 2026-10-28 night (follow-up review F1/N1/N2)
+- min_clearance and the Default/PWR net-class clearance raised 0.1 -> 0.15 mm. DRC (--schematic-parity --refill-zones --severity-all): 0 errors, 0 unconnected, 0 parity, 9 warnings (lib_footprint_issues only). Barrier unchanged (U3 pad to pad 3.000 mm on F.Cu; nothing moved toward it).
+- F1: all six gaps now >= 0.15. SDA via (135.6,123.68) -> (135.6,123.38) with a 45 degree jog on the SDA F.Cu track; SCL F.Cu track now turns up at x 136.5 and runs at y 122.6 to its via (134.9,122.6); GND via (136.1,117.5) -> (136.2,117.5); GND_ISO via (120.6,112.6) -> (120.3,112.6); XFMR_P_B jog x 129.4 -> 129.3.
+- N1: vias (120.2,117.105) -> (120.0,117.105) and (129.0,112.0) -> (129.15,112.0) now >= 0.15 from their pads. C4 vias (120.3,112.6) and (121.8,112.6) stay about 0.05-0.1 from the C4 pads (same net): the 0.745 mm gap between C4 and U3.1 cannot hold a 0.6 mm via at 0.15 on both sides.
+- N2: the 0.06 mm EasyEDA silk lines on C2/C3/C4 set to 0.15 mm; no silk warnings.
