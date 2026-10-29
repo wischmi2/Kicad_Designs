@@ -590,3 +590,37 @@ Reference plane: checking the In1 fill under the new line showed two holes from 
 - Stock blockers: C43 220uF 1206 (DK 0, Mouser on order only, no same-footprint alternative); J1 HRO TYPE-C-31-M-12 and R11 FM8625H (not at DK or Mouser, LCSC only); X1 YXC crystal (not at DK/Mouser, Murata XRCGB32M000F1S2AR0 8 pF is the proposed drop-in, ESR/pads unchecked).
 - Resolved: IC1 AEM10330-QFN is at Mouser (725, $4.22); U2 and U6 are in stock at DK and Mouser; AE1 MPN changed to 2450AT18A0100001E.
 - About 14 schematic MPNs should change (out-of-stock Samsung/Murata caps, L4, L7, L9/L10, RF1); the list is in the live BOM file. Substituted inductors, bead, crystal and U.FL need a datasheet or pad check first.
+
+## Run 8 (2026-10-28 night, kicad-designer): BOM field changes from the live DigiKey/Mouser BOM
+Part fields only (Value, Manufacturer, MPN, distributor PN, LCSC); no placement or routing changes. Source: sourcing\bom_digikey_mouser_2026-10-28_live.md (field-change list and "Revision 2026-10-28 (later)") plus Brian's decisions of 2026-10-28.
+
+### Stage 1: package and crystal checks
+Package check = size code / pad count of the new MPN against the footprint on the board (pad geometry only compared for X1 earlier, by parts-sourcing).
+
+| Ref | New MPN | Package of new part | Footprint on board | Result |
+|---|---|---|---|---|
+| C1, C10 | GRM033R61A225ME47D | 0201 | easyeda2kicad:C0201, 2 pads | match |
+| C3 | GRM188R61H225KE11D | 0603 | C0603, 2 pads | match |
+| C7, C17, C18, C20, C22 | GRM21BR61E106MA73L | 0805 | C0805, 2 pads | match |
+| C40 | CL10A226MP8NUNE | 0603 | C_0603_1608Metric, 2 pads | match |
+| C41, C54 | GRM155R60J106ME15D | 0402 | C_0402_1005Metric, 2 pads | match |
+| C45, C48 | GCM155R71C104KA55D | 0402 | C0402 / C_0402, 2 pads | match |
+| C46 | GRM188R61C106MA73D | 0603 | C_0603_1608Metric, 2 pads | match |
+| L4 | BLM15AG121SN1D | 0402 (1.0 x 0.5) | L0402, 2 pads | match |
+| L7 | LQM18PN4R7MFRL | 0603 (1.6 x 0.8) | L0603, 2 pads | match |
+| L9, L10 | LSCND1608HKT2R2MF (Taiyo) | 1608 = 0603 | L0603, 2 pads | match |
+| R8 | NCU15XH103F60RC | 0402 | R0402, 2 pads | match |
+| R9, R10, R14 | ERJ-3GEY0R00V, RC0603FR-07150KL, RC0402FR-07560RL | 0603, 0603, 0402 | R0603, R0603, R0402 | match |
+| X1 | XRCGB32M000F1S2AR0 | 2.0 x 1.6, 4 pads | CRYSTAL-SMD_4P-L2.0-W1.6, 4 pads | match (pad containment from parts-sourcing) |
+| AE1 | 2450AT18A0100001E | same Johanson antenna, new part number | ANT-SMD_L3.2-W1.6 | unchanged part, MPN only |
+| C43 | MSASJ31LBB5227MTCA01 | 1206 | C_1206_3216Metric | unchanged part, DigiKey PN added |
+| U4, U5 | S2B-PH-K-S(LF)(SN) | same JST S2B-PH-K-S, no LCSC "-GW" suffix | CONN-TH_S2B-PH-K-S-GW | match |
+| J3 | FTSH-105-01-L-DV-K (no -TR) | same part, loose packaging | SAMTEC_FTSH-105-01-L-DV-K, 10 pads | match |
+Nothing was left unchanged for a package mismatch. RF1 stays ECT818000500 / ECT footprint (Brian: skip the Hirose suggestion).
+
+**X1 against Nordic's HFXO limits** (nRF54L15 PS, docs.nordicsemi.com, "OSCILLATORS Electrical specification", 32 MHz crystal oscillator table, read 2026-10-28):
+- Frequency tolerance requirement: +-40 ppm (BLE), +-60 ppm (2.4 GHz proprietary). XRCGB32M000F1S2AR0: +-10 ppm at 25 C, +-20 ppm over temperature, +-2 ppm/yr aging = about 32 ppm worst case. Pass for BLE, with 8 ppm margin for the load-cap/PCB error (the internal CINT can be trimmed).
+- Load capacitance CL_HFXO: 6 pF min, 9 pF typ. XRCGB: 8 pF. Pass. Nordic's own characterisation crystal is 2.0 x 1.6 mm at CL 8 pF.
+- Drive level PD_HFXO: 100 uW max. XRCGB rated 300 uW max (the SoC drives it, so the crystal rating is above the limit). Pass.
+- ESR: **no number in the PS text.** "Crystal selection" gives it as Figure 5 "Maximum allowed combinations of ESR and C0 for a given load capacitance CL" (an image; "supported if the crystal's parameters fall on the line or below it"). The reference crystal in the electrical table has RS 35 ohm, C0 0.74 pF, LM 9.4 mH at CL 8 pF. XRCGB32M000F1S2AR0 is ESR 50 ohm max, C0 not read. So the ESR/C0 point against Figure 5 is **not verified** (I could not read the image).
+- Verdict: **no readable limit is violated, so X1 is changed.** Open: check ESR 50 ohm and the XRCGB C0 against Figure 5 (Brian or the design review, from the PS in a browser) before fab. If it falls above the line, fall back to the second choice NDK CS11336-32M or the old YXC XL7EL89CKI-111YLC-32M (LCSC C2965582, kept in the history of this file).
