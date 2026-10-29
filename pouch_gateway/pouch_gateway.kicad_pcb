@@ -689,9 +689,9 @@
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor")
 		(property "Reference" "C17"
-			(at 1.148051 2.771638 90)
+			(at 1.8 7.199999 0)
+			(unlocked yes)
 			(layer "F.SilkS")
-			(hide yes)
 			(uuid "af03ed0e-6a01-4683-92a7-810954b0cbbc")
 			(effects
 				(font
@@ -1819,9 +1819,9 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R12"
-			(at 1.148051 2.771638 90)
+			(at -2 -2.6 90)
+			(unlocked yes)
 			(layer "F.SilkS")
-			(hide yes)
 			(uuid "7b0b362f-67d0-4341-8ae2-c30ae13e528e")
 			(effects
 				(font
@@ -2294,9 +2294,9 @@
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor")
 		(property "Reference" "C11"
-			(at -1.148051 -2.771638 90)
+			(at -6.200001 0 0)
+			(unlocked yes)
 			(layer "F.SilkS")
-			(hide yes)
 			(uuid "e9a6fdf8-d5e8-4a20-8025-9a5db2ff9025")
 			(effects
 				(font
@@ -4089,9 +4089,9 @@
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor")
 		(property "Reference" "C16"
-			(at 1.148051 2.771638 90)
+			(at 5.2 2.4 90)
+			(unlocked yes)
 			(layer "F.SilkS")
-			(hide yes)
 			(uuid "0537a138-a58e-4de9-932d-bf7b79da03d1")
 			(effects
 				(font
@@ -4652,9 +4652,9 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R13"
-			(at 2.771638 -1.148051 90)
+			(at 4.8 5.2 90)
+			(unlocked yes)
 			(layer "F.SilkS")
-			(hide yes)
 			(uuid "1088264b-aeae-4b4e-96ec-fa00c5417876")
 			(effects
 				(font
@@ -5601,9 +5601,9 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R21"
-			(at 2.771638 -1.148051 90)
+			(at 5.6 -0.6 0)
+			(unlocked yes)
 			(layer "F.SilkS")
-			(hide yes)
 			(uuid "43a29b8a-a4b2-4fe1-9511-b72ba4122ca3")
 			(effects
 				(font
@@ -15490,6 +15490,246 @@
 			)
 		)
 		(embedded_fonts no)
+	)
+	(gr_line
+		(start 141.7 94.6)
+		(end 142.6 94.6)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "34ded344-d54d-4dcb-b982-c3c3c12b113b")
+	)
+	(gr_line
+		(start 146.7 83.7)
+		(end 146.7 84)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "dbc1bf23-c913-4189-8272-c717d23e7f40")
+	)
+	(gr_line
+		(start 146.9 81)
+		(end 146.9 81.4)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "ce7f5fe0-b308-4eea-8c4d-84e4d89e1662")
+	)
+	(gr_line
+		(start 147.3 82)
+		(end 147.3 83.1)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "65bc2eb1-8238-4d29-b16f-bc222b50781e")
+	)
+	(gr_line
+		(start 147.3 83.1)
+		(end 146.7 83.7)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "29975eb5-f4e3-4c27-94cf-d8ab231c16fd")
+	)
+	(gr_line
+		(start 147.6 79.5)
+		(end 147.6 80.3)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "122a5e3c-bad6-42b5-bc44-5f8c155a4578")
+	)
+	(gr_line
+		(start 147.6 80.3)
+		(end 146.9 81)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "f1f5488c-f7a5-4e29-8678-d1f24688d708")
+	)
+	(gr_line
+		(start 147.7 81.6)
+		(end 147.3 82)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "303c6c5d-0131-4b2f-b1b7-aa44c16a15cd")
+	)
+	(gr_line
+		(start 147.8 81.6)
+		(end 147.7 81.6)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "bfe7725c-ae6e-4d66-b70b-a90ff51facd4")
+	)
+	(gr_line
+		(start 147.9 77.3)
+		(end 147.9 79.2)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "47636390-016a-40d9-8ca6-5d8f5352b835")
+	)
+	(gr_line
+		(start 147.9 79.2)
+		(end 147.6 79.5)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "7a033ff3-2676-40e6-89bc-7a200c8aa12f")
+	)
+	(gr_line
+		(start 150.4 87.5)
+		(end 147.9 87.5)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "40ab6a6e-ccfb-4d76-ab9a-33aa989388d9")
+	)
+	(gr_line
+		(start 150.6 87.3)
+		(end 150.4 87.5)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "ea394d8f-06ff-443c-a356-e4eb75c7ddea")
+	)
+	(gr_line
+		(start 151.1 89.3)
+		(end 150.3 89.3)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "a038c7c8-ccb2-43e9-8125-20eeda8eb049")
+	)
+	(gr_line
+		(start 151.3 89.5)
+		(end 151.1 89.3)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "a3952274-f19e-411f-9949-5b7d41881fbc")
+	)
+	(gr_line
+		(start 151.7 89.5)
+		(end 151.3 89.5)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "a5340ec5-a598-43db-a3b8-5e308f780547")
+	)
+	(gr_line
+		(start 152 89.8)
+		(end 151.7 89.5)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "9839e857-6489-47ac-84fa-e311857567e8")
+	)
+	(gr_line
+		(start 152.2 89.8)
+		(end 152 89.8)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "8c8198bf-857a-4dad-a05f-3dfdabd278a7")
+	)
+	(gr_line
+		(start 152.7 82.3)
+		(end 149.9 82.3)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "aa9ffd77-dc4b-4b08-a0be-56acd519b188")
+	)
+	(gr_line
+		(start 152.8 87.3)
+		(end 150.6 87.3)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "1c2499f0-3158-49a4-8657-5f55cf49c2e6")
+	)
+	(gr_line
+		(start 152.9 90.5)
+		(end 152.2 89.8)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "0afe5bb2-a313-4d65-a772-1bb7b62dfea5")
+	)
+	(gr_line
+		(start 152.9 90.8)
+		(end 152.9 90.5)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "3bb23998-0683-4050-9bfb-3fd9c780e971")
+	)
+	(gr_line
+		(start 153.2 91.1)
+		(end 152.9 90.8)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "bbf345d6-4d82-4719-b190-43535309566a")
+	)
+	(gr_line
+		(start 153.2 92.4)
+		(end 153.2 91.1)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "e4eadb12-f08b-419f-a699-e5d8bdb539ff")
 	)
 	(gr_rect
 		(start 110 70)
