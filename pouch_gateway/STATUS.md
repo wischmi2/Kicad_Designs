@@ -61,7 +61,7 @@ Inputs: shared\design\pouch_gateway\lcd_module\MEASUREMENTS.md (Waveshare STEP):
 - Cable W1 (J5 to LCD, PHR-8 x2 + ASPHSPH24K102 x8) is in the live BOM (sourcing/bom_digikey_mouser_2026-10-28_live.md, section "Cable assembly W1"). Wiring map: C:\Personal-Agents\shared\design\pouch_gateway\lcd_module\cable_W1_wiring.md. All nets match the module; the module schematic numbers its PH connector VCC=8 to BL=1, so the cable is probably reversed (slot n to slot 9-n), not 1:1 as DESIGN_NOTES says. Confirm with continuity first.
 
 ### BOM pricing (live, 2026-10-28)
-- Files: sourcingom_digikey_mouser_2026-10-28_live.md plus DigiKey and Mouser CSVs (copies in shared\design\pouch_gateway\). parts-sourcing, DigiKey/Mouser API.
+- Files: sourcing\bom_digikey_mouser_2026-10-28_live.md plus DigiKey and Mouser CSVs (copies in shared\design\pouch_gateway\). parts-sourcing, DigiKey/Mouser API.
 - U1 LBES0ZZ2FR-580 is available singly: DigiKey 103 in stock, MOQ 1, 23.41 USD (Mouser 0 stock, 266-day lead). Single DigiKey stock line is the supply risk.
 - Cheapest split: 36.71 USD for 1 board, 173.14 USD for 5 (excl. J1 and LCD). Add J1 0.19 USD (LCSC only) and the Waveshare LCD 10.99 USD (cable included): about 47.9 USD for 1 board, 229 USD for 5.
 - LCSC-only line: J1 TYPE-C-31-M-12 (C165948). Not at DigiKey/Mouser; a DK/Mouser USB-C needs a footprint change.
