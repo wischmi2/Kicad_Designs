@@ -57,9 +57,17 @@ Inputs: shared\design\pouch_gateway\lcd_module\MEASUREMENTS.md (Waveshare STEP):
 - Note: the current Fusion Ledger model (shared\design\pouch_gateway\enclosure_ledger\NOTES.md) does **not** stack them; it mounts the LCD above the gateway, side by side with a 5 mm offset, so this clash does not occur there. The 2026-10-28 task says the LCD sits over the board on the shared standoffs; which is intended needs confirming.
 - Options (no connector moved): (1) longer standoffs: LCD connector over J1 with M2 x 10 (about 0.8-1.1 mm margin over J1) or over J5 with M2 x 12 (about 1.5 mm margin); (2) remove the LCD's PH connector and solder the cable to its pads, then M2 x 6 works (cable exit to be checked); (3) side by side as in the Ledger model; (4) next rev: J5 and the LCD connector at opposite ends, or a J5 top-entry/FPC.
 
+### BOM pricing (live, 2026-10-28)
+- Files: sourcingom_digikey_mouser_2026-10-28_live.md plus DigiKey and Mouser CSVs (copies in shared\design\pouch_gateway\). parts-sourcing, DigiKey/Mouser API.
+- U1 LBES0ZZ2FR-580 is available singly: DigiKey 103 in stock, MOQ 1, 23.41 USD (Mouser 0 stock, 266-day lead). Single DigiKey stock line is the supply risk.
+- Cheapest split: 36.71 USD for 1 board, 173.14 USD for 5 (excl. J1 and LCD). Add J1 0.19 USD (LCSC only) and the Waveshare LCD 10.99 USD (cable included): about 47.9 USD for 1 board, 229 USD for 5.
+- LCSC-only line: J1 TYPE-C-31-M-12 (C165948). Not at DigiKey/Mouser; a DK/Mouser USB-C needs a footprint change.
+- Zero stock at the schematic MPN, substitutes chosen (field changes for kicad-designer in the BOM file): D1 PRTR5V0U2X -> Wurth 8240026 (check land pattern), D2 -> Panjit RB521S30-AU, L1 -> SWPA4020S2R2NT (+-30%), C6 -> CL21A226MOQNNNE (Mouser), 10 uF and 100 nF MLCCs, R4, 0R.
+- Not checked: other U1 distributors, pad geometry of substitutes, Amazon LCD price.
+
 ## Open work
 - Brian: decide the LCD stack (standoff length or LCD orientation, see LCD clearance), then approve new fab output (Gerbers + drill only; archive the old fab files first).
-- parts-sourcing: DigiKey/Mouser BOM by MPN (U1 LBES0ZZ2FR stock/MOQ first); J2/J4 now DNP.
+- parts-sourcing: done 2026-10-28, see "BOM pricing" above. Open: schematic MPN fields, D1 land pattern check, J1 (LCSC only).
 - Review items not done (nice to have): N2 RF width 0.30-0.32 mm, N4 USB as a 90 ohm pair, N5 D4 resistor 470R-1k, N6 CC ESD, N7 long low-speed routes.
 - Open items listed in DESIGN_NOTES.md:
   - Antenna part from the HSW2FR FCC filing
