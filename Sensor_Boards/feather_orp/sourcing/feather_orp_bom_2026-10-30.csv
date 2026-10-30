@@ -1,6 +1,6 @@
 Qty,References,Value,Footprint,Manufacturer,MPN,Description,LCSC
-2,"C1,C5",1uF,C0402,"SAMSUNG,Samsung Electro-Mechanics",CL05A105KO5NNNC,"1uF (105) ±10% 16V,1uF 10% 16V X5R 0402, U2 VCC decoupling",C29266
-2,"C2,C4",100nF,C0603,YAGEO,CC0603KRX7R9BB104,100nF (104) ±10% 50V,C14663
+2,"C1,C5",1uF,C0402,"SAMSUNG,Samsung Electro-Mechanics",CL05A105KO5NNNC,"1uF (105) +/-10% 16V,1uF 10% 16V X5R 0402, U2 VCC decoupling",C29266
+2,"C2,C4",100nF,C0603,YAGEO,CC0603KRX7R9BB104,100nF (104) +/-10% 50V,C14663
 1,C3,2.2uF,C0603,muRata,GRM188R71A225KE15D,,C86018
 3,"C6,C9,C12",100nF,C_0402_1005Metric,Murata,GRM155R71C104KA88D,"Unpolarized capacitor, small symbol",
 2,"C7,C8",10uF 25V,C_0805_2012Metric,Murata,GRM21BR61E106MA73L,"Unpolarized capacitor, small symbol",
