@@ -87,6 +87,7 @@ Inputs: shared\design\pouch_gateway\lcd_module\MEASUREMENTS.md (Waveshare STEP):
 - (Answered by the 2026-10-28 review: the stackup matches PCBWay standard 4L and RF is about 51-55 ohm; the buck is TLV62569DBVR; the old Gerbers are stale.)
 
 ## Decisions
+- 2026-10-30 (Brian): keep the board silkscreen as is ("Rev 1.0", "Oct. 10, 2026"). The fab zip shared\handoff\pouch_gateway\pouch_gateway_fab_2026-10-28.zip is the one to order (PCBWay std 4L 1.6 mm, ENIG, 6/6 mil, 0.3 mm min hole, plated USB-C slots). Still open, BOM only: D5 blue LED resistor (100 ohm at 3.3 V is too dim), FCC check of the 100 mm antenna.
 - 2026-10-24 (Brian): the gateway PCB has no battery circuit. It's powered only by USB-C. A battery, if used, needs an external charger/5 V boost module feeding J1, inside the enclosure.
 - 2026-10-28 (Brian): Rev A is not on order yet (this replaces "the PCB is fixed and on order"). Fix S1, S2, S3, the J2/J4 DNP part of S6 and the silkscreen (N1); keep R5 0R fitted (S4); order PCBWay standard 4L 1.6 mm, ENIG, stencil. The LCD sits over the board on the shared M2 standoffs.
 - 2026-10-24 (Brian): enclosure placement is a shelf or desk with AC (USB) power available all the time. This answers question 1 in shared\design\pouch_gateway\concepts\2026-10-24-enclosure\concepts.md and points to the Ledger concept.
