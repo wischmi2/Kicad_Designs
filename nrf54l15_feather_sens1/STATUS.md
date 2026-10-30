@@ -112,6 +112,7 @@ This is the same rectangle as the main board's AE1_keepout rule area (132.15-141
 - R1 was already 10k; added Manufacturer YAGEO / MPN RC0402FR-0710KL (DigiKey 311-10.0KLRCT-ND, 8.6 M in stock 2026-10-28) in ph_sensor.kicad_sch and the PCB.
 - H4 confirmed NPTH (np_thru_hole, drill 2.7, board_only). The H4 nylon-hardware note stands.
 - Stackup was 0.1 / 1.24 / 0.1 mm with 35 um inner copper; changed to PCBWay standard 4L 1.6 mm. **Current (since ab32a1c, checked 2026-10-28 evening): prepreg 0.1855 / core 1.03 / prepreg 0.1855 mm, Er 4.74 / 4.6, 35 um copper on all four layers, ENIG finish.** (The 1.1 mm core, 17.5 um inner copper and no-finish figures first written here are superseded.) No RF on this board, so no width changes.
+- Finish (Brian 2026-10-30): order with **leaded HASL** (PCBWay about \$25 vs \$32 lead-free HASL vs \$60 ENIG). No fine-pitch or RF parts need ENIG; the finest pitch is CN1 (0.5 mm FFC), so check it for bridges after soldering. Fine for prototypes; use lead-free HASL or ENIG for any boards that will be sold (RoHS). The ENIG in the board stackup / .gbrjob is not changed; the order form sets the finish.
 - ERC (kicad-cli): 0 errors, 40 warnings. DRC (--schematic-parity --refill-zones): 0 errors, 0 unconnected, 0 parity, 15 warnings (9 lib_footprint_issues, 6 silk_over_copper). Commit 72be7fc.
 
 ## Pre-fab fixes 2026-10-28 evening (review C:\Personal-Agents\shared\reports\2026-10-28-review-orp-ph-prefab.md, all approved by Brian 2026-10-28)
