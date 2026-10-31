@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "Sensor connector CN1 + host-side parts")
-		(date "2026-10-25")
-		(rev "0.1")
+		(date "2026-10-30")
+		(rev "0.2")
 		(company "Feather water level")
 		(comment 1 "Do not change CN1 position, pinout or footprint")
 	)
@@ -1578,7 +1578,7 @@
 			)
 		)
 	)
-	(global_label "SENS_TX"
+	(global_label "RADAR_WAKE"
 		(shape input)
 		(at 215.9 111.76 0)
 		(fields_autoplaced yes)
@@ -1626,7 +1626,7 @@
 			)
 		)
 	)
-	(global_label "SENS_CS"
+	(global_label "RADAR_RST"
 		(shape input)
 		(at 215.9 106.68 0)
 		(fields_autoplaced yes)
@@ -1650,7 +1650,7 @@
 			)
 		)
 	)
-	(global_label "SENS_RX"
+	(global_label "SENS_MISO"
 		(shape input)
 		(at 215.9 109.22 0)
 		(fields_autoplaced yes)
@@ -2468,7 +2468,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10k (set per SENSORS.md)"
+		(property "Value" "22k"
 			(at 93.98 132.08 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2501,7 +2501,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "R_ID water level radar: 22k 1% 0402 (ratio 0.6875, SENSORS.md). DigiKey alt MPN RC0402FR-1322KL"
 			(at 91.44 130.81 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2511,6 +2511,15 @@
 				)
 			)
 		)
+    (property "MPN" "RC0402FR-0722KL" (at 91.44 130.81 0)
+      (effects (font (size 1.27 1.27)) (hide yes))
+    )
+    (property "Manufacturer" "Yageo" (at 91.44 130.81 0)
+      (effects (font (size 1.27 1.27)) (hide yes))
+    )
+    (property "Tolerance" "1%" (at 91.44 130.81 0)
+      (effects (font (size 1.27 1.27)) (hide yes))
+    )
 		(pin "2"
 			(uuid "e701003a-bed3-4b55-b3cf-054495a5ffbf")
 		)
