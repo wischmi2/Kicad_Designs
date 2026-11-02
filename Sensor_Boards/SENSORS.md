@@ -1,5 +1,7 @@
 # Sensor board ID register (SENS_ID)
 
+CN1 pinout and the pins each sensor uses: CN1_SENSOR_CONNECTOR.md (this folder).
+
 Each sensor board carries R1 = R_ID from SENS_ID to GND on the CN1 side. The feather (R19) pulls SENS_ID up with **10k to VSENS** (nrf54l15_feather, sensor_connector sheet), so firmware reads a divider:
 
     V(SENS_ID) = VSENS * R_ID / (R_ID + 10k)        ratio = R_ID / (R_ID + 10k)
