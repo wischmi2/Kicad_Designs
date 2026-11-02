@@ -3,7 +3,7 @@
 Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\Sensor_Boards\feather_water_level\feather_water_level.kicad_pro
 Last reviewed: 2026-10-30
 
-**State: rev 0.2, Acconeer XM125 60 GHz radar, placed and fully routed. ERC 0 errors, DRC 0 / 0 / 0. Not reviewed yet; not a fab design until a design review is done.** The DFRobot A02YYUW ultrasonic plan (buck-boost, UART translator, JST PH) was dropped on 2026-10-30 (Brian approved the radar architecture); it was never drawn.
+**State: rev 0.2, Acconeer XM125 60 GHz radar, placed and fully routed. ERC 0 errors, DRC 0 / 0 / 0. Reviewed 2026-11-02: not ready for fab, 3 blockers (B1 feather R18/R17 vs the radar reset, B2 via ring, B3 battery in the radar path). Report: shared\reports\2026-11-02-review-feather-water-level.md.** The DFRobot A02YYUW ultrasonic plan (buck-boost, UART translator, JST PH) was dropped on 2026-10-30 (Brian approved the radar architecture); it was never drawn.
 
 Datasheet facts, sources and UNVERIFIED items: xm125_notes.md (this folder). Parts stock check by parts-sourcing: sourcing\xm125_parts_2026-10-30.md.
 
@@ -71,7 +71,7 @@ No LCSC numbers were added (DigiKey/Mouser are the sources for this board).
 - 2026-10-30: CN1 pins 6/8 renamed RADAR_WAKE / RADAR_RST, pin 7 SENS_MISO (was SENS_TX / SENS_CS / SENS_RX).
 
 ## Open work
-- Design review (design-reviewer) before any fab output.
+- Close review blockers B1-B3 and pick from S1-S8 (report above). Correction: R2 does not keep Q1 off once mated; feather R18 pulls RADAR_RST to about 2.7 V, so the radar stays in reset until firmware drives SENS_CS low.
 - Firmware (firmware-dev): RADAR_WAKE on the feather SENS_MOSI pin, RADAR_RST (active high) on SENS_CS, SENS_INT, I2C address 0x52; SENS_ID 22k.
 - Enclosure (fusion-enclosure): STEP 2026-10-30; radar faces down out of the bottom; wall in front of U1 about n x lambda/2 thick in the plastic (PETG about 1.5-1.6 mm, er UNVERIFIED) and a gap of about n x 2.5 mm, no metal in the beam (xm125_notes.md).
 - Bench: confirm the XM125 boots and enumerates at 0x52 from a VSENS cold start; check the +1V8 ripple during the 80 mA burst.

@@ -112,9 +112,11 @@ No board uses SPI, UART or AIN today. The water level board is the only one usin
 
 ## Open issues (found 2026-11-02)
 
+Items 2 to 4 are in the water level design review (shared\reports\2026-11-02-review-feather-water-level.md, B1 and S2). Its recommended fix is to leave R15 to R18 off the radar node's feather, which is not decided yet.
+
 1. **DO and EC have the wrong ID resistor.** Both schematics have R1 = 10k, which firmware would read as pH. `SENSORS.md` assigns 2.2k (DO) and 1k (EC). Neither board has fab output yet; fix R1 before generating it.
 2. **Water level RADAR_RST floats high, not low.** The board's STATUS.md says R2 keeps Q1 off while the host pin floats, but feather R18 (10k to VSENS) outweighs R2 (100k), so the pin sits at about 2.7 V and holds the radar in reset. Firmware has to drive SENS_CS low to run the radar, which then draws about 300 uA through R18 while VSENS is on.
 3. **Water level SENS_INT doesn't follow the pin 9 rule.** The rule is open-drain, active low; this board drives it push-pull, active high, against feather R17 (10k to VSENS). It should still work, but draws about 300 uA while the output is low and VSENS is on.
-4. **Water level adds to the I2C pull-ups.** U3 TCA9406's internal 10k pull-ups sit in parallel with the feather's 4.7k, giving about 3.2k. Check this against the rise time and current in the design review.
+4. **Water level adds to the I2C pull-ups.** U3 TCA9406's internal 10k pull-ups sit in parallel with the feather's 4.7k, giving about 3.2k. The design review found about 1.12 mA sink current at the nRF, above the TCA9406 1 mA test condition.
 5. **pH I2C address isn't recorded.** Confirm it from the Atlas datasheet and add it here.
 6. **Feather firmware has no CN1 sensor pins yet, other than SENS_ID.** The board file (`soil_moisture_fw\boards\others\nrf54l15_feather`) still needs the sensor I2C bus and the water level pins.
