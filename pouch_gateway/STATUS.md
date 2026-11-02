@@ -68,6 +68,11 @@ Inputs: shared\design\pouch_gateway\lcd_module\MEASUREMENTS.md (Waveshare STEP):
 - Zero stock at the schematic MPN, substitutes chosen (field changes for kicad-designer in the BOM file): D1 PRTR5V0U2X -> Wurth 8240026 (check land pattern), D2 -> Panjit RB521S30-AU, L1 -> SWPA4020S2R2NT (+-30%), C6 -> CL21A226MOQNNNE (Mouser), 10 uF and 100 nF MLCCs, R4, 0R.
 - Not checked: other U1 distributors, pad geometry of substitutes, Amazon LCD price.
 
+### Enclosure hardware (2026-11-01, coordinator)
+- Ledger is at Fusion v4 with hardware bodies, and uses the Amazon hardware list (C:\Personal-Agents\shared\design\enclosure_hardware_amazon_2026-11-01.md). The McMaster version is in enclosure_ledgerariant_mcmaster_2026-11-01\. No board change.
+- Guide: shared\design\pouch_gateway\enclosure_ledgerssembly_guide_2026-11-01\ASSEMBLY.md. Report: sharedeports6-11-01-coordinator-enclosure-hardware.md.
+- Open: re-apply "Abyss navy PETG" to Front_Shell in Fusion (the agent set an approximate #1F2D4D).
+
 ## Open work
 - Brian: decide the LCD stack (standoff length or LCD orientation, see LCD clearance), then approve new fab output (Gerbers + drill only; archive the old fab files first).
 - parts-sourcing: done 2026-10-28, see "BOM pricing" above. Open: schematic MPN fields, D1 land pattern check, J1 (LCSC only).

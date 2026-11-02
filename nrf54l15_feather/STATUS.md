@@ -761,3 +761,11 @@ Brian's 2026-10-29 decisions applied: C43 option (a), S1 silk, AE1 as-is, 4/4 mi
 
 ### Bring-up rule (C43, Brian 2026-10-29 option a)
 C43 is the single 220 uF 1206 and derates to about 54 uF at 4.2 V, below the AEM10330 100 uF STO minimum. **Connect the battery before the solar panel; never unplug the battery while solar is connected.** Silk "BATT FIRST" on the back between U4 and U5 reminds of it.
+
+## Order state and enclosure hardware (2026-10-30 to 2026-11-02, coordinator)
+- 2026-10-30 (Brian): this board is OK to order, with ENIG. The X1 ESR/C0 check only decides which crystal to buy.
+- Enclosure (Tidemark, Fusion v17) moved to Amazon hardware: list C:\Personal-Agents\shared\design\enclosure_hardware_amazon_2026-11-01.md, 3.6 mm insert holes, 8 mm + 6 mm nylon standoff stack. The McMaster version is Fusion v11 + enclosure_tidemarkariant_mcmaster_2026-11-01\.
+- Hardware vs board pads check is clean (shared\design
+rf54l15_feather\enclosure_tidemark\hardware_pad_check_2026-11-02.md). H4 screw head clears the AE1 body by only 0.24 mm; a low head or nylon washer is optional, check on the bench.
+- No board change. Guide: shared\design
+rf54l15_feather\enclosure_tidemarkssembly_guide_2026-11-01\ASSEMBLY.md. Report: sharedeports6-11-01-coordinator-enclosure-hardware.md.
