@@ -74,6 +74,7 @@ No LCSC numbers were added (DigiKey/Mouser are the sources for this board).
 ## Open work
 - Close review blockers B1-B3 and pick from S1-S8 (report above). B1 is decided (see Decisions): this board uses the radar feather build. On a standard feather, R2 does not keep Q1 off: R18 pulls RADAR_RST to about 2.7 V, so the radar stays in reset until firmware drives SENS_CS low. The note on the Sensor sheet still needs correcting.
 - Firmware (firmware-dev): RADAR_WAKE on the feather SENS_MOSI pin, RADAR_RST (active high) on SENS_CS, SENS_INT, I2C address 0x52; SENS_ID 22k.
+- Enclosure concepts for B3 (2026-11-02): shared\design\feather_water_level\enclosure_concepts_radar_2026-11-02\concepts.md. Recommends Crown (cell in a lid hump behind the radar), fallback Slab; no PCB change. Brian to pick; B3 stays open until then.
 - Enclosure (fusion-enclosure): STEP 2026-10-30; radar faces down out of the bottom; wall in front of U1 about n x lambda/2 thick in the plastic (PETG about 1.5-1.6 mm, er UNVERIFIED) and a gap of about n x 2.5 mm, no metal in the beam (xm125_notes.md).
 - Bench: confirm the XM125 boots and enumerates at 0x52 from a VSENS cold start; check the +1V8 ripple during the 80 mA burst.
 
