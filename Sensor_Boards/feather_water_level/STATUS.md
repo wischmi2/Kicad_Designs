@@ -63,6 +63,7 @@ Datasheet facts, sources and UNVERIFIED items: xm125_notes.md (this folder). Par
 No LCSC numbers were added (DigiKey/Mouser are the sources for this board).
 
 ## Decisions
+- 2026-11-02 (Brian): two feather builds. This board needs the radar build, with feather R15, R16, R17 and R18 not fitted (review B1 and S2). No copper change. See ..\CN1_SENSOR_CONNECTOR.md, Feather builds.
 - 2026-10-30 (Brian): radar (XM125) replaces the A02YYUW ultrasonic plan; sensor inside the enclosure looking through the plastic; only CN1 to the feather; small form factor.
 - 2026-10-30 (kicad-designer): VIN = 1.8 V, not 3.3 V. The 3.3 V VIN range is 2.97-3.45 V and VSENS is 3.0 V (30 mV margin); a 3.3 V rail from VBAT (3.0-4.2 V) would need a buck-boost. 1.8 V for both pins plus translators works over the whole battery range.
 - 2026-10-30 (kicad-designer): LDO from VBAT with EN = VSENS, not from VSENS. The datasheet current profile peaks at about 80 mA typical (no maximum given; A121 alone may draw up to 100 mA per supply), which leaves no margin in the 100 mA VSENS budget. NCP161 is the LDO family Acconeer use on the XE125 EVK (VDIG ripple matters).
@@ -71,7 +72,7 @@ No LCSC numbers were added (DigiKey/Mouser are the sources for this board).
 - 2026-10-30: CN1 pins 6/8 renamed RADAR_WAKE / RADAR_RST, pin 7 SENS_MISO (was SENS_TX / SENS_CS / SENS_RX).
 
 ## Open work
-- Close review blockers B1-B3 and pick from S1-S8 (report above). Correction: R2 does not keep Q1 off once mated; feather R18 pulls RADAR_RST to about 2.7 V, so the radar stays in reset until firmware drives SENS_CS low.
+- Close review blockers B1-B3 and pick from S1-S8 (report above). B1 is decided (see Decisions): this board uses the radar feather build. On a standard feather, R2 does not keep Q1 off: R18 pulls RADAR_RST to about 2.7 V, so the radar stays in reset until firmware drives SENS_CS low. The note on the Sensor sheet still needs correcting.
 - Firmware (firmware-dev): RADAR_WAKE on the feather SENS_MOSI pin, RADAR_RST (active high) on SENS_CS, SENS_INT, I2C address 0x52; SENS_ID 22k.
 - Enclosure (fusion-enclosure): STEP 2026-10-30; radar faces down out of the bottom; wall in front of U1 about n x lambda/2 thick in the plastic (PETG about 1.5-1.6 mm, er UNVERIFIED) and a gap of about n x 2.5 mm, no metal in the beam (xm125_notes.md).
 - Bench: confirm the XM125 boots and enumerates at 0x52 from a VSENS cold start; check the +1V8 ripple during the 80 mA burst.

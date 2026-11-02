@@ -1,6 +1,6 @@
 # Sensor board ID register (SENS_ID)
 
-CN1 pinout and the pins each sensor uses: CN1_SENSOR_CONNECTOR.md (this folder).
+CN1 pinout, the pins each sensor uses and the two feather builds: CN1_SENSOR_CONNECTOR.md (this folder). Water level needs the radar feather build (R15 to R18 not fitted); all other boards use the standard build.
 
 Each sensor board carries R1 = R_ID from SENS_ID to GND on the CN1 side. The feather (R19) pulls SENS_ID up with **10k to VSENS** (nrf54l15_feather, sensor_connector sheet), so firmware reads a divider:
 

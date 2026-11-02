@@ -767,3 +767,9 @@ C43 is the single 220 uF 1206 and derates to about 54 uF at 4.2 V, below the AEM
 - Enclosure (Tidemark, Fusion v17) moved to Amazon hardware: list C:\Personal-Agents\shared\design\enclosure_hardware_amazon_2026-11-01.md, 3.6 mm insert holes, 8 mm + 6 mm nylon standoff stack. The McMaster version is Fusion v11 + enclosure_tidemark\variant_mcmaster_2026-11-01\.
 - Hardware vs board pads check is clean (shared\design\nrf54l15_feather\enclosure_tidemark\hardware_pad_check_2026-11-02.md). H4 screw head clears the AE1 body by only 0.24 mm; a low head or nylon washer is optional, check on the bench.
 - No board change. Guide: shared\design\nrf54l15_feather\enclosure_tidemark\assembly_guide_2026-11-01\ASSEMBLY.md. Report: shared\reports\2026-11-01-coordinator-enclosure-hardware.md.
+
+## Two builds (Brian 2026-11-02)
+- Standard build: all parts fitted, for pH, ORP, DO and EC sensor boards.
+- Radar build, for the water level board: R15, R16, R17 and R18 not fitted; R19 stays. Same bare board and Gerbers. Mark these boards by hand.
+- The schematic and BOM show the standard build. For a radar feather, buy and fit four fewer resistors.
+- Details: Sensor_Boards\CN1_SENSOR_CONNECTOR.md, Feather builds. Review: shared\reports\2026-11-02-review-feather-water-level.md, B1 and S2.

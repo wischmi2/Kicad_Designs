@@ -32,7 +32,28 @@ Pins and connections below come from `kicad-cli` netlists of each board's schema
 | 14 | GND | ground | - | |
 | MP | GND | mounting tabs | - | |
 
-The net is called VBAT on the sensor boards and VBAT_CN1 on the feather.
+The net is called VBAT on the sensor boards and VBAT_CN1 on the feather. R15 to R18 are fitted on the standard build only (see Feather builds).
+
+## Feather builds (Brian 2026-11-02)
+
+There are two builds of the feather. The bare board, Gerbers and the rest of the BOM are the same; only these four resistors differ.
+
+| Build | R15, R16 (4.7k I2C) | R17, R18 (10k INT, CS) | Sensor boards |
+| --- | --- | --- | --- |
+| Standard | Fitted | Fitted | pH, ORP, DO, EC |
+| Radar | Not fitted | Not fitted | Water level |
+
+R19 (SENS_ID) is fitted on both. Mark radar feathers by hand, because SENS_ID identifies the sensor board, not the feather build.
+
+**Why:** the radar uses SENS_CS as an active-high reset, so R18 would hold it in reset and can back-power VSENS. R17 would draw about 300 uA while the interrupt line is low. The TCA9406 has its own 10k I2C pull-ups, so R15 and R16 would push the nRF sink current past the 1 mA TI tests at.
+
+**If they get mixed up:**
+- Radar board on a standard feather: the radar stays in reset until firmware drives SENS_CS low. It then runs with the extra current and marginal I2C. Firmware must not drive SENS_CS high with VSENS off.
+- Atlas board on a radar feather: I2C doesn't work because the host-side pull-ups are missing. Fit R15 and R16 to fix it.
+
+Neither case should damage anything according to the review, but that hasn't been tested.
+
+Any new sensor board should use the standard build if it can. Add a build only if the board can't work with these pull-ups.
 
 ## What each resource can do
 
@@ -96,6 +117,7 @@ No board uses SPI, UART or AIN today. The water level board is the only one usin
 - **Interrupt:** Atlas INT stops at test pad J5 on the isolated side, so firmware polls register 0x07.
 
 ### Water level (Acconeer XM125 radar): `Sensor_Boards\feather_water_level`
+- **Feather build:** radar (R15 to R18 not fitted).
 - **Pins:** VSENS, VBAT, SENS_SDA, SENS_SCL, SENS_MOSI as RADAR_WAKE, SENS_CS as RADAR_RST, SENS_INT, SENS_ID, GND. Not isolated.
 - **VSENS feeds:** host side of the translators (U3 TCA9406, U4 and U5 SN74AXC1T45), U2 NCP161 enable, C1, C2, C8, C9. U4 DIR is tied to VSENS.
 - **VBAT feeds:** U2 NCP161 1.8 V LDO input and C3. The LDO powers the radar, so turning VSENS off turns the radar off.
@@ -112,11 +134,7 @@ No board uses SPI, UART or AIN today. The water level board is the only one usin
 
 ## Open issues (found 2026-11-02)
 
-Items 2 to 4 are in the water level design review (shared\reports\2026-11-02-review-feather-water-level.md, B1 and S2). Its recommended fix is to leave R15 to R18 off the radar node's feather, which is not decided yet.
-
 1. **DO and EC have the wrong ID resistor.** Both schematics have R1 = 10k, which firmware would read as pH. `SENSORS.md` assigns 2.2k (DO) and 1k (EC). Neither board has fab output yet; fix R1 before generating it.
-2. **Water level RADAR_RST floats high, not low.** The board's STATUS.md says R2 keeps Q1 off while the host pin floats, but feather R18 (10k to VSENS) outweighs R2 (100k), so the pin sits at about 2.7 V and holds the radar in reset. Firmware has to drive SENS_CS low to run the radar, which then draws about 300 uA through R18 while VSENS is on.
-3. **Water level SENS_INT doesn't follow the pin 9 rule.** The rule is open-drain, active low; this board drives it push-pull, active high, against feather R17 (10k to VSENS). It should still work, but draws about 300 uA while the output is low and VSENS is on.
-4. **Water level adds to the I2C pull-ups.** U3 TCA9406's internal 10k pull-ups sit in parallel with the feather's 4.7k, giving about 3.2k. The design review found about 1.12 mA sink current at the nRF, above the TCA9406 1 mA test condition.
-5. **pH I2C address isn't recorded.** Confirm it from the Atlas datasheet and add it here.
-6. **Feather firmware has no CN1 sensor pins yet, other than SENS_ID.** The board file (`soil_moisture_fw\boards\others\nrf54l15_feather`) still needs the sensor I2C bus and the water level pins.
+2. **Water level notes need the radar build.** The radar reset, interrupt and I2C pull-up problems are settled by the radar feather build above (review: shared\reports\2026-11-02-review-feather-water-level.md, B1 and S2). The firmware reset default still needs checking on the bench.
+3. **pH I2C address isn't recorded.** Confirm it from the Atlas datasheet and add it here.
+4. **Feather firmware has no CN1 sensor pins yet, other than SENS_ID.** The board file (`soil_moisture_fw\boards\others\nrf54l15_feather`) still needs the sensor I2C bus and the water level pins.
