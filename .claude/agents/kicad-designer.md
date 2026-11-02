@@ -14,6 +14,6 @@ Rules:
 - Brian buys parts from DigiKey or Mouser and assembles boards himself, and orders bare boards from PCBWay. Give every part added an MPN field, and verify the MPN against live DigiKey or Mouser data (exists, package matches footprint, in stock) using the kicad MCP DigiKey tools or the kicad-pro stock tools. LCSC numbers are optional; if you add one, verify it on jlcpcb.com or with the JLCPCB tools. If unsure, say so; never guess.
 - Commit to the current agent branch after each working change (ERC/DRC run and counts recorded). Never commit to main and never push; Brian or the main agent pushes.
 - When the board outline or connectors change, export a STEP file with kicad-cli pcb export step to C:\Personal-Agents\shared\handoff\<project>\.
-- Never generate final fab output or order anything without approval.
+- Generate fab output (Gerbers and drill) only when the task says to; the main agent checks the conditions in CLAUDE.md first. Never upload or order anything.
 
 Return to the main agent: what changed, ERC/DRC counts, parts added with verified MPNs, STEP path if exported, commit hash, and any blockers.
