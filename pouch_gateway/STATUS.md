@@ -69,8 +69,8 @@ Inputs: shared\design\pouch_gateway\lcd_module\MEASUREMENTS.md (Waveshare STEP):
 - Not checked: other U1 distributors, pad geometry of substitutes, Amazon LCD price.
 
 ### Enclosure hardware (2026-11-01, coordinator)
-- Ledger is at Fusion v4 with hardware bodies, and uses the Amazon hardware list (C:\Personal-Agents\shared\design\enclosure_hardware_amazon_2026-11-01.md). The McMaster version is in enclosure_ledgerariant_mcmaster_2026-11-01\. No board change.
-- Guide: shared\design\pouch_gateway\enclosure_ledgerssembly_guide_2026-11-01\ASSEMBLY.md. Report: sharedeports6-11-01-coordinator-enclosure-hardware.md.
+- Ledger is at Fusion v4 with hardware bodies, and uses the Amazon hardware list (C:\Personal-Agents\shared\design\enclosure_hardware_amazon_2026-11-01.md). The McMaster version is in enclosure_ledger\variant_mcmaster_2026-11-01\. No board change.
+- Guide: shared\design\pouch_gateway\enclosure_ledger\assembly_guide_2026-11-01\ASSEMBLY.md. Report: shared\reports\2026-11-01-coordinator-enclosure-hardware.md.
 - Open: re-apply "Abyss navy PETG" to Front_Shell in Fusion (the agent set an approximate #1F2D4D).
 
 ## Open work
