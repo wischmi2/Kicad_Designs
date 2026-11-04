@@ -94,7 +94,7 @@
 			(layer "B.SilkS"
 				(type "Bottom Silk Screen")
 			)
-			(copper_finish "None")
+			(copper_finish "ENIG")
 			(dielectric_constraints no)
 		)
 		(pad_to_mask_clearance 0)
@@ -7537,7 +7537,7 @@
 		(effects
 			(font
 				(size 0.8 0.8)
-				(thickness 0.12)
+				(thickness 0.15)
 			)
 			(justify mirror)
 		)
@@ -7549,91 +7549,7 @@
 		(effects
 			(font
 				(size 0.8 0.8)
-				(thickness 0.12)
-			)
-			(justify mirror)
-		)
-	)
-	(gr_text "CN1 FFC"
-		(at 133.9 127 0)
-		(layer "B.SilkS")
-		(uuid "aa642504-0768-4dfb-8962-415e9ab91a1f")
-		(effects
-			(font
-				(size 0.8 0.8)
-				(thickness 0.12)
-			)
-			(justify mirror)
-		)
-	)
-	(gr_text "14P 0.5mm"
-		(at 133.9 128.1 0)
-		(layer "B.SilkS")
-		(uuid "84747623-ab14-4bfe-941c-602e660b553a")
-		(effects
-			(font
-				(size 0.8 0.8)
-				(thickness 0.12)
-			)
-			(justify mirror)
-		)
-	)
-	(gr_text "OPP-SIDE"
-		(at 133.9 129.199999 0)
-		(layer "B.SilkS")
-		(uuid "71b385e7-f78c-4341-be40-f81e0d6f5099")
-		(effects
-			(font
-				(size 0.8 0.8)
-				(thickness 0.12)
-			)
-			(justify mirror)
-		)
-	)
-	(gr_text "WATER LEVEL RADAR"
-		(at 95 121.43 90)
-		(layer "B.SilkS")
-		(uuid "dbd2be1e-871e-437a-b403-ec0f2966631d")
-		(effects
-			(font
-				(size 0.8 0.8)
-				(thickness 0.12)
-			)
-			(justify mirror)
-		)
-	)
-	(gr_text "R_ID 22k (0.6875)"
-		(at 96.4 121.43 90)
-		(layer "B.SilkS")
-		(uuid "dbfc7025-b392-4a51-9efd-7c1be84db094")
-		(effects
-			(font
-				(size 0.8 0.8)
-				(thickness 0.12)
-			)
-			(justify mirror)
-		)
-	)
-	(gr_text "TP: NRST SWCLK SWDIO"
-		(at 119 120.75 90)
-		(layer "B.SilkS")
-		(uuid "be1672a3-70d5-47f2-b301-8fdd3b986420")
-		(effects
-			(font
-				(size 0.8 0.8)
-				(thickness 0.12)
-			)
-			(justify mirror)
-		)
-	)
-	(gr_text "GND RX TX, 1V8 far"
-		(at 120.3 120.75 90)
-		(layer "B.SilkS")
-		(uuid "dada3222-9b83-46d7-8521-469d3e083cb1")
-		(effects
-			(font
-				(size 0.8 0.8)
-				(thickness 0.12)
+				(thickness 0.15)
 			)
 			(justify mirror)
 		)
@@ -7650,10 +7566,94 @@
 			(justify mirror)
 		)
 	)
+	(gr_text "CN1 FFC"
+		(at 133.9 127 0)
+		(layer "B.SilkS")
+		(uuid "aa642504-0768-4dfb-8962-415e9ab91a1f")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "14P 0.5mm"
+		(at 133.9 128.1 0)
+		(layer "B.SilkS")
+		(uuid "84747623-ab14-4bfe-941c-602e660b553a")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "OPP-SIDE"
+		(at 133.9 129.199999 0)
+		(layer "B.SilkS")
+		(uuid "71b385e7-f78c-4341-be40-f81e0d6f5099")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
 	(gr_text "VSENS"
 		(at 136.5 122.75 0)
 		(layer "B.SilkS")
 		(uuid "2ea75ec5-2fe2-41c6-bb1f-4326afacbc59")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "WATER LEVEL RADAR"
+		(at 95 121.43 90)
+		(layer "B.SilkS")
+		(uuid "dbd2be1e-871e-437a-b403-ec0f2966631d")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "R_ID 22k (0.6875)"
+		(at 96.4 121.43 90)
+		(layer "B.SilkS")
+		(uuid "dbfc7025-b392-4a51-9efd-7c1be84db094")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "TP: NRST SWCLK SWDIO"
+		(at 119 120.75 90)
+		(layer "B.SilkS")
+		(uuid "be1672a3-70d5-47f2-b301-8fdd3b986420")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "GND RX TX, 1V8 far"
+		(at 120.3 120.75 90)
+		(layer "B.SilkS")
+		(uuid "dada3222-9b83-46d7-8521-469d3e083cb1")
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -7680,7 +7680,7 @@
 		(effects
 			(font
 				(size 0.8 0.8)
-				(thickness 0.12)
+				(thickness 0.15)
 			)
 		)
 	)
@@ -7749,6 +7749,14 @@
 		(uuid "3c54fb1b-bed1-4771-907a-82b171935068")
 	)
 	(segment
+		(start 102.58 111.3)
+		(end 103 112.2)
+		(width 0.3)
+		(layer "F.Cu")
+		(net "GND")
+		(uuid "402fe473-2549-410e-a09e-4d99dd3b732d")
+	)
+	(segment
 		(start 134.57 119.18)
 		(end 134.57 119.68)
 		(width 0.2)
@@ -7779,6 +7787,14 @@
 		(layer "F.Cu")
 		(net "GND")
 		(uuid "b95bb90f-6fe2-48dd-bee3-b086c1a39a46")
+	)
+	(segment
+		(start 99.42 111.3)
+		(end 98.7 111.1)
+		(width 0.3)
+		(layer "F.Cu")
+		(net "GND")
+		(uuid "bbaf4260-72ee-4181-899f-ada2ff1f9d26")
 	)
 	(segment
 		(start 128.6 122.21)
@@ -7909,6 +7925,14 @@
 		(uuid "2570358a-a1e0-4272-aee3-f44957d7fa9f")
 	)
 	(via
+		(at 98.7 111.1)
+		(size 0.6)
+		(drill 0.3)
+		(layers "F.Cu" "B.Cu")
+		(net "GND")
+		(uuid "26557269-115a-46e1-94b2-1a548a1cc00d")
+	)
+	(via
 		(at 134.4 125.6)
 		(size 0.6)
 		(drill 0.3)
@@ -7971,6 +7995,14 @@
 		(layers "F.Cu" "B.Cu")
 		(net "GND")
 		(uuid "533838e1-8863-49bb-a6e1-725f4fd5fc8c")
+	)
+	(via
+		(at 103 112.2)
+		(size 0.6)
+		(drill 0.3)
+		(layers "F.Cu" "B.Cu")
+		(net "GND")
+		(uuid "5d1c9585-9c06-432d-88d9-e13d9bbafddc")
 	)
 	(via
 		(at 139.2 118.4)
