@@ -80,9 +80,15 @@ No LCSC numbers were added (DigiKey/Mouser are the sources for this board).
 - Enclosure (fusion-enclosure): STEP 2026-10-30; radar faces down out of the bottom; wall in front of U1 about n x lambda/2 thick in the plastic (PETG about 1.5-1.6 mm, er UNVERIFIED) and a gap of about n x 2.5 mm, no metal in the beam (xm125_notes.md).
 - Bench: confirm the XM125 boots and enumerates at 0x52 from a VSENS cold start; check the +1V8 ripple during the 80 mA burst.
 
+## Decisions (Brian, 2026-11-03)
+1. Power: VSENS stays on, radar in hibernate between readings (about 110 uA idle on the radar feather build: R19/R1 94 uA + module 17.7 uA, about 2.6 mAh a day).
+2. Finish: ENIG. Stencil: B-side, with reduced U1 apertures.
+3. Assembly: hotplate, module first; other F-side parts afterwards by hand or hot air.
+4. Flashing: J-Link over SWD (TP1, TP2, TP3, TP7, TP8). J-Link model and its VTref range at 1.8 V still to check. Every module has to be flashed: the datasheet says it's delivered with a bootloader (review S3).
+5. Field update of the XM125: opening the enclosure is OK. No CN1 change.
+6. Radar wall: PETG 1.5-1.6 mm, confirmed by a coupon test on a SparkFun breakout before the final print.
+7. Buying: SparkFun breakout now; XM125 modules when the board is ordered, with a spare. Brian orders.
+8. Review items to fix: B2, S3 test pads, S4, S5, S6, S7. S8 left as is (0.13 mm gap, order at 4/4 mil).
+
 ## Questions for Brian
-1. Power strategy: VSENS off between readings means a cold boot + detector configure + calibrate on every reading (energy and time per reading not measured, UNVERIFIED). Alternative: keep VSENS on and use the module's hibernate (17.7 uA) with WAKE_UP. Which does the firmware want? The board supports both.
-2. Does a new XM125 come with the I2C distance detector already flashed? Not stated in the Acconeer documents I read. Plan for flashing through the test pads with a 1.8 V USB-UART (TP4 BOOT0, TP3 NRST, TP5 TX, TP6 RX). Do you have a 1.8 V-capable adapter or a debugger that follows VTref?
-3. Hand assembly: XM125 is an LGA (28 pads, no leads) and MSL3. OK to reflow it on a hotplate/hot air first, then the small parts? (Datasheet recommends one reflow pass.)
-4. Enclosure plastic and wall at the radar: PETG wall thickness and gap per the radome rule (xm125_notes.md), or do you want a lens/horn later?
-5. The XM125 is out of stock at DigiKey (16 weeks); Mouser had 1,263 (parts-sourcing). Buy from Mouser?
+1. J-Link model, to check VTref at 1.8 V.
