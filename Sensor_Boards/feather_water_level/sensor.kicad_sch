@@ -4303,13 +4303,13 @@
 		(effects (font (size 1.27 1.27)) (justify left top))
 		(uuid "71172f8a-d15c-4e1c-a3ae-a1759e0cb0b8")
 	)
-	(text "RADAR_RST high = XM125 held in reset (Q1 open drain on NRESET).\nThe STM32 has its own NRST pull-up; R2 keeps Q1 off while the host pin floats."
+	(text "RADAR_RST high = XM125 held in reset (Q1 open drain on NRESET). The STM32 has its own NRST pull-up.\nThis board needs the radar feather build: R15, R16, R17, R18 not fitted (Sensor_Boards\CN1_SENSOR_CONNECTOR.md).\nOn that build R2 keeps Q1 off while the host pin floats. On a standard feather R18 holds RADAR_RST at about 2.7 V,\nso the module stays in reset until firmware drives SENS_CS low."
 		(exclude_from_sim no)
 		(at 190.5 20.32 0)
 		(effects (font (size 1.27 1.27)) (justify left top))
 		(uuid "a5d51153-b3bd-4d7c-a0e8-5151807d1608")
 	)
-	(text "Test pads TP1-TP8 (bottom side, 1.8 V): flash the Acconeer I2C distance detector\nvia ROM bootloader (TP4 BOOT0 to TP7 1V8, pulse TP3 NRST, 1.8 V USB-UART on TP5 TX / TP6 RX)\nor via SWD (TP1/TP2/TP3, debugger set to 1.8 V). I2C_ADDRESS open = 0x52."
+	(text "Test pads TP1-TP8 (bottom side, 1.8 V): flash the Acconeer I2C distance detector\nvia ROM bootloader (TP4 BOOT0 to TP7 1V8, pulse TP3 NRST, 1.8 V USB-UART on TP5 TX / TP6 RX)\nor via SWD (TP1/TP2/TP3, debugger set to 1.8 V). I2C_ADDRESS open = 0x52.\nBench power with the FFC out: TP10 VBAT 3.0-4.2 V, TP9 VSENS 3.0 V, TP8 GND (TP9 and TP10 are on the root sheet)."
 		(exclude_from_sim no)
 		(at 190.5 154.94 0)
 		(effects (font (size 1.27 1.27)) (justify left top))
