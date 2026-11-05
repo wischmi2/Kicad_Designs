@@ -91,11 +91,11 @@ No LCSC numbers were added (DigiKey/Mouser are the sources for this board).
 1. Power: VSENS stays on, radar in hibernate between readings (about 110 uA idle on the radar feather build: R19/R1 94 uA + module 17.7 uA, about 2.6 mAh a day).
 2. Finish: ENIG. Stencil: B-side, with reduced U1 apertures.
 3. Assembly: hotplate, module first; other F-side parts afterwards by hand or hot air.
-4. Flashing: J-Link over SWD (TP1, TP2, TP3, TP7, TP8). J-Link model and its VTref range at 1.8 V still to check. Every module has to be flashed: the datasheet says it's delivered with a bootloader (review S3).
+4. Flashing (changed 2026-11-04): 1.8 V USB-UART through the STM32 ROM bootloader (TP5 TX, TP6 RX, TP8 GND, TP4 BOOT0 held high to TP7 through a resistor, TP3 NRST as backup). Brian's programmer is the nRF9160 DK, whose on-board J-Link is restricted to Nordic targets per forum reports and SEGGER terms (not tried on the STM32L431). Candidate cable: FTDI TTL-232RG-VREG1V8-WE; its red VCC wire stays unconnected. Bench power 3.0 V on TP10 VBAT and TP9 VSENS. Connection method (soldered wires or pogo jig) not chosen yet. Every module has to be flashed: the datasheet says it's delivered with a bootloader (review S3).
 5. Field update of the XM125: opening the enclosure is OK. No CN1 change.
 6. Radar wall: PETG 1.5-1.6 mm, confirmed by a coupon test on a SparkFun breakout before the final print.
 7. Buying: SparkFun breakout now; XM125 modules when the board is ordered, with a spare. Brian orders.
 8. Review items to fix: B2, S3 test pads, S4, S5, S6, S7 (all done 2026-11-04). S8 left as is (0.13 mm gap, order at 4/4 mil).
 
 ## Questions for Brian
-1. J-Link model, to check VTref at 1.8 V.
+1. Flashing connection: soldered wires or a printed pogo jig (decision 4).
