@@ -6536,7 +6536,7 @@
 		(layer "B.Cu")
 		(uuid "c1262b18-6831-4cf0-b998-d6f0f9e5c027")
 		(at 108 121.43)
-		(descr "Acconeer XM125 Entry+ radar module, 28-pad LGA 18.6 x 15 mm, land pattern per XM125 datasheet v1.2 Fig 6.3 (pads 0.95 x 2.40, pitch 1.27, outer 16.89 / inner 12.09 mm, row span 17.46 mm). Pin numbering per Fig 2.3 (pin 1 bottom-left, top view). Body assumed centred on the pad field (SparkFun XM125.lbr agrees). A121 outline on F.Fab at datasheet Fig 6.1 position. Radiates broadside from the module top (component side, away from the host PCB).")
+		(descr "Acconeer XM125 Entry+ radar module, 28-pad LGA 18.6 x 15 mm, land pattern per XM125 datasheet v1.2 Fig 6.3 (pads 0.95 x 2.40, pitch 1.27, outer 16.89 / inner 12.09 mm, row span 17.46 mm). Pin numbering per Fig 2.3 (pin 1 bottom-left, top view). Body assumed centred on the pad field (SparkFun XM125.lbr agrees). A121 outline on F.Fab at datasheet Fig 6.1 position. Radiates broadside from the module top (component side, away from the host PCB). Paste: aperture pads 0.80 x 1.60 mm centred on row +-6.85 mm (module pad centre), not on the land; copper pads carry no paste. Reviewer judgement, Acconeer gives no stencil data.")
 		(tags "Acconeer XM125 A121 radar 60GHz LGA")
 		(property "Reference" "U1"
 			(at 0 0 180)
@@ -6545,7 +6545,7 @@
 			(effects
 				(font
 					(size 0.8 0.8)
-					(thickness 0.12)
+					(thickness 0.15)
 				)
 				(justify mirror)
 			)
@@ -6704,10 +6704,178 @@
 				(justify mirror)
 			)
 		)
+		(pad "" smd rect
+			(at -8.255 -6.85)
+			(size 0.8 1.6)
+			(layers "B.Paste")
+			(uuid "db7c6df1-2eb3-4b36-8b37-25bf2d7f87cc")
+		)
+		(pad "" smd rect
+			(at -8.255 6.85)
+			(size 0.8 1.6)
+			(layers "B.Paste")
+			(uuid "953c5490-9524-4615-bd14-55bd690af992")
+		)
+		(pad "" smd rect
+			(at -6.985 -6.85)
+			(size 0.8 1.6)
+			(layers "B.Paste")
+			(uuid "7bcc2595-60af-423c-bc8c-9e79d72fe908")
+		)
+		(pad "" smd rect
+			(at -6.985 6.85)
+			(size 0.8 1.6)
+			(layers "B.Paste")
+			(uuid "c7581e22-835f-4b6a-9f3c-dc8a52894eee")
+		)
+		(pad "" smd rect
+			(at -5.715 -6.85)
+			(size 0.8 1.6)
+			(layers "B.Paste")
+			(uuid "073eaf8c-a054-4cbd-aaa3-bbd88a20d72f")
+		)
+		(pad "" smd rect
+			(at -5.715 6.85)
+			(size 0.8 1.6)
+			(layers "B.Paste")
+			(uuid "2986f15c-9d53-4a42-8500-e247a48439cb")
+		)
+		(pad "" smd rect
+			(at -4.445 -6.85)
+			(size 0.8 1.6)
+			(layers "B.Paste")
+			(uuid "b5e7e38f-a9e3-4bd1-be45-45938c07b2b7")
+		)
+		(pad "" smd rect
+			(at -4.445 6.85)
+			(size 0.8 1.6)
+			(layers "B.Paste")
+			(uuid "a9c8ad63-761e-41dc-b929-3bbfa986e60d")
+		)
+		(pad "" smd rect
+			(at -3.175 -6.85)
+			(size 0.8 1.6)
+			(layers "B.Paste")
+			(uuid "f807fd46-e26a-4879-af9b-fa232259bdec")
+		)
+		(pad "" smd rect
+			(at -3.175 6.85)
+			(size 0.8 1.6)
+			(layers "B.Paste")
+			(uuid "753f3f93-a3e1-4dfa-b692-b74044ec8480")
+		)
+		(pad "" smd rect
+			(at -1.905 -6.85)
+			(size 0.8 1.6)
+			(layers "B.Paste")
+			(uuid "180af38c-8bd6-4e74-b39e-eec7821d42f4")
+		)
+		(pad "" smd rect
+			(at -1.905 6.85)
+			(size 0.8 1.6)
+			(layers "B.Paste")
+			(uuid "b451434f-f033-4454-a48d-c0db7f82ceec")
+		)
+		(pad "" smd rect
+			(at -0.635 -6.85)
+			(size 0.8 1.6)
+			(layers "B.Paste")
+			(uuid "cca76a79-8ec4-45d5-8fb9-325dfd440b11")
+		)
+		(pad "" smd rect
+			(at -0.635 6.85)
+			(size 0.8 1.6)
+			(layers "B.Paste")
+			(uuid "3f66fd18-3262-48bd-9daf-b47d8e197aac")
+		)
+		(pad "" smd rect
+			(at 0.635 -6.85)
+			(size 0.8 1.6)
+			(layers "B.Paste")
+			(uuid "5e54934a-13ef-47d8-8037-c053a86bc0f9")
+		)
+		(pad "" smd rect
+			(at 0.635 6.85)
+			(size 0.8 1.6)
+			(layers "B.Paste")
+			(uuid "69f4e870-8851-428f-86f4-7e2254807151")
+		)
+		(pad "" smd rect
+			(at 1.905 -6.85)
+			(size 0.8 1.6)
+			(layers "B.Paste")
+			(uuid "bd6d7646-1fc1-41eb-aaea-0f831dd42be2")
+		)
+		(pad "" smd rect
+			(at 1.905 6.85)
+			(size 0.8 1.6)
+			(layers "B.Paste")
+			(uuid "3c5f9e2e-6b4d-4075-b49b-4dc507084429")
+		)
+		(pad "" smd rect
+			(at 3.175 -6.85)
+			(size 0.8 1.6)
+			(layers "B.Paste")
+			(uuid "3aa0540a-bce0-425e-9b3f-1882dc1385b5")
+		)
+		(pad "" smd rect
+			(at 3.175 6.85)
+			(size 0.8 1.6)
+			(layers "B.Paste")
+			(uuid "be5953c3-1b39-45be-8a64-41b9e3393c53")
+		)
+		(pad "" smd rect
+			(at 4.445 -6.85)
+			(size 0.8 1.6)
+			(layers "B.Paste")
+			(uuid "7843996c-a4cb-4fe6-8a94-50272eedd023")
+		)
+		(pad "" smd rect
+			(at 4.445 6.85)
+			(size 0.8 1.6)
+			(layers "B.Paste")
+			(uuid "024aab78-d785-4816-b8d4-f1476a96a5f5")
+		)
+		(pad "" smd rect
+			(at 5.715 -6.85)
+			(size 0.8 1.6)
+			(layers "B.Paste")
+			(uuid "77427a5d-5164-4597-a0f7-bf056bf76d56")
+		)
+		(pad "" smd rect
+			(at 5.715 6.85)
+			(size 0.8 1.6)
+			(layers "B.Paste")
+			(uuid "936059c7-1abf-4071-a22b-e1ce7b36a349")
+		)
+		(pad "" smd rect
+			(at 6.985 -6.85)
+			(size 0.8 1.6)
+			(layers "B.Paste")
+			(uuid "29772791-bb5e-447c-beaa-765e8de4c7c7")
+		)
+		(pad "" smd rect
+			(at 6.985 6.85)
+			(size 0.8 1.6)
+			(layers "B.Paste")
+			(uuid "eb1be147-87c6-4692-81be-212971065a3e")
+		)
+		(pad "" smd rect
+			(at 8.255 -6.85)
+			(size 0.8 1.6)
+			(layers "B.Paste")
+			(uuid "d3e91c67-f7cb-476f-af88-f246e37ffafc")
+		)
+		(pad "" smd rect
+			(at 8.255 6.85)
+			(size 0.8 1.6)
+			(layers "B.Paste")
+			(uuid "9d8ae186-13bc-4b70-bf35-9f99ce804a6e")
+		)
 		(pad "1" smd roundrect
 			(at -8.255 -7.245)
 			(size 0.95 2.4)
-			(layers "B.Cu" "B.Mask" "B.Paste")
+			(layers "B.Cu" "B.Mask")
 			(roundrect_rratio 0.1)
 			(net "/Sensor/+1V8")
 			(uuid "4f40669f-3d61-44a7-af84-03b5ec278b6b")
@@ -6715,7 +6883,7 @@
 		(pad "2" smd roundrect
 			(at -6.985 -7.245)
 			(size 0.95 2.4)
-			(layers "B.Cu" "B.Mask" "B.Paste")
+			(layers "B.Cu" "B.Mask")
 			(roundrect_rratio 0.1)
 			(net "GND")
 			(uuid "2d9fa9b3-afe5-4730-8b21-5d3121667f4b")
@@ -6723,7 +6891,7 @@
 		(pad "3" smd roundrect
 			(at -5.715 -7.245)
 			(size 0.95 2.4)
-			(layers "B.Cu" "B.Mask" "B.Paste")
+			(layers "B.Cu" "B.Mask")
 			(roundrect_rratio 0.1)
 			(net "/Sensor/+1V8")
 			(uuid "2f59be80-96d6-4192-994a-35aeba5967e4")
@@ -6731,7 +6899,7 @@
 		(pad "4" smd roundrect
 			(at -4.445 -7.245)
 			(size 0.95 2.4)
-			(layers "B.Cu" "B.Mask" "B.Paste")
+			(layers "B.Cu" "B.Mask")
 			(roundrect_rratio 0.1)
 			(net "GND")
 			(uuid "fdbf4704-578a-4e7c-9fdc-7aae524b48c6")
@@ -6739,7 +6907,7 @@
 		(pad "5" smd roundrect
 			(at -3.175 -7.245)
 			(size 0.95 2.4)
-			(layers "B.Cu" "B.Mask" "B.Paste")
+			(layers "B.Cu" "B.Mask")
 			(roundrect_rratio 0.1)
 			(net "/Sensor/XM_UART_TX")
 			(uuid "23e1dbfb-acd7-4f55-a1ad-808b194dca22")
@@ -6747,7 +6915,7 @@
 		(pad "6" smd roundrect
 			(at -1.905 -7.245)
 			(size 0.95 2.4)
-			(layers "B.Cu" "B.Mask" "B.Paste")
+			(layers "B.Cu" "B.Mask")
 			(roundrect_rratio 0.1)
 			(net "/Sensor/XM_UART_RX")
 			(uuid "6fb09861-0087-4945-a082-58328e85ad91")
@@ -6755,7 +6923,7 @@
 		(pad "7" smd roundrect
 			(at -0.635 -7.245)
 			(size 0.95 2.4)
-			(layers "B.Cu" "B.Mask" "B.Paste")
+			(layers "B.Cu" "B.Mask")
 			(roundrect_rratio 0.1)
 			(net "GND")
 			(uuid "6374039b-f01f-4bf7-b4e1-8d5787c3a7d4")
@@ -6763,7 +6931,7 @@
 		(pad "8" smd roundrect
 			(at 0.635 -7.245)
 			(size 0.95 2.4)
-			(layers "B.Cu" "B.Mask" "B.Paste")
+			(layers "B.Cu" "B.Mask")
 			(roundrect_rratio 0.1)
 			(net "unconnected-(U1-UART_CTS-Pad8)")
 			(uuid "d0993e92-aad9-46ce-a5d3-9df54eff00d0")
@@ -6771,7 +6939,7 @@
 		(pad "9" smd roundrect
 			(at 1.905 -7.245)
 			(size 0.95 2.4)
-			(layers "B.Cu" "B.Mask" "B.Paste")
+			(layers "B.Cu" "B.Mask")
 			(roundrect_rratio 0.1)
 			(net "unconnected-(U1-UART_RTS-Pad9)")
 			(uuid "96982154-53a9-4a09-9df8-b8134c1ada4e")
@@ -6779,7 +6947,7 @@
 		(pad "10" smd roundrect
 			(at 3.175 -7.245)
 			(size 0.95 2.4)
-			(layers "B.Cu" "B.Mask" "B.Paste")
+			(layers "B.Cu" "B.Mask")
 			(roundrect_rratio 0.1)
 			(net "GND")
 			(uuid "e2f7024c-e637-4f34-83d3-9ddaa072999d")
@@ -6787,7 +6955,7 @@
 		(pad "11" smd roundrect
 			(at 4.445 -7.245)
 			(size 0.95 2.4)
-			(layers "B.Cu" "B.Mask" "B.Paste")
+			(layers "B.Cu" "B.Mask")
 			(roundrect_rratio 0.1)
 			(net "/Sensor/XM_SWDIO")
 			(uuid "31ac6470-0be1-4a15-8521-b376cb13ce96")
@@ -6795,7 +6963,7 @@
 		(pad "12" smd roundrect
 			(at 5.715 -7.245)
 			(size 0.95 2.4)
-			(layers "B.Cu" "B.Mask" "B.Paste")
+			(layers "B.Cu" "B.Mask")
 			(roundrect_rratio 0.1)
 			(net "/Sensor/XM_SWCLK")
 			(uuid "c6dab5bb-5313-4dc1-9f2f-4364de06bbec")
@@ -6803,7 +6971,7 @@
 		(pad "13" smd roundrect
 			(at 6.985 -7.245)
 			(size 0.95 2.4)
-			(layers "B.Cu" "B.Mask" "B.Paste")
+			(layers "B.Cu" "B.Mask")
 			(roundrect_rratio 0.1)
 			(net "GND")
 			(uuid "5dcead83-6854-46b5-a953-61bf9f7885f9")
@@ -6811,7 +6979,7 @@
 		(pad "14" smd roundrect
 			(at 8.255 -7.245)
 			(size 0.95 2.4)
-			(layers "B.Cu" "B.Mask" "B.Paste")
+			(layers "B.Cu" "B.Mask")
 			(roundrect_rratio 0.1)
 			(net "/Sensor/XM_NRESET")
 			(uuid "fad994b7-f1c4-4dc7-a9ba-e780838683d2")
@@ -6819,7 +6987,7 @@
 		(pad "15" smd roundrect
 			(at 8.255 7.245)
 			(size 0.95 2.4)
-			(layers "B.Cu" "B.Mask" "B.Paste")
+			(layers "B.Cu" "B.Mask")
 			(roundrect_rratio 0.1)
 			(net "/Sensor/XM_WAKE")
 			(uuid "c9a44bc9-4b57-4a76-9170-a6708d077517")
@@ -6827,7 +6995,7 @@
 		(pad "16" smd roundrect
 			(at 6.985 7.245)
 			(size 0.95 2.4)
-			(layers "B.Cu" "B.Mask" "B.Paste")
+			(layers "B.Cu" "B.Mask")
 			(roundrect_rratio 0.1)
 			(net "GND")
 			(uuid "74799310-5ba8-46aa-8eea-fb45abaa27dc")
@@ -6835,7 +7003,7 @@
 		(pad "17" smd roundrect
 			(at 5.715 7.245)
 			(size 0.95 2.4)
-			(layers "B.Cu" "B.Mask" "B.Paste")
+			(layers "B.Cu" "B.Mask")
 			(roundrect_rratio 0.1)
 			(net "/Sensor/XM_SCL")
 			(uuid "02628e16-8dde-4c77-ab71-190db7ff3461")
@@ -6843,7 +7011,7 @@
 		(pad "18" smd roundrect
 			(at 4.445 7.245)
 			(size 0.95 2.4)
-			(layers "B.Cu" "B.Mask" "B.Paste")
+			(layers "B.Cu" "B.Mask")
 			(roundrect_rratio 0.1)
 			(net "/Sensor/XM_SDA")
 			(uuid "ab679bcd-9b3a-4075-b3fa-da6ba324bec6")
@@ -6851,7 +7019,7 @@
 		(pad "19" smd roundrect
 			(at 3.175 7.245)
 			(size 0.95 2.4)
-			(layers "B.Cu" "B.Mask" "B.Paste")
+			(layers "B.Cu" "B.Mask")
 			(roundrect_rratio 0.1)
 			(net "GND")
 			(uuid "1706914c-ce6e-4fa6-92a3-1648c0b3bdc5")
@@ -6859,7 +7027,7 @@
 		(pad "20" smd roundrect
 			(at 1.905 7.245)
 			(size 0.95 2.4)
-			(layers "B.Cu" "B.Mask" "B.Paste")
+			(layers "B.Cu" "B.Mask")
 			(roundrect_rratio 0.1)
 			(net "unconnected-(U1-I2C_ADDRESS-Pad20)")
 			(uuid "1ad6fff7-5f2d-4618-9973-1750a76f541a")
@@ -6867,7 +7035,7 @@
 		(pad "21" smd roundrect
 			(at 0.635 7.245)
 			(size 0.95 2.4)
-			(layers "B.Cu" "B.Mask" "B.Paste")
+			(layers "B.Cu" "B.Mask")
 			(roundrect_rratio 0.1)
 			(net "unconnected-(U1-DEBUG_UART_RX-Pad21)")
 			(uuid "766de037-43cb-4a2d-b4df-5db4b750bdca")
@@ -6875,7 +7043,7 @@
 		(pad "22" smd roundrect
 			(at -0.635 7.245)
 			(size 0.95 2.4)
-			(layers "B.Cu" "B.Mask" "B.Paste")
+			(layers "B.Cu" "B.Mask")
 			(roundrect_rratio 0.1)
 			(net "GND")
 			(uuid "2b79c68d-051b-4766-a464-533febf12217")
@@ -6883,7 +7051,7 @@
 		(pad "23" smd roundrect
 			(at -1.905 7.245)
 			(size 0.95 2.4)
-			(layers "B.Cu" "B.Mask" "B.Paste")
+			(layers "B.Cu" "B.Mask")
 			(roundrect_rratio 0.1)
 			(net "unconnected-(U1-DEBUG_UART_TX-Pad23)")
 			(uuid "bd3978f3-f0f1-4a60-b63e-a5b950234492")
@@ -6891,7 +7059,7 @@
 		(pad "24" smd roundrect
 			(at -3.175 7.245)
 			(size 0.95 2.4)
-			(layers "B.Cu" "B.Mask" "B.Paste")
+			(layers "B.Cu" "B.Mask")
 			(roundrect_rratio 0.1)
 			(net "unconnected-(U1-MISC_GPIO0-Pad24)")
 			(uuid "3feaadca-33bb-4ada-8ebf-4b352a357ce6")
@@ -6899,7 +7067,7 @@
 		(pad "25" smd roundrect
 			(at -4.445 7.245)
 			(size 0.95 2.4)
-			(layers "B.Cu" "B.Mask" "B.Paste")
+			(layers "B.Cu" "B.Mask")
 			(roundrect_rratio 0.1)
 			(net "unconnected-(U1-MISC_GPIO1-Pad25)")
 			(uuid "f7062924-5d69-4feb-9adc-4c4e00c86bf5")
@@ -6907,7 +7075,7 @@
 		(pad "26" smd roundrect
 			(at -5.715 7.245)
 			(size 0.95 2.4)
-			(layers "B.Cu" "B.Mask" "B.Paste")
+			(layers "B.Cu" "B.Mask")
 			(roundrect_rratio 0.1)
 			(net "/Sensor/XM_BOOT0")
 			(uuid "ea2051ba-eb03-4666-b95f-fb1de4566493")
@@ -6915,7 +7083,7 @@
 		(pad "27" smd roundrect
 			(at -6.985 7.245)
 			(size 0.95 2.4)
-			(layers "B.Cu" "B.Mask" "B.Paste")
+			(layers "B.Cu" "B.Mask")
 			(roundrect_rratio 0.1)
 			(net "GND")
 			(uuid "50dcccfc-9a13-4d84-8dca-6317c019a539")
@@ -6923,7 +7091,7 @@
 		(pad "28" smd roundrect
 			(at -8.255 7.245)
 			(size 0.95 2.4)
-			(layers "B.Cu" "B.Mask" "B.Paste")
+			(layers "B.Cu" "B.Mask")
 			(roundrect_rratio 0.1)
 			(net "/Sensor/XM_INT")
 			(uuid "2e0221af-2796-4b9d-acf7-f7c85b7f7277")
