@@ -773,3 +773,9 @@ C43 is the single 220 uF 1206 and derates to about 54 uF at 4.2 V, below the AEM
 - Radar build, for the water level board: R15, R16, R17 and R18 not fitted; R19 stays. Same bare board and Gerbers. Mark these boards by hand.
 - The schematic and BOM show the standard build. For a radar feather, buy and fit four fewer resistors.
 - Details: Sensor_Boards\CN1_SENSOR_CONNECTOR.md, Feather builds. Review: shared\reports\2026-11-02-review-feather-water-level.md, B1 and S2.
+
+## Next-revision ideas (2026-11-07, Brian)
+- **J3, the 10-pin 1.27 mm SWD header (FTSH-105):** consider replacing it with a Tag-Connect TC2030 footprint (legged, standard Tag-Connect SWD pinout: 1 VTref, 2 SWDIO, 3 nRESET, 4 SWCLK, 5 GND, 6 SWO). It is smaller and needs no fitted part. Flash through the TC2030-IDC cable and the SWD section of the prog_adapter board to the 9160 DK Debug out. No change on the 10-29 fab board.
+- **IC1 AEM10330 land:** change to the datasheet pattern (Fig 23) and the exposed-pad vias to 0.5/0.2 (2026-11-07 pre-order check N1, N5).
+- **Board name and revision on the silk** (pre-order check N6).
+- **DigiKey/Mouser parts:** J1 GCT USB4105-GF-A fits the current footprint. R11 could be the Abracon ASWD-S2-0002-T (pad fit unverified). RF1 has no DigiKey/Mouser match yet. See shared\design\dk_mouser_alternates_2026-11-07.md.
