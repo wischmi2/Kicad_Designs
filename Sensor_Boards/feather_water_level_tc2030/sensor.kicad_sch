@@ -1,0 +1,4319 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "0c5e6578-0c9f-40e5-832f-fad6dbf55769")
+	(paper "A4")
+	(title_block
+		(title "Sensor (water level, XM125 60 GHz radar, non-isolated)")
+		(date "2026-10-30")
+		(rev "0.2")
+		(company "Feather water level")
+		(comment 1 "Acconeer XM125 on the bottom side, radiating down through the enclosure")
+	)
+	(lib_symbols
+		(symbol "Connector:TestPoint"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0.762)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "TP"
+			(at 0 6.858 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 0 5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 5.08 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 5.08 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "test point tp"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "Pin* Test*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "TestPoint_0_1"
+			(circle
+				(center 0 3.302)
+				(radius 0.762)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "TestPoint_1_1"
+			(pin passive line
+				(at 0 0 90)
+				(length 2.54)
+				(name "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+		(symbol "Device:C"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0.254)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "C"
+			(at 0.635 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C"
+			(at 0.635 -2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 0.9652 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "cap capacitor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "C_*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "C_0_1"
+			(polyline
+				(pts
+					(xy -2.032 0.762) (xy 2.032 0.762)
+				)
+				(stroke
+					(width 0.508)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -2.032 -0.762) (xy 2.032 -0.762)
+				)
+				(stroke
+					(width 0.508)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "C_1_1"
+			(pin passive line
+				(at 0 3.81 270)
+				(length 2.794)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -3.81 90)
+				(length 2.794)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+		(symbol "Device:R"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "R"
+			(at 2.032 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R"
+			(at 0 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at -1.778 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "R res resistor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "R_*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "R_0_1"
+			(rectangle
+				(start -1.016 -2.54)
+				(end 1.016 2.54)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "R_1_1"
+			(pin passive line
+				(at 0 3.81 270)
+				(length 1.27)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -3.81 90)
+				(length 1.27)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+		(symbol "Logic_LevelTranslator:SN74LVC1T45DBV"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "U"
+			(at -6.35 8.89 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SN74LVC1T45DBV"
+			(at 3.81 8.89 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6"
+			(at 0 -11.43 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/sn74lvc1t45.pdf"
+			(at -22.86 -16.51 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Single-Bit Dual-Supply Bus Transceiver With Configurable Voltage Translation and 3-State Outputs, SOT-23-6"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "Level-Shifter CMOS-TTL-Translation"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "SOT?23*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "SN74LVC1T45DBV_0_1"
+			(rectangle
+				(start -7.62 7.62)
+				(end 7.62 -7.62)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+			(polyline
+				(pts
+					(xy -2.54 0) (xy -2.54 1.016) (xy -0.762 1.016)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -0.762 0) (xy -0.762 2.032) (xy 1.016 1.016) (xy -0.762 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -0.762 -1.016) (xy -2.54 -1.016) (xy -2.54 0) (xy -4.572 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 1.016 1.016) (xy 2.794 1.016) (xy 2.794 0) (xy 4.064 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 1.016 0) (xy 1.016 -1.778) (xy 1.016 -2.032) (xy -0.762 -1.016) (xy 1.016 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 2.794 0) (xy 2.794 -1.016) (xy 1.016 -1.016)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "SN74LVC1T45DBV_1_1"
+			(pin power_in line
+				(at -2.54 10.16 270)
+				(length 2.54)
+				(name "VCCA"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at 0 -10.16 90)
+				(length 2.54)
+				(name "GND"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin bidirectional line
+				(at -10.16 0 0)
+				(length 2.54)
+				(name "A"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin bidirectional line
+				(at 10.16 0 180)
+				(length 2.54)
+				(name "B"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at -10.16 -5.08 0)
+				(length 2.54)
+				(name "DIR"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at 2.54 10.16 270)
+				(length 2.54)
+				(name "VCCB"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+		(symbol "Transistor_FET:Q_NMOS_GSD"
+		(pin_names
+			(offset 0)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "Q"
+			(at 5.08 1.905 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Q_NMOS_GSD"
+			(at 5.08 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 5.08 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "N-MOSFET transistor, gate/source/drain"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "transistor NMOS N-MOS N-MOSFET"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "Q_NMOS_GSD_0_1"
+			(polyline
+				(pts
+					(xy 0.254 1.905) (xy 0.254 -1.905)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0.254 0) (xy -2.54 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0.762 2.286) (xy 0.762 1.27)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0.762 0.508) (xy 0.762 -0.508)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0.762 -1.27) (xy 0.762 -2.286)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type outline)
+				)
+			)
+			(circle
+				(center 1.651 0)
+				(radius 2.794)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 2.54 2.54) (xy 2.54 1.778)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(circle
+				(center 2.54 1.778)
+				(radius 0.254)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type outline)
+				)
+			)
+			(circle
+				(center 2.54 -1.778)
+				(radius 0.254)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type outline)
+				)
+			)
+			(polyline
+				(pts
+					(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 2.921 0.381) (xy 3.683 0.381)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "Q_NMOS_GSD_1_1"
+			(pin input line
+				(at -5.08 0 0)
+				(length 2.54)
+				(name "G"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 2.54 -5.08 90)
+				(length 2.54)
+				(name "S"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 2.54 5.08 270)
+				(length 2.54)
+				(name "D"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+		(symbol "feather_water_level:NCP161ASN"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "U"
+			(at -7.62 6.35 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "NCP161ASN180T1G"
+			(at -7.62 -8.89 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no) (hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/ncp161-d.pdf"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no) (hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Description" "450 mA ultra-low-noise LDO, fixed output, EN, active discharge (A version), TSOP-5/SOT-23-5"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no) (hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "LDO regulator"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no) (hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "NCP161ASN_0_1"
+			(rectangle (start -7.62 5.08) (end 7.62 -7.62)
+				(stroke (width 0.254) (type default))
+				(fill (type background))
+			)
+		)
+		(symbol "NCP161ASN_1_1"
+			(pin power_in line
+				(at -10.16 2.54 0)
+				(length 2.54)
+				(name "IN" (effects (font (size 1.27 1.27))))
+				(number "1" (effects (font (size 1.27 1.27))))
+			)
+			(pin input line
+				(at -10.16 -2.54 0)
+				(length 2.54)
+				(name "EN" (effects (font (size 1.27 1.27))))
+				(number "3" (effects (font (size 1.27 1.27))))
+			)
+			(pin power_in line
+				(at 0 -10.16 90)
+				(length 2.54)
+				(name "GND" (effects (font (size 1.27 1.27))))
+				(number "2" (effects (font (size 1.27 1.27))))
+			)
+			(pin power_out line
+				(at 10.16 2.54 180)
+				(length 2.54)
+				(name "OUT" (effects (font (size 1.27 1.27))))
+				(number "5" (effects (font (size 1.27 1.27))))
+			)
+			(pin no_connect line
+				(at 10.16 -2.54 180)
+				(length 2.54)
+				(name "NC" (effects (font (size 1.27 1.27))))
+				(number "4" (effects (font (size 1.27 1.27))))
+			)
+		)
+		(embedded_fonts no)
+	)
+		(symbol "feather_water_level:TCA9406DCT"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "U"
+			(at -10.16 11.43 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "TCA9406DCTR"
+			(at -10.16 -11.43 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Package_SO:SSOP-8_2.95x2.8mm_P0.65mm"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no) (hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tca9406.pdf"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no) (hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Description" "2-bit bidirectional I2C level translator, 10k internal pull-ups, Ioff, SM8 (DCT)"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no) (hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "I2C level translator"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no) (hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "TCA9406DCT_0_1"
+			(rectangle (start -10.16 10.16) (end 10.16 -10.16)
+				(stroke (width 0.254) (type default))
+				(fill (type background))
+			)
+		)
+		(symbol "TCA9406DCT_1_1"
+			(pin power_in line
+				(at -12.7 7.62 0)
+				(length 2.54)
+				(name "VCCA" (effects (font (size 1.27 1.27))))
+				(number "3" (effects (font (size 1.27 1.27))))
+			)
+			(pin bidirectional line
+				(at -12.7 2.54 0)
+				(length 2.54)
+				(name "SDA_A" (effects (font (size 1.27 1.27))))
+				(number "4" (effects (font (size 1.27 1.27))))
+			)
+			(pin bidirectional line
+				(at -12.7 0 0)
+				(length 2.54)
+				(name "SCL_A" (effects (font (size 1.27 1.27))))
+				(number "5" (effects (font (size 1.27 1.27))))
+			)
+			(pin input line
+				(at -12.7 -5.08 0)
+				(length 2.54)
+				(name "OE" (effects (font (size 1.27 1.27))))
+				(number "6" (effects (font (size 1.27 1.27))))
+			)
+			(pin power_in line
+				(at 12.7 7.62 180)
+				(length 2.54)
+				(name "VCCB" (effects (font (size 1.27 1.27))))
+				(number "7" (effects (font (size 1.27 1.27))))
+			)
+			(pin bidirectional line
+				(at 12.7 2.54 180)
+				(length 2.54)
+				(name "SDA_B" (effects (font (size 1.27 1.27))))
+				(number "1" (effects (font (size 1.27 1.27))))
+			)
+			(pin bidirectional line
+				(at 12.7 0 180)
+				(length 2.54)
+				(name "SCL_B" (effects (font (size 1.27 1.27))))
+				(number "8" (effects (font (size 1.27 1.27))))
+			)
+			(pin power_in line
+				(at 0 -12.7 90)
+				(length 2.54)
+				(name "GND" (effects (font (size 1.27 1.27))))
+				(number "2" (effects (font (size 1.27 1.27))))
+			)
+		)
+		(embedded_fonts no)
+	)
+		(symbol "feather_water_level:XM125"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "U"
+			(at -12.7 29.21 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "XM125"
+			(at -12.7 -29.21 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "feather_water_level:Acconeer_XM125"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no) (hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "https://developer.acconeer.com/download/xm125-datasheet/"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no) (hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Description" "Acconeer XM125 Entry+ 60 GHz radar module (A121 + STM32L431), I2C/UART, LGA-28 18.6x15 mm"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no) (hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "radar A121 60GHz Acconeer"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no) (hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "XM125_0_1"
+			(rectangle (start -12.7 27.94) (end 12.7 -27.94)
+				(stroke (width 0.254) (type default))
+				(fill (type background))
+			)
+		)
+		(symbol "XM125_1_1"
+			(pin power_in line
+				(at -15.24 25.4 0)
+				(length 2.54)
+				(name "VIN" (effects (font (size 1.27 1.27))))
+				(number "1" (effects (font (size 1.27 1.27))))
+			)
+			(pin power_in line
+				(at -15.24 22.86 0)
+				(length 2.54)
+				(name "1V8" (effects (font (size 1.27 1.27))))
+				(number "3" (effects (font (size 1.27 1.27))))
+			)
+			(pin input line
+				(at -15.24 17.78 0)
+				(length 2.54)
+				(name "NRESET" (effects (font (size 1.27 1.27))))
+				(number "14" (effects (font (size 1.27 1.27))))
+			)
+			(pin input line
+				(at -15.24 15.24 0)
+				(length 2.54)
+				(name "WAKE_UP" (effects (font (size 1.27 1.27))))
+				(number "15" (effects (font (size 1.27 1.27))))
+			)
+			(pin output line
+				(at -15.24 12.7 0)
+				(length 2.54)
+				(name "MCU_INT" (effects (font (size 1.27 1.27))))
+				(number "28" (effects (font (size 1.27 1.27))))
+			)
+			(pin bidirectional line
+				(at -15.24 7.62 0)
+				(length 2.54)
+				(name "I2C_SCL" (effects (font (size 1.27 1.27))))
+				(number "17" (effects (font (size 1.27 1.27))))
+			)
+			(pin bidirectional line
+				(at -15.24 5.08 0)
+				(length 2.54)
+				(name "I2C_SDA" (effects (font (size 1.27 1.27))))
+				(number "18" (effects (font (size 1.27 1.27))))
+			)
+			(pin input line
+				(at -15.24 2.54 0)
+				(length 2.54)
+				(name "I2C_ADDRESS" (effects (font (size 1.27 1.27))))
+				(number "20" (effects (font (size 1.27 1.27))))
+			)
+			(pin output line
+				(at 15.24 25.4 180)
+				(length 2.54)
+				(name "UART_TX" (effects (font (size 1.27 1.27))))
+				(number "5" (effects (font (size 1.27 1.27))))
+			)
+			(pin input line
+				(at 15.24 22.86 180)
+				(length 2.54)
+				(name "UART_RX" (effects (font (size 1.27 1.27))))
+				(number "6" (effects (font (size 1.27 1.27))))
+			)
+			(pin input line
+				(at 15.24 20.32 180)
+				(length 2.54)
+				(name "UART_CTS" (effects (font (size 1.27 1.27))))
+				(number "8" (effects (font (size 1.27 1.27))))
+			)
+			(pin output line
+				(at 15.24 17.78 180)
+				(length 2.54)
+				(name "UART_RTS" (effects (font (size 1.27 1.27))))
+				(number "9" (effects (font (size 1.27 1.27))))
+			)
+			(pin bidirectional line
+				(at 15.24 12.7 180)
+				(length 2.54)
+				(name "SWD_IO" (effects (font (size 1.27 1.27))))
+				(number "11" (effects (font (size 1.27 1.27))))
+			)
+			(pin input line
+				(at 15.24 10.16 180)
+				(length 2.54)
+				(name "SWD_CLK" (effects (font (size 1.27 1.27))))
+				(number "12" (effects (font (size 1.27 1.27))))
+			)
+			(pin input line
+				(at 15.24 5.08 180)
+				(length 2.54)
+				(name "DEBUG_UART_RX" (effects (font (size 1.27 1.27))))
+				(number "21" (effects (font (size 1.27 1.27))))
+			)
+			(pin output line
+				(at 15.24 2.54 180)
+				(length 2.54)
+				(name "DEBUG_UART_TX" (effects (font (size 1.27 1.27))))
+				(number "23" (effects (font (size 1.27 1.27))))
+			)
+			(pin bidirectional line
+				(at 15.24 -2.54 180)
+				(length 2.54)
+				(name "MISC_GPIO0" (effects (font (size 1.27 1.27))))
+				(number "24" (effects (font (size 1.27 1.27))))
+			)
+			(pin bidirectional line
+				(at 15.24 -5.08 180)
+				(length 2.54)
+				(name "MISC_GPIO1" (effects (font (size 1.27 1.27))))
+				(number "25" (effects (font (size 1.27 1.27))))
+			)
+			(pin bidirectional line
+				(at 15.24 -7.62 180)
+				(length 2.54)
+				(name "MISC_GPIO2_BOOT0" (effects (font (size 1.27 1.27))))
+				(number "26" (effects (font (size 1.27 1.27))))
+			)
+			(pin power_in line
+				(at -10.16 -30.48 90)
+				(length 2.54)
+				(name "GND" (effects (font (size 1.27 1.27))))
+				(number "2" (effects (font (size 1.27 1.27))))
+			)
+			(pin power_in line
+				(at -7.62 -30.48 90)
+				(length 2.54)
+				(name "GND" (effects (font (size 1.27 1.27))))
+				(number "4" (effects (font (size 1.27 1.27))))
+			)
+			(pin power_in line
+				(at -5.08 -30.48 90)
+				(length 2.54)
+				(name "GND" (effects (font (size 1.27 1.27))))
+				(number "7" (effects (font (size 1.27 1.27))))
+			)
+			(pin power_in line
+				(at -2.54 -30.48 90)
+				(length 2.54)
+				(name "GND" (effects (font (size 1.27 1.27))))
+				(number "10" (effects (font (size 1.27 1.27))))
+			)
+			(pin power_in line
+				(at 0 -30.48 90)
+				(length 2.54)
+				(name "GND" (effects (font (size 1.27 1.27))))
+				(number "13" (effects (font (size 1.27 1.27))))
+			)
+			(pin power_in line
+				(at 2.54 -30.48 90)
+				(length 2.54)
+				(name "GND" (effects (font (size 1.27 1.27))))
+				(number "16" (effects (font (size 1.27 1.27))))
+			)
+			(pin power_in line
+				(at 5.08 -30.48 90)
+				(length 2.54)
+				(name "GND" (effects (font (size 1.27 1.27))))
+				(number "19" (effects (font (size 1.27 1.27))))
+			)
+			(pin power_in line
+				(at 7.62 -30.48 90)
+				(length 2.54)
+				(name "GND" (effects (font (size 1.27 1.27))))
+				(number "22" (effects (font (size 1.27 1.27))))
+			)
+			(pin power_in line
+				(at 10.16 -30.48 90)
+				(length 2.54)
+				(name "GND" (effects (font (size 1.27 1.27))))
+				(number "27" (effects (font (size 1.27 1.27))))
+			)
+		)
+		(embedded_fonts no)
+	)
+		(symbol "power:PWR_FLAG"
+		(power global)
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "#FLG"
+			(at 0 1.905 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 0 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "flag power"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "PWR_FLAG_0_0"
+			(pin power_out line
+				(at 0 0 90)
+				(length 0)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(symbol "PWR_FLAG_0_1"
+			(polyline
+				(pts
+					(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	)
+	(symbol
+		(lib_id "feather_water_level:NCP161ASN")
+		(at 50.8 38.1 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "2ceebb39-d050-42fa-a0a3-361a2621745e")
+		(property "Reference" "U2"
+			(at 48.26 30.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "NCP161ASN180T1G"
+			(at 48.26 50.8 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+			(at 50.8 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/ncp161-d.pdf"
+			(at 50.8 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "MPN" "NCP161ASN180T1G"
+			(at 50.8 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "onsemi"
+			(at 50.8 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "1"
+			(uuid "c98534cc-f6ee-40a0-82bc-67f050dd97bc")
+		)
+		(pin "3"
+			(uuid "467ed753-778c-4b59-8743-7e9df3cf88c7")
+		)
+		(pin "2"
+			(uuid "fad22c12-2a38-40b5-aa66-844933efefdb")
+		)
+		(pin "5"
+			(uuid "1dc624da-6cd6-417a-8d1b-47a7b3c22f3c")
+		)
+		(pin "4"
+			(uuid "54ea65d2-96cc-4e9f-b942-de18bb58175f")
+		)
+		(instances
+			(project "feather_water_level_tc2030"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 22.86 38.1 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "503fbe37-8eef-40a1-ad71-672f28ebe441")
+		(property "Reference" "C3"
+			(at 25.4 36.83 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "1uF"
+			(at 25.4 39.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 22.86 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "~"
+			(at 22.86 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "MPN" "CL05A105KO5NNNC"
+			(at 22.86 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 22.86 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Voltage" "16V"
+			(at 22.86 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "1"
+			(uuid "a1d7422b-22c6-4a32-8d0d-a0a2480c6976")
+		)
+		(pin "2"
+			(uuid "8368ab17-7b5a-4372-91fb-5eac1fd80f04")
+		)
+		(instances
+			(project "feather_water_level_tc2030"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "C3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 76.2 38.1 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "88ffc45d-dec5-475c-a5eb-cd12d74d79b3")
+		(property "Reference" "C4"
+			(at 78.74 36.83 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "1uF"
+			(at 78.74 39.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 76.2 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "~"
+			(at 76.2 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "MPN" "CL05A105KO5NNNC"
+			(at 76.2 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 76.2 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Voltage" "16V"
+			(at 76.2 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "1"
+			(uuid "6e9e9190-b31c-4150-ad84-f81ef7b083e9")
+		)
+		(pin "2"
+			(uuid "d395461c-c62c-4919-a854-f5d657cca51c")
+		)
+		(instances
+			(project "feather_water_level_tc2030"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "C4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 86.36 38.1 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "9dbd670f-93dc-4e81-ba42-ff2546d67d3f")
+		(property "Reference" "C5"
+			(at 88.9 36.83 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "10uF"
+			(at 88.9 39.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 86.36 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "~"
+			(at 86.36 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "MPN" "GRM155R60J106ME15D"
+			(at 86.36 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 86.36 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Voltage" "6.3V"
+			(at 86.36 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "1"
+			(uuid "57350834-27dc-4182-8ff3-dd2706a66ae5")
+		)
+		(pin "2"
+			(uuid "ec396628-94db-425e-98fc-c6eecec4011d")
+		)
+		(instances
+			(project "feather_water_level_tc2030"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "C5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 96.52 38.1 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "53f617e3-67ca-4984-b32f-31fd19afc9a7")
+		(property "Reference" "C6"
+			(at 99.06 36.83 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100nF"
+			(at 99.06 39.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 96.52 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "~"
+			(at 96.52 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "MPN" "GRM155R71A104KA01D"
+			(at 96.52 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 96.52 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Voltage" "10V"
+			(at 96.52 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "1"
+			(uuid "570731e1-3429-418f-a488-3ace839e6f70")
+		)
+		(pin "2"
+			(uuid "abf1c7ca-9624-443c-8704-3292b5f50037")
+		)
+		(instances
+			(project "feather_water_level_tc2030"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "C6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 22.86 22.86 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "d711c2aa-b93f-4ca3-b55e-2fd534d6ddcb")
+		(property "Reference" "#FLG02"
+			(at 20.32 15.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "PWR_FLAG"
+			(at 20.32 30.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 22.86 22.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "~"
+			(at 22.86 22.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "1"
+			(uuid "f5080c8f-784b-4f4a-8efc-287e763f6023")
+		)
+		(instances
+			(project "feather_water_level_tc2030"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "#FLG02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 35.56 22.86 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "5d4f54be-ba13-4569-bbd7-5a0017f9f702")
+		(property "Reference" "#FLG03"
+			(at 33.02 15.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "PWR_FLAG"
+			(at 33.02 30.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 35.56 22.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "~"
+			(at 35.56 22.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "1"
+			(uuid "35d11b8e-d60f-40e9-963d-1e7dd45edbf1")
+		)
+		(instances
+			(project "feather_water_level_tc2030"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "#FLG03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "feather_water_level:TCA9406DCT")
+		(at 50.8 81.28 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "550b8e44-d1d8-4018-9411-20fbc5ba7924")
+		(property "Reference" "U3"
+			(at 48.26 71.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "TCA9406DCTR"
+			(at 48.26 96.52 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Package_SO:SSOP-8_2.95x2.8mm_P0.65mm"
+			(at 50.8 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tca9406.pdf"
+			(at 50.8 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "MPN" "TCA9406DCTR"
+			(at 50.8 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 50.8 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "3"
+			(uuid "da3612a3-3eef-4c81-a718-ec8e419f3379")
+		)
+		(pin "4"
+			(uuid "ef9a6ed4-75b2-461b-aedb-69cbe59be062")
+		)
+		(pin "5"
+			(uuid "be4b79d3-e809-4ffe-a0c9-d5ab4339b952")
+		)
+		(pin "6"
+			(uuid "572fc0e6-ba88-494d-a832-d6d37f4267cd")
+		)
+		(pin "7"
+			(uuid "cfc0655e-64b9-4cb2-9be6-7ff90048fedc")
+		)
+		(pin "1"
+			(uuid "dcf2d14c-7a6e-4b94-997b-1dfcdd398c38")
+		)
+		(pin "8"
+			(uuid "ad1fa3a0-f82c-491f-8518-4ec3eab8dc88")
+		)
+		(pin "2"
+			(uuid "24ef70b0-be64-4937-a03f-a9d937956fc0")
+		)
+		(instances
+			(project "feather_water_level_tc2030"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "U3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 22.86 81.28 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b36893fc-28ff-4ff1-aff2-5b2bd5255cbf")
+		(property "Reference" "C7"
+			(at 25.4 80.01 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100nF"
+			(at 25.4 82.55 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 22.86 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "~"
+			(at 22.86 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "MPN" "GRM155R71A104KA01D"
+			(at 22.86 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 22.86 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Voltage" "10V"
+			(at 22.86 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "1"
+			(uuid "b23d318b-7d68-4aa0-b929-f13d3019a06e")
+		)
+		(pin "2"
+			(uuid "234e4e3a-d78f-44db-a859-f281c02a1880")
+		)
+		(instances
+			(project "feather_water_level_tc2030"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "C7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 81.28 81.28 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "74f73e3e-9054-483b-a4ac-7ea7397347a3")
+		(property "Reference" "C8"
+			(at 83.82 80.01 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100nF"
+			(at 83.82 82.55 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 81.28 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "~"
+			(at 81.28 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "MPN" "GRM155R71A104KA01D"
+			(at 81.28 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 81.28 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Voltage" "10V"
+			(at 81.28 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "1"
+			(uuid "51461033-429a-4a61-89c7-76b8a18b1a42")
+		)
+		(pin "2"
+			(uuid "37139784-df45-46f7-9539-95f358e48e79")
+		)
+		(instances
+			(project "feather_water_level_tc2030"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "C8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Logic_LevelTranslator:SN74LVC1T45DBV")
+		(at 50.8 124.46 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "51ff24ef-2a94-4495-9e7b-a6cd5f499cf8")
+		(property "Reference" "U4"
+			(at 48.26 111.76 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "SN74AXC1T45DBVR"
+			(at 48.26 137.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6"
+			(at 50.8 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/sn74axc1t45.pdf"
+			(at 50.8 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "MPN" "SN74AXC1T45DBVR"
+			(at 50.8 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 50.8 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "1"
+			(uuid "db5833fa-eca0-4d8b-8fb2-91f852be1e68")
+		)
+		(pin "2"
+			(uuid "301435c2-8a46-4161-ad54-26b572afdd46")
+		)
+		(pin "3"
+			(uuid "d6ddb703-a19b-437d-897a-d656fe48c79a")
+		)
+		(pin "4"
+			(uuid "405b4fce-888f-4693-84fc-af821fb5a661")
+		)
+		(pin "5"
+			(uuid "623b786a-ef9f-4d63-b362-dfa1c5a3ba9f")
+		)
+		(pin "6"
+			(uuid "c9c15dc4-1ab4-4d9f-acc5-5df1de3db0d2")
+		)
+		(instances
+			(project "feather_water_level_tc2030"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "U4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 30.48 132.08 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "2f6e0e7e-c315-4c95-916c-3a29750e1e1a")
+		(property "Reference" "R3"
+			(at 33.02 130.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100k"
+			(at 33.02 133.35 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 30.48 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "~"
+			(at 30.48 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "MPN" "RC0402FR-07100KL"
+			(at 30.48 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "Yageo"
+			(at 30.48 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Tolerance" "1%"
+			(at 30.48 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "1"
+			(uuid "ca743ec3-b494-4139-9144-93152f8cec7e")
+		)
+		(pin "2"
+			(uuid "95d7bf70-1004-4878-9cb4-e2fbaa269146")
+		)
+		(instances
+			(project "feather_water_level_tc2030"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "R3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Logic_LevelTranslator:SN74LVC1T45DBV")
+		(at 50.8 165.1 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e4ef6c43-74b6-4e04-aca6-6cce4ce645dc")
+		(property "Reference" "U5"
+			(at 48.26 152.4 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "SN74AXC1T45DBVR"
+			(at 48.26 177.8 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6"
+			(at 50.8 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/sn74axc1t45.pdf"
+			(at 50.8 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "MPN" "SN74AXC1T45DBVR"
+			(at 50.8 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 50.8 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "1"
+			(uuid "53aa65fa-9dd1-465f-a90a-e3a03c1f0fe4")
+		)
+		(pin "2"
+			(uuid "7b1a2ee6-c1d4-434f-b8f0-23972bf40a88")
+		)
+		(pin "3"
+			(uuid "8d5d948d-44ea-4e3e-9128-8a962ef25f79")
+		)
+		(pin "4"
+			(uuid "61d3a9d6-1325-4ee8-a57c-4ee93951df5a")
+		)
+		(pin "5"
+			(uuid "0a8d56d3-0e96-4c48-8892-925624d41de6")
+		)
+		(pin "6"
+			(uuid "8926cf16-0872-407c-8da3-357f85835ce1")
+		)
+		(instances
+			(project "feather_water_level_tc2030"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "U5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 30.48 172.72 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5dd777e7-1923-46db-a5fd-7e685e44d173")
+		(property "Reference" "R4"
+			(at 33.02 171.45 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100k"
+			(at 33.02 173.99 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 30.48 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "~"
+			(at 30.48 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "MPN" "RC0402FR-07100KL"
+			(at 30.48 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "Yageo"
+			(at 30.48 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Tolerance" "1%"
+			(at 30.48 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "1"
+			(uuid "3bf3a221-0a02-42e7-815d-5680cf0001c5")
+		)
+		(pin "2"
+			(uuid "79afed28-f818-4a92-88a1-25db6dc86112")
+		)
+		(instances
+			(project "feather_water_level_tc2030"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 81.28 124.46 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "551e0df4-5a4f-4cd9-9423-ef2fdac56423")
+		(property "Reference" "C9"
+			(at 83.82 123.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100nF"
+			(at 83.82 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 81.28 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "~"
+			(at 81.28 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "MPN" "GRM155R71A104KA01D"
+			(at 81.28 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 81.28 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Voltage" "10V"
+			(at 81.28 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "1"
+			(uuid "05a11555-4190-4973-8b0b-4776f4bce532")
+		)
+		(pin "2"
+			(uuid "5c6c8fe0-b545-4381-b0e9-5e43009e675c")
+		)
+		(instances
+			(project "feather_water_level_tc2030"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "C9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 81.28 165.1 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8e76a6ee-1285-4ba5-a9b6-79b3cf0481cf")
+		(property "Reference" "C10"
+			(at 83.82 163.83 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100nF"
+			(at 83.82 166.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 81.28 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "~"
+			(at 81.28 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "MPN" "GRM155R71A104KA01D"
+			(at 81.28 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 81.28 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Voltage" "10V"
+			(at 81.28 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "1"
+			(uuid "a2a0282e-435e-4568-802d-63af60e76975")
+		)
+		(pin "2"
+			(uuid "30a50ba2-2bfe-4a62-aa8d-eefa83750a1e")
+		)
+		(instances
+			(project "feather_water_level_tc2030"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "C10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_FET:Q_NMOS_GSD")
+		(at 220.98 45.72 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d6e22ad8-aaf9-4104-b38a-6fbf30b4751e")
+		(property "Reference" "Q1"
+			(at 223.52 44.45 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "BSS138LT1G"
+			(at 223.52 46.99 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 220.98 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BSS138LT1-D.PDF"
+			(at 220.98 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "MPN" "BSS138LT1G"
+			(at 220.98 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "onsemi"
+			(at 220.98 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "1"
+			(uuid "c141318b-4e1f-4f51-bf02-192cd44e1b74")
+		)
+		(pin "2"
+			(uuid "6faf4bb7-ce66-4266-8dd1-461990630530")
+		)
+		(pin "3"
+			(uuid "862bd1f4-c9a2-4621-9fcb-ee9a245cd40f")
+		)
+		(instances
+			(project "feather_water_level_tc2030"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "Q1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 205.74 55.88 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "89044258-5768-45ec-84a4-8f07a60ecbc6")
+		(property "Reference" "R2"
+			(at 208.28 54.61 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100k"
+			(at 208.28 57.15 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 205.74 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "~"
+			(at 205.74 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "MPN" "RC0402FR-07100KL"
+			(at 205.74 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "Yageo"
+			(at 205.74 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Tolerance" "1%"
+			(at 205.74 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "1"
+			(uuid "1c530a01-e711-4b2c-b93d-da61e1e0203a")
+		)
+		(pin "2"
+			(uuid "5effa90b-b957-4f70-9560-f8997614b5bc")
+		)
+		(instances
+			(project "feather_water_level_tc2030"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "feather_water_level:XM125")
+		(at 152.4 101.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b3206ba5-a46f-4829-897b-3d0357bff909")
+		(property "Reference" "U1"
+			(at 149.86 73.66 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "XM125"
+			(at 149.86 134.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "feather_water_level:Acconeer_XM125"
+			(at 152.4 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "https://developer.acconeer.com/download/xm125-datasheet/"
+			(at 152.4 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "MPN" "XM125"
+			(at 152.4 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "Acconeer AB"
+			(at 152.4 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "1"
+			(uuid "9701e8a0-3f6a-4d0f-b5bb-3c4a540bb09e")
+		)
+		(pin "3"
+			(uuid "91603acf-8507-43cf-93f3-077e2784a8d2")
+		)
+		(pin "14"
+			(uuid "7b5881c0-4bc5-4748-8d9e-508de38e85bf")
+		)
+		(pin "15"
+			(uuid "1e075edb-655a-4f76-a2b0-57121e870823")
+		)
+		(pin "28"
+			(uuid "5bed07a6-35dc-4b44-adca-718a82496e2c")
+		)
+		(pin "17"
+			(uuid "1331765d-5e00-43da-8cd6-5bca36de3bc1")
+		)
+		(pin "18"
+			(uuid "d3fef85e-8b89-40fa-b16f-f06f563658f1")
+		)
+		(pin "20"
+			(uuid "57090dc7-be06-46bf-a358-ba1104f090fc")
+		)
+		(pin "5"
+			(uuid "da28fa57-35a9-4d6e-83e3-baa694699c56")
+		)
+		(pin "6"
+			(uuid "f4669b70-6cfb-4cef-8a52-0ea88c79ddd3")
+		)
+		(pin "8"
+			(uuid "9381ecec-35a6-41d1-892b-6d1c7915f367")
+		)
+		(pin "9"
+			(uuid "ca874fb5-49b6-460f-8339-5436cd03be68")
+		)
+		(pin "11"
+			(uuid "05bfedfb-f9a0-4f5f-ae4c-96014f634d9b")
+		)
+		(pin "12"
+			(uuid "10db136d-6737-48bf-91d9-ba540f429588")
+		)
+		(pin "21"
+			(uuid "06543435-00c2-4e52-b06d-3807cab72207")
+		)
+		(pin "23"
+			(uuid "ff845be4-4a8a-493f-a553-653bc84511d2")
+		)
+		(pin "24"
+			(uuid "85c46782-320a-42d7-b8da-431359b3253d")
+		)
+		(pin "25"
+			(uuid "406f80fd-0d7b-4c7a-86c5-4eceddd90936")
+		)
+		(pin "26"
+			(uuid "4119dcff-df30-4782-b7ef-7768971cf332")
+		)
+		(pin "2"
+			(uuid "d17438b6-3400-4670-befa-38296056a33a")
+		)
+		(pin "4"
+			(uuid "a37420b3-33dd-45f5-90a8-db3262772609")
+		)
+		(pin "7"
+			(uuid "819f7874-01e9-43a8-8a7d-d6b71f1bef32")
+		)
+		(pin "10"
+			(uuid "49c6ad18-efd4-43be-90bc-f5bdcdc00b5f")
+		)
+		(pin "13"
+			(uuid "1cc075bd-500d-4a13-9b2a-8057a43b58e9")
+		)
+		(pin "16"
+			(uuid "a9cbabb6-b51e-4568-87da-3458c3e9de37")
+		)
+		(pin "19"
+			(uuid "1e907adc-f84c-4e3e-9f58-b50696a81110")
+		)
+		(pin "22"
+			(uuid "4f38b75d-d23c-439a-8436-46f083c64bac")
+		)
+		(pin "27"
+			(uuid "4428dd8d-b75c-4f5e-bf47-b62418b3f43d")
+		)
+		(instances
+			(project "feather_water_level_tc2030"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 210.82 101.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "108f0319-522c-4763-8efb-3c1ae2e37d90")
+		(property "Reference" "TP1"
+			(at 213.36 100.33 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "SWDIO"
+			(at 213.36 102.87 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 210.82 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "~"
+			(at 210.82 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "MPN" "DNP (test pad)"
+			(at 210.82 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "-"
+			(at 210.82 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "1"
+			(uuid "d99fe6ad-1c70-4e96-b214-d39a8a0ddd28")
+		)
+		(instances
+			(project "feather_water_level_tc2030"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "TP1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 226.06 101.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "9f60497a-6a31-4e16-a765-191012422156")
+		(property "Reference" "TP2"
+			(at 228.6 100.33 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "SWCLK"
+			(at 228.6 102.87 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 226.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "~"
+			(at 226.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "MPN" "DNP (test pad)"
+			(at 226.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "-"
+			(at 226.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "1"
+			(uuid "4b4fb2cf-bba3-4d92-a3d0-d236e3e8968a")
+		)
+		(instances
+			(project "feather_water_level_tc2030"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "TP2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 241.3 101.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "1f459e2f-a97e-4f96-8377-edd136eaa33d")
+		(property "Reference" "TP3"
+			(at 243.84 100.33 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "NRST"
+			(at 243.84 102.87 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 241.3 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "~"
+			(at 241.3 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "MPN" "DNP (test pad)"
+			(at 241.3 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "-"
+			(at 241.3 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "1"
+			(uuid "df600634-75ab-4025-b1ec-3721ce3639b1")
+		)
+		(instances
+			(project "feather_water_level_tc2030"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "TP3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 256.54 101.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "fc88dcba-5b1a-4868-9d1b-78939656f527")
+		(property "Reference" "TP4"
+			(at 259.08 100.33 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "BOOT0"
+			(at 259.08 102.87 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 256.54 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "~"
+			(at 256.54 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "MPN" "DNP (test pad)"
+			(at 256.54 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "-"
+			(at 256.54 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "1"
+			(uuid "91bb6069-0984-4136-bd24-c961211ecaa0")
+		)
+		(instances
+			(project "feather_water_level_tc2030"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "TP4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 210.82 124.46 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "d76865b4-a638-484e-b628-4e89a42dc667")
+		(property "Reference" "TP5"
+			(at 213.36 123.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "TX"
+			(at 213.36 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 210.82 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "~"
+			(at 210.82 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "MPN" "DNP (test pad)"
+			(at 210.82 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "-"
+			(at 210.82 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "1"
+			(uuid "587be896-802d-4c72-a981-99abb57af001")
+		)
+		(instances
+			(project "feather_water_level_tc2030"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "TP5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 226.06 124.46 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "ac1453f0-948d-4fb1-873c-077c748f3bab")
+		(property "Reference" "TP6"
+			(at 228.6 123.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "RX"
+			(at 228.6 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 226.06 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "~"
+			(at 226.06 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "MPN" "DNP (test pad)"
+			(at 226.06 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "-"
+			(at 226.06 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "1"
+			(uuid "1b55762d-f47b-453a-ac2c-63797e35b2ff")
+		)
+		(instances
+			(project "feather_water_level_tc2030"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "TP6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 241.3 124.46 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "ecec0a15-d034-43d9-9783-64dff832f6c5")
+		(property "Reference" "TP7"
+			(at 243.84 123.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "1V8"
+			(at 243.84 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 241.3 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "~"
+			(at 241.3 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "MPN" "DNP (test pad)"
+			(at 241.3 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "-"
+			(at 241.3 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "1"
+			(uuid "9e80618d-1df8-4e3c-be08-949262be3f4a")
+		)
+		(instances
+			(project "feather_water_level_tc2030"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "TP7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 256.54 124.46 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "cfcbd368-7356-4504-924e-9a09673624aa")
+		(property "Reference" "TP8"
+			(at 259.08 123.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "GND"
+			(at 259.08 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 256.54 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "~"
+			(at 256.54 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "MPN" "DNP (test pad)"
+			(at 256.54 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "-"
+			(at 256.54 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "1"
+			(uuid "25b58d08-d5e6-4ac9-b1ad-e4fd7b522d56")
+		)
+		(instances
+			(project "feather_water_level_tc2030"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "TP8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "VBAT"
+		(shape bidirectional)
+		(at 40.64 35.56 180)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "ca35738d-c033-4f73-b889-0e120f591a41")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 40.64 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(global_label "VSENS"
+		(shape bidirectional)
+		(at 40.64 40.64 180)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "2dac1f4d-13c7-43fd-9da0-c2f720ed07d2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 40.64 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 50.8 48.26 270)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "907deb7d-b90a-4a4e-8994-2ccaf352e46f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 50.8 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(label "+1V8"
+		(at 60.96 35.56 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "26406980-ec7b-41e1-83f3-a83bcfcdb3cc")
+	)
+	(global_label "VBAT"
+		(shape bidirectional)
+		(at 22.86 34.29 90)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify left))
+		(uuid "73234cd2-e6e5-47f6-9d46-31a73addf8ca")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 22.86 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 22.86 41.91 270)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "76f496da-3c34-44bf-a7b0-0ef3ce45cd4e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 22.86 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(label "+1V8"
+		(at 76.2 34.29 90)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "8ea7a10f-22ac-44a7-8238-61a282b1e5a8")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 76.2 41.91 270)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "d6666c4a-f3da-4236-9c3c-7188566e5c34")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 76.2 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(label "+1V8"
+		(at 86.36 34.29 90)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "12e52189-7b3e-4d47-bd62-4899ad4c2ab4")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 86.36 41.91 270)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "0e04070d-744b-4759-89ee-be7b61a15a29")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 86.36 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(label "+1V8"
+		(at 96.52 34.29 90)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "765f0cf2-d165-4b22-95d3-718f172f0d6e")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 96.52 41.91 270)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "4d0b4a93-5983-4668-999a-f4a301069003")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 96.52 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(global_label "VBAT"
+		(shape bidirectional)
+		(at 22.86 22.86 270)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "63cef5eb-2782-4c72-83cf-a6a5ac503dbd")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 22.86 22.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(global_label "VSENS"
+		(shape bidirectional)
+		(at 35.56 22.86 270)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "4327a85f-e17c-4c9e-a3fa-3b334341c03e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 35.56 22.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(label "+1V8"
+		(at 38.1 73.66 180)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "da7406e7-f1ef-43d2-ac48-6ce7f27b7765")
+	)
+	(label "XM_SCL"
+		(at 38.1 78.74 180)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "4fef1dd5-9aa0-451c-872d-198f30d478c9")
+	)
+	(label "XM_SDA"
+		(at 38.1 81.28 180)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "73663eb1-7bea-4803-9ed9-885dd3ecbba8")
+	)
+	(label "+1V8"
+		(at 38.1 86.36 180)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "8bb292ea-d3df-4bf6-97f9-d50ca3a34732")
+	)
+	(global_label "VSENS"
+		(shape bidirectional)
+		(at 63.5 73.66 0)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify left))
+		(uuid "8fb55376-b076-4780-88fc-2fa7382215c6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 63.5 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+	)
+	(global_label "SENS_SCL"
+		(shape bidirectional)
+		(at 63.5 78.74 0)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify left))
+		(uuid "db07f091-816c-4473-a324-ece4141e2268")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 63.5 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+	)
+	(global_label "SENS_SDA"
+		(shape bidirectional)
+		(at 63.5 81.28 0)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify left))
+		(uuid "43927c47-d4bc-473f-aed3-6cbc7d198286")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 63.5 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 50.8 93.98 270)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "79fa207c-9c41-4422-87ca-da5fe9201dc1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 50.8 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(label "+1V8"
+		(at 22.86 77.47 90)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "6dba54b6-428e-4abf-be2d-957fc836bf14")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 22.86 85.09 270)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "69116a4a-d380-4aa7-b1f1-0ed95a7c3e2c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 22.86 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(global_label "VSENS"
+		(shape bidirectional)
+		(at 81.28 77.47 90)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify left))
+		(uuid "e31f360f-fb00-493e-a7f6-92f16bbc33f2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 81.28 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 81.28 85.09 270)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "8c83bdeb-1fef-4fbb-9926-b194bb111d60")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 81.28 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(global_label "VSENS"
+		(shape bidirectional)
+		(at 48.26 114.3 90)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify left))
+		(uuid "106aa65a-9d09-4150-9abb-dbcd8dbac011")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 48.26 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 50.8 134.62 270)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "22171dc9-a1e9-40d6-bddd-2e08aab1a17d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 50.8 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(global_label "RADAR_WAKE"
+		(shape bidirectional)
+		(at 40.64 124.46 180)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "b211dda6-465e-42f6-b607-6c250edb3863")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 40.64 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(label "XM_WAKE"
+		(at 60.96 124.46 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "5e01de93-19e4-4f40-b948-11933a98a710")
+	)
+	(global_label "VSENS"
+		(shape bidirectional)
+		(at 40.64 129.54 180)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "b0392f3e-7883-44d4-9739-e93ccbaf3464")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 40.64 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(label "+1V8"
+		(at 53.34 114.3 90)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "3d6f91ce-d388-43c7-b9d2-9888e0804ee2")
+	)
+	(global_label "RADAR_WAKE"
+		(shape bidirectional)
+		(at 30.48 128.27 90)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify left))
+		(uuid "bb748b34-c110-4b0c-8597-7f864739aa5c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 30.48 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 30.48 135.89 270)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "eff4672c-ace3-4fa9-b88f-0ed3cc3a2d7c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 30.48 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(label "+1V8"
+		(at 48.26 154.94 90)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "0041aeca-3bee-45e4-8791-80d8cb2b9d68")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 50.8 175.26 270)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "7d6a8100-c3f9-4685-801d-633f0bac4785")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 50.8 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(label "XM_INT"
+		(at 40.64 165.1 180)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "9467f208-5bb3-472e-85a5-33d4ea84c93e")
+	)
+	(global_label "SENS_INT"
+		(shape bidirectional)
+		(at 60.96 165.1 0)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify left))
+		(uuid "8d45f7e5-346c-41dd-8ca2-d5920f7679ae")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 60.96 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+	)
+	(label "+1V8"
+		(at 40.64 170.18 180)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "8e36378e-8d3e-4e3d-9fd6-f2b7d28c58a6")
+	)
+	(global_label "VSENS"
+		(shape bidirectional)
+		(at 53.34 154.94 90)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify left))
+		(uuid "d79ed652-286a-452c-8f78-f0aa8f19042b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 53.34 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+	)
+	(label "XM_INT"
+		(at 30.48 168.91 90)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "bd37dd43-7c26-404a-9d80-dde39887f0a7")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 30.48 176.53 270)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "b75d14fb-df3b-45c2-8207-02b28b0d7b87")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 30.48 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(global_label "VSENS"
+		(shape bidirectional)
+		(at 81.28 120.65 90)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify left))
+		(uuid "1164b887-b858-4e31-a2fd-c6389fbc5aa1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 81.28 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 81.28 128.27 270)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "ecfff945-0651-4fd3-b0d0-195cf9ce6c85")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 81.28 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(label "+1V8"
+		(at 81.28 161.29 90)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "a942a1b3-8698-4744-a2c5-8c7a6eef44c2")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 81.28 168.91 270)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "3897890f-8b16-4422-a263-7eabc8dc1171")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 81.28 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(global_label "RADAR_RST"
+		(shape bidirectional)
+		(at 215.9 45.72 180)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "da148424-35c3-4c33-8e46-d28ab5099864")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 215.9 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 223.52 50.8 270)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "add6a933-4e0f-4717-bf12-cce1b63e8b21")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 223.52 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(label "XM_NRESET"
+		(at 223.52 40.64 90)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "af78d63d-91d5-4cd8-9f72-fbb259a683e7")
+	)
+	(global_label "RADAR_RST"
+		(shape bidirectional)
+		(at 205.74 52.07 90)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify left))
+		(uuid "016cdf7c-846f-4dff-a506-3586ee7b25f2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 205.74 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 205.74 59.69 270)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "e11b0477-aedd-4f6a-8b8c-522a507cd664")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 205.74 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(label "+1V8"
+		(at 137.16 76.2 180)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "fe2fdec8-2594-4365-b16d-eeebddb6a0b6")
+	)
+	(label "+1V8"
+		(at 137.16 78.74 180)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "ca911f26-d416-4ec2-aeac-c8387757874b")
+	)
+	(label "XM_NRESET"
+		(at 137.16 83.82 180)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "1a6b2532-1380-4f23-a04b-57ca533781e9")
+	)
+	(label "XM_WAKE"
+		(at 137.16 86.36 180)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "83c627fd-f3dc-43c8-807f-5a17c16278ff")
+	)
+	(label "XM_INT"
+		(at 137.16 88.9 180)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "8bc19cb2-23e2-44ce-bb15-8d74d2b8b461")
+	)
+	(label "XM_SCL"
+		(at 137.16 93.98 180)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "3d645993-015f-4bc7-be67-54e6c915b0ed")
+	)
+	(label "XM_SDA"
+		(at 137.16 96.52 180)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "b5f5250a-d609-4111-8dca-5dbe98dc9202")
+	)
+	(label "XM_UART_TX"
+		(at 167.64 76.2 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "34411232-12b2-404a-8a9f-6da800ab53d1")
+	)
+	(label "XM_UART_RX"
+		(at 167.64 78.74 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "8b80dd61-b8e4-470d-811b-271d4f013ce9")
+	)
+	(label "XM_SWDIO"
+		(at 167.64 88.9 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "c21869b3-fb7c-4078-bf51-fd90f35f166d")
+	)
+	(label "XM_SWCLK"
+		(at 167.64 91.44 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "a70e6bcf-5198-4d8a-8e49-64f0e4756a74")
+	)
+	(label "XM_BOOT0"
+		(at 167.64 109.22 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "040d7a15-42e4-4471-be42-fad9a56678e0")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 142.24 132.08 270)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "e3a8fc5a-dbf9-40ec-bc36-38751f5afe96")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 142.24 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 144.78 132.08 270)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "ecfbba6d-6025-4058-872d-5aeccee5779c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 144.78 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 147.32 132.08 270)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "40e60b07-3814-483a-8321-c78c0df1446d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 147.32 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 149.86 132.08 270)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "53ac061a-c226-4b10-83c9-9733bd14dfec")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 149.86 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 152.4 132.08 270)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "d70ef155-fca7-4d25-8df1-02bd4857f55e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 152.4 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 154.94 132.08 270)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "67cbc09b-5f33-42f4-a5dd-87b8c662beb0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 154.94 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 157.48 132.08 270)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "c42dc069-2fb3-4f5a-8c76-e90c12974f23")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 157.48 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 160.02 132.08 270)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "8b4f0276-f449-4e20-ba15-b8cbf48cb371")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 160.02 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 162.56 132.08 270)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "c7ecc49c-e76b-4b17-aa3a-7cd6edbbec67")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 162.56 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(label "XM_SWDIO"
+		(at 210.82 101.6 270)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "c782c094-d7da-4d95-a53a-9767416fd287")
+	)
+	(label "XM_SWCLK"
+		(at 226.06 101.6 270)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "ad702e84-4747-4cca-ab54-1e54ebc09622")
+	)
+	(label "XM_NRESET"
+		(at 241.3 101.6 270)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "4b6eb357-1263-4739-938c-05dbb86fba5a")
+	)
+	(label "XM_BOOT0"
+		(at 256.54 101.6 270)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "e71033b6-4016-4c11-869d-2732407e57d0")
+	)
+	(label "XM_UART_TX"
+		(at 210.82 124.46 270)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "f5ca4874-6a51-4eb4-9336-dca1a406cf6f")
+	)
+	(label "XM_UART_RX"
+		(at 226.06 124.46 270)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "38488762-dfd9-4be6-be3f-d4e1660c6e3e")
+	)
+	(label "+1V8"
+		(at 241.3 124.46 270)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "b534bcfa-2a8a-4d11-84f8-2833a75e3b13")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 256.54 124.46 270)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "bda6a663-897f-406a-9192-1844fb4d18e0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 256.54 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(no_connect
+		(at 60.96 40.64)
+		(uuid "c7acd304-2dcf-4320-b7d2-4599cefaa3a4")
+	)
+	(no_connect
+		(at 137.16 99.06)
+		(uuid "224a740f-1787-4ae3-be81-574f7f0ef29d")
+	)
+	(no_connect
+		(at 167.64 81.28)
+		(uuid "ff1a60ad-711e-42aa-81aa-6971154e9e32")
+	)
+	(no_connect
+		(at 167.64 83.82)
+		(uuid "89f329d3-031a-4cc6-bbae-886a2fa294fa")
+	)
+	(no_connect
+		(at 167.64 96.52)
+		(uuid "ea760f91-6198-4669-a97f-a231a69e8bba")
+	)
+	(no_connect
+		(at 167.64 99.06)
+		(uuid "9967b9c7-04e5-476d-b921-95d6d281dc18")
+	)
+	(no_connect
+		(at 167.64 104.14)
+		(uuid "2a1eb445-08de-42e2-b294-8a3fed61bd23")
+	)
+	(no_connect
+		(at 167.64 106.68)
+		(uuid "fba3bf58-5960-42f6-a163-6287e560745a")
+	)
+	(text "XM125 radar water-level sensor. VBAT -> U2 1.8 V LDO, EN = VSENS: the module is unpowered while the host has VSENS off.\nXM125 VIN and 1V8 both on +1V8 (single 1.8 V supply, datasheet 3.1), so all module I/O is 1.8 V.\nU3 (I2C), U4 (WAKE_UP), U5 (MCU_INT): Ioff / VCC isolation, high-Z when either supply is off -> no back-powering."
+		(exclude_from_sim no)
+		(at 20.32 12.7 0)
+		(effects (font (size 1.27 1.27)) (justify left top))
+		(uuid "691ecbd4-e567-475a-bc14-352767f155b9")
+	)
+	(text "U3 channels swapped on purpose for layout: SDA_A/SDA_B carry SCL, SCL_A/SCL_B carry SDA\n(the two TCA9406 channels are identical open-drain translators)."
+		(exclude_from_sim no)
+		(at 20.32 101.6 0)
+		(effects (font (size 1.27 1.27)) (justify left top))
+		(uuid "71172f8a-d15c-4e1c-a3ae-a1759e0cb0b8")
+	)
+	(text "RADAR_RST high = XM125 held in reset (Q1 open drain on NRESET). The STM32 has its own NRST pull-up.\nThis board needs the radar feather build: R15, R16, R17, R18 not fitted (Sensor_Boards\CN1_SENSOR_CONNECTOR.md).\nOn that build R2 keeps Q1 off while the host pin floats. On a standard feather R18 holds RADAR_RST at about 2.7 V,\nso the module stays in reset until firmware drives SENS_CS low."
+		(exclude_from_sim no)
+		(at 190.5 20.32 0)
+		(effects (font (size 1.27 1.27)) (justify left top))
+		(uuid "a5d51153-b3bd-4d7c-a0e8-5151807d1608")
+	)
+	(text "Test pads TP1-TP8 (bottom side, 1.8 V): flash the Acconeer I2C distance detector\nvia ROM bootloader (TP4 BOOT0 to TP7 1V8, pulse TP3 NRST, 1.8 V USB-UART on TP5 TX / TP6 RX)\nor via SWD (TP1/TP2/TP3, debugger set to 1.8 V). I2C_ADDRESS open = 0x52.\nBench power with the FFC out: TP10 VBAT 3.0-4.2 V, TP9 VSENS 3.0 V, TP8 GND (TP9 and TP10 are on the root sheet)."
+		(exclude_from_sim no)
+		(at 190.5 154.94 0)
+		(effects (font (size 1.27 1.27)) (justify left top))
+		(uuid "67c0b2f0-9438-4b17-b209-104677cddd57")
+	)
+	(embedded_fonts no)
+)
