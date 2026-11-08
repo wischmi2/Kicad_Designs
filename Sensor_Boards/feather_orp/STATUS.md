@@ -129,7 +129,7 @@ Trial of option (c') from Sensor_Boards\feather_sensor_template\isolated_supply_
 - ERC (kicad-cli 10.0.4): **0 errors**, 39 warnings: 10 pin_to_pin (EasyEDA passives with input/unspecified pins, as the template), 9 footprint_link_issues + 9 lib_symbol_issues (easyeda2kicad / EasyEDA2Kicad libraries not registered on this PC), 7 isolated_pin_label (unused CN1 signals SENS_SCK/MOSI/MISO/CS/INT/AIN + VBAT), 4 lib_symbol_mismatch (GND power symbols).
 - DRC (kicad-cli 10.0.4, --schematic-parity --refill-zones): **0 errors, 0 unconnected, 0 parity**, 15 warnings: 9 lib_footprint_issues (easyeda2kicad library not registered), 6 silk_over_copper (EasyEDA pin-1 dots on C1, C5, R1, R3, R4, R5).
 - STEP: C:\Personal-Agents\shared\handoff\feather_orp\feather_orp_2026-10-26.step (board, holes, CN1, U3, U4). **J1 (SMA), U2 (no model) and the EasyEDA passives are missing**: the BWSMA-KWE-Z001 model the KiCad footprint points to isn't installed on this PC, and the easyeda2kicad 3D folder isn't set up.
-- Fab outputs: none.
+- Fab outputs: C:\Personal-Agents\shared\handoff\feather_orp\feather_orp_fab_2026-11-07.zip (16 files, made 2026-11-07 from commit cbf35b2 after the follow-up copper review; DRC without refill 0 errors / 0 unconnected / 0 parity). Superseded 2026-10-28 output is in handoff\archive\fab_2026-10-28\. ORDER: PCBWay 4-layer 1.6 mm, HASL WITH LEAD (the .gbrjob says ENIG; the order form is what counts), 4/4 mil.
 
 ## Open work
 - Design review (design-reviewer) before any fab output, especially the ORP footprint change and the guard pour.
