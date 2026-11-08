@@ -12,6 +12,280 @@
 		(comment 1 "Acconeer XM125 on the bottom side, radiating down through the enclosure")
 	)
 	(lib_symbols
+		(symbol "Connector_Generic:Conn_02x03_Odd_Even"
+				(pin_names
+					(offset 1.016)
+					(hide yes)
+				)
+				(exclude_from_sim no)
+				(in_bom yes)
+				(on_board yes)
+				(in_pos_files yes)
+				(duplicate_pin_numbers_are_jumpers no)
+				(property "Reference" "J"
+					(at 1.27 5.08 0)
+					(show_name no)
+					(do_not_autoplace no)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(property "Value" "Conn_02x03_Odd_Even"
+					(at 1.27 -5.08 0)
+					(show_name no)
+					(do_not_autoplace no)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(property "Footprint" ""
+					(at 0 0 0)
+					(show_name no)
+					(do_not_autoplace no)
+					(hide yes)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(property "Datasheet" ""
+					(at 0 0 0)
+					(show_name no)
+					(do_not_autoplace no)
+					(hide yes)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(property "Description" "Generic connector, double row, 02x03, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
+					(at 0 0 0)
+					(show_name no)
+					(do_not_autoplace no)
+					(hide yes)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(property "ki_keywords" "connector"
+					(at 0 0 0)
+					(show_name no)
+					(do_not_autoplace no)
+					(hide yes)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(property "ki_fp_filters" "Connector*:*_2x??_*"
+					(at 0 0 0)
+					(show_name no)
+					(do_not_autoplace no)
+					(hide yes)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(symbol "Conn_02x03_Odd_Even_1_1"
+					(rectangle
+						(start -1.27 3.81)
+						(end 3.81 -3.81)
+						(stroke
+							(width 0.254)
+							(type default)
+						)
+						(fill
+							(type background)
+						)
+					)
+					(rectangle
+						(start -1.27 2.667)
+						(end 0 2.413)
+						(stroke
+							(width 0.1524)
+							(type default)
+						)
+						(fill
+							(type none)
+						)
+					)
+					(rectangle
+						(start -1.27 0.127)
+						(end 0 -0.127)
+						(stroke
+							(width 0.1524)
+							(type default)
+						)
+						(fill
+							(type none)
+						)
+					)
+					(rectangle
+						(start -1.27 -2.413)
+						(end 0 -2.667)
+						(stroke
+							(width 0.1524)
+							(type default)
+						)
+						(fill
+							(type none)
+						)
+					)
+					(rectangle
+						(start 3.81 2.667)
+						(end 2.54 2.413)
+						(stroke
+							(width 0.1524)
+							(type default)
+						)
+						(fill
+							(type none)
+						)
+					)
+					(rectangle
+						(start 3.81 0.127)
+						(end 2.54 -0.127)
+						(stroke
+							(width 0.1524)
+							(type default)
+						)
+						(fill
+							(type none)
+						)
+					)
+					(rectangle
+						(start 3.81 -2.413)
+						(end 2.54 -2.667)
+						(stroke
+							(width 0.1524)
+							(type default)
+						)
+						(fill
+							(type none)
+						)
+					)
+					(pin passive line
+						(at -5.08 2.54 0)
+						(length 3.81)
+						(name "Pin_1"
+							(effects
+								(font
+									(size 1.27 1.27)
+								)
+							)
+						)
+						(number "1"
+							(effects
+								(font
+									(size 1.27 1.27)
+								)
+							)
+						)
+					)
+					(pin passive line
+						(at 7.62 2.54 180)
+						(length 3.81)
+						(name "Pin_2"
+							(effects
+								(font
+									(size 1.27 1.27)
+								)
+							)
+						)
+						(number "2"
+							(effects
+								(font
+									(size 1.27 1.27)
+								)
+							)
+						)
+					)
+					(pin passive line
+						(at -5.08 0 0)
+						(length 3.81)
+						(name "Pin_3"
+							(effects
+								(font
+									(size 1.27 1.27)
+								)
+							)
+						)
+						(number "3"
+							(effects
+								(font
+									(size 1.27 1.27)
+								)
+							)
+						)
+					)
+					(pin passive line
+						(at 7.62 0 180)
+						(length 3.81)
+						(name "Pin_4"
+							(effects
+								(font
+									(size 1.27 1.27)
+								)
+							)
+						)
+						(number "4"
+							(effects
+								(font
+									(size 1.27 1.27)
+								)
+							)
+						)
+					)
+					(pin passive line
+						(at -5.08 -2.54 0)
+						(length 3.81)
+						(name "Pin_5"
+							(effects
+								(font
+									(size 1.27 1.27)
+								)
+							)
+						)
+						(number "5"
+							(effects
+								(font
+									(size 1.27 1.27)
+								)
+							)
+						)
+					)
+					(pin passive line
+						(at 7.62 -2.54 180)
+						(length 3.81)
+						(name "Pin_6"
+							(effects
+								(font
+									(size 1.27 1.27)
+								)
+							)
+						)
+						(number "6"
+							(effects
+								(font
+									(size 1.27 1.27)
+								)
+							)
+						)
+					)
+				)
+				(embedded_fonts no)
+			)
 		(symbol "Connector:TestPoint"
 		(pin_numbers
 			(hide yes)
@@ -4314,6 +4588,136 @@
 		(at 190.5 154.94 0)
 		(effects (font (size 1.27 1.27)) (justify left top))
 		(uuid "67c0b2f0-9438-4b17-b209-104677cddd57")
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_02x03_Odd_Even")
+		(at 139.7 160.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "22650e4a-3a35-47d6-a0ae-6b8931f9cf06")
+		(property "Reference" "J1"
+			(at 140.97 154.94 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Value" "TC2030-IDC"
+			(at 140.97 165.10000000000002 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Footprint" "feather_water_level:Tag-Connect_TC2030-IDC-FP_2x03_P1.27mm_Vertical"
+			(at 139.7 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/2019/12/TC2030-IDC-Datasheet-Rev-B.pdf"
+			(at 139.7 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Description" "Tag-Connect TC2030 legged footprint (pads + holes only), XM125 1.8 V UART bootloader port"
+			(at 139.7 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "MPN" "DNP (Tag-Connect pads; cable TC2030-IDC, DigiKey TC2030-IDC-ND)"
+			(at 139.7 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "-"
+			(at 139.7 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(pin "1"
+			(uuid "5f250a9a-22c1-4214-835c-b32abd7fd955")
+		)
+		(pin "2"
+			(uuid "4544f749-ff73-452e-9966-0859e3d75622")
+		)
+		(pin "3"
+			(uuid "0da3684f-9223-4dab-9f13-efb6c6b99bc9")
+		)
+		(pin "4"
+			(uuid "0b7a300c-91d5-4912-9d13-a1e7b248a787")
+		)
+		(pin "5"
+			(uuid "021e2403-4257-49cc-90a6-4efca23c333a")
+		)
+		(pin "6"
+			(uuid "9becad4d-ef67-4799-b3f9-6edf9d7db640")
+		)
+		(instances
+			(project "feather_water_level_tc2030"
+				(path "/55da176d-6431-4d58-ada7-b89d931b1434/9bb0ccc8-fa12-4a18-9e11-be8a7e91d83b"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "XM_NRESET"
+		(at 134.62 157.48 180)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "e0c7bbb9-cbfc-4c86-a2ec-14dc56c0d4cf")
+	)
+	(label "+1V8"
+		(at 147.32 157.48 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "b16f7bdb-033f-41bf-b2b3-250fbb6a7e8f")
+	)
+	(label "XM_BOOT0"
+		(at 134.62 160.02 180)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "00cfc216-ea66-4b96-a04f-1fc15afc5a1c")
+	)
+	(label "XM_UART_RX"
+		(at 147.32 160.02 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "f4796816-fe69-473b-a572-61427cf9141c")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 134.62 162.56 180)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "c80a7c96-cc40-4600-a73e-f9bf1e448bb7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 134.62 162.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+	)
+	(label "XM_UART_TX"
+		(at 147.32 162.56 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "79b42dc8-75e8-45e6-a9fa-f6eb35fd256e")
+	)
+	(text "J1 Tag-Connect TC2030 legged footprint (TC2030-IDC cable), bottom side next to H1/H2: XM125 ROM UART bootloader port, 1.8 V.\nPins: 1 NRST, 2 +1V8 (reference only, do not power the board from the cable), 3 BOOT0, 4 UART RX (module input),\n5 GND, 6 UART TX (module output). Bench power on TP9/TP10 or the feather VSENS. Pads only, not a BOM part."
+		(exclude_from_sim no)
+		(at 20.32 187.96 0)
+		(effects (font (size 1.27 1.27)) (justify left top))
+		(uuid "37b50a6c-82ca-4a3b-9c21-1761f0d9f536")
 	)
 	(embedded_fonts no)
 )
