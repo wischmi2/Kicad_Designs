@@ -3,7 +3,7 @@
 Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\nrf54l15_feather_sens1\nrf54l15_feather_sens1\nrf54l15_feather_sens1.kicad_pro
 Last reviewed: 2026-10-28
 
-**State: ACTIVE sensor board for the nRF54L15 feather.** Reworked to the Feather outline on 2026-10-25. Fully routed, DRC clean (0 errors). Tidemark R1 antenna keep-out added 2026-10-28 (H4 is now NPTH). **2026-10-28 evening: all pre-fab review items B1-B3, S2-S7, N1, N2, N7, N8 fixed (see "Pre-fab fixes 2026-10-28 evening" below).** Not released for fab: no fab outputs generated (needs Brian's approval).
+**State: ACTIVE sensor board for the nRF54L15 feather.** Reworked to the Feather outline on 2026-10-25. Fully routed, DRC clean (0 errors). Tidemark R1 antenna keep-out added 2026-10-28 (H4 is now NPTH). **2026-10-28 evening: all pre-fab review items B1-B3, S2-S7, N1, N2, N7, N8 fixed (see "Pre-fab fixes 2026-10-28 evening" below).** Fab outputs generated 2026-11-07 (zip in handoff; see Fab outputs line).
 
 ## Summary
 Isolated pH sensor board in Feather form factor. It stacks directly under the feather on shared standoffs and connects through CN1 with a 14-way 0.5 mm FFC folded around the far short edge. The CN1 pinout matches the feather pin for pin (same pad coordinates and same net names, checked against the feather PCB 2026-10-25).
@@ -18,7 +18,7 @@ Isolated pH sensor board in Feather form factor. It stacks directly under the fe
 - ERC (kicad-cli 10.0.4): 0 errors, 40 warnings (unchanged from before the rework: 10 pin_to_pin, 10 lib_symbol_issues, 9 footprint_link_issues, 7 isolated_pin_label, 4 lib_symbol_mismatch).
 - DRC (kicad-cli 10.0.4, with and without --refill-zones, schematic parity on): 0 errors, 0 unconnected, 0 parity issues, 15 warnings: 9 lib_footprint_issues (easyeda2kicad footprint library not registered on this PC) and 6 silk_over_copper (the easyeda pin-1 dots on R1/R3/R4/R5/C1/C5 touch their pads; the fab clips them).
 - STEP: C:\Personal-Agents\shared\handoff\nrf54l15_feather_sens1\nrf54l15_feather_sens1_2026-10-25.step. **U2 (pH OEM), J1 (SMA) and the easyeda passives have no 3D model on this PC, so they are missing from the STEP.** U3, U4, CN1 and the board are included.
-- Fab outputs: none (only the old gerber job file). Not to be generated without Brian's approval.
+- Fab outputs: C:\Personal-Agents\shared\handoff\nrf54l15_feather_sens1\nrf54l15_feather_sens1_fab_2026-11-07.zip (16 files, made 2026-11-07 from commit da509e3 after the follow-up copper review; DRC without refill 0 errors / 0 unconnected / 0 parity). Superseded 2026-10-28 output is in handoff\archive\fab_2026-10-28\. ORDER: PCBWay 4-layer 1.6 mm, HASL WITH LEAD (the .gbrjob says ENIG; the order form is what counts), 4/4 mil.
 
 ## Layout (origin = outline top-left corner at 90, 110, same as the feather)
 - Barrier at x = 124. Isolated zones end at x = 122.5, host zones start at x = 125.5, on all 4 layers, with a rule-area keepout for tracks, vias and fills in between. Pad-to-pad gap across the barrier: 3.0 mm at U3, 4.1 mm at U4.
@@ -82,7 +82,7 @@ This is the same rectangle as the main board's AE1_keepout rule area (132.15-141
 **Tooling note:** saving the board with pcbnew Python (KiCad 10.0.4) dropped "*.Mask" from all 9 through-hole/NPTH pads (H1-H4, J1). Restored by text edit before commit; kicad-cli --save-board keeps them. Check this after any pcbnew-Python save. Also, removing vias with board.Remove() made later SWIG calls in the same script crash or return untyped objects; do via removal last.
 
 ## Open work
-- Fab outputs (gerbers, drill, BOM with --exclude-dnp, position file) for PCBWay: not generated; waiting for Brian's approval.
+- Fab outputs: generated 2026-11-07 (see Fab outputs line above). BOM/position file not made (Brian assembles).
 - Bench: VDD_ISO bring-up check before fitting U2 (see Bring-up); scope the ADuM1250 low levels on both sides.
 - Re-read the ADuM1250 datasheet when analog.com is reachable, to confirm side 1 is the offset side (pinout already confirmed).
 - parts-sourcing: add C6 (CC0402KRX7R7BB104) and the DNP R6/D1 to the sens1 BOM files, drop R5 (DNP) from the totals.
@@ -91,7 +91,7 @@ This is the same rectangle as the main board's AE1_keepout rule area (132.15-141
 - Register the easyeda2kicad footprint and 3D library on this PC (this clears the 9 footprint warnings and adds the passive models).
 
 ## Questions for Brian
-- H4 is now NPTH (needed for the R1 keep-out). OK, given nylon hardware at the antenna end? Otherwise H4 could stay plated with no net (a floating ring under AE1).
+- H4 is now NPTH (needed for the R1 keep-out). APPROVED by Brian 2026-10-28 (nylon hardware at the antenna end). Otherwise H4 could stay plated with no net (a floating ring under AE1).
 - Stack orientation: sens1 parts facing up (as laid out) gives a gap of about 8 mm because of the SMA. OK, or move to a lower probe connector (for example a vertical U.FL/MMCX pigtail)?
 - Standoffs at the USB/probe end: nylon (recommended), or metal with the keepout only?
 - INT: is SENS_INT needed on the host? That would need a third isolator channel (ADuM1250 is 2-channel) or polling only.
