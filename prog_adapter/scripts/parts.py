@@ -40,6 +40,7 @@ def P(mpn, mfr, dk, mouser):
 SSK = P('SSK05-BH-254-B3', 'Same Sky', '2223-SSK05-BH-254-B3-ND', '179-SSK05BH254B3')
 R330 = P('RC0805FR-07330RL', 'YAGEO', '311-330CRCT-ND', '603-RC0805FR-07330RL')
 R1K = P('RC0805FR-071KL', 'YAGEO', '311-1.00KCRCT-ND', '603-RC0805FR-071KL')
+R100 = P('RC0805FR-07100RL', 'YAGEO', '311-100CRCT-ND', '603-RC0805FR-07100RL')
 R5K1 = P('RC0805FR-075K1L', 'YAGEO', '311-5.10KCRCT-ND', '603-RC0805FR-075K1L')
 C10U = P('CC0805KKX5R8BB106', 'YAGEO', '311-1869-1-ND', '603-CC805KKX5R8BB106')
 SW = P('B3F-1000', 'Omron (Aratas)', 'SW400-ND', '653-B3F-1000')
@@ -57,7 +58,9 @@ COMPS = {
     'R3': dict(sym='R', value='1k', fp='R_0805_2012Metric', pos=(43.18, 91.44), nets={'1': 'XM_1V8', '2': 'BOOT_JP'}, f=R1K),
     'JP1': dict(sym='Jumper_2_Open', value='BOOT0', fp='PinHeader_1x02_P2.54mm_Vertical', pos=(68.58, 88.9),
                 nets={'1': 'BOOT_JP', '2': 'XM_BOOT0'}, f=P('PEC02SAAN', 'Sullins Connector Solutions', '35-PEC02SAAN-ND', '-')),
-    'SW1': dict(sym='SW_Push', value='XM RESET', fp='SW_PUSH_6mm', pos=(99.06, 86.36), nets={'1': 'XM_NRST', '2': 'GND'}, f=SW),
+    'SW1': dict(sym='SW_Push', value='XM RESET', fp='SW_PUSH_6mm', pos=(99.06, 86.36), nets={'1': 'XM_NRST', '2': 'XM_RST_SW'}, f=SW),
+    # review S1: 100R in series so a mis-plugged cable + reset press can't short a rail
+    'R7': dict(sym='R', value='100', fp='R_0805_2012Metric', pos=(111.76, 86.36), nets={'1': 'XM_RST_SW', '2': 'GND'}, f=R100),
     # ---------------- Section B/C: SWD ----------------
     'J2': dict(sym='Conn_02x03_Odd_Even', value='SWD TC2030-IDC', fp='BoxHeader_SSK05-BH-254-B3_2x03_P2.54mm_Vertical',
                pos=(182.88, 63.5), nets={'1': 'SWD_VTREF', '2': 'SWD_SWDIO', '3': 'SWD_NRESET', '4': 'SWD_SWCLK', '5': 'GND', '6': 'SWD_SWO'}, f=SSK),
@@ -67,7 +70,8 @@ COMPS = {
     'J4': dict(sym='Conn_01x06', value='SWD 0.1in breakout', fp='PinHeader_1x06_P2.54mm_Vertical', pos=(233.68, 99.06),
                nets={'1': 'SWD_VTREF', '2': 'SWD_SWDIO', '3': 'SWD_SWCLK', '4': 'SWD_SWO', '5': 'SWD_NRESET', '6': 'GND'},
                f=P('PEC06SAAN', 'Sullins Connector Solutions', '35-PEC06SAAN-ND', '-')),
-    'SW2': dict(sym='SW_Push', value='SWD RESET', fp='SW_PUSH_6mm', pos=(193.04, 93.98), nets={'1': 'SWD_NRESET', '2': 'GND'}, f=SW),
+    'SW2': dict(sym='SW_Push', value='SWD RESET', fp='SW_PUSH_6mm', pos=(193.04, 93.98), nets={'1': 'SWD_NRESET', '2': 'SWD_RST_SW'}, f=SW),
+    'R8': dict(sym='R', value='100', fp='R_0805_2012Metric', pos=(205.74, 93.98), nets={'1': 'SWD_RST_SW', '2': 'GND'}, f=R100),
     # ---------------- Section D: USB-C 3.0 V ----------------
     'J6': dict(sym='USB_C_Receptacle_USB2.0_16P', value='USB4105-GF-A', fp='USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal',
                pos=(38.1, 152.4), nets={'A4': 'VBUS', 'A1': 'GND', 'SH': 'GND', 'A5': 'CC1', 'B5': 'CC2'},
