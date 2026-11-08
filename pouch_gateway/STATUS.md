@@ -109,3 +109,6 @@ Inputs: shared\design\pouch_gateway\lcd_module\MEASUREMENTS.md (Waveshare STEP):
 - 4 layers. M2 holes on the display hole pattern, which replaces the earlier mounting plan.
 - SWD selected with a 5.1 kohm pull-down on RF_CNTL_2. RF_CNTL_0 left open (40 MHz XOSC).
 - VBUS goes to pin 33 through a 0 ohm resistor that can be removed.
+
+## Via removal 2026-11-07 (pre-order check S1)
+- 2026-11-07: deleted the free GND stitching via c95fffbd (0.6/0.3) at (116.5, 89.0) whose drill touched the J1 USB-C SH plated slot (117.5, 89.03). Mirror via at (116.5, 99.0) kept. Zones refilled (fill unchanged in the diff). DRC without refill (--schematic-parity): 0 violations, 0 unconnected, 0 parity. ERC 0 errors, 195 warnings (known: off-grid endpoints, lib mismatches). Fab zip to be regenerated after follow-up review.
