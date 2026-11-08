@@ -18,12 +18,12 @@ Golioth Pouch BLE to Wi-Fi gateway, Rev A.
 - Sub-sheets: mcu, power, reset_debug, rf, ui_io, usb.
 
 ## Current state
-- **Not on order yet.** Brian will resubmit to PCBWay once he approves new fab output: standard 4L 1.6 mm, ENIG, stencil. Bare boards only, parts from DigiKey/Mouser, self-assembly.
+- **Not on order yet.** Fab output 2026-11-07: C:\Personal-Agents\shared\handoff\pouch_gateway\pouch_gateway_fab_2026-11-07.zip (16 files, from commit beea64e; DRC without refill 0 errors / 0 unconnected / 0 parity). Supersedes the 2026-10-28 zip (archived in handoff\archive\fab_2026-10-28\; the only change is the removed stitching via at (116.5, 89.0): copper layers and PTH drill). ORDER: PCBWay standard 4L 1.6 mm, ENIG, stencil; do NOT tick impedance control (the .gbrjob says ImpedanceControlled true). Bare boards only, parts from DigiKey/Mouser, self-assembly.
 - PCB: 58.0 x 35.0 mm, 4 layers, 70 footprints, 13 zones. Four M2 mounting holes (H1-H4) on the Waveshare 53 x 30 mm pattern. Outline, holes and connectors unchanged on 2026-10-28.
 - ERC (2026-10-28): 0 errors, 195 warnings (140 endpoint_off_grid, 53 lib_symbol_mismatch, 2 unconnected wire endpoints; all cosmetic, unchanged).
 - DRC (2026-10-28, --schematic-parity --refill-zones --severity-all): 0 errors, 0 warnings, 0 unconnected, 0 parity.
 - STEP: C:\Personal-Agents\shared\handoff\pouch_gateway\pouch_gateway_2026-10-28.step (outline and connectors unchanged; U1 and J1 have no 3D model).
-- **Fab files in this folder are stale** (Gerbers, .drl, .gbrjob, pouch_gateway.7z from 2026-10-20, pouch_gateway.csv and the two PCBWay BOM xlsx). They predate the 2026-10-28 fixes and the xlsx/csv are for the old PCBWay turnkey route. Don't upload them. Left in place on purpose; regenerating fab output needs Brian's approval.
+- Old fab files (Gerbers, .drl, .gbrjob, pouch_gateway.7z from 2026-10-20 and the old PCBWay BOM xlsx/csv) were archived in 7712370 (archive\fab_2026-10-20); none are left in the board folder.
 
 ### 2026-10-28 pre-fab fixes (review: C:\Personal-Agents\shared\reports\2026-10-28-review-pouch-gateway-prefab.md)
 - S3: footprint references are now SW1/SW2/SW3 (were RESET/ISP/USER); the function text RESET/ISP/USER stays on silk as the visible Value field, the SW refs sit inside the switch outlines. Parity 6 -> 0.
@@ -92,7 +92,7 @@ Inputs: shared\design\pouch_gateway\lcd_module\MEASUREMENTS.md (Waveshare STEP):
 - (Answered by the 2026-10-28 review: the stackup matches PCBWay standard 4L and RF is about 51-55 ohm; the buck is TLV62569DBVR; the old Gerbers are stale.)
 
 ## Decisions
-- 2026-10-30 (Brian): keep the board silkscreen as is ("Rev 1.0", "Oct. 10, 2026"). The fab zip shared\handoff\pouch_gateway\pouch_gateway_fab_2026-10-28.zip is the one to order (PCBWay std 4L 1.6 mm, ENIG, 6/6 mil, 0.3 mm min hole, plated USB-C slots). Still open, BOM only: D5 blue LED resistor (100 ohm at 3.3 V is too dim), FCC check of the 100 mm antenna.
+- 2026-10-30 (Brian): keep the board silkscreen as is ("Rev 1.0", "Oct. 10, 2026"). The fab zip shared\handoff\pouch_gateway\pouch_gateway_fab_2026-10-28.zip was the one to order (superseded by the 2026-11-07 zip) (PCBWay std 4L 1.6 mm, ENIG, 6/6 mil, 0.3 mm min hole, plated USB-C slots). Still open, BOM only: D5 blue LED resistor (100 ohm at 3.3 V is too dim), FCC check of the 100 mm antenna.
 - 2026-10-24 (Brian): the gateway PCB has no battery circuit. It's powered only by USB-C. A battery, if used, needs an external charger/5 V boost module feeding J1, inside the enclosure.
 - 2026-10-28 (Brian): Rev A is not on order yet (this replaces "the PCB is fixed and on order"). Fix S1, S2, S3, the J2/J4 DNP part of S6 and the silkscreen (N1); keep R5 0R fitted (S4); order PCBWay standard 4L 1.6 mm, ENIG, stencil. The LCD sits over the board on the shared M2 standoffs.
 - 2026-10-24 (Brian): enclosure placement is a shelf or desk with AC (USB) power available all the time. This answers question 1 in shared\design\pouch_gateway\concepts\2026-10-24-enclosure\concepts.md and points to the Ledger concept.
