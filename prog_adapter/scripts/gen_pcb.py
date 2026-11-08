@@ -296,6 +296,9 @@ txt('PWR', 131.4, 134.4)
 txt('3V0', 116.0, 146.6); txt('3V0', 118.54, 146.6); txt('GND', 121.08, 146.6)
 txt('3V0 -> TP9+TP10', 122.6, 143.9, just='l')
 txt('GND -> TP8', 122.6, 145.3, just='l')
+# review S2: TLV755P reverse current if J5 stays on a powered board with USB unplugged
+txt('Connect J5 only', 123.2, 140.0, 0.8, bold=True, just='l', th=0.16)
+txt('with USB plugged in', 123.2, 141.2, 0.8, bold=True, just='l', th=0.16)
 # B / C
 txt('B: SWD - Tag-Connect std', 153.6, 101.9, 1.2, bold=True)
 for i, s in enumerate(['J3 to DK Debug out', '1 VTref 2 SWDIO', '3 GND   4 SWCLK', '5 GND   6 SWO',

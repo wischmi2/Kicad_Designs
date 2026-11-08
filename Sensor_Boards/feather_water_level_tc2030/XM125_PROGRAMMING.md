@@ -3,7 +3,7 @@
 Written 2026-11-04 for board rev 0.2; part 0 added 2026-11-07 for the TC2030 variant (this folder). Not tried on real hardware yet. Pad positions and nets were read from `feather_water_level.kicad_pcb` (unchanged in `feather_water_level_tc2030.kicad_pcb`). Part 10 lists what is still unverified.
 
 ## 0. TC2030 variant: flashing through J1 (added 2026-11-07)
-Adapter PCB: prog_adapter (worktree folder prog_adapter\, section A; section D gives the 3.0 V for TP9/TP10).
+Adapter PCB: prog_adapter (worktree folder prog_adapter\, section A; section D gives the 3.0 V for TP9/TP10). **Connect the adapter's J5 leads only while its USB-C is plugged in:** with USB unplugged and J5 still on a powered board, the board back-feeds the adapter's TLV75530 output (reverse current, TLV755P datasheet 7.1.4). Plug USB in first, unplug J5 first.
 This copy of the guide belongs to **feather_water_level_tc2030** (rev 0.2-TC2030), which adds a Tag-Connect TC2030 legged footprint, J1, on the bottom side between H1 and H2. Everything below still applies; J1 only replaces soldered wires on TP4-TP8. The test pads are all still there. The original rev 0.2 board has no J1, so use parts 2-6 as written for it.
 
 **J1 pin map** (looking at the bottom of the board, pin 1 is marked on the silk; pins 1-2-3... follow the Tag-Connect numbering):
