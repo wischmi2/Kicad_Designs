@@ -282,9 +282,10 @@ seg(SL, (XD, 101.0), (XD, 147.0), 0.2)
 seg(SL, (101.0, 127.2), (XD, 127.2), 0.2)
 # A
 txt('A: XM125 UART ONLY', 119.5, 101.9, 1.5, bold=True)
-txt('XM125 board only', 105.3, 105.1, 0.8, bold=True, just='l', th=0.16)
-for i, s in enumerate(['J1 XM125', '1 NRST  2 1V8', '3 BOOT0 4 RX', '5 GND   6 TX']):
-    txt(s, 105.3, 106.3 + i * 1.2, just='l')
+txt('XM125 board only', 100.8, 106.3, 0.8, bold=True, just='l', th=0.16)
+for row, cells in enumerate([('5 GND', '3 BOOT0', '1 NRST'), ('6 TX', '4 RX', '2 1V8')]):
+    for xc, s in zip((100.8, 105.0, 110.6), cells):
+        txt(s, xc, 107.7 + row * 1.2, just='l')
 txt('RED/BRN/GRN: NC', 108.4, 124.4, just='l')
 txt('XM RESET', 130.25, 116.9)
 txt('BOOT0', 136.1, 108.73, rot=90)
