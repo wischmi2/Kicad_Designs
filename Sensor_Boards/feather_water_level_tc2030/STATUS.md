@@ -5,7 +5,49 @@
 Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\Sensor_Boards\feather_water_level_tc2030\feather_water_level_tc2030.kicad_pro
 
 ## TC2030 variant (2026-11-07)
-- Stage 0 copy check (kicad-cli 10.0.4): ERC 0 errors / 15 warnings; DRC (--schematic-parity --severity-all, no refill) 0 errors / 0 unconnected / 0 parity / 5 warnings. Both lists identical to the original's. No new lib warnings. Left out of the copy: fab_2026-11-04\ and .mcp-backups\.
+**State: J1 TC2030 placed and routed on the copy. ERC 0 errors, DRC 0 / 0 / 0. Design review needed before any fab output; no Gerbers made.**
+
+### What changed against rev 0.2
+- **J1 Tag-Connect TC2030 legged footprint** (value TC2030-IDC, in_bom no, excluded from BOM and pos, MPN field "DNP (Tag-Connect pads; cable TC2030-IDC, DigiKey TC2030-IDC-ND)"). Symbol Connector_Generic:Conn_02x03_Odd_Even on the Sensor sheet, written by script into sensor.kicad_sch (not by the MCP), netlist checked pin by pin, plus a note on the sheet. Brian may want to open the sheet once in eeschema (cosmetic only).
+- **Footprint** feather_water_level.pretty/Tag-Connect_TC2030-IDC-FP_2x03_P1.27mm_Vertical: copied from KiCad 10 Connector.pretty, the same footprint the pouch gateway uses for J6. Checked against Tag-Connect drawing TC2030-IDC-FP rev B (12/05/19, sheet 1 of the TC2030-IDC datasheet rev B): 6 contact pads 0.787 mm on 1.27 mm pitch, rows 1.27 mm apart; 3 alignment holes 0.991 mm; **4** leg latch holes 2.375 mm NPTH (the drawing has four, not three); hole positions match (0.200, 0.125, 0.050, 0.100, 0.040, 0.025 in). No paste, mask open on the pads; the stock keep-out zone between the pads (no vias, no pour) is kept. Added: a pad-side courtyard 9.4 x 8.6 mm for the plug head (9.27 x 7.45 mm per drawing sheet 2) and an opposite-side courtyard over the leg feet (legs stand 2.24 mm out of the far side; each foot needs 1.55 x 1.17 mm, drawn on the opposite Fab layer).
+- **Side: pads on B.Cu (the XM125 side), legs latch on F.Cu.** Why: the TPs are already on B and are reached with the stack lifted off the Crown posts, so the cable plugs in from the same side; on F the feather sits 8 mm above, so the 2.24 mm leg tips fit even with the feather fitted; and the left end between H1 and H2 is the only area free on both sides (U1 fills the B side, the translator column and CN1 the F side further right).
+- **Position: J1 at (93.6, 121.43), B side** (rotation 180 after the flip). Pads x 92.33 / 93.6 / 94.87; y 120.795 for pins 6, 4, 2 and y 122.065 for pins 5, 3, 1 (pin 1 nearest U1, bottom row). Leg holes at x 92.965 and 96.14, y 118.89 and 123.97; alignment holes at (96.14, 121.43), (91.06, 120.414) and (91.06, 122.446). Holes are 0.59 mm from the left board edge and outside the 8 mm Crown post circles at H1/H2 (nearest leg hole 1.16 mm outside the H1 circle). Nothing new in front of U1 on B.Cu. Squeeze access for the legs is from the two long board edges.
+- **Routing:** +1V8 (pin 2) to TP7 on B.Cu along x 97.9. BOOT0 (pin 3) to TP4 on B.Cu along the bottom edge (y 131.6). TX (pin 6), RX (pin 4) and NRST (pin 1) on In2.Cu along y 113.0 / 113.4 / 113.8 to new vias at (105.46, 112.2) TX and (107.0, 112.35) RX next to TP5/TP6, and to the existing NRST via (117.4, 112.2). GND (pin 5) to a new GND via at (91.3, 125.76). 0.15 mm tracks in the connector escapes and the In2 lanes, 0.2-0.3 mm elsewhere; new vias 0.6/0.3.
+- **Removed:** 10 GND stitching vias (GND only, no tracks on them): 8 under J1 at x 91.2 / 93.6, y 118.4 / 120.8 / 123.2 / 125.6; (96.0, 113.6) in the In2 lanes; (105.4, 112.0) between TP5 and TP6, whose place the TX via takes. Added 1 GND via (91.3, 125.76). F, In1 and B GND stay tied by the remaining vias; DRC reports no isolated copper.
+- **In1:** still an unbroken GND plane apart from the 7 NPTH holes of J1 (round voids at the left end, away from U1).
+- **Pour keep-out:** rule area TC2030_pad_pour_keepout on B.Cu keeps the GND pour at least 0.5 mm from every J1 pad (Tag-Connect note 3; measured 1.27 mm minimum). Two escape tracks pass 0.369 mm from a neighbouring pad (RX past pin 2, BOOT0 past pin 1), under mask. The 0.5 mm guidance can't be met for the middle pins without via-in-pad, and Tag-Connect allows only 0.2 mm finished holes there, below the PCBWay standard 0.3 mm. All other other-net tracks are 0.8 mm or more from the pads.
+- **Kept:** TP1-TP10 unchanged, outline, CN1, H1-H4, U1 position, side and paste apertures, vias 0.6/0.3, In1 GND, ENIG, stackup, design rules (4/4 mil). J1 has no paste, so the B stencil (B_Paste) is unchanged.
+- **Silk:** B.SilkS "WATER LEVEL rev 0.2" now reads "WATER LEVEL rev 0.2-TC2030"; "J1" and "TC2030" under the connector, pin 1 marked. "WATER LEVEL RADAR" and "R_ID 22k (0.6875)" sat where J1 is, so they moved to F.SilkS in the middle of the board with a third line "rev 0.2-TC2030".
+
+### J1 pin map (TC2030 pin = pin of the TC2030-IDC 6-pin 0.1 in ribbon socket, 1:1 per the Tag-Connect drawing)
+| TC2030 pin | Net | XM125 | Note |
+| --- | --- | --- | --- |
+| 1 | XM_NRESET | NRESET, U1.14 | same net as TP3 (optional reset) |
+| 2 | +1V8 | VIN / 1V8 | reference only (BOOT0 pull-up source, level check); never power the board from the cable |
+| 3 | XM_BOOT0 | MISC_GPIO2_BOOT0, U1.26 | 1 k to pin 2 to enter the bootloader |
+| 4 | XM_UART_RX | UART_RX (module input), U1.6 | cable TXD (orange) here |
+| 5 | GND | GND | cable GND (black) |
+| 6 | XM_UART_TX | UART_TX (module output), U1.5 | cable RXD (yellow) here |
+
++1V8 (pin 2) and GND (pin 5) are at opposite corners, not next to each other. Power comes from the feather (VSENS) or the bench supply on TP9/TP10, as before.
+
+### Checks (kicad-cli 10.0.4, 2026-11-07)
+- Stage 0 copy check: ERC 0 errors / 15 warnings; DRC (--schematic-parity --severity-all, no refill) 0 errors / 0 unconnected / 0 parity / 5 warnings. Both lists identical to the original. No new lib warnings. Left out of the copy: fab_2026-11-04\ and .mcp-backups\.
+- After J1: ERC 0 errors / 15 warnings (same list). DRC on the saved board, --schematic-parity --severity-all, **no --refill-zones: 0 errors, 0 unconnected, 0 parity, 5 warnings** (the same 3 lib_footprint_issues and 2 silk_over_copper as the original). Zones were refilled in KiCad Python before saving.
+- STEP: C:\Personal-Agents\shared\handoff\feather_water_level_tc2030\feather_water_level_tc2030_2026-11-07.step. Outline, CN1 and H1-H4 unchanged; J1 is pads and holes only (no 3D body).
+- Images: C:\Personal-Agents\shared\design\feather_water_level\tc2030_2026-11-07\ (connector close-ups of both sides, bottom side and In2 of the whole board, 3D top and bottom).
+
+### For the Crown enclosure
+- J1 centre at board (93.6, 121.43): 3.6 mm in from the left (H1/H2) edge, on the board centre line, between the H1 and H2 posts. Pads face the sole.
+- Holes through the board: 4 x 2.375 mm and 3 x 0.991 mm (positions above). The 8 mm posts stay where they are; the nearest leg hole is 1.16 mm outside the H1 post circle.
+- Flashing is done with the stack out of the enclosure, as for the TPs, so the enclosure needs nothing for J1 in use. With the cable on: the plug head (about 9.3 x 7.5 mm, about 19 mm long plus cable) stands on the bottom face, overhangs the left board edge by about 1 mm, and needs finger room from both long edges; the leg tips stand 2.24 mm above the top face, inside the 8 mm standoff gap.
+- A sole window for flashing in place would be about 10 x 9 mm at J1, outside the radar pocket (not drawn, not asked for).
+
+### Open
+- Design review of the copper changes before any fab output.
+- Plug head clearance: the head (9.27 mm wide per the drawing, which says dimensions are subject to change) ends about 0.46 mm from the XM125 body edge (x 98.7). Check with a real cable. Unverified.
+- Not tried on hardware: TC2030 fit, flashing through J1.
+- The coordinator adds this board to the CLAUDE.md Boards table.
 
 ---
 

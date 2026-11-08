@@ -1,6 +1,32 @@
 # Programming the XM125 on the water level board (1.8 V UART)
 
-Written 2026-11-04 for board rev 0.2. Not tried on real hardware yet. Pad positions and nets were read from `feather_water_level.kicad_pcb`. Part 10 lists what is still unverified.
+Written 2026-11-04 for board rev 0.2; part 0 added 2026-11-07 for the TC2030 variant (this folder). Not tried on real hardware yet. Pad positions and nets were read from `feather_water_level.kicad_pcb` (unchanged in `feather_water_level_tc2030.kicad_pcb`). Part 10 lists what is still unverified.
+
+## 0. TC2030 variant: flashing through J1 (added 2026-11-07)
+This copy of the guide belongs to **feather_water_level_tc2030** (rev 0.2-TC2030), which adds a Tag-Connect TC2030 legged footprint, J1, on the bottom side between H1 and H2. Everything below still applies; J1 only replaces soldered wires on TP4-TP8. The test pads are all still there. The original rev 0.2 board has no J1, so use parts 2-6 as written for it.
+
+**J1 pin map** (looking at the bottom of the board, pin 1 is marked on the silk; pins 1-2-3... follow the Tag-Connect numbering):
+
+| J1 / TC2030 pin | Signal | Same as | FTDI TTL-232RG-VREG1V8-WE wire |
+| --- | --- | --- | --- |
+| 1 | NRST | TP3 | none (optional: touch to GND to re-enter the bootloader) |
+| 2 | +1V8 | TP7 | none; 1 k from here to pin 3 |
+| 3 | BOOT0 | TP4 | none; 1 k to pin 2 |
+| 4 | UART RX (module input) | TP6 | orange (TXD), through 330 ohm |
+| 5 | GND | TP8 | black |
+| 6 | UART TX (module output) | TP5 | yellow (RXD), through 330 ohm |
+
+Red, brown and green wires stay unconnected and insulated, as in part 3. Pin 2 is a reference only: the board is powered from the bench supply on TP9 VSENS and TP10 VBAT (3.0 V, part 5) or from the feather, **never from the cable**.
+
+**What to buy:**
+- **TC2030-IDC** (legged, 8 in / 225 mm), Tag-Connect. DigiKey TC2030-IDC-ND, 246 in stock, $44.58 (live 2026-11-07, active). The legged version clips into the board, so it holds itself while you flash. The TC2030-IDC-NL (no legs) also fits these pads but has to be held by hand or with a retaining clip.
+- **The cable end is a 6-pin 0.1 in (2.54 mm) IDC ribbon socket, wired 1:1 to the TC2030 pins** (Tag-Connect drawing TC2030-IDC rev B, sheet 2). It is **not** the 10-pin 1.27 mm Cortex connector; that one is on the TC2030-CTX cable. So no 10-pin 1.27 mm breakout is needed: push 2.54 mm male jumper wires or a 2x3 0.1 in header into the socket and run them to the FTDI cable. (The 2026-11-07 task asked for a 10-pin 1.27 mm breakout; that applies to the TC2030-CTX, not the TC2030-IDC.)
+- A small adapter makes it tidy: a 2x3 0.1 in header on a scrap of perfboard with the 1 k between pins 2 and 3 and the two 330 ohm resistors in line with pins 4 and 6, and the FTDI wires soldered to it. Build it once and check it with a meter before the first board.
+- **Don't use Tag-Connect's own USB-UART (FTDI) cables** on this board unless the exact model's logic level has been checked: they are 3.3 V or 5 V (per the 2026-11-07 task notes; no model was looked up for this guide), and the XM125 I/O limit is 2.1 V. Use the 1.8 V FTDI cable through the IDC socket as above.
+
+**Steps:** as part 6, except step 1 becomes: FFC out, supply off, wire bench power to TP9/TP10/TP8 as in part 5, then press the TC2030 plug onto J1 from the bottom side until the legs click (the alignment pins only go in one way round). Release by squeezing the legs from the two long board edges. The legs stick 2.24 mm out of the top side; with the feather still stacked on its 8 mm standoffs they have room.
+
+**Unverified:** the plug head is drawn at 9.27 mm wide and ends about 0.5 mm from the XM125 body; check it seats flat with a real cable. Not tried on hardware.
 
 ## 1. Short version
 - Every XM125 has to be flashed once. The datasheet says it is delivered with a bootloader, so don't count on it having our application.
