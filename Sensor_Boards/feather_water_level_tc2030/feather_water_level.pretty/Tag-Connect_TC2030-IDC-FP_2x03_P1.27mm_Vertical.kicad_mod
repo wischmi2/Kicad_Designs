@@ -3,7 +3,7 @@
 	(generator "pcbnew")
 	(generator_version "10.0")
 	(layer "F.Cu")
-	(descr "Tag-Connect TC2030-IDC (legged) footprint, copied from KiCad 10 Connector.pretty and checked against Tag-Connect drawing TC2030-IDC-FP rev B (12/05/19): pads 0.787 mm, 1.27 mm pitch, 3 alignment holes 0.991 mm, 4 leg latch holes 2.375 mm (NPTH), no paste. Added for feather_water_level_tc2030 (2026-11-07): pad-side courtyard grown to the plug head (9.27 x 7.45 mm per TC2030-IDC drawing sheet 2) and an opposite-side courtyard over the leg feet (legs protrude 2.24 mm).")
+	(descr "Tag-Connect TC2030-IDC (legged) footprint, copied from KiCad 10 Connector.pretty and checked against Tag-Connect drawing TC2030-IDC-FP rev B (12/05/19): pads 0.787 mm, 1.27 mm pitch, 3 alignment holes 0.991 mm, 4 leg latch holes 2.375 mm (NPTH), no paste. Added for feather_water_level_tc2030 (2026-11-07): pad-side courtyard grown to the plug head (9.27 x 7.45 mm per TC2030-IDC drawing sheet 2) and an opposite-side courtyard over the leg feet (legs protrude 2.24 mm). Hidden 3D model TC2030-IDC_plug_box.step = mated TC2030-IDC plug, a box model from datasheet Rev B (not a vendor model), for fit checks only; hidden so it stays out of the board STEP.")
 	(tags "tag connect programming header pogo pins")
 	(property "Reference" "REF**"
 		(at 0 5 0)
@@ -291,4 +291,16 @@
 		)
 	)
 	(embedded_fonts no)
+	(model "${KIPRJMOD}/feather_water_level.3dshapes/TC2030-IDC_plug_box.step"
+		(hide yes)
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
 )

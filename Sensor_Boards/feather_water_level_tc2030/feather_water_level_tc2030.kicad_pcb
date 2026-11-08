@@ -5581,6 +5581,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 				(justify mirror)
 			)
@@ -5593,6 +5594,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 				(justify mirror)
 			)
@@ -5844,6 +5846,18 @@
 			)
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/feather_water_level.3dshapes/TC2030-IDC_plug_box.step"
+			(hide yes)
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Resistor_SMD:R_0402_1005Metric"
 		(layer "B.Cu")
@@ -9917,22 +9931,6 @@
 		(uuid "a0a413bb-31d5-46a2-8ba2-e7c4df7490a8")
 	)
 	(segment
-		(start 113.715 112.5)
-		(end 113.715 113.3)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sensor/XM_SWCLK")
-		(uuid "7e755550-661f-47f8-be0d-5b2db82c806e")
-	)
-	(segment
-		(start 113.8 111.55)
-		(end 113.715 112.5)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sensor/XM_SWCLK")
-		(uuid "b348c381-d7fe-495b-a188-dd7b9d0f5a62")
-	)
-	(segment
 		(start 94.55 131.6)
 		(end 101.6 131.6)
 		(width 0.2)
@@ -9987,6 +9985,22 @@
 		(layer "B.Cu")
 		(net "/Sensor/XM_BOOT0")
 		(uuid "a38c854f-5766-48fb-b453-544e9a558bf6")
+	)
+	(segment
+		(start 113.715 112.5)
+		(end 113.715 113.3)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sensor/XM_SWCLK")
+		(uuid "7e755550-661f-47f8-be0d-5b2db82c806e")
+	)
+	(segment
+		(start 113.8 111.55)
+		(end 113.715 112.5)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sensor/XM_SWCLK")
+		(uuid "b348c381-d7fe-495b-a188-dd7b9d0f5a62")
 	)
 	(zone
 		(net "GND")
