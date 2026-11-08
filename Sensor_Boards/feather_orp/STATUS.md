@@ -205,3 +205,6 @@ Review: C:\Personal-Agents\shared\reports\2026-10-28-review-orp-ph-prefab.md. Bo
 - Every footprint with a part resolves a model; H1-H4 and J5 (test pad) have none by design.
 - STEP: C:\Personal-Agents\shared\handoff\feather_orp\feather_orp_2026-10-29.step. Heights above the board top (1.56 mm): J1 9.65, T1 4.06, U2 2.58, U3 1.75, U5/U6 1.55, C7/C8 1.25, CN1 1.0. All parts are on F.Cu. Overall 11.21 mm above the board bottom face; J1 pin tails 1.94 mm below it. R5 is DNP but is in the model.
 - DRC (--schematic-parity --refill-zones): 0 errors, 0 unconnected, 0 parity, 9 warnings (lib_footprint_issues). git diff shows only model lines changed in the .kicad_pcb.
+
+## Zone refill 2026-11-07 (pre-order check)
+- 2026-11-07: all zones refilled and saved (stored GND_host fill was stale after the 10-28 clearance nudge 33cf8f8 moved the SENS_SDA via to (135.6, 123.38)). Diff is fill polygons only. DRC without refill (--schematic-parity): 0 errors, 0 unconnected, 0 parity (9 lib_footprint_issues warnings, easyeda2kicad unregistered). ERC 0 errors, 38 warnings. Fab zip to be regenerated after follow-up review (the 2026-10-28 zip contains the stale fill).
