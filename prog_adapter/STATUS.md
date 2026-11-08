@@ -102,7 +102,7 @@ PCBWay, 2 layers, 1.6 mm FR-4, 1 oz, HASL lead-free, green, white silk, 6/6 mil,
 - No LED in section B (no DK-side supply on Debug out).
 - J3 is a through-hole shrouded keyed CNC Tech header (cheaper than the SMD Samtec FTSH-105-01-L-DV-K at $1.37 and fits the "through-hole where possible" rule).
 - Board 72 x 48 mm instead of the 50 x 35 mm aim: four separate sections with large silk titles, pin legends next to every box header, finger room around the two IDC cables and buttons, and corner M3 holes. Same PCBWay price band (under 100 x 100 mm).
-- kicad_dru: hole clearance 0.25 mm board-wide; 0.15 mm allowed only between J6 items, where the KiCad/GCT USB4105 land pattern puts the 0.65 mm NPTH 0.175 mm from the GND pads (board-setup minimum lowered to 0.15). See "Rules file" for the verified state.
+- kicad_dru: hole clearance 0.25 mm board-wide; 0.15 mm allowed only between J6 items, where the KiCad/GCT USB4105 land pattern puts the 0.65 mm NPTH 0.194 mm from the GND pads (board-setup minimum lowered to 0.15). See "Rules file" for the verified state.
 - Reset buttons go to GND through 100 ohm (R7, R8, review S1): a mis-plugged TC2030 cable plus a reset press then puts 100 ohm, not a dead short, across the target rail (18-30 mA at 1.8-3.0 V). Against a reset pull-up of tens of kohm the pin still goes to a few mV, well under the low threshold.
 
 ## Rules file (review B1, fixed 2026-11-07)
@@ -111,7 +111,7 @@ PCBWay, 2 layers, 1.6 mm FR-4, 1 oz, HASL lead-free, green, white silk, 6/6 mil,
 - How it was proven (scripts\check_rules.sh, scratch copies of the saved board, no refill):
   - Old unitless file plus an extra unitless 5 mm track-width rule: 0 track_width errors (whole file ignored). Fixed file before the refill: 12 hole_clearance errors (zone vs H1-H4 and J6 NPTH at 0.15 mm, as the reviewer saw) plus 85 track_width errors from a test `(min 5mm)` rule. So the fixed file loads.
   - Final board plus the test rule `(constraint track_width (min 5mm))`: 93 track_width errors (rules file loaded).
-  - Final board with the J6 exception removed: 4 hole_clearance errors, J6 pads A1/B12 and A12/B1 vs the J6 NPTH (0.175 mm). So the J6-only 0.15 mm rule is what lets J6's own pads sit near its NPTH holes.
+  - Final board with the J6 exception removed: 4 hole_clearance errors, J6 pads A1/B12 and A12/B1 vs the J6 NPTH (0.194 mm). So the J6-only 0.15 mm rule is what lets J6's own pads sit near its NPTH holes.
   - Final board with the real file: 0 errors (zone 0.25 mm or more from every hole).
 
 ## Open items / unverified
