@@ -122,3 +122,10 @@ PCBWay, 2 layers, 1.6 mm FR-4, 1 oz, HASL lead-free, green, white silk, 6/6 mil,
 - Samtec FFSD ribbon key orientation not checked against its drawing.
 - DK guide read from the archived v1.1.0; current Nordic site not readable from here.
 - Not built or tested.
+
+## Fab output (2026-11-07)
+- Zip: C:\Personal-Agents\shared\handoff\prog_adapter\prog_adapter_fab_2026-11-07.zip (14 files at zip root, 128 KB); folder fab_2026-11-07\ beside it.
+- Gate on the saved board (no --refill-zones, rules file proven to load with a strict test rule): DRC 0 errors / 0 unconnected / 0 parity.
+- Files: F_Cu, B_Cu, F_Mask, B_Mask, F_Silkscreen, B_Silkscreen, F_Paste, B_Paste, Edge_Cuts, .gbrjob (2 layers, 1.6 mm), PTH.drl, NPTH.drl, PTH and NPTH drill map PDFs. No pos/BOM.
+- Drill: PTH has the J6 plated slots (4); NPTH has H1-H4 (3.2 mm), J6 0.65 mm holes (2) and the two J7 zip-tie slots (1.5 mm, non-plated).
+- Order notes (PCBWay): 2 layers, 1.6 mm, 6/6 mil, HASL lead-free, any colour. J7 zip-tie slots are non-plated slots. No stencil needed (hand solder); if wanted, F_Paste only.
