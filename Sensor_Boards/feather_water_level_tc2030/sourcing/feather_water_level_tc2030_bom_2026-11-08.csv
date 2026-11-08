@@ -1,0 +1,16 @@
+Ref,Qty,Value,MPN,Manufacturer,DigiKey,Mouser,Unit price USD (qty 1),Stock 2026-11-08,Note
+"C1,C3,C4",3,1uF 16V X5R,CL05A105KO5NNNC,Samsung Electro-Mechanics,1276-1067-1-ND,187-CL05A105KO5NNNC,0.16,DK 0 / Mouser 20834,"DigiKey shows 0 stock (was 22,889 on 2026-10-28 for the feather). Mouser 20,834. Drop-in at DigiKey: Murata GRM155R61C105KA12D (490-10694-1-ND, 94,165, 1uF 16V X5R +-10% 0402). C1 uses the easyeda2kicad C0402 footprint, C3/C4 the KiCad C_0402."
+C2,1,100nF 50V X7R,CC0603KRX7R9BB104,Yageo,311-1344-1-ND,603-CC603KRX7R9BB104,0.14,DK 3588632 / Mouser 46414981,easyeda2kicad C0603 footprint
+C5,1,10uF 6.3V X5R,GRM155R60J106ME15D,Murata Electronics,490-13238-1-ND,81-GRM155R60J106ME5D,0.17,DK 2330394 / Mouser 2965139,
+C6-C10,5,100nF 10V X7R,GRM155R71A104KA01D,Murata Electronics,490-6321-1-ND,81-GRM155R71A104KA1D,0.1,DK 1423001 / Mouser 2048969,Mouser shows On Order (0 on hand); buy at DigiKey
+CN1,1,"FFC 14-pos 0.5 mm R/A, 1 MP",503480-1400,Molex,WM1442CT-ND,538-503480-1400,1.4,DK 29362 / Mouser 16604,DigiKey MPN is 5034801400 (WM1442CT-ND); same part as Mouser 503480-1400. Equal price; DK listed as primary
+Q1,1,BSS138LT1G 50V 200mA N-MOS,BSS138LT1G,onsemi,BSS138LT1GOSCT-ND,863-BSS138LT1G,0.35,DK 27 / Mouser 3022,"DigiKey only 27 on hand (enough for 1 or 5 boards); Mouser 3,022 at 0.43. Thin at DK, Mouser is the safer source"
+R1,1,22k 1% 0402,RC0402FR-0722KL,Yageo,311-22.0KLRCT-ND,603-RC0402FR-0722KL,0.1,DK 0 / Mouser 2797,"DigiKey 0 stock for -0722KL. Mouser 2,797. Drop-in at DigiKey: RC0402FR-1322KL (13-RC0402FR-1322KLCT-ND, 25,688, same value/size/tolerance, different reel code). R1 = 22k sets SENS_ID 0.6875"
+R2-R4,3,100k 1% 0402,RC0402FR-07100KL,Yageo,311-100KLRCT-ND,603-RC0402FR-07100KL,0.1,DK 4668266 / Mouser 10452358,
+U1,1,Acconeer XM125 A121 radar module,XM125,Acconeer AB,1891-XM125-ND,925-XM125,22.2,DK 0 / Mouser 3652,"DigiKey 0 (tray, 16 wk lead per 10-30 check); Mouser 3,652 (was 1,263 on 10-30). Only source; no equivalent"
+U2,1,NCP161ASN180T1G 1.8V 450mA LDO,NCP161ASN180T1G,onsemi,NCP161ASN180T1GOSCT-ND,863-NCP161ASN180T1G,0.61,DK 52300 / Mouser 27231,
+U3,1,TCA9406DCTR I2C translator,TCA9406DCTR,Texas Instruments,296-28108-1-ND,595-TCA9406DCTR,1.49,DK 18930 / Mouser 20144,DCT package matches the footprint; the DCU (VSSOP-8) in the old 10-30 pick would not fit
+"U4,U5",2,SN74AXC1T45DBVR 1-bit translator,SN74AXC1T45DBVR,Texas Instruments,296-47598-1-ND,595-SN74AXC1T45DBVR,0.59,DK 16664 / Mouser 17755,
+TP1-TP10,0,1.0 mm test pads,-,-,-,-,0,-,"board only, not a part"
+H1-H4,0,mounting holes,-,-,-,-,0,-,"board only (H3 plated, others NPTH)"
+J1,0,TC2030 legged footprint,-,-,-,-,0,-,"pads + 7 NPTH holes only; cable is a tool, see md"
