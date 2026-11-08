@@ -51,7 +51,7 @@ COMPS = {
     'J1': dict(sym='Conn_02x03_Odd_Even', value='XM125 TC2030-IDC', fp='BoxHeader_SSK05-BH-254-B3_2x03_P2.54mm_Vertical',
                pos=(76.2, 63.5), nets={'1': 'XM_NRST', '2': 'XM_1V8', '3': 'XM_BOOT0', '4': 'XM_RX', '5': 'GND', '6': 'XM_TX'}, f=SSK),
     'J7': dict(sym='Conn_01x03', value='FTDI_WIRES', fp='FTDI_WirePads_3x_D1.0mm_ZipTie',
-               pos=(30.48, 63.5), nets={'1': 'GND', '2': 'FTDI_TXD', '3': 'FTDI_RXD'}, f=NOPART, bom=False),
+               pos=(30.48, 63.5), nets={'1': 'GND', '2': 'FTDI_RXD', '3': 'FTDI_TXD'}, f=NOPART, bom=False),
     'R1': dict(sym='R', value='330', fp='R_0805_2012Metric', pos=(50.8, 58.42), nets={'1': 'FTDI_TXD', '2': 'XM_RX'}, f=R330),
     'R2': dict(sym='R', value='330', fp='R_0805_2012Metric', pos=(63.5, 58.42), nets={'1': 'XM_TX', '2': 'FTDI_RXD'}, f=R330),
     'R3': dict(sym='R', value='1k', fp='R_0805_2012Metric', pos=(43.18, 91.44), nets={'1': 'XM_1V8', '2': 'BOOT_JP'}, f=R1K),
@@ -65,7 +65,7 @@ COMPS = {
                pos=(233.68, 63.5), nets={'1': 'SWD_VTREF', '2': 'SWD_SWDIO', '3': 'GND', '4': 'SWD_SWCLK', '5': 'GND', '6': 'SWD_SWO', '9': 'GND', '10': 'SWD_NRESET'},
                nc=['7', '8'], f=P('3220-10-0100-00', 'CNC Tech', '1175-1627-ND', '-')),
     'J4': dict(sym='Conn_01x06', value='SWD 0.1in breakout', fp='PinHeader_1x06_P2.54mm_Vertical', pos=(233.68, 99.06),
-               nets={'1': 'SWD_VTREF', '2': 'SWD_SWDIO', '3': 'SWD_SWCLK', '4': 'SWD_NRESET', '5': 'SWD_SWO', '6': 'GND'},
+               nets={'1': 'SWD_VTREF', '2': 'SWD_SWDIO', '3': 'SWD_SWCLK', '4': 'SWD_SWO', '5': 'SWD_NRESET', '6': 'GND'},
                f=P('PEC06SAAN', 'Sullins Connector Solutions', '35-PEC06SAAN-ND', '-')),
     'SW2': dict(sym='SW_Push', value='SWD RESET', fp='SW_PUSH_6mm', pos=(193.04, 93.98), nets={'1': 'SWD_NRESET', '2': 'GND'}, f=SW),
     # ---------------- Section D: USB-C 3.0 V ----------------

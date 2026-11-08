@@ -3644,7 +3644,7 @@
 		)
 		(uuid "1c504123-1a6e-522e-8f66-0b079c867010")
 	)
-	(label "FTDI_TXD"
+	(label "FTDI_RXD"
 		(at 22.86 63.5 180)
 		(effects
 			(font
@@ -3665,7 +3665,7 @@
 		)
 		(uuid "8ae9b694-d7a8-56ce-a3d2-61b224e9ff86")
 	)
-	(label "FTDI_RXD"
+	(label "FTDI_TXD"
 		(at 22.86 66.04 180)
 		(effects
 			(font
@@ -5221,7 +5221,7 @@
 		)
 		(uuid "cf4b8787-70e2-58b8-adeb-ee35f3170ca2")
 	)
-	(label "SWD_NRESET"
+	(label "SWD_SWO"
 		(at 226.06 101.6 180)
 		(effects
 			(font
@@ -5242,7 +5242,7 @@
 		)
 		(uuid "3a7813d2-686b-57ad-affb-c7cfac4c9190")
 	)
-	(label "SWD_SWO"
+	(label "SWD_NRESET"
 		(at 226.06 104.14 180)
 		(effects
 			(font
