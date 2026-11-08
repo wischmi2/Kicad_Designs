@@ -4,6 +4,8 @@
 
 Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\Sensor_Boards\feather_water_level_tc2030\feather_water_level_tc2030.kicad_pro
 
+Purchasing BOM (2026-11-08, live DigiKey/Mouser, MPN-keyed, cart CSVs, tools list): sourcingbom_digikey_mouser_2026-11-08_live.md (about 28.92 USD for 1 board, 128.45 for 5).
+
 ## Fab output (2026-11-07)
 - **Zip:** C:\Personal-Agents\shared\handoff\feather_water_level_tc2030\feather_water_level_tc2030_fab_2026-11-07.zip (16 files at the zip root; unzipped copy in fab_2026-11-07\ next to it). Made after the S2 follow-up review was clean. Not uploaded or ordered.
 - **Gate:** kicad-cli pcb drc --schematic-parity --severity-all, saved board, no --refill-zones: 0 errors / 0 unconnected / 0 parity (5 warnings, same as before).
