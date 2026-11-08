@@ -5,7 +5,7 @@
 Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\Sensor_Boards\feather_water_level_tc2030\feather_water_level_tc2030.kicad_pro
 
 ## Fab output (2026-11-07)
-- **Zip:** C:\Personal-Agents\shared\handoffeather_water_level_tc2030eather_water_level_tc2030_fab_2026-11-07.zip (16 files at the zip root; unzipped copy in fab_2026-11-07\ next to it). Made after the S2 follow-up review was clean. Not uploaded or ordered.
+- **Zip:** C:\Personal-Agents\shared\handoff\feather_water_level_tc2030\feather_water_level_tc2030_fab_2026-11-07.zip (16 files at the zip root; unzipped copy in fab_2026-11-07\ next to it). Made after the S2 follow-up review was clean. Not uploaded or ordered.
 - **Gate:** kicad-cli pcb drc --schematic-parity --severity-all, saved board, no --refill-zones: 0 errors / 0 unconnected / 0 parity (5 warnings, same as before).
 - **Export options** (reproduce the original feather_water_level 2026-11-04 zip byte for byte apart from dates): `pcb export gerbers --check-zones` (kicad-cli defaults, no --subtract-soldermask, no --board-plot-params) on F.Cu, In1.Cu, In2.Cu, B.Cu, F/B.Mask, F/B.Silkscreen, F/B.Paste, Edge.Cuts plus job file; `pcb export drill --format excellon --drill-origin absolute --excellon-units mm --excellon-separate-th --generate-map --map-format pdf`.
 - **Order notes (PCBWay):** 4 layers, 1.6 mm, ENIG, 4/4 mil, standard stackup with no impedance control. Stencil: 0.12 mm, bottom only, from B_Paste (ignore F_Paste). **The 7 NPTH holes of J1 (4 x 2.375 mm, 3 x 0.991 mm) are Tag-Connect holes and must be unplated** (NPTH file; H4 2.7 mm is the only plated big hole). The TC2030 cable is a tool, not a BOM part. No pos/BOM files.
