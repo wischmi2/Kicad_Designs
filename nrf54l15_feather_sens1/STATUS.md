@@ -143,3 +143,6 @@ The NXE1S0303MC needs about 10 % load (30 mA); below about 5 % its output can ri
 ## Clearance nudge 2026-10-28 night (follow-up review S1)
 - min_clearance and the Default/PWR net-class clearance raised 0.1 -> 0.15 mm; DRC (--schematic-parity --refill-zones --severity-all) 0 errors, 0 unconnected, 0 parity, 9 warnings (lib_footprint_issues only). Barrier unchanged (3.000 mm).
 - S1: VSENS via (127.9,113.93) -> (127.8,113.98); gap to C6.1 (same net) about 0.03 -> 0.07 mm, to U3.7 still >= 0.15. 0.15 to C6.1 is not reachable: the U3.8 to U3.7 pad gap (0.67 mm) is barely wider than the 0.6 mm via. Moving it further would break 0.15 to U3.7 (SDA).
+
+## Zone refill 2026-11-07 (pre-order check)
+- 2026-11-07: all zones refilled and saved (stored GND_host fill was stale after efdff31 moved the VSENS via to (127.8, 113.98); fill was 0.139 mm from it on In1/In2/B.Cu). Diff is fill polygons only. DRC without refill (--schematic-parity): 0 errors, 0 unconnected, 0 parity (9 lib_footprint_issues warnings). ERC 0 errors, 40 warnings. Fab zip to be regenerated after follow-up review.
