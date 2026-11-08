@@ -10,7 +10,21 @@ from parts import COMPS
 PRJ, BLD, NETXML = sys.argv[1], sys.argv[2], sys.argv[3]
 os.makedirs(BLD, exist_ok=True)
 shutil.copy(os.path.join(PRJ, 'prog_adapter.kicad_pro'), os.path.join(BLD, 'prog_adapter.kicad_pro'))
-shutil.copy(os.path.join(PRJ, 'prog_adapter.kicad_dru'), os.path.join(BLD, 'prog_adapter.kicad_dru'))
+# Custom rules. KiCad 10 needs units on every value: "(min 0.25)" without "mm" makes the whole
+# file unparseable and kicad-cli then silently ignores it (review B1, 2026-11-07).
+DRU = """(version 1)
+# Board-wide hole clearance 0.25 mm (board setup minimum is lowered to 0.15 only so the
+# J6 exception below can take effect; board-setup values are hard minimums).
+(rule "hole clearance default"
+	(constraint hole_clearance (min 0.25mm)))
+# GCT USB4105-GF-A recommended land pattern (KiCad stock footprint): the 0.65 mm NPTH
+# locating holes sit 0.175 mm from the edge of the A1/B12 and A12/B1 GND pads.
+(rule "J6 NPTH to own pads"
+	(condition "A.memberOfFootprint('J6') && B.memberOfFootprint('J6')")
+	(constraint hole_clearance (min 0.15mm)))
+"""
+for d in (PRJ, BLD):
+    open(os.path.join(d, 'prog_adapter.kicad_dru'), 'w', encoding='utf-8', newline='\n').write(DRU)
 PCB = os.path.join(BLD, 'prog_adapter.kicad_pcb')
 if os.path.exists(PCB):
     os.remove(PCB)
@@ -295,5 +309,9 @@ board = pcbnew.LoadBoard(PCB)
 filler = pcbnew.ZONE_FILLER(board)
 filler.Fill(board.Zones())
 pcbnew.SaveBoard(PCB, board)
+# The Python ZONE_FILLER does not load the .kicad_dru, so refill with kicad-cli (which does)
+# and save; only the .kicad_pcb is copied back to the project.
+import subprocess
+subprocess.run(['kicad-cli', 'pcb', 'drc', '--refill-zones', '--save-board', '-o', os.path.join(BLD, 'refill.rpt'), PCB], check=True)
 shutil.copy(PCB, os.path.join(PRJ, 'prog_adapter.kicad_pcb'))
 print('saved', len(fps), 'footprints', board.GetTrackWidthList() if False else '')
