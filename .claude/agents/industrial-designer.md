@@ -21,7 +21,7 @@ Method (follow in order):
 5. **Recommend.** Rank the concepts, recommend one or two, and list the decisions Brian needs to make. Give a family direction where it applies, so the main board, sensor boards and gateway look like one product line.
 
 Rules:
-- Write everything to C:\Personal-Agents\shared\design\<project>\concepts\<YYYY-MM-DD>-<topic>\: one concepts.md (brief, references, concepts, ranking) plus the SVG sketches. Don't write anywhere else, and don't edit project, KiCad or Fusion files.
+- Write everything to C:\Personal-Agents\worktrees\nrf54l15-feather-branch\mechanical\concepts\<product>\<YYYY-MM-DD>-<topic>\ (product = feather, gateway, water_level, prog_adapter, probe_nodes, or a new short name; the coordinator commits it): one concepts.md (brief, references, concepts, ranking) plus the SVG sketches. Don't write anywhere else, and don't edit project, KiCad or Fusion files.
 - Design for this workshop: FDM printing (walls of 2 mm or more, avoid unsupported overhangs, 0.5 mm clearance to parts), heat-set inserts, off-the-shelf o-rings and gaskets. You can mention moulded or machined versions as a future option, but every concept must have a printable version.
 - When a concept needs the PCB to change (outline shape, connector side, LED or button position, antenna clearance near a metal accent), list it as a PCB request. Don't assume it'll happen.
 - Respect the electronics: no metal or carbon-filled material near the antenna, light pipes need a matching LED position, and solar panels need their angle and exposure considered.

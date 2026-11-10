@@ -4577,7 +4577,7 @@
 		(effects (font (size 1.27 1.27)) (justify left top))
 		(uuid "71172f8a-d15c-4e1c-a3ae-a1759e0cb0b8")
 	)
-	(text "RADAR_RST high = XM125 held in reset (Q1 open drain on NRESET). The STM32 has its own NRST pull-up.\nThis board needs the radar feather build: R15, R16, R17, R18 not fitted (Sensor_Boards\CN1_SENSOR_CONNECTOR.md).\nOn that build R2 keeps Q1 off while the host pin floats. On a standard feather R18 holds RADAR_RST at about 2.7 V,\nso the module stays in reset until firmware drives SENS_CS low."
+	(text "RADAR_RST high = XM125 held in reset (Q1 open drain on NRESET). The STM32 has its own NRST pull-up.\nThis board needs the radar feather build: R15, R16, R17, R18 not fitted (hardware/sensors/CN1_SENSOR_CONNECTOR.md).\nOn that build R2 keeps Q1 off while the host pin floats. On a standard feather R18 holds RADAR_RST at about 2.7 V,\nso the module stays in reset until firmware drives SENS_CS low."
 		(exclude_from_sim no)
 		(at 190.5 20.32 0)
 		(effects (font (size 1.27 1.27)) (justify left top))
