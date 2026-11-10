@@ -1,6 +1,6 @@
 # Feather sensor board template - Status
 
-Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\Sensor_Boards\feather_sensor_template\feather_sensor_template.kicad_pro
+Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\sensors\template\feather_sensor_template.kicad_pro
 Last reviewed: 2026-10-25
 
 **State: TEMPLATE (rev 0.1).** Starting point for every sensor board that stacks under the nRF54L15 feather. Derived from nrf54l15_feather_sens1 (pH) on 2026-10-25; sens1 itself was not changed. Not a fab design: never order it as is. How to use it: README.md in this folder.
@@ -38,7 +38,7 @@ One sensor board per feather, each pair in its own enclosure. CN1 is a point-to-
 - Standoffs: nylon at the isolated end (H1/H2) is mandatory, because the feather's H1/H2 at the USB end are plated GND and sit right above them. H4 is nylon (antenna corner, NPTH on both boards). H3 may be metal: the feather's H3 is NPTH, so a metal standoff there only touches this board's host GND.
 
 ## CN1 and the FFC fold
-Same as sens1 (see nrf54l15_feather_sens1\STATUS.md). The feather's FFC leaves +x at x = 140.8, folds 180 degrees down round that edge and enters this board's CN1 heading -x. Pin 1 meets pin 1. A U-fold puts the conductors on opposite faces at the two ends, so the cable is opposite-side contacts; the 503480 is dual contact (SD-503480-001 note 9), so a same-side cable also works.
+Same as sens1 (see hardware\sensors\ph\STATUS.md). The feather's FFC leaves +x at x = 140.8, folds 180 degrees down round that edge and enters this board's CN1 heading -x. Pin 1 meets pin 1. A U-fold puts the conductors on opposite faces at the two ends, so the cable is opposite-side contacts; the 503480 is dual contact (SD-503480-001 note 9), so a same-side cable also works.
 
 ## Open work
 - Register the easyeda2kicad / EasyEDA2Kicad / Parts_1 libraries on this PC (clears 22 ERC/DRC library warnings and adds 3D models for the passives).
@@ -47,7 +47,7 @@ Same as sens1 (see nrf54l15_feather_sens1\STATUS.md). The feather's FFC leaves +
 ## Questions for Brian
 - H4 is NPTH in the template (antenna keep-out), so only H3 is a plated GND hole. OK, or keep H4 plated as on sens1 and allow its pad inside the keep-out?
 - The isolated supply is U4 NXE1S0303MC from VSENS. It is unregulated (Vout follows Vin) and VSENS is 3.0 V, at the bottom of its 3.3 V +-10 % input range (from memory of the Murata NXE1 datasheet, not re-checked today), so VDD_ISO is nearer 3.0 V than 3.3 V under load, and the whole sensor shares the 100 mA VSENS budget. Fine for the pH OEM (3.0 to 5 V). The conductivity plan (EZO-EC, 3.3 V min, sensor-board-conductivity.md section 5.3) wants a VBAT-fed SN6505 + transformer + LDO at about 3.9 V instead. Keep the NXE1S0303MC as the template default, or change the default isolation block to the VBAT-fed design once the conductivity board proves it?
-- R1 value field is "10k (set per SENSORS.md)". There is no SENSORS.md yet; the ID table is in v4-sensor-connector.md. Create SENSORS.md as the ID register (pH = ?, conductivity = 1k proposed)?
+- R1 value field is "10k (set per SENSORS.md)". There is no SENSORS.md yet; the ID table is in docs\notes\v4-sensor-connector.md. Create SENSORS.md as the ID register (pH = ?, conductivity = 1k proposed)?
 - INT_ISO stops at J5 (2-channel ADuM1250). Make a 3-channel isolator the template default so every board can interrupt the host?
 
 ## Decisions

@@ -1,6 +1,6 @@
 # pH sensor - Status
 
-Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\ph_sensor\ph_sensor.kicad_pro
+Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\archive\ph_sensor\ph_sensor.kicad_pro
 Last reviewed: 2026-10-23
 
 **State: SUPERSEDED (2026-10-23, per Brian).** The active pH board is nrf54l15_feather_sens1.

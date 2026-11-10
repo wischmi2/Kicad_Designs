@@ -177,7 +177,7 @@ Added to the schematic as LCSC / Manufacturer / MPN fields (J5 also has Mating_C
 - The module ships with a PH2.0 8-pin to Dupont lead, which does **not** fit J5.
 
 ### LCD cable W1 (J5 ↔ module), 8-pin JST PH, probably REVERSED (J5 slot n → module slot 9−n)
-Updated 2026-10-29. Full wiring table and continuity check: C:\Personal-Agents\shared\design\pouch_gateway\lcd_module\cable_W1_wiring.md.
+Updated 2026-10-29. Full wiring table and continuity check: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\gateway\docs\lcd_module\cable_W1_wiring.md.
 
 | Qty | Part | Manufacturer | MPN | Source |
 |---|---|---|---|---|

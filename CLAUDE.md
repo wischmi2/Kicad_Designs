@@ -16,6 +16,7 @@ You coordinate PCB and enclosure work.
 - Before each handoff, pick the cheapest model that can do the task well and pass it as `model` on the Agent call. Don't use Fable by default (Brian 2026-10-28, it uses up his 5-hour limit fast). Use it only when Brian asks for it, or when I judge a task really needs it (for example RF/antenna/crystal placement or a task Opus has already failed); then ask Brian first and say why. Use Opus for layout and routing, including RF, design reviews, hard debugging and anything that sets placement or architecture. Use Sonnet for BOM and stock checks, STEP/ERC/DRC exports, STATUS.md updates, routine firmware builds and devicetree edits, concept research and write-ups, and Fusion edits to an existing model. Use Haiku for file moves and listings, and single kicad-cli runs. If a Sonnet or Haiku run fails, needs a redo, or misses something a review catches, rerun the task on Opus (for an Opus failure, ask Brian before moving to Fable) and note it in the session report. Record the model and the outcome of each handoff in the session report, so the defaults can be tuned. parts-sourcing defaults to Sonnet in its agent file (Brian 2026-10-25); pass `model: "opus"` to override it.
 
 ## Status (keep updated)
+- Paths: 2026-11-10 repo reorganised into hardware\, firmware\, mechanical\, docs\ (map in README.md). Paths in entries before 2026-11-10 (and in shared\reports) use the old layout; translate with docs\reorg_2026-11-10.md. Enclosure files from shared\design are now copied into mechanical\ (originals not yet deleted)
 - Done: 2026-10-23 wrote first STATUS.md for all six boards (ERC/DRC run with kicad-cli 10.0)
 - Done: 2026-10-24 pouch gateway enclosure (Ledger, Abyss navy) modelled in Fusion; notes in shared\design\pouch_gateway\enclosure_ledger\. Waiting on Brian: brow print approach (fine layers, supports, or separate cap)
 - Done: 2026-10-25 feather run 3: 6 of 7 unconnected fixed (SENS_SCL open), STEP 2026-10-25c. sens1 re-laid on the Feather outline, fully routed, STEP 2026-10-25. Feather enclosure concepts in shared\design\nrf54l15_feather\enclosure_concepts\. Report: shared\reports\2026-10-25-coordinator-feather-sens1-enclosure.md
@@ -89,18 +90,20 @@ Read a board's STATUS.md before working on it. Update it at the end of every ses
 
 | Board | Folder | Status file |
 | --- | --- | --- |
-| nRF54L15 feather (ACTIVE main) | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\nrf54l15_feather | STATUS.md |
-| Feather sensor board 1 (ACTIVE pH) | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\nrf54l15_feather_sens1 | STATUS.md |
-| Pouch gateway | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\pouch_gateway | STATUS.md |
-| ReefWatch solar node | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\nrf54l15_v3 | STATUS.md |
-| nRF54L15 v2 (earlier rev, SPV1040) | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\nrf54l15_v2 | STATUS.md |
-| nRF54L15 v4 (paused, replaced by feather) | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\nrf54l15_v4 | STATUS.md |
-| pH sensor (superseded by sens1) | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\ph_sensor | STATUS.md |
-| Feather sensor template | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\Sensor_Boards\feather_sensor_template | STATUS.md |
-| Feather water level (new, XM125 radar) | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\Sensor_Boards\feather_water_level | STATUS.md |
-| Feather water level TC2030 variant (copy of rev 0.2 + Tag-Connect XM125 port; original stays the fallback) | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\Sensor_Boards\feather_water_level_tc2030 | STATUS.md |
-| Feather ORP (Atlas ORP OEM, isolated) | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\Sensor_Boards\feather_orp | STATUS.md |
-| Feather dissolved oxygen (Atlas DO OEM, isolated) | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\Sensor_Boards\feather_dissolved_oxygen | STATUS.md |
-| Feather conductivity (Atlas EC OEM, isolated) | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\Sensor_Boards\feather_conductivity | STATUS.md |
-| Programming adapter (XM125 UART, TC2030 SWD to 10-pin for the 9160 DK, 0.1 in SWD breakout, USB-C 3.0 V) | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\prog_adapter | STATUS.md |
-| XIAO pogo stack | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\xiao_breakout | STATUS.md |
+| nRF54L15 feather (ACTIVE main) | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\feather | STATUS.md |
+| Feather sensor board 1 (ACTIVE pH) | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\sensors\ph | STATUS.md |
+| Pouch gateway | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\gateway | STATUS.md |
+| ReefWatch solar node | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\archive\nrf54l15_v3 | STATUS.md |
+| nRF54L15 v2 (earlier rev, SPV1040) | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\archive\nrf54l15_v2 | STATUS.md |
+| nRF54L15 v4 (paused, replaced by feather) | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\archive\nrf54l15_v4 | STATUS.md |
+| pH sensor (superseded by sens1) | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\archive\ph_sensor | STATUS.md |
+| Feather sensor template | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\sensors\template | STATUS.md |
+| Feather water level (new, XM125 radar) | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\sensors\water_level | STATUS.md |
+| Feather water level TC2030 variant (copy of rev 0.2 + Tag-Connect XM125 port; original stays the fallback) | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\sensors\water_level_tc2030 | STATUS.md |
+| Feather ORP (Atlas ORP OEM, isolated) | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\sensors\orp | STATUS.md |
+| Feather dissolved oxygen (Atlas DO OEM, isolated) | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\sensors\dissolved_oxygen | STATUS.md |
+| Feather conductivity (Atlas EC OEM, isolated) | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\sensors\conductivity | STATUS.md |
+| Programming adapter (XM125 UART, TC2030 SWD to 10-pin for the 9160 DK, 0.1 in SWD breakout, USB-C 3.0 V) | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\prog_adapter | STATUS.md |
+| XIAO pogo stack | C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\archive\xiao_breakout | STATUS.md |
+
+Other repo folders: firmware C:\Personal-Agents\worktrees\nrf54l15-feather-branch\firmware (boards\ = BOARD_ROOT, apps\feather_node\); enclosure exports C:\Personal-Agents\worktrees\nrf54l15-feather-branch\mechanical; notes and datasheets C:\Personal-Agents\worktrees\nrf54l15-feather-branch\docs; sensor-wide docs C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\sensors\CN1_SENSOR_CONNECTOR.md and SENSORS.md; old boards C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\archive.

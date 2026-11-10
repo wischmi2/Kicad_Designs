@@ -1,6 +1,6 @@
 # nRF54L15 v2 - Status
 
-Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\nrf54l15_v2\nrf54l15_v2.kicad_pro
+Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\archive\nrf54l15_v2\nrf54l15_v2.kicad_pro
 Last reviewed: 2026-10-23
 
 ## Summary

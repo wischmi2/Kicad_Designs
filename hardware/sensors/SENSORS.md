@@ -10,12 +10,12 @@ Read SENS_ID only while VSENS is on. The reading is ratiometric to VSENS, so the
 
 | Sensor type | Board folder | R_ID (1%, 0402) | MPN (Yageo, DigiKey stock checked 2026-10-28) | Ratio | V(SENS_ID) at 3.0 V | ADC counts (VSENS FS, 12 bit) |
 | --- | --- | --- | --- | --- | --- | --- |
-| EC / conductivity (Atlas EC OEM) | Sensor_Boards\feather_conductivity | 1k | RC0402FR-071KL (DigiKey 311-1.00KLRCT-ND, 3.5 M) | 0.0909 | 0.273 V | 372 |
-| DO / dissolved oxygen (Atlas DO OEM) | Sensor_Boards\feather_dissolved_oxygen | 2.2k | RC0402FR-072K2L (311-2.20KLRCT-ND, 1.8 k in stock) | 0.1803 | 0.541 V | 738 |
-| ORP (Atlas ORP OEM) | Sensor_Boards\feather_orp | 4.7k | RC0402FR-074K7L (311-4.7KLRCT-ND, 842 k) | 0.3197 | 0.959 V | 1309 |
+| EC / conductivity (Atlas EC OEM) | hardware\sensors\conductivity | 1k | RC0402FR-071KL (DigiKey 311-1.00KLRCT-ND, 3.5 M) | 0.0909 | 0.273 V | 372 |
+| DO / dissolved oxygen (Atlas DO OEM) | hardware\sensors\dissolved_oxygen | 2.2k | RC0402FR-072K2L (311-2.20KLRCT-ND, 1.8 k in stock) | 0.1803 | 0.541 V | 738 |
+| ORP (Atlas ORP OEM) | hardware\sensors\orp | 4.7k | RC0402FR-074K7L (311-4.7KLRCT-ND, 842 k) | 0.3197 | 0.959 V | 1309 |
 | pH (sens1) | nrf54l15_feather_sens1 | 10k | RC0402FR-0710KL (311-10.0KLRCT-ND, 8.6 M) | 0.5000 | 1.500 V | 2048 |
-| Water level (Acconeer XM125 60 GHz radar) | Sensor_Boards\feather_water_level | 22k | RC0402FR-0722KL (DigiKey stock 0 on 2026-10-30; Mouser 603-RC0402FR-0722KL per parts-sourcing; same part at DigiKey: RC0402FR-1322KL, 13-RC0402FR-1322KLCT-ND, 20,963) | 0.6875 | 2.063 V | 2816 |
-| Template / unassigned | Sensor_Boards\feather_sensor_template | 10k placeholder | RC0402FR-0710KL | 0.5000 | 1.500 V | 2048 |
+| Water level (Acconeer XM125 60 GHz radar) | hardware\sensors\water_level | 22k | RC0402FR-0722KL (DigiKey stock 0 on 2026-10-30; Mouser 603-RC0402FR-0722KL per parts-sourcing; same part at DigiKey: RC0402FR-1322KL, 13-RC0402FR-1322KLCT-ND, 20,963) | 0.6875 | 2.063 V | 2816 |
+| Template / unassigned | hardware\sensors\template | 10k placeholder | RC0402FR-0710KL | 0.5000 | 1.500 V | 2048 |
 
 Notes
 - IDs decided by Brian 2026-10-28. Open (SENS_ID no resistor fitted) reads ratio 1.0 (VSENS) and a shorted ID reads 0, so both are invalid IDs for firmware.

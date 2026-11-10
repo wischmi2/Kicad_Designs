@@ -1,8 +1,8 @@
 # Pouch gateway - Status
 
-Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\pouch_gateway\pouch_gateway.kicad_pro
+Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\gateway\pouch_gateway.kicad_pro
 Last reviewed: 2026-10-28 (pre-fab fixes from the 2026-10-28 design review)
-Design notes: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\pouch_gateway\docs\DESIGN_NOTES.md (Rev A)
+Design notes: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\gateway\docs\DESIGN_NOTES.md (Rev A)
 
 ## Summary
 Golioth Pouch BLE to Wi-Fi gateway, Rev A.
@@ -44,21 +44,21 @@ Golioth Pouch BLE to Wi-Fi gateway, Rev A.
   - C11: label at (146.4, 76.4) above C15/R7, leader down the right side of C15 to C11.
   - C16: label (vertical) at (148.7, 80.1), leader down past C11's right side to C16.
   - R12: label (vertical) at (140.7, 95.9), short leader to R12.
-- DRC (--schematic-parity --refill-zones --severity-all): 0 errors, 0 warnings, 0 unconnected, 0 parity (no silk warnings). Render: C:\Personal-Agents\shared\design\pouch_gateway\silk_2026-10-28.png.
+- DRC (--schematic-parity --refill-zones --severity-all): 0 errors, 0 warnings, 0 unconnected, 0 parity (no silk warnings). Render: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\gateway\docs\silk_2026-10-28.png.
 - Leaders in the C11/C16/R13 area are long and bendy because the module/RF area is dense. If Brian wants it tidier, the alternative is moving the R20/R22/R23 reference texts to open space.
 - Decision 2026-10-28 (Brian): the LCD mounts in its own holder in the Ledger enclosure, offset from the board as in the 2026-10-24 Fusion model, not stacked on the M2x6 standoffs. The J5/J1 clash found in the "LCD clearance" check above therefore does not apply; that section is kept as a record only.
 
 ### LCD clearance (stacked on the shared M2 standoffs, 2026-10-28)
-Inputs: shared\design\pouch_gateway\lcd_module\MEASUREMENTS.md (Waveshare STEP): PH2.0 8-pin SMT side-entry on the LCD's back, 5.6 mm tall, body 4.25-12.75 mm in from the LCD's connector end, centred across the short axis over 19.9 mm (y 77.55-97.45 on this board). Standoffs M2 x 6 (Waveshare wiki and STEP), so the LCD back is 6.0 mm above the gateway top and the connector leaves **0.4 mm** above the gateway surface. The LCD can only sit with its back towards the gateway, so its connector end is over either the right (J5) end or the left (J1) end. Gateway heights are datasheet/model values, not measured: J5 4.85 mm (board STEP, per enclosure_ledger\NOTES.md), J1 about 3.2-3.3 mm (enclosure placeholder 3.3), 0603 about 0.9, 0402 about 0.35-0.5, SOT-143 about 1.1.
+Inputs: hardware\gateway\docs\lcd_module\MEASUREMENTS.md (Waveshare STEP): PH2.0 8-pin SMT side-entry on the LCD's back, 5.6 mm tall, body 4.25-12.75 mm in from the LCD's connector end, centred across the short axis over 19.9 mm (y 77.55-97.45 on this board). Standoffs M2 x 6 (Waveshare wiki and STEP), so the LCD back is 6.0 mm above the gateway top and the connector leaves **0.4 mm** above the gateway surface. The LCD can only sit with its back towards the gateway, so its connector end is over either the right (J5) end or the left (J1) end. Gateway heights are datasheet/model values, not measured: J5 4.85 mm (board STEP, per enclosure_ledger\NOTES.md), J1 about 3.2-3.3 mm (enclosure placeholder 3.3), 0603 about 0.9, 0402 about 0.35-0.5, SOT-143 about 1.1.
 - **Connector end over the right edge (J5 end): clash.** LCD connector x 155.25-163.75 overlaps J5 (courtyard x 158.4-167.1) over x 158.4-163.75 by y 77.55-94.97 (5.35 x 17.4 mm). 4.85 + 5.6 = 10.45 mm in a 6.0 mm gap: **4.45 mm interference**. C20 (0603) and C21 (0402) are also under it and taller than 0.4 mm. The LCD cable plug would also sit right on top of J5 and its cable.
 - **Connector end over the left edge (J1 end): clash.** LCD connector x 114.25-122.75 overlaps J1 (courtyard x 110.2-119.7) over x 114.25-119.69 by y 87.98-97.45 (5.4 x 9.5 mm). 3.3 + 5.6 = 8.9 mm: **about 2.9 mm interference**. FB1 (0603), D1 edge (SOT-143, 0.06 mm overlap), R1/R2 (0402, borderline) and the J6 Tag-Connect pads are also under it; J2 is pads only (DNP).
 - Rest of the LCD footprint at 6 mm: fine for the parts outside the connector zone (J5 4.85, L1 about 2.0, KMR2 about 1.9, mated U.FL about 2.4, U1 about 1.6). Only the connector was modelled on the LCD back; other back-side parts were not checked.
 - Other consequences of stacking: J6 Tag-Connect can't be used with the LCD fitted (the TC2030 head needs top access), and SW1/SW2/SW3 and D3-D5 are covered (concepts.md 2.4).
-- Note: the current Fusion Ledger model (shared\design\pouch_gateway\enclosure_ledger\NOTES.md) does **not** stack them; it mounts the LCD above the gateway, side by side with a 5 mm offset, so this clash does not occur there. The 2026-10-28 task says the LCD sits over the board on the shared standoffs; which is intended needs confirming.
+- Note: the current Fusion Ledger model (mechanical\ledger\NOTES.md) does **not** stack them; it mounts the LCD above the gateway, side by side with a 5 mm offset, so this clash does not occur there. The 2026-10-28 task says the LCD sits over the board on the shared standoffs; which is intended needs confirming.
 - Options (no connector moved): (1) longer standoffs: LCD connector over J1 with M2 x 10 (about 0.8-1.1 mm margin over J1) or over J5 with M2 x 12 (about 1.5 mm margin); (2) remove the LCD's PH connector and solder the cable to its pads, then M2 x 6 works (cable exit to be checked); (3) side by side as in the Ledger model; (4) next rev: J5 and the LCD connector at opposite ends, or a J5 top-entry/FPC.
 
 ### LCD cable W1 (2026-10-29)
-- Cable W1 (J5 to LCD, PHR-8 x2 + ASPHSPH24K102 x8) is in the live BOM (sourcing/bom_digikey_mouser_2026-10-28_live.md, section "Cable assembly W1"). Wiring map: C:\Personal-Agents\shared\design\pouch_gateway\lcd_module\cable_W1_wiring.md. All nets match the module; the module schematic numbers its PH connector VCC=8 to BL=1, so the cable is probably reversed (slot n to slot 9-n), not 1:1 as DESIGN_NOTES says. Confirm with continuity first.
+- Cable W1 (J5 to LCD, PHR-8 x2 + ASPHSPH24K102 x8) is in the live BOM (sourcing/bom_digikey_mouser_2026-10-28_live.md, section "Cable assembly W1"). Wiring map: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\gateway\docs\lcd_module\cable_W1_wiring.md. All nets match the module; the module schematic numbers its PH connector VCC=8 to BL=1, so the cable is probably reversed (slot n to slot 9-n), not 1:1 as DESIGN_NOTES says. Confirm with continuity first.
 
 ### BOM pricing (live, 2026-10-28)
 - Files: sourcing\bom_digikey_mouser_2026-10-28_live.md plus DigiKey and Mouser CSVs (copies in shared\design\pouch_gateway\). parts-sourcing, DigiKey/Mouser API.
@@ -69,8 +69,8 @@ Inputs: shared\design\pouch_gateway\lcd_module\MEASUREMENTS.md (Waveshare STEP):
 - Not checked: other U1 distributors, pad geometry of substitutes, Amazon LCD price.
 
 ### Enclosure hardware (2026-11-01, coordinator)
-- Ledger is at Fusion v4 with hardware bodies, and uses the Amazon hardware list (C:\Personal-Agents\shared\design\enclosure_hardware_amazon_2026-11-01.md). The McMaster version is in enclosure_ledger\variant_mcmaster_2026-11-01\. No board change.
-- Guide: shared\design\pouch_gateway\enclosure_ledger\assembly_guide_2026-11-01\ASSEMBLY.md. Report: shared\reports\2026-11-01-coordinator-enclosure-hardware.md.
+- Ledger is at Fusion v4 with hardware bodies, and uses the Amazon hardware list (C:\Personal-Agents\worktrees\nrf54l15-feather-branch\mechanical\hardware_lists\enclosure_hardware_amazon_2026-11-01.md). The McMaster version is in enclosure_ledger\variant_mcmaster_2026-11-01\. No board change.
+- Guide: mechanical\ledger\assembly_guide_2026-11-01\ASSEMBLY.md. Report: shared\reports\2026-11-01-coordinator-enclosure-hardware.md.
 - Open: re-apply "Abyss navy PETG" to Front_Shell in Fusion (the agent set an approximate #1F2D4D).
 
 ## Open work
@@ -95,7 +95,7 @@ Inputs: shared\design\pouch_gateway\lcd_module\MEASUREMENTS.md (Waveshare STEP):
 - 2026-10-30 (Brian): keep the board silkscreen as is ("Rev 1.0", "Oct. 10, 2026"). The fab zip shared\handoff\pouch_gateway\pouch_gateway_fab_2026-10-28.zip was the one to order (superseded by the 2026-11-07 zip) (PCBWay std 4L 1.6 mm, ENIG, 6/6 mil, 0.3 mm min hole, plated USB-C slots). Still open, BOM only: D5 blue LED resistor (100 ohm at 3.3 V is too dim), FCC check of the 100 mm antenna.
 - 2026-10-24 (Brian): the gateway PCB has no battery circuit. It's powered only by USB-C. A battery, if used, needs an external charger/5 V boost module feeding J1, inside the enclosure.
 - 2026-10-28 (Brian): Rev A is not on order yet (this replaces "the PCB is fixed and on order"). Fix S1, S2, S3, the J2/J4 DNP part of S6 and the silkscreen (N1); keep R5 0R fitted (S4); order PCBWay standard 4L 1.6 mm, ENIG, stencil. The LCD sits over the board on the shared M2 standoffs.
-- 2026-10-24 (Brian): enclosure placement is a shelf or desk with AC (USB) power available all the time. This answers question 1 in shared\design\pouch_gateway\concepts\2026-10-24-enclosure\concepts.md and points to the Ledger concept.
+- 2026-10-24 (Brian): enclosure placement is a shelf or desk with AC (USB) power available all the time. This answers question 1 in mechanical\concepts\gateway\2026-10-24-enclosure\concepts.md and points to the Ledger concept.
 - 2026-10-24 (Brian): printer is a Snapmaker U1 (4-toolhead toolchanger, 270 x 270 x 270 mm, 300 °C nozzle, 100 °C bed, no top cover mentioned). Open to filament suggestions; proposed PETG body + translucent PETG/PCTG light pipe + TPU feet (answers question 8).
 - 2026-10-24 (Brian): Rev A is wall (USB-C) power only, with no battery, PowerBoost or pigtail in the enclosure. This replaces the earlier "small pack for power cuts" answer. External USB-C keeps data, and the USB_VBUS 0 ohm stays fitted (closes concepts questions 2, 3 and 7). Checked the schematic: no charger, battery connector or power path on the board.
 - 2026-10-24 (Brian): enclosure concept is Ledger (concepts.md section 5). Desk/shelf placement means the wedge stand; no wall keyholes needed.
@@ -103,7 +103,7 @@ Inputs: shared\design\pouch_gateway\lcd_module\MEASUREMENTS.md (Waveshare STEP):
 - 2026-10-24 (Brian): open window over the LCD, no cover lens (concepts question 10).
 - 2026-10-24 (Brian): J2 (SWD) and J4 (UART) are not fitted on the build; Tag-Connect J6 is the debug path (concepts question 5).
 - 2026-10-24 (Brian): colourway is Abyss navy with a coral key (concepts question 9).
-- 2026-10-24: LCD module dimensions taken from Waveshare's STEP model, so no hand measurement is needed (concepts question 4). See shared\design\pouch_gateway\lcd_module\MEASUREMENTS.md. Active area is 1.71 mm off-centre towards the connector end; the module is 4.0 mm thick; the PH connector on its back is 5.6 mm tall.
+- 2026-10-24: LCD module dimensions taken from Waveshare's STEP model, so no hand measurement is needed (concepts question 4). See hardware\gateway\docs\lcd_module\MEASUREMENTS.md. Active area is 1.71 mm off-centre towards the connector end; the module is 4.0 mm thick; the PH connector on its back is 5.6 mm tall.
 
 ## Decisions (from DESIGN_NOTES.md)
 - 4 layers. M2 holes on the display hole pattern, which replaces the earlier mounting plan.

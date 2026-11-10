@@ -2,7 +2,7 @@
 
 One 14-pin plug, same on every sensor board. The host pinout is fixed; new sensor boards adapt to it.
 
-Source of truth: `nrf54l15_v4\sensor_connector.kicad_sch` and `nrf54l15.kicad_sch`, read 2026-10-04. Pin capabilities checked against the nRF54L15 datasheet v1.0 (Table 79, §10.1.1–10.1.2).
+Source of truth: `hardware\archive\nrf54l15_v4\sensor_connector.kicad_sch` and `nrf54l15.kicad_sch`, read 2026-10-04. Pin capabilities checked against the nRF54L15 datasheet v1.0 (Table 79, §10.1.1–10.1.2).
 
 ## Connector
 

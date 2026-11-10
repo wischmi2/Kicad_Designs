@@ -3,7 +3,7 @@
 Written 2026-11-04 for board rev 0.2; part 0 added 2026-11-07 for the TC2030 variant (this folder). Not tried on real hardware yet. Pad positions and nets were read from `feather_water_level.kicad_pcb` (unchanged in `feather_water_level_tc2030.kicad_pcb`). Part 10 lists what is still unverified.
 
 ## 0. TC2030 variant: flashing through J1 (added 2026-11-07)
-Adapter PCB: prog_adapter (worktree folder prog_adapter\, section A; section D gives the 3.0 V for TP9/TP10). **Connect the adapter's J5 leads only while its USB-C is plugged in:** with USB unplugged and J5 still on a powered board, the board back-feeds the adapter's TLV75530 output (reverse current, TLV755P datasheet 7.1.4). Plug USB in first, unplug J5 first.
+Adapter PCB: prog_adapter (worktree folder hardware\prog_adapter\, section A; section D gives the 3.0 V for TP9/TP10). **Connect the adapter's J5 leads only while its USB-C is plugged in:** with USB unplugged and J5 still on a powered board, the board back-feeds the adapter's TLV75530 output (reverse current, TLV755P datasheet 7.1.4). Plug USB in first, unplug J5 first.
 This copy of the guide belongs to **feather_water_level_tc2030** (rev 0.2-TC2030), which adds a Tag-Connect TC2030 legged footprint, J1, on the bottom side between H1 and H2. Everything below still applies; J1 only replaces soldered wires on TP4-TP8. The test pads are all still there. The original rev 0.2 board has no J1, so use parts 2-6 as written for it.
 
 **J1 pin map** (looking at the bottom of the board, pin 1 is marked on the silk; pins 1-2-3... follow the Tag-Connect numbering):
@@ -30,7 +30,7 @@ Red, brown and green wires stay unconnected and insulated, as in part 3. Pin 2 i
 
 **Steps:** as part 6, except step 1 becomes: FFC out, supply off, wire bench power to TP9/TP10/TP8 as in part 5, then press the TC2030 plug onto J1 from the bottom side until the legs click (the alignment pins only go in one way round). Release by squeezing the legs from the two long board edges. The legs stick 2.24 mm out of the top side; with the feather still stacked on its 8 mm standoffs they have room.
 
-**Plug fit (S1 check 2026-11-07, box model from the Tag-Connect drawing, no vendor 3D model found):** the part of the plug that sits on the board (the pin carrier, about 7.35 mm wide, scaled from the drawing) ends 1.42 mm from the XM125 body edge. The wider grip (9.27 or 9.906 mm, the drawing gives both) starts about 7.5 mm off the board, about 5.6 mm above the module top. Even if the full 9.906 mm reached the board it would end 0.15 mm short of the module (no overlap). Picture: C:\Personal-Agents\shared\design\feather_water_level\tc2030_2026-11-07\plug_fit_check.png.
+**Plug fit (S1 check 2026-11-07, box model from the Tag-Connect drawing, no vendor 3D model found):** the part of the plug that sits on the board (the pin carrier, about 7.35 mm wide, scaled from the drawing) ends 1.42 mm from the XM125 body edge. The wider grip (9.27 or 9.906 mm, the drawing gives both) starts about 7.5 mm off the board, about 5.6 mm above the module top. Even if the full 9.906 mm reached the board it would end 0.15 mm short of the module (no overlap). Picture: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\sensors\water_level_tc2030\docs\tc2030_2026-11-07\plug_fit_check.png.
 
 **Unverified:** fit with a real cable (the drawing says dimensions are subject to change). Not tried on hardware.
 

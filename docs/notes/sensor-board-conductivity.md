@@ -3,7 +3,7 @@
 Design outline for a CN1 plug-in board that measures conductivity / salinity / specific gravity in the reef tank.
 
 - **Reference schematic:** MikroE **EZO Carrier Click - Conductivity** (MIKROE-6011). This is a starting point only; the board is not a Click.
-- **Host:** Nordic_Solar v4 (nRF54L15 + nPM1300). Connector pinout per `v4-sensor-connector.md`.
+- **Host:** Nordic_Solar v4 (nRF54L15 + nPM1300). Connector pinout per `docs\notes\v4-sensor-connector.md`.
 - **Status:** outline. Items marked **[verify]** still need a datasheet check, and part numbers marked **[TBD]** are not chosen.
 
 ---
@@ -53,7 +53,7 @@ CN1.1/12/14 GND ── host GND                       ║        ISO_GND (separa
 | 8 | CS | no | NC (host pull-up keeps it high). |
 | 9 | INT | optional | NC for EZO-EC. If you change to an OEM-EC with an INT output, it needs a third isolated channel (open-drain, active low). |
 | 10 | AIN | no | NC. Nothing analog can cross the isolation barrier without extra parts. |
-| 11 | ID | **yes** | R_ID 1 % to GND. Proposed: **1 k → type 1 = conductivity** (`V_ID` ≈ 0.27 V). Record the assignment in `v4-sensor-connector.md`. |
+| 11 | ID | **yes** | R_ID 1 % to GND. Proposed: **1 k → type 1 = conductivity** (`V_ID` ≈ 0.27 V). Record the assignment in `docs\notes\v4-sensor-connector.md`. |
 | 12 | GND | **yes** | Host GND |
 | 13 | VBAT (raw battery) | **yes** | Input to the isolated power stage. This gives headroom over the full LiPo range and keeps the load visible to the nPM1300 fuel gauge. |
 | 14 | GND | **yes** | Host GND |
@@ -177,7 +177,7 @@ Duty cycle drives the power budget. Measure the board's on-current and on-time o
 3. Measure EZO-EC peak and average current, plus boot time → finalize the duty cycle.
 4. Settle the temperature-compensation method (§7).
 5. Settle the UART→I²C mode-switch procedure (§6).
-6. Assign ID type 1 in `v4-sensor-connector.md`.
+6. Assign ID type 1 in `docs\notes\v4-sensor-connector.md`.
 7. Host open item that affects this board: **VBAT fuse on CN1 pin 13** — this board is the first real VBAT load.
 
 ## References
@@ -185,4 +185,4 @@ Duty cycle drives the power budget. Measure the board's on-current and on-time o
 - MikroE EZO Carrier Click - Conductivity (MIKROE-6011): https://www.mikroe.com/ezo-carrier-click-conductivity
 - EZO-EC datasheet: https://download.mikroe.com/documents/datasheets/EZO-EC_datasheet.pdf
 - pH OEM datasheet, for the isolation reference design: https://atlas-scientific.com/files/pH_oem_datasheet.pdf
-- `v4-sensor-connector.md` — CN1 pinout and sensor-board rules
+- `docs\notes\v4-sensor-connector.md` — CN1 pinout and sensor-board rules

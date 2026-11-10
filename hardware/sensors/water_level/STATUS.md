@@ -1,6 +1,6 @@
 # Feather water level sensor board - Status
 
-Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\Sensor_Boards\feather_water_level\feather_water_level.kicad_pro
+Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\sensors\water_level\feather_water_level.kicad_pro
 Last reviewed: 2026-11-04
 
 **State: rev 0.2, Acconeer XM125 60 GHz radar, placed, fully routed, fab zip made 2026-11-04. ERC 0 errors, DRC 0 / 0 / 0. Follow-up review (shared\reports\2026-11-04-review-feather-water-level-followup.md) had no open blockers; Brian approved SF1 and SF2 and closed B3 for fab on 2026-11-04 on that review's reasoning. Crown enclosure still to model. Earlier report: shared\reports\2026-11-02-review-feather-water-level.md.** The DFRobot A02YYUW ultrasonic plan (buck-boost, UART translator, JST PH) was dropped on 2026-10-30 (Brian approved the radar architecture); it was never drawn.
@@ -81,8 +81,8 @@ No LCSC numbers were added (DigiKey/Mouser are the sources for this board).
 - Follow-up review done and fab zip made 2026-11-04 (see State). Next: Brian orders; first-article check of the paste apertures and XM125 height.
 - Review items: B1 closed by the two-build decision (radar feather build, R15-R18 not fitted; sheet note corrected). B2, S3, S4, S5, S6, S7 fixed. S8 left as is by decision. B3: closed for fab by Brian 2026-11-04 (Crown still to model). On a standard feather R18 pulls RADAR_RST to about 2.7 V, so the radar stays in reset until firmware drives SENS_CS low; use the radar build.
 - Firmware (firmware-dev): RADAR_WAKE on the feather SENS_MOSI pin, RADAR_RST (active high) on SENS_CS, SENS_INT, I2C address 0x52; SENS_ID 22k.
-- Enclosure concepts for B3 (2026-11-02): shared\design\feather_water_level\enclosure_concepts_radar_2026-11-02\concepts.md. Recommends Crown (cell in a lid hump behind the radar), fallback Slab; no PCB change. Brian picked Crown (next line).
-- Enclosure decision (2026-11-02): Brian picked Crown, which closes the B3 layout question once it's modelled. Mounting options: shared\design\feather_water_level\crown_mounting_2026-11-02\mounting.md (read section 14 first). Fusion modelling waits on Brian's answers there.
+- Enclosure concepts for B3 (2026-11-02): mechanical\crown\enclosure_concepts_radar_2026-11-02\concepts.md. Recommends Crown (cell in a lid hump behind the radar), fallback Slab; no PCB change. Brian picked Crown (next line).
+- Enclosure decision (2026-11-02): Brian picked Crown, which closes the B3 layout question once it's modelled. Mounting options: mechanical\crown\crown_mounting_2026-11-02\mounting.md (read section 14 first). Fusion modelling waits on Brian's answers there.
 - Mounting decisions (Brian, 2026-11-03): can lid off, A2 Span in several lengths (printed bars to about 430 mm rim, stock PVC/HDPE bars to 700 mm). Holes: both small and large, A6 Pad (25-33 mm) and A5 Expander (50.5 mm and up). No underside access assumed, so no A3 Collar. Indoors, dry, so no face gasket or UV requirement. Model these three adapters plus the dock ring and blank plate. Not yet settled: the larger A6 gasket for 33-44 mm holes, stock bars vs printed-only details.
 - Enclosure (fusion-enclosure): STEP 2026-10-30; radar faces down out of the bottom; wall in front of U1 about n x lambda/2 thick in the plastic (PETG about 1.5-1.6 mm, er UNVERIFIED) and a gap of about n x 2.5 mm, no metal in the beam (xm125_notes.md).
 - Bench: confirm the XM125 boots and enumerates at 0x52 from a VSENS cold start; check the +1V8 ripple during the 80 mA burst.

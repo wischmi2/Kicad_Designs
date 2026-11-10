@@ -1,6 +1,6 @@
 # Feather conductivity (EC) sensor board - Status
 
-Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\Sensor_Boards\feather_conductivity\feather_conductivity.kicad_pro
+Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\sensors\conductivity\feather_conductivity.kicad_pro
 Last reviewed: 2026-10-26
 
 **State: DRAWN, PLACED AND ROUTED (rev 0.1), not reviewed.** Isolated Feather sensor board built from feather_sensor_template (stage 1 at 3e46ede). Not a fab design yet: no fab outputs made, and the questions below are open.

@@ -82,7 +82,7 @@ Verdict:
   - L2, L3, L5, L6, L8: 0201 RF. L4: 0402 ferrite.
   - Power: L7 (4.7 µH, nRF DC/DC), L9/L10 (2.2 µH, nPM1300 bucks), L11 (10 µH, AEM, 2.5 x 2.0).
   - None is a size blocker.
-- **AEM10330 layout (DS §10, from solar-analysis-v4.md §3.5):** no copper under L11 on inner or bottom layers; short, wide LIN/LOUT; C40/C42/C43 close to the IC with a direct return to the EP; C41 close to pin 13; 0.4 to 0.5 mm STO trace; keep the IC1 EP via array. This rules out bottom parts under L11 and needs the AEM loop kept compact.
+- **AEM10330 layout (DS §10, from docs\notes\solar-analysis-v4.md §3.5):** no copper under L11 on inner or bottom layers; short, wide LIN/LOUT; C40/C42/C43 close to the IC with a direct return to the EP; C41 close to pin 13; 0.4 to 0.5 mm STO trace; keep the IC1 EP via array. This rules out bottom parts under L11 and needs the AEM loop kept compact.
 - **IC1 and U2:** fit in the middle; not blockers. Check heat at full charge current on the smaller copper area.
 
 ## 5. Options

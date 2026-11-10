@@ -1,6 +1,6 @@
 # XIAO pogo stack - Status
 
-Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\xiao_breakout\xiao_breakout\xiao_breakout.kicad_pro
+Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\archive\xiao_breakout\xiao_breakout\xiao_breakout.kicad_pro
 Last reviewed: 2026-10-23
 
 ## Summary

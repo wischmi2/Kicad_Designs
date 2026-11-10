@@ -1,6 +1,6 @@
 # Feather ORP sensor board - Status
 
-Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\Sensor_Boards\feather_orp\feather_orp.kicad_pro
+Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\sensors\orp\feather_orp.kicad_pro
 Last reviewed: 2026-10-28 (pre-fab review; fixes applied the same evening)
 
 **State (2026-10-28 evening): LAID OUT AND ROUTED (rev 0.1), pre-fab review done (C:\Personal-Agents\shared\reports\2026-10-28-review-orp-ph-prefab.md) and its B1/S1/N1-N4/N7 items fixed (see "Pre-fab fixes 2026-10-28 evening" at the end). ERC 0 errors, DRC 0 errors / 0 unconnected / 0 parity. Isolated supply is SN6505B + Wurth 760390015 + LP2985-33 and U3 is ISO1540DR; the U4 NXE1S0303MC / ADuM1250 notes further down are history. No fab outputs yet (ask Brian).** Copied from feather_sensor_template (isolated variant), with the Atlas Scientific ORP OEM drawn on the Sensor sheet and placed and routed on the PCB.
@@ -46,7 +46,7 @@ Last reviewed: 2026-10-28 (pre-fab review; fixes applied the same evening)
 - Open: VSENS tolerance against ISO1540 VCC2 min 3.0 V (see stage 1). Mouser ISO1540DR stock 55 on 2026-10-28; DigiKey 0.
 
 ## Isolated supply trial (2026-10-28)
-Trial of option (c') from Sensor_Boards\feather_sensor_template\isolated_supply_options.md, so Brian can see the SN6505B transformer supply on a real board before it goes on the template / DO / EC. Commits: 27c8c7d (stage 1 schematic), 5f9f497 (stage 2 footprint), a7d1704 (stage 3 PCB), then stage 4 (exports) and stage 5 (this section).
+Trial of option (c') from hardware\sensors\template\isolated_supply_options.md, so Brian can see the SN6505B transformer supply on a real board before it goes on the template / DO / EC. Commits: 27c8c7d (stage 1 schematic), 5f9f497 (stage 2 footprint), a7d1704 (stage 3 PCB), then stage 4 (exports) and stage 5 (this section).
 
 ### What changed
 - Isolation sheet: U4 NXE1S0303MC deleted. New: FB1 bead in series with VSENS -> VSENS_DRV; U5 SN6505BDBVR (EN tied to VCC, CLK to GND, internal 420 kHz oscillator); C6 100 nF at VCC, C7 10 uF 16 V at the T1 primary centre tap; T1 Wurth 760390015 (centre-tapped primary and secondary); D1 BAT54C full-wave rectifier; C8 10 uF 25 V + C9 100 nF on VISO_RAW; U6 LP2985-33DBVR (ON/OFF tied to VIN) with C10 10 nF bypass and C11 4.7 uF output; C3 2.2 uF and C4 100 nF kept on VDD_ISO. VDD_ISO is now a regulated 3.3 V.
@@ -100,7 +100,7 @@ Trial of option (c') from Sensor_Boards\feather_sensor_template\isolated_supply_
 - DRC (--schematic-parity --refill-zones): **0 errors, 0 unconnected, 0 parity**, 25 warnings: 9 lib_footprint_issues (easyeda2kicad), 9 silk_overlap (C4's EasyEDA silk outline against U3 and R3, now that C4 sits next to U3 pin 1), 7 silk_over_copper (6 EasyEDA pin-1 dots as before, plus C4 silk on an R3 pad). The reference text of the new 0402/0603 caps and FB1 is hidden (no room).
 
 ### Exports
-- Renders in C:\Personal-Agents\shared\design\feather_orp\iso_supply_trial\: feather_orp_iso_3d_corner.png, feather_orp_iso_3d_top.png, feather_orp_iso_3d_bottom.png, feather_orp_iso_Fcu_silk_top.png, feather_orp_iso_Bcu_silk_bottom.png, feather_orp_iso_In2.png. The 2D ones are black-and-white copper + silk, cropped to x 104-141.
+- Renders in C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\sensors\orp\docs\iso_supply_trial\: feather_orp_iso_3d_corner.png, feather_orp_iso_3d_top.png, feather_orp_iso_3d_bottom.png, feather_orp_iso_Fcu_silk_top.png, feather_orp_iso_Bcu_silk_bottom.png, feather_orp_iso_In2.png. The 2D ones are black-and-white copper + silk, cropped to x 104-141.
 - STEP: C:\Personal-Agents\shared\handoff\feather_orp\feather_orp_2026-10-28.step. Outline and CN1 unchanged; T1 now has a model; J1, U2 and the EasyEDA passives still have no model.
 
 ### What to copy to the template, DO and EC
@@ -118,7 +118,7 @@ Trial of option (c') from Sensor_Boards\feather_sensor_template\isolated_supply_
 
 ## Current state (2026-10-26)
 - Schematic: root + Sensor Connector + Isolation + Sensor. The Sensor sheet was drawn in the previous run (WIP commit bf5bbf2). This run checked it against the datasheet (pinout, NC pins, INT, decoupling, pull-ups, SMA, AGND link) and found nothing to change.
-- R1 (R_ID) is back to the template placeholder "10k (set per SENSORS.md)". The previous run had set 4.7k 1 % (C25900, "board type 3 = ORP" from the ID table in v4-sensor-connector.md), but SENSORS.md doesn't exist, so the value was reverted and left as a question (see below). The B.SilkS line reads "SENSOR TYPE: ORP   R_ID: ______".
+- R1 (R_ID) is back to the template placeholder "10k (set per SENSORS.md)". The previous run had set 4.7k 1 % (C25900, "board type 3 = ORP" from the ID table in docs\notes\v4-sensor-connector.md), but SENSORS.md doesn't exist, so the value was reverted and left as a question (see below). The B.SilkS line reads "SENSOR TYPE: ORP   R_ID: ______".
 - Footprint Atlas_ORP_OEM redrawn this run to the ORP datasheet v3.3 "Recommended pad layout": pads 2.5 x 1.4 mm, rows 12 mm apart centre to centre, 2.3 mm pitch, body 12 x 11 mm on F.Fab with a pin-1 chamfer, silk and courtyard (15 x 11.5 mm), and a footprint rule area that bans vias under the module ("NEVER place vias under the OEM footprint"). **It differs from the copied sens1 pH footprint** (2.9 x 1.5 mm pads, 12.4 mm rows, uneven 2.2/2.3 mm pitch, from an "Atlas OEM Footprint.dxf"). The ORP datasheet gives the pin pitch as 2.3 mm and the pin width as 1.3 mm, so the even pitch was used. See Questions.
 - PCB: 50.8 x 22.86 mm, 4 layers, outline, holes, CN1, barrier, keep-outs and isolation block unchanged from the template. New parts (all top side, isolated area):
   - J1 (94.4, 121.43) rot 90: SMA on the x = 90 short edge, opposite CN1, barrel pointing -x. The barrel sticks out about 5.6 mm past the edge (from the footprint's fab drawing; the BAT Wireless drawing was not checked).
@@ -140,8 +140,8 @@ Trial of option (c') from Sensor_Boards\feather_sensor_template\isolated_supply_
 - Assembly note for the BOM/fab notes: the datasheet requires all flux to be washed off after soldering the OEM (ultrasonic, flux remover, or about 20 minutes in alcohol), and clear epoxy only if conformal protection is needed (no coloured potting).
 
 ## Questions for Brian
-- (Closed 2026-10-28: Brian keeps the SN6505B supply as is.) Isolated supply trial: OK with the layout (renders in shared\design\feather_orp\iso_supply_trial)? If so the template, DO and EC get the same block. Bench-test the supply first (list in the trial section)?
-- (Closed 2026-10-28: 4.7k, Sensor_Boards\SENSORS.md.) R_ID: no SENSORS.md exists. The v4-sensor-connector.md table gives 4.7k = type 3 and the previous run picked that for ORP. Create SENSORS.md and confirm ORP = type 3 (4.7k 1 %, C25900), or another value? (conductivity has 1k proposed; DO and the others are still at the 10k placeholder.)
+- (Closed 2026-10-28: Brian keeps the SN6505B supply as is.) Isolated supply trial: OK with the layout (renders in hardware\sensors\orp\docs\iso_supply_trial)? If so the template, DO and EC get the same block. Bench-test the supply first (list in the trial section)?
+- (Closed 2026-10-28: 4.7k, hardware\sensors\SENSORS.md.) R_ID: no SENSORS.md exists. The docs\notes\v4-sensor-connector.md table gives 4.7k = type 3 and the previous run picked that for ORP. Create SENSORS.md and confirm ORP = type 3 (4.7k 1 %, C25900), or another value? (conductivity has 1k proposed; DO and the others are still at the 10k placeholder.)
 - U2 footprint: use the ORP datasheet pad layout (this board, even 2.3 mm pitch) or the sens1 DXF-derived land pattern? If the DXF is the more trustworthy source, sens1 and this board should be made the same.
 - INT_ISO only reaches the J5 test pad (2-channel ADuM1250), so firmware has to poll register 0x07. Same template question as before: change to a 3-channel isolator so the OEM can interrupt the host?
 - (Closed: VDD_ISO is now LP2985-33 regulated 3.3 V.) VDD_ISO is the unregulated NXE1S0303MC output from the 3.0 V VSENS rail, so it sits near 3.0 V, the bottom of the ORP OEM's 3.0-5.5 V range. The Atlas isolation example uses an ADM3260 at 3.9 V. Accept, or move to the VBAT-fed isolated supply being considered for conductivity?
@@ -158,7 +158,7 @@ Trial of option (c') from Sensor_Boards\feather_sensor_template\isolated_supply_
 - 2026-10-26: ORP OEM land pattern taken from the ORP datasheet v3.3 rather than the sens1 DXF footprint (flagged as a question).
 
 ## Pre-fab edits 2026-10-28 (Brian's decisions)
-- Decisions: R_ID = 4.7k for ORP (register: Sensor_Boards\SENSORS.md). Keep the new SN6505B isolated supply as is. R5 (0R AGND_ISO to GND_ISO link) is DNP. Fab is PCBWay standard 4-layer 1.6 mm.
+- Decisions: R_ID = 4.7k for ORP (register: hardware\sensors\SENSORS.md). Keep the new SN6505B isolated supply as is. R5 (0R AGND_ISO to GND_ISO link) is DNP. Fab is PCBWay standard 4-layer 1.6 mm.
 - R1 = 4.7k 1 % 0402, Yageo RC0402FR-074K7L (DigiKey 311-4.7KLRCT-ND, 842 k in stock 2026-10-28). Manufacturer/MPN fields added in the schematic and the PCB; B.SilkS line now reads "SENSOR TYPE: ORP   R_ID: 4.7k". This supersedes the earlier "R1 placeholder" notes above (R_ID question closed).
 - R5 set DNP (schematic dnp yes, PCB attr dnp; still in BOM/pos files, flagged DNP, so use --exclude-dnp or skip it when ordering). With R5 open, AGND_ISO has no link to GND_ISO on this board: the probe ground and the guard rely on the Atlas module's own AGND/GND connection. Confirm on the bench; fit R5 (0R) if the reading is noisy or floating.
 - Stackup (corrected 2026-10-28 evening; the text written here earlier was superseded by commit ab32a1c): PCBWay standard 4L 1.6 mm as on the feather: prepreg 0.1855 mm (FR4 7628, er 4.74) / core 1.03 mm (er 4.6) / prepreg 0.1855 mm, 35 um copper on all four layers (inner too), finish ENIG. No RF on this board, so no trace width changes.
@@ -167,13 +167,13 @@ Trial of option (c') from Sensor_Boards\feather_sensor_template\isolated_supply_
 - ERC (kicad-cli): 0 errors, 38 warnings. DRC (--schematic-parity --refill-zones): 0 errors, 0 unconnected, 0 parity, 25 warnings (9 lib_footprint_issues, 9 silk_overlap, 7 silk_over_copper). Commits 109904e, c34e627.
 
 ## BOM pricing (live, 2026-10-28, parts-sourcing)
-- File: C:\Personal-Agents\shared\design\feather_orp\iso_supply_parts_live_2026-10-28.md (copy in Sensor_Boards\feather_orp\sourcing\). Replaces the "DigiKey/Mouser stock is not verified" note in the isolated supply trial section.
+- File: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\sensors\orp\sourcing\iso_supply_parts_live_2026-10-28.md (copy in hardware\sensors\orp\sourcing\). Replaces the "DigiKey/Mouser stock is not verified" note in the isolated supply trial section.
 - Cost per board (cheapest split): 9.16 USD for 1 board, 41.38 USD for 5 boards, excluding U3, J1 (SMA, LCSC only) and U2 (Atlas OEM-ORP, buy from Atlas). Add 4.79 USD per board if U3 is ISO1540DR.
 - Stock blockers: U3 ISO1640BDR is 0 at DigiKey and Mouser (Mouser due 21,775 on 2026-12-18; ISO1540DR has 55 at Mouser, pinout and drive unverified); U5 SN6505BDBVR is 0 at DigiKey but Mouser has 108.
 - Other: C7 and C8 (10uF 0805) and C11 (obsolete) need new MPNs (see the file); T1 760390015, U6 LP2985-33DBVR, D1 (use BAT54CLT1G after a pin check), FB1 are in stock.
 
 ## BOM pricing (live, 2026-10-28, full BOM; supersedes the section above)
-- Files: Sensor_Boards\feather_orp\sourcing\bom_digikey_mouser_2026-10-28_live.md plus bom_digikey_ and bom_mouser_2026-10-28_live.csv (copies in C:\Personal-Agents\shared\design\feather_orp\). Priced for the current BOM (U3 ISO1540DR, C7/C8 GRM21BR61E106MA73L, C11 GRM188R61E475KE11D, D1 BAT54CLT1G, R1 4.7k), R5 DNP skipped.
+- Files: hardware\sensors\orp\sourcing\bom_digikey_mouser_2026-10-28_live.md plus bom_digikey_ and bom_mouser_2026-10-28_live.csv (copies in C:\Personal-Agents\shared\design\feather_orp\). Priced for the current BOM (U3 ISO1540DR, C7/C8 GRM21BR61E106MA73L, C11 GRM188R61E475KE11D, D1 BAT54CLT1G, R1 4.7k), R5 DNP skipped.
 - Cheapest split, excluding U2 and J1: 13.85 USD for 1 board, 64.83 USD for 5 boards; two orders needed (Mouser for C6/C9/C12, C7/C8, U3 55 on hand, U5 108 on hand; DigiKey for D1, U6). With U2 Atlas OEM-ORP (45.99 each) and J1 SMA (LCSC C496551, 0.51): 60.35 USD for 1, 297.35 USD for 5.
 - LCSC/Atlas only: J1 BWSMA-KWE-Z001 (not at DK/Mouser), U2 OEM-ORP.
 

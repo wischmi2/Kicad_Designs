@@ -1,6 +1,6 @@
 # Feather sensor board 1 - Status
 
-Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\nrf54l15_feather_sens1\nrf54l15_feather_sens1\nrf54l15_feather_sens1.kicad_pro
+Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\sensors\ph\nrf54l15_feather_sens1\nrf54l15_feather_sens1.kicad_pro
 Last reviewed: 2026-10-28
 
 **State: ACTIVE sensor board for the nRF54L15 feather.** Reworked to the Feather outline on 2026-10-25. Fully routed, DRC clean (0 errors). Tidemark R1 antenna keep-out added 2026-10-28 (H4 is now NPTH). **2026-10-28 evening: all pre-fab review items B1-B3, S2-S7, N1, N2, N7, N8 fixed (see "Pre-fab fixes 2026-10-28 evening" below).** Fab outputs generated 2026-11-07 (zip in handoff; see Fab outputs line).
@@ -108,7 +108,7 @@ This is the same rectangle as the main board's AE1_keepout rule area (132.15-141
 - 2026-10-25: probe J1 on the short edge opposite CN1 (the USB-C end of the stack), so the probe cable exits that end of the enclosure.
 
 ## Pre-fab edits 2026-10-28 (Brian's decisions)
-- Decisions: R_ID = 10k for pH (register: Sensor_Boards\SENSORS.md). sens1 keeps its existing NXE1S0303MC supply (ORP is the trial of the SN6505B supply). H4 NPTH approved. Fab is PCBWay standard 4-layer 1.6 mm.
+- Decisions: R_ID = 10k for pH (register: hardware\sensors\SENSORS.md). sens1 keeps its existing NXE1S0303MC supply (ORP is the trial of the SN6505B supply). H4 NPTH approved. Fab is PCBWay standard 4-layer 1.6 mm.
 - R1 was already 10k; added Manufacturer YAGEO / MPN RC0402FR-0710KL (DigiKey 311-10.0KLRCT-ND, 8.6 M in stock 2026-10-28) in ph_sensor.kicad_sch and the PCB.
 - H4 confirmed NPTH (np_thru_hole, drill 2.7, board_only). The H4 nylon-hardware note stands.
 - Stackup was 0.1 / 1.24 / 0.1 mm with 35 um inner copper; changed to PCBWay standard 4L 1.6 mm. **Current (since ab32a1c, checked 2026-10-28 evening): prepreg 0.1855 / core 1.03 / prepreg 0.1855 mm, Er 4.74 / 4.6, 35 um copper on all four layers, ENIG finish.** (The 1.1 mm core, 17.5 um inner copper and no-finish figures first written here are superseded.) No RF on this board, so no width changes.
@@ -136,7 +136,7 @@ The NXE1S0303MC needs about 10 % load (30 mA); below about 5 % its output can ri
 5. Wash the OEM area after soldering (Atlas: remove flux, avoid rosin-core solder). Scope the I2C low level on the host side (U3.6/U3.7) and on the OEM side (U3.2/U3.3).
 
 ## BOM pricing (live, 2026-10-28)
-- Files: nrf54l15_feather_sens1\sourcing\bom_digikey_mouser_2026-10-28_live.md plus bom_digikey_ and bom_mouser_2026-10-28_live.csv (copies in C:\Personal-Agents\shared\design\nrf54l15_feather_sens1\).
+- Files: hardware\sensors\ph\sourcing\bom_digikey_mouser_2026-10-28_live.md plus bom_digikey_ and bom_mouser_2026-10-28_live.csv (copies in C:\Personal-Agents\shared\design\nrf54l15_feather_sens1\).
 - All DigiKey, one order: 13.96 USD for 1 board, 67.33 USD for 5 boards, excluding U2 Atlas pH OEM (45.99 each) and J1 SMA (LCSC C496551, 0.51). With both: 60.46 USD for 1, 299.85 USD for 5. No stock blockers.
 - Empty schematic MPNs (J1, R5, U2, U3, U4): written into the schematic and PCB 2026-10-28 evening (U3 ADUM1250ARZ-RL7, U4 NXE1S0303MC-R13, R5 ERJ-2GE0R00X (now DNP), J1 BWSMA-KWE-Z001 / LCSC C496551, U2 Atlas Scientific OEM-pH). J1 is not at DigiKey/Mouser (LCSC only). New lines since the pricing run: C6 CC0402KRX7R7BB104 (fitted, about 0.10 USD) and DNP R6/D1; R5 is now DNP (the pricing file still counts it).
 

@@ -2,7 +2,7 @@
 
 CN1 is the only link between the nRF54L15 feather and its sensor board. Each node has one feather and one sensor board, joined point to point by a short FFC. The SENS_ID resistor tells firmware which board is fitted.
 
-Pins and connections below come from `kicad-cli` netlists of each board's schematic (2026-11-02). Rail limits, peripheral rules and analog channels come from `v4-sensor-connector.md` and `feather_sensor_template\README.md`. ID values and ratios are in `SENSORS.md`.
+Pins and connections below come from `kicad-cli` netlists of each board's schematic (2026-11-02). Rail limits, peripheral rules and analog channels come from `docs\notes\v4-sensor-connector.md` and `feather_sensor_template\README.md`. ID values and ratios are in `SENSORS.md`.
 
 ## Connector
 
@@ -95,28 +95,28 @@ No board uses SPI, UART or AIN today. The water level board is the only one usin
 - **SENS_ID:** R1 10k.
 - **Interrupt:** not wired to CN1, so firmware polls.
 
-### ORP (Atlas ORP OEM): `Sensor_Boards\feather_orp`
+### ORP (Atlas ORP OEM): `hardware\sensors\orp`
 - **Pins:** VSENS, SENS_SDA, SENS_SCL, SENS_ID, GND.
 - **VSENS feeds:** U3 ISO1540DR host side, FB1 to the SN6505B isolated supply, C1, C2, C12.
 - **I2C:** through the U3 isolator, address 0x66.
 - **SENS_ID:** R1 4.7k.
 - **Interrupt:** Atlas INT stops at test pad J5 on the isolated side, so firmware polls register 0x07.
 
-### DO (Atlas DO OEM): `Sensor_Boards\feather_dissolved_oxygen`
+### DO (Atlas DO OEM): `hardware\sensors\dissolved_oxygen`
 - **Pins:** VSENS, SENS_SDA, SENS_SCL, SENS_ID, GND.
 - **VSENS feeds:** U3 ADuM1250 host side, U4 NXE1S0303MC isolated DC-DC, C1, C2.
 - **I2C:** through the U3 isolator, address 0x67.
 - **SENS_ID:** the register says 2.2k, but **the schematic still has the 10k placeholder** (see Open issues).
 - **Interrupt:** Atlas INT stops at test pad J5 on the isolated side, so firmware polls register 0x07.
 
-### EC (Atlas EC OEM): `Sensor_Boards\feather_conductivity`
+### EC (Atlas EC OEM): `hardware\sensors\conductivity`
 - **Pins:** VSENS, SENS_SDA, SENS_SCL, SENS_ID, GND.
 - **VSENS feeds:** U3 ADuM1250 host side, U4 NXE1S0303MC isolated DC-DC, C1, C2.
 - **I2C:** through the U3 isolator, address 0x64.
 - **SENS_ID:** the register says 1k, but **the schematic still has the 10k placeholder** (see Open issues).
 - **Interrupt:** Atlas INT stops at test pad J5 on the isolated side, so firmware polls register 0x07.
 
-### Water level (Acconeer XM125 radar): `Sensor_Boards\feather_water_level`
+### Water level (Acconeer XM125 radar): `hardware\sensors\water_level`
 - **Feather build:** radar (R15 to R18 not fitted).
 - **Pins:** VSENS, VBAT, SENS_SDA, SENS_SCL, SENS_MOSI as RADAR_WAKE, SENS_CS as RADAR_RST, SENS_INT, SENS_ID, GND. Not isolated.
 - **VSENS feeds:** host side of the translators (U3 TCA9406, U4 and U5 SN74AXC1T45), U2 NCP161 enable, C1, C2, C8, C9. U4 DIR is tied to VSENS.
@@ -127,7 +127,7 @@ No board uses SPI, UART or AIN today. The water level board is the only one usin
 - **Pin 9 SENS_INT:** from XM125 MCU_INT through U5, high = ready.
 - **SENS_ID:** R1 22k.
 
-### Template (no sensor): `Sensor_Boards\feather_sensor_template`
+### Template (no sensor): `hardware\sensors\template`
 - **Pins:** VSENS, SENS_SDA, SENS_SCL, SENS_ID, GND.
 - **VSENS feeds:** U3 ADuM1250 host side, U4 NXE1S0303MC isolated DC-DC, C1, C2.
 - **SENS_ID:** R1 10k placeholder, which reads as pH until it's changed.
@@ -137,4 +137,4 @@ No board uses SPI, UART or AIN today. The water level board is the only one usin
 1. **DO and EC have the wrong ID resistor.** Both schematics have R1 = 10k, which firmware would read as pH. `SENSORS.md` assigns 2.2k (DO) and 1k (EC). Neither board has fab output yet; fix R1 before generating it.
 2. **Water level notes need the radar build.** The radar reset, interrupt and I2C pull-up problems are settled by the radar feather build above (review: shared\reports\2026-11-02-review-feather-water-level.md, B1 and S2). The firmware reset default still needs checking on the bench.
 3. **pH I2C address isn't recorded.** Confirm it from the Atlas datasheet and add it here.
-4. **Feather firmware has no CN1 sensor pins yet, other than SENS_ID.** The board file (`soil_moisture_fw\boards\others\nrf54l15_feather`) still needs the sensor I2C bus and the water level pins.
+4. **Feather firmware has no CN1 sensor pins yet, other than SENS_ID.** The board file (`firmware\boards\nrf54l15_feather`) still needs the sensor I2C bus and the water level pins.

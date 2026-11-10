@@ -22,10 +22,10 @@ PCB (origin = outline top-left corner at (90, 110), the same as the feather):
 
 ## Starting a new sensor board
 
-1. **Copy the project.** Open feather_sensor_template.kicad_pro in the KiCad project manager and use File > Save As to a new folder under Sensor_Boards (for example Sensor_Boards\feather_sens2_salinity\feather_sens2_salinity). KiCad renames the project files and keeps the sheet instances working.
+1. **Copy the project.** Open feather_sensor_template.kicad_pro in the KiCad project manager and use File > Save As to a new folder under hardware\sensors (for example hardware\sensors\feather_sens2_salinity\feather_sens2_salinity). KiCad renames the project files and keeps the sheet instances working.
    - Fallback by hand: copy the folder (skip any `~*.lck` files), rename the four `feather_sensor_template.kicad_*` files to the new name, and replace the project name inside them: `sed -i 's/"feather_sensor_template"/"<new_name>"/g' *.kicad_sch *.kicad_pro`. The footprint library nickname `feather_sensor_template` (fp-lib-table and the .pretty folder) can stay as it is.
    - Never edit the template itself for a real board.
-2. **Set R_ID.** Pick the next free board type in the ID table (v4-sensor-connector.md, "Board ID - pin 11"; the R1 value field says "set per SENSORS.md", the ID register) and set R1's value to it on the Sensor Connector sheet, 1 % tolerance. Update the "SENSOR TYPE / R_ID" text on B.SilkS and record the assignment in the ID table.
+2. **Set R_ID.** Pick the next free board type in the ID table (docs\notes\v4-sensor-connector.md, "Board ID - pin 11"; the R1 value field says "set per SENSORS.md", the ID register) and set R1's value to it on the Sensor Connector sheet, 1 % tolerance. Update the "SENSOR TYPE / R_ID" text on B.SilkS and record the assignment in the ID table.
 3. **Fill the Sensor sheet.** Draw the sensor circuit on sensor.kicad_sch and connect it to the hierarchical labels. Delete the short wire stubs on the labels as you wire them (they only exist so the empty template passes ERC). Place new symbols in the KiCad GUI.
 4. **Update the PCB** (Tools > Update PCB from Schematic), place the new parts in the sensor area, put the probe connector on the x = 90 short edge (opposite CN1, so the probe cable leaves the other end of the enclosure), route, refill the zones.
 5. **Rename the board.** Title blocks on all sheets, "FEATHER SENSOR <NAME> rev" on B.SilkS, and a STATUS.md for the new board.
@@ -40,7 +40,7 @@ PCB (origin = outline top-left corner at (90, 110), the same as the feather):
 - **Barrier**: nothing crosses x 122.5 to 125.5 on any layer except the isolator and DC-DC packages themselves.
 - All parts on the top side. The bottom stays flat (silk only), because it faces nothing and the stack height is set by the tallest top-side part.
 
-## Sensor-board rules (from v4-sensor-connector.md)
+## Sensor-board rules (from docs\notes\v4-sensor-connector.md)
 
 1. Pin 1 at the same end on every board; print the FFC type on the silkscreen. For the U-folded cable the contacts end up on opposite faces at the two ends (opposite-side FFC); the 503480 is dual contact, so a same-side cable also works.
 2. No I2C pull-ups on the host side of the sensor board. The feather has 4.7k to VSENS on SDA/SCL and 10k on CS and INT. (The isolated side needs its own: R3/R4 in the template.)

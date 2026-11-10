@@ -1,6 +1,6 @@
 # Feather dissolved oxygen sensor board - Status
 
-Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\Sensor_Boards\feather_dissolved_oxygen\feather_dissolved_oxygen.kicad_pro
+Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\sensors\dissolved_oxygen\feather_dissolved_oxygen.kicad_pro
 Last reviewed: 2026-10-26
 
 **State: LAID OUT AND ROUTED (rev 0.1), not reviewed.** Built from feather_sensor_template (isolated variant). ERC/DRC clean. R_ID not assigned yet. Not a fab design: no fab outputs made; needs a design review and Brian's answers below first.
@@ -38,7 +38,7 @@ Last reviewed: 2026-10-26
 - Register the easyeda2kicad / EasyEDA2Kicad / Parts_1 libraries on this PC (clears 22 library warnings, adds passive 3D models).
 
 ## Questions for Brian
-- R_ID: there is no SENSORS.md. v4-sensor-connector.md has the ID table (1k type 1 ... 100k type 7) but no assignments. The previous run proposed DO = 2.2k (type 2); the ORP board has 4.7k (type 3), conductivity proposes 1k (type 1), sens1 pH has 10k (type 4). Create SENSORS.md with these and fit 2.2k here?
+- R_ID: there is no SENSORS.md. docs\notes\v4-sensor-connector.md has the ID table (1k type 1 ... 100k type 7) but no assignments. The previous run proposed DO = 2.2k (type 2); the ORP board has 4.7k (type 3), conductivity proposes 1k (type 1), sens1 pH has 10k (type 4). Create SENSORS.md with these and fit 2.2k here?
 - Atlas_DO_OEM footprint pad pitch is 2.2/2.2/2.3/2.3 mm (copied from the Atlas DXF used for the sens1 pH footprint); the DO datasheet says 2.3 mm all pins. Pad 1 is about 0.2 mm off a true 2.3 mm grid but still overlaps the castellation. Keep the sens1 geometry (same as the pH board, if that was built and fitted fine) or switch to an exact 2.3 mm grid?
 - Probe ground: J1 shell and U2 PRB GND are a separate DO_PRB_GND guard pour, linked to GND_ISO only through R5 (DNP), as on sens1. The datasheet only asks for a ground plane under/around the probe traces and does not say to tie PRB GND to GND. Keep R5 DNP as default, or fit it?
 - INT: the 2-channel ADuM1250 leaves INT_ISO on J5 only, so firmware polls register 0x07 (new reading). OK, or move to a 3-channel isolator (template question)?

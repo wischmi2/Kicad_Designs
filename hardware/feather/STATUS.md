@@ -1,6 +1,6 @@
 # nRF54L15 feather - Status
 
-Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\nrf54l15_feather\nrf54l15_feather\nrf54l15_feather.kicad_pro
+Project: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\feather\nrf54l15_feather\nrf54l15_feather.kicad_pro
 Last reviewed: 2026-10-28 night (run 9: 30 vias enlarged to a 0.15 mm annular ring for PCBWay, 22 to 0.6/0.3 and 8 to 0.55/0.25, min annular rule now 0.15; no via or part moved; DRC 0 errors / 0 unconnected / 0 parity; ERC 0 errors; STEP unchanged, 2026-10-28b)
 
 **State: ACTIVE main board (2026-10-23, per Brian).** It replaces nrf54l15_v4. The active sensor board for it is nrf54l15_feather_sens1 (pH).
@@ -512,7 +512,7 @@ Reference plane: checking the In1 fill under the new line showed two holes from 
 ### Stage 4: checks and renders
 - DRC (kicad-cli 10.0.4, --schematic-parity --refill-zones --severity-all): **0 errors, 0 unconnected, 0 parity, 413 warnings** (192 silk_overlap, 165 silk_over_copper, 54 lib_footprint_issues, 2 silk_edge_clearance), the same warnings as run 6.
 - ERC (--severity-all): **0 errors, 206 warnings** (schematic not changed).
-- Renders: C:\Personal-Agents\shared\design\nrf54l15_feather\rf_50ohm_2026-10-28\ (rf_corner_FCu.png, rf_corner_FCu_silk.png, rf_corner_In1_GND.png, rf_corner_overview_FCu_silk.png, rf_corner_FCu_over_In1.png).
+- Renders: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\feather\docs\rf_50ohm_2026-10-28\ (rf_corner_FCu.png, rf_corner_FCu_silk.png, rf_corner_In1_GND.png, rf_corner_overview_FCu_silk.png, rf_corner_FCu_over_In1.png).
 - STEP not exported: no part, outline or connector moved. The latest STEP is still nrf54l15_feather_2026-10-28b.step.
 - The run 6 recommendation "don't order the PCBWay standard stackup" is superseded: the board is now drawn for it. Order note for PCBWay: standard 4L 1.6 mm, 1 oz outer finished / 1 oz inner, no impedance control needed (the line is a few mm long; the match is tuned on the bench). Optional: ask for impedance control "50 Ohm single-ended, L1 ref L2, 0.30 mm" if the price is the same.
 
@@ -551,7 +551,7 @@ Reference plane: checking the In1 fill under the new line showed two holes from 
 - Clear the ERC errors above, or document why they're acceptable.
 - Fix the co-located or too-close GND vias and the dangling tracks.
 - Export a board STEP for fusion-enclosure once the holes are placed.
-- Solar review items carried over from v4 (solar-analysis-v4.md):
+- Solar review items carried over from v4 (docs\notes\solar-analysis-v4.md):
   - Check C41/C42/C43 capacitance under DC bias.
   - Check the L11 (DFE252010F-100M) land pattern against Murata's recommendation.
   - Check the layout against AEM10330 DS §10.
@@ -578,7 +578,7 @@ Reference plane: checking the In1 fill under the new line showed two holes from 
 - 2026-10-23 (Brian): this is the active main board. Feather form factor replaces v4.
 - From v4: EN_SLEEP to GND, MPPT 70 %, and the CN1 14-pin Molex 503480-1400 pinout is fixed on the host.
 - 2026-10-24 (Brian): resize to the standard Feather outline (50.8 x 22.86 mm, Feather mounting-hole positions) but **without the Feather header rows or pinout**. Keep every current connector: J1 USB-C, CN1, J3 SWD, U4 battery JST, U5 solar JST. Not FeatherWing-compatible. This is a variant of option (a) in feather-size-study.md and closes its questions 1-3, 5 and 6. Placement questions still open (see Questions for Brian).
-- 2026-10-24 (Brian): connector layout is Proposal C (C:\Personal-Agents\shared\design\nrf54l15_feather\feather_connector_layouts.html). USB-C centred on one short edge; CN1 centred on the far short edge so the FFC folds straight down to sens1, which stacks underneath; U5 solar and U4 battery on opposite long edges near the USB end; the antenna moves to a long edge near the far end. RF risk accepted, to be minimised in layout.
+- 2026-10-24 (Brian): connector layout is Proposal C (C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\feather\docs\feather_connector_layouts.html). USB-C centred on one short edge; CN1 centred on the far short edge so the FFC folds straight down to sens1, which stacks underneath; U5 solar and U4 battery on opposite long edges near the USB end; the antenna moves to a long edge near the far end. RF risk accepted, to be minimised in layout.
 - 2026-10-24 (Brian): **all parts on the top side**, including J3, U4 and U5, so the bottom is flat and sens1 can stack close underneath. The RF1 U.FL + R11 switch (ANT_SEL) is the fallback if the chip antenna's range suffers on the long edge. Defaults accepted: M2.5 holes (plated at the USB end, NPTH + nylon at the far end), USB stays charge-only, no fab output without approval.
 - 2026-10-24 (Brian): SENS_MISO on two U6 pins (pad 11 and pad 15) is intentional, not a bug.
 - 2026-10-25 (Brian): mounting holes use a 2.7 mm drill (M2.5 clearance) at the same Feather positions. Done in run 2: H1/H2 plated with a 3.4 mm pad, H3/H4 NPTH 2.7 mm. (The footprint names still read MountingHole_2.5mm*; only the pads changed.)
@@ -586,7 +586,7 @@ Reference plane: checking the In1 fill under the new line showed two holes from 
 - 2026-10-25 (Brian): AE1 moved to the far corner with a ~6.5 x 6.5 mm no-ground area, per the Johanson datasheet/EVB (checked by coordinator). Done in run 2 step 1c; the pi-match values must be tuned on the real board.
 
 ## BOM pricing (live, 2026-10-28, parts-sourcing)
-- Files: C:\Personal-Agents\shared\design\nrf54l15_feather\bom_digikey_mouser_2026-10-28_live.md plus bom_digikey_2026-10-28_live.csv and bom_mouser_2026-10-28_live.csv (copies in nrf54l15_feather\sourcing\). Live DigiKey and Mouser API data, cut-tape prices, no shipping or tax.
+- Files: C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\feather\sourcing\bom_digikey_mouser_2026-10-28_live.md plus bom_digikey_2026-10-28_live.csv and bom_mouser_2026-10-28_live.csv (copies in hardware\feather\sourcing\). Live DigiKey and Mouser API data, cut-tape prices, no shipping or tax.
 - Cost per board (cheapest DK/Mouser split): 1 board 30.29 USD, 5 boards 138.46 USD total (27.69 per board). Excludes the three lines below that cannot be bought from DK/Mouser (about 1.4 to 2.3 USD more).
 - Stock blockers: C43 220uF 1206 (DK 0, Mouser on order only, no same-footprint alternative); J1 HRO TYPE-C-31-M-12 and R11 FM8625H (not at DK or Mouser, LCSC only); X1 YXC crystal (not at DK/Mouser, Murata XRCGB32M000F1S2AR0 8 pF is the proposed drop-in, ESR/pads unchecked).
 - Resolved: IC1 AEM10330-QFN is at Mouser (725, $4.22); U2 and U6 are in stock at DK and Mouser; AE1 MPN changed to 2450AT18A0100001E.
@@ -728,7 +728,7 @@ Totals: 17 x 0.5/0.3 -> 13 to 0.6/0.3 and 4 to 0.55/0.25; 13 x 0.45/0.25 -> 9 to
 ### Stage 3: checks and renders
 - DRC (kicad-cli 10.0.4, --schematic-parity --refill-zones --severity-all, with min annular 0.15): **0 errors, 0 unconnected, 0 parity, 413 warnings** (192 silk_overlap, 165 silk_over_copper, 54 lib_footprint_issues, 2 silk_edge_clearance), same warnings as run 8.
 - ERC (--severity-all): **0 errors, 206 warnings** (schematic not changed).
-- Renders (changed vias ringed in yellow): C:\Personal-Agents\shared\design\nrf54l15_feather\vias_2026-10-28\ - before_/after_ U6_FCu_BCu.png, RF_corner_FCu_BCu.png, RF_corner_In1.png, U2_FCu_BCu.png.
+- Renders (changed vias ringed in yellow): C:\Personal-Agents\worktrees\nrf54l15-feather-branch\hardware\feather\docs\vias_2026-10-28\ - before_/after_ U6_FCu_BCu.png, RF_corner_FCu_BCu.png, RF_corner_In1.png, U2_FCu_BCu.png.
 - STEP not exported: no part, outline or connector moved (latest is still nrf54l15_feather_2026-10-28b.step). No fab output.
 - B1 (annular ring) of the 2026-10-28 ORP/pH pre-fab review is closed for the feather. ORP (40 vias) and sens1 (36) still have 0.10/0.125 mm rings.
 
@@ -738,14 +738,14 @@ Brian's 2026-10-29 decisions applied: C43 option (a), S1 silk, AE1 as-is, 4/4 mi
 ### Changes
 - Stage 1 (38e4769): "P1"/"P14" silk stroke 0.10 -> 0.15 mm (size stays 1.0 mm). Project min_text_thickness 0.08 -> 0.15 mm (and default silk text thickness 0.1 -> 0.15); DRC flagged no other text. Silk note **"BATT FIRST"** on **B.SilkS** (mirrored, reads from the bottom), 0.8 mm high, 0.15 mm stroke, centred at (101.95, 121.43) between U4 (battery JST) and U5 (solar JST). F.SilkS had no room: a scan of 28 positions between the JSTs and several beside them all gave new silk/pad violations, and the only clean F.SilkS spot (vertical at x 96, over J1's silk) crossed J1's silk bracket. The B side is empty there. No copper changed.
 - Coordinator follow-up (2026-10-29): the "P1"/"P14" silk texts at x = 151 (about 10 mm outside the board, right edge x 140.8, leftovers from the old board) were deleted. DRC still 0 errors/0 unconnected/0 parity, 413 warnings (same types). Gerbers and drill regenerated into fab_2026-10-29\ and the zip rebuilt; against the first set only F_Silkscreen changed (the two texts gone), the drill files differ only in timestamps, and all other layers and the gbrjob are identical.
-- Stage 2 (0519a02): old fab files (all 2026-10-21 or earlier) moved with git mv to nrf54l15_feather\archive\fab_2026-10-21\: 11 Gerbers (B_Cu, B_Mask, B_Paste, B_Silkscreen, Edge_Cuts, F_Cu, F_Mask, F_Paste, F_Silkscreen, In1_Cu, In2_Cu), nrf54l15_feather-job.gbrjob, nrf54l15_feather.drl, nrf54l15_feather.7z, nrf54l15_feather_BOM_PCBWay.xlsx, nrf54l15_feather.net, nrf54l15_feather.xml. Nothing else in the folder was old fab output. CN1 vendor files kept.
+- Stage 2 (0519a02): old fab files (all 2026-10-21 or earlier) moved with git mv to hardware\feather\archive\fab_2026-10-21\: 11 Gerbers (B_Cu, B_Mask, B_Paste, B_Silkscreen, Edge_Cuts, F_Cu, F_Mask, F_Paste, F_Silkscreen, In1_Cu, In2_Cu), nrf54l15_feather-job.gbrjob, nrf54l15_feather.drl, nrf54l15_feather.7z, nrf54l15_feather_BOM_PCBWay.xlsx, nrf54l15_feather.net, nrf54l15_feather.xml. Nothing else in the folder was old fab output. CN1 vendor files kept.
 
 ### Checks (kicad-cli 10.0.4, before and after: identical)
 - DRC (--schematic-parity --refill-zones --severity-all): 0 errors, 0 unconnected, 0 parity, 413 warnings (192 silk_overlap, 165 silk_over_copper, 54 lib_footprint_issues, 2 silk_edge_clearance), same as run 9.
 - ERC (--severity-all): 0 errors, 206 warnings.
 
 ### Fab output
-- Folder: nrf54l15_feather\nrf54l15_feather\fab_2026-10-29\ (kicad-cli from the committed board, Protel extensions, subtract soldermask from silkscreen, zones checked).
+- Folder: hardware\feather\nrf54l15_feather\fab_2026-10-29\ (kicad-cli from the committed board, Protel extensions, subtract soldermask from silkscreen, zones checked).
 - Zip: C:\Personal-Agents\shared\handoff\nrf54l15_feather\nrf54l15_feather_fab_2026-10-29.zip (185 kB). Not uploaded, nothing ordered.
 - Files: nrf54l15_feather-F_Cu.gtl, -In1_Cu.g1, -In2_Cu.g2, -B_Cu.gbl, -F_Mask.gts, -B_Mask.gbs, -F_Silkscreen.gto, -B_Silkscreen.gbo, -F_Paste.gtp, -B_Paste.gbp, -Edge_Cuts.gm1, nrf54l15_feather-job.gbrjob, nrf54l15_feather-PTH.drl, -NPTH.drl, -PTH-drl_map.pdf, -NPTH-drl_map.pdf. No pos, no BOM.
 - gbrjob: 4 layers, 1.6 mm, finish ENIG, size 50.85 x 22.91 mm (the 50.8 x 22.86 outline plus the 0.05 mm Edge.Cuts line width, which KiCad adds).
@@ -764,18 +764,18 @@ C43 is the single 220 uF 1206 and derates to about 54 uF at 4.2 V, below the AEM
 
 ## Order state and enclosure hardware (2026-10-30 to 2026-11-02, coordinator)
 - 2026-10-30 (Brian): this board is OK to order, with ENIG. The X1 ESR/C0 check only decides which crystal to buy.
-- Enclosure (Tidemark, Fusion v17) moved to Amazon hardware: list C:\Personal-Agents\shared\design\enclosure_hardware_amazon_2026-11-01.md, 3.6 mm insert holes, 8 mm + 6 mm nylon standoff stack. The McMaster version is Fusion v11 + enclosure_tidemark\variant_mcmaster_2026-11-01\.
-- Hardware vs board pads check is clean (shared\design\nrf54l15_feather\enclosure_tidemark\hardware_pad_check_2026-11-02.md). H4 screw head clears the AE1 body by only 0.24 mm; a low head or nylon washer is optional, check on the bench.
-- No board change. Guide: shared\design\nrf54l15_feather\enclosure_tidemark\assembly_guide_2026-11-01\ASSEMBLY.md. Report: shared\reports\2026-11-01-coordinator-enclosure-hardware.md.
+- Enclosure (Tidemark, Fusion v17) moved to Amazon hardware: list C:\Personal-Agents\worktrees\nrf54l15-feather-branch\mechanical\hardware_lists\enclosure_hardware_amazon_2026-11-01.md, 3.6 mm insert holes, 8 mm + 6 mm nylon standoff stack. The McMaster version is Fusion v11 + enclosure_tidemark\variant_mcmaster_2026-11-01\.
+- Hardware vs board pads check is clean (mechanical\tidemark\hardware_pad_check_2026-11-02.md). H4 screw head clears the AE1 body by only 0.24 mm; a low head or nylon washer is optional, check on the bench.
+- No board change. Guide: mechanical\tidemark\assembly_guide_2026-11-01\ASSEMBLY.md. Report: shared\reports\2026-11-01-coordinator-enclosure-hardware.md.
 
 ## Two builds (Brian 2026-11-02)
 - Standard build: all parts fitted, for pH, ORP, DO and EC sensor boards.
 - Radar build, for the water level board: R15, R16, R17 and R18 not fitted; R19 stays. Same bare board and Gerbers. Mark these boards by hand.
 - The schematic and BOM show the standard build. For a radar feather, buy and fit four fewer resistors.
-- Details: Sensor_Boards\CN1_SENSOR_CONNECTOR.md, Feather builds. Review: shared\reports\2026-11-02-review-feather-water-level.md, B1 and S2.
+- Details: hardware\sensors\CN1_SENSOR_CONNECTOR.md, Feather builds. Review: shared\reports\2026-11-02-review-feather-water-level.md, B1 and S2.
 
 ## Next-revision ideas (2026-11-07, Brian)
 - **J3, the 10-pin 1.27 mm SWD header (FTSH-105):** consider replacing it with a Tag-Connect TC2030 footprint (legged, standard Tag-Connect SWD pinout: 1 VTref, 2 SWDIO, 3 nRESET, 4 SWCLK, 5 GND, 6 SWO). It is smaller and needs no fitted part. Flash through the TC2030-IDC cable and the SWD section of the prog_adapter board to the 9160 DK Debug out. No change on the 10-29 fab board.
 - **IC1 AEM10330 land:** change to the datasheet pattern (Fig 23) and the exposed-pad vias to 0.5/0.2 (2026-11-07 pre-order check N1, N5).
 - **Board name and revision on the silk** (pre-order check N6).
-- **DigiKey/Mouser parts:** J1 GCT USB4105-GF-A fits the current footprint. R11 could be the Abracon ASWD-S2-0002-T (pad fit unverified). RF1 has no DigiKey/Mouser match yet. See shared\design\dk_mouser_alternates_2026-11-07.md.
+- **DigiKey/Mouser parts:** J1 GCT USB4105-GF-A fits the current footprint. R11 could be the Abracon ASWD-S2-0002-T (pad fit unverified). RF1 has no DigiKey/Mouser match yet. See docs\sourcing\dk_mouser_alternates_2026-11-07.md.
