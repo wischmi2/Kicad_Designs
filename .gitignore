@@ -22,8 +22,8 @@ build/
 build_*/
 
 # Nested clone/workspace snapshots (contain their own .git)
-nrf54l15_v2/nrf54l15_v2/
-nrf54l15_v3/nrf54l15_v3/nrf54l15_v2/
+hardware/archive/nrf54l15_v2/nrf54l15_v2/
+hardware/archive/nrf54l15_v3/nrf54l15_v3/nrf54l15_v2/
 
 # Editor / tool backup copies
 *.claude_bak
