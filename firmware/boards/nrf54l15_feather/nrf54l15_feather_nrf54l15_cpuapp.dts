@@ -8,7 +8,7 @@
 
 /*
  * nRF54L15 Feather main board (nrf54l15_feather, run 5 schematic, 2026-10-28).
- * Derived from the soil_moisture board file; see ../../../README.md
+ * Derived from the soil_moisture board file; see ../../apps/feather_node/README.md
  * "Feather run 5 firmware" for the sources of every setting below.
  *
  * Netlist facts used (kicad-cli export of nrf54l15_feather.kicad_sch, 2026-10-28):

@@ -8,7 +8,7 @@ $AppDir = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 $NcsDir = "c:\ncs\$NcsVersion"
 if (-not $BuildDir) {
 	$BuildDir = Join-Path $AppDir "build_v330"
-	if (-not (Test-Path (Join-Path $BuildDir "soil_moisture_fw\zephyr\zephyr.hex"))) {
+	if (-not (Test-Path (Join-Path $BuildDir "feather_node\zephyr\zephyr.hex"))) {
 		$BuildDir = Join-Path $AppDir "build"
 	}
 }

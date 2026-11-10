@@ -6,12 +6,13 @@ param(
 
 $ErrorActionPreference = "Stop"
 $AppDir = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
+$FwRoot = (Resolve-Path (Join-Path $AppDir "..\..")).Path   # firmware\ (BOARD_ROOT, holds boards\)
 $NcsDir = "c:\ncs\$NcsVersion"
 if (-not $BuildDir) {
 	$BuildDir = Join-Path $AppDir "build"
 }
 
-$env:BOARD_ROOT = ($AppDir -replace '\\', '/')
+$env:BOARD_ROOT = ($FwRoot -replace '\\', '/')
 New-Item -ItemType Directory -Force -Path $BuildDir | Out-Null
 
 nrfutil sdk-manager toolchain launch --ncs-version=$NcsVersion --chdir $NcsDir -- `
@@ -19,4 +20,4 @@ nrfutil sdk-manager toolchain launch --ncs-version=$NcsVersion --chdir $NcsDir -
 	-d $BuildDir `
 	$AppDir
 
-Write-Host "HEX: $(Join-Path $BuildDir 'soil_moisture_fw\zephyr\zephyr.hex')"
+Write-Host "HEX: $(Join-Path $BuildDir 'feather_node\zephyr\zephyr.hex')"

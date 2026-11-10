@@ -28,14 +28,15 @@ Primary: **NCS v3.3.0** at `c:\ncs\v3.3.0` (installed via `west init` / `west up
 Or manually:
 
 ```powershell
-$env:BOARD_ROOT = "c:/Users/Brian/Kicad_Designs/soil_moisture_fw"
+# BOARD_ROOT is firmware\ (board definitions live in firmware\boards\)
+$env:BOARD_ROOT = "C:/Personal-Agents/worktrees/nrf54l15-feather-branch/firmware"
 nrfutil sdk-manager toolchain launch --ncs-version=v3.3.0 --chdir c:\ncs\v3.3.0 -- `
   west build -p -b soil_moisture/nrf54l15/cpuapp `
-  -d c:\Users\Brian\Kicad_Designs\soil_moisture_fw\build_v330 `
-  c:\Users\Brian\Kicad_Designs\soil_moisture_fw
+  -d C:\Personal-Agents\worktrees\nrf54l15-feather-branch\firmware\apps\feather_node\build_v330 `
+  C:\Personal-Agents\worktrees\nrf54l15-feather-branch\firmware\apps\feather_node
 ```
 
-Artifact: `build_v330/soil_moisture_fw/zephyr/zephyr.hex`
+Artifact: `build_v330/feather_node/zephyr/zephyr.hex` (sysbuild names the image after the app folder; before the 2026-11-10 reorg it was `soil_moisture_fw`).
 
 ## Flash (TC2030 / J-Link)
 
@@ -56,7 +57,7 @@ No UART on this board — use SEGGER RTT.
 
 Status: devicetree, Kconfig and code written 2026-10-28, **NOT BUILT**. The build needs NCS v3.3.0 (named by `scripts\build.ps1`), which is not installed: `C:\ncs` has v2.9.0, v2.9.1, v3.0.1, v3.0.2, v3.1.0 and v3.2.3 only, and `nrfutil sdk-manager` is not installed on this PC. Nothing was flashed. Property names were checked by reading the NCS v3.2.3 sources (`zephyr/dts/bindings/regulator/nordic,npm13xx-regulator-common.yaml`, `sensor/nordic,npm13xx-charger-common.yaml`, `nordic,npm1300-charger.yaml`, `drivers/regulator/regulator_npm13xx.c`, `regulator_common.c`); v3.3.0 may differ.
 
-Target: new board `nrf54l15_feather/nrf54l15/cpuapp` in `boards\others\nrf54l15_feather\` (copied from `soil_moisture`; the existing soil_moisture board is untouched and the app still builds for it). Build: `.\scripts\build.ps1 -Board nrf54l15_feather/nrf54l15/cpuapp -BuildDir <dir>`. Feather-only code is `src\feather_run5.c` (compiled when `CONFIG_BOARD_NRF54L15_FEATHER`) and `boards\nrf54l15_feather_nrf54l15_cpuapp.conf` (`CONFIG_ADC=y`).
+Target: new board `nrf54l15_feather/nrf54l15/cpuapp` in `firmware\boards\nrf54l15_feather\` (was `soil_moisture_fw\boards\others\nrf54l15_feather\` before 2026-11-10; copied from `soil_moisture`; the existing soil_moisture board is untouched and the app still builds for it). Build: `.\scripts\build.ps1 -Board nrf54l15_feather/nrf54l15/cpuapp -BuildDir <dir>`. Feather-only code is `src\feather_run5.c` (compiled when `CONFIG_BOARD_NRF54L15_FEATHER`) and `boards\nrf54l15_feather_nrf54l15_cpuapp.conf` (`CONFIG_ADC=y`).
 
 Pins from the netlist (kicad-cli export of `nrf54l15_feather.kicad_sch`, 2026-10-28): I2C SCL P1.03, SDA P1.04; PMIC_INT P0.00 (U2 GPIO1); ANT_SEL P0.01 (U6.24 -> U7.2 -> ANT_VCTL -> R11.6); SENS_ID P1.06 (U6.7, SAADC AIN2, R19 10k to VSENS); VSENS = U2.29 LSOUT1 (LDSW1, node LDO1); VRF = U2.31 LSOUT2 (LDSW2, node LDO2).
 
