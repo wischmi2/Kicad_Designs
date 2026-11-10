@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560">
+  <style>
+    .ab{fill:#1f3347;stroke:#0f1a24;stroke-width:2}
+    .tpu{fill:#3b3f46;stroke:#15181c;stroke-width:1}
+    .coral{fill:#ff7a59;stroke:#c24a2c;stroke-width:1}
+    .cone{fill:#7fb7d6;fill-opacity:.22;stroke:#2f6f8f;stroke-width:1.2;stroke-dasharray:5 3}
+    .water{fill:#9fd0e3;fill-opacity:.6;stroke:none}
+    .wl{stroke:#2f6f8f;stroke-width:1.5}
+    .wall{fill:#cfe8f2;stroke:#5a8ea3;stroke-width:1.5}
+    .bad{fill:#e0574a;fill-opacity:.25;stroke:none}
+    .blind{fill:#e0574a;fill-opacity:.18;stroke:#e0574a;stroke-width:1;stroke-dasharray:3 3}
+    .margin{fill:#e8b84a;fill-opacity:.25;stroke:#c08a2e;stroke-width:1;stroke-dasharray:3 3}
+    .dim{stroke:#5b6578;stroke-width:.8;fill:none}
+    .t{font-family:Helvetica,Arial,sans-serif;font-size:11px;fill:#1d2533}
+    .s{font-family:Helvetica,Arial,sans-serif;font-size:10px;fill:#5b6578}
+    .r{font-family:Helvetica,Arial,sans-serif;font-size:10px;fill:#c24a2c}
+    .ti{font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:bold;fill:#1d2533}
+  </style>
+  <text x="40" y="30" class="ti">00 THE ACOUSTIC RULES - every water-level option has to obey these</text>
+  <text x="40" y="47" class="s">Scale 0.9 px/mm. A02YYUW: 3 cm blind zone, 60 deg reference angle (30 deg each side of the axis), 3-450 cm. Wall positions are geometry, not a promise: test at the lowest water level.</text>
+
+  <!-- ceiling / mount -->
+  <rect x="60" y="76" width="440" height="8" class="ab"/>
+  <!-- transducer: dia 20 -> 18 px, body 26 -> 23 px -->
+  <rect x="241" y="84" width="18" height="23" class="tpu"/>
+  <rect x="239" y="105" width="22" height="3" class="coral"/>
+  <text x="270" y="98" class="s">transducer face (z = 0)</text>
+
+  <!-- blind zone 30 mm = 27 px: y 108..135 -->
+  <rect x="150" y="108" width="200" height="27" class="blind"/>
+  <text x="156" y="125" class="r">blind zone 30 mm: no water here, ever</text>
+  <!-- margin to 70 mm = 63 px: y 135..171 -->
+  <rect x="150" y="135" width="200" height="28" class="margin"/>
+  <text x="156" y="153" class="s">margin: waves, foam, condensation, fill overshoot</text>
+  <!-- highest water 70 mm -> y=171 -->
+  <line x1="120" y1="171" x2="380" y2="171" class="wl"/>
+  <text x="384" y="175" class="t">highest water, at least 70 mm from the face</text>
+  <!-- lowest water at 300 mm -> y=108+270=378 -->
+  <rect x="120" y="378" width="260" height="60" class="water"/>
+  <line x1="120" y1="378" x2="380" y2="378" class="wl" stroke-dasharray="6 4"/>
+  <text x="384" y="382" class="t">lowest water (example: 300 mm)</text>
+
+  <!-- cone from (250,108) half-angle 30 deg to y=378: dx = 270*tan30 = 156 -->
+  <polygon points="250,108 94,378 406,378" class="cone"/>
+  <line x1="250" y1="108" x2="250" y2="378" stroke="#2f6f8f" stroke-width=".8" stroke-dasharray="2 4"/>
+  <text x="256" y="300" class="s">axis</text>
+  <text x="168" y="330" class="s">30 deg</text>
+
+  <!-- good wall at 190 mm lateral = 171 px: x=421 enters cone below 190/tan30 = 329 mm -> beyond lowest water -->
+  <rect x="421" y="108" width="10" height="330" class="wall"/>
+  <text x="436" y="200" class="t">wall 190 mm off axis</text>
+  <text x="436" y="213" class="s">cone clear of the wall down to 329 mm</text>
+  <!-- bad wall at 100 mm lateral = 90 px: x=160 -> enters cone at 173 mm -> y=108+156=264 -->
+  <rect x="150" y="108" width="10" height="330" class="wall"/>
+  <polygon points="160,264 160,378 101,378 " class="bad"/>
+  <text x="40" y="228" class="r">wall 100 mm off axis:</text>
+  <text x="40" y="241" class="r">inside the cone below 173 mm.</text>
+  <text x="40" y="254" class="r">First strong echo may be the</text>
+  <text x="40" y="267" class="r">wall, not the water.</text>
+  <line x1="160" y1="264" x2="130" y2="264" stroke="#e0574a" stroke-width="1"/>
+
+  <!-- dims -->
+  <line x1="470" y1="108" x2="470" y2="171" class="dim"/><text x="476" y="144" class="s">70 = 30 + 40</text>
+  <line x1="500" y1="108" x2="500" y2="378" class="dim"/><text x="506" y="250" class="s">d = 300</text>
+  <line x1="250" y1="450" x2="160" y2="450" class="dim"/><text x="190" y="464" class="s">100</text>
+  <line x1="250" y1="478" x2="421" y2="478" class="dim"/><text x="320" y="492" class="s">190</text>
+
+  <!-- right panel: table -->
+  <text x="620" y="96" class="t">Cone radius on the water = d x tan 30</text>
+  <text x="620" y="116" class="s">d = 100 mm   ->   r = 58 mm</text>
+  <text x="620" y="132" class="s">d = 200 mm   ->   r = 115 mm</text>
+  <text x="620" y="148" class="s">d = 300 mm   ->   r = 173 mm</text>
+  <text x="620" y="164" class="s">d = 450 mm   ->   r = 260 mm</text>
+  <text x="620" y="196" class="t">Rules used in all four options</text>
+  <text x="620" y="214" class="s">1. Face at least 70 mm above the highest</text>
+  <text x="620" y="226" class="s">   water (30 blind + 40 margin).</text>
+  <text x="620" y="244" class="s">2. Axis plumb: within 2 deg, or the echo</text>
+  <text x="620" y="256" class="s">   walks off. Every mount has a level aid.</text>
+  <text x="620" y="274" class="s">3. Nothing but air in the cone: no arm,</text>
+  <text x="620" y="286" class="s">   screw, pipe or lip. Exit chamfer 45 deg.</text>
+  <text x="620" y="304" class="s">4. Wall off axis at least 0.58 x d is clean;</text>
+  <text x="620" y="316" class="s">   less means test at the lowest level.</text>
+  <text x="620" y="334" class="s">5. Never recess the face in a nozzle or</text>
+  <text x="620" y="346" class="s">   tube (a lip makes false echoes).</text>
+  <text x="620" y="364" class="s">6. Keep fill pipes, return flow, skimmer</text>
+  <text x="620" y="376" class="s">   foam and bubbles out of the cone.</text>
+  <text x="620" y="408" class="t">Why Tidemark cannot hold the probe</text>
+  <text x="620" y="422" class="s">Tidemark hangs the probe at the wall, so</text>
+  <text x="620" y="434" class="s">the glass sits at 20-40 mm off axis: inside</text>
+  <text x="620" y="446" class="s">the cone. Every option here moves the</text>
+  <text x="620" y="458" class="s">transducer inboard of the wall.</text>
+</svg>

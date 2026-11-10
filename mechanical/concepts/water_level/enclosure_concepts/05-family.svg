@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="640" viewBox="0 0 900 640">
+  <style>
+    .ab{fill:#1f3347;stroke:#0f1a24;stroke-width:2}
+    .brow{fill:#2c4660;stroke:#0f1a24;stroke-width:1}
+    .sad{fill:#2c4660;stroke:#0f1a24;stroke-width:2}
+    .w{fill:#20262f}
+    .tpu{fill:#3b3f46;stroke:#15181c;stroke-width:1}
+    .coral{fill:#ff7a59;stroke:#c24a2c;stroke-width:1}
+    .tide{fill:#ff7a59;fill-opacity:.6;stroke:#c24a2c;stroke-width:1}
+    .ant{fill:none;stroke:#e0574a;stroke-width:1.5;stroke-dasharray:4 3}
+    .glass{fill:#cfe8f2;stroke:#5a8ea3;stroke-width:1.5}
+    .lid{fill:#e9eef2;stroke:#6b7480;stroke-width:1.5}
+    .cab{fill:#e3dccb;stroke:#8a7f66;stroke-width:1.5}
+    .pvc{fill:#cfd3d8;stroke:#6b7480;stroke-width:1.5}
+    .eye{fill:#d8dce2;stroke:#4a4f57;stroke-width:1}
+    .t{font-family:Helvetica,Arial,sans-serif;font-size:11px;fill:#1d2533}
+    .s{font-family:Helvetica,Arial,sans-serif;font-size:10px;fill:#5b6578}
+    .ti{font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:bold;fill:#1d2533}
+  </style>
+  <text x="40" y="30" class="ti">05 FAMILY - the water-level options next to the gateway and the Feather column</text>
+  <text x="40" y="47" class="s">Top row 1.5 px/mm, bottom row 1 px/mm. New in this line: the Eye (graphite TPU sleeve, coral lip, 45 deg exit chamfer) - the one part every option shares.</text>
+
+  <!-- TOP ROW baseline y=250 -->
+  <rect x="40" y="100" width="123" height="150" rx="10" class="ab"/>
+  <rect x="43" y="103" width="117" height="20" rx="8" class="brow"/>
+  <rect x="70" y="106" width="54" height="12" class="ant"/>
+  <rect x="62" y="132" width="63" height="48" rx="2" class="w"/>
+  <circle cx="101" cy="196" r="7" class="coral"/>
+  <rect x="94" y="232" width="14" height="5" rx="2" class="tide"/>
+  <text x="40" y="270" class="t">Ledger gateway (modelled)</text>
+  <text x="40" y="283" class="s">82 x 100 x 24</text>
+
+  <polygon points="241,154 210,154 210,250 258,250 258,176" class="ab"/>
+  <rect x="210" y="244" width="48" height="6" class="tpu"/>
+  <rect x="226" y="160" width="20" height="10" class="ant"/>
+  <circle cx="246" cy="188" r="6" class="coral"/>
+  <circle cx="244" cy="200" r="2" class="tide"/>
+  <text x="196" y="270" class="t">Tidemark-W (electronics)</text>
+  <text x="196" y="283" class="s">32 x 64 x 32, no sensor heel</text>
+
+  <path class="ab" d="M300 250 L300 215 Q300 193 322 193 L344 193 Q366 193 366 215 L366 250 Z"/>
+  <rect x="315" y="205" width="36" height="38" class="eye"/>
+  <rect x="311" y="247" width="44" height="6" class="coral"/>
+  <text x="290" y="270" class="t">Eye pod (Bead)</text>
+  <text x="290" y="283" class="s">dia 44 x 38</text>
+
+  <!-- shared Eye callout -->
+  <text x="430" y="104" class="t">The Eye, shared by all four</text>
+  <rect x="430" y="114" width="60" height="50" rx="8" class="ab"/>
+  <rect x="440" y="124" width="40" height="38" class="tpu"/>
+  <rect x="444" y="124" width="32" height="42" class="eye"/>
+  <rect x="438" y="164" width="44" height="5" class="coral"/>
+  <text x="504" y="130" class="s">Probe (dia 20, to be measured) in a TPU sleeve</text>
+  <text x="504" y="144" class="s">Coral lip: the only coral you see from below</text>
+  <text x="504" y="158" class="s">45 deg exit chamfer outside the 30 deg cone</text>
+  <text x="504" y="172" class="s">Bore size is a parameter; one model, four holders</text>
+
+  <!-- PALETTE -->
+  <text x="430" y="206" class="t">Palette (unchanged)</text>
+  <rect x="430" y="214" width="26" height="14" fill="#1f3347"/><text x="462" y="225" class="s">Abyss PETG/PCTG (wet zones)</text>
+  <rect x="640" y="214" width="26" height="14" fill="#ff7a59"/><text x="672" y="225" class="s">Coral (key, light, Eye lip)</text>
+  <rect x="430" y="236" width="26" height="14" fill="#3b3f46"/><text x="462" y="247" class="s">Graphite TPU (foot, bung, Eye sleeve)</text>
+  <rect x="640" y="236" width="26" height="14" fill="#cfd3d8" stroke="#6b7480"/><text x="672" y="247" class="s">Stock PVC tube (Davit arm)</text>
+  <text x="430" y="272" class="s">No solar panel on these nodes: Sand ASA and the PC window drop out.</text>
+
+  <!-- BOTTOM ROW baseline y=470 -->
+  <text x="40" y="330" class="t">Plumb</text>
+  <rect x="86" y="356" width="8" height="100" class="glass"/>
+  <rect x="54" y="362" width="32" height="64" rx="4" class="ab"/>
+  <rect x="54" y="420" width="32" height="6" class="tpu"/>
+  <path class="sad" d="M82 352 L190 352 L190 362 L104 362 L104 392 L96 392 L96 362 L82 362 Z"/>
+  <rect x="172" y="362" width="22" height="26" rx="5" class="ab"/>
+  <rect x="173" y="385" width="20" height="3" class="coral"/>
+  <text x="40" y="490" class="s">column outside, hook over the rim,</text>
+  <text x="40" y="503" class="s">boom inboard, Eye at the tip</text>
+
+  <text x="270" y="330" class="t">Cork</text>
+  <rect x="250" y="420" width="150" height="5" class="lid"/>
+  <path class="ab" d="M262 420 L262 392 Q262 384 270 384 L350 380 L372 384 L378 420 Z"/>
+  <rect x="280" y="424" width="26" height="22" class="tpu"/>
+  <rect x="283" y="426" width="20" height="26" class="eye"/>
+  <rect x="280" y="450" width="26" height="3" class="coral"/>
+  <circle cx="338" cy="380" r="4" class="coral"/>
+  <text x="250" y="490" class="s">pebble on a lid, Eye through a</text>
+  <text x="250" y="503" class="s">dia 30 hole</text>
+
+  <text x="470" y="330" class="t">Davit</text>
+  <rect x="470" y="352" width="12" height="130" class="cab"/>
+  <polygon points="504,356 482,356 482,420 512,420 512,372" class="ab"/>
+  <rect x="482" y="416" width="30" height="4" class="tpu"/>
+  <rect x="512" y="424" width="130" height="10" class="pvc"/>
+  <path d="M580 420 l6 18 M590 420 l6 18" stroke="#fff" stroke-width="5"/>
+  <rect x="636" y="420" width="32" height="18" rx="5" class="sad"/>
+  <rect x="642" y="438" width="20" height="20" class="eye"/>
+  <rect x="640" y="456" width="24" height="3" class="coral"/>
+  <text x="470" y="490" class="s">column on a cabinet wall, tube arm</text>
+  <text x="470" y="503" class="s">swings over an open tank (shortened)</text>
+
+  <text x="700" y="330" class="t">Bead</text>
+  <rect x="700" y="352" width="12" height="130" class="cab"/>
+  <polygon points="734,356 712,356 712,420 742,420 742,372" class="ab"/>
+  <rect x="712" y="416" width="30" height="4" class="tpu"/>
+  <path d="M726 420 Q726 440 760 440 L800 440 Q820 440 820 430" fill="none" stroke="#2b2f2d" stroke-width="2"/>
+  <rect x="790" y="426" width="90" height="4" class="lid"/>
+  <path class="ab" d="M804 430 L804 446 Q804 456 814 456 L836 456 Q846 456 846 446 L846 430 Z"/>
+  <rect x="808" y="454" width="34" height="3" class="coral"/>
+  <text x="700" y="490" class="s">Tidemark-W on a wall, cable to a</text>
+  <text x="700" y="503" class="s">pod on any lid, rim or pipe</text>
+
+  <!-- PAIRING -->
+  <text x="40" y="540" class="t">Pairs best with the feather concepts</text>
+  <text x="40" y="556" class="s">Plumb  - Tidemark (same column, brow, dovetail rail, foot). Davit - Tidemark (cleat) and Shard (stake socket for a free-standing post).</text>
+  <text x="40" y="570" class="s">Cork   - Slate (low spine, boards flat, antenna at the outer edge); drop the wing and the panel.  Bead - Tidemark plus the Ledger gateway.</text>
+  <text x="40" y="584" class="s">Lily has no water-level sibling: the transducer must not move, so a floating node is out.</text>
+  <text x="40" y="606" class="t">Shared rules</text>
+  <text x="40" y="620" class="s">Antenna in a plastic-only brow; one coral key and one coral eye on the electronics; ports in a graphite foot facing down; Eye at the water end of every option.</text>
+</svg>

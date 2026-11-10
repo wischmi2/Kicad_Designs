@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="680" viewBox="0 0 900 680">
+  <style>
+    .ab{fill:#1f3347;stroke:#0f1a24;stroke-width:2}
+    .brow{fill:#2c4660;stroke:#0f1a24;stroke-width:1}
+    .sad{fill:#2c4660;stroke:#0f1a24;stroke-width:2}
+    .w{fill:#20262f}
+    .tpu{fill:#3b3f46;stroke:#15181c;stroke-width:1}
+    .coral{fill:#ff7a59;stroke:#c24a2c;stroke-width:1}
+    .tide{fill:#ff7a59;fill-opacity:.6;stroke:#c24a2c;stroke-width:1}
+    .ant{fill:none;stroke:#e0574a;stroke-width:1.5;stroke-dasharray:4 3}
+    .glass{fill:#cfe8f2;stroke:#5a8ea3;stroke-width:1.5}
+    .lid{fill:#e9eef2;stroke:#6b7480;stroke-width:1.5}
+    .cab{fill:#e3dccb;stroke:#8a7f66;stroke-width:1.5}
+    .pvc{fill:#cfd3d8;stroke:#6b7480;stroke-width:1.5}
+    .water{fill:#9fd0e3;fill-opacity:.55;stroke:none}
+    .prb{fill:#d9dde2;stroke:#4a4f57;stroke-width:1}
+    .eye{fill:#d8dce2;stroke:#4a4f57;stroke-width:1}
+    .t{font-family:Helvetica,Arial,sans-serif;font-size:11px;fill:#1d2533}
+    .s{font-family:Helvetica,Arial,sans-serif;font-size:10px;fill:#5b6578}
+    .c{font-family:Helvetica,Arial,sans-serif;font-size:9px;fill:#c9d3de}
+    .ti{font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:bold;fill:#1d2533}
+  </style>
+  <text x="40" y="30" class="ti">05 FAMILY - the probe nodes next to the gateway, the Feather column and the water-level line</text>
+  <text x="40" y="47" class="s">Top row 1.4 px/mm, bottom row 0.9 px/mm. New in this line: the Collet (split TPU holder, bore 12 / 16.5) and the type band. Everything else is existing language.</text>
+
+  <!-- TOP ROW baseline y=250 -->
+  <rect x="40" y="110" width="115" height="140" rx="10" class="ab"/>
+  <rect x="43" y="113" width="109" height="20" rx="8" class="brow"/>
+  <rect x="66" y="116" width="52" height="12" class="ant"/>
+  <rect x="62" y="140" width="62" height="46" rx="2" class="w"/>
+  <circle cx="98" cy="204" r="7" class="coral"/>
+  <rect x="91" y="236" width="14" height="5" rx="2" class="tide"/>
+  <text x="40" y="270" class="t">Ledger gateway</text>
+  <text x="40" y="283" class="s">82 x 100 x 24 (modelled)</text>
+
+  <path class="ab" d="M195 250 L195 150 L205 140 L240 140 L240 250 Z"/>
+  <rect x="195" y="244" width="45" height="6" class="tpu"/>
+  <rect x="206" y="144" width="26" height="10" class="ant"/>
+  <circle cx="203" cy="178" r="5" class="coral"/>
+  <rect x="195" y="232" width="45" height="8" fill="#4fae7b"/>
+  <text x="190" y="270" class="t">Tidemark (ph)</text>
+  <text x="190" y="283" class="s">feather concept, 32 x 78</text>
+
+  <path class="ab" d="M280 250 L280 175 L288 165 L325 165 L325 250 Z"/>
+  <rect x="280" y="244" width="45" height="6" class="tpu"/>
+  <circle cx="288" cy="195" r="4" class="coral"/>
+  <rect x="280" y="232" width="45" height="8" fill="#e9e4d4"/>
+  <text x="272" y="270" class="t">Tidemark-W (lvl)</text>
+  <text x="272" y="283" class="s">32 x 64, water level</text>
+
+  <path class="ab" d="M365 250 L365 152 L373 142 L410 142 L410 250 Z"/>
+  <rect x="365" y="244" width="45" height="6" class="tpu"/>
+  <rect x="376" y="146" width="26" height="10" class="ant"/>
+  <circle cx="373" cy="178" r="5" class="coral"/><circle cx="373" cy="192" r="2" class="tide"/>
+  <rect x="365" y="232" width="45" height="8" fill="#e8b23a"/>
+  <rect x="380" y="251" width="14" height="22" rx="4" class="tpu"/>
+  <text x="352" y="296" class="t">Tidemark-P (orp)</text>
+  <text x="352" y="309" class="s">32 x 70 x 33.5, probe node</text>
+
+  <path class="ab" d="M450 250 L450 224 Q450 210 464 210 L486 210 Q500 210 500 224 L500 250 Z"/>
+  <rect x="460" y="218" width="30" height="28" class="eye"/>
+  <rect x="456" y="248" width="38" height="5" class="coral"/>
+  <text x="440" y="270" class="t">Eye pod (Bead)</text>
+  <text x="440" y="283" class="s">44 x 38, level</text>
+
+  <!-- COLLET callout -->
+  <text x="560" y="104" class="t">The Collet, shared by all four probe options</text>
+  <rect x="560" y="114" width="64" height="52" rx="8" class="ab"/>
+  <rect x="580" y="108" width="24" height="70" rx="4" class="prb"/>
+  <rect x="574" y="128" width="36" height="22" rx="4" class="tpu"/>
+  <rect x="574" y="128" width="36" height="5" fill="#9a82d6"/>
+  <text x="640" y="130" class="s">Split TPU 95A, bore 11.5 (pH, ORP, EC) or 16 (DO)</text>
+  <text x="640" y="144" class="s">Coloured ring = sensor type, same as the cable tag</text>
+  <text x="640" y="158" class="s">Slides on the probe to set depth, no metal in water</text>
+  <text x="640" y="172" class="s">One part on a leg, a lid, a tube or a rack</text>
+
+  <text x="560" y="206" class="t">Type band (one shell, a swappable band)</text>
+  <rect x="560" y="216" width="26" height="14" fill="#4fae7b"/><text x="592" y="227" class="s">ph</text>
+  <rect x="624" y="216" width="26" height="14" fill="#e8b23a"/><text x="656" y="227" class="s">orp</text>
+  <rect x="696" y="216" width="26" height="14" fill="#4fc3dc"/><text x="728" y="227" class="s">do</text>
+  <rect x="760" y="216" width="26" height="14" fill="#9a82d6"/><text x="792" y="227" class="s">ec</text>
+  <rect x="560" y="240" width="26" height="14" fill="#e9e4d4" stroke="#8a7f66"/><text x="592" y="251" class="s">lvl</text>
+  <text x="624" y="251" class="s">Also debossed lowercase code and a cable tag.</text>
+  <text x="560" y="276" class="t">Palette (unchanged)</text>
+  <rect x="560" y="284" width="26" height="14" fill="#1f3347"/><text x="592" y="295" class="s">Abyss PETG / PCTG</text>
+  <rect x="700" y="284" width="26" height="14" fill="#ff7a59"/><text x="732" y="295" class="s">Coral (key, eye, lip)</text>
+  <rect x="560" y="306" width="26" height="14" fill="#3b3f46"/><text x="592" y="317" class="s">Graphite TPU (foot, boot, collet)</text>
+
+  <!-- BOTTOM ROW baseline y=520 -->
+  <text x="40" y="360" class="t">Perch</text>
+  <rect x="104" y="388" width="8" height="120" class="glass"/>
+  <rect x="68" y="396" width="36" height="70" rx="4" class="ab"/>
+  <rect x="68" y="458" width="36" height="8" fill="#e8b23a"/>
+  <path class="sad" d="M98 386 L134 386 L134 424 L126 424 L126 394 L98 394 Z"/>
+  <rect x="124" y="424" width="20" height="14" rx="3" class="tpu"/>
+  <rect x="127" y="436" width="14" height="70" rx="4" class="prb"/>
+  <rect x="112" y="450" width="120" height="58" class="water"/>
+  <text x="40" y="540" class="s">column outside, saddle over the rim,</text>
+  <text x="40" y="552" class="s">probe on a rigid inner leg</text>
+
+  <text x="250" y="360" class="t">Berth</text>
+  <rect x="250" y="384" width="8" height="140" class="cab"/>
+  <rect x="258" y="386" width="40" height="30" rx="6" class="ab"/>
+  <rect x="258" y="386" width="40" height="124" rx="6" class="ab" opacity=".0"/>
+  <rect x="302" y="386" width="24" height="124" rx="6" class="ab"/>
+  <rect x="258" y="408" width="40" height="8" fill="#4fc3dc"/>
+  <rect x="308" y="454" width="12" height="52" rx="3" class="prb"/>
+  <rect x="304" y="496" width="20" height="14" rx="4" class="tpu"/>
+  <text x="250" y="540" class="s">wall monolith: node on the shoulder,</text>
+  <text x="250" y="552" class="s">probe parks in the bay, row of nodes</text>
+
+  <text x="470" y="360" class="t">Limpet</text>
+  <rect x="450" y="466" width="170" height="5" class="lid"/>
+  <path class="ab" d="M500 466 L500 446 Q500 442 505 442 L560 442 L576 452 L576 466 Z"/>
+  <rect x="470" y="452" width="38" height="14" rx="4" class="ab"/>
+  <rect x="478" y="436" width="22" height="30" rx="5" class="ab"/>
+  <rect x="476" y="434" width="26" height="3" class="coral"/>
+  <rect x="482" y="430" width="14" height="60" class="prb"/>
+  <rect x="482" y="471" width="14" height="40" class="prb"/>
+  <rect x="440" y="486" width="190" height="24" class="water"/>
+  <circle cx="540" cy="442" r="3" class="coral"/>
+  <text x="450" y="540" class="s">low shell on a bucket lid, probe</text>
+  <text x="450" y="552" class="s">through the eye ring beside it</text>
+
+  <text x="700" y="360" class="t">Staff</text>
+  <rect x="690" y="460" width="170" height="64" class="water"/>
+  <rect x="772" y="420" width="12" height="100" class="pvc"/>
+  <path class="ab" d="M758 396 Q758 380 770 380 L788 380 Q800 380 800 396 L800 424 L758 424 Z"/>
+  <rect x="758" y="416" width="42" height="6" fill="#9a82d6"/>
+  <rect x="758" y="518" width="56" height="6" rx="3" class="sad"/>
+  <rect x="802" y="460" width="8" height="50" rx="2" class="prb"/>
+  <circle cx="762" cy="400" r="2.5" class="coral"/>
+  <text x="700" y="540" class="s">round bud slides on a stock tube;</text>
+  <text x="700" y="552" class="s">foot, spike or rim clamp</text>
+
+  <text x="40" y="590" class="t">Pairs best</text>
+  <text x="40" y="606" class="s">Perch - Tidemark and Plumb (same column, rail and foot).  Berth - Ledger (wall object) and Berth Row for the level node.  Limpet - Slate and Cork (low spine, brow).</text>
+  <text x="40" y="620" class="s">Staff - Bead pod (the 44 mm round) and Davit (stock 20 mm tube). Lily has no probe sibling: a floating hull cannot hold a probe rigid.</text>
+  <text x="40" y="642" class="t">Shared rules</text>
+  <text x="40" y="656" class="s">Antenna in a plastic-only brow or crown; one coral key and one coral eye; ports in one graphite foot that faces down; one cartridge in every shell; the SMA boot and the Collet are the only new parts.</text>
+</svg>

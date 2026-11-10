@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="720" viewBox="0 0 900 720">
+  <style>
+    .ab{fill:#1f3347;stroke:#0f1a24;stroke-width:2}
+    .sad{fill:#2c4660;stroke:#0f1a24;stroke-width:2}
+    .tpu{fill:#3b3f46;stroke:#15181c;stroke-width:1}
+    .coral{fill:#ff7a59;stroke:#c24a2c;stroke-width:1}
+    .lid{fill:#e9eef2;stroke:#6b7480;stroke-width:1.5}
+    .water{fill:#9fd0e3;fill-opacity:.55;stroke:none}
+    .wl{stroke:#2f6f8f;stroke-width:1.5}
+    .pcb{fill:#2f7d5a;stroke:#174a34;stroke-width:1}
+    .part{fill:#c9ccd1;stroke:#5b6578;stroke-width:1}
+    .bat{fill:none;stroke:#8a7f66;stroke-width:1.2;stroke-dasharray:5 3}
+    .rfz{fill:none;stroke:#e0574a;stroke-width:1.2;stroke-dasharray:4 3}
+    .wire{fill:none;stroke:#2b2f2d;stroke-width:2}
+    .dim{stroke:#5b6578;stroke-width:.8;fill:none}
+    .t{font-family:Helvetica,Arial,sans-serif;font-size:11px;fill:#1d2533}
+    .s{font-family:Helvetica,Arial,sans-serif;font-size:10px;fill:#5b6578}
+    .ti{font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:bold;fill:#1d2533}
+  </style>
+  <text x="30" y="28" class="ti">03 LIMPET - a low shell on a lid; the probe passes through an eye ring beside it, a cleat holds the spare cable</text>
+  <text x="30" y="45" class="s">Section at 2.5 px/mm, plan at 2 px/mm. Head about 131 L x 38 W x 34 H on three TPU feet. Boards lie flat, battery under them. For lidded buckets: salt-mix, RO, ATO, hydroponic reservoirs.</text>
+
+  <!-- SECTION -->
+  <text x="40" y="84" class="t">Section, probe on the left, antenna end on the right</text>
+  <!-- lid and bushing -->
+  <rect x="40" y="330" width="79" height="10" class="lid"/>
+  <rect x="181" y="330" width="379" height="10" class="lid"/>
+  <rect x="112" y="326" width="76" height="5" class="tpu"/><rect x="112" y="339" width="76" height="5" class="tpu"/>
+  <rect x="119" y="326" width="6" height="18" class="tpu"/><rect x="175" y="326" width="6" height="18" class="tpu"/>
+  <text x="44" y="362" class="s">lid 1-5 mm, hole dia 25</text>
+  <text x="44" y="374" class="s">double-flange TPU bushing</text>
+  <!-- water -->
+  <rect x="40" y="420" width="520" height="200" class="water"/>
+  <line x1="40" y1="420" x2="560" y2="420" class="wl"/>
+  <text x="380" y="438" class="s">water (probe tip at least 20 mm off the floor and walls)</text>
+  <!-- probe -->
+  <rect x="135" y="245" width="30" height="365" rx="6" fill="#d9dde2" stroke="#4a4f57"/>
+  <rect x="135" y="270" width="30" height="12" fill="#9a82d6"/>
+  <rect x="140" y="232" width="20" height="14" rx="3" class="tpu"/>
+  <text x="172" y="560" class="s">probe 12 or 16.5 mm</text>
+  <text x="172" y="572" class="s">pushes down through the eye,</text>
+  <text x="172" y="584" class="s">collet grips the body</text>
+  <!-- head -->
+  <rect x="105" y="297" width="170" height="25" rx="6" class="ab"/>
+  <rect x="112" y="262" width="76" height="60" rx="10" class="ab"/>
+  <path class="ab" d="M270 322 L270 252 Q270 244 278 244 L392 244 L432 266 L432 322 Z"/>
+  <rect x="112" y="258" width="76" height="5" class="coral"/>
+  <!-- feet -->
+  <rect x="215" y="322" width="24" height="8" rx="3" class="tpu"/><rect x="310" y="322" width="24" height="8" rx="3" class="tpu"/><rect x="400" y="322" width="24" height="8" rx="3" class="tpu"/>
+  <!-- boards -->
+  <rect x="278" y="288" width="127" height="4" class="pcb"/>
+  <rect x="278" y="266" width="127" height="4" class="pcb"/>
+  <rect x="300" y="246" width="85" height="20" fill="#e6e9ee" stroke="#9aa6b5" stroke-dasharray="3 3"/>
+  <rect x="300" y="297" width="85" height="19" class="bat"/>
+  <text x="302" y="311" class="s">battery 40 x 25 x 7</text>
+  <rect x="385" y="262" width="18" height="4" class="coral"/>
+  <rect x="370" y="244" width="62" height="28" class="rfz"/>
+  <text x="372" y="240" class="s">AE1, plastic only (brow)</text>
+  <!-- end plate + SMA -->
+  <rect x="270" y="262" width="6" height="40" fill="#2c4660" stroke="#0f1a24"/>
+  <rect x="258" y="274" width="40" height="12" class="part"/>
+  <rect x="200" y="268" width="70" height="24" rx="7" class="tpu"/>
+  <text x="196" y="306" class="s">TPU boot</text>
+  <rect x="258" y="250" width="12" height="12" rx="3" class="tpu"/>
+  <text x="208" y="252" class="s">USB bung</text>
+  <!-- key and eye -->
+  <rect x="335" y="240" width="18" height="6" rx="3" class="coral"/>
+  <rect x="356" y="241" width="8" height="4" rx="2" fill="#ffd1c2" stroke="#c24a2c"/>
+  <text x="320" y="232" class="s">key / eye on the roof</text>
+  <!-- cable -->
+  <path class="wire" d="M150 232 C150 205 205 215 203 250 L201 268"/>
+  <!-- dims -->
+  <line x1="448" y1="244" x2="448" y2="322" class="dim"/><text x="454" y="286" class="s">34</text>
+  <text x="40" y="640" class="s">Lid underside to highest water: at least 25 mm (antenna 25 mm from water). Spare cable is not coiled in the head: it wraps on the cleat (plan).</text>
+
+  <!-- PLAN -->
+  <text x="590" y="84" class="t">Plan</text>
+  <rect x="600" y="168" width="132" height="40" rx="8" class="ab"/>
+  <circle cx="636" cy="188" r="30" class="ab"/>
+  <circle cx="636" cy="188" r="15" fill="#d9dde2" stroke="#4a4f57"/>
+  <circle cx="636" cy="188" r="30" fill="none" stroke="#ff7a59" stroke-width="3"/>
+  <rect x="676" y="176" width="56" height="24" rx="7" class="tpu"/>
+  <rect x="732" y="156" width="129" height="64" rx="14" class="ab"/>
+  <circle cx="791" cy="188" r="8" class="coral"/>
+  <circle cx="808" cy="192" r="3" fill="#ffd1c2" stroke="#c24a2c"/>
+  <rect x="826" y="160" width="32" height="56" class="rfz"/>
+  <rect x="760" y="219" width="8" height="14" rx="3" class="tpu"/><rect x="782" y="219" width="8" height="14" rx="3" class="tpu"/>
+  <path class="wire" d="M636 158 C636 130 700 126 740 126 C770 126 775 226 764 226"/>
+  <text x="600" y="112" class="s">cable arcs from the probe top to the boot,</text>
+  <text x="600" y="124" class="s" style="display:none"></text>
+  <text x="598" y="252" class="s">eye ring, coral lip</text>
+  <text x="690" y="252" class="s">plug trough</text>
+  <text x="752" y="252" class="s">cleat</text>
+  <text x="808" y="252" class="s">brow</text>
+  <line x1="600" y1="266" x2="861" y2="266" class="dim"/><text x="702" y="280" class="s">131</text>
+  <line x1="880" y1="156" x2="880" y2="220" class="dim"/><text x="868" y="150" class="s">32</text>
+
+  <!-- NOTES -->
+  <text x="590" y="318" class="t">Why a lid</text>
+  <text x="590" y="334" class="s">A lidded bucket is where EC and ORP probes live</text>
+  <text x="590" y="346" class="s">for mixing and dosing. The lid carries the node,</text>
+  <text x="590" y="358" class="s">the bushing holds the probe, no arm, no clamp.</text>
+  <text x="590" y="384" class="t">Probe, cable, strain relief</text>
+  <text x="590" y="400" class="s">The probe cable is the only tether: it arcs 30 mm</text>
+  <text x="590" y="412" class="s">to the boot. Pull goes into the cleat horns, never</text>
+  <text x="590" y="424" class="s">the SMA jack. Boot lip seats in the plug trough.</text>
+  <text x="590" y="450" class="t">Service and battery</text>
+  <text x="590" y="466" class="s">Lift the head off, remove the end plate (4 screws,</text>
+  <text x="590" y="478" class="s">face o-ring). The cartridge slides out toward the</text>
+  <text x="590" y="490" class="s">trough with jack and USB tunnel on the plate.</text>
+  <text x="590" y="516" class="t">Mount and storage</text>
+  <text x="590" y="532" class="s">Lid hole dia 25 (printed drill template). Probe</text>
+  <text x="590" y="544" class="s">parks in a TPU storage cap clipped to the cleat.</text>
+  <text x="590" y="570" class="t">Needs</text>
+  <text x="590" y="586" class="s">A plastic lid 1-5 mm that stays on, with a hole</text>
+  <text x="590" y="598" class="s">at least 25 mm from the wall. Not for open tanks.</text>
+  <text x="30" y="672" class="s">Type colour: the tide band on the end plate, the collet ring and the cable tag use the sensor colour (violet ring on the probe = EC). The eye ring lip stays coral (family). Code debossed on the roof.</text>
+  <text x="30" y="686" class="s">No metal in the lid hole or the water: shell, bushing and cleat are PETG/PCTG/TPU. Roof-down print, 20 degree brow lean, no supports.</text>
+</svg>

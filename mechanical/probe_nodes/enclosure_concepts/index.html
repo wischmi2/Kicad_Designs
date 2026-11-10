@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlas probe nodes (ORP, DO, EC): enclosure concepts</title>
+<style>
+:root {
+  --bg: #f3f5f2; --fg: #1d2420; --muted: #5b665f; --line: #d3d9d4; --card: #ffffff; --accent: #2e6b4e; --coral: #c24a2c;
+  --font-body: "IBM Plex Sans", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121614; --fg: #e3e8e4; --muted: #9aa69f; --line: #2a322e; --card: #1a201d; --accent: #7cc4a0; --coral: #ff9a7d; color-scheme: dark } }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.5; margin: 0; }
+main { max-width: 1000px; margin: 0 auto; padding: 28px 16px 48px; display: grid; gap: 28px; }
+h1 { font-size: 1.7rem; font-weight: 600; margin: 0; text-wrap: balance; }
+h2 { font-size: 1.25rem; font-weight: 600; margin: 0; }
+h3 { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 4px; font-weight: 500; }
+p { margin: 0; max-width: 72ch; }
+.lede { display: grid; gap: 8px; color: var(--muted); }
+.lede strong { color: var(--fg); font-weight: 500; }
+.tag { font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 20px; display: grid; gap: 14px; min-width: 0; }
+.head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+.score { font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+.score b { color: var(--fg); }
+.fig { overflow-x: auto; background: #fbfbf9; border-radius: 6px; border: 1px solid var(--line); }
+.fig img { display: block; width: 100%; min-width: 640px; height: auto; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 22px; }
+.grid div { min-width: 0; }
+.grid ul { margin: 0; padding-left: 18px; display: grid; gap: 3px; }
+@media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
+table { border-collapse: collapse; width: 100%; font-size: 14px; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-weight: 500; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+td.m { font-family: var(--font-mono); font-size: 13px; white-space: nowrap; }
+.tbl { overflow-x: auto; }
+.rec { border-left: 4px solid var(--coral); }
+.warn { color: var(--coral); }
+.note { font-size: 13px; color: var(--muted); }
+.sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -1px; margin-right: 4px; border: 1px solid rgba(0,0,0,.2); }
+</style>
+</head><body>
+<main>
+  <header class="lede">
+    <span class="tag">nRF54L15 feather + Atlas OEM sensor board + SMA probe · ORP, DO, EC · enclosure concepts · 2026-10-26</span>
+    <h1>Four ways to house a battery probe node in a reef room</h1>
+    <p>Concepts only, no CAD. Each node is a Feather main board plus one stacked sensor board in its own enclosure, with an Atlas probe on a 1 m cable plugged into an <strong>SMA jack on the USB end</strong>. The node stays dry, the antenna stays high and 25 mm or more from water, and one cartridge, one SMA boot and one probe holder (the Collet) serve all four options. Full text, references and questions are in <code>concepts.md</code>.</p>
+    <p class="warn">Atlas does not publish the probe body size on its product pages. Holders are parametric (bore 11.5 or 16 mm); the sketches assume 12 x 150 (pH, ORP, EC) and 16.5 x 120 (DO). Please measure the real probes. Also check the SMA barrel length (P1): the ORP board notes say 5.6 mm, the DO and EC boards 7.6 mm, and the foot needs about 7.</p>
+  </header>
+
+  <section class="card rec" aria-labelledby="r-h">
+    <h2 id="r-h">Recommendation</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>#</th><th>Option</th><th>Idea</th><th>Size (mm)</th><th>Looks</th><th>Setting</th><th>Print/seal</th><th>PCB</th><th>Total</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><b>Staff</b></td><td>Round bud slides on a stock 20 mm tube; probe clips lower; foot, spike or rim clamp</td><td class="m">bud dia 44 x 80; tube 300-600</td><td>4</td><td>4</td><td>4</td><td>5</td><td><b>17</b></td></tr>
+        <tr><td>2</td><td><b>Perch</b></td><td>Tidemark-style column outside the wall, saddle over the rim, probe in a collet on the inner leg</td><td class="m">column 32 x 33.5 x 70</td><td>4</td><td>4</td><td>4</td><td>5</td><td><b>17</b></td></tr>
+        <tr><td>3</td><td><b>Limpet</b></td><td>Low shell on a bucket lid, probe through the lid in a TPU bushing, cleat for spare cable</td><td class="m">131 x 38 x 34</td><td>4</td><td>3</td><td>4</td><td>5</td><td><b>16</b></td></tr>
+        <tr><td>4</td><td><b>Berth</b></td><td>Wall monolith: node, storage and calibration bay, cable post; probe on a remote Hold</td><td class="m">62 x 36 x 190</td><td>4</td><td>3</td><td>3</td><td>5</td><td><b>15</b></td></tr>
+      </tbody>
+    </table></div>
+    <p><b>Staff first</b> (works wherever there is water and no usable rim or lid; round o-ring seal) and <b>Perch second</b> (sumps and tubs with an open rim; matches the Tidemark column exactly). Limpet only for lidded buckets; Berth only if probes are pulled out for calibration often. Decision: for Staff, the round bud or the Tidemark-P column on the tube through the rail?</p>
+    <p class="note">PCB column: 5 = no change needed. One check applies to all (P1, SMA barrel length), plus a request for 3D bodies of the jack and OEM module.</p>
+  </section>
+
+  <section class="card" aria-labelledby="a-h">
+    <div class="head"><span class="tag">00 Reference</span><h2 id="a-h">The probes, the stack and the port plate</h2></div>
+    <div class="fig"><img src="00-stack-and-probes.svg" alt="Four probes, the board stack in side view and the port plate seen from the foot"></div>
+    <div class="grid">
+      <div><h3>Probes</h3><ul>
+        <li>All three Atlas pages: 1 m cable, male SMA by default (BNC is an optional adapter).</li>
+        <li class="warn">Body sizes unconfirmed. Storage rules for DO and EC not confirmed.</li></ul></div>
+      <div><h3>Port</h3><ul>
+        <li>SMA dia 6.8 hole and USB-C 12.5 x 7, 9.6 mm apart, centred on the board width.</li>
+        <li>EC: the plug shell is a live electrode, so nothing metal near the plug.</li></ul></div>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="c1-h">
+    <div class="head"><span class="tag">Option 1</span><h2 id="c1-h">Staff</h2><span class="score">Looks 4 · Setting 4 · Print/seal 4 · PCB 5 · <b>17</b></span></div>
+    <p>A tide staff for a probe. The bud slides on a stock tube; the probe clips below it; the spare cable wraps round the tube. The base is a sand-filled foot, a spike or a rim clamp.</p>
+    <div class="fig"><img src="04-staff.svg" alt="Staff elevation in a tub, bud section, foot seen from below and three bases"></div>
+    <div class="grid">
+      <div><h3>Containers</h3><ul>
+        <li>Tubs, buckets, ponds, planters, tanks with a rim clamp, a bench with a beaker.</li></ul></div>
+      <div><h3>Key dimensions</h3><ul>
+        <li>Bud dia 44 x 80; tube channel ID 20.5; foot o-ring 38 x 2.</li>
+        <li>Bud at least 60 mm above water; probe tip 20 mm off floor and walls.</li></ul></div>
+      <div><h3>Seal and environment</h3><ul>
+        <li>One round o-ring; crown bonded, no screws near the antenna; plastic tube only.</li></ul></div>
+      <div><h3>Build (about 9 h, easy to moderate)</h3><ul>
+        <li>Tube printed standing, crown dome-up, foot cap sealing-face down.</li>
+        <li class="warn">Tall staffs can tip: wide foot or clamp.</li></ul></div>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="c2-h">
+    <div class="head"><span class="tag">Option 2</span><h2 id="c2-h">Perch</h2><span class="score">Looks 4 · Setting 4 · Print/seal 4 · PCB 5 · <b>17</b></span></div>
+    <p>The node straddles the rim like a bird on a branch: column outside and dry, saddle over the wall, probe held vertical in a split TPU collet on the inner leg.</p>
+    <div class="fig"><img src="01-perch.svg" alt="Perch section through a tank wall and front view of the column"></div>
+    <div class="grid">
+      <div><h3>Containers</h3><ul>
+        <li>Sumps, tubs and tanks with a free rim of 6-19 mm and 200 mm or more of depth. Not for lids over the rim.</li></ul></div>
+      <div><h3>Key dimensions</h3><ul>
+        <li>Column 32 x 33.5 x 70; saddle 24 wide, inner leg 8 x 75; probe 26 mm off the wall.</li></ul></div>
+      <div><h3>Seal and environment</h3><ul>
+        <li>Column IP66 target on the dry side; plug under a boot facing down; cable in two snap clips with drip loops.</li></ul></div>
+      <div><h3>Build (about 10 h, moderate)</h3><ul>
+        <li>Sleeve roof-down, saddle on its side, no supports.</li>
+        <li class="warn">Torque on the rim: test on acrylic.</li></ul></div>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="c3-h">
+    <div class="head"><span class="tag">Option 3</span><h2 id="c3-h">Limpet</h2><span class="score">Looks 4 · Setting 3 · Print/seal 4 · PCB 5 · <b>16</b></span></div>
+    <p>A low shell clings to a lid. The probe passes through the lid beside it in a TPU bushing; the tail is an eye ring around the hole; two cleat horns take the spare cable.</p>
+    <div class="fig"><img src="03-limpet.svg" alt="Limpet section on a lid with the probe through the eye ring, and plan view"></div>
+    <div class="grid">
+      <div><h3>Containers</h3><ul>
+        <li>Plastic lids 1-5 mm on salt-mix, RO, ATO and hydroponic buckets; hole at least 25 mm from the wall.</li></ul></div>
+      <div><h3>Key dimensions</h3><ul>
+        <li>Head 131 x 38 x 34; hole dia 25; eye ring dia 30; lid to highest water at least 25 mm.</li></ul></div>
+      <div><h3>Seal and environment</h3><ul>
+        <li>End plate face o-ring; bushing is the only path through the lid; drip groove on the eye lip.</li></ul></div>
+      <div><h3>Build (about 9 h, moderate)</h3><ul>
+        <li>Roof-down with a 20 degree brow lean; TPU bushing needs a test.</li>
+        <li class="warn">Needs a lid with a hole; not for open tanks.</li></ul></div>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="c4-h">
+    <div class="head"><span class="tag">Option 4</span><h2 id="c4-h">Berth</h2><span class="score">Looks 4 · Setting 3 · Print/seal 3 · PCB 5 · <b>15</b></span></div>
+    <p>A wall monolith with the node on the shoulder, a bay for the probe, a cable post and remote Holds in the tank. Tiles on one rail as Berth Row.</p>
+    <div class="fig"><img src="02-berth.svg" alt="Berth front and side, three remote holds and a row of nodes on a shared rail"></div>
+    <div class="grid">
+      <div><h3>Containers</h3><ul>
+        <li>Any, with a wall or cabinet panel within reach of the 1 m cable. Best where probes are pulled for calibration.</li></ul></div>
+      <div><h3>Key dimensions</h3><ul>
+        <li>62 x 36 x 190; cleat plate 80 x 195; keyholes at 60 mm; cup about 25 ml.</li></ul></div>
+      <div><h3>Seal and environment</h3><ul>
+        <li>Node column IP66; tower unsealed; the cup can spill if knocked. Never RO water for pH or ORP storage.</li></ul></div>
+      <div><h3>Build (about 18 h, moderate)</h3><ul>
+        <li>Tall tower plus three Holds.</li>
+        <li class="warn">Two-part install and the largest print.</li></ul></div>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="f-h">
+    <div class="head"><span class="tag">Family</span><h2 id="f-h">Next to the gateway, the Feather column and the water-level line</h2></div>
+    <div class="fig"><img src="05-family.svg" alt="Family lineup: Ledger gateway, Tidemark, Tidemark-W, Tidemark-P, Eye pod, and the four probe options in profile with the type colours"></div>
+    <ul>
+      <li>Perch pairs with Tidemark and Plumb, Staff with the Bead pod and Davit, Limpet with Slate and Cork, Berth with the Ledger gateway. Lily has no probe sibling.</li>
+      <li>New shared parts: the Collet (split TPU holder) and a swappable type band: <span class="sw" style="background:#4fae7b"></span>ph, <span class="sw" style="background:#e8b23a"></span>orp, <span class="sw" style="background:#4fc3dc"></span>do, <span class="sw" style="background:#9a82d6"></span>ec, <span class="sw" style="background:#e9e4d4"></span>level. A debossed code and raised dots are the non-colour cue.</li>
+    </ul>
+  </section>
+
+  <section class="card" aria-labelledby="p-h">
+    <h2 id="p-h">PCB requests and questions</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>ID</th><th>Request</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td class="m">P1</td><td>Check the SMA barrel length past the board edge on all three boards; at least 7 mm needed (5.6 vs 7.6 in the STATUS files)</td><td>Wall 2.5 + 0.5 + about 4 mm of thread for the plug nut</td></tr>
+        <tr><td class="m">P2</td><td>Add 3D bodies for J1 and U2 to the STEPs</td><td>The cradle and gap are drawn from estimates</td></tr>
+        <tr><td class="m">P3</td><td>Optional: keep the sensor board's antenna corner free of copper (R1)</td><td>Second ground plane 10 mm under the chip antenna</td></tr>
+      </tbody>
+    </table></div>
+    <p><b>Questions for Brian:</b> the containers (rim or lid, depth, material); bud or column for Staff; the real probe sizes and the DO SKU; how often probes are pulled for calibration and how DO and EC are stored; IP66 or IP67; four band colours or one; a wall within 1 m; battery life target (EC draws up to 26 mA); outdoor use; TPU, PCTG and nylon screws on hand. The EC STATUS also says the probes ship with BNC, but Atlas lists SMA as standard. Full list in <code>concepts.md</code> section 8.</p>
+  </section>
+</main>
+</body></html>

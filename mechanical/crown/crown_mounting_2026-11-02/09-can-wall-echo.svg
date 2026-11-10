@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="800" height="520" font-family="Arial, Helvetica, sans-serif">
+  <style>
+    .ttl{font-size:17px;font-weight:bold;fill:#0b1a30}
+    .sub{font-size:11.5px;fill:#444}
+    .t{font-size:11px;fill:#222}
+    .l{font-size:22px;fill:#1b1b1b}
+    .wall{fill:none;stroke:#4b565e;stroke-width:5}
+    .taper{fill:none;stroke:#4b565e;stroke-width:3;stroke-dasharray:14 8}
+  </style>
+  <rect width="800" height="520" fill="#fbfbf8"/>
+  <text x="14" y="20" class="ttl">Round can wall echo: node at the centre against a node on the rim (32 gal can, section, vertical wall)</text>
+  <text x="14" y="36" class="sub">Scale 0.5 px per mm. Inner radius 275 mm (OD 559 less 4 mm walls, wall UNVERIFIED), depth 692 mm. Wide plane 0.637 drawn; dashed wall = 3.3 degree taper (assumed from the bucket numbers).</text>
+
+  <g transform="translate(300,70) scale(0.5)">
+    <path class="wall" d="M-275,-10 V692 H275 V-10"/>
+    <path class="taper" d="M-275,0 L-235,692 M275,0 L235,692"/>
+    <path d="M-300,-4 H300" stroke="#9aa5ad" stroke-width="3"/>
+    <!-- centre node -->
+    <path d="M0,-4 L-275,427.7 M0,-4 L275,427.7" stroke="#e63946" stroke-width="3" fill="none"/>
+    <path d="M0,-4 V692" stroke="#e63946" stroke-width="2" stroke-dasharray="10 8"/>
+    <circle cx="0" cy="-4" r="9" fill="#e63946"/>
+    <circle cx="-275" cy="427.7" r="11" fill="none" stroke="#e63946" stroke-width="4"/>
+    <!-- rim node, L = 60 -->
+    <path d="M-215,-4 L-275,90.2 M-215,-4 L228,692" stroke="#1d6fb8" stroke-width="3" fill="none"/>
+    <circle cx="-215" cy="-4" r="9" fill="#1d6fb8"/>
+    <circle cx="-275" cy="90.2" r="11" fill="none" stroke="#1d6fb8" stroke-width="4"/>
+    <!-- water examples -->
+    <path d="M-275,300 H275" stroke="#3aa0e0" stroke-width="3" stroke-dasharray="6 6"/>
+    <path d="M-275,600 H275" stroke="#3aa0e0" stroke-width="3" stroke-dasharray="6 6"/>
+    <text class="l" x="-262" y="290" style="fill:#2a7aa0">water at 300 mm</text>
+    <text class="l" x="-262" y="590" style="fill:#2a7aa0">water at 600 mm</text>
+    <text class="l" x="-150" y="470" style="fill:#e63946">centre: wall enters</text>
+    <text class="l" x="-150" y="498" style="fill:#e63946">at d = 428 (0.637), 547 (0.499)</text>
+    <text class="l" x="-262" y="150" style="fill:#1d6fb8">rim, L = 60:</text>
+    <text class="l" x="-262" y="178" style="fill:#1d6fb8">wall at d = 90 / 116</text>
+  </g>
+
+  <g class="t">
+    <text x="520" y="110" font-weight="bold">Reading it</text>
+    <text x="520" y="126">Red: node over the can centre, L = 275.</text>
+    <text x="520" y="140">The wall is in the cone only below</text>
+    <text x="520" y="154">428 / 547 mm; a wall return can arrive</text>
+    <text x="520" y="168">before the water return only when the</text>
+    <text x="520" y="182">water is deeper than 508 / 612 mm.</text>
+    <text x="520" y="202">Blue: node 60 mm from the wall (rim hang).</text>
+    <text x="520" y="216">Wall in the cone from 90 / 116 mm; wall</text>
+    <text x="520" y="230">return can beat the water return from</text>
+    <text x="520" y="244">108 / 130 mm: most of the can.</text>
+    <text x="520" y="264">First number: wide plane (0.637), second:</text>
+    <text x="520" y="278">narrow plane (0.499). Which one lies along</text>
+    <text x="520" y="292">the board is UNVERIFIED.</text>
+    <text x="520" y="312">Taper pulls the entry in: centre node 393 / 491</text>
+    <text x="520" y="326">mm with 3.3 degrees; rim node 83 / 104.</text>
+    <text x="520" y="346">Strength of a wall return at this angle is</text>
+    <text x="520" y="360">UNVERIFIED: a plane wall meets the ray at 32</text>
+    <text x="520" y="374">degrees, so most energy is mirrored away.</text>
+    <text x="520" y="394" font-weight="bold">Bench test 4 settles it.</text>
+  </g>
+</svg>

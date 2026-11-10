@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470">
+  <defs>
+    <pattern id="g2" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.1" fill="#1d2533"/></pattern>
+  </defs>
+  <style>
+    .o{fill:#f4f2ee;stroke:#1d2533;stroke-width:2}
+    .ab{fill:#1f3347;stroke:#0f1a24;stroke-width:2}
+    .brow{fill:#e2ded5;stroke:#1d2533;stroke-width:1}
+    .w{fill:#20262f}
+    .tide{fill:#ff7a59;fill-opacity:.6;stroke:#c24a2c;stroke-width:1}
+    .sol{fill:#2b3f63;stroke:#9fb0c4;stroke-width:1}
+    .ant{fill:none;stroke:#3a9bb8;stroke-width:1.5;stroke-dasharray:4 3}
+    .t{font-family:Helvetica,Arial,sans-serif;font-size:11px;fill:#1d2533}
+    .s{font-family:Helvetica,Arial,sans-serif;font-size:10px;fill:#5b6578}
+    .ti{font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:bold;fill:#1d2533}
+  </style>
+  <text x="40" y="30" class="ti">06 FAMILY - "Brow and Tide line": one language for gateway, reef nodes, pH and soil</text>
+  <text x="40" y="47" class="s">Scale 2 px/mm. Same rules on every device: antenna lives under a sloped brow; status lives in a coral tide line; 6 mm corner radius; same cleat.</text>
+
+  <!-- gateway -->
+  <rect x="40" y="110" width="164" height="200" rx="16" class="o"/>
+  <rect x="44" y="114" width="156" height="24" rx="12" class="brow"/>
+  <rect x="80" y="118" width="72" height="16" class="ant"/>
+  <rect x="74" y="148" width="84" height="64" rx="3" class="w"/>
+  <circle cx="117" cy="226" r="9" fill="#ff7a59" stroke="#c24a2c"/>
+  <rect x="76" y="242" width="80" height="26" fill="url(#g2)"/>
+  <rect x="110" y="282" width="16" height="6" rx="3" class="tide"/>
+  <text x="40" y="330" class="t">Pouch gateway (Ledger)</text>
+  <text x="40" y="344" class="s">82 x 100 x 24, matte PLA/PETG</text>
+
+  <!-- ReefWatch node -->
+  <rect x="250" y="214" width="112" height="96" rx="12" class="ab"/>
+  <rect x="254" y="218" width="104" height="20" rx="10" fill="#2c4660" stroke="#0f1a24"/>
+  <rect x="270" y="222" width="70" height="12" class="ant"/>
+  <rect x="268" y="246" width="76" height="40" rx="2" class="sol"/>
+  <rect x="294" y="294" width="24" height="5" rx="2.5" class="tide"/>
+  <text x="250" y="330" class="t">ReefWatch node (nrf54l15_v3)</text>
+  <text x="250" y="344" class="s">~56 x 48 x 20, PETG; PV cell under the face</text>
+
+  <!-- Feather + pH -->
+  <rect x="420" y="232" width="160" height="78" rx="12" class="o"/>
+  <rect x="424" y="236" width="152" height="18" rx="9" class="brow"/>
+  <rect x="450" y="239" width="80" height="12" class="ant"/>
+  <rect x="488" y="292" width="24" height="5" rx="2.5" class="tide"/>
+  <rect x="566" y="262" width="26" height="14" rx="3" fill="#c9ccd1" stroke="#4a4f57"/>
+  <text x="596" y="273" class="s">probe gland</text>
+  <text x="420" y="330" class="t">Feather + pH board (sens1)</text>
+  <text x="420" y="344" class="s">~80 x 38 x 30, PETG, o-ring lid near the sump</text>
+
+  <!-- soil -->
+  <rect x="680" y="200" width="96" height="90" rx="12" class="ab"/>
+  <rect x="684" y="204" width="88" height="18" rx="9" fill="#2c4660" stroke="#0f1a24"/>
+  <rect x="696" y="207" width="64" height="12" class="ant"/>
+  <rect x="698" y="230" width="60" height="34" rx="2" class="sol"/>
+  <rect x="716" y="272" width="24" height="5" rx="2.5" class="tide"/>
+  <polygon points="718,290 738,290 728,350" fill="#c9ccd1" stroke="#4a4f57"/>
+  <text x="680" y="368" class="t">Soil node (outdoor)</text>
+  <text x="680" y="382" class="s">ASA, gasketed lid, stake</text>
+
+  <text x="40" y="400" class="t">Palette</text>
+  <rect x="40" y="410" width="40" height="20" fill="#f4f2ee" stroke="#1d2533"/><text x="86" y="424" class="s">Sand (body, indoor)</text>
+  <rect x="200" y="410" width="40" height="20" fill="#1f3347"/><text x="246" y="424" class="s">Abyss (body, wet or outdoor)</text>
+  <rect x="400" y="410" width="40" height="20" fill="#ff7a59"/><text x="446" y="424" class="s">Coral (translucent light parts, keys)</text>
+  <rect x="620" y="410" width="40" height="20" fill="#20262f"/><text x="666" y="424" class="s">Ink (screen bezel)</text>
+</svg>

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="800" height="560" font-family="Arial, Helvetica, sans-serif">
+  <style>
+    .ttl{font-size:17px;font-weight:bold;fill:#0b1a30}
+    .sub{font-size:11.5px;fill:#444}
+    .t{font-size:11px;fill:#222}
+    .l{font-size:3px;fill:#1b1b1b}
+    .crown{fill:#dfe6ee;stroke:#0b1a30;stroke-width:.2}
+    .sole{fill:#5b7a99;stroke:#0b1a30;stroke-width:.2}
+    .add{fill:#e07a2f;fill-opacity:.85;stroke:#7a3a0a;stroke-width:.2}
+    .cont{fill:#9aa5ad;stroke:#4b565e;stroke-width:.2}
+    .cone{fill:#e63946;fill-opacity:.10;stroke:#e63946;stroke-width:.2}
+    .m45{fill:none;stroke:#e08a00;stroke-width:.2;stroke-dasharray:1.2 .8}
+    .dim{stroke:#555;stroke-width:.15;fill:none}
+  </style>
+  <rect width="800" height="560" fill="#fbfbf8"/>
+  <text x="14" y="20" class="ttl">A2 SPAN: two flat bars across the opening, Crown docked on top, radar over the can centre</text>
+  <text x="14" y="36" class="sub">Left: end view looking along the span (across plane, tan 0.499), scale 3.2 px per mm. Below: one bar end on a rim. Right: plan, NOT to scale.</text>
+
+  <g transform="translate(190,175) scale(3.2)">
+    <path class="crown" d="M-25.93,0 H25.93 V-8 L19.95,-14 V-36.58 H-19.95 V-14 L-25.93,-8 Z"/>
+    <rect class="sole" x="-25.93" y="-4" width="51.86" height="4"/>
+    <rect x="-10.5" y="-4" width="21" height="2.5" fill="#fbfbf8" stroke="#0b1a30" stroke-width=".12"/>
+    <path class="add" d="M-29.15,0 H-17 V3 H-29.15 Z M17,0 H29.15 V3 H17 Z"/>
+    <path class="add" d="M-37,3 H-17 V11 H-37 Z M17,3 H37 V11 H17 Z"/>
+    <path class="cone" d="M0,-4 L27,50 L-27,50 Z"/>
+    <path class="m45" d="M0,-4 L40,36 M0,-4 L-40,36"/>
+    <path d="M0,-4 V50" stroke="#c0202e" stroke-width=".15" stroke-dasharray="1 .6"/>
+    <g class="dim">
+      <path d="M17,15 H37 M17,14.3 V15.7 M37,14.3 V15.7"/>
+      <path d="M-37,19 H37 M-37,18.3 V19.7 M37,18.3 V19.7"/>
+    </g>
+    <text class="l" x="19" y="14.2">20</text>
+    <text class="l" x="-9" y="18.2">74 outer to outer</text>
+    <text class="l" x="-37" y="1.3" style="fill:#7a3a0a">bar 20 x 8</text>
+    <text class="l" x="19" y="8.3" style="fill:#7a3a0a">bar</text>
+    <text class="l" x="-7" y="-39">Crown end view (foot 51.9, hump 36.6)</text>
+    <text class="l" x="1.5" y="26">bar inner corner (17, 11): margin r 15 &lt; 17</text>
+    <text class="l" x="1.5" y="29">clear by 2 mm</text>
+    <text class="l" x="1.5" y="46">water, 70+ mm below the outer face</text>
+  </g>
+
+  <g transform="translate(420,400) scale(3)">
+    <rect class="cont" x="0" y="0" width="12" height="8" rx="3"/>
+    <rect class="cont" x="0" y="8" width="4" height="26"/>
+    <path class="add" d="M-26,-8 H15 V32 H12 V0 H-26 Z"/>
+    <rect x="12" y="20" width="3" height="3" fill="#2aa198"/>
+    <text style="font-size:3.2px;fill:#1b1b1b" x="-26" y="-11">to the Crown plate (bar runs over the opening)</text>
+    <text style="font-size:3.2px;fill:#1b1b1b" x="-26" y="-3">bar 8 thick, sits on the rim top</text>
+    <text style="font-size:3.2px;fill:#1b1b1b" x="4.5" y="14">can wall</text>
+    <text style="font-size:3.2px;fill:#1b1b1b" x="16" y="9">rim bead (12 wide assumed)</text>
+    <text style="font-size:3.2px;fill:#1b1b1b" x="16" y="22">tongue 3 thick + TPU pad</text>
+    <text style="font-size:3.2px;fill:#1b1b1b" x="-26" y="40">end hook: tongue hangs 40 mm outside the wall</text>
+  </g>
+
+  <g transform="translate(640,170)">
+    <circle r="98" fill="#e8ecef" stroke="#4b565e" stroke-width="1.5"/>
+    <circle r="94" fill="none" stroke="#4b565e" stroke-width=".8" stroke-dasharray="3 2"/>
+    <rect x="-105" y="-8" width="210" height="6" fill="#e07a2f" fill-opacity=".85" stroke="#7a3a0a"/>
+    <rect x="-105" y="2" width="210" height="6" fill="#e07a2f" fill-opacity=".85" stroke="#7a3a0a"/>
+    <rect x="-15" y="-10" width="30" height="20" fill="#e07a2f" fill-opacity=".6" stroke="#7a3a0a"/>
+    <path d="M-4,0 H4 M0,-4 V4" stroke="#c0202e" stroke-width="1.5"/>
+    <text style="font-size:10px;fill:#222" x="-100" y="-114">32 gal can, OD 559, drawn at 0.35 px/mm</text>
+    <text style="font-size:10px;fill:#222" x="-100" y="124">bars 600 long, plate 86 x 58</text>
+  </g>
+
+  <g class="t">
+    <text x="470" y="318" font-weight="bold">What it fits</text>
+    <text x="470" y="332">Round can, bucket or open tank, lid off.</text>
+    <text x="470" y="346">Rim OD 250 to 700 mm. Printed bars only (2 sections</text>
+    <text x="470" y="360">of 250 mm each, sleeved, 60 overlap) reach about 440;</text>
+    <text x="470" y="374">stock plastic bar (PVC or HDPE 20 x 8, cut to length)</text>
+    <text x="470" y="388">reaches 700.</text>
+    <text x="470" y="408" font-weight="bold">Level, sag, wall echo</text>
+    <text x="470" y="422">Rim top is the datum, 4 pads, rail 2 loose in height.</text>
+    <text x="470" y="436">Sag at 560 mm: about 1.6 mm (hand calc, 150 g and</text>
+    <text x="470" y="450">E 2 GPa assumed). Node at centre: a wall echo only</text>
+    <text x="470" y="464">when a deep can is nearly empty (tables in mounting.md).</text>
+    <text x="470" y="484" font-weight="bold">Metal / seal</text>
+    <text x="470" y="498">None (nylon M4 clamps). Open: no seal, splash only.</text>
+    <text x="470" y="518" font-weight="bold">Outer face height</text>
+    <text x="470" y="532">11 mm above the rim top (plate 3 + bar 8).</text>
+  </g>
+</svg>

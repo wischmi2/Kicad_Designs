@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470">
+  <style>
+    .or{fill:#f26b2a;stroke:#7a2e0b;stroke-width:2}
+    .orl{fill:#f7a072;stroke:#7a2e0b;stroke-width:1}
+    .wing{fill:#3a3f47;stroke:#15181c;stroke-width:2}
+    .win{fill:#2b3f63;stroke:#9fb0c4;stroke-width:1.2}
+    .sec{fill:#e3e8ee;stroke:#1d2533;stroke-width:2}
+    .pcb{fill:#1f5a40;stroke:#0f3826;stroke-width:1}
+    .pcb2{fill:#2f6f8f;stroke:#173a4c;stroke-width:1}
+    .conn{fill:#d2a64b;stroke:#8a6420;stroke-width:.8}
+    .tpu{fill:#3b3f46;stroke:#15181c;stroke-width:1}
+    .yel{fill:#ffd23f;stroke:#8a6a00;stroke-width:1}
+    .pipe{fill:#fff3c4;stroke:#8a6a00;stroke-width:.8}
+    .bat{fill:#c9ccd1;fill-opacity:.6;stroke:#4a4f57;stroke-width:1;stroke-dasharray:5 3}
+    .rf{fill:#e0574a}
+    .rfz{fill:none;stroke:#e0574a;stroke-width:1.2;stroke-dasharray:4 3}
+    .dash{fill:none;stroke:#1d2533;stroke-width:1;stroke-dasharray:4 3}
+    .scr{fill:#15181c;stroke:#000;stroke-width:.5}
+    .nyl{fill:#15181c;stroke:#e0574a;stroke-width:1.5}
+    .dim{stroke:#5b6578;stroke-width:.8;fill:none}
+    .t{font-family:Helvetica,Arial,sans-serif;font-size:11px;fill:#1d2533}
+    .s{font-family:Helvetica,Arial,sans-serif;font-size:10px;fill:#5b6578}
+    .ti{font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:bold;fill:#1d2533}
+  </style>
+  <text x="40" y="30" class="ti">04 SLATE - a field instrument: an orange spine holds the electronics, a thin wing carries the panel</text>
+  <text x="40" y="47" class="s">Scale 2 px/mm (top), 2.5 px/mm (section, port end). About 104 L x 116 W; spine 26 tall, wing 8 tapering to 5. Signal-orange ASA spine, graphite wing, yellow key.</text>
+
+  <!-- TOP VIEW origin (50,80): X = 50 + 2x, Y = 80 + 2y -->
+  <text x="50" y="72" class="t">Top</text>
+  <rect class="tpu" x="22" y="88" width="30" height="52" rx="4" opacity=".55"/>
+  <path class="wing" d="M50 148 L258 148 L258 296 Q258 312 242 312 L66 312 Q50 312 50 296 Z"/>
+  <rect class="win" x="54" y="151" width="200" height="158" rx="4"/>
+  <text class="s" x="100" y="232" style="fill:#c9d3de">LL200-2.4-75 under 2 mm PC</text>
+  <rect class="or" x="50" y="80" width="208" height="68" rx="6"/>
+  <rect class="dash" x="56" y="91.1" width="101.6" height="45.7"/>
+  <rect class="bat" x="174" y="89" width="80" height="50"/>
+  <rect class="rfz" x="140.3" y="91.1" width="17.3" height="12.9"/>
+  <rect class="rf" x="143.8" y="93.5" width="3.2" height="6.4"/>
+  <circle class="yel" cx="108.8" cy="95.3" r="7"/>
+  <circle class="pipe" cx="117.2" cy="101.7" r="2.6"/>
+  <!-- spine lid screws: black, the two near AE1 are nylon (red ring here only to mark them) -->
+  <circle class="scr" cx="62" cy="87" r="3"/><circle class="scr" cx="62" cy="141" r="3"/>
+  <circle class="scr" cx="250" cy="87" r="3"/><circle class="scr" cx="250" cy="141" r="3"/>
+  <circle class="nyl" cx="162" cy="87" r="3"/><circle class="nyl" cx="162" cy="141" r="3"/>
+  <!-- wing bezel screws -->
+  <circle class="scr" cx="62" cy="156" r="2.6"/><circle class="scr" cx="154" cy="156" r="2.6"/><circle class="scr" cx="246" cy="156" r="2.6"/>
+  <circle class="scr" cx="62" cy="304" r="2.6"/><circle class="scr" cx="154" cy="304" r="2.6"/><circle class="scr" cx="246" cy="304" r="2.6"/>
+  <text class="s" x="270" y="96">antenna edge faces out,</text>
+  <text class="s" x="270" y="108">25 mm from the panel</text>
+  <text class="s" x="270" y="128">battery in the far end of the spine</text>
+  <text class="s" x="4" y="160">dock (sens1</text>
+  <text class="s" x="4" y="172">level, SMA)</text>
+  <line class="dim" x1="50" y1="326" x2="258" y2="326"/><text class="s" x="146" y="339">104</text>
+  <line class="dim" x1="270" y1="80" x2="270" y2="312"/><text class="s" x="276" y="300">116</text>
+  <text class="s" x="50" y="356">Red rings mark the two nylon screws (they look the same as the rest: all black button heads).</text>
+
+  <!-- END SECTION origin (330..620, 110..175): X = 330 + 2.5 w, Y = 110 + 2.5 (26 - z) -->
+  <text x="390" y="100" class="t">Section across spine and wing (through the key)</text>
+  <polygon class="sec" points="330,175 330,113 333,110 412,110 415,113 415,155 620,162.5 620,175"/>
+  <line class="dash" x1="330" y1="120" x2="415" y2="120"/>
+  <rect class="pcb" x="343.9" y="138.25" width="57.2" height="4"/>
+  <rect class="pcb2" x="343.9" y="162.25" width="57.2" height="4"/>
+  <rect class="conn" x="380" y="122" width="18" height="16"/>
+  <rect class="yel" x="345.7" y="110" width="7" height="6.25"/>
+  <rect class="tpu" x="348" y="116.25" width="2.5" height="17"/>
+  <rect class="pipe" x="355.7" y="110" width="2.6" height="27.5"/>
+  <line x1="417" y1="157" x2="618" y2="164.5" stroke="#2b3f63" stroke-width="3"/>
+  <rect class="tpu" x="350" y="175" width="20" height="3"/><rect class="tpu" x="560" y="175" width="20" height="3"/>
+  <text class="s" x="430" y="128">spine lid: face o-ring, 6 screws</text>
+  <text class="s" x="430" y="146">window: TPU or silicone-cord gasket under the bezel</text>
+  <text class="s" x="430" y="194">TPU feet; strap slots and a cleat rail under the spine</text>
+
+  <!-- PORT END origin (330,230): spine end 34 x 26 at 2.5 px/mm -->
+  <text x="330" y="222" class="t">Port end</text>
+  <rect class="or" x="330" y="230" width="85" height="65" rx="5"/>
+  <rect class="orl" x="342" y="270" width="61" height="25" rx="3"/>
+  <rect class="tpu" x="357" y="245.4" width="31.25" height="17.5" rx="4"/>
+  <circle class="conn" cx="372.5" cy="282" r="8"/>
+  <circle cx="372.5" cy="282" r="3" fill="#8a6420"/>
+  <rect x="415" y="290" width="205" height="5" fill="#3a3f47"/>
+  <text class="s" x="430" y="252">USB-C behind a tethered TPU bung</text>
+  <text class="s" x="430" y="270">dock steps out 14 mm at the sens1 level:</text>
+  <text class="s" x="430" y="282">IP67 SMA bulkhead + TPU probe boot</text>
+  <text class="s" x="330" y="322">Uses: flat on a hood, deck or pond edge; on a fold-out stand (30-60 deg) toward a lamp or window;</text>
+  <text class="s" x="330" y="335">strapped to a post; hung on the family cleat with the wing vertical and the spine on top.</text>
+</svg>

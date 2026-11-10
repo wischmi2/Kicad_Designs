@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 500" width="780" height="500" font-family="Arial, Helvetica, sans-serif">
+  <style>
+    .ttl{font-size:17px;font-weight:bold;fill:#0b1a30}
+    .sub{font-size:11.5px;fill:#444}
+    .t{font-size:11px;fill:#222}
+    .l{font-size:2.5px;fill:#1b1b1b}
+    .crown{fill:#dfe6ee;stroke:#0b1a30;stroke-width:.15}
+    .sole{fill:#5b7a99;stroke:#0b1a30;stroke-width:.15}
+    .add{fill:#e07a2f;fill-opacity:.85;stroke:#7a3a0a;stroke-width:.15}
+    .cont{fill:#9aa5ad;stroke:#4b565e;stroke-width:.15}
+    .gask{fill:#333;stroke:#000;stroke-width:.1}
+    .cone{fill:#e63946;fill-opacity:.10;stroke:#e63946;stroke-width:.15}
+    .m45{fill:none;stroke:#e08a00;stroke-width:.15;stroke-dasharray:1 .6}
+    .dim{stroke:#555;stroke-width:.12;fill:none}
+  </style>
+  <rect width="780" height="500" fill="#fbfbf8"/>
+  <text x="14" y="20" class="ttl">A6 PAD: flange and gasket sitting on a lid with a small hole (section at v = 0)</text>
+  <text x="14" y="36" class="sub">Drawn for a 3 mm lid with a 30 mm hole. Scale 4 px per mm. Dock ring omitted from the section for clarity; see 01-dock-ring.svg.</text>
+
+  <g transform="translate(210,200) scale(4)">
+    <path class="crown" d="M-25.5,0 H53.8 V-8 L47.8,-14 V-22.08 L43.3,-26.58 H6 V-36.58 H-19.5 V-14 L-25.5,-8 Z"/>
+    <rect class="sole" x="-25.5" y="-4" width="79.3" height="4"/>
+    <rect x="-12.5" y="-4" width="25" height="2.5" fill="#fbfbf8" stroke="#0b1a30" stroke-width=".1"/>
+    <rect x="-7.8" y="-5.88" width="18.6" height="1.88" fill="#d9b24a" stroke="#6b551a" stroke-width=".1"/>
+    <circle cx="28.17" cy="-17.7" r=".9" fill="#f4a261" stroke="#8a4a10" stroke-width=".1"/>
+    <path class="add" d="M-28.7,0 H-17 V3 H-28.7 Z M17,0 H57 V3 H17 Z"/>
+    <path class="gask" d="M-24,3 H-17 V4.5 H-24 Z M17,3 H24 V4.5 H17 Z"/>
+    <path class="cont" d="M-40,4.5 H-15 V7.5 H-40 Z M15,4.5 H65 V7.5 H15 Z"/>
+    <path class="cone" d="M0,-4 L34.4,50 L-34.4,50 Z"/>
+    <path class="m45" d="M0,-4 L40,36 M0,-4 L-40,36"/>
+    <path d="M0,-4 V50" stroke="#c0202e" stroke-width=".12" stroke-dasharray=".8 .5"/>
+    <g class="dim">
+      <path d="M-15,12 H15 M-15,11.3 V12.7 M15,11.3 V12.7"/>
+      <path d="M-33,0 V7.5 M-33.7,0 H-32.3 M-33.7,4.5 H-32.3 M-33.7,7.5 H-32.3"/>
+    </g>
+    <text class="l" x="-12" y="11.2">hole dia 30 (25 to 33)</text>
+    <text class="l" x="-44" y="3">outer face</text>
+    <text class="l" x="-44" y="6.4">4.5 above lid</text>
+    <text class="l" x="-44" y="10">lid 3.0</text>
+    <text class="l" x="-25" y="1.9" style="fill:#7a3a0a">plate 3.0</text>
+    <text class="l" x="17.5" y="6.6" style="fill:#fff">gasket ring</text>
+    <text class="l" x="24.5" y="3.2" style="fill:#444">gasket 1.5 (id 34, od 48)</text>
+    <text class="l" x="1" y="16">margin line at the lid underside d = 7.5:</text>
+    <text class="l" x="1" y="18.8">r 11.5, hole r 15: 3.5 mm clear</text>
+    <text class="l" x="2" y="40">beam to the water, 70 mm below the outer face</text>
+    <text class="l" x="29.5" y="-19.5">AE1</text>
+  </g>
+
+  <g transform="translate(655,115) scale(1.55)">
+    <rect class="add" x="-28.7" y="-29.15" width="85.7" height="58.3" fill-opacity=".30"/>
+    <rect x="12" y="-36.5" width="9" height="7.4" class="add"/><rect x="12" y="29.1" width="9" height="7.4" class="add"/>
+    <circle cx="16.5" cy="-33" r="2.2" fill="#fbfbf8" stroke="#7a3a0a" stroke-width=".4"/><circle cx="16.5" cy="33" r="2.2" fill="#fbfbf8" stroke="#7a3a0a" stroke-width=".4"/>
+    <circle r="24" fill="none" stroke="#000" stroke-width=".5"/><circle r="17" fill="none" stroke="#000" stroke-width=".5"/>
+    <circle r="15" fill="#9aa5ad" fill-opacity=".5" stroke="#4b565e" stroke-width=".5"/>
+    <circle r="11.5" fill="none" stroke="#e08a00" stroke-width=".5" stroke-dasharray="2 1.2"/>
+    <rect x="-12.5" y="-10.5" width="25" height="21" fill="none" stroke="#0b1a30" stroke-width=".4"/>
+    <path d="M-3,0 H3 M0,-3 V3" stroke="#c0202e" stroke-width=".6"/>
+  </g>
+
+  <g class="t">
+    <text x="510" y="262" font-weight="bold">What it fits</text>
+    <text x="510" y="277">Hole dia 25 to 33 mm, lid 2 to 6 mm.</text>
+    <text x="510" y="291">Minimum hole = 17 + 2 x lid (45 deg rule):</text>
+    <text x="510" y="305">2 mm 21, 3 mm 23, 5 mm 27, 6 mm 29 (+2 slack).</text>
+    <text x="510" y="319">Hole must stay inside the gasket id 34, so</text>
+    <text x="510" y="333">the top end is 33. Lid flat for 86 x 58 mm.</text>
+    <text x="510" y="353" font-weight="bold">Level</text>
+    <text x="510" y="367">Plate rests on a flat lid. Dome lids: drill at</text>
+    <text x="510" y="381">the flat crown or use A5 with a bubble vial.</text>
+    <text x="510" y="401" font-weight="bold">Hold</text>
+    <text x="510" y="415">Weight plus two M4 nylon screws in ears</text>
+    <text x="510" y="429">(drill 4.5), or a 3M-type foam tape strip.</text>
+    <text x="510" y="449" font-weight="bold">Metal</text>
+    <text x="510" y="463">None (nylon M4, M2.5 inserts in the ring only).</text>
+  </g>
+</svg>

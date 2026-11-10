@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="720" viewBox="0 0 900 720">
+  <style>
+    .ab{fill:#1f3347;stroke:#0f1a24;stroke-width:2}
+    .cav{fill:#101c28;stroke:none}
+    .sad{fill:#2c4660;stroke:#0f1a24;stroke-width:2}
+    .tpu{fill:#3b3f46;stroke:#15181c;stroke-width:1}
+    .coral{fill:#ff7a59;stroke:#c24a2c;stroke-width:1}
+    .pipe{fill:#ffd1c2;stroke:#c24a2c;stroke-width:.8}
+    .pvc{fill:#cfd3d8;stroke:#6b7480;stroke-width:1.5}
+    .cab{fill:#e3dccb;stroke:#8a7f66;stroke-width:1.5}
+    .lid{fill:#e9eef2;stroke:#6b7480;stroke-width:1.5}
+    .rf{fill:#e0574a}
+    .rfz{fill:none;stroke:#e0574a;stroke-width:1.2;stroke-dasharray:4 3}
+    .cone{fill:#7fb7d6;fill-opacity:.22;stroke:#2f6f8f;stroke-width:1.2;stroke-dasharray:5 3}
+    .glass{fill:#cfe8f2;stroke:#5a8ea3;stroke-width:1.5}
+    .water{fill:#9fd0e3;fill-opacity:.6;stroke:none}
+    .wl{stroke:#2f6f8f;stroke-width:1.5}
+    .wire{fill:none;stroke:#2b2f2d;stroke-width:2.2}
+    .dim{stroke:#5b6578;stroke-width:.8;fill:none}
+    .dash{fill:none;stroke:#9fb0c4;stroke-width:1;stroke-dasharray:4 3}
+    .t{font-family:Helvetica,Arial,sans-serif;font-size:11px;fill:#1d2533}
+    .s{font-family:Helvetica,Arial,sans-serif;font-size:10px;fill:#5b6578}
+    .lbl{font-family:Helvetica,Arial,sans-serif;font-size:9px;fill:#c9d3de}
+    .ti{font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:bold;fill:#1d2533}
+  </style>
+  <text x="40" y="30" class="ti">04 BEAD - the transducer lives alone in a small pod; the electronics stay dry in a Tidemark</text>
+  <text x="40" y="47" class="s">Pod section at 4 px/mm, mounts at about 1.5 px/mm, system at about 1 px/mm. Pod dia 44 x 38 high, no electronics inside. Tidemark-W 32 x 64 x 32.</text>
+
+  <!-- POD SECTION, axis x=138 -->
+  <text x="50" y="84" class="t">Pod section</text>
+  <path class="ab" d="M50 252 L50 130 Q50 100 80 100 L196 100 Q226 100 226 130 L226 252 Z"/>
+  <rect x="108" y="116" width="60" height="30" class="cav"/>
+  <line x1="50" y1="140" x2="226" y2="140" stroke="#9fb0c4" stroke-width="1" stroke-dasharray="4 3"/>
+  <circle cx="60" cy="140" r="3" fill="#c9ccd1"/><circle cx="216" cy="140" r="3" fill="#c9ccd1"/>
+  <rect x="92" y="146" width="92" height="106" class="tpu"/>
+  <rect x="98" y="154" width="80" height="104" fill="#d8dce2" stroke="#4a4f57"/>
+  <rect x="88" y="248" width="100" height="6" class="coral"/>
+  <rect x="124" y="84" width="28" height="16" rx="3" class="tpu"/>
+  <path class="wire" d="M138 84 L138 74 Q138 60 152 60 L196 60"/>
+  <rect x="44" y="215" width="6" height="12" class="tpu"/><rect x="226" y="215" width="6" height="12" class="tpu"/>
+  <rect x="168" y="90" width="30" height="10" rx="5" fill="#cfe8f2" stroke="#5a8ea3"/>
+  <circle cx="183" cy="95" r="2.5" fill="#2f6f8f"/>
+  <line x1="138" y1="258" x2="63" y2="388" stroke="#2f6f8f" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <line x1="138" y1="258" x2="213" y2="388" stroke="#2f6f8f" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <text x="76" y="300" class="s">face proud by 1.5 mm; nothing in the cone</text>
+  <line x1="50" y1="318" x2="226" y2="318" class="dim"/><text x="120" y="332" class="s">dia 44</text>
+  <line x1="30" y1="100" x2="30" y2="252" class="dim"/><text x="8" y="180" class="s">38</text>
+  <text x="206" y="64" class="s">drip loop</text>
+  <text x="206" y="94" class="s">bubble level</text>
+  <text x="236" y="146" class="s">parting line, face o-ring</text>
+  <text x="236" y="222" class="s">3 bayonet lugs</text>
+  <text x="236" y="256" class="s">coral lip = the family eye</text>
+  <text x="236" y="236" class="s">TPU sleeve grips the probe</text>
+
+  <!-- MOUNTING BASES -->
+  <text x="420" y="84" class="t">One pod, four bases (the bayonet is the same on every base)</text>
+  <!-- A lid -->
+  <rect x="420" y="150" width="130" height="8" class="lid"/>
+  <rect x="460" y="140" width="50" height="10" class="sad"/>
+  <rect x="478" y="158" width="14" height="10" class="tpu"/>
+  <rect x="468" y="168" width="34" height="34" rx="8" class="ab"/>
+  <rect x="470" y="198" width="30" height="4" class="coral"/>
+  <text x="420" y="226" class="s">A  Lid: ring on top, pod</text>
+  <text x="420" y="238" class="s">twists in from below</text>
+  <!-- B rim saddle -->
+  <rect x="600" y="140" width="8" height="90" class="glass"/>
+  <path class="sad" d="M592 128 L690 128 L690 138 L616 138 L616 190 L608 190 L608 138 L600 138 L600 190 L592 190 Z"/>
+  <rect x="650" y="138" width="38" height="34" rx="8" class="ab"/>
+  <rect x="654" y="168" width="30" height="4" class="coral"/>
+  <text x="580" y="250" class="s">B  Rim saddle, short boom</text>
+  <!-- C pipe -->
+  <rect x="736" y="110" width="20" height="130" class="pvc"/>
+  <rect x="732" y="150" width="28" height="8" class="sad"/>
+  <rect x="760" y="144" width="40" height="8" class="sad"/>
+  <rect x="780" y="152" width="34" height="34" rx="8" class="ab"/>
+  <rect x="783" y="182" width="28" height="4" class="coral"/>
+  <text x="726" y="262" class="s">C  Pipe / post clamp</text>
+  <!-- D suction under glass -->
+  <rect x="826" y="130" width="64" height="8" class="glass"/>
+  <path d="M845 138 L871 138 L866 150 L850 150 Z" fill="#3b3f46" stroke="#15181c"/>
+  <rect x="855" y="150" width="6" height="8" class="tpu"/>
+  <rect x="842" y="158" width="32" height="32" rx="8" class="ab"/>
+  <rect x="844" y="186" width="28" height="4" class="coral"/>
+  <text x="808" y="262" class="s">D  Suction cup / VHB</text>
+  <text x="808" y="274" class="s">under a flat lid</text>
+
+  <!-- SYSTEM -->
+  <text x="50" y="380" class="t">In use: electronics on the cabinet wall, pod over the water</text>
+  <rect x="50" y="392" width="30" height="230" class="cab"/>
+  <rect x="80" y="396" width="6" height="96" class="tpu"/>
+  <polygon points="123,396 86,396 86,492 134,492 134,426" class="ab"/>
+  <rect x="86" y="486" width="48" height="6" class="tpu"/>
+  <rect x="104" y="402" width="22" height="12" class="rfz"/>
+  <circle cx="128" cy="444" r="6" class="coral"/>
+  <text x="142" y="410" class="s">Tidemark-W</text>
+  <text x="142" y="422" class="s">(antenna, key, eye)</text>
+  <path class="wire" d="M108 492 L108 520 Q108 532 122 532 L430 532 Q450 532 450 512 L450 440 Q450 428 462 428 L640 428 L640 442"/>
+  <text x="170" y="548" class="s">cable 1-2.5 m, drip loop at both ends, clipped along the cabinet</text>
+  <!-- container + lid -->
+  <rect x="470" y="450" width="8" height="150" class="glass"/>
+  <rect x="852" y="450" width="8" height="150" class="glass"/>
+  <rect x="470" y="442" width="390" height="8" class="lid"/>
+  <rect x="600" y="436" width="80" height="6" class="sad"/>
+  <rect x="628" y="450" width="26" height="30" rx="6" class="ab"/>
+  <rect x="630" y="476" width="22" height="4" class="coral"/>
+  <rect x="478" y="570" width="374" height="40" class="water"/>
+  <line x1="478" y1="570" x2="852" y2="570" class="wl"/>
+  <polygon points="641,482 547,640 735,640" class="cone"/>
+  <text x="700" y="564" class="s">highest water</text>
+  <text x="490" y="470" class="s">lid on the container</text>
+
+  <!-- notes -->
+  <text x="50" y="660" class="s">The pod holds only the transducer, so it can go where the sound path is cleanest and the walls are far away. It never carries a battery, vent or USB port.</text>
+  <text x="50" y="674" class="s">The Tidemark-W cable slot in the foot takes a split TPU wedge seal around the probe cable (the PH2.0 plug passes through first). M8 panel connector as an option.</text>
+  <text x="50" y="688" class="s">UART at 9600 baud over 1-2.5 m of twisted cable is expected to work; longer runs need a test.</text>
+</svg>

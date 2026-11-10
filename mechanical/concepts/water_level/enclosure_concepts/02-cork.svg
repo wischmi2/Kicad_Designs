@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560">
+  <style>
+    .ab{fill:#1f3347;stroke:#0f1a24;stroke-width:2}
+    .cav{fill:#101c28;stroke:none}
+    .brow{fill:#2c4660;stroke:#0f1a24;stroke-width:1}
+    .tpu{fill:#3b3f46;stroke:#15181c;stroke-width:1}
+    .coral{fill:#ff7a59;stroke:#c24a2c;stroke-width:1}
+    .pipe{fill:#ffd1c2;stroke:#c24a2c;stroke-width:.8}
+    .pcb{fill:#1f5a40;stroke:#0f3826;stroke-width:1}
+    .pcb2{fill:#2f6f8f;stroke:#173a4c;stroke-width:1}
+    .bat{fill:#c9ccd1;fill-opacity:.6;stroke:#4a4f57;stroke-width:1;stroke-dasharray:5 3}
+    .rf{fill:#e0574a}
+    .rfz{fill:none;stroke:#e0574a;stroke-width:1.2;stroke-dasharray:4 3}
+    .cone{fill:#7fb7d6;fill-opacity:.22;stroke:#2f6f8f;stroke-width:1.2;stroke-dasharray:5 3}
+    .lid{fill:#e9eef2;stroke:#6b7480;stroke-width:1.5}
+    .water{fill:#9fd0e3;fill-opacity:.6;stroke:none}
+    .wl{stroke:#2f6f8f;stroke-width:1.5}
+    .so{fill:#9aa3ad;stroke:#4a4f57;stroke-width:.6}
+    .ffc{fill:none;stroke:#c08a2e;stroke-width:2}
+    .wire{fill:none;stroke:#2b2f2d;stroke-width:2}
+    .dim{stroke:#5b6578;stroke-width:.8;fill:none}
+    .dash{fill:none;stroke:#9fb0c4;stroke-width:1;stroke-dasharray:4 3}
+    .t{font-family:Helvetica,Arial,sans-serif;font-size:11px;fill:#1d2533}
+    .s{font-family:Helvetica,Arial,sans-serif;font-size:10px;fill:#5b6578}
+    .lbl{font-family:Helvetica,Arial,sans-serif;font-size:9px;fill:#c9d3de}
+    .ti{font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:bold;fill:#1d2533}
+  </style>
+  <text x="40" y="30" class="ti">02 CORK - a low pebble that sits on a plastic lid; the Eye pushes through a hole like a stopper</text>
+  <text x="40" y="47" class="s">Scale 3 px/mm (section). Head 104 x 38 x 32. Hole in the lid dia 30. Face 8 mm below the lid, so the lid-to-highest-water gap must be 78 mm or more.</text>
+
+  <!-- LID with hole x 81..171 -->
+  <rect x="0" y="240" width="81" height="9" class="lid"/>
+  <rect x="171" y="240" width="249" height="9" class="lid"/>
+  <path d="M0 238 l8 14 M420 238 l-8 14" stroke="#6b7480" stroke-width="1.5"/>
+  <text x="8" y="270" class="s">lid 1-5 mm</text>
+
+  <!-- HEAD PROFILE -->
+  <path class="ab" d="M60 240 L60 160 Q60 152 68 152 L250 146 L350 144 L372 204 L372 240 Z"/>
+  <!-- cavity for the boards -->
+  <rect x="176" y="156" width="190" height="77" class="cav"/>
+  <!-- USB tunnel and bung -->
+  <rect x="62" y="160" width="116" height="21" class="cav"/>
+  <rect x="58" y="162" width="14" height="18" rx="3" class="tpu"/>
+  <text x="76" y="174" class="lbl">USB-C tunnel</text>
+  <!-- floor -->
+  <rect x="60" y="233" width="312" height="7" fill="#1f3347"/>
+
+  <!-- boards -->
+  <rect x="192" y="175" width="152" height="5" class="pcb"/>
+  <rect x="192" y="204" width="152" height="5" class="pcb2"/>
+  <rect x="192" y="154" width="152" height="21" class="dash"/>
+  <rect x="200" y="180" width="6" height="24" class="so"/>
+  <rect x="330" y="180" width="6" height="24" class="so"/>
+  <rect x="180" y="212" width="120" height="21" class="bat"/>
+  <text x="206" y="226" class="s">battery 40 x 25 x 7</text>
+  <path class="ffc" d="M344 177 Q362 177 362 192 Q362 207 344 207"/>
+  <rect x="318" y="164" width="16" height="11" class="rf"/>
+  <rect x="300" y="152" width="50" height="14" class="rfz"/>
+  <text x="268" y="196" class="lbl">main</text>
+  <text x="268" y="224" class="lbl">sens</text>
+  <!-- key + pipe -->
+  <rect x="262" y="140" width="18" height="7" rx="3" class="coral"/>
+  <rect x="268" y="147" width="6" height="26" class="tpu"/>
+  <rect x="283" y="147" width="5" height="27" class="pipe"/>
+  <circle cx="285" cy="145" r="3" class="pipe"/>
+
+  <!-- EYE: bushing in the hole -->
+  <rect x="82" y="228" width="88" height="28" class="tpu"/>
+  <rect x="70" y="233" width="112" height="7" class="tpu"/>
+  <rect x="76" y="249" width="100" height="6" class="tpu"/>
+  <rect x="96" y="195" width="60" height="78" fill="#d8dce2" stroke="#4a4f57"/>
+  <rect x="92" y="268" width="68" height="5" class="coral"/>
+  <polygon points="92,255 84,273 92,273" fill="#3b3f46"/>
+  <polygon points="160,255 168,273 160,273" fill="#3b3f46"/>
+  <!-- cable from the probe to the sens board connector -->
+  <path class="wire" d="M126 195 L126 190 Q126 186 132 186 L176 186 Q186 186 186 196 L186 204 L192 204"/>
+  <rect x="190" y="203" width="6" height="6" fill="#d2a64b" stroke="#8a6420" stroke-width=".8"/>
+
+  <!-- cone -->
+  <polygon points="126,273 5,483 247,483" class="cone"/>
+  <!-- water -->
+  <rect x="0" y="483" width="420" height="60" class="water"/>
+  <line x1="0" y1="483" x2="420" y2="483" class="wl"/>
+  <text x="270" y="478" class="s">highest water</text>
+
+  <!-- dims -->
+  <line x1="60" y1="130" x2="372" y2="130" class="dim"/><text x="200" y="124" class="s">104</text>
+  <line x1="44" y1="152" x2="44" y2="240" class="dim"/><text x="14" y="200" class="s">32</text>
+  <line x1="436" y1="249" x2="436" y2="483" class="dim"/><text x="444" y="370" class="s">78 lid underside to highest water</text>
+  <text x="444" y="382" class="s">(8 below the lid + 70 minimum)</text>
+  <text x="180" y="300" class="s">TPU snap-in bushing (double flange)</text>
+  <text x="180" y="312" class="s">coral lip is the only part you see from below</text>
+  <text x="180" y="324" class="s">45 deg exit chamfer: nothing clips the cone</text>
+  <text x="372" y="260" class="s">brow: antenna</text>
+  <text x="372" y="272" class="s">end, plastic only</text>
+
+  <!-- PLAN VIEW at 1.5 px/mm -->
+  <text x="470" y="84" class="t">Plan (from above)</text>
+  <rect x="470" y="94" width="156" height="57" rx="14" class="ab"/>
+  <circle cx="503" cy="122" r="22" class="dash"/>
+  <rect x="528" y="102" width="76" height="34" class="dash"/>
+  <rect x="586" y="98" width="30" height="14" class="rfz"/>
+  <circle cx="563" cy="118" r="5" class="coral"/>
+  <circle cx="570" cy="126" r="2" class="pipe"/>
+  <text x="470" y="166" class="s">Eye (dia 30 hole) left, boards right, key and eye on top</text>
+
+  <!-- notes -->
+  <text x="470" y="200" class="t">What it is</text>
+  <text x="470" y="216" class="s">A Slate spine without the wing: boards flat, battery</text>
+  <text x="470" y="228" class="s">under them, the transducer in an Eye at the USB end.</text>
+  <text x="470" y="244" class="s">The USB-C tunnel runs over the transducer to a bung</text>
+  <text x="470" y="256" class="s">in the end face. The probe cable is a 40 mm hop to</text>
+  <text x="470" y="268" class="s">the sens board connector: shorten and re-crimp it.</text>
+  <text x="470" y="296" class="t">Containers</text>
+  <text x="470" y="312" class="s">Plastic lids on RO, top-off and dosing reservoirs and</text>
+  <text x="470" y="324" class="s">sump covers, 1-5 mm thick, where Brian can cut a</text>
+  <text x="470" y="336" class="s">dia 30 hole at least 0.58 x depth from the wall.</text>
+  <text x="470" y="360" class="t">Mount and hold</text>
+  <text x="470" y="376" class="s">Bushing snaps through the hole and carries the head.</text>
+  <text x="470" y="388" class="s">Three TPU feet stop it rocking. Optional ring nut on a</text>
+  <text x="470" y="400" class="s">threaded stem for thin or flexible lids.</text>
+  <text x="470" y="428" class="t">Seal</text>
+  <text x="470" y="444" class="s">The bushing is the only path from tank air to the head:</text>
+  <text x="470" y="456" class="s">it grips the probe body (inside) and the lid hole (outside).</text>
+  <text x="470" y="468" class="s">Vent and silica gel sit on the dry side; conformal coat.</text>
+</svg>

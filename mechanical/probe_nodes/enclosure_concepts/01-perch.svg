@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="720" viewBox="0 0 900 720">
+  <style>
+    .ab{fill:#1f3347;stroke:#0f1a24;stroke-width:2}
+    .sad{fill:#2c4660;stroke:#0f1a24;stroke-width:2}
+    .tpu{fill:#3b3f46;stroke:#15181c;stroke-width:1}
+    .coral{fill:#ff7a59;stroke:#c24a2c;stroke-width:1}
+    .glass{fill:#cfe8f2;stroke:#5a8ea3;stroke-width:1.5}
+    .water{fill:#9fd0e3;fill-opacity:.55;stroke:none}
+    .wl{stroke:#2f6f8f;stroke-width:1.5}
+    .rfz{fill:none;stroke:#e0574a;stroke-width:1.2;stroke-dasharray:4 3}
+    .wire{fill:none;stroke:#2b2f2d;stroke-width:2}
+    .dim{stroke:#5b6578;stroke-width:.8;fill:none}
+    .t{font-family:Helvetica,Arial,sans-serif;font-size:11px;fill:#1d2533}
+    .s{font-family:Helvetica,Arial,sans-serif;font-size:10px;fill:#5b6578}
+    .ti{font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:bold;fill:#1d2533}
+  </style>
+  <text x="30" y="28" class="ti">01 PERCH - the node straddles the rim like a bird on a branch (kept from 2026-10-25, revised 2026-10-26)</text>
+  <text x="30" y="45" class="s">Side section at 2 px/mm (room on the left, tank on the right), front view at 3 px/mm. Electronics outside and dry; the probe is held rigid on the inner leg. ORP node shown.</text>
+
+  <!-- wall -->
+  <rect x="300" y="130" width="20" height="500" class="glass"/>
+  <rect x="320" y="440" width="260" height="190" class="water"/>
+  <line x1="320" y1="440" x2="580" y2="440" class="wl"/>
+  <text x="470" y="432" class="s">water (rim to water 150)</text>
+  <text x="306" y="650" class="s">sump / tank wall (rim 6-19 mm)</text>
+
+  <!-- saddle -->
+  <path class="sad" d="M294 112 L344 112 L344 262 L324 262 L324 130 L300 130 L300 380 L294 380 Z"/>
+  <text x="352" y="124" class="s">saddle: bridge 9, back plate 3, inner leg 8 x 75</text>
+  <!-- column -->
+  <path class="ab" d="M294 130 L294 270 L228 270 L228 160 L240 130 Z"/>
+  <rect x="228" y="254" width="66" height="16" fill="#2c4660" stroke="#0f1a24" stroke-width="1.5"/>
+  <rect x="228" y="262" width="66" height="8" fill="#e8b23a"/>
+  <rect x="236" y="132" width="40" height="28" class="rfz"/>
+  <text x="196" y="124" class="s">antenna brow (plastic only)</text>
+  <circle cx="228" cy="178" r="5" class="coral"/><circle cx="228" cy="198" r="3" fill="#ffd1c2" stroke="#c24a2c"/>
+  <text x="124" y="182" class="s">key and eye (front)</text>
+  <line x1="294" y1="140" x2="294" y2="250" stroke="#9fb0c4" stroke-dasharray="4 3"/>
+  <text x="140" y="228" class="s">dovetail rail: column slides</text>
+  <text x="140" y="240" class="s">down onto the back plate</text>
+  <!-- foot + boot -->
+  <rect x="252" y="270" width="18" height="30" rx="5" class="tpu"/>
+  <path class="wire" d="M261 300 L261 326 Q261 342 273 342 Q285 342 285 326 L285 124 Q285 100 305 100 L352 100 Q392 100 392 140 L392 228"/>
+  <rect x="280" y="236" width="10" height="8" rx="2" class="tpu"/>
+  <rect x="280" y="170" width="10" height="8" rx="2" class="tpu"/>
+  <text x="106" y="320" class="s">TPU boot over the SMA plug,</text>
+  <text x="106" y="332" class="s">drip loop, then the cable runs</text>
+  <text x="106" y="344" class="s">up the back plate groove in two</text>
+  <text x="106" y="356" class="s">snap clips (pull goes to the clips)</text>
+  <!-- thumbscrew + pad -->
+  <rect x="320" y="184" width="4" height="22" class="tpu"/>
+  <rect x="324" y="190" width="26" height="10" fill="#cfd3d8" stroke="#6b7480"/><circle cx="356" cy="195" r="9" fill="#cfd3d8" stroke="#6b7480"/>
+  <text x="372" y="198" class="s">nylon / PCTG thumbscrew + TPU pad</text>
+  <!-- collet block -->
+  <rect x="324" y="232" width="90" height="36" rx="6" class="sad"/>
+  <rect x="380" y="232" width="24" height="36" class="tpu"/>
+  <rect x="380" y="232" width="24" height="7" fill="#e8b23a"/>
+  <text x="420" y="248" class="s">split TPU collet, bore 11.5 / 16</text>
+  <text x="420" y="260" class="s">(colour ring = sensor)</text>
+  <!-- probe -->
+  <rect x="380" y="224" width="24" height="300" rx="6" fill="#d9dde2" stroke="#4a4f57"/>
+  <rect x="380" y="224" width="24" height="12" fill="#e8b23a"/>
+  <text x="414" y="400" class="s">probe held vertical,</text>
+  <text x="414" y="412" class="s">slides in the collet to set depth</text>
+  <text x="414" y="424" class="s">(tip at least 20 mm off any wall)</text>
+  <line x1="340" y1="290" x2="392" y2="290" class="dim"/><text x="344" y="304" class="s">26</text>
+  <!-- parking cap on the back plate -->
+  <rect x="230" y="380" width="16" height="40" rx="5" class="tpu"/>
+  <rect x="232" y="386" width="12" height="28" fill="#9fd0e3" opacity=".6"/>
+  <line x1="246" y1="400" x2="294" y2="400" stroke="#9fb0c4" stroke-dasharray="3 3"/>
+  <text x="130" y="440" class="s">storage cap on a peg (TPU + sponge):</text>
+  <text x="130" y="452" class="s">pH / ORP stay wet when lifted out</text>
+  <!-- dims -->
+  <line x1="214" y1="130" x2="214" y2="270" class="dim"/><text x="190" y="204" class="s">70</text>
+
+  <!-- FRONT VIEW -->
+  <text x="610" y="84" class="t">Front view of the column (ORP)</text>
+  <path class="ab" d="M630 330 L630 150 Q630 108 672 108 L720 108 Q762 108 762 150 L762 330 Z" transform="translate(40 0)"/>
+  <path d="M670 146 L802 146" stroke="#0f1a24" stroke-width="1"/>
+  <circle cx="707" cy="172" r="4" fill="#ffd1c2" stroke="#c24a2c"/>
+  <circle cx="747" cy="182" r="11" class="coral"/>
+  <text x="700" y="250" class="t" style="font-size:22px;font-weight:bold;fill:#c9d3de">orp</text>
+  <rect x="670" y="310" width="132" height="20" fill="#e8b23a"/>
+  <rect x="716" y="333" width="40" height="12" rx="4" class="tpu"/>
+  <rect x="690" y="333" width="12" height="12" rx="6" class="tpu"/>
+  <text x="810" y="176" class="s">eye</text><text x="810" y="188" class="s">key</text>
+  <text x="810" y="324" class="s">Tide band</text>
+  <text x="610" y="366" class="s">Band colour and lowercase code set the sensor:</text>
+  <text x="610" y="378" class="s">ph green, do aqua, orp amber, ec violet.</text>
+  <text x="610" y="390" class="s">The collet ring and the cable tag match the band.</text>
+
+  <!-- notes -->
+  <text x="610" y="430" class="t">Size</text>
+  <text x="610" y="446" class="s">Column 32 W x 33.5 D x 70 H</text>
+  <text x="610" y="458" class="s">Saddle 24 W, rim gap 6-19 (shims)</text>
+  <text x="610" y="470" class="s">Overall depth to probe axis: about 110</text>
+  <text x="610" y="482" class="s">Probe tip about 190 below the rim top</text>
+  <text x="610" y="494" class="s">(leg 40-100 mm long as a variant)</text>
+  <text x="610" y="520" class="t">Needs</text>
+  <text x="610" y="536" class="s">Free rim, no lid over it. Rim to water</text>
+  <text x="610" y="548" class="s">at least 25 mm (antenna) and the tank</text>
+  <text x="610" y="560" class="s">at least 200 deep for a 150 mm probe.</text>
+  <text x="610" y="586" class="t">Sealing</text>
+  <text x="610" y="602" class="s">Column IP66 target (face o-ring, vent). The</text>
+  <text x="610" y="614" class="s">plug is behind the boot, facing down.</text>
+  <text x="30" y="672" class="s">No metal in the water: thumbscrew, pins and pads are nylon, PCTG or TPU. Metal near a pH or ORP electrode can shift readings. EC: the plug shell is a live electrode.</text>
+  <text x="30" y="686" class="s">Torque: the 140 g column hangs outboard; a TPU heel pad on the back plate presses the outer wall face. Test on an acrylic rim.</text>
+</svg>

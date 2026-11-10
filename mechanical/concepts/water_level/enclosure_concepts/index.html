@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feather water-level node: enclosure concepts</title>
+<style>
+:root {
+  --bg: #f3f5f2; --fg: #1d2420; --muted: #5b665f; --line: #d3d9d4; --card: #ffffff; --accent: #2e6b4e; --coral: #c24a2c;
+  --font-body: "IBM Plex Sans", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121614; --fg: #e3e8e4; --muted: #9aa69f; --line: #2a322e; --card: #1a201d; --accent: #7cc4a0; --coral: #ff9a7d; color-scheme: dark } }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.5; margin: 0; }
+main { max-width: 1000px; margin: 0 auto; padding: 28px 16px 48px; display: grid; gap: 28px; }
+h1 { font-size: 1.7rem; font-weight: 600; margin: 0; text-wrap: balance; }
+h2 { font-size: 1.25rem; font-weight: 600; margin: 0; }
+h3 { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 4px; font-weight: 500; }
+p { margin: 0; max-width: 72ch; }
+.lede { display: grid; gap: 8px; color: var(--muted); }
+.lede strong { color: var(--fg); font-weight: 500; }
+.tag { font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 20px; display: grid; gap: 14px; min-width: 0; }
+.head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+.score { font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+.score b { color: var(--fg); }
+.fig { overflow-x: auto; background: #fbfbf9; border-radius: 6px; border: 1px solid var(--line); }
+.fig img { display: block; width: 100%; min-width: 640px; height: auto; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 22px; }
+.grid div { min-width: 0; }
+.grid ul { margin: 0; padding-left: 18px; display: grid; gap: 3px; }
+@media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
+table { border-collapse: collapse; width: 100%; font-size: 14px; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-weight: 500; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+td.m { font-family: var(--font-mono); font-size: 13px; white-space: nowrap; }
+.tbl { overflow-x: auto; }
+.rec { border-left: 4px solid var(--coral); }
+.warn { color: var(--coral); }
+.note { font-size: 13px; color: var(--muted); }
+</style>
+</head><body>
+<main>
+  <header class="lede">
+    <span class="tag">nRF54L15 feather + sensor board + A02YYUW ultrasonic probe · enclosure concepts · 2026-10-25</span>
+    <h1>Four ways to house a battery water-level node in a reef room</h1>
+    <p>Concepts only, no CAD. The probe must point straight down, sit at least <strong>70 mm above the highest water</strong> (30 mm blind zone plus margin) and see only air in its 60 degree cone. Brian has not fixed the container, so each option suits different containers and mountings. Full text, references, key dimensions and questions are in <code>concepts.md</code>.</p>
+    <p class="warn">The probe's body size, thread and cable length could not be found online. Holders are parametric on Dp (sketches assume 20 mm). Please measure the real part.</p>
+  </header>
+
+  <section class="card rec" aria-labelledby="r-h">
+    <h2 id="r-h">Recommendation</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>#</th><th>Option</th><th>Idea</th><th>Size (mm)</th><th>Looks</th><th>Setting</th><th>Print/seal</th><th>PCB</th><th>Total</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><b>Bead</b></td><td>Transducer in its own pod on a cable; electronics dry in a Tidemark-W; four bases</td><td class="m">pod 44 x 38; column 32 x 64 x 32</td><td>5</td><td>5</td><td>4</td><td>5</td><td><b>19</b></td></tr>
+        <tr><td>2</td><td><b>Davit</b></td><td>Column on a cabinet wall, swing arm of stock tube over an open tank</td><td class="m">column + arm 150-300</td><td>4</td><td>4</td><td>4</td><td>5</td><td><b>17</b></td></tr>
+        <tr><td>3</td><td><b>Plumb</b></td><td>Column on the dry side of the wall, hook over the rim, 100 mm boom</td><td class="m">column + boom 100</td><td>4</td><td>4</td><td>3</td><td>5</td><td><b>16</b></td></tr>
+        <tr><td>4</td><td><b>Cork</b></td><td>Low pebble on a plastic lid, transducer through a TPU bushing</td><td class="m">104 x 38 x 32</td><td>4</td><td>3</td><td>4</td><td>5</td><td><b>16</b></td></tr>
+      </tbody>
+    </table></div>
+    <p><b>Bead</b> is the system: Tidemark-W plus the Eye pod, with the container choosing the base (lid ring, rim saddle, pipe clamp, suction cup). <b>Davit</b> is its base for an open tank beside a wall. Both share one Eye and one column, so fusion-enclosure models them once.</p>
+    <p class="note">PCB column: 5 = no change needed. Two electronics issues need Brian: the probe is rated 3.3-5 V (the template rail is 3.0 V) and its standby current may be up to 5 mA, so the probe needs a power switch.</p>
+  </section>
+
+  <section class="card" aria-labelledby="a-h">
+    <div class="head"><span class="tag">00 Reference</span><h2 id="a-h">The acoustic rules every option follows</h2></div>
+    <div class="fig"><img src="00-cone-and-clearances.svg" alt="Cone diagram with blind zone, margin, highest and lowest water and two wall positions"></div>
+    <div class="grid">
+      <div><h3>Rules</h3><ul>
+        <li>Face at least 70 mm above the highest water.</li>
+        <li>Axis plumb within about 2 degrees: every mount has a level aid.</li>
+        <li>Only air in the cone; Eye exit chamfer 45 degrees; no recess.</li></ul></div>
+      <div><h3>Walls</h3><ul>
+        <li>A wall x mm off axis enters the cone 1.73 x below the face.</li>
+        <li>0.58 x the distance to the lowest water keeps it clear; less needs a test.</li>
+        <li>That is why Tidemark cannot hang the probe by the wall.</li></ul></div>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="c1-h">
+    <div class="head"><span class="tag">Option 1</span><h2 id="c1-h">Bead</h2><span class="score">Looks 5 · Setting 5 · Print/seal 4 · PCB 5 · <b>19</b></span></div>
+    <p>The pod holds only the transducer, so it can go where the sound path is clean. The column stays dry on the wall with the antenna high. One pod, four bases for lids, rims, pipes and flat glass lids.</p>
+    <div class="fig"><img src="04-bead.svg" alt="Bead pod section, four mounting bases and the system in use"></div>
+    <div class="grid">
+      <div><h3>Containers</h3><ul>
+        <li>Any: lidded RO or top-off reservoirs (base A), rim sumps (B), pipes and posts (C), glass or acrylic lids (D).</li></ul></div>
+      <div><h3>Key dimensions</h3><ul>
+        <li>Pod dia 44 x 38, Eye collar dia 30, face proud 1.5 mm, 3 bayonet lugs.</li>
+        <li>Column 32 x 64 x 32; foot with USB-C tunnel 12.5 x 7 and cable slot about 12 x 7.5.</li></ul></div>
+      <div><h3>Condensation and salt</h3><ul>
+        <li>Electronics never meet tank air; pod has a face o-ring and a top strain relief; drip loops both ends.</li></ul></div>
+      <div><h3>Build (about 9 h, easy to moderate)</h3><ul>
+        <li>Pod cup lip-down, TPU sleeve, bases flat. Column as Tidemark, roof-down.</li>
+        <li class="warn">Cable runs over about 2.5 m need a UART test.</li></ul></div>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="c2-h">
+    <div class="head"><span class="tag">Option 2</span><h2 id="c2-h">Davit</h2><span class="score">Looks 4 · Setting 4 · Print/seal 4 · PCB 5 · <b>17</b></span></div>
+    <p>A Tidemark-W on a cabinet wall with a swing arm of stock 20 mm conduit. The cable runs inside the tube; the Eye sits on a printed elbow cap. Swing the arm away to reach the tank.</p>
+    <div class="fig"><img src="03-davit.svg" alt="Davit elevation over an open tank and plan view of the swing"></div>
+    <div class="grid">
+      <div><h3>Containers</h3><ul>
+        <li>Open tanks, sumps, tubs and ponds with a wall or cabinet within about 300 mm.</li></ul></div>
+      <div><h3>Key dimensions</h3><ul>
+        <li>Cleat plate 90 x 50 x 6; knuckle about 30 cubed with a dia 10 pin and 3 detents.</li>
+        <li>Tube 20 mm OD, 150-300 mm; elbow cap about 60 x 38 x 38.</li></ul></div>
+      <div><h3>Condensation and salt</h3><ul>
+        <li>Column out of the splash; drip edges at both arm ends; drain notch in the elbow, outside the cone.</li></ul></div>
+      <div><h3>Build (about 10 h, moderate)</h3><ul>
+        <li>The swivel tolerance is the hard part. Tube is a stock part.</li>
+        <li class="warn">Keep the antenna corner away from metal cabinets.</li></ul></div>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="c3-h">
+    <div class="head"><span class="tag">Option 3</span><h2 id="c3-h">Plumb</h2><span class="score">Looks 4 · Setting 4 · Print/seal 3 · PCB 5 · <b>16</b></span></div>
+    <p>The column hangs on the outside face of a rim wall; a planar saddle hooks over the rim and carries a 100 mm boom with the Eye at its tip. One object, one gesture to install.</p>
+    <div class="fig"><img src="01-plumb.svg" alt="Plumb front view and section through a wall with the boom and cone"></div>
+    <div class="grid">
+      <div><h3>Containers</h3><ul>
+        <li>Open-top sumps, tubs and tanks with a free rim of 6-19 mm. Not for lids that must close over the rim.</li></ul></div>
+      <div><h3>Key dimensions</h3><ul>
+        <li>Saddle 18 wide: back plate 3, bridge 9, inner leg 40; boom 100 (60 / 150 variants).</li>
+        <li>Face 27 below the rim: needs 100 mm rim-to-water (a 40 mm riser lifts it).</li></ul></div>
+      <div><h3>Condensation and salt</h3><ul>
+        <li>Column on the dry side; boom and Eye over the sump; cable groove ends at a grommet with a drip loop.</li></ul></div>
+      <div><h3>Build (about 10 h, moderate)</h3><ul>
+        <li>Saddle and boom printed on their side in PCTG, no supports.</li>
+        <li class="warn">Test the torque on an acrylic rim; the hook stands in splash.</li></ul></div>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="c4-h">
+    <div class="head"><span class="tag">Option 4</span><h2 id="c4-h">Cork</h2><span class="score">Looks 4 · Setting 3 · Print/seal 4 · PCB 5 · <b>16</b></span></div>
+    <p>A low pebble on a plastic lid. A double-flange TPU bushing snaps through a dia 30 hole and carries the head; the transducer sits in it. A Slate spine without the wing.</p>
+    <div class="fig"><img src="02-cork.svg" alt="Cork section on a lid, plan view and notes"></div>
+    <div class="grid">
+      <div><h3>Containers</h3><ul>
+        <li>Plastic lids 1-5 mm on RO, top-off and dosing reservoirs and sump covers; the hole at least 0.58 x depth from the wall.</li></ul></div>
+      <div><h3>Key dimensions</h3><ul>
+        <li>Head 104 x 38 x 32; hole dia 30; flange dia 40; face 8 mm below the lid.</li>
+        <li>Lid-to-highest-water at least 78 mm.</li></ul></div>
+      <div><h3>Condensation and salt</h3><ul>
+        <li>The bushing is the only path from tank air; vent and silica on the dry side; drip groove on the bushing.</li></ul></div>
+      <div><h3>Build (about 8-9 h, moderate)</h3><ul>
+        <li>Cartridge drops in from above (no slide-in constraint). Probe cable must be shortened and re-crimped.</li>
+        <li class="warn">Needs a hole in the lid; fails in a narrow, deep bucket.</li></ul></div>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="f-h">
+    <div class="head"><span class="tag">Family</span><h2 id="f-h">Next to the gateway and the Feather column</h2></div>
+    <div class="fig"><img src="05-family.svg" alt="Family lineup: Ledger gateway, Tidemark-W, Eye pod, and the four options in profile"></div>
+    <ul>
+      <li>Plumb and Davit pair with Tidemark; Cork pairs with Slate; Bead pairs with Tidemark and the Ledger gateway. Lily has no sibling.</li>
+      <li>New shared part: the Eye (graphite TPU sleeve, coral lip, 45 degree chamfer). Everything else is the existing language: brow, coral key and eye, graphite foot, Abyss.</li>
+    </ul>
+  </section>
+
+  <section class="card" aria-labelledby="p-h">
+    <h2 id="p-h">Electronics requests and questions</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>ID</th><th>Request</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td class="m">W1</td><td>Power the probe from a switched 3.3 V or more, not the 3.0 V VSENS rail</td><td>Probe rated 3.3-5 V; standby up to 5 mA is 120 mAh a day if left on</td></tr>
+        <tr><td class="m">W2</td><td>Side-entry PH2.0 4-pin centred on the x = 90 edge, VCC / GND / RX / TX</td><td>Cable leaves straight out of the foot</td></tr>
+      </tbody>
+    </table></div>
+    <p><b>Questions for Brian:</b> the container (type, depth, width, lid and wall material and thickness, whether the lid must close); the highest and lowest water levels; a wall or post within 300 mm; the probe size and whether its cable can be cut; the battery life target; whether a separate pod is acceptable; TPU and PCTG on hand; which feather concept you lean towards. The full list is in <code>concepts.md</code> section 8.</p>
+  </section>
+</main>
+</body></html>

@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="760" viewBox="0 0 900 760">
+  <style>
+    .ab{fill:#1f3347;stroke:#0f1a24;stroke-width:2}
+    .sad{fill:#2c4660;stroke:#0f1a24;stroke-width:2}
+    .tpu{fill:#3b3f46;stroke:#15181c;stroke-width:1}
+    .coral{fill:#ff7a59;stroke:#c24a2c;stroke-width:1}
+    .pvc{fill:#cfd3d8;stroke:#6b7480;stroke-width:1.5}
+    .water{fill:#9fd0e3;fill-opacity:.55;stroke:none}
+    .wl{stroke:#2f6f8f;stroke-width:1.5}
+    .pcb{fill:#2f7d5a;stroke:#174a34;stroke-width:1}
+    .part{fill:#c9ccd1;stroke:#5b6578;stroke-width:1}
+    .bat{fill:none;stroke:#8a7f66;stroke-width:1.2;stroke-dasharray:5 3}
+    .rfz{fill:none;stroke:#e0574a;stroke-width:1.2;stroke-dasharray:4 3}
+    .wire{fill:none;stroke:#2b2f2d;stroke-width:1.8}
+    .dim{stroke:#5b6578;stroke-width:.8;fill:none}
+    .soil{fill:#d8cdb6;stroke:#8a7f66;stroke-width:1}
+    .t{font-family:Helvetica,Arial,sans-serif;font-size:11px;fill:#1d2533}
+    .s{font-family:Helvetica,Arial,sans-serif;font-size:10px;fill:#5b6578}
+    .ti{font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:bold;fill:#1d2533}
+    .w{font-family:Helvetica,Arial,sans-serif;font-size:9px;fill:#c9d3de}
+  </style>
+  <text x="30" y="28" class="ti">04 STAFF - a bud on a tide staff: the node slides on a stock tube, the probe clips below it</text>
+  <text x="30" y="45" class="s">Elevation at 1.1 px/mm, bud section at 2.5 px/mm, foot from below at 3 px/mm. Bud dia 44 x 80. The staff is 20 mm plastic tube, 300-600 mm; the base decides where it stands. ORP node shown.</text>
+
+  <!-- ELEVATION -->
+  <text x="40" y="84" class="t">Staff in a tub or bucket (side)</text>
+  <rect x="30" y="420" width="240" height="225" class="water"/>
+  <line x1="30" y1="420" x2="270" y2="420" class="wl"/>
+  <rect x="20" y="420" width="10" height="230" fill="#cfe8f2" stroke="#5a8ea3"/><rect x="270" y="420" width="10" height="230" fill="#cfe8f2" stroke="#5a8ea3"/>
+  <text x="34" y="414" class="s">water</text>
+  <rect x="90" y="625" width="130" height="20" rx="8" class="sad"/>
+  <text x="100" y="640" class="w">ballast foot, sand-filled</text>
+  <rect x="160" y="130" width="22" height="500" class="pvc"/>
+  <rect x="160" y="620" width="22" height="8" class="sad"/>
+  <path class="ab" d="M102 118 Q102 100 122 100 L142 100 Q158 100 158 118 L158 188 L102 188 Z"/>
+  <rect x="152" y="128" width="40" height="62" rx="8" class="ab"/>
+  <rect x="102" y="170" width="56" height="12" fill="#e8b23a"/>
+  <rect x="110" y="106" width="30" height="20" class="rfz"/>
+  <circle cx="102" cy="138" r="4" class="coral"/><circle cx="102" cy="150" r="2" fill="#ffd1c2" stroke="#c24a2c"/>
+  <rect x="116" y="188" width="14" height="20" rx="5" class="tpu"/>
+  <rect x="136" y="188" width="14" height="6" rx="2" class="tpu"/>
+  <text x="196" y="132" class="s">bud 44 x 80, slides on the tube</text>
+  <text x="196" y="144" class="s">(nylon thumbscrew, 25 mm below AE1)</text>
+  <path class="wire" d="M123 208 C123 240 186 246 186 270 L186 470"/>
+  <path d="M158 276 L184 272 M158 284 L184 280 M158 292 L184 288 M158 300 L184 296 M158 308 L184 304" stroke="#2b2f2d" stroke-width="2"/>
+  <text x="196" y="296" class="s">spare cable wraps on the tube</text>
+  <text x="196" y="308" class="s">(4-6 turns, TPU rings)</text>
+  <rect x="180" y="352" width="10" height="8" rx="2" class="tpu"/><rect x="180" y="396" width="10" height="8" rx="2" class="tpu"/>
+  <text x="196" y="360" class="s">cable clip</text>
+  <rect x="196" y="472" width="13" height="150" rx="3" fill="#d9dde2" stroke="#4a4f57"/>
+  <rect x="196" y="472" width="13" height="8" fill="#e8b23a"/>
+  <rect x="182" y="476" width="16" height="10" class="tpu"/>
+  <text x="214" y="532" class="s">probe 12 x ~150,</text>
+  <text x="214" y="544" class="s">collet clip slides on</text>
+  <text x="214" y="556" class="s">the tube to set depth</text>
+  <line x1="40" y1="100" x2="40" y2="188" class="dim"/><text x="14" y="148" class="s">80</text>
+  <line x1="60" y1="188" x2="60" y2="420" class="dim"/><text x="64" y="304" class="s">60+ above</text><text x="64" y="316" class="s">water</text>
+  <text x="40" y="676" class="s">Tube: 20 mm PVC or PP, plastic only near the antenna (a metal tube behind AE1 detunes it).</text>
+  <text x="40" y="690" class="s">Probe tip at least 20 mm off the floor and 20 mm from the tub wall.</text>
+
+  <!-- BUD SECTION -->
+  <text x="320" y="84" class="t">Bud section (side)</text>
+  <rect x="340" y="100" width="110" height="200" rx="22" class="ab"/>
+  <rect x="340" y="260" width="110" height="20" fill="#e8b23a" opacity=".9"/>
+  <rect x="340" y="282" width="110" height="18" rx="6" class="sad"/>
+  <text x="344" y="294" class="w">foot cap + o-ring 38 x 2</text>
+  <circle cx="352" cy="282" r="3" fill="#ffd1c2" stroke="#0f1a24"/><circle cx="438" cy="282" r="3" fill="#ffd1c2" stroke="#0f1a24"/>
+  <rect x="373" y="140" width="4" height="127" class="pcb"/>
+  <rect x="356" y="150" width="17" height="110" fill="#e6e9ee" stroke="#9aa6b5" stroke-dasharray="3 3"/>
+  <rect x="397" y="140" width="4" height="127" class="pcb"/>
+  <rect x="405" y="150" width="17" height="100" class="bat"/>
+  <rect x="366" y="144" width="8" height="10" class="coral"/>
+  <rect x="355" y="104" width="76" height="62" class="rfz"/>
+  <text x="358" y="98" class="s">AE1 in the crown</text>
+  <rect x="377" y="262" width="20" height="10" class="part"/>
+  <rect x="388" y="262" width="12" height="40" class="part"/>
+  <rect x="385" y="300" width="18" height="34" rx="6" class="tpu"/>
+  <rect x="362" y="276" width="16" height="12" rx="3" class="tpu"/>
+  <text x="300" y="320" class="s">USB bung</text>
+  <text x="408" y="328" class="s">SMA + boot</text>
+  <circle cx="340" cy="196" r="6" class="coral"/><circle cx="340" cy="214" r="3" fill="#ffd1c2" stroke="#c24a2c"/>
+  <text x="304" y="190" class="s">key</text><text x="304" y="220" class="s">eye</text>
+  <rect x="450" y="190" width="64" height="110" rx="14" class="ab"/>
+  <rect x="460" y="190" width="50" height="190" class="pvc"/>
+  <rect x="514" y="236" width="22" height="8" class="tpu"/>
+  <text x="520" y="258" class="s">nylon</text><text x="520" y="268" class="s">thumbscrew</text>
+  <text x="456" y="182" class="s">channel, ID 20.5</text>
+  <text x="344" y="350" class="s">Boards stand upright, antenna up in the crown (plastic only, bonded</text>
+  <text x="344" y="362" class="s">cap, no screws within 15 mm). Cartridge slides out through the foot.</text>
+
+  <!-- FOOT FROM BELOW -->
+  <text x="590" y="84" class="t">Foot from below (3 px/mm)</text>
+  <circle cx="700" cy="180" r="66" class="ab"/>
+  <circle cx="700" cy="180" r="57" fill="none" stroke="#9fb0c4" stroke-dasharray="3 3"/>
+  <rect x="681" y="140" width="38" height="22" rx="7" fill="#101c28" stroke="#c9d3de"/>
+  <text x="686" y="154" class="w">USB-C</text>
+  <circle cx="700" cy="180" r="10" fill="#101c28" stroke="#c9d3de"/>
+  <circle cx="700" cy="180" r="21" fill="none" stroke="#e8b23a" stroke-width="3"/>
+  <circle cx="662" cy="148" r="3" fill="#c9d3de"/><circle cx="738" cy="148" r="3" fill="#c9d3de"/><circle cx="662" cy="212" r="3" fill="#c9d3de"/><circle cx="738" cy="212" r="3" fill="#c9d3de"/>
+  <circle cx="700" cy="268" r="38" class="ab"/>
+  <circle cx="700" cy="268" r="30" class="pvc"/>
+  <text x="786" y="146" class="s">front (key side)</text>
+  <text x="786" y="184" class="s">SMA dia 6.8, tide ring</text>
+  <text x="786" y="196" class="s">USB-C 12.5 x 7, 9.6 mm</text>
+  <text x="786" y="208" class="s">in front of the SMA</text>
+  <text x="786" y="272" class="s">tube channel behind</text>
+  <text x="786" y="284" class="s">(thumbscrew side)</text>
+
+  <!-- BASES -->
+  <text x="590" y="344" class="t">Bases</text>
+  <rect x="598" y="430" width="14" height="60" class="pvc"/>
+  <rect x="580" y="490" width="50" height="10" rx="4" class="sad"/>
+  <text x="580" y="520" class="s">A Foot</text><text x="580" y="532" class="s">tub, bucket, bench</text>
+  <rect x="690" y="360" width="60" height="150" class="soil"/>
+  <rect x="713" y="400" width="14" height="60" class="pvc"/>
+  <path d="M713 460 L727 460 L720 500 Z" class="sad"/>
+  <text x="684" y="520" class="s">B Spike</text><text x="684" y="532" class="s">pond, planter, gravel</text>
+  <rect x="800" y="380" width="64" height="12" fill="#cfe8f2" stroke="#5a8ea3"/>
+  <path d="M846 372 L872 372 L872 400 L846 400" fill="none" stroke="#2c4660" stroke-width="7"/>
+  <rect x="822" y="372" width="14" height="110" class="pvc"/>
+  <rect x="836" y="384" width="12" height="8" class="sad"/>
+  <text x="786" y="520" class="s">C Rim clamp</text><text x="786" y="532" class="s">tank rim 3-20 mm</text>
+  <text x="590" y="566" class="t">Why a staff</text>
+  <text x="590" y="582" class="s">The tube is the stake, the cable guide, the depth</text>
+  <text x="590" y="594" class="s">gauge and the cable reel in one stock part. The</text>
+  <text x="590" y="606" class="s">bud rides above the splash zone; the probe hangs</text>
+  <text x="590" y="618" class="s">below it. Lift the staff out to calibrate.</text>
+  <text x="590" y="644" class="t">Storage and service</text>
+  <text x="590" y="660" class="s">Probe cap (TPU, sponge) parks on a peg on the foot.</text>
+  <text x="590" y="672" class="s">Battery and USB: foot cap, 4 screws, cartridge drops</text>
+  <text x="590" y="684" class="s">out downward. Round o-ring, the easiest seal here.</text>
+  <text x="30" y="722" class="s">Tide ring and tube clip use the sensor colour (amber = ORP shown). Code debossed on the cap. The crown has the same plastic-only antenna zone as the column brow.</text>
+  <text x="30" y="736" class="s">The shell is a plain tube printed standing up, open at both ends; the crown cap prints dome-up and is bonded on; the foot cap prints sealing-face down.</text>
+</svg>

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 500" width="780" height="500" font-family="Arial, Helvetica, sans-serif">
+  <style>
+    .ttl{font-size:17px;font-weight:bold;fill:#0b1a30}
+    .sub{font-size:11.5px;fill:#444}
+    .t{font-size:11px;fill:#222}
+    .l{font-size:2.5px;fill:#1b1b1b}
+    .crown{fill:#dfe6ee;stroke:#0b1a30;stroke-width:.15}
+    .sole{fill:#5b7a99;stroke:#0b1a30;stroke-width:.15}
+    .add{fill:#e07a2f;fill-opacity:.85;stroke:#7a3a0a;stroke-width:.15}
+    .tpu{fill:none;stroke:#2aa198;stroke-width:1.2;stroke-linecap:round}
+    .cont{fill:#9aa5ad;stroke:#4b565e;stroke-width:.15}
+    .gask{fill:#333;stroke:#000;stroke-width:.1}
+    .cone{fill:#e63946;fill-opacity:.10;stroke:#e63946;stroke-width:.15}
+    .m45{fill:none;stroke:#e08a00;stroke-width:.15;stroke-dasharray:1 .6}
+    .dim{stroke:#555;stroke-width:.12;fill:none}
+  </style>
+  <rect width="780" height="500" fill="#fbfbf8"/>
+  <text x="14" y="20" class="ttl">A4 UMBRELLA: push-in tube with a TPU skirt that opens under the lid (section at v = 0)</text>
+  <text x="14" y="36" class="sub">Drawn for a 3 mm lid with a dia 40 hole. Scale 4 px per mm. Push from above, no access below needed. First print: PETG ring in place of the TPU skirt (fit only).</text>
+
+  <g transform="translate(210,200) scale(4)">
+    <path class="crown" d="M-25.5,0 H53.8 V-8 L47.8,-14 V-22.08 L43.3,-26.58 H6 V-36.58 H-19.5 V-14 L-25.5,-8 Z"/>
+    <rect class="sole" x="-25.5" y="-4" width="79.3" height="4"/>
+    <rect x="-12.5" y="-4" width="25" height="2.5" fill="#fbfbf8" stroke="#0b1a30" stroke-width=".1"/>
+    <rect x="-7.8" y="-5.88" width="18.6" height="1.88" fill="#d9b24a" stroke="#6b551a" stroke-width=".1"/>
+    <circle cx="28.17" cy="-17.7" r=".9" fill="#f4a261" stroke="#8a4a10" stroke-width=".1"/>
+    <path class="add" d="M-28.7,0 H-17 V11.5 H-19.5 V3 H-28.7 Z M17,0 H57 V3 H19.5 V11.5 H17 Z"/>
+    <path class="gask" d="M-27,3 H-20.5 V4.5 H-27 Z M20.5,3 H27 V4.5 H20.5 Z"/>
+    <path class="cont" d="M-45,4.5 H-20 V7.5 H-45 Z M20,4.5 H65 V7.5 H20 Z"/>
+    <path class="tpu" d="M-19.5,11.2 L-26,7.9 M19.5,11.2 L26,7.9"/>
+    <path class="cone" d="M0,-4 L34.4,50 L-34.4,50 Z"/>
+    <path class="m45" d="M0,-4 L40,36 M0,-4 L-40,36"/>
+    <path d="M0,-4 V50" stroke="#c0202e" stroke-width=".12" stroke-dasharray=".8 .5"/>
+    <g class="dim">
+      <path d="M-20,15 H20 M-20,14.3 V15.7 M20,14.3 V15.7"/>
+      <path d="M-17,19 H17 M-17,18.3 V19.7 M17,18.3 V19.7"/>
+    </g>
+    <text class="l" x="-10" y="14.2">hole dia 40 (tube od 39)</text>
+    <text class="l" x="-8" y="18.2">bore dia 34</text>
+    <text class="l" x="-48" y="3.2">foam gasket 1.5</text>
+    <text class="l" x="-48" y="9">lid 3.0</text>
+    <text class="l" x="-46" y="13" style="fill:#2aa198">TPU skirt (open)</text>
+    <text class="l" x="1" y="23">tube bottom d = 11.5: margin r 15.5 &lt; bore r 17</text>
+    <text class="l" x="1" y="26">skirt rim r 26 touches the lid underside; no part of it is inside r 15.5</text>
+    <text class="l" x="2" y="42">beam to the water, 70 mm below the outer face</text>
+    <text class="l" x="29.5" y="-19.5">AE1</text>
+  </g>
+
+  <g transform="translate(655,115) scale(1.5)">
+    <rect class="add" x="-28.7" y="-29.15" width="85.7" height="58.3" fill-opacity=".30"/>
+    <circle r="26" fill="none" stroke="#2aa198" stroke-width="1.2"/><circle r="20" fill="#9aa5ad" fill-opacity=".4" stroke="#4b565e" stroke-width=".5"/>
+    <circle r="19.5" fill="none" stroke="#7a3a0a" stroke-width=".6"/><circle r="17" fill="none" stroke="#0b1a30" stroke-width=".4" stroke-dasharray="2 1.2"/>
+    <rect x="-12.5" y="-10.5" width="25" height="21" fill="none" stroke="#0b1a30" stroke-width=".4"/>
+    <path d="M-3,0 H3 M0,-3 V3" stroke="#c0202e" stroke-width=".6"/>
+  </g>
+
+  <g class="t">
+    <text x="510" y="262" font-weight="bold">What it fits</text>
+    <text x="510" y="277">One size per hole: dia 40 to 42 (tube od 39),</text>
+    <text x="510" y="291">lid 2 to 6 mm (skirt flexes). Variants M and L</text>
+    <text x="510" y="305">at tube od 45 and 51 for holes 46 and 52.</text>
+    <text x="510" y="319">Needs a lid at least 86 x 58 mm flat.</text>
+    <text x="510" y="339" font-weight="bold">How it works</text>
+    <text x="510" y="353">Skirt folds up while the tube goes through,</text>
+    <text x="510" y="367">springs open below. Hold-down is the skirt rim;</text>
+    <text x="510" y="381">pulling the Crown plate off needs about the same</text>
+    <text x="510" y="395">force as a snap-in rubber grommet (not measured).</text>
+    <text x="510" y="415" font-weight="bold">Level / seal / metal</text>
+    <text x="510" y="429">Flat lid only. Foam gasket seals the flange; skirt</text>
+    <text x="510" y="443">is a splash seal, not water-tight. No metal.</text>
+    <text x="510" y="463" fill="#a00">Holds only if the hole is the right size: bench test.</text>
+  </g>
+</svg>

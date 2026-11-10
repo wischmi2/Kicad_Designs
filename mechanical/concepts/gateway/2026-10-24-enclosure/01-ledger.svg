@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470">
+  <defs>
+    <pattern id="grille" width="7.5" height="7.5" patternUnits="userSpaceOnUse"><circle cx="3.75" cy="3.75" r="1.4" fill="#1d2533"/></pattern>
+  </defs>
+  <style>
+    .o{fill:#f4f2ee;stroke:#1d2533;stroke-width:2}
+    .ln{fill:none;stroke:#1d2533;stroke-width:1.5}
+    .w{fill:#20262f;stroke:#1d2533;stroke-width:1.5}
+    .hid{fill:none;stroke:#8a94a6;stroke-width:1;stroke-dasharray:4 3}
+    .acc{fill:#ff7a59;stroke:#c24a2c;stroke-width:1.2}
+    .glow{fill:#ff7a59;fill-opacity:.45;stroke:#c24a2c;stroke-width:1}
+    .ant{fill:#d6eef6;fill-opacity:.6;stroke:#3a9bb8;stroke-width:1.5;stroke-dasharray:5 3}
+    .bat{fill:#e6e0d0;stroke:#8a7f66;stroke-width:1.2}
+    .pcb{fill:#5d8a5b;stroke:#2f4d2e;stroke-width:1}
+    .cab{fill:none;stroke:#e85c3a;stroke-width:2;stroke-dasharray:6 3}
+    .t{font-family:Helvetica,Arial,sans-serif;font-size:11px;fill:#1d2533}
+    .s{font-family:Helvetica,Arial,sans-serif;font-size:10px;fill:#5b6578}
+    .ti{font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:bold;fill:#1d2533}
+  </style>
+  <text x="40" y="30" class="ti">01 LEDGER - screen over a control panel (Braun-style instrument), portrait, desk or wall</text>
+  <text x="40" y="47" class="s">82 W x 100 H x 24 D mm. Scale 2.5 px/mm. Screen and gateway sit one above the other, both facing forward (not stacked).</text>
+
+  <!-- FRONT -->
+  <text x="40" y="330" class="t">FRONT</text>
+  <rect x="40" y="60" width="205" height="250" rx="20" class="o"/>
+  <line x1="52" y1="97.5" x2="233" y2="97.5" class="ln"/>
+  <rect x="98.75" y="72.5" width="87.5" height="22.5" class="ant"/>
+  <text x="104" y="87" class="s">antenna behind brow</text>
+  <rect x="72.5" y="100" width="145" height="87.5" class="hid"/>
+  <rect x="92.5" y="104" width="105" height="79.5" rx="3" class="w"/>
+  <text x="112" y="148" class="t" fill="#cfd6e0" style="fill:#cfd6e0">240 x 320 IPS</text>
+  <rect x="72.5" y="197.5" width="145" height="87.5" class="hid"/>
+  <circle cx="146.75" cy="205.75" r="12.5" class="acc"/>
+  <circle cx="119" cy="206" r="2" fill="#1d2533"/>
+  <circle cx="176.75" cy="206" r="2" fill="#1d2533"/>
+  <rect x="95" y="226" width="100" height="35" fill="url(#grille)"/>
+  <rect x="152.5" y="268.75" width="18.75" height="7.5" rx="3.75" class="glow"/>
+  <text x="40" y="350" class="s">Brow (top 14 mm) leans back 20 deg and hides the antenna.</text>
+  <text x="40" y="364" class="s">USER = convex accent key under the screen; RESET and ISP = two pinholes either side.</text>
+  <text x="40" y="378" class="s">Dot grille = vents over the 2FR module and buck. Status pill = one diffuser over D3-D5.</text>
+
+  <!-- SIDE -->
+  <text x="300" y="330" class="t">SIDE (left)</text>
+  <path d="M305 60 L350 60 Q360 60 360 70 L360 300 Q360 310 350 310 L310 310 Q300 310 300 300 L300 97.5 Z" class="o"/>
+  <line x1="300" y1="97.5" x2="360" y2="97.5" class="hid"/>
+  <rect x="360" y="110" width="4" height="14" fill="#1d2533"/>
+  <rect x="360" y="250" width="4" height="14" fill="#1d2533"/>
+  <text x="368" y="122" class="s">keyhole</text>
+  <path d="M330 310 L405 310 L360 248 Z" fill="#ffd9cc" stroke="#c24a2c" stroke-width="1.2"/>
+  <text x="372" y="300" class="s">wedge stand</text>
+  <text x="372" y="312" class="s">15 deg, TPU feet</text>
+  <text x="300" y="350" class="s">Desk: slides onto a printed wedge.</text>
+  <text x="300" y="364" class="s">Wall/cabinet: 2 keyholes + rear cable channel.</text>
+
+  <!-- SECTION -->
+  <text x="460" y="330" class="t">SECTION (front at left)</text>
+  <rect x="460" y="60" width="60" height="250" rx="8" fill="none" stroke="#1d2533" stroke-width="2"/>
+  <line x1="467" y1="72" x2="462" y2="95" stroke="#3a9bb8" stroke-width="3" stroke-dasharray="5 3"/>
+  <rect x="465" y="100" width="11" height="87.5" class="w"/>
+  <rect x="476" y="155" width="14" height="30" class="hid"/>
+  <rect x="497" y="110" width="15" height="57.5" fill="#cfe3cf" stroke="#2f4d2e"/>
+  <rect x="480" y="197.5" width="4" height="87.5" class="pcb"/>
+  <rect x="465" y="197.5" width="15" height="87.5" class="hid"/>
+  <line x1="462" y1="205.75" x2="480" y2="205.75" stroke="#c24a2c" stroke-width="3"/>
+  <rect x="461" y="268" width="19" height="6" class="glow"/>
+  <rect x="487" y="199" width="25" height="85" class="bat"/>
+  <path d="M505 167 L493 190 L478 256" class="cab"/>
+  <rect x="490" y="304" width="20" height="6" fill="#1d2533"/>
+  <rect x="468" y="304" width="10" height="6" fill="#c24a2c"/>
+  <text x="530" y="85" class="t">FPC antenna (Molex 146153, 100 mm lead)</text>
+  <text x="530" y="99" class="s">kept 12+ mm above the LCD, 60+ mm from the battery</text>
+  <text x="530" y="145" class="t">LCD module 58 x 35 (front)</text>
+  <text x="530" y="160" class="t">PowerBoost 1000C behind LCD</text>
+  <text x="530" y="215" class="t">Gateway PCB, parts facing front</text>
+  <text x="530" y="229" class="s">USER plunger, pinhole guides, light pipe</text>
+  <text x="530" y="250" class="t">LiPo 103450 (2000 mAh) behind gateway</text>
+  <text x="530" y="264" class="s">dashed orange = 5 V pigtail to J1 (USB-C plug)</text>
+  <text x="530" y="300" class="t">underside: charge USB-C + power switch</text>
+  <text x="530" y="350" class="s">Print: front shell face-down on textured PEI, rear cover flat. No supports.</text>
+  <text x="530" y="364" class="s">Rear cover: 4 x M2 screws into heat-set inserts.</text>
+</svg>

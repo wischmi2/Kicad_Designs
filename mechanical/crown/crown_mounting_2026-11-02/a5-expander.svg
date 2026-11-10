@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 500" width="780" height="500" font-family="Arial, Helvetica, sans-serif">
+  <style>
+    .ttl{font-size:17px;font-weight:bold;fill:#0b1a30}
+    .sub{font-size:11.5px;fill:#444}
+    .t{font-size:11px;fill:#222}
+    .l{font-size:2.5px;fill:#1b1b1b}
+    .crown{fill:#dfe6ee;stroke:#0b1a30;stroke-width:.15}
+    .sole{fill:#5b7a99;stroke:#0b1a30;stroke-width:.15}
+    .add{fill:#e07a2f;fill-opacity:.85;stroke:#7a3a0a;stroke-width:.15}
+    .tpu{fill:#2aa198;fill-opacity:.85;stroke:#146b64;stroke-width:.12}
+    .cont{fill:#9aa5ad;stroke:#4b565e;stroke-width:.15}
+    .cone{fill:#e63946;fill-opacity:.10;stroke:#e63946;stroke-width:.15}
+    .m45{fill:none;stroke:#e08a00;stroke-width:.15;stroke-dasharray:1 .6}
+    .dim{stroke:#555;stroke-width:.12;fill:none}
+  </style>
+  <rect width="780" height="500" fill="#fbfbf8"/>
+  <text x="14" y="20" class="ttl">A5 EXPANDER: wing-nut style plug with a TPU ring, three screws off the beam axis (section at v = 0)</text>
+  <text x="14" y="36" class="sub">Drawn for a 3 mm lid with a dia 50.5 hole (a 2 in saw). Scale 4 px per mm. Tightening pulls the lower ring up and the TPU bulges against the hole wall.</text>
+
+  <g transform="translate(210,200) scale(4)">
+    <path class="crown" d="M-25.5,0 H53.8 V-8 L47.8,-14 V-22.08 L43.3,-26.58 H6 V-36.58 H-19.5 V-14 L-25.5,-8 Z"/>
+    <rect class="sole" x="-25.5" y="-4" width="79.3" height="4"/>
+    <rect x="-12.5" y="-4" width="25" height="2.5" fill="#fbfbf8" stroke="#0b1a30" stroke-width=".1"/>
+    <rect x="-7.8" y="-5.88" width="18.6" height="1.88" fill="#d9b24a" stroke="#6b551a" stroke-width=".1"/>
+    <circle cx="28.17" cy="-17.7" r=".9" fill="#f4a261" stroke="#8a4a10" stroke-width=".1"/>
+    <!-- plate + body wall r 17..22, y 0..12 ; compression ring y 9..12 -->
+    <path class="add" d="M-28.7,0 H-17 V12 H-22 V3 H-28.7 Z M17,0 H57 V3 H22 V12 H17 Z"/>
+    <path class="tpu" d="M-25,3 H-22 V9 H-25 Z M22,3 H25 V9 H22 Z"/>
+    <path class="add" d="M-22,9 H-17 V12 H-22 Z" fill-opacity=".4"/>
+    <path class="cont" d="M-45,3 H-25.25 V6 H-45 Z M25.25,3 H65 V6 H25.25 Z"/>
+    <path d="M19.5,0.3 V11.5" stroke="#555" stroke-width=".9"/>
+    <path d="M-9.75,0.3 V11.5" stroke="#555" stroke-width=".9" stroke-dasharray=".8 .6"/>
+    <path class="cone" d="M0,-4 L34.4,50 L-34.4,50 Z"/>
+    <path class="m45" d="M0,-4 L40,36 M0,-4 L-40,36"/>
+    <path d="M0,-4 V50" stroke="#c0202e" stroke-width=".12" stroke-dasharray=".8 .5"/>
+    <g class="dim">
+      <path d="M-25.25,16 H25.25 M-25.25,15.3 V16.7 M25.25,15.3 V16.7"/>
+      <path d="M-17,20 H17 M-17,19.3 V20.7 M17,19.3 V20.7"/>
+    </g>
+    <text class="l" x="-14" y="15.2">hole dia 50.5 (TPU ring od 50)</text>
+    <text class="l" x="-8" y="19.2">bore dia 34</text>
+    <text class="l" x="-48" y="2.2">lid 3.0</text>
+    <text class="l" x="27" y="8" style="fill:#146b64">TPU ring 3 x 6</text>
+    <text class="l" x="23" y="12.5">lower ring (compression)</text>
+    <text class="l" x="20.5" y="-1.4" style="fill:#444">M3 x3 at r 19.5</text>
+    <text class="l" x="1" y="24">stack bottom d = 12: margin r 16 &lt; bore r 17</text>
+    <text class="l" x="1" y="27">the 3 screws sit at r 19.5, 3.5 mm outside the margin</text>
+    <text class="l" x="2" y="42">beam to the water, 70 mm below the outer face</text>
+    <text class="l" x="29.5" y="-19.5">AE1</text>
+  </g>
+
+  <g transform="translate(655,115) scale(1.5)">
+    <rect class="add" x="-28.7" y="-29.15" width="85.7" height="58.3" fill-opacity=".30"/>
+    <circle r="25.25" fill="#9aa5ad" fill-opacity=".4" stroke="#4b565e" stroke-width=".5"/>
+    <circle r="25" fill="none" stroke="#2aa198" stroke-width="1"/><circle r="22" fill="none" stroke="#7a3a0a" stroke-width=".6"/>
+    <circle r="17" fill="none" stroke="#0b1a30" stroke-width=".4" stroke-dasharray="2 1.2"/>
+    <circle cx="19.5" cy="0" r="1.6" fill="#555"/><circle cx="-9.75" cy="16.9" r="1.6" fill="#555"/><circle cx="-9.75" cy="-16.9" r="1.6" fill="#555"/>
+    <rect x="-12.5" y="-10.5" width="25" height="21" fill="none" stroke="#0b1a30" stroke-width=".4"/>
+    <path d="M-3,0 H3 M0,-3 V3" stroke="#c0202e" stroke-width=".6"/>
+  </g>
+
+  <g class="t">
+    <text x="510" y="262" font-weight="bold">What it fits</text>
+    <text x="510" y="277">Hole dia 50.5 and up, lid 2 to 10 mm. Sizes S/M/L:</text>
+    <text x="510" y="291">50.5 (2 in saw 50.8, lid to 4), 57.2 (lid to 7),</text>
+    <text x="510" y="305">63.5 (lid to 10), 76 (lid to 16, wide plate).</text>
+    <text x="510" y="319">Rule: hole = bore + 16.5 and bore >= 26 + 2 x lid.</text>
+    <text x="510" y="333">Ring grips +-1.5 mm of hole error.</text>
+    <text x="510" y="353" font-weight="bold">Level / seal</text>
+    <text x="510" y="367">TPU ring lets the plate tilt about 3 degrees; seals</text>
+    <text x="510" y="381">the hole to splash. Use the vial to trim on a dome.</text>
+    <text x="510" y="401" font-weight="bold">Metal</text>
+    <text x="510" y="415">Nylon M3 into printed threads: none. With 3 x 316</text>
+    <text x="510" y="429">captive nuts: 29 mm from AE1 (see mounting.md).</text>
+    <text x="510" y="449" font-weight="bold">Releases</text>
+    <text x="510" y="463">Crown pops off the ring; plug stays in the lid.</text>
+  </g>
+</svg>

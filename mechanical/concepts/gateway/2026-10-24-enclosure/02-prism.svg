@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470">
+  <style>
+    .o{fill:#2b3a4a;fill-opacity:.12;stroke:#141b24;stroke-width:2}
+    .face{fill:#34475a;stroke:#141b24;stroke-width:1.5}
+    .cap{fill:#9fd8e8;fill-opacity:.45;stroke:#3a9bb8;stroke-width:1.5}
+    .fac{fill:none;stroke:#3a9bb8;stroke-width:1}
+    .w{fill:#0e1217;stroke:#cfd6e0;stroke-width:1}
+    .hid{fill:none;stroke:#8a94a6;stroke-width:1;stroke-dasharray:4 3}
+    .glow{fill:#ff7a59;fill-opacity:.6;stroke:#c24a2c;stroke-width:1}
+    .gl{fill:none;stroke:#ff7a59;stroke-width:4;stroke-opacity:.7}
+    .acc{fill:none;stroke:#c24a2c;stroke-width:3}
+    .ant{stroke:#3a9bb8;stroke-width:3;stroke-dasharray:5 3}
+    .bat{fill:#e6e0d0;stroke:#8a7f66;stroke-width:1.2}
+    .pcb{fill:#5d8a5b;stroke:#2f4d2e;stroke-width:1}
+    .lcd{fill:#20262f;stroke:#1d2533;stroke-width:1}
+    .t{font-family:Helvetica,Arial,sans-serif;font-size:11px;fill:#1d2533}
+    .s{font-family:Helvetica,Arial,sans-serif;font-size:10px;fill:#5b6578}
+    .ti{font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:bold;fill:#1d2533}
+  </style>
+  <text x="40" y="30" class="ti">02 PRISM - a faceted tent: screen on the 62 deg face, glowing crystal end caps, desk</text>
+  <text x="40" y="47" class="s">104 L x 80 D x 62 H mm. Scale 2.5 px/mm. LCD stacked on the gateway (M2 standoffs), gateway parts facing rear.</text>
+
+  <!-- FRONT ELEVATION -->
+  <text x="40" y="330" class="t">FRONT (looking at the sloped face)</text>
+  <rect x="65" y="150" width="210" height="155" class="face"/>
+  <polygon points="40,305 65,305 65,150 52,150 40,190" class="cap"/>
+  <polygon points="275,305 300,305 300,190 288,150 275,150" class="cap"/>
+  <polyline points="40,190 65,228 40,262 65,305" class="fac"/>
+  <polyline points="300,190 275,228 300,262 275,305" class="fac"/>
+  <line x1="288" y1="196" x2="288" y2="280" class="ant"/>
+  <rect x="97.5" y="183.6" width="145" height="77.3" class="hid"/>
+  <rect x="117.5" y="187.1" width="105" height="70.2" rx="3" class="w"/>
+  <rect x="130" y="271" width="80" height="5" rx="2.5" class="glow"/>
+  <text x="40" y="350" class="s">End caps: translucent faceted PETG ("crystal"). Right cap carries the FPC antenna flat on its inner face.</text>
+  <text x="40" y="364" class="s">Light sill: thin glowing line under the screen, fed from D3-D5 by an L-shaped pipe.</text>
+  <text x="40" y="378" class="s">Left cap: charge USB-C and power switch. Ridge: a crisp 1 mm land along the apex.</text>
+
+  <!-- END VIEW / SECTION -->
+  <text x="370" y="330" class="t">END VIEW / SECTION</text>
+  <polygon points="370,305 452.5,150 570,305" class="o"/>
+  <polygon points="397.9,263.2 439.0,186.0 449.0,191.2 407.9,268.5" class="lcd"/>
+  <polygon points="425.5,277.9 466.6,200.6 470.1,202.5 429.0,279.8" class="pcb"/>
+  <polygon points="397.9,263.2 439.0,186.0 489.8,213.0 448.7,290.3" class="hid"/>
+  <line x1="466.2" y1="209.8" x2="519.1" y2="237.9" class="acc"/>
+  <line x1="513.1" y1="249" x2="524.9" y2="227" stroke="#c24a2c" stroke-width="5"/>
+  <rect x="465" y="277" width="85" height="25" class="bat"/>
+  <rect x="470" y="264" width="57" height="12" class="hid"/>
+  <path d="M434.9 268.7 L437 292 L381 292" class="gl"/>
+  <text x="580" y="170" class="t">LCD (front) + gateway (behind)</text>
+  <text x="580" y="184" class="s">parts face rear, 8 mm standoffs</text>
+  <text x="580" y="215" class="t">Key facet: flat cut into the back</text>
+  <text x="580" y="229" class="s">face, 24 mm guided plunger to USER;</text>
+  <text x="580" y="243" class="s">RESET / ISP pinholes in the same facet</text>
+  <text x="580" y="275" class="t">LiPo 103450 on the rear floor</text>
+  <text x="580" y="289" class="s">(ballast behind the leaning face)</text>
+  <text x="580" y="303" class="s">PowerBoost on top of it (dashed); both in the left half</text>
+  <text x="370" y="350" class="s">Print: body stands on one end (profile vertical) = no supports; window top edge</text>
+  <text x="370" y="364" class="s">gets a 45 deg roof. End caps print flat. Base: TPU strip feet.</text>
+  <text x="370" y="378" class="s">Antenna sits 30+ mm from the battery and PowerBoost (opposite ends).</text>
+</svg>

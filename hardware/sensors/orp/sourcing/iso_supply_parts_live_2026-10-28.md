@@ -1,3 +1,5 @@
+**SUPERSEDED 2026-10-28 by bom_digikey_mouser_2026-10-28_live.md (full ORP BOM with U3 ISO1540DR and the new C7/C8/C11/D1/R1; this file is for the old ISO1640BDR BOM).**
+
 # feather_orp isolated supply trial: parts with live DigiKey / Mouser data (2026-10-28)
 
 Live check date: 2026-10-28 (DigiKey Product Information API v4 and Mouser Search API; USD, US site, cut tape). Board: Sensor_Boards\feather_orp, BOM from kicad-cli sch export bom (schematic not edited). Replaces the "stock not verified" note in the STATUS.md trial section. All board parts are listed (19 lines); lines marked NEW are the isolated-supply trial parts (SN6505B, 760390015, BAT54C, LP2985-33, ISO1640BDR, FB1 and the new caps C6-C12).

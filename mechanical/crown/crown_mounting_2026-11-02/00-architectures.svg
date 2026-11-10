@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 360" width="780" height="360" font-family="Arial, Helvetica, sans-serif">
+  <style>
+    .ttl{font-size:17px;font-weight:bold;fill:#0b1a30}
+    .sub{font-size:11.5px;fill:#444}
+    .h{font-size:13px;font-weight:bold;fill:#0b1a30}
+    .t{font-size:10.5px;fill:#222}
+    .l{font-size:4.2px;fill:#222}
+    .sole{fill:#5b7a99;fill-opacity:.30;stroke:#0b1a30;stroke-width:.5}
+    .win{fill:#fff;stroke:#0b1a30;stroke-width:.4}
+    .add{fill:#e07a2f;fill-opacity:.75;stroke:#7a3a0a;stroke-width:.4}
+    .ax{stroke:#c0202e;stroke-width:.5;fill:none}
+  </style>
+  <rect width="780" height="360" fill="#fbfbf8"/>
+  <text x="14" y="20" class="ttl">Three connection architectures on the Crown sole (bottom view, USB end left, radar axis marked)</text>
+  <text x="14" y="36" class="sub">Scale 1.9 px per mm. Sole 79.3 x 51.9; window 25 x 21; radar axis at 25.5 mm from the USB-end foot edge. Orange = what the architecture adds.</text>
+
+  <!-- Panel A: axis bayonet -->
+  <g transform="translate(88,125) scale(1.9)">
+    <rect class="sole" x="-25.5" y="-25.95" width="79.3" height="51.9"/>
+    <rect class="win" x="-12.5" y="-10.5" width="25" height="21"/>
+    <circle cx="0" cy="0" r="22" fill="none" stroke="#e07a2f" stroke-width=".4" stroke-dasharray="2 1.5"/>
+    <path class="add" d="M19.4,-10.4 A22,22 0 0 1 21.7,3.6 L18.6,3.1 A19,19 0 0 0 16.7,-9 Z"/>
+    <path class="add" d="M-21.7,-3.6 A22,22 0 0 0 -19.4,10.4 L-16.7,9 A19,19 0 0 1 -18.6,-3.1 Z"/>
+    <path class="add" d="M-6,-21.2 A22,22 0 0 1 6,-21.2 L5.2,-18.3 A19,19 0 0 0 -5.2,-18.3 Z"/>
+    <path d="M-3,0 H3 M0,-3 V3" class="ax"/>
+    <path d="M11,-26 A28,28 0 0 1 24,-14" fill="none" stroke="#333" stroke-width=".5"/>
+    <path d="M24,-14 l-2.6,.2 l1.2,-2.4" fill="none" stroke="#333" stroke-width=".5"/>
+    <text class="l" x="-24" y="-28">3 tabs on a 44 mm circle</text>
+  </g>
+  <text class="h" x="20" y="205">A  Axis bayonet</text>
+  <text class="t" x="20" y="221">3 hook tabs 3.5 mm below the window</text>
+  <text class="t" x="20" y="235">quarter-turn of the whole Crown</text>
+  <text class="t" x="20" y="249">sole changes; turning sweeps 60 mm</text>
+  <text class="t" x="20" y="263">self-centres on round holes</text>
+  <text class="t" x="20" y="277" fill="#a00">fails in a bridge, clamp or rim hook</text>
+
+  <!-- Panel B: dovetail -->
+  <g transform="translate(348,125) scale(1.9)">
+    <rect class="sole" x="-25.5" y="-25.95" width="79.3" height="51.9"/>
+    <rect class="win" x="-12.5" y="-10.5" width="25" height="21"/>
+    <rect class="add" x="-17" y="-21" width="62" height="5"/>
+    <rect class="add" x="-17" y="16" width="62" height="5"/>
+    <path d="M-3,0 H3 M0,-3 V3" class="ax"/>
+    <path d="M-23,-27 L-23,-31 M55,-27 L55,-31" stroke="#333" stroke-width=".4"/>
+    <path d="M56,-18.5 h8 l-2,-2 M64,-18.5 l-2,2" fill="none" stroke="#333" stroke-width=".5"/>
+    <text class="l" x="-14" y="-23.2">rail, 45 deg undercut, 2.5 high</text>
+  </g>
+  <text class="h" x="280" y="205">B  Dovetail slide</text>
+  <text class="t" x="280" y="221">2 rails, 62 mm, 17 to 21 mm off axis</text>
+  <text class="t" x="280" y="235">slide in, nylon set screw locks</text>
+  <text class="t" x="280" y="249">radar position adjustable along the slot</text>
+  <text class="t" x="280" y="263">rails stand proud of the window plane</text>
+  <text class="t" x="280" y="277" fill="#a00">needs 80 mm free run, tolerance-sensitive</text>
+
+  <!-- Panel C: dock ring -->
+  <g transform="translate(608,125) scale(1.9)">
+    <rect class="add" x="-28.7" y="-29.15" width="85.7" height="58.3" fill-opacity=".30"/>
+    <rect class="sole" x="-25.7" y="-26.15" width="79.7" height="52.3"/>
+    <rect class="win" x="-12.5" y="-10.5" width="25" height="21"/>
+    <rect class="add" x="-28.7" y="-14" width="3" height="12"/>
+    <rect class="add" x="-28.7" y="2" width="3" height="12"/>
+    <rect class="add" x="54" y="-20" width="3" height="40"/>
+    <rect class="add" x="57" y="-7" width="3.5" height="14"/>
+    <circle cx="0" cy="0" r="17" fill="none" stroke="#0b1a30" stroke-width=".4" stroke-dasharray="2 1.2"/>
+    <path d="M-3,0 H3 M0,-3 V3" class="ax"/>
+    <text class="l" x="-26" y="-31.5">ring + 2 hook tongues + flexure latch</text>
+  </g>
+  <text class="h" x="540" y="205">C  Dock ring on a plate (recommended)</text>
+  <text class="t" x="540" y="221">ring grips the foot and the plinth chamfer</text>
+  <text class="t" x="540" y="235">tilt in, click, thumb tab releases</text>
+  <text class="t" x="540" y="249">sole unchanged; plate is the adapter</text>
+  <text class="t" x="540" y="263">plate any shape; Crown pops off, no cable</text>
+  <text class="t" x="540" y="277" fill="#a00">two prints and four screws per adapter</text>
+
+  <text x="14" y="318" class="sub">Orange = added by the architecture. Dashed circle in C = the Dia 34 aperture every plate keeps open under the window.</text>
+  <text x="14" y="334" class="sub">Corner screws of the sole sit at (-22.5, +-22.93) and (+50.8, +-22.93) from the radar axis; A and B must work around them, C covers them.</text>
+</svg>

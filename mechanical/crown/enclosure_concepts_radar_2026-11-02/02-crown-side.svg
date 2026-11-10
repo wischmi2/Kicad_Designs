@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 580" width="760" height="580" font-family="Arial, Helvetica, sans-serif">
+  <style>
+    .ttl{font-size:19px;font-weight:bold;fill:#0b1a30}
+    .sub{font-size:12px;fill:#444}
+    .l{font-size:1.5px;fill:#1b1b1b}
+    .ls{font-size:1.2px;fill:#444}
+    .dim{stroke:#555;stroke-width:.1;fill:none}
+    .hood{fill:#1d3557;fill-opacity:.88;stroke:#0b1a30;stroke-width:.12;fill-rule:evenodd}
+    .sole{fill:#5b7a99;stroke:#0b1a30;stroke-width:.12}
+    .pcb{fill:#2f7d4f;stroke:#14361f;stroke-width:.1}
+    .mod{fill:#d9b24a;stroke:#6b551a;stroke-width:.1}
+    .a121{fill:#f0e1a0;stroke:#6b551a;stroke-width:.1}
+    .ghost{fill:#bbb;fill-opacity:.5;stroke:#777;stroke-width:.1;stroke-dasharray:.5 .3}
+    .bat{fill:#c9d3dc;stroke:#333;stroke-width:.14}
+    .cone{fill:#e63946;fill-opacity:.10;stroke:#e63946;stroke-width:.14}
+    .cone45{fill:none;stroke:#e08a00;stroke-width:.12;stroke-dasharray:.9 .5}
+    .coral{fill:#ff6b57;stroke:#8a2a1d;stroke-width:.1}
+    .pipe{fill:#bfe6ff;fill-opacity:.85;stroke:#4a8fb5;stroke-width:.1}
+  </style>
+  <rect width="760" height="580" fill="#fbfbf8"/>
+  <text x="20" y="20" class="ttl">2 CROWN, side section (battery above the feather, USB half)</text>
+  <text x="20" y="36" class="sub">Battery rides in a hump in the lid over fx 0 to 20, clear of the key (fx 26) and about 25 mm from AE1. Dimensions in mm.</text>
+
+  <g transform="translate(103,345) scale(7)">
+    <path class="hood" d="M-9,-4 V-8 L-3,-14 V-36.58 H22.5 V-26.58 H59.8 L64.3,-22.08 V-14 L70.3,-8 V-4 Z M-0.5,-4 V-34.1 H20.5 V-24.08 H58 L61.8,-20.28 V-4 Z"/>
+    <rect x="-3" y="-22.2" width="2.5" height="7" fill="#fbfbf8" stroke="#0b1a30" stroke-width=".1" stroke-dasharray=".5 .3"/>
+    <path class="sole" d="M-9,0 H70.3 V-4 H29 V-1.5 H4 V-4 H-9 Z"/>
+    <circle cx="-1.75" cy="-3.2" r="1.0" fill="#e63946" fill-opacity=".7"/>
+    <circle cx="63.05" cy="-3.2" r="1.0" fill="#e63946" fill-opacity=".7"/>
+    <rect class="ghost" x="-1.46" y="-5.88" width="8" height="1.88"/>
+    <rect class="ghost" x="44.26" y="-5.88" width="8" height="1.88"/>
+    <rect class="ghost" x="0.19" y="-15.48" width="4.7" height="8"/>
+    <rect class="ghost" x="45.91" y="-15.48" width="4.7" height="8"/>
+    <rect class="ghost" x="0.04" y="-19.08" width="5" height="2"/>
+    <rect class="ghost" x="45.76" y="-19.08" width="5" height="2"/>
+    <rect class="mod" x="8.7" y="-5.88" width="18.6" height="1.0"/>
+    <rect class="a121" x="13.75" y="-4.88" width="5.5" height="0.88"/>
+    <rect class="pcb" x="0" y="-7.48" width="50.8" height="1.6"/>
+    <rect class="pcb" x="0" y="-17.08" width="50.8" height="1.6"/>
+    <rect x="33.5" y="-8.6" width="2.4" height="1.12" fill="#333"/>
+    <rect x="46.5" y="-8.98" width="3.95" height="1.5" fill="#999"/>
+    <rect x="46.5" y="-18.58" width="3.95" height="1.5" fill="#999"/>
+    <rect x="0" y="-20.34" width="7.35" height="3.26" fill="#9aa"/>
+    <rect x="15.7" y="-23.08" width="6.3" height="6" fill="none" stroke="#777" stroke-width=".1" stroke-dasharray=".5 .3"/>
+    <rect x="25.4" y="-18.7" width="2" height="1.62" fill="#555"/>
+    <rect x="43.9" y="-18.38" width="1.6" height="1.3" fill="#f4a261" stroke="#8a4a10" stroke-width=".08"/>
+    <rect class="coral" x="23.2" y="-27.6" width="6.4" height="3.5"/>
+    <rect class="coral" x="25.15" y="-24.1" width="2.5" height="5.4"/>
+    <rect class="pipe" x="29.9" y="-26.58" width="2.5" height="8.4"/>
+    <path d="M50.45,-17.9 H54 C60.8,-17.9 60.8,-8.3 54,-8.3 H50.45" fill="none" stroke="#333" stroke-width=".3"/>
+    <!-- battery in hump -->
+    <rect class="bat" x="0" y="-33.6" width="20" height="10"/>
+    <text class="ls" x="0.8" y="-28.4">LiPo about</text>
+    <text class="ls" x="0.8" y="-26.9">10 x 20 x 20</text>
+    <!-- lead down to U4 -->
+    <path d="M10,-23.6 C10,-21 12,-21 12,-18.5" fill="none" stroke="#c0202e" stroke-width=".25"/>
+    <!-- AE1 distance -->
+    <path d="M20,-23.6 L44.67,-17.7" stroke="#8a4a10" stroke-width=".16" stroke-dasharray=".6 .4"/>
+    <text class="ls" x="27.5" y="-14.2" style="fill:#8a4a10;font-size:1.1px">25.4 mm to AE1 (3D)</text>
+    <!-- cone -->
+    <path class="cone" d="M16.5,-4 L38.16,30 L-5.16,30 Z"/>
+    <path class="cone45" d="M16.5,-4 L40.5,20 M16.5,-4 L-7.5,20"/>
+    <circle cx="16.5" cy="-4" r=".45" fill="#e63946"/>
+    <!-- dims -->
+    <g class="dim">
+      <path d="M-3,-40.5 H64.3 M-3,-41.2 V-39.8 M64.3,-41.2 V-39.8"/>
+      <path d="M-9,-44 H70.3 M-9,-44.7 V-43.3 M70.3,-44.7 V-43.3"/>
+      <path d="M73,0 V-36.58 M72.4,0 H73.6 M72.4,-36.58 H73.6 M72.4,-26.58 H73.6"/>
+    </g>
+    <text class="l" x="20" y="-41.1">67.3 body</text>
+    <text class="l" x="17" y="-44.6">79.3 foot</text>
+    <text class="l" x="74" y="-31">36.6 hump</text>
+    <text class="l" x="74" y="-13">26.6 lid</text>
+    <text class="ls" x="-8.8" y="3.6">window 25 x 21 x 1.5, solid</text>
+    <text class="ls" x="0.3" y="-21.6" style="fill:#fff">USB-C tunnel</text>
+    <text class="ls" x="36.5" y="-19.8">AE1</text>
+    <text class="ls" x="52.5" y="-21.4">FFC U-fold</text>
+    <text class="ls" x="23.3" y="-28.0">key</text>
+    <text class="ls" x="30.4" y="-27.2">eye</text>
+    <text class="ls" x="36" y="22">cone 65 / 53 deg</text>
+    <text class="ls" x="36" y="23.5" style="fill:#b36b00">45 deg margin (dashed)</text>
+    <text class="ls" x="40" y="-34.5">battery is straight behind the radar:</text>
+    <text class="ls" x="40" y="-33">180 deg, behind both ground planes</text>
+    <path d="M16.5,27 V31.5 M15.7,30.6 L16.5,31.8 L17.3,30.6" stroke="#222" stroke-width=".18" fill="none"/>
+    <text class="ls" x="18" y="31">to the water, 70+ mm below the face</text>
+  </g>
+</svg>

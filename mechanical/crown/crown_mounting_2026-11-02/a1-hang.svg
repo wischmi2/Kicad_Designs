@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="800" height="520" font-family="Arial, Helvetica, sans-serif">
+  <style>
+    .ttl{font-size:17px;font-weight:bold;fill:#0b1a30}
+    .sub{font-size:11.5px;fill:#444}
+    .t{font-size:11px;fill:#222}
+    .l{font-size:2.6px;fill:#1b1b1b}
+    .crown{fill:#dfe6ee;stroke:#0b1a30;stroke-width:.15}
+    .sole{fill:#5b7a99;stroke:#0b1a30;stroke-width:.15}
+    .add{fill:#e07a2f;fill-opacity:.85;stroke:#7a3a0a;stroke-width:.15}
+    .cont{fill:#9aa5ad;stroke:#4b565e;stroke-width:.15}
+    .cone{fill:#e63946;fill-opacity:.10;stroke:#e63946;stroke-width:.15}
+    .m45{fill:none;stroke:#e08a00;stroke-width:.15;stroke-dasharray:1 .6}
+    .dim{stroke:#555;stroke-width:.12;fill:none}
+  </style>
+  <rect width="800" height="520" fill="#fbfbf8"/>
+  <text x="14" y="20" class="ttl">A1 HANG: saddle on the rim, arm cantilevered over the opening (section at v = 0)</text>
+  <text x="14" y="36" class="sub">Radar axis 60 mm from the inner wall (arm length is a parameter, 45 to 120). USB end of the Crown points at the rim. Scale 4 px per mm.</text>
+
+  <g transform="translate(320,200) scale(4)">
+    <path class="crown" d="M-25.5,0 H53.8 V-8 L47.8,-14 V-22.08 L43.3,-26.58 H6 V-36.58 H-19.5 V-14 L-25.5,-8 Z"/>
+    <rect class="sole" x="-25.5" y="-4" width="79.3" height="4"/>
+    <rect x="-12.5" y="-4" width="25" height="2.5" fill="#fbfbf8" stroke="#0b1a30" stroke-width=".1"/>
+    <rect x="-7.8" y="-5.88" width="18.6" height="1.88" fill="#d9b24a" stroke="#6b551a" stroke-width=".1"/>
+    <circle cx="28.17" cy="-17.7" r=".9" fill="#f4a261" stroke="#8a4a10" stroke-width=".1"/>
+    <!-- arm plate, tongue, ring walls -->
+    <path class="add" d="M-78,-1 V45 H-75 V3 H-17 V0 H-78 Z"/>
+    <path class="add" d="M-17,0 H57 V3 H-17 Z"/>
+    <path class="add" d="M-28.7,0 V-11 H-23.4 V-10.4 L-25.7,-8.1 V0 Z"/>
+    <path class="add" d="M57,0 V-11.5 H51.4 V-10.7 L54,-8.1 V0 Z"/>
+    <path d="M-75,-1 H-28.7" stroke="#7a3a0a" stroke-width=".15"/>
+    <!-- rim -->
+    <path class="cont" d="M-72,3 H-60 V11 H-64 V70 H-60 H-64 Z"/>
+    <path class="cont" d="M-72,3 H-60 V11 H-72 Z"/>
+    <path class="cont" d="M-64,11 H-60 V70 H-64 Z"/>
+    <path d="M-78,30 H-66" stroke="#555" stroke-width="1.1"/>
+    <rect x="-66" y="28.5" width="2" height="3" fill="#2aa198"/>
+    <path class="cone" d="M0,-4 L34.4,50 L-34.4,50 Z"/>
+    <path class="m45" d="M0,-4 L-60,56 M0,-4 L40,36"/>
+    <path d="M0,-4 V55" stroke="#c0202e" stroke-width=".12" stroke-dasharray=".8 .5"/>
+    <g class="dim">
+      <path d="M-60,-2 V-10 M-60,-8 H0 M0,-9 V-7"/>
+      <path d="M-72,66 H-60 M-72,65.3 V66.7 M-60,65.3 V66.7"/>
+    </g>
+    <text class="l" x="-52" y="-9">L = 60 to the inner wall</text>
+    <text class="l" x="-72" y="69.4">rim 12</text>
+    <text class="l" x="-90" y="24" style="fill:#7a3a0a">tongue</text>
+    <text class="l" x="-90" y="33">M4 nylon + TPU pad</text>
+    <text class="l" x="-60" y="1.4" style="fill:#7a3a0a">arm plate 3 + 2 ribs 12 tall (v +-21)</text>
+    <text class="l" x="-58" y="-21">45 deg line meets the wall at d = 56</text>
+    <text class="l" x="-58" y="-18">-3 dB cone meets it at d = 90 (0.637)</text>
+    <text class="l" x="-58" y="-15">or 116 (0.499), below this view</text>
+    <text class="l" x="4" y="58">beam to the water</text>
+    <text class="l" x="29.5" y="-19.5">AE1</text>
+  </g>
+
+  <g transform="translate(700,120)">
+    <circle r="60" fill="#e8ecef" stroke="#4b565e" stroke-width="1.2"/>
+    <rect x="-90" y="-11.6" width="53" height="23.2" fill="#e07a2f" fill-opacity=".75" stroke="#7a3a0a"/>
+    <path d="M-36,0 h-3 M-37.5,-1.5 v3" stroke="#c0202e" stroke-width="1.5"/>
+    <path d="M-35,0 h-5" stroke="#c0202e" stroke-width="1.5"/>
+    <text style="font-size:9px;fill:#222" x="-66" y="-68">5 gal bucket, plan, 0.4 px/mm</text>
+  </g>
+
+  <g class="t">
+    <text x="560" y="230" font-weight="bold">What it fits</text>
+    <text x="560" y="244">Any round can, bucket or tank</text>
+    <text x="560" y="258">with a free rim 8 to 20 mm</text>
+    <text x="560" y="272">wide (12 assumed, UNVERIFIED),</text>
+    <text x="560" y="286">lid off. No size limit on dia.</text>
+    <text x="560" y="306" font-weight="bold">Level</text>
+    <text x="560" y="320">Rim top is the datum (2 pads);</text>
+    <text x="560" y="334">thumbscrew sets pitch on a</text>
+    <text x="560" y="348">tapered wall. Vial on the plate.</text>
+    <text x="560" y="368" font-weight="bold">Wall echo</text>
+    <text x="560" y="382">L = 60: wall in -3 dB at 90 / 116 mm;</text>
+    <text x="560" y="396">may beat the water echo below</text>
+    <text x="560" y="410">108 / 130 mm. Weakest scheme</text>
+    <text x="560" y="424">for deep cans: quick test only.</text>
+    <text x="560" y="444" font-weight="bold">Metal / outer face</text>
+    <text x="560" y="458">None. Outer face 3 above the rim.</text>
+    <text x="560" y="478" font-weight="bold">Lid</text>
+    <text x="560" y="492">Lid stays off. Lift the whole arm away.</text>
+  </g>
+</svg>

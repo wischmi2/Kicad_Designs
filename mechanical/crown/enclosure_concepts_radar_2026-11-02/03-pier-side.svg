@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 500" width="860" height="500" font-family="Arial, Helvetica, sans-serif">
+  <style>
+    .ttl{font-size:19px;font-weight:bold;fill:#0b1a30}
+    .sub{font-size:12px;fill:#444}
+    .l{font-size:1.9px;fill:#1b1b1b}
+    .ls{font-size:1.5px;fill:#444}
+    .dim{stroke:#555;stroke-width:.12;fill:none}
+    .hood{fill:#1d3557;fill-opacity:.88;stroke:#0b1a30;stroke-width:.14;fill-rule:evenodd}
+    .sole{fill:#5b7a99;stroke:#0b1a30;stroke-width:.14}
+    .pcb{fill:#2f7d4f;stroke:#14361f;stroke-width:.12}
+    .mod{fill:#d9b24a;stroke:#6b551a;stroke-width:.12}
+    .a121{fill:#f0e1a0;stroke:#6b551a;stroke-width:.12}
+    .ghost{fill:#bbb;fill-opacity:.5;stroke:#777;stroke-width:.12;stroke-dasharray:.6 .4}
+    .bat{fill:#c9d3dc;stroke:#333;stroke-width:.16}
+    .cone{fill:#e63946;fill-opacity:.10;stroke:#e63946;stroke-width:.16}
+    .cone45{fill:none;stroke:#e08a00;stroke-width:.14;stroke-dasharray:1 .6}
+    .coral{fill:#ff6b57;stroke:#8a2a1d;stroke-width:.12}
+    .pipe{fill:#bfe6ff;fill-opacity:.85;stroke:#4a8fb5;stroke-width:.12}
+    .rim{fill:#d9d4c7;stroke:#7a7466;stroke-width:.14}
+  </style>
+  <rect width="860" height="500" fill="#fbfbf8"/>
+  <text x="20" y="20" class="ttl">3 PIER, side section (battery in an in-line tail, on the rim)</text>
+  <text x="20" y="36" class="sub">The tail sits on the container rim and carries the cell; the head hangs out over the water. Section through the radar centre. Dimensions in mm.</text>
+
+  <g transform="translate(80,250) scale(5.5)">
+    <path class="hood" d="M-9,-4 V-8 L-3,-14 V-26.58 H57.8 L70.88,-13.5 H120.5 L126,-8 V-4 Z M-0.5,-4 V-24.08 H56 L69.08,-11 H117.5 V-4 Z"/>
+    <rect x="-3" y="-22.2" width="2.5" height="7" fill="#fbfbf8" stroke="#0b1a30" stroke-width=".12" stroke-dasharray=".6 .4"/>
+    <path class="sole" d="M-9,0 H126 V-4 H29 V-1.5 H4 V-4 H-9 Z"/>
+    <circle cx="-1.75" cy="-3.2" r="1.0" fill="#e63946" fill-opacity=".7"/>
+    <circle cx="118.75" cy="-3.2" r="1.0" fill="#e63946" fill-opacity=".7"/>
+    <rect class="ghost" x="-1.46" y="-5.88" width="8" height="1.88"/>
+    <rect class="ghost" x="44.26" y="-5.88" width="8" height="1.88"/>
+    <rect class="ghost" x="0.19" y="-15.48" width="4.7" height="8"/>
+    <rect class="ghost" x="45.91" y="-15.48" width="4.7" height="8"/>
+    <rect class="ghost" x="0.04" y="-19.08" width="5" height="2"/>
+    <rect class="ghost" x="45.76" y="-19.08" width="5" height="2"/>
+    <rect class="mod" x="8.7" y="-5.88" width="18.6" height="1.0"/>
+    <rect class="a121" x="13.75" y="-4.88" width="5.5" height="0.88"/>
+    <rect class="pcb" x="0" y="-7.48" width="50.8" height="1.6"/>
+    <rect class="pcb" x="0" y="-17.08" width="50.8" height="1.6"/>
+    <rect x="33.5" y="-8.6" width="2.4" height="1.12" fill="#333"/>
+    <rect x="46.5" y="-8.98" width="3.95" height="1.5" fill="#999"/>
+    <rect x="46.5" y="-18.58" width="3.95" height="1.5" fill="#999"/>
+    <rect x="0" y="-20.34" width="7.35" height="3.26" fill="#9aa"/>
+    <rect x="15.7" y="-23.08" width="6.3" height="6" fill="none" stroke="#777" stroke-width=".12" stroke-dasharray=".6 .4"/>
+    <rect x="25.4" y="-18.7" width="2" height="1.62" fill="#555"/>
+    <rect x="43.9" y="-18.38" width="1.6" height="1.3" fill="#f4a261" stroke="#8a4a10" stroke-width=".1"/>
+    <rect class="coral" x="23.2" y="-27.6" width="6.4" height="3.5"/>
+    <rect class="coral" x="25.15" y="-24.1" width="2.5" height="5.4"/>
+    <rect class="pipe" x="29.9" y="-26.58" width="2.5" height="8.4"/>
+    <path d="M50.45,-17.9 H54 C60.8,-17.9 60.8,-8.3 54,-8.3 H50.45" fill="none" stroke="#333" stroke-width=".35"/>
+    <!-- battery in tail -->
+    <rect class="bat" x="67" y="-10" width="50" height="6"/>
+    <text class="ls" x="70" y="-6.4">LiPo 6 x 20 x 50 (or 6 x 34 x 50)</text>
+    <!-- lead -->
+    <path d="M67,-8 C64,-8 64,-21 60,-21 H14 C12,-21 12,-19.5 12,-18.5" fill="none" stroke="#c0202e" stroke-width=".3" stroke-dasharray=".8 .5"/>
+    <text class="ls" x="20" y="-21.6" style="fill:#c0202e">battery lead about 90 mm, U5 side, away from AE1</text>
+    <!-- AE1 distance -->
+    <path d="M67,-10 L45.5,-17.6" stroke="#8a4a10" stroke-width=".18" stroke-dasharray=".6 .4"/>
+    <text class="ls" x="46" y="-11.5" style="fill:#8a4a10">23.6 mm to AE1</text>
+    <!-- rim and hold-down -->
+    <rect class="rim" x="90" y="0" width="12" height="36"/>
+    <text class="ls" x="91.3" y="14">rim</text>
+    <text class="ls" x="91.3" y="16">12</text>
+    <rect x="102.5" y="0" width="3" height="20" fill="#5b7a99" stroke="#0b1a30" stroke-width=".12"/>
+    <circle cx="104" cy="10" r="1.5" fill="#ff6b57" stroke="#8a2a1d" stroke-width=".12"/>
+    <text class="ls" x="106" y="9">hold-down with</text>
+    <text class="ls" x="106" y="11">thumbscrew pad</text>
+    <!-- cone -->
+    <path class="cone" d="M16.5,-4 L42,36 L-9,36 Z"/>
+    <path class="cone45" d="M16.5,-4 L56.5,36 M16.5,-4 L-23.5,36"/>
+    <circle cx="16.5" cy="-4" r=".5" fill="#e63946"/>
+    <!-- dims -->
+    <g class="dim">
+      <path d="M-3,-30 H120 M-3,-30.8 V-29.2 M120,-30.8 V-29.2"/>
+      <path d="M-9,-33.5 H126 M-9,-34.3 V-32.7 M126,-34.3 V-32.7"/>
+      <path d="M128.5,0 V-13.5 M127.8,0 H129.2 M127.8,-13.5 H129.2"/>
+      <path d="M-5,0 V-26.58 M-5.7,0 H-4.3 M-5.7,-26.58 H-4.3"/>
+    </g>
+    <text class="l" x="45" y="-30.8">123 body</text>
+    <text class="l" x="45" y="-34.3">135 foot with the plinth flare</text>
+    <text class="l" x="129.8" y="-6">13.5</text>
+    <text class="l" x="-14" y="-13" transform="rotate(-90 -6.8 -13)">26.6</text>
+    <text class="ls" x="-8.8" y="3.8">window 25 x 21 x 1.5, solid</text>
+    <text class="ls" x="0.3" y="-21.6" style="fill:#fff;font-size:1.2px">USB-C</text>
+    <text class="ls" x="36.5" y="-19.8">AE1</text>
+    <text class="ls" x="38" y="22">cone 65 / 53 deg, 45 deg margin dashed</text>
+    <text class="ls" x="38" y="-25.5" style="font-size:1.3px">head 67 / tail 55</text>
+    <path d="M16.5,31 V35.5" stroke="#222" stroke-width=".2"/>
+    <text class="ls" x="18" y="35">to the water, 70+ mm below. Rim wall is 73.5 mm from the radar axis</text>
+  </g>
+</svg>

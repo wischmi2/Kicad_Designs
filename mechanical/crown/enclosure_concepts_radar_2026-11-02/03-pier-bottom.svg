@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 440" width="860" height="440" font-family="Arial, Helvetica, sans-serif">
+  <style>
+    .ttl{font-size:19px;font-weight:bold;fill:#0b1a30}
+    .sub{font-size:12px;fill:#444}
+    .l{font-size:2px;fill:#1b1b1b}
+    .ls{font-size:1.6px;fill:#444}
+    .sole{fill:#5b7a99;fill-opacity:.35;stroke:#0b1a30;stroke-width:.22}
+    .body{fill:none;stroke:#0b1a30;stroke-width:.2;stroke-dasharray:1 .6}
+    .win{fill:#fff;stroke:#0b1a30;stroke-width:.22}
+    .pcb{fill:none;stroke:#2f7d4f;stroke-width:.22;stroke-dasharray:.7 .4}
+    .post{fill:none;stroke:#777;stroke-width:.16}
+    .mod{fill:#d9b24a;fill-opacity:.35;stroke:#6b551a;stroke-width:.16;stroke-dasharray:.6 .3}
+    .bat{fill:#c9d3dc;fill-opacity:.7;stroke:#333;stroke-width:.22;stroke-dasharray:.9 .5}
+    .cone{fill:none;stroke:#e63946;stroke-width:.2}
+    .rule{fill:none;stroke:#e08a00;stroke-width:.2;stroke-dasharray:1 .6}
+    .rim{fill:#d9d4c7;fill-opacity:.8;stroke:#7a7466;stroke-width:.18}
+  </style>
+  <rect width="860" height="440" fill="#fbfbf8"/>
+  <text x="20" y="20" class="ttl">3 PIER, bottom view (from the water side)</text>
+  <text x="20" y="36" class="sub">USB end on the left; AE1 / U4 edge at the TOP. Rim band shows where the container wall crosses the tail (clamp position slides along the tail).</text>
+
+  <g transform="translate(90,256) scale(5.5)">
+    <rect class="sole" x="-9" y="-37.36" width="135" height="51.86"/>
+    <rect class="body" x="-3" y="-31.36" width="123" height="39.86"/>
+    <rect class="win" x="4" y="-21.93" width="25" height="21"/>
+    <ellipse class="cone" cx="16.5" cy="-11.43" rx="2.55" ry="2.0"/>
+    <ellipse class="cone" cx="16.5" cy="-11.43" rx="15.3" ry="12.0" stroke-dasharray=".6 .4"/>
+    <ellipse class="cone" cx="16.5" cy="-11.43" rx="28.0" ry="21.9" stroke-dasharray=".3 .3"/>
+    <rect class="pcb" x="0" y="-22.86" width="50.8" height="22.86"/>
+    <circle class="post" cx="2.54" cy="-2.54" r="4"/><circle class="post" cx="2.54" cy="-20.32" r="4"/>
+    <circle class="post" cx="48.26" cy="-2.54" r="4"/><circle class="post" cx="48.26" cy="-20.32" r="4"/>
+    <rect class="mod" x="8.7" y="-18.93" width="18.6" height="15"/>
+    <path d="M15.2,-11.43 H17.8 M16.5,-12.73 V-10.13" stroke="#c0202e" stroke-width=".28"/>
+    <rect x="-3" y="-17.68" width="2.5" height="12.5" fill="#fff" stroke="#0b1a30" stroke-width=".16"/>
+    <!-- battery tail: wide 34 mm cell and narrow 20 mm cell -->
+    <rect class="bat" x="67" y="-28.43" width="50" height="34"/>
+    <rect class="bat" x="67" y="-21.43" width="50" height="20" stroke-opacity=".5"/>
+    <text class="l" x="72" y="-10.5">LiPo 6 x 34 x 50 (outer), 6 x 20 x 50 (inner)</text>
+    <circle cx="44.67" cy="-20.08" r="1.2" fill="#f4a261" stroke="#8a4a10" stroke-width=".16"/>
+    <circle class="rule" cx="44.67" cy="-20.08" r="15"/>
+    <circle class="rule" cx="44.67" cy="-20.08" r="20" stroke-opacity=".5"/>
+    <!-- rim band -->
+    <rect class="rim" x="90" y="-37.36" width="12" height="51.86"/>
+    <text class="ls" x="91" y="-33" transform="rotate(90 91 -33)">container wall / rim 12</text>
+    <!-- screws -->
+    <circle cx="-6" cy="-34.36" r="2.0" fill="#333"/><circle cx="-6" cy="11.5" r="2.0" fill="#333"/>
+    <circle cx="123" cy="-34.36" r="2.0" fill="#333"/><circle cx="123" cy="11.5" r="2.0" fill="#333"/>
+    <text class="ls" x="4.5" y="-0.6">window 25 x 21</text>
+    <text class="ls" x="31" y="-28.7" style="fill:#b36b00">15 / 20 mm from AE1</text>
+    <text class="ls" x="46" y="-24" style="fill:#8a4a10">AE1</text>
+  </g>
+
+  <g font-size="12" fill="#222">
+    <text x="20" y="400" font-weight="bold">Sizes:</text>
+    <text x="68" y="400">body 123 x 39.9, foot 135 x 51.9, height 26.6 (head) and 13.5 (tail). Tail starts 5 mm beyond the FFC apex so the cell is 23.6 mm from AE1.</text>
+    <text x="20" y="418">The wide 34 mm cell (603450) fits inside the same 39.9 mm width. Lateral distance radar axis to rim: 73.5 mm as drawn; slide the clamp for 50 to 100 mm.</text>
+  </g>
+</svg>

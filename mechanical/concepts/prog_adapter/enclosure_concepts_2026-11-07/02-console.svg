@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 620" font-family="Segoe UI, Arial, sans-serif">
+<defs>
+<g id="board">
+<rect width="360" height="240" rx="10" fill="#6d7d58" stroke="#2f3a26" stroke-width="1.5"/>
+<g fill="#222"><rect x="78.5" y="33.5" width="77" height="45"/><rect x="162" y="24" width="14" height="32.5"/><rect x="200" y="26" width="26.5" height="58"/><rect x="233.5" y="21" width="40" height="81"/><rect x="281" y="33.5" width="46" height="77.5"/><rect x="72.5" y="215" width="40" height="14.5"/></g>
+<rect x="132" y="88.5" width="41" height="31" fill="#ddd"/><rect x="197.5" y="154.5" width="42.5" height="33" fill="#ddd"/>
+<rect x="0" y="153.5" width="36" height="47" fill="#f2f2f2" stroke="#666"/>
+</g>
+</defs>
+<rect width="520" height="620" fill="#f6f4ef"/>
+<text x="40" y="28" font-size="18" font-weight="700" fill="#1c2b45">2  CONSOLE (lid with windows)</text>
+<text x="40" y="45" font-size="11" fill="#555">Top view. Lid covers the board, so legends are embossed on the lid.</text>
+<rect x="40" y="60" width="387" height="267" rx="12" fill="#1c2b45"/>
+<!-- windows (cut-outs) in lid, board faintly visible -->
+<g fill="#f6f4ef" stroke="#e8604c" stroke-width="1.2">
+<rect x="124" y="99" width="93" height="61" rx="4"/>
+<rect x="211" y="93" width="23" height="42" rx="3"/>
+<circle cx="206" cy="177.5" r="22"/>
+<rect x="76" y="140" width="34" height="52" rx="3"/>
+<rect x="248" y="89" width="84" height="91" rx="4"/>
+<rect x="328" y="101" width="58" height="90" rx="4"/>
+<circle cx="272" cy="244.5" r="22"/>
+<circle cx="210.5" cy="253.5" r="8"/>
+<rect x="120" y="283" width="52" height="26" rx="3"/>
+</g>
+<!-- underlying parts through windows -->
+<g transform="translate(53.5 73.5)" fill="#222" opacity=".75">
+<rect x="78.5" y="33.5" width="77" height="45"/><rect x="162" y="24" width="14" height="32.5"/><rect x="200" y="26" width="26.5" height="58"/><rect x="233.5" y="21" width="40" height="81"/><rect x="281" y="33.5" width="46" height="77.5"/><rect x="72.5" y="215" width="40" height="14.5"/>
+</g>
+<g fill="#555"><circle cx="70.5" cy="90.5" r="8" fill="#0d1526"/><circle cx="396.5" cy="90.5" r="8" fill="#0d1526"/><circle cx="70.5" cy="296.5" r="8" fill="#0d1526"/><circle cx="396.5" cy="296.5" r="8" fill="#0d1526"/></g>
+<g font-size="10" fill="#e8c4bc" font-weight="600"><text x="124" y="95">A  XM125 UART</text><text x="248" y="85">B  SWD</text><text x="76" y="278">D  3V0</text><text x="120" y="279">J5</text></g>
+<g font-size="9" fill="#e8c4bc"><text x="210" y="90">JP1 on = BOOT</text><text x="164" y="204">XM RST</text><text x="238" y="276">SWD RST</text><text x="76" y="136">FTDI</text><text x="250" y="198">J3 DK / J4 0.1 in</text></g>
+<text x="300" y="300" font-size="20" fill="#e8604c" font-weight="700">prog</text>
+<g stroke="#f6f4ef" stroke-width="6"><line x1="40" y1="227" x2="40" y2="274"/><line x1="40" y1="148" x2="40" y2="192"/></g>
+<text x="2" y="252" font-size="9" fill="#555">USB-C</text><text x="2" y="172" font-size="9" fill="#555">FTDI</text>
+<!-- section -->
+<text x="40" y="365" font-size="11" fill="#555">Front section, screws through lid, PCB hole and into base posts.</text>
+<line x1="20" y1="520" x2="500" y2="520" stroke="#999"/>
+<g fill="#e8604c"><rect x="52" y="520" width="30" height="6"/><rect x="385" y="520" width="30" height="6"/></g>
+<rect x="40" y="500" width="387" height="20" fill="#1c2b45"/>
+<rect x="40" y="410" width="12" height="90" fill="#1c2b45"/><rect x="415" y="410" width="12" height="90" fill="#1c2b45"/>
+<polygon points="40,410 40,425 56,410" fill="#14203a"/>
+<rect x="40" y="398" width="387" height="12" fill="#2a3d63"/>
+<rect x="70" y="480" width="10" height="20" fill="#1c2b45"/><rect x="392" y="480" width="10" height="20" fill="#1c2b45"/>
+<rect x="53" y="472" width="360" height="8" fill="#6d7d58" stroke="#2f3a26"/>
+<g fill="#222"><rect x="130" y="427" width="77" height="45"/><rect x="290" y="427" width="46" height="45"/></g>
+<g stroke="#888" stroke-dasharray="4 3"><line x1="75" y1="392" x2="75" y2="492"/><line x1="397" y1="392" x2="397" y2="492"/></g>
+<rect x="68" y="392" width="14" height="6" fill="#aaa"/><rect x="390" y="392" width="14" height="6" fill="#aaa"/>
+<g fill="#e8604c"><rect x="182" y="398" width="24" height="12" opacity=".9"/></g>
+<text x="40" y="560" font-size="10" fill="#555">Orange = TPU feet and button caps (cap optional). Lid underside 9.5 mm over the PCB.</text>
+<text x="40" y="575" font-size="10" fill="#555">77 x 53 x about 19.5 mm. Lid prints top face down, no supports.</text>
+<text x="40" y="590" font-size="10" fill="#555">Windows 1.5 mm bigger than each shroud so a ribbon plug has room.</text>
+</svg>

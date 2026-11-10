@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="680" viewBox="0 0 900 680">
+  <style>
+    .ab{fill:#1f3347;stroke:#0f1a24;stroke-width:2}
+    .sad{fill:#2c4660;stroke:#0f1a24;stroke-width:2}
+    .tpu{fill:#3b3f46;stroke:#15181c;stroke-width:1}
+    .coral{fill:#ff7a59;stroke:#c24a2c;stroke-width:1}
+    .pipe{fill:#ffd1c2;stroke:#c24a2c;stroke-width:.8}
+    .pvc{fill:#cfd3d8;stroke:#6b7480;stroke-width:1.5}
+    .cab{fill:#e3dccb;stroke:#8a7f66;stroke-width:1.5}
+    .rf{fill:#e0574a}
+    .rfz{fill:none;stroke:#e0574a;stroke-width:1.2;stroke-dasharray:4 3}
+    .cone{fill:#7fb7d6;fill-opacity:.22;stroke:#2f6f8f;stroke-width:1.2;stroke-dasharray:5 3}
+    .glass{fill:#cfe8f2;stroke:#5a8ea3;stroke-width:1.5}
+    .water{fill:#9fd0e3;fill-opacity:.6;stroke:none}
+    .wl{stroke:#2f6f8f;stroke-width:1.5}
+    .wire{fill:none;stroke:#2b2f2d;stroke-width:2;stroke-dasharray:5 3}
+    .dim{stroke:#5b6578;stroke-width:.8;fill:none}
+    .arc{fill:none;stroke:#5b6578;stroke-width:1;stroke-dasharray:4 3}
+    .t{font-family:Helvetica,Arial,sans-serif;font-size:11px;fill:#1d2533}
+    .s{font-family:Helvetica,Arial,sans-serif;font-size:10px;fill:#5b6578}
+    .ti{font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:bold;fill:#1d2533}
+  </style>
+  <text x="40" y="30" class="ti">03 DAVIT - a Tidemark column on the cabinet wall; a swing arm of stock tube reaches out over an open tank</text>
+  <text x="40" y="47" class="s">Scale 1.5 px/mm (elevation). Column 32 x 64 x 32 on the family cleat. Arm: 20 mm PVC conduit, 220 mm shown (cut to suit). Everything leaves from the foot.</text>
+
+  <!-- cabinet wall -->
+  <rect x="50" y="56" width="30" height="450" class="cab"/>
+  <text x="52" y="522" class="s">cabinet side / wall</text>
+  <!-- cleat plate and screws -->
+  <rect x="80" y="60" width="6" height="96" class="tpu"/>
+  <circle cx="64" cy="72" r="3" fill="#8a7f66"/><circle cx="64" cy="144" r="3" fill="#8a7f66"/>
+  <!-- column: brow leans back toward the wall -->
+  <polygon points="123,60 86,60 86,156 134,156 134,90" class="ab"/>
+  <rect x="86" y="150" width="48" height="6" class="tpu"/>
+  <rect x="104" y="66" width="22" height="12" class="rfz"/>
+  <rect x="112" y="68" width="8" height="7" class="rf"/>
+  <circle cx="128" cy="108" r="6" class="coral"/>
+  <circle cx="128" cy="96" r="2" class="pipe"/>
+  <text x="142" y="74" class="s">antenna in the brow</text>
+  <text x="142" y="112" class="s">coral key + eye</text>
+
+  <!-- knuckle (swivel) under the foot, USB bung beside it -->
+  <rect x="92" y="156" width="30" height="30" rx="5" class="sad"/>
+  <rect x="124" y="156" width="10" height="5" rx="2" class="tpu"/>
+  <text x="142" y="140" class="s">USB-C bung (foot)</text>
+  <text x="142" y="152" class="s">swivel knuckle below: friction pivot, 3 detents</text>
+  <!-- tube -->
+  <rect x="122" y="161" width="348" height="30" rx="2" class="pvc"/>
+  <!-- elbow cap + Eye -->
+  <rect x="440" y="156" width="60" height="38" rx="7" class="sad"/>
+  <rect x="450" y="190" width="40" height="44" class="tpu"/>
+  <rect x="455" y="194" width="30" height="42" fill="#d8dce2" stroke="#4a4f57"/>
+  <rect x="450" y="233" width="40" height="4" class="coral"/>
+  <polygon points="450,233 444,237 450,237" fill="#3b3f46"/>
+  <polygon points="490,233 496,237 490,237" fill="#3b3f46"/>
+  <!-- cable inside the tube, down the knuckle into the foot -->
+  <path class="wire" d="M470 194 L470 176 L112 176 L112 152"/>
+  <text x="250" y="206" class="s">cable runs inside the tube</text>
+  <!-- cone: apex (470,237) -> y=480: dx=243*0.577=140 -->
+  <polygon points="470,237 330,480 610,480" class="cone"/>
+
+  <!-- tank -->
+  <rect x="250" y="250" width="8" height="250" class="glass"/>
+  <rect x="712" y="250" width="8" height="250" class="glass"/>
+  <rect x="250" y="500" width="470" height="8" class="glass"/>
+  <rect x="258" y="346" width="454" height="154" class="water"/>
+  <line x1="258" y1="346" x2="712" y2="346" class="wl"/>
+  <text x="620" y="340" class="s">highest water</text>
+  <line x1="258" y1="450" x2="712" y2="450" class="wl" stroke-dasharray="6 4"/>
+  <text x="620" y="466" class="s">lowest water</text>
+  <text x="262" y="244" class="s">open tank, rim 9 mm below the face</text>
+
+  <!-- dims -->
+  <line x1="122" y1="222" x2="470" y2="222" class="dim"/><text x="262" y="236" class="s">220 to axis (150-300)</text>
+  <line x1="520" y1="237" x2="520" y2="346" class="dim"/><text x="526" y="296" class="s">73 to highest water</text>
+  <line x1="258" y1="300" x2="470" y2="300" class="dim"/><text x="330" y="296" class="s">147 to the wall</text>
+
+  <!-- plan: swing -->
+  <text x="730" y="78" class="t">Plan: swing out of the way</text>
+  <rect x="700" y="90" width="12" height="150" class="cab"/>
+  <circle cx="722" cy="210" r="5" class="ab"/>
+  <line x1="722" y1="210" x2="852" y2="210" stroke="#6b7480" stroke-width="5"/>
+  <line x1="722" y1="210" x2="814" y2="118" stroke="#9aa3ad" stroke-width="3" stroke-dasharray="4 3"/>
+  <line x1="722" y1="210" x2="722" y2="106" stroke="#9aa3ad" stroke-width="3" stroke-dasharray="4 3"/>
+  <path class="arc" d="M852 210 A130 130 0 0 0 722 80"/>
+  <text x="780" y="228" class="s">working</text>
+  <text x="734" y="130" class="s">parked</text>
+  <text x="730" y="256" class="s">detents at 0, 45, 90 deg</text>
+
+  <!-- notes (below the drawing) -->
+  <text x="100" y="560" class="t">What it is</text>
+  <text x="100" y="576" class="s">Tidemark-W, upright on a cleat, with a socket in the foot for a swivel knuckle. The arm is stock 20 mm conduit, so it never sags,</text>
+  <text x="100" y="588" class="s">costs little and is cut to length. The Eye is a printed elbow cap. Column stays on the wall, out of the splash.</text>
+  <text x="100" y="610" class="t">Containers</text>
+  <text x="100" y="626" class="s">Open tanks, sumps, tubs and ponds where the lid or the rim is not usable, and where a wall or cabinet is within about 300 mm.</text>
+  <text x="100" y="648" class="t">Serviceability</text>
+  <text x="100" y="664" class="s">Swing the arm away to reach the tank. Pull the Eye cap off the tube end to swap the probe; the cable stays in the tube.</text>
+</svg>

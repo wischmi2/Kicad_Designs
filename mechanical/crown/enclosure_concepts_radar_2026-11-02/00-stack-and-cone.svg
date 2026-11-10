@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640" font-family="Arial, Helvetica, sans-serif">
+  <style>
+    .t{fill:#1b1b1b}
+    .ttl{font-size:20px;font-weight:bold;fill:#0b1a30}
+    .sub{font-size:12.5px;fill:#444}
+    .l{font-size:1.45px;fill:#1b1b1b}
+    .ls{font-size:1.15px;fill:#555}
+    .dim{stroke:#555;stroke-width:.1;fill:none}
+    .hood{fill:#1d3557;fill-opacity:.88;stroke:#0b1a30;stroke-width:.12;fill-rule:evenodd}
+    .sole{fill:#5b7a99;stroke:#0b1a30;stroke-width:.12}
+    .pcb{fill:#2f7d4f;stroke:#14361f;stroke-width:.1}
+    .mod{fill:#d9b24a;stroke:#6b551a;stroke-width:.1}
+    .a121{fill:#f0e1a0;stroke:#6b551a;stroke-width:.1}
+    .ghost{fill:#bbb;fill-opacity:.5;stroke:#777;stroke-width:.1;stroke-dasharray:.5 .3}
+    .cone{fill:#e63946;fill-opacity:.10;stroke:#e63946;stroke-width:.14}
+    .coneE{fill:none;stroke:#e63946;stroke-width:.1;stroke-dasharray:.8 .4}
+    .cone45{fill:none;stroke:#e08a00;stroke-width:.12;stroke-dasharray:.9 .5}
+  </style>
+  <rect width="960" height="640" fill="#fbfbf8"/>
+  <text x="24" y="28" class="ttl">Radar head: layers along the beam and the cone (all concepts share this)</text>
+  <text x="24" y="46" class="sub">Section through the radar centre, along the board length (USB end left). Z up from the outer face of the radome. Dimensions in mm. Module height 1.88 is the modelled box, UNVERIFIED.</text>
+
+  <g transform="translate(110,396) scale(12)">
+    <!-- hood: left wall and roof (right side cut) -->
+    <path class="hood" d="M-3,-4 V-26.58 H36 V-24.08 H-0.5 V-4 Z"/>
+    <!-- sole with window recess -->
+    <path class="sole" d="M-3,0 H36 V-4 H29 V-1.5 H4 V-4 H-3 Z"/>
+    <circle cx="-1.75" cy="-3.2" r="1.0" fill="#e63946" fill-opacity=".7"/>
+    <!-- posts (behind section plane) and standoff stack -->
+    <rect class="ghost" x="-1.46" y="-5.88" width="8" height="1.88"/>
+    <rect class="ghost" x="0.19" y="-15.48" width="4.7" height="8"/>
+    <rect class="ghost" x="0.04" y="-19.08" width="5" height="2"/>
+    <!-- module -->
+    <rect class="mod" x="8.7" y="-5.88" width="18.6" height="1.0"/>
+    <rect class="a121" x="13.75" y="-4.88" width="5.5" height="0.88"/>
+    <!-- sensor board and feather -->
+    <rect class="pcb" x="-0" y="-7.48" width="36" height="1.6"/>
+    <rect class="pcb" x="-0" y="-17.08" width="36" height="1.6"/>
+    <rect x="33.5" y="-8.6" width="2.4" height="1.12" fill="#333"/>
+    <rect x="0" y="-20.34" width="7.35" height="3.26" fill="#9aa"/>
+    <rect x="25.4" y="-18.7" width="2" height="1.62" fill="#555"/>
+    <!-- break marks -->
+    <path d="M36,-27 V-0.2" stroke="#999" stroke-width=".12" stroke-dasharray=".6 .4"/>
+
+    <!-- cone from A121 centre (16.5,-4.0) -->
+    <path class="cone" d="M16.5,-4 L27.97,14 L5.03,14 Z"/>
+    <path class="coneE" d="M16.5,-4 L25.47,14 M16.5,-4 L7.53,14"/>
+    <path class="cone45" d="M16.5,-4 L34.5,14 M16.5,-4 L-1.5,14"/>
+    <circle cx="16.5" cy="-4" r=".45" fill="#e63946"/>
+    <text class="l" x="17.2" y="-3.1" style="fill:#a00">A121 centre</text>
+    <text class="ls" x="21.6" y="10" style="fill:#c0202e">-3 dB cone</text>
+    <text class="ls" x="21.6" y="11.5" style="fill:#c0202e">65 deg (32.5 half), 53 deg (26.5 half)</text>
+    <text class="ls" x="24" y="13.2" style="fill:#b36b00">45 deg margin line (my rule)</text>
+
+    <!-- layer brackets on the right -->
+    <g class="dim">
+      <path d="M37,0 V-26.58"/>
+      <path d="M36.6,0 H37.4 M36.6,-1.5 H37.4 M36.6,-4 H37.4 M36.6,-5.88 H37.4 M36.6,-7.48 H37.4 M36.6,-15.48 H37.4 M36.6,-17.08 H37.4 M36.6,-24.08 H37.4 M36.6,-26.58 H37.4"/>
+    </g>
+    <text class="l" x="38.2" y="-0.4">1.5  radome window, 100 % solid PETG</text>
+    <text class="l" x="38.2" y="-2.55">2.5  air gap (n = 1)</text>
+    <text class="l" x="38.2" y="-4.5" style="fill:#7a5c00">1.88  XM125 (module face to board bottom)</text>
+    <text class="l" x="38.2" y="-6.9">1.6  water level board (radar on its bottom)</text>
+    <text class="l" x="38.2" y="-11.9">8.0  Hs, nylon standoff, FFC U-fold in this gap</text>
+    <text class="l" x="38.2" y="-16.1">1.6  nRF54L15 feather</text>
+    <text class="l" x="38.2" y="-20.9">7.0  parts and headroom (J3, JST assumed 6.0 tall)</text>
+    <text class="l" x="38.2" y="-25.1">2.5  roof</text>
+    <text class="l" x="38.2" y="-28.2" style="font-weight:bold">26.6 total  (outer face to roof)</text>
+    <text class="ls" x="-2.8" y="-1.9" style="fill:#fff">sole 4.0</text>
+    <text class="ls" x="1.2" y="-9.7">board-bottom to outer face 5.88</text>
+    <text class="ls" x="0.1" y="-3.2" style="fill:#fff">post</text>
+  </g>
+
+  <!-- beam table -->
+  <g class="t" font-size="13">
+    <text x="640" y="470" font-weight="bold" font-size="14">Beam radius at the water (-3 dB)</text>
+    <text x="640" y="490">outer face to water   H plane   E plane</text>
+    <text x="640" y="510">   70 mm                47 mm      37 mm</text>
+    <text x="640" y="528">  100 mm                66 mm      52 mm</text>
+    <text x="640" y="546">  150 mm                98 mm      77 mm</text>
+    <text x="640" y="564">  200 mm               130 mm    102 mm</text>
+    <text x="640" y="582">  300 mm               194 mm    152 mm</text>
+    <text x="640" y="604" font-size="11.5" fill="#444">radius = (distance + 4.0) x tan 32.5 / 26.5 deg.</text>
+    <text x="640" y="620" font-size="11.5" fill="#444">Window 25 x 21 mm covers the cone at the wall (r 2.5).</text>
+  </g>
+</svg>

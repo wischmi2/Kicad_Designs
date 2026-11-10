@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="430" viewBox="0 0 900 430">
+  <style>
+    .ab{fill:#1f3347;stroke:#0f1a24;stroke-width:2}
+    .brow{fill:#2c4660;stroke:#0f1a24;stroke-width:1}
+    .sand{fill:#efe9dc;stroke:#1d2533;stroke-width:2}
+    .sbrow{fill:#e2ded5;stroke:#1d2533;stroke-width:1}
+    .w{fill:#20262f}
+    .tide{fill:#ff7a59;fill-opacity:.6;stroke:#c24a2c;stroke-width:1}
+    .coral{fill:#ff7a59;stroke:#c24a2c;stroke-width:1}
+    .sol{fill:#2b3f63;stroke:#9fb0c4;stroke-width:1}
+    .ant{fill:none;stroke:#e0574a;stroke-width:1.5;stroke-dasharray:4 3}
+    .foot{fill:#3b3f46;stroke:#15181c;stroke-width:1}
+    .t{font-family:Helvetica,Arial,sans-serif;font-size:11px;fill:#1d2533}
+    .s{font-family:Helvetica,Arial,sans-serif;font-size:10px;fill:#5b6578}
+    .ti{font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:bold;fill:#1d2533}
+  </style>
+  <text x="40" y="30" class="ti">05 FAMILY - "Brow, Tide line and Service foot" across the gateway and the Feather node</text>
+  <text x="40" y="47" class="s">Scale 2 px/mm. Antenna always under a brow or crown (plastic only); one coral key; one coral light; every port and the probe leave from one service foot that faces down.</text>
+
+  <!-- Ledger gateway (existing, 82 x 100) -->
+  <rect x="40" y="110" width="164" height="200" rx="12" class="ab"/>
+  <rect x="44" y="114" width="156" height="26" rx="10" class="brow"/>
+  <rect x="80" y="118" width="72" height="16" class="ant"/>
+  <rect x="74" y="150" width="84" height="64" rx="3" class="w"/>
+  <circle cx="117" cy="228" r="9" class="coral"/>
+  <rect x="110" y="282" width="16" height="6" rx="3" class="tide"/>
+  <text x="40" y="330" class="t">Pouch gateway (Ledger, modelled)</text>
+  <text x="40" y="344" class="s">82 x 100 x 24, Abyss PETG</text>
+
+  <!-- Tidemark 32 x 78 -->
+  <rect x="270" y="154" width="64" height="128" rx="8" class="ab"/>
+  <rect x="270" y="282" width="64" height="28" rx="6" class="foot"/>
+  <rect x="273" y="157" width="58" height="38" rx="6" class="brow"/>
+  <rect x="306" y="170" width="22" height="16" class="ant"/>
+  <circle cx="316" cy="218" r="2.5" class="tide"/>
+  <circle cx="322" cy="228" r="7" class="coral"/>
+  <text x="250" y="330" class="t">Feather + sens1: Tidemark</text>
+  <text x="250" y="344" class="s">32 x 78 x 32, Abyss PETG, rim / cleat</text>
+
+  <!-- Slate 104 x 116 (top view) at 1 px/mm so it fits -->
+  <rect x="420" y="214" width="104" height="82" rx="8" fill="#3a3f47" stroke="#15181c" stroke-width="2"/>
+  <rect x="424" y="218" width="96" height="74" rx="3" class="sol"/>
+  <rect x="420" y="180" width="104" height="34" rx="6" class="ab"/>
+  <rect x="466" y="183" width="12" height="9" class="ant"/>
+  <circle cx="455" cy="188" r="3.5" class="coral"/>
+  <circle cx="460" cy="196" r="1.5" class="tide"/>
+  <rect x="412" y="185" width="8" height="24" class="foot"/>
+  <text x="410" y="330" class="t">Feather + sens1: Slate</text>
+  <text x="410" y="344" class="s">104 x 116 (drawn at 1 px/mm), Abyss spine variant</text>
+
+  <!-- Shard at 1 px/mm -->
+  <rect x="640" y="138" width="90" height="140" rx="3" class="sand"/>
+  <polygon points="640,138 668,128 696,120 730,138" fill="#ffd9cc" stroke="#c24a2c" stroke-width="1.5"/>
+  <rect x="670" y="127" width="20" height="10" class="ant"/>
+  <rect x="645" y="161" width="79" height="100" rx="2" class="sol"/>
+  <rect x="640" y="278" width="90" height="10" class="foot"/>
+  <text x="630" y="330" class="t">Feather + sens1: Shard</text>
+  <text x="630" y="344" class="s">90 x 56 x 158 (1 px/mm), Sand ASA</text>
+
+  <text x="40" y="378" class="t">Palette</text>
+  <rect x="40" y="388" width="40" height="20" fill="#1f3347"/><text x="86" y="402" class="s">Abyss (indoor wet: PETG)</text>
+  <rect x="230" y="388" width="40" height="20" fill="#efe9dc" stroke="#1d2533"/><text x="276" y="402" class="s">Sand (outdoor sun: ASA, keeps the cell cooler)</text>
+  <rect x="500" y="388" width="40" height="20" fill="#ff7a59"/><text x="546" y="402" class="s">Coral (key, light, crown)</text>
+  <rect x="680" y="388" width="40" height="20" fill="#3b3f46"/><text x="726" y="402" class="s">Graphite TPU (foot, bungs)</text>
+</svg>

@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="540" viewBox="0 0 900 540">
+  <style>
+    .ab{fill:#1f3347;stroke:#0f1a24;stroke-width:2}
+    .brow{fill:#2c4660;stroke:#0f1a24;stroke-width:1}
+    .sad{fill:#2c4660;stroke:#0f1a24;stroke-width:2}
+    .tpu{fill:#3b3f46;stroke:#15181c;stroke-width:1}
+    .coral{fill:#ff7a59;stroke:#c24a2c;stroke-width:1}
+    .pipe{fill:#ffd1c2;stroke:#c24a2c;stroke-width:.8}
+    .pcb{fill:#1f5a40;stroke:#0f3826;stroke-width:1}
+    .pcb2{fill:#2f6f8f;stroke:#173a4c;stroke-width:1}
+    .bat{fill:#c9ccd1;fill-opacity:.6;stroke:#4a4f57;stroke-width:1;stroke-dasharray:5 3}
+    .rf{fill:#e0574a}
+    .rfz{fill:none;stroke:#e0574a;stroke-width:1.2;stroke-dasharray:4 3}
+    .cone{fill:#7fb7d6;fill-opacity:.22;stroke:#2f6f8f;stroke-width:1.2;stroke-dasharray:5 3}
+    .glass{fill:#cfe8f2;stroke:#5a8ea3;stroke-width:1.5}
+    .water{fill:#9fd0e3;fill-opacity:.6;stroke:none}
+    .wl{stroke:#2f6f8f;stroke-width:1.5}
+    .cab{fill:none;stroke:#c08a2e;stroke-width:1.6;stroke-dasharray:4 3}
+    .dim{stroke:#5b6578;stroke-width:.8;fill:none}
+    .dash{fill:none;stroke:#9fb0c4;stroke-width:1;stroke-dasharray:4 3}
+    .t{font-family:Helvetica,Arial,sans-serif;font-size:11px;fill:#1d2533}
+    .s{font-family:Helvetica,Arial,sans-serif;font-size:10px;fill:#5b6578}
+    .lbl{font-family:Helvetica,Arial,sans-serif;font-size:9px;fill:#c9d3de}
+    .ti{font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:bold;fill:#1d2533}
+  </style>
+  <text x="40" y="30" class="ti">01 PLUMB - the electronics hang on the dry side of the wall; one hook carries a boom over the rim</text>
+  <text x="40" y="47" class="s">Scale 2 px/mm (front and section). Column 32 x 64 x 32 (Tidemark without the SMA heel). Boom 100 mm to the transducer axis. Abyss PCTG/PETG, graphite TPU, coral lip.</text>
+
+  <!-- FRONT VIEW: column 64 x 128 px at (70,150); saddle ghost behind -->
+  <text x="70" y="128" class="t">Front (from the room side)</text>
+  <rect x="88" y="124" width="36" height="30" class="dash"/>
+  <rect x="70" y="150" width="64" height="128" rx="8" class="ab"/>
+  <rect x="72" y="152" width="60" height="40" rx="7" class="brow"/>
+  <rect x="108" y="158" width="18" height="14" class="rfz"/>
+  <rect x="118" y="160" width="5" height="9" class="rf"/>
+  <circle cx="92" cy="226" r="2.6" class="pipe"/>
+  <circle cx="104" cy="240" r="7" class="coral"/>
+  <rect x="78" y="278" width="48" height="8" rx="2" class="tpu"/>
+  <rect x="82" y="280" width="18" height="4" rx="1" fill="#555b63"/>
+  <ellipse cx="114" cy="282" rx="6" ry="2.4" fill="#555b63"/>
+  <line x1="70" y1="310" x2="134" y2="310" class="dim"/><text x="92" y="323" class="s">32</text>
+  <line x1="54" y1="150" x2="54" y2="278" class="dim"/><text x="30" y="218" class="s">64</text>
+  <text x="140" y="172" class="s">antenna (plastic only)</text>
+  <text x="140" y="184" class="s">in the brow</text>
+  <text x="140" y="230" class="s">coral eye + key</text>
+  <text x="140" y="270" class="s">USB-C bung</text>
+  <text x="140" y="282" class="s">and cable slot</text>
+  <text x="140" y="294" class="s">in the foot, face down</text>
+
+  <!-- SECTION. rim top y=140; wall x 310..326 (8 mm); outside left, water right -->
+  <text x="300" y="84" class="t">Section through the wall: room side left, water side right</text>
+  <rect x="310" y="140" width="16" height="340" class="glass"/>
+  <text x="332" y="470" class="s">wall 6-19 mm</text>
+  <rect x="326" y="340" width="360" height="140" class="water"/>
+  <line x1="326" y1="340" x2="686" y2="340" class="wl"/>
+  <text x="560" y="332" class="s">highest water</text>
+  <line x1="326" y1="440" x2="686" y2="440" class="wl" stroke-dasharray="6 4"/>
+  <text x="560" y="456" class="s">lowest water</text>
+
+  <!-- cone from face (526,194): half-angle 30, down to y=480 -> dx = 286*0.577 = 165 -->
+  <polygon points="526,194 361,480 691,480" class="cone"/>
+
+  <!-- column body (brow leans back toward the wall) -->
+  <polygon points="250.6,150 304,150 304,278 240,278 240,190" class="ab"/>
+  <rect x="240" y="270" width="64" height="8" class="tpu"/>
+  <!-- boards (side-on): main pcb, sens pcb, battery -->
+  <rect x="264" y="160" width="3" height="104" class="pcb"/>
+  <rect x="283" y="160" width="3" height="104" class="pcb2"/>
+  <rect x="288" y="190" width="13" height="74" class="bat"/>
+  <rect x="252" y="162" width="12" height="9" class="rf"/>
+  <text x="246" y="212" class="lbl">main</text>
+  <!-- key and pipe -->
+  <rect x="236" y="236" width="5" height="14" class="coral"/>
+  <rect x="241" y="241" width="23" height="3" class="tpu"/>
+  <rect x="241" y="222" width="22" height="3" class="pipe"/>
+  <!-- saddle: back plate, bridge, inner leg, boom -->
+  <path class="sad" d="M304 150 L304 118 L560 118 Q568 118 568 127 Q568 136 560 136 L338 136 L338 216 L330 216 L330 136 L310 136 L310 150 Z"/>
+  <rect x="304" y="150" width="6" height="128" class="sad"/>
+  <!-- clamp pad + thumbscrew on the inner leg -->
+  <rect x="326" y="182" width="4" height="22" class="tpu"/>
+  <rect x="338" y="188" width="14" height="10" class="coral"/>
+  <line x1="330" y1="193" x2="338" y2="193" stroke="#15181c" stroke-width="2"/>
+  <text x="344" y="232" class="s">thumbscrew + TPU pad</text>
+  <!-- cable channel (dashed) from foot up the back plate and along the boom -->
+  <path d="M296 278 L296 296 Q296 302 302 302 L307 302 L307 130 L526 130" fill="none" stroke="#2b2f2d" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="372" y="112" class="s">cable runs in a groove under a snap-on cover</text>
+  <!-- Eye -->
+  <rect x="496" y="136" width="60" height="54" rx="6" class="sad"/>
+  <rect x="502" y="140" width="48" height="50" class="tpu"/>
+  <rect x="506" y="140" width="40" height="52" fill="#d8dce2" stroke="#4a4f57"/>
+  <rect x="500" y="190" width="52" height="4" class="coral"/>
+  <polygon points="500,190 492,194 500,194" fill="#1f3347"/>
+  <polygon points="552,190 560,194 552,194" fill="#1f3347"/>
+  <text x="566" y="168" class="s">Eye: TPU sleeve, dia 20 probe</text>
+  <text x="566" y="180" class="s">coral lip, 45 deg exit chamfer</text>
+
+  <!-- dims -->
+  <line x1="310" y1="140" x2="250" y2="140" class="dim"/><text x="262" y="134" class="s">rim top</text>
+  <line x1="608" y1="194" x2="608" y2="340" class="dim"/><text x="614" y="270" class="s">73 to highest water</text>
+  <text x="614" y="282" class="s">(70 mm minimum)</text>
+  <line x1="326" y1="104" x2="526" y2="104" class="dim"/><text x="400" y="100" class="s">100 to axis</text>
+  <line x1="590" y1="140" x2="590" y2="194" class="dim"/><text x="596" y="164" class="s">face 27 below rim</text>
+
+  <!-- notes -->
+  <text x="40" y="360" class="t">What it is</text>
+  <text x="40" y="376" class="s">A Tidemark column on the outside of the wall.</text>
+  <text x="40" y="388" class="s">A planar saddle (back plate, bridge, inner leg)</text>
+  <text x="40" y="400" class="s">hangs it on the rim. The bridge keeps going</text>
+  <text x="40" y="412" class="s">inboard as a 100 mm boom with the Eye at its tip.</text>
+  <text x="40" y="436" class="t">Containers</text>
+  <text x="40" y="452" class="s">Open-top sumps, tubs, glass or acrylic tanks, RO</text>
+  <text x="40" y="464" class="s">and top-off tubs with the lid off or notched.</text>
+  <text x="40" y="476" class="s">Not for lids that must close over the rim.</text>
+  <text x="40" y="500" class="s">Needs rim-to-highest-water of 100 mm or more</text>
+  <text x="40" y="512" class="s">(a 40 mm riser block lifts the boom if less).</text>
+</svg>

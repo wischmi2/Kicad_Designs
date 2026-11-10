@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560">
+  <defs>
+    <pattern id="hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="5" height="5" fill="#e0574a" fill-opacity=".12"/>
+      <line x1="0" y1="0" x2="0" y2="5" stroke="#e0574a" stroke-width="1.2"/>
+    </pattern>
+  </defs>
+  <style>
+    .pcb{fill:#1f5a40;stroke:#0f3826;stroke-width:1.5}
+    .pcb2{fill:#2f6f8f;stroke:#173a4c;stroke-width:1.5}
+    .conn{fill:#d2a64b;stroke:#8a6420;stroke-width:1}
+    .ic{fill:#2b2f2d;stroke:#7a827d;stroke-width:.8}
+    .hole{fill:#d8b45c}
+    .drill{fill:#f4f2ee}
+    .npth{fill:#f4f2ee;stroke:#f2f4ef;stroke-width:1}
+    .rfk{fill:url(#hatch);stroke:#e0574a;stroke-width:1.2}
+    .ant{fill:#f2f4ef;stroke:#e0574a;stroke-width:1}
+    .sw{fill:#f2f4ef;stroke:#7a827d;stroke-width:1}
+    .led{fill:#ffcc33;stroke:#8a6420;stroke-width:.6}
+    .bat{fill:#c9ccd1;fill-opacity:.5;stroke:#4a4f57;stroke-width:1.2;stroke-dasharray:6 4}
+    .ffc{fill:none;stroke:#c08a2e;stroke-width:2.2}
+    .so{fill:#9aa3ad;stroke:#4a4f57;stroke-width:.8}
+    .dim{stroke:#5b6578;stroke-width:.8;fill:none}
+    .env{stroke:#5b6578;stroke-width:1;stroke-dasharray:4 3;fill:none}
+    .t{font-family:Helvetica,Arial,sans-serif;font-size:11px;fill:#1d2533}
+    .tw{font-family:Helvetica,Arial,sans-serif;font-size:9px;fill:#f2f4ef;text-anchor:middle}
+    .tk{font-family:Helvetica,Arial,sans-serif;font-size:9px;fill:#2a1d05;text-anchor:middle}
+    .s{font-family:Helvetica,Arial,sans-serif;font-size:10px;fill:#5b6578}
+    .ti{font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:bold;fill:#1d2533}
+  </style>
+  <text x="40" y="30" class="ti">00 REFERENCE - nRF54L15 feather (Proposal C) + sens1 stack, the base for every concept</text>
+  <text x="40" y="47" class="s">Scale 6 px/mm. Top view from nrf54l15_feather.kicad_pcb (2026-10-25, after run 2). Feather coordinates: fx from the USB end, fy from the AE1/SW1 long edge.</text>
+
+  <!-- TOP VIEW: x = 60 + 6 fx, y = 227.16 - 6 fy -->
+  <rect class="pcb" x="60" y="90" width="304.8" height="137.16" rx="15.24"/>
+  <!-- holes -->
+  <circle class="hole" cx="75.24" cy="211.92" r="10.2"/><circle class="drill" cx="75.24" cy="211.92" r="8.1"/>
+  <circle class="hole" cx="75.24" cy="105.24" r="10.2"/><circle class="drill" cx="75.24" cy="105.24" r="8.1"/>
+  <circle class="npth" cx="349.56" cy="211.92" r="8.1"/>
+  <circle class="npth" cx="349.56" cy="105.24" r="8.1"/>
+  <!-- antenna keep-out and AE1 -->
+  <rect class="rfk" x="312.9" y="188.4" width="51.9" height="38.76"/>
+  <rect class="ant" x="323.2" y="200.9" width="9.6" height="19.2"/>
+  <text class="tw" x="300" y="222">AE1</text>
+  <!-- connectors -->
+  <rect class="conn" x="60" y="131.5" width="44.6" height="54.2"/><text class="tk" x="82" y="157">J1</text><text class="tk" x="82" y="168">USB-C</text>
+  <rect class="conn" x="111" y="90" width="38.1" height="47.7"/><text class="tk" x="130" y="112">U5</text><text class="tk" x="130" y="123">solar</text>
+  <rect class="conn" x="111" y="179.5" width="38.1" height="47.7"/><text class="tk" x="130" y="200">U4</text><text class="tk" x="130" y="211">battery</text>
+  <rect class="conn" x="150.8" y="180.8" width="44.7" height="41.6"/><text class="tk" x="173" y="204">J3 SWD</text>
+  <rect class="conn" x="337.8" y="130.4" width="26" height="56.3"/><text class="tk" x="351" y="158">CN1</text>
+  <rect class="sw" x="209.4" y="207.1" width="18" height="15"/><text class="tk" x="218.4" y="217.5">SW1</text>
+  <rect class="led" x="240.6" y="193.8" width="6" height="3.6"/><text class="tw" x="244" y="189">LED1</text>
+  <!-- ICs -->
+  <rect class="ic" x="173.1" y="99" width="30" height="30"/><text class="tw" x="188" y="117">AEM</text>
+  <rect class="ic" x="212.4" y="117" width="30" height="30"/><text class="tw" x="227" y="135">nPM</text>
+  <rect class="ic" x="272.4" y="119.4" width="36" height="36"/><text class="tw" x="290" y="140">nRF54</text>
+  <!-- cable directions -->
+  <path d="M52 158 L40 152 L40 164 Z" fill="#2e6b4e"/><text class="s" x="4" y="180">USB</text>
+  <path d="M130 84 L124 74 L136 74 Z" fill="#2e6b4e"/><text class="s" x="142" y="80">solar lead leaves +fy</text>
+  <path d="M130 233 L124 243 L136 243 Z" fill="#2e6b4e"/><text class="s" x="142" y="243">battery lead leaves -fy</text>
+  <path d="M372 158 L384 152 L384 164 Z" fill="#2e6b4e"/><text class="s" x="388" y="150">FFC folds</text><text class="s" x="388" y="162">down to sens1</text>
+  <line class="dim" x1="60" y1="252" x2="364.8" y2="252"/><text class="s" x="190" y="265">50.8 mm</text>
+  <line class="dim" x1="384" y1="90" x2="384" y2="227"/><text class="s" x="388" y="205">22.86</text>
+
+  <!-- key numbers -->
+  <text x="470" y="96" class="t">Positions (fx, fy) in mm, from the board file</text>
+  <text x="470" y="114" class="s">SW1 Omron B3U-1000P, top-actuated: (26.40, 2.10), 1.6 mm tall, 0.15 mm travel, 1.5 N</text>
+  <text x="470" y="128" class="s">LED1 ROHM SML-P12Y (yellow, 1.0 x 0.6 x 0.2): (30.60, 5.26)</text>
+  <text x="470" y="142" class="s">AE1 2450AT18A100E: (44.67, 2.78); keep-out fx 42.15-50.8, fy 0-6.46</text>
+  <text x="470" y="156" class="s">J3 FTSH-105: (18.85, 4.26), about 5.2-6.0 mm tall (sources disagree)</text>
+  <text x="470" y="170" class="s">U4 / U5 JST PH side entry: fx 8.5-14.85 on the two long edges</text>
+  <text x="470" y="184" class="s">CN1 Molex 503480-1400: centre (48.48, 11.43), 1.0 mm tall</text>
+  <text x="470" y="198" class="s">Holes 2.7 mm at (2.54|48.26, 2.54|20.32); USB end plated GND,</text>
+  <text x="470" y="212" class="s">far end NPTH: nylon screws, no brass inserts within 15 mm of AE1</text>
+
+  <!-- SIDE VIEW OF THE STACK: y = 330 - 6 z, main board bottom z = 0, Hs = 8 for the sketch -->
+  <text x="40" y="300" class="t">Side view of the stack (sketch values: Hs = 8, battery 7 mm thick; both are parameters)</text>
+  <line class="env" x1="60" y1="278.4" x2="364.8" y2="278.4"/>
+  <text class="s" x="372" y="282">Tm = 7.0 top envelope (tallest part ~6.0-6.5 + 0.5)</text>
+  <rect class="pcb" x="60" y="320.4" width="304.8" height="9.6"/>
+  <text class="s" x="372" y="328">main board 1.6, all parts on top, flat bottom</text>
+  <rect class="conn" x="60" y="300.6" width="44.6" height="19.8"/>
+  <rect class="conn" x="111" y="284.4" width="38.1" height="36"/>
+  <rect class="conn" x="150.8" y="284.4" width="44.7" height="36"/>
+  <rect class="sw" x="209.4" y="310.8" width="18" height="9.6"/>
+  <rect class="conn" x="337.8" y="314.4" width="26" height="6"/>
+  <rect class="ant" x="323.2" y="314.4" width="9.6" height="6"/>
+  <!-- standoffs -->
+  <rect class="so" x="69.2" y="330" width="12" height="48"/>
+  <rect class="so" x="343.5" y="330" width="12" height="48"/>
+  <text class="s" x="86" y="358">Hs standoff (brass OK here)</text>
+  <text class="s" x="232" y="358">nylon standoff here</text>
+  <!-- sens1 -->
+  <rect class="pcb2" x="60" y="378" width="304.8" height="9.6"/>
+  <text class="s" x="372" y="386">sens1 1.6, same outline and holes (re-layout in progress)</text>
+  <!-- SMA on sens1, USB end -->
+  <rect class="conn" x="28" y="372" width="40" height="21"/>
+  <text class="s" x="4" y="410">sens1 J1 SMA (assumed edge-mount,</text>
+  <text class="s" x="4" y="422">about 5 mm past the USB edge)</text>
+  <!-- FFC -->
+  <path class="ffc" d="M362.7 323.5 L368 323.5 A24 24 0 0 1 368 371.5 L362.7 371.5"/>
+  <text class="s" x="398" y="350">F = (Hs + 1.6)/2 + 1.5 FFC loop</text>
+  <!-- battery -->
+  <rect class="bat" x="72" y="393.6" width="240" height="42"/>
+  <text class="s" x="150" y="418">battery: L x W x T are parameters</text>
+  <!-- dims -->
+  <line class="dim" x1="44" y1="320.4" x2="44" y2="278.4"/><text class="s" x="18" y="302">Tm</text>
+  <line class="dim" x1="420" y1="330" x2="420" y2="378"/><text class="s" x="426" y="368">Hs (unknown until sens1 is laid out)</text>
+  <line class="dim" x1="420" y1="393.6" x2="420" y2="435.6"/><text class="s" x="426" y="418">B_T + 1 mm air</text>
+
+  <text x="40" y="470" class="t">Rules every concept follows</text>
+  <text x="40" y="488" class="s">1. Antenna corner (far end, fy = 0 edge) goes up or outward, away from water, the panel, the battery and every screw. Plastic only within 15 mm; no CF or metal-filled filament.</text>
+  <text x="40" y="502" class="s">2. The USB end is the service end: J1 sits 0.5 mm from the wall; sens1's SMA needs a "heel" pocket P1 = 14 mm (pigtail) or about 3 mm (PCB request R2).</text>
+  <text x="40" y="516" class="s">3. Battery ends at least 10 mm short of the far end. SW1 and LED1 face the user through a TPU key and a light pipe; both sit near the fy = 0 edge.</text>
+  <text x="40" y="530" class="s">4. Stack depth D = Tm + 1.6 + Hs + 1.6 + S1b (sens1 bottom parts). Inner length at main level = 0.5 + 50.8 + F.</text>
+</svg>

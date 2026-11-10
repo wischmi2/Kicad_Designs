@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="740" viewBox="0 0 900 740">
+  <style>
+    .ab{fill:#1f3347;stroke:#0f1a24;stroke-width:2}
+    .sad{fill:#2c4660;stroke:#0f1a24;stroke-width:2}
+    .tpu{fill:#3b3f46;stroke:#15181c;stroke-width:1}
+    .coral{fill:#ff7a59;stroke:#c24a2c;stroke-width:1}
+    .glass{fill:#cfe8f2;stroke:#5a8ea3;stroke-width:1.5}
+    .cab{fill:#e3dccb;stroke:#8a7f66;stroke-width:1.5}
+    .water{fill:#9fd0e3;fill-opacity:.55;stroke:none}
+    .rfz{fill:none;stroke:#e0574a;stroke-width:1.2;stroke-dasharray:4 3}
+    .wire{fill:none;stroke:#2b2f2d;stroke-width:2}
+    .dim{stroke:#5b6578;stroke-width:.8;fill:none}
+    .pvc{fill:#cfd3d8;stroke:#6b7480;stroke-width:1.5}
+    .t{font-family:Helvetica,Arial,sans-serif;font-size:11px;fill:#1d2533}
+    .s{font-family:Helvetica,Arial,sans-serif;font-size:10px;fill:#5b6578}
+    .ti{font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:bold;fill:#1d2533}
+  </style>
+  <text x="30" y="28" class="ti">02 BERTH - a wall monolith: node on the shoulder, a parking bay for the probe, a post for the slack cable (kept, revised 2026-10-26)</text>
+  <text x="30" y="45" class="s">Front and side at 2 px/mm. Overall 62 W x 36 D x 190 H. In service the probe lives in the tank on a remote Hold; the Berth is where it rests, is cleaned and is calibrated. DO node shown.</text>
+
+  <!-- FRONT VIEW -->
+  <text x="60" y="84" class="t">Front</text>
+  <rect x="104" y="92" width="162" height="392" rx="4" fill="#f1efe9" stroke="#c8c2b2"/>
+  <text x="108" y="506" class="s">cleat plate 80 x 195 x 5</text>
+  <path class="ab" d="M124 240 L124 132 Q124 100 156 100 L190 100 L190 240 Z"/>
+  <path d="M124 132 L190 132" stroke="#0f1a24"/>
+  <circle cx="150" cy="150" r="3" fill="#ffd1c2" stroke="#c24a2c"/><circle cx="170" cy="158" r="7" class="coral"/>
+  <text x="130" y="206" class="t" style="font-size:16px;font-weight:bold;fill:#c9d3de">do</text>
+  <rect x="124" y="226" width="66" height="14" fill="#4fc3dc"/>
+  <rect x="132" y="102" width="40" height="26" class="rfz"/>
+  <rect x="204" y="100" width="56" height="380" rx="8" class="ab"/>
+  <rect x="210" y="104" width="44" height="12" rx="3" fill="#4fc3dc"/>
+  <rect x="204" y="430" width="56" height="50" rx="8" class="tpu"/>
+  <rect x="212" y="438" width="40" height="40" rx="6" fill="#9fd0e3" opacity=".6"/>
+  <rect x="220" y="162" width="24" height="300" rx="6" fill="#d9dde2" stroke="#4a4f57"/>
+  <rect x="220" y="162" width="24" height="12" fill="#4fc3dc"/>
+  <rect x="214" y="186" width="36" height="14" rx="4" class="tpu"/>
+  <path class="wire" d="M232 162 C232 190 196 202 172 244"/>
+  <rect x="164" y="240" width="16" height="26" rx="5" class="tpu"/>
+  <rect x="142" y="276" width="30" height="130" rx="4" fill="#2c4660" stroke="#0f1a24" stroke-width="1.5"/>
+  <rect x="124" y="270" width="66" height="8" class="sad"/><rect x="124" y="404" width="66" height="8" class="sad"/>
+  <path d="M144 288 L170 294 M144 300 L170 306 M144 312 L170 318 M144 324 L170 330 M144 336 L170 342 M144 348 L170 354 M144 360 L170 366 M144 372 L170 378" stroke="#2b2f2d" stroke-width="2.4"/>
+  <text x="108" y="430" class="s">cable post, 4-6 turns</text>
+  <text x="268" y="130" class="s">node column (same cartridge as Perch)</text>
+  <text x="268" y="193" class="s">upper TPU clamp</text>
+  <text x="268" y="460" class="s">soaker cup, TPU insert</text>
+  <text x="268" y="300" class="s">probe parks tip-down in the cup</text>
+  <text x="268" y="312" class="s">cable runs to the boot on the foot</text>
+  <text x="268" y="324" class="s">(spare length on the post)</text>
+  <line x1="92" y1="100" x2="92" y2="480" class="dim"/><text x="70" y="294" class="s">190</text>
+  <line x1="124" y1="86" x2="190" y2="86" class="dim"/><text x="146" y="80" class="s">32</text>
+  <line x1="204" y1="86" x2="260" y2="86" class="dim"/><text x="222" y="80" class="s">28</text>
+
+  <!-- SIDE -->
+  <text x="470" y="84" class="t">Side</text>
+  <rect x="470" y="92" width="22" height="400" class="cab"/>
+  <rect x="492" y="96" width="10" height="392" fill="#2c4660" stroke="#0f1a24"/>
+  <path class="ab" d="M502 100 L502 240 L569 240 L569 140 L548 100 Z"/>
+  <rect x="502" y="226" width="67" height="14" fill="#4fc3dc"/>
+  <path class="ab" d="M502 240 L502 480 L558 480 L558 240 Z" opacity=".95"/>
+  <rect x="528" y="162" width="24" height="300" rx="6" fill="#d9dde2" stroke="#4a4f57"/>
+  <rect x="520" y="186" width="40" height="14" rx="4" class="tpu"/>
+  <rect x="520" y="430" width="38" height="50" rx="8" class="tpu"/>
+  <text x="580" y="126" class="s">node 33.5 deep</text>
+  <text x="566" y="360" class="s">tower 36 deep:</text>
+  <text x="566" y="372" class="s">probe stands 18 mm</text>
+  <text x="566" y="384" class="s">clear of the plate</text>
+  <text x="474" y="510" class="s">wall: 2 screws (keyholes at 60 mm) or VHB</text>
+
+  <!-- HOLDS -->
+  <text x="640" y="84" class="t">Remote Holds (in service)</text>
+  <rect x="650" y="130" width="8" height="140" class="glass"/>
+  <path class="sad" d="M640 110 L702 110 L702 124 L668 124 L668 160 L658 160 L658 124 L640 124 Z"/>
+  <rect x="664" y="160" width="40" height="22" rx="4" class="sad"/>
+  <rect x="680" y="160" width="12" height="22" class="tpu"/>
+  <rect x="680" y="182" width="12" height="80" rx="4" fill="#d9dde2" stroke="#4a4f57"/>
+  <text x="640" y="296" class="s">A Rim Hold</text>
+  <rect x="750" y="120" width="8" height="150" class="glass"/>
+  <path d="M758 150 L778 144 L778 172 L758 166 Z" fill="#3b3f46" stroke="#15181c"/>
+  <rect x="778" y="150" width="30" height="14" rx="4" class="sad"/>
+  <rect x="790" y="150" width="12" height="14" class="tpu"/>
+  <rect x="790" y="164" width="12" height="80" rx="4" fill="#d9dde2" stroke="#4a4f57"/>
+  <text x="742" y="296" class="s">B Glass Hold</text>
+  <rect x="842" y="120" width="18" height="150" class="pvc"/>
+  <rect x="838" y="150" width="26" height="8" class="sad"/>
+  <text x="826" y="296" class="s">C Pipe clamp</text>
+  <text x="640" y="330" class="s">One collet on each: split TPU, bore 11.5 / 16.</text>
+  <text x="640" y="342" class="s">Printed in PCTG, no metal in the water.</text>
+  <text x="640" y="354" class="s">Same inner leg and collet as Perch.</text>
+  <text x="640" y="382" class="t">Why a bay</text>
+  <text x="640" y="398" class="s">pH and ORP probes must not dry out; all of them</text>
+  <text x="640" y="410" class="s">need rinsing and calibration. The cup holds a</text>
+  <text x="640" y="422" class="s">little storage or calibration liquid; a drip tray</text>
+  <text x="640" y="434" class="s">under it keeps the cabinet dry. Never RO water</text>
+  <text x="640" y="446" class="s">for pH storage (Bluelab). Check DO / EC datasheets.</text>
+  <text x="640" y="470" class="t">Needs</text>
+  <text x="640" y="486" class="s">A wall or cabinet panel within reach of the</text>
+  <text x="640" y="498" class="s">1 m cable (an SMA extension cable for further).</text>
+
+  <!-- ROW -->
+  <text x="30" y="548" class="t">Berth Row: a shared 80 mm-pitch rail takes any node (the family case)</text>
+  <rect x="30" y="562" width="400" height="8" class="cab"/>
+  <rect x="40" y="574" width="52" height="72" rx="8" class="ab"/><rect x="40" y="634" width="52" height="8" fill="#4fae7b"/><text x="52" y="606" class="s" style="fill:#c9d3de">ph</text>
+  <rect x="120" y="574" width="52" height="72" rx="8" class="ab"/><rect x="120" y="634" width="52" height="8" fill="#e8b23a"/><text x="130" y="606" class="s" style="fill:#c9d3de">orp</text>
+  <rect x="200" y="574" width="52" height="72" rx="8" class="ab"/><rect x="200" y="634" width="52" height="8" fill="#4fc3dc"/><text x="212" y="606" class="s" style="fill:#c9d3de">do</text>
+  <rect x="280" y="574" width="52" height="72" rx="8" class="ab"/><rect x="280" y="634" width="52" height="8" fill="#9a82d6"/><text x="292" y="606" class="s" style="fill:#c9d3de">ec</text>
+  <rect x="360" y="574" width="52" height="72" rx="8" class="ab"/><rect x="360" y="634" width="52" height="8" fill="#e9e4d4"/><text x="370" y="606" class="s" style="fill:#c9d3de">lvl</text>
+  <text x="30" y="668" class="s">One rail, one probe rack below (4-5 cups, like Neptune's magnetic probe rack). Nodes lift off singly; the rack serves all.</text>
+  <text x="470" y="548" class="t">Honest limits</text>
+  <text x="470" y="564" class="s">Tall (190) and two-part: wall unit plus a Hold per probe.</text>
+  <text x="470" y="576" class="s">Only worth it if probes are pulled out often for cal.</text>
+  <text x="470" y="588" class="s">Cup spills if the wall is knocked: lid or sponge only.</text>
+  <text x="30" y="708" class="s">Antenna sits in the node's brow at the top of the wall unit, as high as the cabinet allows; keep 15 mm clear of metal cabinet fittings and at least 25 mm from water.</text>
+</svg>

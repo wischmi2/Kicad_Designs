@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 500" width="780" height="500" font-family="Arial, Helvetica, sans-serif">
+  <style>
+    .ttl{font-size:17px;font-weight:bold;fill:#0b1a30}
+    .sub{font-size:11.5px;fill:#444}
+    .t{font-size:11px;fill:#222}
+    .l{font-size:2.5px;fill:#1b1b1b}
+    .crown{fill:#dfe6ee;stroke:#0b1a30;stroke-width:.15}
+    .sole{fill:#5b7a99;stroke:#0b1a30;stroke-width:.15}
+    .add{fill:#e07a2f;fill-opacity:.85;stroke:#7a3a0a;stroke-width:.15}
+    .nut{fill:#c9a227;fill-opacity:.8;stroke:#6b551a;stroke-width:.15}
+    .cont{fill:#9aa5ad;stroke:#4b565e;stroke-width:.15}
+    .gask{fill:#333;stroke:#000;stroke-width:.1}
+    .cone{fill:#e63946;fill-opacity:.10;stroke:#e63946;stroke-width:.15}
+    .m45{fill:none;stroke:#e08a00;stroke-width:.15;stroke-dasharray:1 .6}
+    .dim{stroke:#555;stroke-width:.12;fill:none}
+  </style>
+  <rect width="780" height="500" fill="#fbfbf8"/>
+  <text x="14" y="20" class="ttl">A3 COLLAR AND NUT: printed bulkhead, flange above the lid, nut below (section at v = 0)</text>
+  <text x="14" y="36" class="sub">Drawn for a 3 mm lid with a dia 42.5 hole. Scale 4 px per mm. Thread is a 45 degree buttress profile, printed with the tube pointing up.</text>
+
+  <g transform="translate(210,200) scale(4)">
+    <path class="crown" d="M-25.5,0 H53.8 V-8 L47.8,-14 V-22.08 L43.3,-26.58 H6 V-36.58 H-19.5 V-14 L-25.5,-8 Z"/>
+    <rect class="sole" x="-25.5" y="-4" width="79.3" height="4"/>
+    <rect x="-12.5" y="-4" width="25" height="2.5" fill="#fbfbf8" stroke="#0b1a30" stroke-width=".1"/>
+    <rect x="-7.8" y="-5.88" width="18.6" height="1.88" fill="#d9b24a" stroke="#6b551a" stroke-width=".1"/>
+    <circle cx="28.17" cy="-17.7" r=".9" fill="#f4a261" stroke="#8a4a10" stroke-width=".1"/>
+    <!-- plate with tube -->
+    <path class="add" d="M-28.7,0 H-17 V11.5 H-19.5 V3 H-28.7 Z M17,0 H57 V3 H19.5 V11.5 H17 Z"/>
+    <rect x="-21" y="3" width="1.5" height="8.5" fill="#e07a2f" fill-opacity=".45" stroke="#7a3a0a" stroke-width=".1" stroke-dasharray=".4 .3"/>
+    <rect x="19.5" y="3" width="1.5" height="8.5" fill="#e07a2f" fill-opacity=".45" stroke="#7a3a0a" stroke-width=".1" stroke-dasharray=".4 .3"/>
+    <path class="gask" d="M-27,3 H-21.5 V4.5 H-27 Z M21.5,3 H27 V4.5 H21.5 Z"/>
+    <path class="cont" d="M-45,4.5 H-21.25 V7.5 H-45 Z M21.25,4.5 H65 V7.5 H21.25 Z"/>
+    <path class="nut" d="M-26,7.5 H-19.5 V11.5 H-26 Z M19.5,7.5 H26 V11.5 H19.5 Z"/>
+    <path class="cone" d="M0,-4 L34.4,50 L-34.4,50 Z"/>
+    <path class="m45" d="M0,-4 L40,36 M0,-4 L-40,36"/>
+    <path d="M0,-4 V50" stroke="#c0202e" stroke-width=".12" stroke-dasharray=".8 .5"/>
+    <g class="dim">
+      <path d="M-21.25,15 H21.25 M-21.25,14.3 V15.7 M21.25,14.3 V15.7"/>
+      <path d="M-17,19 H17 M-17,18.3 V19.7 M17,18.3 V19.7"/>
+    </g>
+    <text class="l" x="-14" y="14.2">hole dia 42.5 (thread major 42)</text>
+    <text class="l" x="-8" y="18.2">bore dia 34</text>
+    <text class="l" x="-48" y="3.2">gasket 1.5</text>
+    <text class="l" x="-48" y="9">lid 3.0</text>
+    <text class="l" x="-48" y="12.3">nut 4.0</text>
+    <text class="l" x="27.5" y="11">nut (printed, ribbed)</text>
+    <text class="l" x="-22.5" y="14" style="fill:#7a3a0a"></text>
+    <text class="l" x="1" y="23">tube bottom at d = 11.5: margin r 15.5 &lt; bore r 17</text>
+    <text class="l" x="1" y="26">tube wall 2.5, enters the -3 dB cone only below d = 22.7</text>
+    <text class="l" x="2" y="42">beam to the water, 70 mm below the outer face</text>
+    <text class="l" x="29.5" y="-19.5">AE1</text>
+  </g>
+
+  <g transform="translate(655,115) scale(1.5)">
+    <rect class="add" x="-28.7" y="-29.15" width="85.7" height="58.3" fill-opacity=".30"/>
+    <circle r="27" fill="none" stroke="#000" stroke-width=".5"/><circle r="21.25" fill="#9aa5ad" fill-opacity=".4" stroke="#4b565e" stroke-width=".5"/>
+    <circle r="26" fill="none" stroke="#6b551a" stroke-width=".7" stroke-dasharray="3 1.5"/>
+    <circle r="19.5" fill="none" stroke="#7a3a0a" stroke-width=".6"/><circle r="17" fill="none" stroke="#0b1a30" stroke-width=".4" stroke-dasharray="2 1.2"/>
+    <rect x="-12.5" y="-10.5" width="25" height="21" fill="none" stroke="#0b1a30" stroke-width=".4"/>
+    <path d="M-3,0 H3 M0,-3 V3" stroke="#c0202e" stroke-width=".6"/>
+  </g>
+
+  <g class="t">
+    <text x="510" y="262" font-weight="bold">What it fits</text>
+    <text x="510" y="277">Hole dia 42.5 mm and up, lid 2 to 10 mm+.</text>
+    <text x="510" y="291">Hole >= 42.5 for lids to 4.5 mm; else</text>
+    <text x="510" y="305">hole >= 33.5 + 2 x lid (6 mm 45.5, 8 mm 49.5,</text>
+    <text x="510" y="319">10 mm 53.5). Saw sizes: see mounting.md.</text>
+    <text x="510" y="333">Standard plate covers holes to about 48;</text>
+    <text x="510" y="347">64 mm needs a wider (80 mm) plate and nut.</text>
+    <text x="510" y="367" font-weight="bold">Level</text>
+    <text x="510" y="381">Flange on a flat lid; gasket takes 1 degree.</text>
+    <text x="510" y="401" font-weight="bold">Seal</text>
+    <text x="510" y="415">Flange gasket (EPDM or 2 mm silicone cord ring).</text>
+    <text x="510" y="435" font-weight="bold">Metal</text>
+    <text x="510" y="449">None. Needs hand access under the lid.</text>
+  </g>
+</svg>

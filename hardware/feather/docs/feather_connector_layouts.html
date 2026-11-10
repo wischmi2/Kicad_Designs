@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feather Connector Layouts</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one column of plan cards, each a to-scale top view of the 50.8 x 22.86 board */
+:root {
+  --bg: #f3f5f2; --fg: #1d2420; --muted: #5b665f; --line: #d3d9d4; --card: #ffffff; --accent: #2e6b4e;
+  --mask: #1f5a40; --mask-edge: #0f3826; --silk: #f2f4ef;
+  --conn: #d2a64b; --conn-edge: #8a6420; --ic: #2b2f2d; --ic-edge: #7a827d;
+  --bottom: #b9d3c4; --rf: #e0574a; --pad: #d8b45c;
+  --font-body: "IBM Plex Sans", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121614; --fg: #e3e8e4; --muted: #9aa69f; --line: #2a322e; --card: #1a201d; --accent: #7cc4a0; color-scheme: dark } }
+:root[data-theme="dark"] { --bg: #121614; --fg: #e3e8e4; --muted: #9aa69f; --line: #2a322e; --card: #1a201d; --accent: #7cc4a0; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.5; }
+main { max-width: 980px; margin: 0 auto; padding-block: 28px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 28px; }
+h1 { font-size: 1.7rem; font-weight: 600; margin: 0; text-wrap: balance; }
+h2 { font-size: 1.2rem; font-weight: 600; margin: 0; text-wrap: balance; }
+p { margin: 0; max-width: 68ch; }
+.lede { display: grid; gap: 8px; color: var(--muted); }
+.lede strong { color: var(--fg); font-weight: 500; }
+.legend { display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: 13px; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 7px; }
+.sw { width: 18px; height: 12px; border-radius: 2px; display: inline-block; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 20px; display: grid; gap: 14px; min-width: 0; }
+.head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+.tag { font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+.fig { overflow-x: auto; }
+.fig svg { display: block; width: 100%; min-width: 520px; height: auto; }
+.pc { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.pc div { min-width: 0; }
+.pc h3 { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 4px; font-weight: 500; }
+.pc ul { margin: 0; padding-left: 18px; display: grid; gap: 3px; }
+@media (max-width: 640px) { .pc { grid-template-columns: 1fr; } }
+table { border-collapse: collapse; width: 100%; font-size: 14px; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-weight: 500; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+td.m { font-family: var(--font-mono); font-size: 13px; white-space: nowrap; }
+.tbl { overflow-x: auto; }
+.note { font-size: 13px; color: var(--muted); }
+/* SVG pieces */
+.board { fill: var(--mask); stroke: var(--mask-edge); stroke-width: .25; }
+.conn { fill: var(--conn); stroke: var(--conn-edge); stroke-width: .15; }
+.ic { fill: var(--ic); stroke: var(--ic-edge); stroke-width: .12; }
+.bot { fill: var(--bottom); fill-opacity: .28; stroke: var(--bottom); stroke-width: .2; stroke-dasharray: .7 .45; }
+.hole { fill: var(--pad); stroke: none; }
+.drill { fill: var(--card); }
+.keep { fill: none; stroke: var(--silk); stroke-opacity: .45; stroke-width: .12; stroke-dasharray: .4 .3; }
+.rfk { fill: url(#hatch); stroke: var(--rf); stroke-width: .15; }
+.ant { fill: var(--silk); stroke: var(--rf); stroke-width: .12; }
+.t { font-family: var(--font-mono); font-size: 1.35px; fill: var(--silk); text-anchor: middle; dominant-baseline: middle; }
+.tc { font-family: var(--font-mono); font-size: 1.35px; fill: #2a1d05; text-anchor: middle; dominant-baseline: middle; font-weight: 500; }
+.ts { font-size: 1.05px; }
+.out { font-family: var(--font-body); font-size: 1.35px; fill: var(--muted); text-anchor: middle; dominant-baseline: middle; }
+.arr { fill: var(--accent); }
+.dim { stroke: var(--muted); stroke-width: .1; fill: none; }
+</style>
+
+</head><body>
+<main>
+  <header class="lede">
+    <span class="tag">nRF54L15 feather · resize proposals</span>
+    <h1>Where the connectors go on a 50.8 × 22.86 mm board</h1>
+    <p>Three ways to place all five current connectors on the standard Feather outline, with the four Feather mounting holes and no header rows. <strong>Every part is drawn to scale</strong> from its courtyard in today's PCB file. The ICs are shown only to give a sense of size; kicad-designer will place them.</p>
+    <div class="legend" aria-label="Legend">
+      <span><i class="sw" style="background:var(--conn)"></i>Connector, top side</span>
+      <span><i class="sw" style="background:var(--bottom);opacity:.7;outline:1px dashed var(--bottom)"></i>Part on the bottom side</span>
+      <span><i class="sw" style="background:var(--ic)"></i>Main ICs (size only)</span>
+      <span><i class="sw" style="background:var(--rf)"></i>Antenna and keep-out</span>
+      <span><i class="sw" style="background:var(--accent);border-radius:50%;width:12px"></i>Cable direction</span>
+    </div>
+  </header>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <pattern id="hatch" width=".8" height=".8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <rect width=".8" height=".8" fill="#e0574a" fill-opacity=".18"></rect>
+        <line x1="0" y1="0" x2="0" y2=".8" stroke="#e0574a" stroke-width=".22"></line>
+      </pattern>
+      <!-- shared board: outline, holes, USB-C, antenna end -->
+      <g id="base">
+        <rect class="board" x="0" y="0" width="50.8" height="22.86" rx="2.54"></rect>
+        <g>
+          <circle class="hole" cx="2.54" cy="2.54" r="1.6"></circle><circle class="drill" cx="2.54" cy="2.54" r="1.25"></circle><circle class="keep" cx="2.54" cy="2.54" r="2.5"></circle>
+          <circle class="hole" cx="2.54" cy="20.32" r="1.6"></circle><circle class="drill" cx="2.54" cy="20.32" r="1.25"></circle><circle class="keep" cx="2.54" cy="20.32" r="2.5"></circle>
+          <circle class="drill" cx="48.26" cy="2.54" r="1.27" style="stroke:var(--silk);stroke-width:.12"></circle><circle class="keep" cx="48.26" cy="2.54" r="2.5"></circle>
+          <circle class="drill" cx="48.26" cy="20.32" r="1.27" style="stroke:var(--silk);stroke-width:.12"></circle><circle class="keep" cx="48.26" cy="20.32" r="2.5"></circle>
+        </g>
+        <!-- J1 USB-C, 7.44 x 9.03 -->
+        <rect class="conn" x="0" y="6.915" width="7.44" height="9.03"></rect>
+        <text class="tc" x="3.72" y="10.6">J1</text><text class="tc ts" x="3.72" y="12.4">USB-C</text>
+        <path class="arr" d="M-1.0 10.43 L-2.6 11.43 L-1.0 12.43 Z"></path>
+        <!-- SW1 + LED, top side, near the USB end -->
+        <rect class="conn" style="fill:var(--silk);stroke:var(--ic-edge)" x="9.2" y="18.9" width="4.89" height="3.39"></rect>
+        <text class="tc ts" x="11.65" y="20.6">SW1</text>
+        <rect class="ic" style="fill:#e0574a;stroke:none" x="15.0" y="20.1" width=".7" height="1.1"></rect>
+        <text class="t ts" x="17.4" y="20.65">LED</text>
+      </g>
+      <!-- antenna at the far short edge -->
+      <g id="ant-end">
+        <rect class="rfk" x="47.7" y="8.48" width="3.1" height="5.9"></rect>
+        <rect class="ant" x="48.5" y="9.79" width="1.6" height="3.29"></rect>
+        <rect class="ic" x="40.6" y="9.43" width="6.6" height="4"></rect>
+        <text class="t ts" x="43.9" y="11.43">RF / U.FL</text>
+      </g>
+    </defs>
+  </svg>
+
+  <!-- A -->
+  <section class="card" aria-labelledby="a-h">
+    <div class="head"><span class="tag">Proposal A</span><h2 id="a-h">Split long edges, closest to today</h2></div>
+    <div class="fig">
+      <svg viewBox="-5 -6 61 35" role="img" aria-label="Proposal A board layout">
+        <use href="#base"></use><use href="#ant-end"></use>
+        <!-- U5 solar, top edge, bottom side -->
+        <rect class="bot" x="8.5" y="0" width="6.35" height="7.95"></rect>
+        <text class="t" x="11.68" y="3.2">U5</text><text class="t ts" x="11.68" y="5">solar</text>
+        <path class="arr" d="M10.68 -1 L11.68 -2.6 L12.68 -1 Z"></path>
+        <!-- U4 battery, bottom edge, bottom side -->
+        <rect class="bot" x="8.5" y="14.91" width="6.35" height="7.95"></rect>
+        <text class="t" x="11.68" y="16.6">U4</text><text class="t ts" x="11.68" y="18.2">battery</text>
+        <path class="arr" d="M10.68 23.86 L11.68 25.46 L12.68 23.86 Z"></path>
+        <!-- CN1, top edge -->
+        <rect class="conn" x="27" y="0" width="9.39" height="4.34"></rect>
+        <text class="tc" x="31.7" y="1.7">CN1</text><text class="tc ts" x="31.7" y="3.2">sensor</text>
+        <path class="arr" d="M30.7 -1 L31.7 -2.6 L32.7 -1 Z"></path>
+        <!-- J3 SWD, bottom side -->
+        <rect class="bot" x="26.5" y="13.8" width="7.45" height="6.94"></rect>
+        <text class="t" x="30.2" y="16.6">J3</text><text class="t ts" x="30.2" y="18.3">SWD (bottom)</text>
+        <!-- ICs -->
+        <rect class="ic" x="16.3" y="6.6" width="6.34" height="6.34"></rect><text class="t ts" x="19.47" y="9.77">AEM10330</text>
+        <rect class="ic" x="23.6" y="6.6" width="6.29" height="6.29"></rect><text class="t ts" x="26.74" y="9.74">nPM1300</text>
+        <rect class="ic" x="32.2" y="6.0" width="7.29" height="7.29"></rect><text class="t ts" x="35.85" y="9.65">nRF54L15</text>
+        <text class="out" x="-2.5" y="26.5" style="text-anchor:start">USB end</text>
+        <text class="out" x="53.3" y="26.5" style="text-anchor:end">antenna end</text>
+        <line class="dim" x1="0" y1="27.8" x2="50.8" y2="27.8"></line><text class="out" x="25.4" y="28.7">50.8 mm</text>
+      </svg>
+    </div>
+    <div class="pc">
+      <div><h3>For</h3><ul>
+        <li>Solar and battery stay where they are today, on opposite long edges near the power ICs, so the AEM10330 loop stays short.</li>
+        <li>The sensor cable leaves on its own edge, away from the power cables.</li>
+        <li>Least re-routing of the three.</li></ul></div>
+      <div><h3>Against</h3><ul>
+        <li>The enclosure needs cable openings on both long sides plus the USB end.</li>
+        <li>The U4/U5 through-hole pins take a little room on the top side.</li></ul></div>
+    </div>
+  </section>
+
+  <!-- B -->
+  <section class="card" aria-labelledby="b-h">
+    <div class="head"><span class="tag">Proposal B</span><h2 id="b-h">All cables out of one long edge</h2></div>
+    <div class="fig">
+      <svg viewBox="-5 -6 61 35" role="img" aria-label="Proposal B board layout">
+        <use href="#base"></use><use href="#ant-end"></use>
+        <rect class="bot" x="7.6" y="0" width="6.35" height="7.95"></rect>
+        <text class="t" x="10.78" y="3.2">U5</text><text class="t ts" x="10.78" y="5">solar</text>
+        <path class="arr" d="M9.78 -1 L10.78 -2.6 L11.78 -1 Z"></path>
+        <rect class="bot" x="15.0" y="0" width="6.35" height="7.95"></rect>
+        <text class="t" x="18.18" y="3.2">U4</text><text class="t ts" x="18.18" y="5">battery</text>
+        <path class="arr" d="M17.18 -1 L18.18 -2.6 L19.18 -1 Z"></path>
+        <rect class="conn" x="23.2" y="0" width="9.39" height="4.34"></rect>
+        <text class="tc" x="27.9" y="1.7">CN1</text><text class="tc ts" x="27.9" y="3.2">sensor</text>
+        <path class="arr" d="M26.9 -1 L27.9 -2.6 L28.9 -1 Z"></path>
+        <rect class="bot" x="20.5" y="13.0" width="7.45" height="6.94"></rect>
+        <text class="t" x="24.2" y="15.8">J3</text><text class="t ts" x="24.2" y="17.5">SWD (bottom)</text>
+        <rect class="ic" x="9.0" y="10.2" width="6.34" height="6.34"></rect><text class="t ts" x="12.17" y="13.37">AEM10330</text>
+        <rect class="ic" x="24.3" y="6.0" width="6.29" height="6.29"></rect><text class="t ts" x="27.44" y="9.14">nPM1300</text>
+        <rect class="ic" x="32.4" y="9.0" width="7.29" height="7.29"></rect><text class="t ts" x="36.05" y="12.65">nRF54L15</text>
+        <text class="out" x="-2.5" y="26.5" style="text-anchor:start">USB end</text>
+        <text class="out" x="53.3" y="26.5" style="text-anchor:end">antenna end</text>
+        <line class="dim" x1="0" y1="27.8" x2="50.8" y2="27.8"></line><text class="out" x="25.4" y="28.7">50.8 mm</text>
+      </svg>
+    </div>
+    <div class="pc">
+      <div><h3>For</h3><ul>
+        <li>One cable side plus USB: the other long side of the enclosure can be closed or sit against a wall.</li>
+        <li>Neat if sens1 stacks above: battery, solar and sensor cables all fold up the same side.</li></ul></div>
+      <div><h3>Against</h3><ul>
+        <li>The three connectors fill the top edge from 7.6 to 32.6 mm, so plugs sit close together.</li>
+        <li>The power and sensor cables run side by side (CN1 carries the analog AIN signal).</li></ul></div>
+    </div>
+  </section>
+
+  <!-- C -->
+  <section class="card" aria-labelledby="c-h">
+    <div class="head"><span class="tag">Proposal C</span><h2 id="c-h">Sensor out of the far end, antenna moved to a long edge</h2></div>
+    <div class="fig">
+      <svg viewBox="-5 -6 61 35" role="img" aria-label="Proposal C board layout">
+        <use href="#base"></use>
+        <rect class="bot" x="8.5" y="0" width="6.35" height="7.95"></rect>
+        <text class="t" x="11.68" y="3.2">U5</text><text class="t ts" x="11.68" y="5">solar</text>
+        <path class="arr" d="M10.68 -1 L11.68 -2.6 L12.68 -1 Z"></path>
+        <rect class="bot" x="8.5" y="14.91" width="6.35" height="7.95"></rect>
+        <text class="t" x="11.68" y="16.6">U4</text><text class="t ts" x="11.68" y="18.2">battery</text>
+        <path class="arr" d="M10.68 23.86 L11.68 25.46 L12.68 23.86 Z"></path>
+        <!-- CN1 on far short edge -->
+        <rect class="conn" x="46.46" y="6.735" width="4.34" height="9.39"></rect>
+        <text class="tc" x="48.63" y="10.6">CN1</text><text class="tc ts" x="48.63" y="12.3">sensor</text>
+        <path class="arr" d="M51.8 10.43 L53.4 11.43 L51.8 12.43 Z"></path>
+        <!-- antenna on bottom long edge near the far end -->
+        <rect class="rfk" x="38.6" y="19.76" width="5.9" height="3.1"></rect>
+        <rect class="ant" x="39.9" y="21.1" width="3.29" height="1.6"></rect>
+        <rect class="ic" x="37.6" y="14.6" width="6.6" height="4"></rect><text class="t ts" x="40.9" y="16.6">RF / U.FL</text>
+        <rect class="bot" x="26.5" y="12.2" width="7.45" height="6.94"></rect>
+        <text class="t" x="30.2" y="15.0">J3</text><text class="t ts" x="30.2" y="16.7">SWD (bottom)</text>
+        <rect class="ic" x="16.3" y="6.6" width="6.34" height="6.34"></rect><text class="t ts" x="19.47" y="9.77">AEM10330</text>
+        <rect class="ic" x="24.4" y="4.0" width="6.29" height="6.29"></rect><text class="t ts" x="27.54" y="7.14">nPM1300</text>
+        <rect class="ic" x="35.6" y="4.2" width="7.29" height="7.29"></rect><text class="t ts" x="39.25" y="7.85">nRF54L15</text>
+        <text class="out" x="-2.5" y="26.5" style="text-anchor:start">USB end</text>
+        <text class="out" x="53.3" y="26.5" style="text-anchor:end">sensor end</text>
+        <line class="dim" x1="0" y1="27.8" x2="50.8" y2="27.8"></line><text class="out" x="25.4" y="28.7">50.8 mm</text>
+      </svg>
+    </div>
+    <div class="pc">
+      <div><h3>For</h3><ul>
+        <li>The sensor cable runs straight off the end, which suits sens1 sitting end to end with the main board.</li>
+        <li>USB and sensor cables at opposite ends.</li></ul></div>
+      <div><h3>Against</h3><ul>
+        <li>The antenna leaves the Feather's usual spot and sits on a long edge, with only about 3 mm of clearance to the board edge. The keep-out would need re-checking against the datasheet.</li>
+        <li>CN1 and its cable sit right next to the antenna end, so the cable can detune it. Riskiest of the three for radio range.</li></ul></div>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="s-h">
+    <h2 id="s-h">Part sizes used</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Ref</th><th>Part</th><th>Footprint (mm)</th><th>Side</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td class="m">J1</td><td>USB-C, TYPE-C-31-M-12</td><td class="m">7.44 × 9.03</td><td>Top</td><td>Centred on the USB end, as on every Feather</td></tr>
+        <tr><td class="m">CN1</td><td>Molex 503480-1400, 14-pin FFC</td><td class="m">9.39 × 4.34</td><td>Top</td><td>Ribbon enters from the board edge</td></tr>
+        <tr><td class="m">U4</td><td>JST PH 2-pin, battery</td><td class="m">6.35 × 7.95</td><td>Bottom</td><td>Through-hole; plug enters from the edge</td></tr>
+        <tr><td class="m">U5</td><td>JST PH 2-pin, solar</td><td class="m">6.35 × 7.95</td><td>Bottom</td><td>Through-hole; plug enters from the edge</td></tr>
+        <tr><td class="m">J3</td><td>Samtec FTSH-105, SWD</td><td class="m">7.45 × 6.94</td><td>Bottom</td><td>Vertical; no edge needed, cable plugs in from below</td></tr>
+        <tr><td class="m">AE1</td><td>Johanson 2450AT18A100E chip antenna</td><td class="m">1.6 × 3.2, keep-out 3.1 × 5.9</td><td>Top</td><td>Keep-out still to be checked against the datasheet</td></tr>
+        <tr><td class="m">H1–H4</td><td>Feather mounting holes</td><td class="m">M2.5, Ø5 screw-head clearance</td><td>Both</td><td>Plated at the USB end; unplated with nylon screws at the far end</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note">The connectors keep the same sides as today: U4, U5 and J3 on the bottom, everything else on the top. Courtyards are from nrf54l15_feather.kicad_pcb (2026-10-24). IC positions are only a rough guide.</p>
+  </section>
+</main>
+
+</body></html>

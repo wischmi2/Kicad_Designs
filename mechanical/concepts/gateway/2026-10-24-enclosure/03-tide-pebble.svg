@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470">
+  <style>
+    .o{fill:#e9e4da;stroke:#3b3a36;stroke-width:2}
+    .w{fill:#20262f;stroke:#1d2533;stroke-width:1.2}
+    .lens{fill:none;stroke:#3a9bb8;stroke-width:1.5}
+    .hid{fill:none;stroke:#8a94a6;stroke-width:1;stroke-dasharray:4 3}
+    .halo{fill:#ff7a59;fill-opacity:.45;stroke:#c24a2c;stroke-width:1}
+    .ant{fill:none;stroke:#3a9bb8;stroke-width:3;stroke-dasharray:5 3}
+    .bat{fill:#e6e0d0;stroke:#8a7f66;stroke-width:1.2}
+    .pcb{fill:#5d8a5b;stroke:#2f4d2e;stroke-width:1}
+    .acc{fill:#c24a2c}
+    .t{font-family:Helvetica,Arial,sans-serif;font-size:11px;fill:#1d2533}
+    .s{font-family:Helvetica,Arial,sans-serif;font-size:10px;fill:#5b6578}
+    .ti{font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:bold;fill:#1d2533}
+  </style>
+  <text x="40" y="30" class="ti">03 TIDE PEBBLE - a soft lectern stone you look down into; the whole screen is the button</text>
+  <text x="40" y="47" class="s">~120 W x 92 D x 60 H mm. Scale 2.5 px/mm. Screen face tilted 35 deg up. LCD stacked on gateway, parts facing down/rear.</text>
+
+  <!-- FRONT -->
+  <text x="40" y="330" class="t">FRONT</text>
+  <path d="M70 290 C40 290 35 230 60 195 C95 150 285 150 320 195 C345 230 340 290 310 290 Z" class="o"/>
+  <path d="M120 212 C150 190 230 190 260 212 L250 250 C220 260 160 260 130 250 Z" fill="#d8d2c6" stroke="#3b3a36" stroke-width="1"/>
+  <rect x="137.5" y="203" width="105" height="45" rx="4" class="w"/>
+  <rect x="133" y="199" width="114" height="53" rx="6" class="lens"/>
+  <path d="M62 282 C120 288 260 288 318 282 L316 290 L64 290 Z" class="halo"/>
+  <text x="40" y="350" class="s">Clear lens (laser-cut 1.5 mm acrylic) floats over the LCD in a soft-edged dish.</text>
+  <text x="40" y="364" class="s">Press anywhere on the lens: the screen module tips ~0.4 mm on a front hinge and clicks USER.</text>
+  <text x="40" y="378" class="s">Waterline ring (translucent PETG) at the base glows with D3-D5 status.</text>
+
+  <!-- SIDE SECTION -->
+  <text x="420" y="330" class="t">SIDE SECTION (front at left)</text>
+  <path d="M450 290 C425 290 418 258 430 244 L445 228 L540 161 C575 138 630 138 645 183 C657 223 655 272 635 290 Z" class="o"/>
+  <g transform="translate(452,235) rotate(-35.2)">
+    <rect x="2" y="-3" width="94" height="4" fill="none" stroke="#3a9bb8" stroke-width="1.5"/>
+    <rect x="4" y="3" width="88" height="11" class="w"/>
+    <rect x="4" y="34" width="88" height="4" class="pcb"/>
+    <rect x="4" y="38" width="88" height="15" class="hid"/>
+    <circle cx="4" cy="20" r="3" class="acc"/>
+    <rect x="80" y="53" width="6" height="8" class="acc"/>
+  </g>
+  <rect x="535" y="258" width="85" height="25" class="bat"/>
+  <rect x="470" y="268" width="55" height="14" class="hid"/>
+  <path d="M600 152 C620 150 638 165 642 190" class="ant"/>
+  <path d="M440 282 C500 287 600 287 640 282 L637 290 L447 290 Z" class="halo"/>
+  <text x="665" y="160" class="t">FPC antenna inside the</text>
+  <text x="665" y="174" class="s">rear crown, 15+ mm from LCD,</text>
+  <text x="665" y="188" class="s">35+ mm above the battery</text>
+  <text x="665" y="215" class="t">Front hinge (filament pin) +</text>
+  <text x="665" y="229" class="s">fixed post under USER at the</text>
+  <text x="665" y="243" class="s">rear (top) edge of the stack</text>
+  <text x="665" y="268" class="t">LiPo 103450 in the belly,</text>
+  <text x="665" y="282" class="s">PowerBoost in front of it,</text>
+  <text x="665" y="296" class="s">white printed liner = light box</text>
+  <text x="420" y="350" class="s">Print: split at the waterline. Upper shell dome-up (overhangs under 45 deg if the split is at the widest</text>
+  <text x="420" y="364" class="s">point). Base tray flat. Ring in translucent PETG. TPU foot ring. Charge USB-C at the rear, low; power</text>
+  <text x="420" y="378" class="s">switch underneath. RESET / ISP: lift off the base tray (3 screws); the battery blocks a pinhole path.</text>
+</svg>

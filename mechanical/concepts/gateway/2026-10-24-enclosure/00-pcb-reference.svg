@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="470" viewBox="0 0 760 470">
+  <style>
+    .o{fill:none;stroke:#1d2533;stroke-width:2}
+    .p{fill:#eef1f5;stroke:#1d2533;stroke-width:1.2}
+    .k{fill:#ffd9cc;stroke:#e85c3a;stroke-width:1.2}
+    .led{fill:#ff7a59;stroke:#b8412a;stroke-width:1}
+    .rf{fill:#d6eef6;stroke:#3a9bb8;stroke-width:1.2}
+    .dnp{fill:none;stroke:#3a9bb8;stroke-width:1.2;stroke-dasharray:3 2}
+    .h{fill:#fff;stroke:#1d2533;stroke-width:1.2}
+    .t{font-family:Helvetica,Arial,sans-serif;font-size:11px;fill:#1d2533}
+    .s{font-family:Helvetica,Arial,sans-serif;font-size:10px;fill:#5b6578}
+    .ti{font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:bold;fill:#1d2533}
+    .d{stroke:#8a94a6;stroke-width:1;fill:none}
+  </style>
+  <text x="40" y="28" class="ti">Pouch gateway Rev A - component side (F.Cu), 58.0 x 35.0 mm, scale 8 px/mm</text>
+  <text x="40" y="46" class="s">Positions are footprint centres read from pouch_gateway.kicad_pcb (origin = board corner 110,70). Outlines are approximate.</text>
+  <!-- board -->
+  <rect x="40" y="70" width="464" height="280" class="o"/>
+  <!-- mounting holes M2 on 53 x 30 -->
+  <circle cx="60" cy="90" r="8.8" class="h"/><circle cx="484" cy="90" r="8.8" class="h"/>
+  <circle cx="60" cy="330" r="8.8" class="h"/><circle cx="484" cy="330" r="8.8" class="h"/>
+  <!-- J1 USB-C -->
+  <rect x="40" y="221" width="59" height="72" class="p"/>
+  <text x="46" y="261" class="t">J1</text><text x="44" y="274" class="s">USB-C</text>
+  <!-- J2 SWD -->
+  <rect x="110" y="82" width="27" height="51" class="p"/><text x="111" y="146" class="t">J2 SWD</text>
+  <!-- buttons -->
+  <rect x="172" y="86" width="33.6" height="22.4" class="k"/><text x="168" y="124" class="t">RESET</text>
+  <rect x="260.8" y="85.2" width="33.6" height="22.4" class="k"/><text x="262" y="124" class="t">USER</text>
+  <rect x="356.8" y="86" width="33.6" height="22.4" class="k"/><text x="364" y="124" class="t">ISP</text>
+  <!-- U1 -->
+  <rect x="227.2" y="158.8" width="96" height="88" class="p"/><text x="236" y="200" class="t">U1 Murata 2FR</text><text x="244" y="214" class="s">12 x 11 mm</text>
+  <!-- J4 UART -->
+  <rect x="154.8" y="195.2" width="13.6" height="13.6" class="p"/><rect x="174.8" y="195.2" width="13.6" height="13.6" class="p"/><rect x="195.6" y="195.2" width="13.6" height="13.6" class="p"/>
+  <text x="152" y="226" class="t">J4 UART (TH)</text>
+  <!-- J6 Tag-Connect -->
+  <rect x="65.6" y="144.4" width="36.8" height="64" rx="6" class="p"/><text x="68" y="180" class="t">J6</text><text x="66" y="193" class="s">TC2030</text>
+  <!-- J3 / J7 UFL -->
+  <rect x="356" y="236.4" width="24" height="24" class="rf"/><text x="386" y="252" class="t">J3 U.FL (main ant.)</text>
+  <rect x="247.2" y="305.2" width="24" height="24" class="dnp"/><text x="190" y="322" class="s">J7 (DNP)</text>
+  <!-- J5 -->
+  <rect x="442.4" y="122" width="60.8" height="144" class="p"/><text x="448" y="190" class="t">J5</text><text x="446" y="204" class="s">PH 8p</text><text x="446" y="216" class="s">side entry</text>
+  <!-- buck -->
+  <rect x="158.4" y="278" width="24" height="24" class="p"/><text x="132" y="296" class="s">U2</text>
+  <rect x="146.4" y="309.2" width="32" height="32" class="p"/><text x="120" y="330" class="s">L1</text>
+  <!-- LEDs -->
+  <rect x="305.6" y="303.6" width="6.4" height="12.8" class="led"/>
+  <rect x="321.6" y="303.6" width="6.4" height="12.8" class="led"/>
+  <rect x="338.4" y="302" width="8" height="17.6" class="led"/>
+  <text x="300" y="340" class="t">D3  D5  D4</text>
+  <!-- edge annotations -->
+  <text x="40" y="372" class="t">LEFT edge: USB-C J1 at y = 23.4 mm (receptacle faces left).</text>
+  <text x="40" y="388" class="t">TOP edge, all 3.3 mm in: RESET x 18.6, USER x 29.7 (centre), ISP x 41.7 mm. KMR2 switches, top-actuated, 1.9 mm tall.</text>
+  <text x="40" y="404" class="t">BOTTOM edge: LEDs at x 33.6 / 35.6 / 37.8 mm, y 30.0 (5 mm in), 2 mm pitch: suits ONE combined diffuser, not 3 pipes.</text>
+  <text x="40" y="420" class="t">RIGHT edge: J5 display cable leaves here (DESIGN_NOTES item 6: confirm the opening direction in the 3D viewer).</text>
+  <text x="40" y="436" class="t">Antenna: J3 at x 41.0, y 22.3 mm. Needs a cable to an FCC-listed antenna (see concepts.md). Holes: M2, 53 x 30 mm.</text>
+  <text x="40" y="452" class="s">Note: the brief said buck top-right and USER/LEDs on the bottom edge; the board file has the buck bottom-left and USER top-centre.</text>
+  <!-- dimension lines -->
+  <line x1="40" y1="60" x2="504" y2="60" class="d"/><text x="250" y="57" class="s">58.0</text>
+  <line x1="515" y1="70" x2="515" y2="350" class="d"/><text x="520" y="214" class="s">35.0</text>
+</svg>

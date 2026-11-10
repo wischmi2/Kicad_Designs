@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feather + pH node: enclosure concepts</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --bg: #f3f5f2; --fg: #1d2420; --muted: #5b665f; --line: #d3d9d4; --card: #ffffff; --accent: #2e6b4e; --coral: #c24a2c;
+  --font-body: "IBM Plex Sans", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121614; --fg: #e3e8e4; --muted: #9aa69f; --line: #2a322e; --card: #1a201d; --accent: #7cc4a0; --coral: #ff9a7d; color-scheme: dark } }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.5; margin: 0; }
+main { max-width: 1000px; margin: 0 auto; padding: 28px 16px 48px; display: grid; gap: 28px; }
+h1 { font-size: 1.7rem; font-weight: 600; margin: 0; text-wrap: balance; }
+h2 { font-size: 1.25rem; font-weight: 600; margin: 0; }
+h3 { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 4px; font-weight: 500; }
+p { margin: 0; max-width: 72ch; }
+.lede { display: grid; gap: 8px; color: var(--muted); }
+.lede strong { color: var(--fg); font-weight: 500; }
+.tag { font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 20px; display: grid; gap: 14px; min-width: 0; }
+.head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+.score { font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+.score b { color: var(--fg); }
+.fig { overflow-x: auto; background: #fbfbf9; border-radius: 6px; border: 1px solid var(--line); }
+.fig img { display: block; width: 100%; min-width: 640px; height: auto; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 22px; }
+.grid div { min-width: 0; }
+.grid ul { margin: 0; padding-left: 18px; display: grid; gap: 3px; }
+@media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
+table { border-collapse: collapse; width: 100%; font-size: 14px; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-weight: 500; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+td.m { font-family: var(--font-mono); font-size: 13px; white-space: nowrap; }
+.tbl { overflow-x: auto; }
+.rec { border-left: 4px solid var(--coral); }
+.warn { color: var(--coral); }
+.note { font-size: 13px; color: var(--muted); }
+</style>
+</head><body>
+<main>
+  <header class="lede">
+    <span class="tag">nRF54L15 feather + sens1 pH · enclosure concepts · 2026-10-25</span>
+    <h1>Four ways to house a solar pH node that lives by the water</h1>
+    <p>Concepts only, no CAD. Every concept uses the same internal <strong>cartridge</strong> (sled, boards, battery, port plate) and the Proposal C board as laid out today. <strong>None needs a PCB change.</strong> Unknown numbers (sens1 stack height, battery) are parameters, and the sketches use Hs = 8 mm and a 40 x 25 x 7 mm cell. Full text, references and formulas are in <code>concepts.md</code>.</p>
+  </header>
+
+  <section class="card rec" aria-labelledby="r-h">
+    <h2 id="r-h">Recommendation</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>#</th><th>Concept</th><th>Idea</th><th>Size (mm)</th><th>Looks</th><th>Setting</th><th>Print/seal</th><th>PCB</th><th>Total</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><b>Tidemark</b></td><td>Ledger-family column on the rim; probe drops straight down; remote leaf panel</td><td class="m">32 x 78 x 32</td><td>4</td><td>5</td><td>4</td><td>5</td><td><b>18</b></td></tr>
+        <tr><td>2</td><td><b>Slate</b></td><td>Orange spine for the electronics, thin wing carrying the panel</td><td class="m">104 x 116 x 26</td><td>4</td><td>4</td><td>4</td><td>5</td><td><b>17</b></td></tr>
+        <tr><td>3</td><td><b>Shard</b></td><td>Faceted post; panel on the sun facet, antenna in the crown</td><td class="m">90 x 56 x 158</td><td>4</td><td>4</td><td>3</td><td>5</td><td><b>16</b></td></tr>
+        <tr><td>4</td><td><b>Lily</b></td><td>Floating pad with a bud; probe hangs in the pad's notch</td><td class="m">176 x 112 x 96</td><td>5</td><td>3</td><td>2</td><td>5</td><td><b>15</b></td></tr>
+      </tbody>
+    </table></div>
+    <p><b>Tidemark</b> for an indoor tank, sump, tub or reservoir: the smallest, easiest to seal, and it matches the Ledger gateway. <b>Slate</b> if the panel should be built in or the node lives outdoors. Both share the cartridge, so fusion-enclosure can model the core once.</p>
+    <p class="note">PCB column: 5 = no change needed. Setting scores assume an indoor wet location; on an outdoor pond Shard and Lily score higher.</p>
+  </section>
+
+  <section class="card" aria-labelledby="b-h">
+    <div class="head"><span class="tag">00 Reference</span><h2 id="b-h">The board, the stack and the rules every concept follows</h2></div>
+    <div class="fig"><img src="00-stack-reference.svg" alt="To-scale top view of the feather board with SW1, LED1, AE1 keep-out and connectors, and a side view of the stack with parameters"></div>
+    <div class="grid">
+      <div><h3>What sets the size</h3><ul>
+        <li>The validated panel (PowerFilm LL200-2.4-75) is <b>94 x 73 mm</b>, far bigger than the 50.8 x 22.86 board. A built-in panel sets the footprint.</li>
+        <li>sens1's SMA sits past the USB edge, so every shell has a <b>14 mm heel</b> at the sens1 level (about 3 mm with request R2).</li>
+        <li>The FFC fold needs about (Hs + 1.6)/2 + 1.5 mm past the far edge.</li></ul></div>
+      <div><h3>Antenna rules</h3><ul>
+        <li>Plastic only within 15 mm of AE1: no inserts, screws, CF or metal-filled filament. Nylon at the far holes.</li>
+        <li>Never under the panel (at least 10-15 mm away), at least 10 mm from the battery, at least 25 mm from water.</li>
+        <li>The antenna corner points up or outward. A 35 x 10 mm plastic zone is kept free for a U.FL flex antenna if RF1 is ever used.</li></ul></div>
+      <div><h3>Probe and ports</h3><ul>
+        <li>Default: a pigtail to an IP67/68 SMA bulkhead, so the probe screws on from outside with a TPU boot. Replaceable without opening the case.</li>
+        <li>USB-C: tethered TPU bung sealing in a 12.5 x 7 mm tunnel, pointing down.</li>
+        <li>ePTFE vent and silica gel in every shell (the pH input is high impedance, and damp drifts readings).</li></ul></div>
+      <div><h3>Key, light, seal</h3><ul>
+        <li>TPU 95A key co-printed in the wall; plunger 0.2 mm above the B3U (0.15 mm travel).</li>
+        <li>Clear light pipe fused in the wall, ending 0.5 mm over the yellow LED, behind a coral eye.</li>
+        <li>2 mm silicone or EPDM cord face seals. IP figures are targets until dunk-tested.</li></ul></div>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="c1-h">
+    <div class="head"><span class="tag">Concept 1</span><h2 id="c1-h">Tidemark</h2><span class="score">Looks 4 · Setting 5 · Print/seal 4 · PCB 5 · <b>18</b></span></div>
+    <p>The Ledger gateway's small sibling. A slim Abyss column hangs on the rim of a sump, tub or reservoir; the antenna, a coral eye and a coral key sit under its leaning brow, and the probe drops straight down from the heel. The panel is a separate "leaf" card you put where the light is, which matters most indoors.</p>
+    <div class="fig"><img src="01-tidemark.svg" alt="Tidemark front view, section and in-use view on a sump wall"></div>
+    <div class="grid">
+      <div><h3>Form and mounting</h3><ul>
+        <li>32 W x 78 H x 32 D. Boards upright with the USB end down, parts facing the front, sens1 and battery behind.</li>
+        <li>Brow: top 20 mm leans back 20 deg; AE1 sits inside it.</li>
+        <li>Dovetail rail on the back takes clips for 6-19 mm walls or the family cleat.</li></ul></div>
+      <div><h3>Ports and sealing (target IP66, IP67 geometry)</h3><ul>
+        <li>Stepped foot cap: USB-C bung in the toe, SMA bulkhead, solar gland and vent in the heel. All face down.</li>
+        <li>One face o-ring; 4 M2.5 inserts at the foot, more than 50 mm from AE1.</li></ul></div>
+      <div><h3>CMF</h3><ul>
+        <li>Abyss PETG indoors, Sand ASA outdoors; coral TPU key, coral eye, graphite TPU bung; "ph" debossed.</li></ul></div>
+      <div><h3>Build (about 9.5 h, easy to moderate)</h3><ul>
+        <li>Sleeve printed roof-down: the brow is a 20 deg lean, so no supports (this avoids Ledger's brow overhang problem).</li>
+        <li class="warn">The cartridge slides in under the key plunger: SW1 must be the tallest part from fx 26 to the far edge, or use the front-plate variant.</li></ul></div>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="c2-h">
+    <div class="head"><span class="tag">Concept 2</span><h2 id="c2-h">Slate</h2><span class="score">Looks 4 · Setting 4 · Print/seal 4 · PCB 5 · <b>17</b></span></div>
+    <p>A field instrument that shows how it's made. A signal-orange spine holds the electronics and battery; a thin graphite wing carries the panel behind a polycarbonate window held by a ring of black screws. It lies flat, stands on a fold-out leg toward a lamp, straps to a post, or hangs on the cleat. The antenna faces out of the spine, 25 mm from the panel.</p>
+    <div class="fig"><img src="04-slate.svg" alt="Slate top view, cross-section and port end"></div>
+    <div class="grid">
+      <div><h3>Form and mounting</h3><ul>
+        <li>104 x 116. Spine 34 wide x 26 tall; wing 8 mm thick tapering to 5 (sheds water at 3 deg).</li>
+        <li>Boards flat, parts up; battery in the far end of the spine, at least 14 mm from AE1.</li>
+        <li>Fold-out leg (30 / 45 / 60 deg), strap slots, cleat rail, TPU feet.</li></ul></div>
+      <div><h3>Ports and sealing (target IP66)</h3><ul>
+        <li>Port end steps out into a 14 mm dock: SMA bulkhead and boot below, USB-C bung above.</li>
+        <li>Spine lid with a face o-ring, plus a window gasket under the bezel, plus a potted panel-lead hole.</li></ul></div>
+      <div><h3>CMF</h3><ul>
+        <li>Orange ASA spine, graphite ASA wing, PC window, black button-head screws. The two nearest the antenna are black nylon.</li>
+        <li>Family variant: Abyss spine, coral key.</li></ul></div>
+      <div><h3>Build (about 12 h, moderate)</h3><ul>
+        <li>All flat or upright prints, no supports. Brim the 104 x 82 ASA wing against warping.</li></ul></div>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="c3-h">
+    <div class="head"><span class="tag">Concept 3</span><h2 id="c3-h">Shard</h2><span class="score">Looks 4 · Setting 4 · Print/seal 3 · PCB 5 · <b>16</b></span></div>
+    <p>A crystal post at the edge of a pond. The 10 deg sun facet carries the panel and a coral crown above it holds the antenna. The boards stand behind the top of the panel, so AE1 is 10 mm above the panel's top edge and the battery hides low in its shade. Outdoors, even a near-vertical panel gives far more than the node needs.</p>
+    <div class="fig"><img src="03-shard.svg" alt="Shard front view and section on a pole"></div>
+    <div class="grid">
+      <div><h3>Form and mounting</h3><ul>
+        <li>90 W x 56 D x 158 H, pentagonal plan; front leans back 10 deg.</li>
+        <li>Two stainless hose clamps on a 20-60 mm pole (100 mm below AE1), or a stake socket.</li></ul></div>
+      <div><h3>Ports and sealing (target IP66)</h3><ul>
+        <li>Silicone cord along the facet parting line; window gasket; bulkhead and vent face down.</li>
+        <li>USB-C internal (rear shell off). Key and eye on the back face.</li></ul></div>
+      <div><h3>CMF</h3><ul>
+        <li>Sand ASA (a cooler cell), coral ASA crown by toolchange (no extra seal), PC window.</li></ul></div>
+      <div><h3>Build (about 15 h, moderate)</h3><ul>
+        <li>Shells print on their parting faces. Check the crown overhang; painted supports may be needed. Needs the U1 top cover for ASA.</li></ul></div>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="c4-h">
+    <div class="head"><span class="tag">Concept 4</span><h2 id="c4-h">Lily</h2><span class="score">Looks 5 · Setting 3 · Print/seal 2 · PCB 5 · <b>15</b></span></div>
+    <p>A floating lily pad for a pond, pool or big reservoir. The panel lies in the pad facing the sky; the electronics stand upright in a bud with a coral screw cap, antenna on top about 55-60 mm above the water. The pad's notch is the moonpool: the probe hangs in it, so nothing pierces the hull below the waterline. <span class="warn">Floating monitors are known for letting water in (the pHin team's own lesson), so this is the riskiest concept.</span></p>
+    <div class="fig"><img src="02-lily.svg" alt="Lily top view and section through the bud at the waterline"></div>
+    <div class="grid">
+      <div><h3>Form</h3><ul>
+        <li>Pad 176 x 112 x 24, solid-printed and buoyant, no electronics inside. Bud dia 43, 64 above the deck.</li>
+        <li>Freeboard about 10 mm (estimate): check in Fusion; trim washers more than 60 mm from AE1.</li></ul></div>
+      <div><h3>Sealing (bud IP67 minimum, IP68 wanted)</h3><ul>
+        <li>Coarse printed thread on the cap with a face o-ring; window gasket; potted panel-lead pass.</li>
+        <li>Tether to the bank; USB-C internal.</li></ul></div>
+      <div><h3>CMF</h3><ul><li>Sand or white ASA, coral cap, PC window, TPU collet and tether loop.</li></ul></div>
+      <div><h3>Build (about 17 h, hard)</h3><ul><li>Printed threads and a buoyancy trim: expect two or three test prints.</li></ul></div>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="f-h">
+    <div class="head"><span class="tag">Family</span><h2 id="f-h">Brow, Tide line and Service foot</h2></div>
+    <div class="fig"><img src="05-family.svg" alt="Family lineup: Ledger gateway, Tidemark, Slate and Shard with the shared palette"></div>
+    <ul>
+      <li>The antenna always lives in a marked, plastic-only top zone (brow, crown, cap, spine edge).</li>
+      <li>One coral light, one coral key per device.</li>
+      <li>Every port leaves from one graphite service foot that faces down or aft.</li>
+      <li>One cartridge across the Feather-node shells; one dovetail rail and cleat for mounting.</li>
+      <li>Abyss PETG for indoor wet zones, Sand ASA for outdoor sun.</li>
+    </ul>
+  </section>
+
+  <section class="card" aria-labelledby="p-h">
+    <h2 id="p-h">PCB requests (optional) and open numbers</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>ID</th><th>Request</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td class="m">R1</td><td>sens1: no copper under the AE1 corner (fx 42.15-50.8, fy 0-6.46, all layers)</td><td>sens1's ground would otherwise sit about 10 mm under the chip antenna. Recommended for every stacked concept</td></tr>
+        <tr><td class="m">R2</td><td>sens1 J1 as an o-ring-sealed, panel-threaded PCB SMA through the end wall</td><td>Removes the pigtail and bulkhead; heel 14 to about 3 mm. Puts the probe's mating load on sens1</td></tr>
+      </tbody>
+    </table></div>
+    <p><b>Still unknown for fusion-enclosure:</b> Hs and sens1 part heights and sides; sens1 J1 type and protrusion; FFC length; battery model, size and NTC; heights of J3, U4/U5, J1, X1, L9/L10 (most STEP bodies are missing); panel choice and lead; probe body size; site (rim thickness, pole diameter); printer top cover and TPU. The full list and the questions for Brian are in <code>concepts.md</code> sections 7 and 8.</p>
+  </section>
+</main>
+</body></html>

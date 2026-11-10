@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470">
+  <style>
+    .sand{fill:#efe9dc;stroke:#1d2533;stroke-width:2}
+    .crown{fill:#ffd9cc;stroke:#c24a2c;stroke-width:1.5}
+    .facet{stroke:#1d2533;stroke-width:.8;fill:none}
+    .win{fill:#2b3f63;stroke:#9fb0c4;stroke-width:1.2}
+    .sec{fill:#e3e8ee;stroke:#1d2533;stroke-width:2}
+    .pcb{fill:#1f5a40;stroke:#0f3826;stroke-width:1}
+    .pcb2{fill:#2f6f8f;stroke:#173a4c;stroke-width:1}
+    .conn{fill:#d2a64b;stroke:#8a6420;stroke-width:.8}
+    .tpu{fill:#3b3f46;stroke:#15181c;stroke-width:1}
+    .coral{fill:#ff7a59;stroke:#c24a2c;stroke-width:1}
+    .bat{fill:#c9ccd1;fill-opacity:.6;stroke:#4a4f57;stroke-width:1;stroke-dasharray:5 3}
+    .rf{fill:#e0574a}
+    .rfz{fill:none;stroke:#e0574a;stroke-width:1.2;stroke-dasharray:4 3}
+    .dash{fill:none;stroke:#7a8696;stroke-width:1;stroke-dasharray:4 3}
+    .ffc{fill:none;stroke:#c08a2e;stroke-width:2}
+    .coax{fill:none;stroke:#2b2f2d;stroke-width:2}
+    .pole{fill:#c9ccd1;stroke:#4a4f57;stroke-width:1.2}
+    .dim{stroke:#5b6578;stroke-width:.8;fill:none}
+    .t{font-family:Helvetica,Arial,sans-serif;font-size:11px;fill:#1d2533}
+    .s{font-family:Helvetica,Arial,sans-serif;font-size:10px;fill:#5b6578}
+    .ti{font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:bold;fill:#1d2533}
+  </style>
+  <text x="40" y="30" class="ti">03 SHARD - a faceted post at the water's edge: sun facet below, crystal crown with the antenna above</text>
+  <text x="40" y="47" class="s">Scale 1.5 px/mm. About 90 W x 56 D x 158 H. Sand ASA body, translucent coral crown cap. Pole clamp or stake; probe on its 1 m cable down to the water.</text>
+
+  <!-- FRONT origin (60,70); y = 307 - 1.5 z -->
+  <text x="60" y="64" class="t">Front (sun side)</text>
+  <rect class="sand" x="60" y="97" width="135" height="210" rx="3"/>
+  <polygon class="crown" points="60,97 102,82 144,70 195,97"/>
+  <line class="facet" x1="102" y1="82" x2="128" y2="97"/>
+  <line class="facet" x1="144" y1="70" x2="128" y2="97"/>
+  <line class="facet" x1="78" y1="97" x2="78" y2="307"/>
+  <line class="facet" x1="177" y1="97" x2="177" y2="307"/>
+  <rect class="win" x="68.25" y="131.5" width="118.5" height="150" rx="3"/>
+  <text class="s" x="80" y="210" style="fill:#c9d3de">LL200-2.4-75</text>
+  <text class="s" x="80" y="222" style="fill:#c9d3de">behind 2 mm PC</text>
+  <rect class="dash" x="110.4" y="110.8" width="34.2" height="76.2"/>
+  <rect class="rfz" x="134.9" y="110.8" width="9.7" height="13.2"/>
+  <rect class="rf" x="137" y="113.5" width="2.4" height="4.8"/>
+  <text class="s" x="205" y="92">crown: no metal, AE1</text>
+  <text class="s" x="205" y="104">10 mm above the panel top</text>
+  <text class="s" x="205" y="160">boards (dashed) behind</text>
+  <text class="s" x="205" y="172">the top of the panel</text>
+  <line class="dim" x1="60" y1="322" x2="195" y2="322"/><text class="s" x="120" y="335">90</text>
+  <line class="dim" x1="44" y1="70" x2="44" y2="307"/><text class="s" x="18" y="190">158</text>
+
+  <!-- SECTION origin (330,70); x = 330 + 1.5 d -->
+  <text x="330" y="64" class="t">Section (sun on the left)</text>
+  <polygon class="sec" points="330,307 367,97 390,70 414,97 414,307"/>
+  <polygon class="crown" points="367,97 390,70 414,97"/>
+  <line class="dash" x1="367" y1="97" x2="414" y2="97"/>
+  <line x1="335" y1="281.5" x2="361" y2="131.5" stroke="#2b3f63" stroke-width="4"/>
+  <!-- boards -->
+  <rect class="pcb2" x="383" y="110.8" width="2.4" height="76.2"/>
+  <rect class="pcb" x="397.4" y="110.8" width="2.4" height="76.2"/>
+  <rect class="rf" x="400" y="115" width="2" height="5"/>
+  <path class="ffc" d="M386 110.8 L386 106 A7 7 0 0 1 400 106 L400 110.8"/>
+  <rect class="bat" x="367.5" y="194.5" width="10.5" height="75"/>
+  <rect class="conn" x="381" y="187" width="7" height="10"/>
+  <path class="coax" d="M384.5 197 L384.5 300"/>
+  <rect class="conn" x="379" y="300" width="11" height="16"/>
+  <!-- key and LED on the back face -->
+  <rect class="coral" x="414" y="141" width="4" height="12"/>
+  <rect x="404" y="139" width="12" height="2.4" fill="#ffd1c2" stroke="#c24a2c" stroke-width=".6"/>
+  <!-- clamp + pole -->
+  <rect class="tpu" x="414" y="230" width="8" height="60"/>
+  <rect class="pole" x="424" y="100" width="22" height="330"/>
+  <path d="M414 240 L452 240 M414 280 L452 280" stroke="#4a4f57" stroke-width="2"/>
+  <!-- vent -->
+  <rect x="398" y="307" width="10" height="3" fill="#ffffff" stroke="#4a4f57"/>
+  <text class="s" x="460" y="114">FFC loop under the crown cap</text>
+  <text class="s" x="460" y="146">TPU key + light pipe on the back face (away from sun)</text>
+  <text class="s" x="460" y="200">battery low and behind the panel, in the shade of it</text>
+  <text class="s" x="460" y="250">two stainless hose clamps (pole 20-60 mm), 100 mm below AE1</text>
+  <text class="s" x="460" y="300">base: SMA bulkhead + ePTFE vent face down; drip edge</text>
+  <text class="s" x="460" y="326">USB-C is internal (rear shell off); solar charges it</text>
+  <text class="s" x="460" y="360">Parting line runs along the side facets: front shell (window) / rear shell.</text>
+  <text class="s" x="460" y="373">2 mm silicone cord in a groove; 8 x M2.5 inserts below z = 100 mm,</text>
+  <text class="s" x="460" y="386">a printed hook and tongue joins the shells at the crown (no metal).</text>
+  <text class="s" x="460" y="412">Front face leans back 10 deg so rain runs off the window.</text>
+</svg>

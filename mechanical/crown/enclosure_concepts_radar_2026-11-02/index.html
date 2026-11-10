@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Water level node (XM125 radar): enclosure concepts, battery placement, 2026-11-02</title>
+<style>
+  body{font-family:Arial,Helvetica,sans-serif;background:#fbfbf8;color:#1b1b1b;max-width:1100px;margin:24px auto;padding:0 16px;line-height:1.45}
+  h1{color:#0b1a30;font-size:24px} h2{color:#0b1a30;border-bottom:2px solid #1d3557;padding-bottom:4px;margin-top:36px}
+  img{max-width:100%;border:1px solid #ccc;background:#fff;margin:8px 0}
+  table{border-collapse:collapse;margin:12px 0} th,td{border:1px solid #bbb;padding:5px 9px;text-align:left;font-size:14px}
+  th{background:#e8edf3} .rec{background:#fff3ee;border-left:5px solid #ff6b57;padding:8px 14px}
+  .note{font-size:13px;color:#555}
+</style>
+</head>
+<body>
+<h1>Water level node (XM125 radar): where the battery goes</h1>
+<p class="note">Concepts only, no CAD. Review blocker B3: in the Tidemark stack order the radar would look through the sled into the LiPo. Full text: <a href="concepts.md">concepts.md</a>. Working notes: <a href="research_notes.md">research_notes.md</a>. Sizes in mm. Items marked UNVERIFIED in concepts.md are estimates, not measurements.</p>
+
+<div class="rec"><b>Recommendation: Crown.</b> The cell is 19.6 mm behind the radar, behind two ground-plane boards, 180 degrees off the beam, and 25.4 mm from the AE1 antenna. Smallest lid footprint (Perch has the same foot plus a leg), shortest lead. Cost: a cell of about 4 cm3 and a separate bonnet to print it without supports. Slab is the fallback for a bigger cell and shares the same radar head. No concept needs a PCB change.</div>
+
+<table>
+<tr><th>#</th><th>Concept</th><th>Idea</th><th>Outer size</th><th>Cell to radar / AE1</th><th>Score /45</th></tr>
+<tr><td>1</td><td>Slab</td><td>Stack laid flat, cell on the sole beside the boards</td><td>67.3 x 56.9 x 26.6 (foot 79.3 x 68.9)</td><td>14.0 mm sideways / 23.9 mm</td><td>35</td></tr>
+<tr><td>2</td><td>Crown</td><td>Cell in a hump on the lid, behind the radar</td><td>67.3 x 39.9 x 26.6, hump 36.6 (foot 79.3 x 51.9)</td><td>19.6 mm behind / 25.4 mm</td><td>36</td></tr>
+<tr><td>3</td><td>Pier</td><td>Long head over the water, tail on the rim carries a big cell</td><td>123 x 39.9 x 26.6, tail 13.5 (foot 135 x 51.9)</td><td>50.5 mm / 23.6 mm</td><td>33</td></tr>
+<tr><td>4</td><td>Perch</td><td>Head over the water, rim under its end, cell in a leg outside the wall</td><td>79.3 x 39.9, 55.6 tall (26.6 above, 29 below the sole)</td><td>50.8 mm, 59 deg corner / 22.6 mm</td><td>33</td></tr>
+</table>
+
+<h2>0. The radar head and the cone (shared)</h2>
+<p>Window 1.5 mm solid PETG, air gap 2.5 mm, XM125 1.88 mm (modelled, UNVERIFIED), sensor board, 8 mm nylon standoff, feather, headroom, roof: 26.6 mm total. Cone half angles 32.5 and 26.5 degrees; 25 x 21 mm window; PETG permittivity at 60 GHz is UNVERIFIED so the 1.5 mm is a bench decision.</p>
+<img src="00-stack-and-cone.svg" alt="Radar head layers and cone">
+
+<h2>1. Slab: cell beside the boards</h2>
+<p>The Tidemark laid on its back. The cell lies on the sole 14.0 mm from the radar axis at the module level, 23.9 mm from AE1. Simplest print (about 5 h, no supports), best for a big cell (width grows 14 mm for a 34 mm cell). Needs a lid cut-out of at least 30 x 26 mm. Score 35.</p>
+<img src="01-slab-side.svg" alt="Slab side section">
+<img src="01-slab-bottom.svg" alt="Slab bottom view">
+
+<h2>2. Crown: cell on the lid, behind the radar (recommended)</h2>
+<p>Cell about 10 x 20 x 20 mm (about 4 cm3) in a hump over the USB half, 19.6 mm behind the module face, 25.4 mm from AE1, lead about 15 mm to U4. The key and LED limit the hump to fx 0 to 20. Print the hump as a separate bonnet (also the battery door) to avoid supports under the stepped roof. Same foot as Perch, smaller than Slab and Pier. Score 36.</p>
+<img src="02-crown-side.svg" alt="Crown side section">
+<img src="02-crown-bottom.svg" alt="Crown bottom view">
+
+<h2>3. Pier: tail on the rim</h2>
+<p>The cell sits 50.5 mm from the radar axis in a low tail across the container rim, 23.6 mm from AE1. Biggest battery room (6 x 34 x 50 fits), but 123 mm long, a flat tail roof that needs supports or a split part, and a rim container. Score 33.</p>
+<img src="03-pier-side.svg" alt="Pier side section">
+<img src="03-pier-bottom.svg" alt="Pier bottom view">
+
+<h2>4. Perch: cell in a leg outside the wall</h2>
+<p>The cell stands in a leg outside the container wall: lowest corner 59 degrees off the beam, 22.6 mm from AE1 and facing it. The wall is only 35.3 mm from the axis, so the beam meets it at 31 mm (45 degree margin) to 51 mm (-3 dB) below the face. Needs a rim and room outside. Score 33.</p>
+<img src="04-perch-side.svg" alt="Perch side section">
+<img src="04-perch-bottom.svg" alt="Perch bottom view">
+
+<h2>Open questions for Brian</h2>
+<ol>
+<li>Container type(s), inside size, wall or rim thickness, water levels.</li>
+<li>Is a 30 x 26 mm hole in a lid acceptable? If not, only Pier and Perch work.</li>
+<li>Battery-life target; is a 4 cm3 cell enough?</li>
+<li>VSENS off between readings, or on with hibernate?</li>
+<li>Field firmware update, or bench flashing only?</li>
+<li>FFC length 20 to 25 mm or standard 30 mm.</li>
+<li>Real J3 height and SWD cable.</li>
+</ol>
+<p class="note">Bench tests before the first full print: PETG coupons (1.2 to 3.0 mm) through the SparkFun XM125 breakout, water film, cell near the radar, wall echo, AE1 range with the cell at each distance, XM125 height, FFC bulge. Details in concepts.md section 9.</p>
+</body>
+</html>

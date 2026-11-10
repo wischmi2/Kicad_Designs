@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470">
+  <style>
+    .o{fill:#1f3347;stroke:#0f1a24;stroke-width:2}
+    .crest{fill:#ff9e80;fill-opacity:.55;stroke:#c24a2c;stroke-width:1.5}
+    .w{fill:#0b0f14;stroke:#9fb0c4;stroke-width:1}
+    .hid{fill:none;stroke:#9fb0c4;stroke-width:1;stroke-dasharray:4 3}
+    .hid2{fill:none;stroke:#8a94a6;stroke-width:1;stroke-dasharray:4 3}
+    .glow{fill:#ff7a59;fill-opacity:.6;stroke:none}
+    .key{fill:#ff7a59;stroke:#c24a2c;stroke-width:1.2}
+    .ant{fill:none;stroke:#e8f6fb;stroke-width:2;stroke-dasharray:5 3}
+    .rib{fill:none;stroke:#9fb0c4;stroke-width:.8}
+    .t{font-family:Helvetica,Arial,sans-serif;font-size:11px;fill:#1d2533}
+    .s{font-family:Helvetica,Arial,sans-serif;font-size:10px;fill:#5b6578}
+    .ti{font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:bold;fill:#1d2533}
+  </style>
+  <text x="40" y="30" class="ti">04 REEF FIN - a wave-topped plaque for the side of the aquarium cabinet or a wall</text>
+  <text x="40" y="47" class="s">150 W x 52 H (72 at the crest) x 26-18 D mm wedge. Scale 2.5 px/mm. Screen left, gateway right (rotated 180), both facing forward.</text>
+
+  <!-- FRONT -->
+  <text x="40" y="350" class="t">FRONT</text>
+  <path d="M40 330 L40 214 C110 200 190 206 250 200 C300 195 330 160 365 148 C395 138 415 155 415 180 L415 330 Z" class="o"/>
+  <path d="M250 200 C300 195 330 160 365 148 C395 138 415 155 415 180 L415 206 C360 204 300 206 250 206 Z" class="crest"/>
+  <g transform="rotate(-14 344 172)"><rect x="300" y="162" width="88" height="20" class="ant"/></g>
+  <rect x="55" y="221" width="145" height="87.75" class="hid"/>
+  <rect x="75" y="225" width="105" height="79.5" rx="3" class="w"/>
+  <rect x="225" y="221" width="145" height="87.75" class="hid"/>
+  <rect x="276" y="202" width="10" height="34" class="glow"/>
+  <circle cx="295.75" cy="300.5" r="9" class="key"/>
+  <circle cx="323.5" cy="300.25" r="2" fill="#e8f6fb"/>
+  <circle cx="265.75" cy="300.25" r="2" fill="#e8f6fb"/>
+  <rect x="398" y="312" width="12" height="5" rx="2" fill="#e8f6fb"/>
+  <text x="40" y="368" class="s">Crest = translucent coral PETG: it holds the FPC antenna (visible like a fin ray) and glows with status.</text>
+  <text x="40" y="382" class="s">D3-D5 sit at the gateway's top edge after the 180 deg turn, so one short straight pipe lights the crest.</text>
+  <text x="40" y="396" class="s">USER key + RESET / ISP pinholes along the lower edge of the gateway half. Charge USB-C on the right end.</text>
+
+  <!-- SIDE -->
+  <text x="470" y="350" class="t">SIDE (wall at right)</text>
+  <polygon points="480,330 545,330 545,206 500,206" class="o"/>
+  <polygon points="500,206 512,150 545,158 545,206" class="crest"/>
+  <line x1="580" y1="110" x2="580" y2="350" stroke="#1d2533" stroke-width="3"/>
+  <polygon points="545,232 562,249 562,262 545,262" fill="#ff9e80" stroke="#c24a2c"/>
+  <polygon points="580,236 566,236 566,246 580,260" fill="#cfd6e0" stroke="#5b6578"/>
+  <text x="590" y="244" class="s">printed French cleat</text>
+  <text x="590" y="257" class="s">(2 screws or VHB tape)</text>
+  <text x="590" y="300" class="s">face tilts up ~12 deg for</text>
+  <text x="590" y="313" class="s">cabinet height; flip the cleat</text>
+  <text x="590" y="326" class="s">for an eye-level wall</text>
+  <path d="M548 280 L577 280 M548 292 L577 292 M548 304 L577 304" class="rib"/>
+  <text x="470" y="368" class="s">Rear: shallow growth-line ribs (coral texture) + battery bay behind the screen half.</text>
+  <text x="470" y="382" class="s">Print: front face down on textured PEI; crest printed separately, glued/clipped.</text>
+  <text x="470" y="396" class="s">LiPo 103450 behind the LCD; PowerBoost behind the gateway half.</text>
+</svg>
