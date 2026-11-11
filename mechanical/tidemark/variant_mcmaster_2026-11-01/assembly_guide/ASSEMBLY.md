@@ -35,7 +35,7 @@ Part letter D is not used any more: the printed board spacer was replaced by a p
 | <img src="part_H_leafcard.png" width="280"><br>H Leaf card | <img src="part_I_usb_bung.png" width="280"><br>I USB bung |
 | <img src="part_J_sma_boot.png" width="280"><br>J SMA boot | <img src="part_K_clip_pad.png" width="280"><br>K Clip pad |
 
-### Hardware (not printed). McMaster-Carr part numbers from `shared\design\enclosure_hardware_mcmaster_2026-11-01.md`
+### Hardware (not printed). McMaster-Carr part numbers from `mechanical\hardware_lists\enclosure_hardware_mcmaster_2026-11-01.md`
 
 <img src="hw_00_hardware_kit.png" width="640" alt="hw_00_hardware_kit.png">
 

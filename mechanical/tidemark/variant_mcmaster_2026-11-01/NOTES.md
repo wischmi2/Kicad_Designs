@@ -4,7 +4,7 @@ Fusion document: `nrf54l15_feather_enclosure_tidemark` v9 (project Fish_Stuff / 
 URN urn:adsk.wipprod:dm.lineage:fvkOX6_aTxKGrTD7iTSsdg.
 Versions: v3 = stage 1 (model), v4 = stage 2 (checks and fixes), v5 = stage 3 (ORP fit check), v6 = stage 4 (exports),
 v7 = McMaster stage 1 (4.0 mm insert holes), v8 = McMaster stage 2 (nylon standoffs and screws), v9 = McMaster stage 3 (exports and notes).
-Hardware source: C:\Personal-Agents\shared\design\enclosure_hardware_mcmaster_2026-11-01.md
+Hardware source: mechanical\hardware_lists\enclosure_hardware_mcmaster_2026-11-01.md
 
 Board STEPs used: feather `nrf54l15_feather_2026-10-28b.step`, sens1 `nrf54l15_feather_sens1_2026-10-28.step`,
 ORP `feather_orp_2026-10-29.step` (fit check only; hidden component `Board_ORP_fitcheck`, not exported).

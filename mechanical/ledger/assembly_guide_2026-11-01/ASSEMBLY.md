@@ -39,7 +39,7 @@ Parts D, E and F are drawn as separate colours (black, coral, translucent coral)
 
 *The screws and inserts, one of each type. Left to right: brass M2 insert (x8), M2 x 5 button head screw (x8), M2 x 5 thread-forming screw with a pan head (x4).*
 
-Hardware is the Amazon version, from `shared\design\enclosure_hardware_amazon_2026-11-01.md` (ASINs, packs and prices checked on amazon.com 2026-11-01). The earlier McMaster-Carr hardware version of this guide and the model notes are in `..\variant_mcmaster_2026-11-01\`.
+Hardware is the Amazon version, from `mechanical\hardware_lists\enclosure_hardware_amazon_2026-11-01.md` (ASINs, packs and prices checked on amazon.com 2026-11-01). The earlier McMaster-Carr hardware version of this guide and the model notes are in `..\variant_mcmaster_2026-11-01\`.
 
 | Item | ASIN | Qty | Where |
 | --- | --- | --- | --- |

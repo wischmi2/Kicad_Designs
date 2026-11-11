@@ -36,7 +36,7 @@ Part letter D is not used any more: the printed board spacer was replaced by a p
 | <img src="part_I_usb_bung.png" width="280"><br>I USB bung | <img src="part_J_sma_boot.png" width="280"><br>J SMA boot |
 | <img src="part_K_clip_pad.png" width="280"><br>K Clip pad | |
 
-### Hardware (not printed). Amazon ASINs from `shared\design\enclosure_hardware_amazon_2026-11-01.md`
+### Hardware (not printed). Amazon ASINs from `mechanical\hardware_lists\enclosure_hardware_amazon_2026-11-01.md` (in the repo; it was in `shared\design\` before the 2026-11-10 reorg)
 The McMaster-Carr version of this list is in `..\variant_mcmaster_2026-11-01\` (NOTES.md and assembly_guide).
 
 <img src="hw_00_hardware_kit.png" width="640" alt="hw_00_hardware_kit.png">

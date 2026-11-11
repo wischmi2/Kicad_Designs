@@ -39,7 +39,7 @@ Parts D, E and F are drawn as separate colours (black, coral, translucent coral)
 
 *The screws and inserts, one of each type. Left to right: brass M2 insert (x8), M2 x 5 button head screw (x8), M2 x 5 thread-forming screw with a pan head (x4).*
 
-McMaster-Carr part numbers are from `shared\design\enclosure_hardware_mcmaster_2026-11-01.md`.
+McMaster-Carr part numbers are from `mechanical\hardware_lists\enclosure_hardware_mcmaster_2026-11-01.md`.
 
 | Item | P/N | Qty | Where |
 | --- | --- | --- | --- |
