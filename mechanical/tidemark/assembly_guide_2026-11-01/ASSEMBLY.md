@@ -53,7 +53,7 @@ The McMaster-Carr version of this list is in `..\variant_mcmaster_2026-11-01\` (
 | 1 g silica gel packets | B0GSRKXHFT | 100 | 1 | In the slot on the sled, beside the boards (see the silica pack note and step 10) |
 | VOSAREA adhesive ePTFE breathable membrane | B0F45VY7KK | 100 sheets | 1 | Over the 3.0 mm vent hole in the cap (cut a 6-10 mm disc) |
 | 14-way 0.5 mm FFC, 30 mm, **Type D (opposite-side contacts)**: Molex 0150200140 | DigiKey 0150200140-ND | | 1 | CN1 (main) to CN1 (sens1). Thickness to be checked against CN1's 0.3 mm |
-| 602050 LiPo (6 x 20 x 50 mm) with JST PH 2-pin (red on U4 pad 1) | not stocked at DigiKey/Mouser; source open | | 1 | Back of sled. See `mechanical\hardware_lists	idemark_electronics_perch_2026-11-11.md` |
+| 602050 LiPo (6 x 20 x 50 mm) with JST PH 2-pin (red on U4 pad 1) | not stocked at DigiKey/Mouser; source open | | 1 | Back of sled. See `mechanical\hardware_lists\tidemark_electronics_perch_2026-11-11.md` |
 | RG316 pigtail, right-angle SMA plug, with IP68 SMA bulkhead jack: Molex 73230-7070 (152.4 mm, longer than the 60-80 mm assumed) | Mouser 73230-7070 | | 1 | sens1 J1 to the bulkhead (one assembly with the next row) |
 | IP67 SMA bulkhead jack (6.5 mm hole) | part of the Molex 73230-7070 assembly above | | 1 | Heel floor of the foot cap |
 | Thin foam | | | some | Round the battery |
