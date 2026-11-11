@@ -52,10 +52,10 @@ The McMaster-Carr version of this list is in `..\variant_mcmaster_2026-11-01\` (
 | Mr O-Ring 2 mm silicone cord, 70A, 10 ft (cut a ~154 mm loop, join with CA glue) | B00QVB0ZG6 | 10 ft | 1 | Foot cap groove |
 | 1 g silica gel packets | B0GSRKXHFT | 100 | 1 | In the slot on the sled, beside the boards (see the silica pack note and step 10) |
 | VOSAREA adhesive ePTFE breathable membrane | B0F45VY7KK | 100 sheets | 1 | Over the 3.0 mm vent hole in the cap (cut a 6-10 mm disc) |
-| 14-way 0.5 mm FFC, 30 mm | (DigiKey/Mouser) | | 1 | CN1 (main) to CN1 (sens1) |
-| 602050 LiPo (6 x 20 x 50 mm) | (battery supplier) | | 1 | Back of sled |
-| RG316 pigtail, right-angle SMA plug, 60-80 mm | (DigiKey/Mouser) | | 1 | sens1 J1 to the bulkhead |
-| IP67 SMA bulkhead jack (6.5 mm hole) | (DigiKey/Mouser) | | 1 | Heel floor of the foot cap |
+| 14-way 0.5 mm FFC, 30 mm, **Type D (opposite-side contacts)**: Molex 0150200140 | DigiKey 0150200140-ND | | 1 | CN1 (main) to CN1 (sens1). Thickness to be checked against CN1's 0.3 mm |
+| 602050 LiPo (6 x 20 x 50 mm) with JST PH 2-pin (red on U4 pad 1) | not stocked at DigiKey/Mouser; source open | | 1 | Back of sled. See `mechanical\hardware_lists	idemark_electronics_perch_2026-11-11.md` |
+| RG316 pigtail, right-angle SMA plug, with IP68 SMA bulkhead jack: Molex 73230-7070 (152.4 mm, longer than the 60-80 mm assumed) | Mouser 73230-7070 | | 1 | sens1 J1 to the bulkhead (one assembly with the next row) |
+| IP67 SMA bulkhead jack (6.5 mm hole) | part of the Molex 73230-7070 assembly above | | 1 | Heel floor of the foot cap |
 | Thin foam | | | some | Round the battery |
 
 **Silica pack note.** There is no flat room beside the battery (about 5 x 6 mm), so the pack lives somewhere else: on the board side of the sled, in the 6 mm wide channel between the boards and the sleeve's left wall (the side away from the antenna and the key). The sled has a thin rib there; the rib and the sleeve wall make a slot 3.95 mm wide that the 1 g pack slides into from below. The model uses one pack of 3 x 19.9 x 30 mm (thickness x width x length, assumed size for the B0GSRKXHFT packet; check the real packet). It stands on the foot cap floor and runs from the cap up along the left wall for 30 mm. It clears the boards by 2.5 mm, the battery JST plug by 0.5 mm, the vent hole by 0.9 mm and the antenna (AE1) by 14 mm, and it does not block the FFC, USB or the battery. A second pack does not fit in this slot; there is no designed place for one.
