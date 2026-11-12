@@ -168,6 +168,7 @@ No LCSC numbers were added (DigiKey/Mouser are the sources for this board).
 8. Review items to fix: B2, S3 test pads, S4, S5, S6, S7 (all done 2026-11-04). S8 left as is (0.13 mm gap, order at 4/4 mil).
 
 - 2026-11-11: R1 (R_ID) 22k -> 220k, RC0402FR-07220KL (ratio 0.6875 unchanged with feather R19 100k); stock now fine at DigiKey and Mouser. Value/MPN only, copper and fab zip 11-07 untouched. ERC 0 errors, DRC 0/0/0 (no refill).
+- Crown modelled 2026-11-11 (fusion-enclosure, Opus; first run cut off after stage 1 by session end, restart did stages 2-4): housing (sole, hood, bonnet with cell hump for ASR00003, key, light pipe), dock ring, blank 3 mm plate, A6 Pad, A2 Span (printed bars 206 mm per side at 430 mm rim, stock-bar end caps), A5 Expander (3 mm top). STLs, NOTES.md and renders in mechanical\crown\print_draft_2026-11-11\, assembly STEP shared\handoffeather_water_level_tc2030\enclosure\crown_draft_assembly_2026-11-11.step. Interference clean (only press-fit inserts and board STEP internals). Beam path clear (A5 bore exactly on the 45 deg line). AE1 23 mm from dock ring; H4 screw must stay nylon. No PCB change. TC2030 needs the stack out. Fusion cloud save fails (uploaded copies read-only, likely the 10 editable-doc limit); local .f3d snapshots are the source. Open questions in NOTES.md (dock polarity chamfer, bar stock, A5 top thicknesses, gasket, H4 sole insert nylon/brass, drip lip/vial, latch off-centre).
 
 ## Questions for Brian
 1. Flashing connection: soldered wires or a printed pogo jig (decision 4).
