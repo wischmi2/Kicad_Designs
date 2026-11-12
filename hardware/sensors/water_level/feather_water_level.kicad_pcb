@@ -1971,7 +1971,7 @@
 				)
 			)
 		)
-		(property "Value" "22k"
+		(property "Value" "220k"
 			(at 0 4 180)
 			(layer "F.Fab")
 			(uuid "d94c4aaf-5c4f-46bf-a376-c5c2d68dac20")
@@ -1993,7 +1993,7 @@
 				)
 			)
 		)
-		(property "Description" "R_ID water level radar: 22k 1% 0402 (ratio 0.6875, SENSORS.md). DigiKey alt MPN RC0402FR-1322KL"
+		(property "Description" "R_ID water level radar: 220k 1% 0402 (ratio 0.6875 with feather R19 100k; register ID 22k x10). DigiKey alt MPN RC0402FR-13220KL"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -2004,7 +2004,7 @@
 				)
 			)
 		)
-		(property "MPN" "RC0402FR-0722KL"
+		(property "MPN" "RC0402FR-07220KL"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -2016,7 +2016,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Yageo"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
