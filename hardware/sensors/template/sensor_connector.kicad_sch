@@ -2417,7 +2417,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10k (set per SENSORS.md)"
+		(property "Value" "100k"
 			(at 93.98 132.08 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2450,8 +2450,41 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "R_ID template placeholder: 100k (was 10k, x10 2026-11-11); set per sensor from SENSORS.md"
 			(at 91.44 130.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-07100KL"
+			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Tolerance" "1%"
+			(at 0 0 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2630,7 +2663,7 @@
 		)
 		(uuid "de6bddfc-8e2c-4fd1-aea6-20fc2d5574dd")
 	)
-	(text "Host-side parts (keep on every sensor board):\nC1 1uF + C2 100nF: VSENS decoupling at CN1 (also the U4 / U3 side-1 input caps on the isolated variant).\nR1 = R_ID, SENS_ID (pin 11) to GND, 1 %. Value is SET PER SENSOR TYPE from the ID table in\nv4-sensor-connector.md / SENSORS.md. 10k is only a placeholder (10k = type 4)."
+	(text "Host-side parts (keep on every sensor board):\nC1 1uF + C2 100nF: VSENS decoupling at CN1 (also the U4 / U3 side-1 input caps on the isolated variant).\nR1 = R_ID, SENS_ID (pin 11) to GND, 1 %. Value is SET PER SENSOR TYPE from the ID table in\nv4-sensor-connector.md / SENSORS.md. Values are the x10 scaled set (2026-11-11), see SENSORS.md."
 		(exclude_from_sim no)
 		(at 40.64 105.41 0)
 		(effects
