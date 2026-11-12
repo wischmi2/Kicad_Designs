@@ -1775,7 +1775,7 @@
 				)
 			)
 		)
-		(property "Value" "10k (set per SENSORS.md)"
+		(property "Value" "22k"
 			(at 0 4 180)
 			(layer "F.Fab")
 			(uuid "d94c4aaf-5c4f-46bf-a376-c5c2d68dac20")
@@ -1797,7 +1797,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "R_ID DO: 22k 1% 0402 (ratio 0.1803 with feather R19 100k; register ID 2.2k x10). DigiKey alt MPN RC0402FR-1322KL"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -1809,6 +1809,42 @@
 			)
 		)
 		(property ki_fp_filters "R_*")
+		(property "MPN" "RC0402FR-0722KL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "184093c6-1b54-41b3-b6c6-d7fbbe8261b9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0105c6b5-3220-45b3-83cc-7d2532cac55f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "1%"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e69f11fa-991e-43d0-90d5-49a68cbb0f37")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/9f4015c9-bc16-4983-a249-fb3ed0079cbe/ca7700bf-a610-4d72-8b0c-77293dad2eb0")
 		(sheetname "/Sensor Connector/")
 		(sheetfile "sensor_connector.kicad_sch")
