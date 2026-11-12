@@ -90,6 +90,8 @@ This is the same rectangle as the main board's AE1_keepout rule area (132.15-141
 - Fusion: check the FFC loop and the standoff height against the STEP (U2/J1 bodies missing).
 - Register the easyeda2kicad footprint and 3D library on this PC (this clears the 9 footprint warnings and adds the passive models).
 
+- 2026-11-11: R1 (R_ID) 10k -> 100k, RC0402FR-07100KL (ratio 0.5 unchanged with feather R19 100k). Value/MPN only, copper and fab zip 11-07 untouched. ERC 0 errors, DRC 0/0/0 (no refill).
+
 ## Questions for Brian
 - H4 is now NPTH (needed for the R1 keep-out). APPROVED by Brian 2026-10-28 (nylon hardware at the antenna end). Otherwise H4 could stay plated with no net (a floating ring under AE1).
 - Stack orientation: sens1 parts facing up (as laid out) gives a gap of about 8 mm because of the SMA. OK, or move to a lower probe connector (for example a vertical U.FL/MMCX pigtail)?

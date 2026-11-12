@@ -37,6 +37,8 @@ Last reviewed: 2026-10-26
 - 3D models for J1 and U2 (or simple bodies) so the STEP is complete for the enclosure.
 - Register the easyeda2kicad / EasyEDA2Kicad / Parts_1 libraries on this PC (clears 22 library warnings, adds passive 3D models).
 
+- 2026-11-11: R1 (R_ID) set to 22k, RC0402FR-0722KL (register ID 2.2k x10 with feather R19 100k, ratio 0.1803); it was the 10k placeholder (read as pH). DigiKey stock for this MPN is 0, alt RC0402FR-1322KL or Mouser. Value/MPN only. ERC 0 errors, DRC 0/0/0 (no refill).
+
 ## Questions for Brian
 - R_ID: there is no SENSORS.md. docs\notes\v4-sensor-connector.md has the ID table (1k type 1 ... 100k type 7) but no assignments. The previous run proposed DO = 2.2k (type 2); the ORP board has 4.7k (type 3), conductivity proposes 1k (type 1), sens1 pH has 10k (type 4). Create SENSORS.md with these and fit 2.2k here?
 - Atlas_DO_OEM footprint pad pitch is 2.2/2.2/2.3/2.3 mm (copied from the Atlas DXF used for the sens1 pH footprint); the DO datasheet says 2.3 mm all pins. Pad 1 is about 0.2 mm off a true 2.3 mm grid but still overlaps the castellation. Keep the sens1 geometry (same as the pH board, if that was built and fitted fine) or switch to an exact 2.3 mm grid?

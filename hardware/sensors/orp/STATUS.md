@@ -139,6 +139,8 @@ Trial of option (c') from hardware\sensors\template\isolated_supply_options.md, 
 - Register the easyeda2kicad libraries on this PC (clears 18 ERC and 9 DRC library warnings).
 - Assembly note for the BOM/fab notes: the datasheet requires all flux to be washed off after soldering the OEM (ultrasonic, flux remover, or about 20 minutes in alcohol), and clear epoxy only if conformal protection is needed (no coloured potting).
 
+- 2026-11-11: R1 (R_ID) 4.7k -> 47k, RC0402FR-0747KL (ratio 0.3197 unchanged with feather R19 100k). Value/MPN only, copper and fab zip 11-07 untouched. ERC 0 errors, DRC 0/0/0 (no refill).
+
 ## Questions for Brian
 - (Closed 2026-10-28: Brian keeps the SN6505B supply as is.) Isolated supply trial: OK with the layout (renders in hardware\sensors\orp\docs\iso_supply_trial)? If so the template, DO and EC get the same block. Bench-test the supply first (list in the trial section)?
 - (Closed 2026-10-28: 4.7k, hardware\sensors\SENSORS.md.) R_ID: no SENSORS.md exists. The docs\notes\v4-sensor-connector.md table gives 4.7k = type 3 and the previous run picked that for ORP. Create SENSORS.md and confirm ORP = type 3 (4.7k 1 %, C25900), or another value? (conductivity has 1k proposed; DO and the others are still at the 10k placeholder.)

@@ -44,6 +44,8 @@ Same as sens1 (see hardware\sensors\ph\STATUS.md). The feather's FFC leaves +x a
 - Register the easyeda2kicad / EasyEDA2Kicad / Parts_1 libraries on this PC (clears 22 ERC/DRC library warnings and adds 3D models for the passives).
 - The first board built from the template (conductivity) must check the VDD_ISO budget, see Questions.
 
+- 2026-11-11: R1 (R_ID placeholder) 10k -> 100k, RC0402FR-07100KL (x10; still reads as pH until set per SENSORS.md). Value/MPN only. ERC 0 errors, DRC 0/0/0 (no refill).
+
 ## Questions for Brian
 - H4 is NPTH in the template (antenna keep-out), so only H3 is a plated GND hole. OK, or keep H4 plated as on sens1 and allow its pad inside the keep-out?
 - The isolated supply is U4 NXE1S0303MC from VSENS. It is unregulated (Vout follows Vin) and VSENS is 3.0 V, at the bottom of its 3.3 V +-10 % input range (from memory of the Murata NXE1 datasheet, not re-checked today), so VDD_ISO is nearer 3.0 V than 3.3 V under load, and the whole sensor shares the 100 mA VSENS budget. Fine for the pH OEM (3.0 to 5 V). The conductivity plan (EZO-EC, 3.3 V min, sensor-board-conductivity.md section 5.3) wants a VBAT-fed SN6505 + transformer + LDO at about 3.9 V instead. Keep the NXE1S0303MC as the template default, or change the default isolation block to the VBAT-fed design once the conductivity board proves it?

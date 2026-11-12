@@ -167,5 +167,7 @@ No LCSC numbers were added (DigiKey/Mouser are the sources for this board).
 7. Buying: SparkFun breakout now; XM125 modules when the board is ordered, with a spare. Brian orders.
 8. Review items to fix: B2, S3 test pads, S4, S5, S6, S7 (all done 2026-11-04). S8 left as is (0.13 mm gap, order at 4/4 mil).
 
+- 2026-11-11: R1 (R_ID) 22k -> 220k, RC0402FR-07220KL (ratio 0.6875 unchanged with feather R19 100k); stock now fine at DigiKey and Mouser. Value/MPN only, copper and fab zip 11-07 untouched. ERC 0 errors, DRC 0/0/0 (no refill).
+
 ## Questions for Brian
 1. Flashing connection: soldered wires or a printed pogo jig (decision 4).

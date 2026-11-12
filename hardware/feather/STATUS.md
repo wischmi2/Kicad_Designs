@@ -557,6 +557,8 @@ Reference plane: checking the In1 fill under the new line showed two holes from 
   - Check the layout against AEM10330 DS §10.
   - Do these before fab.
 
+- 2026-11-11: SENS_ID divider scaled x10 (Brian): R19 10k -> 100k (RT0402BRD07100KL), value/MPN only, copper unchanged, fab zip 10-29 untouched. ERC 0 errors, DRC 0/0/0 (no refill). Buy a 100k for R19. Firmware: SENS_ID source impedance is now 9-69 kohm, use a long SAADC acquisition time. See sensors\SENSORS.md.
+
 ## Questions for Brian
 - (closed 2026-10-28 evening: Brian placed the 0603 F1 at (130.23, 111.37)) **The F1 polyfuse has no legal site next to CN1.13**: courtyard, DECA and SENS_SDA conflicts (details in Run 5 stage 3, 3.2). Options:
   - (a) a smaller PTC (0402) with a smaller footprint; needs a part check and may still need room.
