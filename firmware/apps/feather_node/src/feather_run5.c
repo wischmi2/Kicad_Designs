@@ -16,10 +16,12 @@ static const struct gpio_dt_spec ant_sel = GPIO_DT_SPEC_GET(DT_ALIAS(ant_sel), g
 static const struct adc_dt_spec sens_id = ADC_DT_SPEC_GET_BY_IDX(DT_PATH(zephyr_user), 0);
 
 /* R19 pull-up on SENS_ID to VSENS, nominal VSENS (VDDIO via LSIN1, load switch mode). */
-#define SENS_ID_PULLUP_OHM 10000
+#define SENS_ID_PULLUP_OHM 100000 /* was 10k until the 2026-11-11 x10 rescale */
 #define VSENS_NOMINAL_MV   3000
-/* Settling time after VSENS on before sampling (load switch ramp + C45 + sensor board). */
-#define VSENS_SETTLE_MS    20
+/* Settling time after VSENS on before sampling (load switch ramp + C45 + sensor board).
+ * The ID divider now has about 50-70k source impedance, so any capacitance on SENS_ID
+ * (100 nF assumed worst case) gives tau of 5-7 ms; 50 ms is about 7 tau. */
+#define VSENS_SETTLE_MS    50
 /* Above this fraction of VSENS the pin is treated as open (no sensor board). */
 #define SENS_ID_OPEN_MV    2900
 

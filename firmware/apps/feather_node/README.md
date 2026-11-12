@@ -59,7 +59,7 @@ Status: devicetree, Kconfig and code written 2026-10-28, **NOT BUILT**. The buil
 
 Target: new board `nrf54l15_feather/nrf54l15/cpuapp` in `firmware\boards\nrf54l15_feather\` (was `soil_moisture_fw\boards\others\nrf54l15_feather\` before 2026-11-10; copied from `soil_moisture`; the existing soil_moisture board is untouched and the app still builds for it). Build: `.\scripts\build.ps1 -Board nrf54l15_feather/nrf54l15/cpuapp -BuildDir <dir>`. Feather-only code is `src\feather_run5.c` (compiled when `CONFIG_BOARD_NRF54L15_FEATHER`) and `boards\nrf54l15_feather_nrf54l15_cpuapp.conf` (`CONFIG_ADC=y`).
 
-Pins from the netlist (kicad-cli export of `nrf54l15_feather.kicad_sch`, 2026-10-28): I2C SCL P1.03, SDA P1.04; PMIC_INT P0.00 (U2 GPIO1); ANT_SEL P0.01 (U6.24 -> U7.2 -> ANT_VCTL -> R11.6); SENS_ID P1.06 (U6.7, SAADC AIN2, R19 10k to VSENS); VSENS = U2.29 LSOUT1 (LDSW1, node LDO1); VRF = U2.31 LSOUT2 (LDSW2, node LDO2).
+Pins from the netlist (kicad-cli export of `nrf54l15_feather.kicad_sch`, 2026-10-28): I2C SCL P1.03, SDA P1.04; PMIC_INT P0.00 (U2 GPIO1); ANT_SEL P0.01 (U6.24 -> U7.2 -> ANT_VCTL -> R11.6); SENS_ID P1.06 (U6.7, SAADC AIN2, R19 100k to VSENS); VSENS = U2.29 LSOUT1 (LDSW1, node LDO1); VRF = U2.31 LSOUT2 (LDSW2, node LDO2).
 
 | Item | Where | Setting | Source |
 | --- | --- | --- | --- |
@@ -67,7 +67,7 @@ Pins from the netlist (kicad-cli export of `nrf54l15_feather.kicad_sch`, 2026-10
 | 2 ANT_SEL | board dts `&gpio0` `ant-sel-hog` (output-low), plus the `ant-sel` gpio-leds alias that `main.c` still drives inactive | P0.01 low = VCTL 0 = ANT-RF1 = chip antenna (FM8625H truth table, review report B4 update; U7 is non-inverting). Hog init is POST_KERNEL priority 41, the nPM1300 regulators init at 85/86, so P0.01 is driven before VRF is on | FM8625H v1.2 via the review report; SN74AUP1G34 SCES603K |
 | 3 BUCK1 | board dts | no `BUCK1` node at all, so the driver creates no BUCK1 device and nothing can write BUCK1ENASET. VSET1 is grounded via R9 0R (off). BUCK2 (VDDIO) is `always-on` with a 2.9-3.1 V window and no software voltage write | STATUS.md item 3 |
 | 4 NTC | `charger` node | `thermistor-ohms = 10000`, `thermistor-beta = 3380` | R8 Murata NCP15XH103F03RC, B25/50 3380 K |
-| 5 SENS_ID | `feather_read_sens_id()` + dts `&adc channel@0` | `regulator_enable(VSENS)`, wait 20 ms, SAADC read on AIN2 (gain 1/4, internal ref, 40 us acquisition, 4x oversampling), `regulator_disable(VSENS)`. Rid is estimated as 10k * V / (3.0 V - V); open pin (above 2.9 V) gives 0 | STATUS.md item 7 |
+| 5 SENS_ID | `feather_read_sens_id()` + dts `&adc channel@0` | `regulator_enable(VSENS)`, wait 50 ms, SAADC read on AIN2 (gain 1/4, internal ref, 40 us acquisition, 4x oversampling), `regulator_disable(VSENS)`. Rid is estimated as 100k * V / (3.0 V - V); open pin (above 2.9 V) gives 0 | STATUS.md item 7 |
 | 6 Currents | `charger` node | charge `current-microamp = 150000` (cap is 300 mA; raise to at most 300000), `vbus-limit-microamp = 300000` (binding range 100-1500 mA in 100 mA steps) | STATUS.md stage 3.4 (0.25 mm VBAT/VBUS sections) |
 
 VRF: always on from boot is the simple safe choice (load about 50-90 uA, U7 0.9 uA). Switching it around TX/RX would save that current (matters on the 20-30 uA solar budget of other boards) but needs the 10 us switch settling and the U7 input handling on every cycle; do that only if the bench shows the current matters. If it is switched, drive P0.01 first and switch VRF off only after the radio is idle.
@@ -77,5 +77,13 @@ Needs a bench test:
 - P0.01 between reset and the hog (MCU reset while the PMIC keeps VRF on): U7's input floats for a short time. Fit R20 (1M pull-down, DNP) if the VCTL glitch matters.
 - NTC: read the charger's battery temperature with the real R8 and a battery; check the 10k/3380 setting against room temperature.
 - Dead-battery USB attach: the nPM1300 default VBUS limit is 100 mA until set; check that the board starts from a dead battery on USB, that the 300 mA VBUS limit holds with 150 mA charge plus the load, and that charging resumes. Also check whether the Rd on CC1/CC2 works with R1/R2 DNP.
-- SENS_ID: voltages for 1k, 2.2k, 4.7k, 10k and open; confirm the settle time on a real sensor board.
+- SENS_ID: voltages for 10k, 22k, 47k, 100k, 220k and open; confirm the settle time on a real sensor board.
 - LFCLK: X2 is DNP; select the LFCLK source in Kconfig before using BLE.
+
+## SENS_ID divider rescale (2026-11-11)
+
+Hardware: R19 (VSENS to SENS_ID) 10k to 100k; sensor-board R_ID EC 10k, DO 22k, ORP 47k, pH 100k, water level 220k. Ratios are unchanged, so pin voltages and the 2.9 V open threshold are unchanged (220k gives about 2.06 V, still below open).
+
+Firmware: `SENS_ID_PULLUP_OHM` is 100000 (the Rid estimate scales with it); `VSENS_SETTLE_MS` 20 to 50 ms (source impedance is now 50-70k, so stray capacitance on SENS_ID settles 10x slower); acquisition time stays 40 us.
+
+Acquisition time basis: the nRF54L15 SAADC TACQ field is 9 bits, tacq = (TACQ+1) x 125 ns (up to 64 us; from the nrfx MDK SVD, NCS v3.1.0). I could not load the Nordic datasheet's acquisition-time vs source-resistance table (the docs page body did not come through). From memory, the nRF52 SAADC table allows about 100k at 10 us and about 800k at 40 us; the nRF54L15 table is unverified, so check it when the SDK is installed. 40 us leaves a large margin for 70k either way. If the bench shows reading error, raise it with a raw value such as `ADC_ACQ_TIME(ADC_ACQ_TIME_MICROSECONDS, 60)` (the nRF54L branch of the Zephyr driver takes any multiple of 125 ns).

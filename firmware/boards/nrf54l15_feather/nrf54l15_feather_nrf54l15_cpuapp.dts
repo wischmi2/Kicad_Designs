@@ -15,7 +15,7 @@
  *   I2C_SCL  U6.4  P1.03     I2C_SDA  U6.5  P1.04
  *   PMIC_INT U6.23 P0.00 <- U2.8 GPIO1
  *   ANT_SEL  U6.24 P0.01 -> U7.2 (SN74AUP1G34, VCC = VRF) -> ANT_VCTL -> R11.6 (FM8625H VCTL)
- *   SENS_ID  U6.7  P1.06 (SAADC AIN2), R19 10k pull-up to VSENS
+ *   SENS_ID  U6.7  P1.06 (SAADC AIN2), R19 100k pull-up to VSENS
  *   VSENS    U2.29 LSOUT1/VOUTLDO1 (nPM1300 LDSW1), input LSIN1 = VDDIO
  *   VRF      U2.31 LSOUT2/VOUTLDO2 (nPM1300 LDSW2), input LSIN2 = VDDIO
  *   BUCK1    U2.1 VOUT1 (VSET1 grounded through R9 0R, so OFF), only L9/C18 on it
@@ -146,10 +146,12 @@
 	status = "okay";
 };
 
-/* SENS_ID on P1.06 = SAADC AIN2. R19 = 10k to VSENS (3.0 V); the sensor board puts its
- * ID resistor to GND, so the pin sits at VSENS * Rid / (Rid + 10k), 0..VSENS (open).
- * Gain 1/4 on the internal reference gives a 3.6 V full scale. 40 us acquisition
- * covers up to about 10k source impedance.
+/* SENS_ID on P1.06 = SAADC AIN2. R19 = 100k to VSENS (3.0 V); the sensor board puts its
+ * ID resistor to GND, so the pin sits at VSENS * Rid / (Rid + 100k), 0..VSENS (open).
+ * Rid values (2026-11-11 x10 rescale): EC 10k, DO 22k, ORP 47k, pH 100k, water level 220k.
+ * Source impedance at the pin is R19 || Rid, up to about 70 kohm. Gain 1/4 on the internal
+ * reference gives a 3.6 V full scale. 40 us acquisition (the longest named Zephyr setting;
+ * the TACQ field allows up to 64 us) is well above what a 70k source needs, see README.
  */
 &adc {
 	status = "okay";
