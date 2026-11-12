@@ -26,7 +26,7 @@ Pins and connections below come from `kicad-cli` netlists of each board's schema
 | 8 | SENS_CS | SPI chip select | P2.05 (U6.16) | R18 10k to VSENS |
 | 9 | SENS_INT | interrupt, GPIO | P1.07 (U6.8) | R17 10k to VSENS |
 | 10 | SENS_AIN | analog in, 0 to 3.0 V | P1.05 = AIN1 (U6.6) | |
-| 11 | SENS_ID | board ID | P1.06 = AIN2 (U6.7) | R19 10k to VSENS |
+| 11 | SENS_ID | board ID | P1.06 = AIN2 (U6.7) | R19 100k to VSENS (10k before 2026-11-11) |
 | 12 | GND | ground | - | |
 | 13 | VBAT_CN1 | battery, always on | - | F1 200 mA polyfuse (MF-FSMF020X-2) |
 | 14 | GND | ground | - | |
@@ -92,28 +92,28 @@ No board uses SPI, UART or AIN today. The water level board is the only one usin
 - **Pins:** VSENS, SENS_SDA, SENS_SCL, SENS_ID, GND.
 - **VSENS feeds:** U3 ADuM1250 host side, U4 NXE1S0303MC isolated DC-DC, C1, C2, C6.
 - **I2C:** through the U3 isolator. Address not recorded in the board's STATUS.md.
-- **SENS_ID:** R1 10k.
+- **SENS_ID:** R1 100k (was 10k).
 - **Interrupt:** not wired to CN1, so firmware polls.
 
 ### ORP (Atlas ORP OEM): `hardware\sensors\orp`
 - **Pins:** VSENS, SENS_SDA, SENS_SCL, SENS_ID, GND.
 - **VSENS feeds:** U3 ISO1540DR host side, FB1 to the SN6505B isolated supply, C1, C2, C12.
 - **I2C:** through the U3 isolator, address 0x66.
-- **SENS_ID:** R1 4.7k.
+- **SENS_ID:** R1 47k (was 4.7k).
 - **Interrupt:** Atlas INT stops at test pad J5 on the isolated side, so firmware polls register 0x07.
 
 ### DO (Atlas DO OEM): `hardware\sensors\dissolved_oxygen`
 - **Pins:** VSENS, SENS_SDA, SENS_SCL, SENS_ID, GND.
 - **VSENS feeds:** U3 ADuM1250 host side, U4 NXE1S0303MC isolated DC-DC, C1, C2.
 - **I2C:** through the U3 isolator, address 0x67.
-- **SENS_ID:** the register says 2.2k, but **the schematic still has the 10k placeholder** (see Open issues).
+- **SENS_ID:** R1 22k (was a 10k placeholder that read as pH; fixed 2026-11-11).
 - **Interrupt:** Atlas INT stops at test pad J5 on the isolated side, so firmware polls register 0x07.
 
 ### EC (Atlas EC OEM): `hardware\sensors\conductivity`
 - **Pins:** VSENS, SENS_SDA, SENS_SCL, SENS_ID, GND.
 - **VSENS feeds:** U3 ADuM1250 host side, U4 NXE1S0303MC isolated DC-DC, C1, C2.
 - **I2C:** through the U3 isolator, address 0x64.
-- **SENS_ID:** the register says 1k, but **the schematic still has the 10k placeholder** (see Open issues).
+- **SENS_ID:** R1 10k (register ID 1k x10; was a 10k placeholder that read as pH; fixed 2026-11-11).
 - **Interrupt:** Atlas INT stops at test pad J5 on the isolated side, so firmware polls register 0x07.
 
 ### Water level (Acconeer XM125 radar): `hardware\sensors\water_level`
@@ -125,16 +125,16 @@ No board uses SPI, UART or AIN today. The water level board is the only one usin
 - **Pin 6 RADAR_WAKE:** through U4 to XM125 WAKE_UP, high = wake. R3 100k pull-down.
 - **Pin 8 RADAR_RST:** drives Q1 BSS138 onto XM125 NRESET, high = held in reset. R2 100k pull-down.
 - **Pin 9 SENS_INT:** from XM125 MCU_INT through U5, high = ready.
-- **SENS_ID:** R1 22k.
+- **SENS_ID:** R1 220k (was 22k). Same on the TC2030 variant.
 
 ### Template (no sensor): `hardware\sensors\template`
 - **Pins:** VSENS, SENS_SDA, SENS_SCL, SENS_ID, GND.
 - **VSENS feeds:** U3 ADuM1250 host side, U4 NXE1S0303MC isolated DC-DC, C1, C2.
-- **SENS_ID:** R1 10k placeholder, which reads as pH until it's changed.
+- **SENS_ID:** R1 100k placeholder (was 10k), which reads as pH until it's changed.
 
 ## Open issues (found 2026-11-02)
 
-1. **DO and EC have the wrong ID resistor.** Both schematics have R1 = 10k, which firmware would read as pH. `SENSORS.md` assigns 2.2k (DO) and 1k (EC). Neither board has fab output yet; fix R1 before generating it.
+1. **SENS_ID divider scaled x10 (2026-11-11, Brian).** R19 100k and R_ID now 10k (EC), 22k (DO), 47k (ORP), 100k (pH), 220k (water level, TC2030), 100k (template). All ratios are unchanged (0.0909, 0.1803, 0.3197, 0.5, 0.6875), so firmware ID thresholds do not change. Divider current at 3.0 V is now 9 to 27 uA (was 94 to 273 uA). The SAADC source impedance is now R19 || R_ID = 9 to 69 kohm, so firmware needs a long acquisition time (40 us) on SENS_ID. The DO/EC wrong-ID-resistor issue (10k placeholders) is closed by this change. Details in `SENSORS.md`.
 2. **Water level notes need the radar build.** The radar reset, interrupt and I2C pull-up problems are settled by the radar feather build above (review: shared\reports\2026-11-02-review-feather-water-level.md, B1 and S2). The firmware reset default still needs checking on the bench.
 3. **pH I2C address isn't recorded.** Confirm it from the Atlas datasheet and add it here.
 4. **Feather firmware has no CN1 sensor pins yet, other than SENS_ID.** The board file (`firmware\boards\nrf54l15_feather`) still needs the sensor I2C bus and the water level pins.
