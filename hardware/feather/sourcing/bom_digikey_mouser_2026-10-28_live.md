@@ -1,5 +1,7 @@
 # nRF54L15 feather main board: DigiKey / Mouser BOM, live data (2026-10-28)
 
+> **Update 2026-11-11:** R19 (SENS_ID pull-up) is now 100k, RT0402BRD07100KL (YAG1343CT-ND, DigiKey 76 k; Mouser 245 k), instead of 10k RT0402BRD0710KL; R17 and R18 stay 10k. The current BOM is nrf54l15_feather_bom_2026-10-30.csv; the 2026-10-28 snapshot files are not edited.
+
 Live check date: 2026-10-28; revised later the same day (stage 1 C43, stage 2 substitute datasheet checks; see the 'Revision' section at the end). (DigiKey Product Information API v4 and Mouser Search API, called with the account keys on this PC; USD, US site, cut tape). Replaces the no-data version bom_digikey_mouser_2026-10-28.md. Build quantities: 1 board and 5 boards. 51 BOM lines (72 fitted parts); DNP parts are listed at the end and not priced.
 
 BOM source: kicad-cli sch export bom on nrf54l15_feather.kicad_sch (read-only). Differences from the earlier BOM file: C4 is gone; the new LDO-input cap is C54 CL05A106MQ5NUNC (0402), not a 0603 CL10A106KP8NNNC as the old file assumed; C41 MPN still lacks the trailing D. Package check is by MPN size code against the footprint name (0201/0402/0603/0805/1206, QFN pin count, DK package field for U6); pad geometry was not compared.

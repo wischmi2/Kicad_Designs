@@ -43,7 +43,8 @@ Qty,References,Value,Footprint,Manufacturer,MPN,Description,LCSC
 1,R11,FM8625H,DFN-6_L1.1-W0.7-P0.40-BL,FM,FM8625H,,C2857391
 4,"R12,R13,R15,R16",4.7k,R0402,YAGEO,RC0402FR-074K7L,4.7k pull-up to VSENS,C105871
 1,R14,560,R0402,Yageo,RC0402FR-07560RL,,
-3,"R17,R18,R19",10k,R0402,Yageo,RT0402BRD0710KL,"10k pull-up to VSENS,SENS_ID pull-up, now from VSENS (was VDDIO) so it draws no current while the sensor rail is off (review S6, Brian 2026-10-27).",C190095
+2,"R17,R18",10k,R0402,Yageo,RT0402BRD0710KL,10k pull-up to VSENS,C190095
+1,R19,100k,R0402,Yageo,RT0402BRD07100KL,"SENS_ID pull-up to VSENS, 100k since 2026-11-11 (was 10k, divider current /10; DigiKey YAG1343CT-ND 76 k stock, Mouser 245 k). LCSC for 100k not checked",
 1,RF1,ECT818000500,ANT-SMD_ECT818000500,ECT,ECT818000500,,C437254
 1,SW1,SW_Push,SW_SPST_B3U-1000P,Omron,B3U-1000P,"Push button switch, generic, two pins",
 1,U2,nPM1300-QEXX,QFN-32-1EP_5x5mm_P0.5mm_EP3.6x3.6mm_ThermalVias,Nordic Semiconductor,nPM1300-QEAA-R7,"PMIC, LED Driver, Battery Charger, QFN-32",

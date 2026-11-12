@@ -1,5 +1,7 @@
 # Feather water level TC2030 variant: DigiKey / Mouser BOM, live data (2026-11-08)
 
+> **Update 2026-11-11:** R1 (SENS_ID R_ID) is now 220k 1% 0402, RC0402FR-07220KL (was 22k RC0402FR-0722KL), part of the x10 board-ID divider change (feather R19 100k, ratio 0.6875 unchanged). Stock checked 2026-11-11: DigiKey 1,037,777 (311-220KLRCT-ND), Mouser 835,482, so R1 no longer needs Mouser. The R1 rows and the Mouser cart CSV below and in the BOM CSV were updated; the 22k remarks in the stock-problem table are history, and kicad_bom_export_2026-11-08_raw.csv is left as the 2026-11-08 snapshot.
+
 Live check date: 2026-11-08 (DigiKey Product Information API v4 and Mouser Search API, called from this PC with the account keys; USD, US site, cut tape). Every stock and price figure below is live from those APIs except where "Not live" says otherwise. Prices are unit prices at the quantity break for the line's total quantity; unit price at qty 1/10/100 is shown per MPN in the table. Shipping, tax and tariffs are not included.
 
 BOM source: `kicad-cli sch export bom` (10.0.4) on feather_water_level_tc2030.kicad_sch; the raw export is kept in kicad_bom_export_2026-11-08_raw.csv. Schematic and PCB were not edited. No DNP parts in the schematic. Left out as board-only: TP1-TP10 (test pads), H1-H4 (mounting holes), J1 (the TC2030 footprint: 6 pads and 7 NPTH holes, in_bom no). 12 lines, 21 parts per board.

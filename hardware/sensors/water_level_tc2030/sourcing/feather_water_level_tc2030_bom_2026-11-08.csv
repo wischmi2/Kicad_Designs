@@ -5,7 +5,7 @@ C5,1,10uF 6.3V X5R,GRM155R60J106ME15D,Murata Electronics,490-13238-1-ND,81-GRM15
 C6-C10,5,100nF 10V X7R,GRM155R71A104KA01D,Murata Electronics,490-6321-1-ND,81-GRM155R71A104KA1D,0.1,DK 1423001 / Mouser 2048969,Mouser shows On Order (0 on hand); buy at DigiKey
 CN1,1,"FFC 14-pos 0.5 mm R/A, 1 MP",503480-1400,Molex,WM1442CT-ND,538-503480-1400,1.4,DK 29362 / Mouser 16604,DigiKey MPN is 5034801400 (WM1442CT-ND); same part as Mouser 503480-1400. Equal price; DK listed as primary
 Q1,1,BSS138LT1G 50V 200mA N-MOS,BSS138LT1G,onsemi,BSS138LT1GOSCT-ND,863-BSS138LT1G,0.35,DK 27 / Mouser 3022,"DigiKey only 27 on hand (enough for 1 or 5 boards); Mouser 3,022 at 0.43. Thin at DK, Mouser is the safer source"
-R1,1,22k 1% 0402,RC0402FR-0722KL,Yageo,311-22.0KLRCT-ND,603-RC0402FR-0722KL,0.1,DK 0 / Mouser 2797,"DigiKey 0 stock for -0722KL. Mouser 2,797. Drop-in at DigiKey: RC0402FR-1322KL (13-RC0402FR-1322KLCT-ND, 25,688, same value/size/tolerance, different reel code). R1 = 22k sets SENS_ID 0.6875"
+R1,1,220k 1% 0402,RC0402FR-07220KL,Yageo,311-220KLRCT-ND,603-RC0402FR-07220KL,0.1,DK 1037777 / Mouser 835482 (checked 2026-11-11),"R1 changed 22k -> 220k on 2026-11-11 (SENS_ID divider x10, ratio 0.6875 unchanged). The old 22k RC0402FR-0722KL (DigiKey 0 stock) is no longer needed. DigiKey alt: RC0402FR-13220KL (20,123)"
 R2-R4,3,100k 1% 0402,RC0402FR-07100KL,Yageo,311-100KLRCT-ND,603-RC0402FR-07100KL,0.1,DK 4668266 / Mouser 10452358,
 U1,1,Acconeer XM125 A121 radar module,XM125,Acconeer AB,1891-XM125-ND,925-XM125,22.2,DK 0 / Mouser 3652,"DigiKey 0 (tray, 16 wk lead per 10-30 check); Mouser 3,652 (was 1,263 on 10-30). Only source; no equivalent"
 U2,1,NCP161ASN180T1G 1.8V 450mA LDO,NCP161ASN180T1G,onsemi,NCP161ASN180T1GOSCT-ND,863-NCP161ASN180T1G,0.61,DK 52300 / Mouser 27231,
