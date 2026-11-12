@@ -6858,7 +6858,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "100k"
 			(at 111.76 137.16 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6890,7 +6890,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "R_ID pH: 100k 1% 0402 (ratio 0.5 with feather R19 100k; register ID 10k x10)"
 			(at 111.76 137.16 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6911,8 +6911,19 @@
 				)
 			)
 		)
-		(property "MPN" "RC0402FR-0710KL"
+		(property "MPN" "RC0402FR-07100KL"
 			(at 113.792 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Tolerance" "1%"
+			(at 0 0 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
