@@ -10428,7 +10428,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "100k"
 			(at 0 1.6 0)
 			(layer "F.Fab")
 			(uuid "dbba1b62-1deb-4108-bbba-8dfdf731e493")
@@ -10450,7 +10450,7 @@
 				)
 			)
 		)
-		(property "Description" "SENS_ID pull-up, now from VSENS (was VDDIO) so it draws no current while the sensor rail is off (review S6, Brian 2026-10-27)."
+		(property "Description" "SENS_ID pull-up, now from VSENS (was VDDIO) so it draws no current while the sensor rail is off (review S6, Brian 2026-10-27). 100k since 2026-11-11 (was 10k; divider current /10, ratios unchanged)."
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -10461,7 +10461,7 @@
 				)
 			)
 		)
-		(property "MPN" "RT0402BRD0710KL"
+		(property "MPN" "RT0402BRD07100KL"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10474,15 +10474,26 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C190095"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 0)
-			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "2aa6d10a-1b49-44b5-ac26-3d084c73244c")
+			(uuid "005fffc2-7022-4b7e-a39f-be38dcdf2f5d")
 			(effects
 				(font
-					(size 1 1)
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "1%"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4f3426fa-e2f6-4daa-89b3-e3d2078e181f")
+			(effects
+				(font
+					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)

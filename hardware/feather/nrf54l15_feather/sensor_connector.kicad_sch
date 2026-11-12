@@ -2217,7 +2217,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "100k"
 			(at 40.64 45.72 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2249,7 +2249,7 @@
 				)
 			)
 		)
-		(property "Description" "SENS_ID pull-up, now from VSENS (was VDDIO) so it draws no current while the sensor rail is off (review S6, Brian 2026-10-27)."
+		(property "Description" "SENS_ID pull-up, now from VSENS (was VDDIO) so it draws no current while the sensor rail is off (review S6, Brian 2026-10-27). 100k since 2026-11-11 (was 10k; divider current /10, ratios unchanged)."
 			(at 40.64 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -2260,7 +2260,7 @@
 				)
 			)
 		)
-		(property "MPN" "RT0402BRD0710KL"
+		(property "MPN" "RT0402BRD07100KL"
 			(at 40.64 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -2271,8 +2271,19 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C190095"
-			(at 40.64 48.26 0)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Tolerance" "1%"
+			(at 0 0 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
