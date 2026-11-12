@@ -2061,7 +2061,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7k"
+		(property "Value" "47k"
 			(at 0 4 180)
 			(layer "F.Fab")
 			(uuid "d94c4aaf-5c4f-46bf-a376-c5c2d68dac20")
@@ -2083,7 +2083,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "R_ID ORP: 47k 1% 0402 (ratio 0.3197 with feather R19 100k; register ID 4.7k x10)"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -2106,7 +2106,7 @@
 				)
 			)
 		)
-		(property "MPN" "RC0402FR-074K7L"
+		(property "MPN" "RC0402FR-0747KL"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -2119,6 +2119,18 @@
 			)
 		)
 		(property ki_fp_filters "R_*")
+		(property "Tolerance" "1%"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "31db9891-80c9-40c8-af2c-2ae25e90c0f6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/9f4015c9-bc16-4983-a249-fb3ed0079cbe/ca7700bf-a610-4d72-8b0c-77293dad2eb0")
 		(sheetname "/Sensor Connector/")
 		(sheetfile "sensor_connector.kicad_sch")

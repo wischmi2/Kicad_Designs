@@ -2417,7 +2417,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7k"
+		(property "Value" "47k"
 			(at 93.98 132.08 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2450,7 +2450,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "R_ID ORP: 47k 1% 0402 (ratio 0.3197 with feather R19 100k; register ID 4.7k x10)"
 			(at 91.44 130.81 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2471,8 +2471,19 @@
 				)
 			)
 		)
-		(property "MPN" "RC0402FR-074K7L"
+		(property "MPN" "RC0402FR-0747KL"
 			(at 91.44 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Tolerance" "1%"
+			(at 0 0 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2652,7 +2663,7 @@
 		)
 		(uuid "de6bddfc-8e2c-4fd1-aea6-20fc2d5574dd")
 	)
-	(text "Host-side parts (keep on every sensor board):\nC1 1uF + C2 100nF: VSENS decoupling at CN1 (also the U4 / U3 side-1 input caps on the isolated variant).\nR1 = R_ID, SENS_ID (pin 11) to GND, 1 %. Value is SET PER SENSOR TYPE from the ID table in\nv4-sensor-connector.md / SENSORS.md. 10k is only a placeholder (10k = type 4)."
+	(text "Host-side parts (keep on every sensor board):\nC1 1uF + C2 100nF: VSENS decoupling at CN1 (also the U4 / U3 side-1 input caps on the isolated variant).\nR1 = R_ID, SENS_ID (pin 11) to GND, 1 %. Value is SET PER SENSOR TYPE from the ID table in\nv4-sensor-connector.md / SENSORS.md. Values are the x10 scaled set (2026-11-11), see SENSORS.md."
 		(exclude_from_sim no)
 		(at 40.64 105.41 0)
 		(effects
