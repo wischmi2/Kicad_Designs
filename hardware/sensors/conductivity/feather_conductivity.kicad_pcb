@@ -1600,7 +1600,7 @@
 				)
 			)
 		)
-		(property "Value" "10k (set per SENSORS.md)"
+		(property "Value" "10k"
 			(at 0 4 180)
 			(layer "F.Fab")
 			(uuid "d94c4aaf-5c4f-46bf-a376-c5c2d68dac20")
@@ -1622,7 +1622,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "R_ID EC: 10k 1% 0402 (ratio 0.0909 with feather R19 100k; register ID 1k x10)"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -1634,6 +1634,42 @@
 			)
 		)
 		(property ki_fp_filters "R_*")
+		(property "MPN" "RC0402FR-0710KL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2244b42f-59c3-4145-bba3-f88085b31ccb")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "012c80d0-65cd-4f33-ae8d-02cad04dfa88")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "1%"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ec1d5b04-43e7-4d36-80dd-01a015d595f3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/9f4015c9-bc16-4983-a249-fb3ed0079cbe/ca7700bf-a610-4d72-8b0c-77293dad2eb0")
 		(sheetname "/Sensor Connector/")
 		(sheetfile "sensor_connector.kicad_sch")
