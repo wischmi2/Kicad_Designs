@@ -1,0 +1,9 @@
+{"image": "callout_01_crown_exterior.png", "width": 1600, "height": 1000, "labels": [
+{"text": "sole", "x": 700, "y": 925, "side": "bottom"},
+{"text": "hood", "x": 960, "y": 330, "side": "top"},
+{"text": "hood plinth", "x": 1000, "y": 640, "side": "right"},
+{"text": "bonnet (battery hump)", "x": 560, "y": 420, "side": "left"},
+{"text": "bonnet screw hole", "x": 825, "y": 465, "side": "right"},
+{"text": "USB tunnel", "x": 555, "y": 640, "side": "left"},
+{"text": "sole pry notch", "x": 1160, "y": 600, "side": "right"}
+]}

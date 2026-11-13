@@ -1,0 +1,10 @@
+{"image": "callout_05_crown_on_dock_orientation.png", "width": 1600, "height": 1000, "labels": [
+{"text": "hook tongue (USB end)", "x": 445, "y": 625, "side": "left"},
+{"text": "hook tongue", "x": 595, "y": 725, "side": "bottom"},
+{"text": "USB tunnel", "x": 578, "y": 590, "side": "top"},
+{"text": "bonnet (hump) at hook end", "x": 650, "y": 380, "side": "top"},
+{"text": "latch end (far end)", "x": 1155, "y": 450, "side": "right"},
+{"text": "dock ring", "x": 990, "y": 690, "side": "right"},
+{"text": "A6 pad ear", "x": 1020, "y": 760, "side": "bottom"},
+{"text": "corner boss", "x": 1225, "y": 515, "side": "right"}
+]}

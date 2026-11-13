@@ -1,0 +1,9 @@
+{"image": "callout_01b_crown_key_lightpipe.png", "width": 1600, "height": 1000, "labels": [
+{"text": "key (SW1 button)", "x": 708, "y": 448, "side": "left"},
+{"text": "light pipe (LED1)", "x": 759, "y": 454, "side": "bottom"},
+{"text": "bonnet", "x": 640, "y": 270, "side": "top"},
+{"text": "hood", "x": 1000, "y": 410, "side": "right"},
+{"text": "round hole in end wall", "x": 1084, "y": 584, "side": "right"},
+{"text": "sole pry notch", "x": 815, "y": 835, "side": "bottom"},
+{"text": "sole", "x": 1050, "y": 790, "side": "right"}
+]}

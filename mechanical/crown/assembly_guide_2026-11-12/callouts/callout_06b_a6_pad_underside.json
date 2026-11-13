@@ -1,0 +1,9 @@
+{"image": "callout_06b_a6_pad_underside.png", "width": 1600, "height": 1000, "labels": [
+{"text": "gasket area (34/54 ring)", "x": 450, "y": 395, "side": "left"},
+{"text": "radar opening", "x": 700, "y": 545, "side": "bottom"},
+{"text": "ear (M4 hole)", "x": 1070, "y": 350, "side": "right"},
+{"text": "ear (M4 hole)", "x": 568, "y": 640, "side": "bottom"},
+{"text": "ring screw hole", "x": 275, "y": 445, "side": "left"},
+{"text": "ring screw hole", "x": 880, "y": 757, "side": "bottom"},
+{"text": "plate face (to dock ring)", "x": 1100, "y": 560, "side": "right"}
+]}

@@ -1,0 +1,13 @@
+{"image": "callout_07_a2_span.png", "width": 2400, "height": 1500, "labels": [
+{"text": "span plate", "x": 1330, "y": 710, "side": "top"},
+{"text": "radar aperture", "x": 1200, "y": 650, "side": "top"},
+{"text": "bar section (printed, 206 mm)", "x": 1750, "y": 960, "side": "right"},
+{"text": "bar section", "x": 800, "y": 480, "side": "top"},
+{"text": "end tongue (rim locator)", "x": 430, "y": 440, "side": "left"},
+{"text": "end tongue (rim locator)", "x": 2060, "y": 1350, "side": "bottom"},
+{"text": "end tongue", "x": 2250, "y": 1250, "side": "right"},
+{"text": "ring screw hole", "x": 1318, "y": 826, "side": "bottom"},
+{"text": "ring screw hole", "x": 1527, "y": 696, "side": "right"},
+{"text": "ring screw hole", "x": 985, "y": 637, "side": "left"},
+{"text": "bar clip", "x": 1130, "y": 790, "side": "left"}
+]}

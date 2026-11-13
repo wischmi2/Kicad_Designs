@@ -1,0 +1,55 @@
+{
+ "image": "callout_03_dock_ring_top.png",
+ "width": 1600,
+ "height": 1000,
+ "labels": [
+  {
+   "text": "hook tongue",
+   "x": 385,
+   "y": 572,
+   "side": "left"
+  },
+  {
+   "text": "hook tongue",
+   "x": 565,
+   "y": 700,
+   "side": "bottom"
+  },
+  {
+   "text": "45 deg lead-in",
+   "x": 1165,
+   "y": 325,
+   "side": "top"
+  },
+  {
+   "text": "latch lip",
+   "x": 1160,
+   "y": 392,
+   "side": "bottom"
+  },
+  {
+   "text": "flexure latch beam",
+   "x": 1000,
+   "y": 362,
+   "side": "top"
+  },
+  {
+   "text": "thumb tab",
+   "x": 1235,
+   "y": 455,
+   "side": "bottom"
+  },
+  {
+   "text": "corner boss (insert hole below)",
+   "x": 885,
+   "y": 255,
+   "side": "left"
+  },
+  {
+   "text": "USB end (hooks)",
+   "x": 300,
+   "y": 600,
+   "side": "left"
+  }
+ ]
+}

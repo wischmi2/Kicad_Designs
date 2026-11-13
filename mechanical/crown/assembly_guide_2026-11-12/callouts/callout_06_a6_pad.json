@@ -1,0 +1,8 @@
+{"image": "callout_06_a6_pad.png", "width": 1600, "height": 1000, "labels": [
+{"text": "ear (M4 hole)", "x": 566, "y": 352, "side": "top"},
+{"text": "ear (M4 hole)", "x": 1062, "y": 638, "side": "right"},
+{"text": "ring screw hole (x4)", "x": 268, "y": 543, "side": "left"},
+{"text": "radar opening", "x": 690, "y": 545, "side": "bottom"},
+{"text": "dock seat (ring sits here)", "x": 950, "y": 400, "side": "top"},
+{"text": "plate edge notch", "x": 495, "y": 430, "side": "left"}
+]}

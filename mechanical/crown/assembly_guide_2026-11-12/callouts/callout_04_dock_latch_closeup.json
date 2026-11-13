@@ -1,0 +1,60 @@
+{
+ "image": "callout_04_dock_latch_closeup.png",
+ "width": 2400,
+ "height": 1500,
+ "note": "Whole-assembly iso at 2400x1500 so the latch end (lower right) can be cropped. Release push direction is +x, which runs down and to the right in this picture (about 0.85 right, 0.5 down in pixel space); arrow_dir is a hint for the arrow.",
+ "labels": [
+  {
+   "text": "thumb tab",
+   "x": 1480,
+   "y": 1185,
+   "side": "bottom"
+  },
+  {
+   "text": "flexure latch beam",
+   "x": 1690,
+   "y": 1075,
+   "side": "right"
+  },
+  {
+   "text": "latch lip",
+   "x": 1405,
+   "y": 1150,
+   "side": "left"
+  },
+  {
+   "text": "45 deg lead-in",
+   "x": 1500,
+   "y": 1065,
+   "side": "top"
+  },
+  {
+   "text": "push tab this way to release",
+   "x": 1520,
+   "y": 1255,
+   "side": "right",
+   "arrow_dir": [
+    0.85,
+    0.5
+   ]
+  },
+  {
+   "text": "Crown hood plinth",
+   "x": 1250,
+   "y": 1130,
+   "side": "left"
+  },
+  {
+   "text": "corner boss",
+   "x": 1345,
+   "y": 1290,
+   "side": "left"
+  }
+ ],
+ "crop": [
+  1050,
+  780,
+  2400,
+  1500
+ ]
+}

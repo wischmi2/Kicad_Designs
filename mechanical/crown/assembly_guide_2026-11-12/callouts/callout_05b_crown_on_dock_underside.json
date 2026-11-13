@@ -1,0 +1,10 @@
+{"image": "callout_05b_crown_on_dock_underside.png", "width": 1600, "height": 1000, "labels": [
+{"text": "radar window seen through aperture", "x": 705, "y": 590, "side": "bottom"},
+{"text": "plate aperture (beam clear)", "x": 870, "y": 600, "side": "right"},
+{"text": "gasket recess ring", "x": 470, "y": 540, "side": "left"},
+{"text": "hook tongue (USB end)", "x": 440, "y": 420, "side": "left"},
+{"text": "hook tongue", "x": 600, "y": 325, "side": "top"},
+{"text": "latch end", "x": 1135, "y": 575, "side": "right"},
+{"text": "A6 pad ear", "x": 565, "y": 745, "side": "bottom"},
+{"text": "plate screw hole", "x": 876, "y": 848, "side": "bottom"}
+]}

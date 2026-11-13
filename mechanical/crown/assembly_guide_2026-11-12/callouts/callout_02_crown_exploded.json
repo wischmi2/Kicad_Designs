@@ -1,0 +1,61 @@
+{
+ "image": "callout_02_crown_exploded.png",
+ "width": 1600,
+ "height": 1000,
+ "labels": [
+  {
+   "text": "bonnet",
+   "x": 800,
+   "y": 150,
+   "side": "right"
+  },
+  {
+   "text": "battery",
+   "x": 800,
+   "y": 318,
+   "side": "right"
+  },
+  {
+   "text": "key",
+   "x": 650,
+   "y": 303,
+   "side": "left"
+  },
+  {
+   "text": "hood",
+   "x": 1000,
+   "y": 400,
+   "side": "right"
+  },
+  {
+   "text": "insert holes (bonnet screws)",
+   "x": 777,
+   "y": 408,
+   "side": "left"
+  },
+  {
+   "text": "feather",
+   "x": 935,
+   "y": 590,
+   "side": "right"
+  },
+  {
+   "text": "water level board",
+   "x": 925,
+   "y": 722,
+   "side": "right"
+  },
+  {
+   "text": "nylon standoffs",
+   "x": 938,
+   "y": 800,
+   "side": "right"
+  },
+  {
+   "text": "sole",
+   "x": 1000,
+   "y": 870,
+   "side": "right"
+  }
+ ]
+}

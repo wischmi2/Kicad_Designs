@@ -1,0 +1,10 @@
+{"image": "callout_08b_a5_expander_underside.png", "width": 1600, "height": 1000, "note": "Assembled (not exploded): the TPU ring (blue) sits between plate and compression ring (red). Exploding was skipped because the three A5 bodies share one component.", "labels": [
+{"text": "expander plate", "x": 1100, "y": 450, "side": "right"},
+{"text": "TPU ring", "x": 520, "y": 280, "side": "left"},
+{"text": "compression ring", "x": 690, "y": 615, "side": "bottom"},
+{"text": "nut pocket (M3)", "x": 885, "y": 527, "side": "right"},
+{"text": "nut pocket (M3)", "x": 545, "y": 578, "side": "left"},
+{"text": "nut pocket (M3)", "x": 612, "y": 358, "side": "top"},
+{"text": "radar bore (tube)", "x": 700, "y": 495, "side": "top"},
+{"text": "ring screw hole", "x": 250, "y": 405, "side": "left"}
+]}

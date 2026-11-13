@@ -1,0 +1,10 @@
+{"image": "callout_03b_dock_ring_underside.png", "width": 1600, "height": 1000, "labels": [
+{"text": "boss insert hole (x4)", "x": 252, "y": 502, "side": "left"},
+{"text": "boss insert hole", "x": 1313, "y": 615, "side": "right"},
+{"text": "boss insert hole", "x": 677, "y": 203, "side": "top"},
+{"text": "boss insert hole", "x": 885, "y": 810, "side": "bottom"},
+{"text": "plate seat (ring bottom face)", "x": 1000, "y": 418, "side": "top"},
+{"text": "hook tongue", "x": 545, "y": 240, "side": "top"},
+{"text": "hook tongue", "x": 375, "y": 345, "side": "left"},
+{"text": "latch riser and tab", "x": 1160, "y": 620, "side": "bottom"}
+]}

@@ -1,0 +1,10 @@
+{"image": "callout_08_a5_expander.png", "width": 1600, "height": 1000, "labels": [
+{"text": "expander plate", "x": 1100, "y": 330, "side": "top"},
+{"text": "M3 screw hole", "x": 548, "y": 425, "side": "left"},
+{"text": "M3 screw hole", "x": 897, "y": 472, "side": "right"},
+{"text": "M3 screw hole", "x": 618, "y": 648, "side": "bottom"},
+{"text": "radar bore", "x": 700, "y": 445, "side": "top"},
+{"text": "compression ring", "x": 780, "y": 495, "side": "right"},
+{"text": "TPU ring", "x": 440, "y": 685, "side": "left"},
+{"text": "ring screw hole", "x": 236, "y": 505, "side": "left"}
+]}

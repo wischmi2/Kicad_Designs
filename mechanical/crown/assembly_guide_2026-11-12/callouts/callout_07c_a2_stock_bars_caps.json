@@ -1,0 +1,10 @@
+{"image": "callout_07c_a2_stock_bars_caps.png", "width": 2400, "height": 1500, "note": "Stock-bar version, two 702 mm bars with a printed end cap on each end (cap tongue hangs below the bar). The span plate is hidden in this view. Caps are small in this overview; crop around them if needed.", "labels": [
+{"text": "stock bar (702 mm)", "x": 1200, "y": 640, "side": "top"},
+{"text": "stock bar", "x": 1500, "y": 880, "side": "bottom"},
+{"text": "stock-bar end cap", "x": 1990, "y": 215, "side": "right"},
+{"text": "cap screw hole (M4)", "x": 1977, "y": 170, "side": "top"},
+{"text": "stock-bar end cap", "x": 2100, "y": 320, "side": "right"},
+{"text": "end tongue (rim locator)", "x": 535, "y": 1090, "side": "bottom"},
+{"text": "stock-bar end cap", "x": 640, "y": 1110, "side": "bottom"},
+{"text": "end cap sleeve", "x": 555, "y": 1020, "side": "left"}
+]}

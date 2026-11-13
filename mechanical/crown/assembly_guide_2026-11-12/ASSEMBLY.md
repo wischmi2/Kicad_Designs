@@ -16,6 +16,90 @@ Most pictures are from the Fusion model. In each "before" picture the part float
 
 ---
 
+## 0. Know the parts (labelled pictures)
+
+Names used in the steps below. Colours are only for the pictures (print everything in plain PETG, TPU ring in TPU). Labels were placed by eye; if one looks off, trust the step text.
+
+### The Crown
+
+<img src="labelled/callout_01_crown_exterior_labelled.png" width="640" alt="callout_01_crown_exterior">
+
+*Outside of the Crown.*
+
+<img src="labelled/callout_01b_crown_key_lightpipe_labelled.png" width="640" alt="callout_01b_crown_key_lightpipe">
+
+*Key and light pipe.*
+
+<img src="labelled/callout_01c_crown_underside_labelled.png" width="640" alt="callout_01c_crown_underside">
+
+*Underside: radar window face and sole screw counterbores.*
+
+<img src="labelled/callout_02_crown_exploded_labelled.png" width="640" alt="callout_02_crown_exploded">
+
+*Exploded stack.*
+
+<img src="labelled/callout_02b_crown_exploded_underside_labelled.png" width="640" alt="callout_02b_crown_exploded_underside">
+
+*Exploded from below: the XM125 radar on the underside of the water level board.*
+
+### Dock
+
+<img src="labelled/callout_03_dock_ring_top_labelled.png" width="640" alt="callout_03_dock_ring_top">
+
+*Dock ring from above: hook tongues at the USB end, latch at the far end.*
+
+<img src="labelled/callout_03b_dock_ring_underside_labelled.png" width="640" alt="callout_03b_dock_ring_underside">
+
+*Dock ring from below: boss insert holes and plate seat.*
+
+<img src="labelled/callout_03c_dock_plate_top_labelled.png" width="640" alt="callout_03c_dock_plate_top">
+
+*Blank dock plate.*
+
+<img src="labelled/callout_04_dock_latch_closeup_labelled.png" width="640" alt="callout_04_dock_latch_closeup">
+
+*Latch close-up with the Crown seated. Push the thumb tab out (arrow) to release, then lift the far end.*
+
+<img src="labelled/callout_05_crown_on_dock_orientation_labelled.png" width="640" alt="callout_05_crown_on_dock_orientation">
+
+*Crown on the dock the right way round: bonnet and USB at the hook end.*
+
+<img src="labelled/callout_05b_crown_on_dock_underside_labelled.png" width="640" alt="callout_05b_crown_on_dock_underside">
+
+*From below: the radar window must be centred in the plate aperture.*
+
+### Mounting plates
+
+<img src="labelled/callout_06_a6_pad_labelled.png" width="640" alt="callout_06_a6_pad">
+
+*A6 Pad.*
+
+<img src="labelled/callout_06b_a6_pad_underside_labelled.png" width="640" alt="callout_06b_a6_pad_underside">
+
+*A6 Pad from below: gasket area.*
+
+<img src="labelled/callout_07_a2_span_labelled.png" width="640" alt="callout_07_a2_span">
+
+*A2 Span with printed bar sections.*
+
+<img src="labelled/callout_07b_a2_span_underside_labelled.png" width="640" alt="callout_07b_a2_span_underside">
+
+*A2 Span from below: bar clips.*
+
+<img src="labelled/callout_07c_a2_stock_bars_caps_labelled.png" width="640" alt="callout_07c_a2_stock_bars_caps">
+
+*A2 Span with stock bars and end caps.*
+
+<img src="labelled/callout_08_a5_expander_labelled.png" width="640" alt="callout_08_a5_expander">
+
+*A5 Expander.*
+
+<img src="labelled/callout_08b_a5_expander_underside_labelled.png" width="640" alt="callout_08b_a5_expander_underside">
+
+*A5 Expander from below: nut pockets, TPU ring, compression ring.*
+
+---
+
 ## 1. Printed parts (PETG unless noted)
 
 All STLs are in `..\print_draft_2026-11-11\`. No supports on any stage 2-4 part. Window and plates 100 % solid, 4 perimeters. Rotate in the slicer as in the orientation column. **Nothing has been sliced or printed.**
@@ -124,7 +208,7 @@ Then put the bonnet on and fit its 4 screws into the roof inserts.
 </tr></table>
 
 ### Step 6. Check the Crown
-The USB-C connector is in the -x end wall (a tunnel in the hood), a 3 mm vent is in the same wall. The key sits just under the hump edge. If the Crown is for a first print only, test fit the cell and board before you glue or close anything.
+The USB-C connector is in the -x end wall (a tunnel in the hood), the 3 mm round vent is in the opposite (+x, latch) end wall (checked in the hood STL; NOTES.md says -x, which is wrong). The key sits just under the hump edge. If the Crown is for a first print only, test fit the cell and board before you glue or close anything.
 
 <img src="step_00_crown_complete.png" width="420" alt="step_00_crown_complete.png">
 
@@ -139,6 +223,10 @@ Pick the plate you need (blank, A6 Pad, A2 Span or A5 Expander; steps 9-11). Hol
 </tr></table>
 
 ### Step 8. Crown into the dock. PROVISIONAL (polarity chamfer, off-centre latch)
+
+<img src="labelled/callout_05_crown_on_dock_orientation_labelled.png" width="520" alt="orientation"> <img src="labelled/callout_04_dock_latch_closeup_labelled.png" width="520" alt="latch">
+
+*Left: right way round (bonnet at the hook tongues). Right: thumb tab and latch; push the tab the way of the arrow to release.*
 1. **WARNING: orientation.** The Crown foot is a plain rectangle, so it also fits the dock turned 180 deg. Turned wrong, the radar sits 28.3 mm off the aperture centre and the **plate covers the radar beam**. The correct way: the **hump end (battery, key) and the radar are at the hook end** of the dock (the two hook tongues). The aperture in the plate is at the same end. Check by looking up through the aperture from below: you should see the radar window centred in it. Brian's open question 2 (an 8 x 8 mm polarity chamfer) would make the wrong way impossible; it is not in the model yet.
 2. Slide the Crown's USB end under the two hook tongues.
 3. Lower the far end. The latch beam is pushed out by its 45 deg lead-in and clicks back in. Check that the Crown does not rock.

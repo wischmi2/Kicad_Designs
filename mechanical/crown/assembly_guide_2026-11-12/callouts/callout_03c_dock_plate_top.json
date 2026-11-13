@@ -1,0 +1,9 @@
+{"image": "callout_03c_dock_plate_top.png", "width": 1600, "height": 1000, "labels": [
+{"text": "relief pocket (under latch)", "x": 1100, "y": 335, "side": "top"},
+{"text": "34 mm aperture", "x": 690, "y": 560, "side": "bottom"},
+{"text": "screw hole (counterbore below)", "x": 888, "y": 217, "side": "top"},
+{"text": "screw hole", "x": 228, "y": 550, "side": "left"},
+{"text": "V datum notch", "x": 478, "y": 428, "side": "top"},
+{"text": "V datum notch", "x": 432, "y": 700, "side": "left"},
+{"text": "plate (ring sits on top)", "x": 1000, "y": 520, "side": "right"}
+]}

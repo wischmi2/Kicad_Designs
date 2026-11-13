@@ -1,0 +1,12 @@
+{"image": "callout_02b_crown_exploded_underside.png", "width": 1600, "height": 1000, "labels": [
+{"text": "bonnet", "x": 800, "y": 70, "side": "right"},
+{"text": "battery", "x": 845, "y": 195, "side": "right"},
+{"text": "hood", "x": 900, "y": 285, "side": "right"},
+{"text": "plinth insert hole", "x": 1048, "y": 455, "side": "right"},
+{"text": "key", "x": 662, "y": 442, "side": "left"},
+{"text": "feather", "x": 905, "y": 540, "side": "right"},
+{"text": "water level board", "x": 940, "y": 725, "side": "right"},
+{"text": "XM125 radar", "x": 822, "y": 685, "side": "right"},
+{"text": "nylon standoffs", "x": 822, "y": 650, "side": "right"},
+{"text": "sole", "x": 800, "y": 900, "side": "left"}
+]}
