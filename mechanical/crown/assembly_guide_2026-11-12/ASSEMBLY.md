@@ -215,7 +215,7 @@ The cell (TinyCircuits ASR00003) lies on the hood roof on a 1 mm pad and the bon
 
 **Battery first:** with the pigtail plugged in at step 4, the battery is connected as soon as the splice is made. Do that before USB or any solar is connected.
 
-Lead path measured in Fusion and from the JST datasheet on 2026-11-12 (`..attery_lead_check_2026-11-12\LEAD_CHECK.md`). **Check the bend behind the plug on the first build.**
+Lead path measured in Fusion and from the JST datasheet on 2026-11-12 (`..\battery_lead_check_2026-11-12\LEAD_CHECK.md`). **Check the bend behind the plug on the first build.**
 
 <table><tr>
 <td><img src="step_07_battery_bonnet_before.png" width="420" alt="step_07_battery_bonnet_before.png"><br>Before: cell and bonnet over the hood roof.</td>
