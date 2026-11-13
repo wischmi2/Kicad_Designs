@@ -190,17 +190,32 @@ Turn the hood roof down. Push the key and the light pipe into their holes from t
 <td><img src="step_05_key_fitted.png" width="420" alt="step_05_key_fitted.png"><br>Fitted: they sit up in the roof pockets.</td>
 </tr></table>
 
-### Step 4. Hood over the stack
-**PROVISIONAL (order inferred, not modelled).** Keep the hood roof down with the key and pipe in. Pick up the sole with its board stack as one rigid unit and lower it, boards first, into the hood. If you prefer, turn the stack the right way up and lower the hood over it, holding the key and light pipe in with a finger or tape. Then fit the 4 corner screws from the window face through the sole counterbores into the hood plinth inserts. Tighten in a cross pattern.
+### Step 4. Battery pigtail into U4, then hood over the stack
+**Do this before the hood goes on.** U4 (the feather's battery JST) sits under the hood roof, and the PH plug won't pass through the 4 mm roof hole, so the battery can only be plugged in while the stack is out.
+
+1. Make the pigtail: a JST PHR-2 plug with **thin, flexible wire (AWG 28 silicone is best; AWG 26 PVC is too stiff for the bend)**, about **40-45 mm** from plug back to bare ends. Leave the far ends bare (not tinned into a blob) so they fit through the hole together.
+2. Meter it: the contact that lands on U4 pad 1 must be + (red).
+3. Push the plug fully home in U4. The wires leave the back of the plug toward the hood wall; there is only about 3 mm before the wall, so bend them straight up right behind the plug and twist the pair together.
+4. Find the 4 mm battery-lead hole in the hood roof (under where the bonnet goes, between its two screw inserts on the U4 side). Feed the twisted pair up through it from inside as you lower the hood. The hole is about 1.5 mm toward the USB end from the plug centre, so lean the pair that way.
+
+Then, keeping the wires through the hole: **PROVISIONAL (order inferred, not modelled).** Keep the hood roof down with the key and pipe in. Pick up the sole with its board stack as one rigid unit and lower it, boards first, into the hood. If you prefer, turn the stack the right way up and lower the hood over it, holding the key and light pipe in with a finger or tape. Then fit the 4 corner screws from the window face through the sole counterbores into the hood plinth inserts. Tighten in a cross pattern.
 
 <table><tr>
 <td><img src="step_06_hood_before.png" width="420" alt="step_06_hood_before.png"><br>Before: hood above the stack.</td>
 <td><img src="step_06_hood_fitted.png" width="420" alt="step_06_hood_fitted.png"><br>Fitted: hood on the sole. The four black screws standing in the roof are the bonnet screws.</td>
 </tr></table>
 
-### Step 5. Battery into the hump, bonnet on
-The cell lies on the hood roof on a 1 mm pad and the bonnet covers it. Plug the battery's JST plug into the feather's battery socket (U4) **before** closing the bonnet. **Battery first, before the solar panel or USB.** The model does not show the lead's path through the roof; check it before you close up. **PROVISIONAL: lead routing not modelled.**
-Then put the bonnet on and fit its 4 screws into the roof inserts.
+### Step 5. Splice the cell, battery into the hump, bonnet on
+The cell (TinyCircuits ASR00003) lies on the hood roof on a 1 mm pad and the bonnet covers it. Its own lead is only 12 mm with a JST SH plug, which doesn't fit U4.
+
+1. Cut the SH plug off the cell. Splice the cell leads to the pigtail ends coming up through the roof hole, **red to the + wire** (check with the meter).
+2. **Stagger the two joints** (about 6 mm apart) with small heat-shrink on each. A straight 15-20 mm splice doesn't fit. The free space for the joints is a box about **10.9 x 6.9 x 6.5 mm**, between the two bonnet screw bosses on the hole side, beside the cell. The cell lead passes under a rib in the bonnet with a 2 mm gap, so keep the joints out from under it.
+3. Lay the cell on its pad and tuck the joints into that space.
+4. Put the bonnet on and fit its 4 screws into the roof inserts.
+
+**Battery first:** with the pigtail plugged in at step 4, the battery is connected as soon as the splice is made. Do that before USB or any solar is connected.
+
+Lead path measured in Fusion and from the JST datasheet on 2026-11-12 (`..attery_lead_check_2026-11-12\LEAD_CHECK.md`). **Check the bend behind the plug on the first build.**
 
 <table><tr>
 <td><img src="step_07_battery_bonnet_before.png" width="420" alt="step_07_battery_bonnet_before.png"><br>Before: cell and bonnet over the hood roof.</td>
