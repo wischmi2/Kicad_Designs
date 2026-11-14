@@ -781,3 +781,8 @@ C43 is the single 220 uF 1206 and derates to about 54 uF at 4.2 V, below the AEM
 - **IC1 AEM10330 land:** change to the datasheet pattern (Fig 23) and the exposed-pad vias to 0.5/0.2 (2026-11-07 pre-order check N1, N5).
 - **Board name and revision on the silk** (pre-order check N6).
 - **DigiKey/Mouser parts:** J1 GCT USB4105-GF-A fits the current footprint. R11 could be the Abracon ASWD-S2-0002-T (pad fit unverified). RF1 has no DigiKey/Mouser match yet. See docs\sourcing\dk_mouser_alternates_2026-11-07.md.
+
+## Firmware: Golioth Pouch node on NCS v3.4.0 (2026-11-13, firmware-dev)
+- `firmware\apps\feather_node` is now a Pouch `ble_gatt` node (MCUboot, LittleFS credentials, RTT, `.s/sensor` JSON with vbat_mv, soc_pct, ibat_ma, charge, vbus, sens_id_mv, sens_rid_ohm). It builds for `nrf54l15_feather/nrf54l15/cpuapp` (app 309,668 B RRAM, 72,280 B RAM; MCUboot 39,024 B) in the `C:\ncs\pouch-ncs` workspace (NCS v3.4.0, golioth/pouch 32ded9b). **Never run on hardware**: nothing was flashed, erased or reset.
+- Board definition fixes (no hardware change): X2 is DNP so `&lfxo` is disabled and LFCLK/GRTC use the internal RC (the old file would have hung at boot); SCL is P1.03, an NFC pin, so `nfct-pins-as-gpios` is set and NFCT disabled; nPM1300 LEDs are host mode (only LED0 is wired, U2.25). ANT_SEL stays low (chip antenna). nPM1300 devicetree properties rechecked against v3.4.0 bindings, which are identical to v3.2.3.
+- Bench items: provision credentials over the TC2030/J3 SWD with `scripts\provision_credentials.py` (prints commands only), program with `scripts\flash.ps1 -Serial <J-Link>` (ERASE_NONE, never recover once credentials are on the chip), RTT block at 0x20002070. See `firmware\apps\feather_node\README.md`.

@@ -6,7 +6,7 @@ nRF Connect SDK (Zephyr) firmware for the nRF54L15 boards in `hardware\`.
 | --- | --- |
 | `boards\nrf54l15_feather\` | Board definition `nrf54l15_feather/nrf54l15/cpuapp` (main feather, `hardware\feather\`) |
 | `boards\soil_moisture\` | Board definition `soil_moisture/nrf54l15/cpuapp` (old soil-moisture board, `hardware\archive\`) |
-| `apps\feather_node\` | Node application (bring-up, PMIC, fuel gauge, SENS_ID). Build/flash scripts in `scripts\`, notes in `README.md` and `HW_VERIFY.md` |
+| `apps\feather_node\` | Golioth Pouch BLE node (MCUboot, LittleFS credentials, nPM1300 fuel gauge, SENS_ID uplink on `.s/sensor`). Build/flash/provision scripts in `scripts\`, notes in `README.md` and `HW_VERIFY.md` |
 
 `firmware\` is the Zephyr `BOARD_ROOT` (Zephyr looks for `BOARD_ROOT\boards\**\board.yml`).
 The app adds it in `CMakeLists.txt` and `sysbuild\CMakeLists.txt`, and `scripts\build.ps1` sets it in
@@ -49,13 +49,16 @@ Proof build: `pouch\examples\zephyr\ble_gatt` for `nrf54l15dk/nrf54l15/cpuapp` i
 
 Build command (the scripts wrap this): `nrfutil sdk-manager toolchain launch --ncs-version=v3.4.0 --chdir C:\ncs\pouch-ncs -- west build -p -b <board> -d <dir> <app>`.
 
-Build (needs NCS v3.3.0, not installed on this PC as of 2026-11-10):
+Build and program (NCS v3.4.0, workspace above; nothing has been run on hardware yet):
 
 ```powershell
 cd C:\Personal-Agents\worktrees\nrf54l15-feather-branch\firmware\apps\feather_node
-.\scripts\build.ps1 -Board nrf54l15_feather/nrf54l15/cpuapp
-.\scripts\flash.ps1
+.\scripts\build.ps1                            # nrf54l15_feather/nrf54l15/cpuapp, pristine, C:\ncs\pouch-builds\feather_pouch
+.\scripts\flash.ps1 -Serial <J-Link serial>    # nrfutil device program, ERASE_NONE, no west flash
+python .\scripts\provision_credentials.py --crt c.der --key k.der --serial <J-Link serial>   # prints commands only
 ```
+
+`flash.ps1` has no default serial on purpose. Credentials (`*.der`, `*.pem`, credential hex) are gitignored and never committed. Details, sizes, warnings and the Pouch differences are in `apps\feather_node\README.md`.
 
 Until 2026-11-10 this was `soil_moisture_fw\` at the repo root, with the board definitions in
 `soil_moisture_fw\boards\others\`. See `docs\reorg_2026-11-10.md`.

@@ -1,6 +1,65 @@
-# nRF54L15 Soil Moisture — Bring-up Firmware
+# nRF54L15 Feather - Golioth Pouch BLE node
 
-Freestanding nRF Connect SDK application for the custom nRF54L15 + nPM1300 + SPV1040T board.
+nRF Connect SDK application for the nRF54L15 feather (`nrf54l15_feather/nrf54l15/cpuapp`, board definition in `firmware\boards\nrf54l15_feather\`). Since 2026-11-13 it is a Golioth Pouch `ble_gatt` node, ported from the ReefWatch solar board app (github.com/wischmi2/nrf54l15_solar_pouch @ cebb66a). Before that it was the soil moisture bring-up (nPM1300, fuel gauge, SENS_ID), which is still in the same sources.
+
+**Status 2026-11-13: builds, never run on hardware.** No device was attached, nothing was flashed, erased or reset. Treat every runtime statement below as an expectation to check on the bench.
+
+## What it does
+
+- Boots through MCUboot (sysbuild), loads `/lfs1/credentials/crt.der` and `key.der` from LittleFS (storage partition RRAM `0x174000`, `0x9000`), starts Pouch and advertises as `Feather`.
+- Gateway sharing: the gateway-request flag is set for 30 s (`CONFIG_EXAMPLE_ADV_WINDOW_S`), then cleared for 300 s (`CONFIG_EXAMPLE_SYNC_PERIOD_S`), so one gateway can serve several nodes. Advertising restarts after a disconnect. The advertising is still the solar debug path (100-150 ms interval, always advertising); slow it and drop the 10 s heartbeat before battery tests.
+- `src\feather_status.c` samples the nPM1300 every 5 s (`CONFIG_FEATHER_STATUS_PERIOD_S`) on its own work queue: battery voltage, current, charger state, VBUS, and the Nordic fuel gauge state of charge. SENS_ID is read about once a minute (VSENS on for 50 ms).
+- On every Pouch uplink one JSON object goes to `.s/sensor`:
+  `{"vbat_mv":4012,"soc_pct":87,"ibat_ma":-12,"charge":"IDLE","vbus":false,"sens_id_mv":1500,"sens_rid_ohm":100000}`
+  `ibat_ma` is negative while discharging, `sens_rid_ohm` 0 means no sensor board (open pin), `soc_pct` and the SENS_ID fields are -1 until the first read or if it failed. No AEM10330 fields (the feather has no harvester IC).
+- All three nPM1300 LED pins are set to host mode and cleared at boot (the pin sinks about 5 mA and the latch survives an nRF reset). The feather wires only LED0 (U2.25, LED1 via R14).
+- ANT_SEL (P0.01) is held low (chip antenna AE1) by a gpio-hog in the board file. The solar board holds it high; do not copy that.
+
+## Differences to the Pouch ble_gatt example
+
+| Item | Setting |
+| --- | --- |
+| Logs | SEGGER RTT only, deferred, drop mode, 8 KB up buffer. Shell, console, serial and MCUmgr are off (no UART; the shell 10 ms RTT poll also keeps the CPU out of idle) |
+| RTT control block | `_SEGGER_RTT` at `0x20002070` for the 8 KB buffer (from `zephyr.map`; KMU RAM sits at `0x20000000`, auto-search misses it). Check `zephyr.map` again if the buffer size changes |
+| Access port | `CONFIG_NRF_APPROTECT_DISABLE` and `CONFIG_NRF_SECURE_APPROTECT_DISABLE`; always program with `ERASE_NONE` |
+| LFCLK | internal RC (`CONFIG_CLOCK_CONTROL_NRF_K32SRC_RC`, `CONFIG_NRF_GRTC_TIMER_SOURCE_LFLPRC`), `&lfxo` disabled in the board file (X2 is DNP). In app and MCUboot |
+| NFC pins | `&uicr { nfct-pins-as-gpios; }`, `&nfct` disabled (SCL is P1.03). In board file and MCUboot overlay |
+| MCUboot | `sysbuild\mcuboot.overlay` starts with `zephyr,code-partition = &boot_partition` (it replaces the MCUboot app.overlay), disables the nPM1300 nodes, I2C bus and ADC (the MCUboot kernel has no multithreading, so the nPM13xx driver does not link), same LFXO/NFC/RC settings. `sysbuild\mcuboot.conf` has `CONFIG_LTO_SINGLE_THREADED=y` (parallel LTO loses its temp objects on Windows; the app image is not built with LTO, so the option is not set there) |
+| Signing | MCUboot debug key (CMake warns). Pick a production key before shipping |
+| Device name | `Feather` (`CONFIG_BT_DEVICE_NAME`) |
+
+## SDK, build, flash
+
+NCS v3.4.0 in `C:\ncs\pouch-ncs` with golioth/pouch at `32ded9b` (versions, `west list` and toolchain bundle `dcbdc366a1` are in `..\..\README.md`).
+
+```powershell
+cd C:\Personal-Agents\worktrees\nrf54l15-feather-branch\firmware\apps\feather_node
+.\scripts\build.ps1                           # pristine, output in C:\ncs\pouch-builds\feather_pouch
+.\scripts\flash.ps1 -Serial <J-Link serial>   # MCUboot at 0x0, then zephyr.signed.hex, ERASE_NONE
+```
+
+Sizes (2026-11-13, pristine build): app 309,668 B RRAM (43.5 % of the 712,560 B slot), 72,280 B RAM (27.6 %); MCUboot 39,024 B (61.5 % of 62 KB), 20,560 B RAM. Warnings in the build: Kconfig `BOOT_MAX_IMG_SECTORS` (MCUboot, also in the upstream example), `NRF_PLATFORM_LUMOS` deprecated (twice), CMake "default MCUboot signing key", `lto-wrapper: serial compilation of 2 LTRANS jobs` (benign). No application warnings. `soil_moisture/nrf54l15/cpuapp` still builds from the same sources (app 303,604 B, 72,040 B RAM, MCUboot 39,256 B / 21,776 B), also never run.
+
+`west flash` does not work on Windows (the pouch runner imports `pty` and `termios`), hence `flash.ps1` calls `nrfutil device program`. Use J-Link V9.82 (V9.36 drops the link when the nRF54L15 sleeps). Do not pass a chip erase and do not use `nrfutil device recover` once credentials are on the chip: both wipe the LittleFS partition. A locked access port is the only reason to recover.
+
+## Credentials (provisioning over SWD)
+
+The running firmware cannot receive files (no UART, no shell, no MCUmgr), so the credential image is built on the PC and programmed into the storage partition:
+
+```powershell
+py -3.11 -m pip install littlefs-python==0.19.0       # once
+python .\scripts\provision_credentials.py --crt <device>.crt.der --key <device>.key.der --serial <J-Link serial>
+```
+
+The script reads the storage partition address and size from the build `zephyr.dts`, builds the LittleFS image (block 4096, read/prog 16, cache 64, lookahead 32, block cycles 512, directory `/credentials`), writes it as Intel hex into a new folder under the system temp directory (never the repo) and **prints** the `nrfutil device erase --pages 0x174000-0x17d000` and `nrfutil device program ... ERASE_NONE` commands. It runs nothing. The hex contains the private key: delete it right after programming (the script prints the command). Certificates and keys are never committed (`.gitignore` covers `*.der`, `*.pem` and credential hex). Convert PEM with `openssl x509 -inform PEM -outform DER` and `openssl pkcs8 -topk8 -nocrypt -inform PEM -outform DER`.
+
+The image format was checked on the PC by mounting the generated image again with littlefs-python (dummy files, 9 blocks, both files read back). It has not been mounted by the firmware.
+
+On the first boot of an erased chip RTT shows littlefs `Corrupted dir pair` and `can't mount (LFS -84); formatting`; that is expected if the partition was not provisioned. `Failed to load certificate (err -2)` means the files are missing.
+
+## Logs
+
+RTT only. Open `JLinkRTTViewer.exe` (V9.82) with device `nRF54L15_M33`, SWD 4000 kHz, RTT control block address `20002070`, auto-detection off. Expected after provisioning: `Credentials loaded`, `Pouch initialized`, `Requesting a gateway for 30 s`, periodic `VBAT ... mV (..%)` lines.
 
 ## Hardware (verified KiCad netlist 2026-07-16)
 
@@ -15,47 +74,18 @@ See [HW_VERIFY.md](HW_VERIFY.md).
 | MCU VDD / VDDIO / I2C pull-ups | VOUT2 ≈ 3.0 V (same net) |
 | RF switch VDD | VOUT1 ≈ 1.8 V |
 
-## SDK
-
-Primary: **NCS v3.3.0** at `c:\ncs\v3.3.0` (installed via `west init` / `west update`; toolchain via nrfutil).
-
-## Build
-
-```powershell
-.\scripts\build.ps1
-```
-
-Or manually:
-
-```powershell
-# BOARD_ROOT is firmware\ (board definitions live in firmware\boards\)
-$env:BOARD_ROOT = "C:/Personal-Agents/worktrees/nrf54l15-feather-branch/firmware"
-nrfutil sdk-manager toolchain launch --ncs-version=v3.3.0 --chdir c:\ncs\v3.3.0 -- `
-  west build -p -b soil_moisture/nrf54l15/cpuapp `
-  -d C:\Personal-Agents\worktrees\nrf54l15-feather-branch\firmware\apps\feather_node\build_v330 `
-  C:\Personal-Agents\worktrees\nrf54l15-feather-branch\firmware\apps\feather_node
-```
-
-Artifact: `build_v330/feather_node/zephyr/zephyr.hex` (sysbuild names the image after the app folder; before the 2026-11-10 reorg it was `soil_moisture_fw`).
-
-## Flash (TC2030 / J-Link)
-
-```powershell
-.\scripts\flash.ps1
-```
-
-## Logs / charge validation
+## Charge validation (bring-up notes from before the Pouch port)
 
 No UART on this board — use SEGGER RTT.
 
 1. Flash firmware and open RTT.
-2. Confirm boot: `ANT_SEL set…`, `PMIC ready…`.
+2. Confirm boot: `VRF on, 2500 mV`, `ANT_SEL (P0.01) reads 0`, then the first `VBAT ... mV` line (the old `ANT_SEL set` and `PMIC ready` lines are gone).
 3. Attach battery; connect USB-C — expect `VBUS connected` and charging status / rising SoC.
 4. Disconnect USB; illuminate solar panel feeding SPV1040T — expect `VBUS connected` again and charge current while illuminated.
 
 ## Feather run 5 firmware
 
-Status: devicetree, Kconfig and code written 2026-10-28, **NOT BUILT**. The build needs NCS v3.3.0 (named by `scripts\build.ps1`), which is not installed: `C:\ncs` has v2.9.0, v2.9.1, v3.0.1, v3.0.2, v3.1.0 and v3.2.3 only, and `nrfutil sdk-manager` is not installed on this PC. Nothing was flashed. Property names were checked by reading the NCS v3.2.3 sources (`zephyr/dts/bindings/regulator/nordic,npm13xx-regulator-common.yaml`, `sensor/nordic,npm13xx-charger-common.yaml`, `nordic,npm1300-charger.yaml`, `drivers/regulator/regulator_npm13xx.c`, `regulator_common.c`); v3.3.0 may differ.
+Status: devicetree, Kconfig and code written 2026-10-28; first built 2026-11-13 on NCS v3.4.0 (see the top of this file; NCS v3.3.0 was never installed). Nothing was flashed. 2026-11-13 recheck: the nPM1300 binding files (`nordic,npm13xx-regulator-common`, `nordic,npm13xx-charger-common`, `nordic,npm1300-charger`, `nordic,npm1300`, led, gpio) are identical in NCS v3.4.0 and v3.2.3 (the regulator driver only gained nPM1304 LDO soft-start), and every property in the board file compiles against them. Property names were checked by reading the NCS v3.2.3 sources (`zephyr/dts/bindings/regulator/nordic,npm13xx-regulator-common.yaml`, `sensor/nordic,npm13xx-charger-common.yaml`, `nordic,npm1300-charger.yaml`, `drivers/regulator/regulator_npm13xx.c`, `regulator_common.c`); v3.3.0 may differ.
 
 Target: new board `nrf54l15_feather/nrf54l15/cpuapp` in `firmware\boards\nrf54l15_feather\` (was `soil_moisture_fw\boards\others\nrf54l15_feather\` before 2026-11-10; copied from `soil_moisture`; the existing soil_moisture board is untouched and the app still builds for it). Build: `.\scripts\build.ps1 -Board nrf54l15_feather/nrf54l15/cpuapp -BuildDir <dir>`. Feather-only code is `src\feather_run5.c` (compiled when `CONFIG_BOARD_NRF54L15_FEATHER`) and `boards\nrf54l15_feather_nrf54l15_cpuapp.conf` (`CONFIG_ADC=y`).
 
