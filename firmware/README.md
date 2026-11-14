@@ -141,7 +141,7 @@ cd C:\Personal-Agents\worktrees\nrf54l15-feather-branch\firmware\apps\pouch_gate
 .\scripts\build.ps1 -Target pouch_gateway    # our board only
 ```
 
-Pristine builds, no warnings. `pouch_gateway`: flash 1,243,760 B (7.41 % of 16 MB), RAM 569,804 B (57.96 %). `frdm_rw612` Wi-Fi: flash 1,243,936 B (1.85 % of 64 MB), RAM 569,804 B. Flashing (J-Link Commander, printed in the app README, not run), Wi-Fi (`wifi cred add`) and Golioth credentials (mcumgr to `/lfs1/credentials/`) are in `apps\pouch_gateway\README.md`. Nothing has run on hardware; J4 (the shell UART) and J2 are DNP on Rev A.
+Since later on 2026-11-13 it is a sysbuild with MCUboot and Golioth OTA (`build.ps1` runs `west build --sysbuild`). Pristine builds: `pouch_gateway` app 1,245,900 B flash (39.7 % of the 3 MB image-0 slot), RAM 570,524 B (58.04 %), MCUboot 59,804 B / 128 KB (45.6 %), 55,544 B RAM; `frdm_rw612` Wi-Fi app 1,246,076 B, MCUboot 59,988 B. Warnings: only the MCUboot-side CMake ones (default signing key; mbedTLS private identifiers from MCUboot's RSA). Before MCUboot/OTA the single image was 1,243,760 B flash / 569,804 B RAM. Program MCUboot `mcuboot\zephyr\zephyr.bin` at 0x08000000 and `pouch_gateway\zephyr\zephyr.signed.bin` at 0x08020000 (J-Link commands in `apps\pouch_gateway\README.md`); `zephyr.signed.bin` is also the Golioth OTA artifact. Flashing (J-Link Commander, printed in the app README, not run), Wi-Fi (`wifi cred add`) and Golioth credentials (mcumgr to `/lfs1/credentials/`) are in `apps\pouch_gateway\README.md`. Nothing has run on hardware; J4 (the shell UART) and J2 are DNP on Rev A.
 
 Until 2026-11-10 this was `soil_moisture_fw\` at the repo root, with the board definitions in
 `soil_moisture_fw\boards\others\`. See `docs\reorg_2026-11-10.md`.
