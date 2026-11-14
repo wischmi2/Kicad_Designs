@@ -11,10 +11,13 @@ Five commits, 2026-10-08 to 2026-10-17. Local path on the laptop: `C:\Users\Bria
 - prj.conf: device name `Pouch_v3`; RTT logging (deferred, drop mode, 8 KB up buffer); shell, console, serial and MCUmgr all off (the shell's 10 ms RTT poll keeps the CPU out of idle); `CONFIG_NRF_APPROTECT_DISABLE` and `CONFIG_NRF_SECURE_APPROTECT_DISABLE`; Pouch GATT/transport debug logs on.
 - sysbuild: MCUboot; `CONFIG_LTO_SINGLE_THREADED=y` (parallel LTO loses objects on Windows).
 
-### Status as of 2026-10-17 (from its README)
+### Status as of 2026-10-17
 
-- Node boots, loads its credentials from LittleFS, initialises Pouch and advertises for a gateway. RTT works.
-- **No gateway session has completed.** The 9160 DK gateway (pouch v0.2.0 layout: gateway on the nRF52840, `ncs-serial-modem` on the nRF9160) brings up the modem PPP link, then fails DTLS to `coap.golioth.io:5684` (`-113`) and later DNS (`-101`). So the node side is proven to boot and advertise; the end-to-end path to Golioth is not.
+Laptop export `G:\My Drive\Transfer\solar_board_nrf54l15_v3\` (2026-11-13) has the same app at cebb66a (no device cert/key), `prebuilt\zephyr.signed.hex/.bin/.elf`, the bring-up tests (`nordic_solar_fw\`, repo wischmi2/nrf54l15_solar @ 0aaf786, uncommitted edits in `04_ble_battery_solar`), and two logs: `solar-build.log` and `gateway-vcom1.log`.
+
+- Node boots, loads its credentials from LittleFS, initialises Pouch and advertises for a gateway. RTT works. Build: NCS v3.4.0 (f30459884d7f), Zephyr 4.4.1, Pouch from `C:\ncs\pouch-ncs\pouch`.
+- The app README says no gateway session completed (9160 DK DTLS `-113`, DNS `-101`). **`gateway-vcom1.log` (2026-10-17 ~12:00) shows otherwise:** the 9160 DK gateway (`Gateway Version: v0.2.0-18-g32ded9b-dirty`, NCS v3.4.0, Zephyr 4.4.1, cellular via the nRF91 serial modem) completed 12 sessions with peripheral `F1:02:1E:C1:1A:BF`, about every 2 min 12 s: BT security level 2, `Peripheral device certificate uploaded (381 bytes)`, `Forwarding 317 bytes of peripheral data to cloud`, `Gateway pouch forwarded`. 381 bytes is the size of `nrf54l15_v3_solar.crt.der`, and the 2-minute cycle matches commit ed6e768, so that peripheral is very likely the solar board. A second Pouch board (`D9:A4:79:0F:08:02`, 371-byte cert) mostly fails with `Failed to set security (244)` / `BT security change failed ... err 9` (a bond or pairing problem) but also got some uplinks through. CoAP `request timeout (retry 0/3)` and `Ignoring piggyback ACK` warnings repeat but recover. The log doesn't show whether the data appeared in the Golioth console; confirm there.
+- The DTLS/DNS failures in the README are probably from a run before or after this log. The gateway is not reliable yet, but the full chain has worked at least once.
 - The image on the board is still a debug build (fast advertising, 10 s heartbeat), which draws more than the panel's ~0.1 mA.
 - The device certificate `nrf54l15_v3_solar` was valid **2026-10-09 to 2026-11-06, so it has expired** (today is 2026-11-13). A new one is needed before the next try.
 
@@ -41,7 +44,7 @@ Differences to keep: the solar board holds ANT_SEL **high** (external connector)
 | golioth/pouch (node SDK) | v0.2.0, aa27b019 | 2026-07-23 | Node library and examples. Gateway code merged into this repo and rewritten on CoAP | `west-ncs.yml`: NCS v3.4-branch (Zephyr 4.4.0). `west-zephyr.yml`: Zephyr v4.4.0 + hal_nxp |
 | golioth/bluetooth-gateway (was pouch-gateway) | v0.2.0, 5ce2d8c9 | 2025-10-13 | Older stand-alone gateway app (FRDM-RW612, Thingy:91 X, nRF9160 DK) | golioth-firmware-sdk v0.20.0 -> NCS v3.0.1; Pouch 64ee488 (v0.1.0 + 8) |
 
-The solar board run used golioth/pouch v0.2.0 on both sides (node `ble_gatt`, 9160 DK gateway on the nRF52840 + serial modem). That is the pair to follow. bluetooth-gateway v0.2.0 is the older line and carries an older Pouch library; don't mix it with a v0.2.0 node.
+The solar board run used golioth/pouch v0.2.0 on both sides (node `ble_gatt`, 9160 DK gateway on the nRF52840 + serial modem). The gateway was actually golioth/pouch **main at 32ded9b (v0.2.0 + 18) with local edits** ("-dirty"), the same commit as `C:\Users\Brian\pouch-1` on this desktop. The laptop's local gateway edits are not in the export. That is the pair to follow. bluetooth-gateway v0.2.0 is the older line and carries an older Pouch library; don't mix it with a v0.2.0 node.
 
 Upstream golioth/pouch has only v0.1.0 and v0.2.0; main is v0.2.0 + 18 (CI, plus 2 fixes: SAR receiver stops ack retry on fatal bearer errors; an over-long server-cert serial no longer silently succeeds).
 
@@ -69,7 +72,7 @@ The 9160 DK cellular gateway is still failing DTLS/DNS. The RW612 Wi-Fi path avo
 
 ## Open questions for Brian
 
-1. Get the 9160 DK gateway to Golioth first (DTLS `-113` / DNS `-101`), or go straight to the RW612 Wi-Fi gateway (FRDM-RW612 prebuilt now, our board later)?
-2. Tag v0.2.0 exactly (what the solar board ran) or main (v0.2.0 + 18, two fixes)?
+1. Did the solar board's `.s/sensor` data show up in the Golioth console on 2026-10-17 (the gateway log says it was forwarded)? Keep using the 9160 DK gateway for the feather, or move to the RW612 Wi-Fi gateway (FRDM-RW612 prebuilt now, our board later)?
+2. Use golioth/pouch main 32ded9b (what the gateway ran) for both sides? What were the gateway's local ("-dirty") edits on the laptop?
 3. OK to install NCS v3.4.0 on the desktop (several GB), and to fix the two missing feather board-definition items (LFXO/RC, NFC pins) now? Both are firmware only, no hardware change.
 4. The solar board's certificate expired 2026-11-06; reissue for more tests on that board?
