@@ -1,0 +1,64 @@
+/*
+ * Pin muxing for the Pouch gateway (Murata Type 2FR, RW612).
+ * Pin numbers are RW612 GPIO numbers (= the module pin names GPIO_nn in the
+ * Murata datasheet). Source: KiCad netlist of hardware\gateway
+ * (pouch_gateway.kicad_sch), checked 2026-11-13, see ..\README.md.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include <nxp/rw/RW612-pinctrl.h>
+
+&pinctrl {
+	/* J4 UART header (DNP): GPIO_24 (U1.97, RX) and GPIO_26 (U1.99, TX), VIO_3 = 3.3 V */
+	pinmux_flexcomm3_usart: pinmux_flexcomm3_usart {
+		group0 {
+			pinmux = <IO_MUX_FC3_USART_DATA>;
+			slew-rate = "normal";
+		};
+	};
+
+	/* J5 Waveshare 2in LCD through the LCDIC (SPI 4-wire MIPI-DBI), VIO_6 = 3.3 V */
+	pinmux_lcdic: pinmux_lcdic {
+		group0 {
+			pinmux = <IO_MUX_LCD_SPI_IO45	/* GPIO_45 TE, TP1 only */
+				  IO_MUX_LCD_SPI_IO46	/* GPIO_46 DIN  -> R20 -> J5.3 */
+				  IO_MUX_LCD_SPI_IO47	/* GPIO_47 DC   -> R22 -> J5.6 */
+				  IO_MUX_LCD_SPI_IO48	/* GPIO_48 CLK  -> R21 -> J5.4 */
+				  IO_MUX_LCD_SPI_IO49>;	/* GPIO_49 CS   -> J5.5 */
+			slew-rate = "ultra";
+		};
+
+		group1 {
+			pinmux = <IO_MUX_LCD_SPI_IO44>;	/* GPIO_44 RST -> J5.7 */
+			slew-rate = "ultra";
+			sleep-output = "high";
+		};
+	};
+
+	/* J5.8 backlight: GPIO_55 (U1.109) = SCT0 OUT9, through R23 (0R), VIO_1 = 3.3 V */
+	pinmux_pwm_backlight: pinmux_pwm_backlight {
+		group0 {
+			pinmux = <IO_MUX_SCT_OUT_9>;
+			slew-rate = "normal";
+		};
+	};
+
+	/* USER button SW3 on GPIO_25 (U1.87, VIO_3), 10k pull-up R18 on the board */
+	pinmux_hsgpio0: pinmux_hsgpio0 {
+		group0 {
+			pinmux = <IO_MUX_GPIO25>;
+			slew-rate = "normal";
+		};
+	};
+
+	/* LEDs: D3 red GPIO_51 (U1.63), D5 blue GPIO_52 (U1.64), D4 green GPIO_53 (U1.113); VIO_1 = 3.3 V */
+	pinmux_hsgpio1: pinmux_hsgpio1 {
+		group0 {
+			pinmux = <IO_MUX_GPIO51
+				  IO_MUX_GPIO52
+				  IO_MUX_GPIO53>;
+			slew-rate = "normal";
+		};
+	};
+};

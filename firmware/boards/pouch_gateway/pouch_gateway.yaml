@@ -1,0 +1,19 @@
+identifier: pouch_gateway
+name: Pouch gateway (Murata Type 2FR)
+type: mcu
+arch: arm
+toolchain:
+  - zephyr
+  - gnuarmemb
+ram: 960
+flash: 16384
+supported:
+  - gpio
+  - dma
+  - entropy
+  - usb_device
+  - watchdog
+  - counter
+  - pwm
+  - hwinfo
+vendor: others

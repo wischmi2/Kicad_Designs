@@ -1,0 +1,21 @@
+# Pouch gateway board defaults
+# SPDX-License-Identifier: Apache-2.0
+
+if BOARD_POUCH_GATEWAY
+
+if LVGL
+
+# Enable DMA for LCDIC
+config MIPI_DBI_NXP_LCDIC_DMA
+	default y if MIPI_DBI
+
+# LCDIC DMA descriptors (LPC DMA has a 1 KB limit per descriptor), as FRDM-RW612
+config DMA_MCUX_LPC_NUMBER_OF_DESCRIPTORS
+	default 60
+
+config LV_Z_FLUSH_THREAD
+	default y
+
+endif # LVGL
+
+endif # BOARD_POUCH_GATEWAY

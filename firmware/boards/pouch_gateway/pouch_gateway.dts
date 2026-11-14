@@ -1,0 +1,302 @@
+/*
+ * Pouch gateway: Murata Type 2FR module (LBES0ZZ2FR, NXP RW612), Wi-Fi only.
+ *
+ * Derived from Zephyr's frdm_rw612 (Copyright 2024-2025 NXP, Apache-2.0).
+ * Hardware: hardware\gateway (KiCad). Every pin below was read from the
+ * KiCad netlist on 2026-11-13; the pin table is in firmware\README.md.
+ *
+ * Removed from the FRDM board: Ethernet MAC/MDIO and the KSZ8081 PHY,
+ * Arduino / mikroBUS / PMOD headers, flexcomm1 SPI, flexcomm2 I2C and the
+ * P3T1755 temperature sensor, ADC, DAC, the 8 MB pSRAM and the 64 MB
+ * Winbond W25Q512JV (the module has its own 16 MB flash instead).
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/dts-v1/;
+
+#include <nxp/rw/nxp_rw6xx.dtsi>
+#include "pouch_gateway-pinctrl.dtsi"
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <zephyr/dt-bindings/pwm/pwm.h>
+#include <zephyr/dt-bindings/spi/spi.h>
+
+/ {
+	model = "Pouch gateway (Murata Type 2FR)";
+	compatible = "others,pouch-gateway";
+
+	aliases {
+		led0 = &led_green;
+		led1 = &led_red;
+		led2 = &led_blue;
+		sw0 = &user_button;
+		watchdog0 = &wwdt;
+		usart-0 = &flexcomm3;
+		pwm-0 = &sctimer;
+	};
+
+	chosen {
+		zephyr,sram = &sram_data;
+		zephyr,flash = &int_flash;
+		zephyr,flash-controller = &ext_flash_ctrl;
+		zephyr,code-partition = &slot0_partition;
+		/* J4 UART header (DNP on Rev A). A USB CDC-ACM console is not set up. */
+		zephyr,console = &flexcomm3;
+		zephyr,shell-uart = &flexcomm3;
+		zephyr,uart-mcumgr = &flexcomm3;
+	};
+
+	/* LEDs: anode to +3V3, cathode through a resistor to the GPIO, so active low */
+	leds {
+		compatible = "gpio-leds";
+
+		led_red: led_red {
+			/* D3, R14 470R, GPIO_51 (U1.63) */
+			gpios = <&hsgpio1 19 GPIO_ACTIVE_LOW>;
+		};
+
+		led_green: led_green {
+			/* D4, R15 100R, GPIO_53 (U1.113) */
+			gpios = <&hsgpio1 21 GPIO_ACTIVE_LOW>;
+		};
+
+		led_blue: led_blue {
+			/* D5, R16 100R, GPIO_52 (U1.64) */
+			gpios = <&hsgpio1 20 GPIO_ACTIVE_LOW>;
+		};
+	};
+
+	gpio_keys {
+		compatible = "gpio-keys";
+
+		user_button: button_0 {
+			/* SW3 USER: GPIO_25 (U1.87), R17 100R in series, R18 10k pull-up to +3V3, switch to GND */
+			label = "USER SW3";
+			gpios = <&hsgpio0 25 GPIO_ACTIVE_LOW>;
+			zephyr,code = <INPUT_KEY_0>;
+		};
+	};
+
+	/*
+	 * LCD backlight on J5.8: GPIO_55 (U1.109) = SCT0 OUT9 through R23 0R.
+	 * Whether the Waveshare module's BL pin drives its own transistor is not
+	 * verified (DESIGN_NOTES.md); do not run the PWM at full duty on the raw LED.
+	 */
+	pwm_leds {
+		compatible = "pwm-leds";
+
+		lcd_backlight: lcd_backlight {
+			pwms = <&sctimer 9 PWM_KHZ(1) PWM_POLARITY_NORMAL>;
+		};
+	};
+};
+
+/*
+ * Console: flexcomm3 USART on J4 (DNP), GPIO_24 RX / GPIO_26 TX, 115200 8N1,
+ * 3.3 V. J4 (netlist): 1 GND, 2 UART_TX (module TX output), 3 UART_RX (module RX input).
+ */
+&flexcomm3 {
+	compatible = "nxp,lpc-usart";
+	status = "okay";
+	current-speed = <115200>;
+	pinctrl-0 = <&pinmux_flexcomm3_usart>;
+	pinctrl-names = "default";
+	wakeup-source;
+};
+
+&hsgpio0 {
+	status = "okay";
+	pinctrl-0 = <&pinmux_hsgpio0>;
+	pinctrl-names = "default";
+};
+
+&hsgpio1 {
+	status = "okay";
+	pinctrl-0 = <&pinmux_hsgpio1>;
+	pinctrl-names = "default";
+};
+
+/*
+ * 16 MB flash inside the Type 2FR module on FlexSPI port A (CS_Int_Flash U1.80
+ * tied to GPIO_28 U1.98 by R6). The module datasheet says "16MB Winbond"; the
+ * exact part and its JEDEC id are not given, so jedec-id is left out (the
+ * driver then skips the id check). The FCB is LBES0ZZ2FR_FCB.c.
+ * size is in bits.
+ */
+&flexspi {
+	status = "okay";
+	ahb-bufferable;
+	ahb-prefetch;
+	ahb-cacheable;
+	ahb-read-addr-opt;
+	ahb-boundary = "1024";
+	rx-clock-source = <1>;
+	rx-clock-source-b = <1>;
+
+	ext_flash_ctrl: flash-controller@0 {
+		compatible = "nxp,imx-flexspi-nor";
+		reg = <0>;
+		size = <DT_SIZE_M(16 * 8)>;
+		status = "okay";
+		spi-max-frequency = <DT_FREQ_M(104)>;
+
+		#address-cells = <1>;
+		#size-cells = <1>;
+		ranges = <0x0 0x18000000 DT_SIZE_M(16)>;
+
+		int_flash: flash@0 {
+			compatible = "soc-nv-flash";
+			reg = <0x0 DT_SIZE_M(16)>;
+			erase-block-size = <4096>;
+			write-block-size = <1>;
+
+			partitions {
+				compatible = "fixed-partitions";
+				#address-cells = <1>;
+				#size-cells = <1>;
+
+				/* Same layout as FRDM-RW612, storage shortened to the 16 MB flash.
+				 * Sizes are multiples of the 4 KB sector. */
+				boot_partition: partition@0 {
+					label = "mcuboot";
+					reg = <0x00000000 DT_SIZE_K(128)>;
+				};
+
+				slot0_partition: partition@20000 {
+					label = "image-0";
+					reg = <0x00020000 DT_SIZE_M(3)>;
+				};
+
+				slot1_partition: partition@320000 {
+					label = "image-1";
+					reg = <0x00320000 DT_SIZE_M(3)>;
+				};
+
+				storage_partition: partition@620000 {
+					label = "storage";
+					reg = <0x00620000 (DT_SIZE_M(16) - DT_SIZE_K(6272))>;
+				};
+			};
+		};
+	};
+};
+
+/* Wi-Fi and BLE run on the network core (NBU), controller firmware is linked in */
+&hci {
+	status = "okay";
+	wakeup-source;
+};
+
+&nbu {
+	status = "okay";
+	wakeup-source;
+};
+
+&imu {
+	status = "okay";
+	wakeup-source;
+};
+
+&wwdt {
+	status = "okay";
+};
+
+&dma0 {
+	status = "okay";
+};
+
+&mrt0_channel0 {
+	status = "okay";
+};
+
+&ctimer0 {
+	status = "okay";
+};
+
+&pmu {
+	reset-causes-en = <PMU_RESET_CM33_LOCKUP>,
+			  <PMU_RESET_ITRC>,
+			  <PMU_RESET_AP_RESET>;
+};
+
+/* OS Timer is the wakeup source for PM mode 2. The 32.768 kHz crystal is not fitted (xtal32 stays disabled). */
+&os_timer {
+	status = "okay";
+	wakeup-source;
+	deep-sleep-counter = <&rtc_highres>;
+};
+
+&systick {
+	status = "disabled";
+};
+
+/* RTC is the wakeup source for PM modes 3,4 */
+&rtc_highres {
+	status = "okay";
+	wakeup-source;
+};
+
+/* LCD backlight PWM */
+&sctimer {
+	status = "okay";
+	pinctrl-0 = <&pinmux_pwm_backlight>;
+	pinctrl-names = "default";
+};
+
+/* USB-C J1 (full device, USB_DP GPIO U1.29 / USB_DM U1.30, VBUS sense on U1.33 through R5, USB_ID not connected) */
+zephyr_udc0: &usb_otg {
+	status = "okay";
+};
+
+/*
+ * J5, Waveshare 2in LCD (ST7789VW, 240x320) on the LCDIC in SPI 4-wire mode.
+ * The panel node is disabled: no display driver work yet, the values below
+ * are the generic Zephyr ST7789V set and have not been tuned for this panel.
+ */
+zephyr_mipi_dbi_spi: &lcdic {
+	status = "okay";
+	pinctrl-0 = <&pinmux_lcdic>;
+	pinctrl-names = "default";
+	nxp,swap-bytes;
+
+	st7789v_lcd: st7789v@0 {
+		compatible = "sitronix,st7789v";
+		status = "disabled";
+		reg = <0>;
+		mipi-max-frequency = <DT_FREQ_M(20)>;
+		mipi-mode = "MIPI_DBI_MODE_SPI_4WIRE";
+		width = <240>;
+		height = <320>;
+		x-offset = <0>;
+		y-offset = <0>;
+		vcom = <0x19>;
+		gctrl = <0x35>;
+		vrhs = <0x12>;
+		vdvs = <0x20>;
+		mdac = <0x00>;
+		gamma = <0x01>;
+		colmod = <0x55>;
+		lcm = <0x2c>;
+		porch-param = [0c 0c 00 33 33];
+		cmd2en-param = [5a 69 02 01];
+		pwctrl1-param = [a4 a1];
+		pvgam-param = [d0 04 0d 11 13 2b 3f 54 4c 18 0d 0b 1f 23];
+		nvgam-param = [d0 04 0c 11 13 2c 3f 44 51 2f 1f 1f 20 23];
+		ram-param = [00 f0];
+		rgb-param = [cd 08 14];
+	};
+};
+
+/* power-states: as FRDM-RW612. Idle = PM mode 1, suspend = mode 2, standby = mode 3 */
+&idle {
+	min-residency-us = <0>;
+};
+
+&suspend {
+	min-residency-us = <412>;
+};
+
+&standby {
+	exit-latency-us = <13460>;
+	min-residency-us = <1690>;
+};

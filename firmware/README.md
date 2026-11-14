@@ -6,7 +6,9 @@ nRF Connect SDK (Zephyr) firmware for the nRF54L15 boards in `hardware\`.
 | --- | --- |
 | `boards\nrf54l15_feather\` | Board definition `nrf54l15_feather/nrf54l15/cpuapp` (main feather, `hardware\feather\`) |
 | `boards\soil_moisture\` | Board definition `soil_moisture/nrf54l15/cpuapp` (old soil-moisture board, `hardware\archive\`) |
+| `boards\pouch_gateway\` | Board definition `pouch_gateway/rw612` (gateway, Murata Type 2FR / NXP RW612, `hardware\gateway\`); see "Gateway board definition" below |
 | `apps\feather_node\` | Golioth Pouch BLE node (MCUboot, LittleFS credentials, nPM1300 fuel gauge, SENS_ID uplink on `.s/sensor`). Build/flash/provision scripts in `scripts\`, notes in `README.md` and `HW_VERIFY.md` |
+| `apps\pouch_gateway\` | Golioth Pouch gateway (BLE to Wi-Fi), the Pouch `examples/zephyr/gateway` app at 32ded9b built from this repo; needs the separate Zephyr workspace `C:\ncs\pouch-zephyr` (see "SDK workspace (Zephyr v4.4.0 ...)" below) |
 
 `firmware\` is the Zephyr `BOARD_ROOT` (Zephyr looks for `BOARD_ROOT\boards\**\board.yml`).
 The app adds it in `CMakeLists.txt` and `sysbuild\CMakeLists.txt`, and `scripts\build.ps1` sets it in
@@ -94,6 +96,40 @@ zcbor         modules/lib/zcbor         9164bd18dcd88ff9d9ef98279501fc1093571017
 Proof build (upstream, unmodified except the fix below): `pouch\examples\zephyr\gateway` for `frdm_rw612` with `-DEXTRA_CONF_FILE=boards/frdm_rw612_wifi.conf`, into `C:\ncs\pouch-builds\gw_frdm_proof` (outside the repo). Compiles and links with **no warnings**: flash 1,243,924 B (1.85 % of the 64 MB FRDM flash), RAM 569,804 B (57.96 % of 960 KB); SMU1/SMU2 are fixed regions.
 
 Windows problem in upstream: the gateway `CMakeLists.txt` generates `git_describe.h` by running a `.sh` script through `cmd /C`, which on Windows hangs the build forever (`Generating git_describe.h, always_run`). The proof build was finished after temporarily replacing that block with `execute_process(git describe ...)` + `file(WRITE ...)` in the pouch checkout (reverted afterwards; the checkout is clean at 32ded9b). Our own gateway app (`apps\pouch_gateway`) carries the same fix.
+
+## Gateway board definition `pouch_gateway/rw612` (2026-11-13)
+
+`boards\pouch_gateway\`, derived from Zephyr's `frdm_rw612`, for the Murata Type 2FR module (LBES0ZZ2FR, NXP RW612, Wi-Fi only) on `hardware\gateway`. Pins come from the KiCad netlist (`kicad-cli sch export netlist` on `hardware\gateway\pouch_gateway.kicad_sch`, 2026-11-13; no KiCad file was edited). Module pin names `GPIO_nn` are the RW612 GPIO numbers (Murata datasheet SP-ZZ2FR Rev 5.1 table 8, which also gives the supply domain); on the RW612 `hsgpio0` is GPIO_0-31 and `hsgpio1` is GPIO_32-63.
+
+| Function | Net / part | U1 pin | RW612 pin | Zephyr | Supply |
+| --- | --- | --- | --- | --- | --- |
+| Console UART RX | UART_RX, J4.3 (DNP; J4.1 GND, J4.2 is TX) | 97 | GPIO_24, FC3 USART | `flexcomm3` 115200 8N1, console, shell, mcumgr | VIO_3, 3.3 V |
+| Console UART TX | UART_TX, J4.2 (DNP) | 99 | GPIO_26, FC3 USART | `flexcomm3` | VIO_3 |
+| USB-C data | USB_DP / USB_DM via D1 to J1 | 29 / 30 | dedicated | `zephyr_udc0` = `usb_otg` enabled (no CDC-ACM node yet) | AVDD33_USB |
+| USB VBUS sense | R5 0R from +5V | 33 | USB_VBUS | n/a | abs max 5.25 V |
+| LED red D3 (R14 470R) | LED_R | 63 | GPIO_51 = `hsgpio1` 19 | `led_red` (`led1`), active low | VIO_1 |
+| LED green D4 (R15 100R) | LED_G | 113 | GPIO_53 = `hsgpio1` 21 | `led_green` (`led0`), active low | VIO_1 |
+| LED blue D5 (R16 100R) | LED_B | 64 | GPIO_52 = `hsgpio1` 20 | `led_blue` (`led2`), active low | VIO_1 |
+| USER button SW3 (R17 100R, R18 10k pull-up) | BTN_USER | 87 | GPIO_25 = `hsgpio0` 25 | `user_button` (`sw0`), active low; Pouch uses it to enable bonding | VIO_3 |
+| LCD SCK, J5.4 via R21 33R | LCD_SCK | 82 | GPIO_48 | `&lcdic` LCD_SPI_SCK (`IO_MUX_LCD_SPI_IO48`) | VIO_6 |
+| LCD DIN, J5.3 via R20 33R | LCD_DIN | 75 | GPIO_46 | `&lcdic` LCD_SPI_DATA | VIO_6 |
+| LCD CS, J5.5 | LCD_CS | 81 | GPIO_49 | `&lcdic` LCD_SPI_SS | VIO_6 |
+| LCD DC, J5.6 via R22 33R | LCD_DC | 12 | GPIO_47 | `&lcdic` LCD_SPI_DC | VIO_6 |
+| LCD RST, J5.7 | LCD_RST | 115 | GPIO_44 | `&lcdic` LCD_SPI_RESET (function pin, `sleep-output = "high"`) | VIO_6 |
+| LCD TE (TP1 only, panel has no TE) | LCD_TE | 111 | GPIO_45 | `&lcdic` LCD_SPI_TE muxed, unused | VIO_6 |
+| LCD backlight, J5.8 via R23 0R | LCD_BL | 109 | GPIO_55 | SCT0 OUT9, `pwm-leds` `lcd_backlight` (1 kHz) | VIO_1 |
+| SWD clock / data (J6 TC2030, J2 DNP) | SWCLK / SWDIO | 43 / 106 | GPIO_13 / GPIO_14 | not in devicetree (ROM debug port, selected by R10 5.1k on RF_CNTL_2 pin 55) | VIO_2 |
+| Boot strap ISP (SW2, R11 5.1k) | EXT_REQ | 69 | EXT_REQ (not a GPIO) | not in devicetree; hold SW2 at reset for ISP mode | AVDD18 |
+| Reset (SW1, R9 100R, R8 10k, C16) | PDN | 11 | PDn | not in devicetree | |
+| Flash chip select | CS_Int_Flash to GPIO_28 via R6 0R, R7 10k to VDD18 | 80 / 98 | FlexSPI A | `&flexspi` `ext_flash_ctrl` | VDD18 |
+
+J5 pin order (JST PH 8-pin): 1 +3V3, 2 GND, 3 DIN, 4 CLK, 5 CS, 6 DC, 7 RST, 8 BL. The panel (Waveshare 2in, ST7789VW, 240x320) is described as a **disabled** `sitronix,st7789v` node under `&lcdic` with the generic Zephyr parameter set; no display driver or LVGL work was done. All other U1 GPIOs are unconnected in the netlist (62 of them), as is USB_ID, RF_CNTL_0/1/3 and EXT_FREQ/GNT/PRI.
+
+Flash: the module has 16 MB on FlexSPI port A. DT: `size = 16 MB`, partitions as FRDM (128 KB boot, 3 MB image-0 at 0x20000, 3 MB image-1 at 0x320000) with `storage` = 0x620000 to 16 MB (10,112 KB); `/lfs1` (Pouch credentials, settings) is on `storage`. The flash part number and JEDEC id are not in the datasheet ("16MB Winbond" only), so `jedec-id` is omitted and the driver skips the id check. The boot-ROM flash configuration block (`LBES0ZZ2FR_FCB.c`) is not the FRDM one (64 MB W25Q512JV, 32-bit addresses, which breaks boot on this module, Murata EVK guide for Zephyr section 7.1.1): it is the FCB at 0x400..0x603 of Murata's own prebuilt Type 2FR image (`github.com/murata-wireless/2FR`, `internal_flash_binaries\rdrw610_wifi_cli_intFlash_singleAnt.bin`, BSD-3-Clause). The built `zephyr.bin` was checked: bytes 0x400..0x603 are identical to Murata's.
+
+Removed from the FRDM definition: Ethernet MAC/MDIO/KSZ8081 PHY, Arduino/mikroBUS/PMOD headers, flexcomm1 SPI, flexcomm2 I2C and the P3T1755 sensor, ADC, DAC, pSRAM, the 64 MB flash. The 32.768 kHz crystal is not fitted (`xtal32` stays disabled). Kept: NBU/IMU/HCI (Wi-Fi + BLE firmware is linked into the app), watchdog, DMA, PM states, `init.c` (iBuck, as FRDM and the Murata EVK).
+
+Not clear from the netlist / datasheets (not guessed, see the report for the list): whether `init.c`'s `iBuck = true` is right for our supply scheme, the exact flash part (QE sequence in the FCB, `deviceModeArg 0x200`), the LCD backlight drive, and the Wi-Fi TX power tables (Murata publishes region tables for the 2FR; the FRDM default WW table is used).
 
 Until 2026-11-10 this was `soil_moisture_fw\` at the repo root, with the board definitions in
 `soil_moisture_fw\boards\others\`. See `docs\reorg_2026-11-10.md`.

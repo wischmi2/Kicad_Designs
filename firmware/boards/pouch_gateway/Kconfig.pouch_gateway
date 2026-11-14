@@ -1,0 +1,5 @@
+# Pouch gateway: Murata Type 2FR (LBES0ZZ2FR) module, NXP RW612
+# SPDX-License-Identifier: Apache-2.0
+
+config BOARD_POUCH_GATEWAY
+	select SOC_PART_NUMBER_RW612ETA2I

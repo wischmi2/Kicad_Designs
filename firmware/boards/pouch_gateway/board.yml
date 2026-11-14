@@ -1,0 +1,6 @@
+board:
+  name: pouch_gateway
+  full_name: Pouch gateway (Murata Type 2FR, NXP RW612)
+  vendor: others
+  socs:
+    - name: rw612
