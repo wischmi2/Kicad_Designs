@@ -17,6 +17,7 @@ project(pouch_gateway)
 target_sources(app PRIVATE
   src/credentials.c
   src/fatal_error.c
+  src/fw_update.c
   src/main.c
 )
 

@@ -29,12 +29,14 @@
 #include <golioth/settings_callbacks.h>
 
 #include "credentials.h"
+#include "fw_update.h"
 
 #if defined(CONFIG_WIFI)
 #include "wifi.h"
 #endif
 
 #include <git_describe.h>
+#include <app_version.h>
 
 #include <zephyr/logging/log.h>
 LOG_MODULE_REGISTER(main);
@@ -314,6 +316,7 @@ int main(void)
     int err;
 
     LOG_INF("Gateway Version: " STRINGIFY(GIT_DESCRIBE));
+    LOG_INF("Gateway app version (MCUboot / Golioth package): " APP_VERSION_STRING);
     LOG_INF("Pouch BLE Transport Protocol Version: %d", POUCH_GATT_VERSION);
 
     /* Load the Pouch device's identity (cert + key). */
@@ -444,6 +447,19 @@ int main(void)
 
     pouch_gateway_scan_start();
 
+    /* Health check before confirming an OTA image (MCUboot test mode):
+     *  - Wi-Fi up and IP address (wait_for_network() above),
+     *  - cloud transport ready (pouch_gateway_cloud_ensure_ready() above),
+     *  - Bluetooth enabled and scanning (just now),
+     *  - and, below, one successful Pouch sync with Golioth on this image.
+     * Without the cloud there is nothing more to wait for. If any step never happens the image
+     * stays unconfirmed and MCUboot reverts to the old one at the next reset.
+     */
+    if (!IS_ENABLED(CONFIG_POUCH_GATEWAY_CLOUD))
+    {
+        fw_update_confirm_healthy();
+    }
+
     if (IS_ENABLED(CONFIG_POUCH_GATEWAY_CLOUD))
     {
         while (true)
@@ -454,6 +470,10 @@ int main(void)
             if (err)
             {
                 LOG_WRN("CoAP sync failed: %d", err);
+            }
+            else
+            {
+                fw_update_confirm_healthy();
             }
         }
     }

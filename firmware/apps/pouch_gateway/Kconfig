@@ -55,4 +55,11 @@ config EXAMPLE_COAP_CLIENT_GW_DEVICE_KEY_FILENAME
 	help
 	  The filename used to store the mTLS device private key in the filesystem.
 
+config EXAMPLE_FW_UPDATE_COMPONENT
+	string "OTA component (Golioth package name) for the gateway firmware"
+	default "gateway"
+	help
+	  Name of the Golioth package that carries this firmware. Must match the package
+	  created in the Golioth console (at most CONFIG_GOLIOTH_OTA_MAX_PACKAGE_NAME_LEN chars).
+
 source "Kconfig.zephyr"

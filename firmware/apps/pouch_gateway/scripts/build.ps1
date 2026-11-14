@@ -1,5 +1,6 @@
 # Build the Pouch gateway app from the Zephyr v4.4.0 + Pouch workspace (C:\ncs\pouch-zephyr).
 # The compiler comes from the NCS v3.4.0 toolchain bundle (Zephyr SDK 1.0.1), which Zephyr 4.4.0 accepts.
+# Sysbuild: MCUboot + the app, signed with the MCUboot debug key.
 # Builds go outside the repo (default C:\ncs\pouch-builds). Pristine by default. Never flashes.
 #   .\build.ps1                      both targets
 #   .\build.ps1 -Target pouch_gateway
@@ -27,11 +28,12 @@ $pristine = if ($Incremental) { "auto" } else { "always" }
 
 function Invoke-GatewayBuild([string]$Board, [string]$BuildDir, [string[]]$CmakeArgs) {
 	Write-Host "=== $Board -> $BuildDir"
-	$west = @("build", "-p", $pristine, "-b", $Board, "-d", $BuildDir.Replace('\', '/'), $AppDir.Replace('\', '/'))
+	$west = @("build", "--sysbuild", "-p", $pristine, "-b", $Board, "-d", $BuildDir.Replace('\', '/'), $AppDir.Replace('\', '/'))
 	if ($CmakeArgs) { $west += "--"; $west += $CmakeArgs }
 	nrfutil sdk-manager toolchain launch --ncs-version=$NcsVersion --chdir $Workspace -- west @west
 	if ($LASTEXITCODE -ne 0) { throw "west build failed for $Board ($LASTEXITCODE)" }
-	Write-Host "Image   : $(Join-Path $BuildDir 'zephyr\zephyr.hex')  (also zephyr.bin)"
+	Write-Host "MCUboot : $(Join-Path $BuildDir 'mcuboot\zephyr\zephyr.bin')  (also zephyr.hex)"
+	Write-Host "App     : $(Join-Path $BuildDir 'pouch_gateway\zephyr\zephyr.signed.bin')  (also zephyr.signed.hex; this is the Golioth artifact)"
 }
 
 if ($Target -in @("all", "pouch_gateway")) {
