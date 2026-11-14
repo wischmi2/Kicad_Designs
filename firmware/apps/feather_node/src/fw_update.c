@@ -2,6 +2,15 @@
  * Copyright (c) 2025 Golioth
  *
  * SPDX-License-Identifier: Apache-2.0
+ *
+ * Based on golioth/pouch examples/zephyr/ble_gatt/src/fw_update.c at 32ded9b. Changes:
+ *  - the upgrade is requested in TEST mode (BOOT_UPGRADE_TEST), not PERMANENT. Upstream never
+ *    confirms anything, and a permanent upgrade can never be reverted, even if the new image
+ *    cannot reach the cloud any more;
+ *  - the new image confirms itself (boot_write_img_confirmed) after one Pouch sync in which the
+ *    cloud answered: a downlink was authenticated and decoded (the OTA manifest arrived) and the
+ *    session then ended. If that never happens MCUboot reverts at the next reset;
+ *  - no new download is started while the running image is still unconfirmed.
  */
 
 #include <zephyr/logging/log.h>
@@ -15,10 +24,53 @@ LOG_MODULE_REGISTER(fw_update);
 #include <zephyr/sys/reboot.h>
 
 #include <golioth/ota.h>
+#include <pouch/events.h>
 
 #include <app_version.h>
 
 static struct flash_img_context flash_context;
+
+/* Set when the cloud answered in this boot (OTA manifest received and decoded). */
+static atomic_t cloud_answered;
+
+static void confirm_work_fn(struct k_work *work)
+{
+    ARG_UNUSED(work);
+
+    if (boot_is_img_confirmed())
+    {
+        return;
+    }
+
+    int err = boot_write_img_confirmed();
+
+    if (err)
+    {
+        LOG_ERR("Failed to confirm the running image: %d", err);
+        return;
+    }
+
+    LOG_INF("Image confirmed (version " APP_VERSION_STRING ")");
+}
+
+static K_WORK_DEFINE(confirm_work, confirm_work_fn);
+
+/* POUCH_EVENT_SESSION_END fires for failed sessions too (32ded9b drops the transport's success
+ * flag), so it only counts together with cloud_answered. Confirm from the system work queue,
+ * not from the Pouch thread.
+ */
+static void pouch_event(enum pouch_event event, void *ctx)
+{
+    ARG_UNUSED(ctx);
+
+    if (event == POUCH_EVENT_SESSION_END && atomic_get(&cloud_answered)
+        && !boot_is_img_confirmed())
+    {
+        k_work_submit(&confirm_work);
+    }
+}
+
+POUCH_EVENT_HANDLER(pouch_event, NULL);
 
 static void ota_fw_receive(const void *data, size_t offset, size_t len, bool is_last)
 {
@@ -45,7 +97,10 @@ static void ota_fw_receive(const void *data, size_t offset, size_t len, bool is_
 
     if (is_last)
     {
-        err = boot_request_upgrade(BOOT_UPGRADE_PERMANENT);
+        /* Test mode: MCUboot boots the new image once and reverts at the next reset unless the
+         * new image confirms itself (see pouch_event above).
+         */
+        err = boot_request_upgrade(BOOT_UPGRADE_TEST);
         if (err)
         {
             LOG_ERR("Failed to request upgrade");
@@ -69,6 +124,8 @@ static void ota_fw_receive(const void *data, size_t offset, size_t len, bool is_
 static void ota_manifest_receive(const struct golioth_ota_manifest_component *components,
                                  size_t num_components)
 {
+    atomic_set(&cloud_answered, 1);
+
     for (int i = 0; i < num_components; i++)
     {
         LOG_DBG("Target: %s@%s, %d bytes",
@@ -80,6 +137,15 @@ static void ota_manifest_receive(const struct golioth_ota_manifest_component *co
                         "Target hash:");
         if (0 != strcmp(components[i].current, components[i].target))
         {
+            if (!boot_is_img_confirmed())
+            {
+                /* A new upgrade request on top of an unconfirmed image would make MCUboot
+                 * revert the running image first. Confirm (end of this session), then update.
+                 */
+                LOG_WRN("Update to %s postponed: running image not confirmed yet",
+                        components[i].target);
+                continue;
+            }
             golioth_ota_mark_for_download(components[i].name);
         }
     }
