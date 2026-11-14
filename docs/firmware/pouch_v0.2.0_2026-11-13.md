@@ -1,64 +1,75 @@
 # Golioth Pouch v0.2.0 for the feather node and the gateway (2026-11-13)
 
-Brian wants Pouch v0.2.0 on both the nRF54L15 feather (node) and the pouch gateway (RW612). He already has v0.2.0 working on another Bluetooth solar board as a Pouch node, with an nRF9160 DK as the gateway. This note collects what is on disk, what the two "v0.2.0" releases are, and what the feather and gateway firmware need. Nothing was built.
+Brian wants Pouch v0.2.0 on both the nRF54L15 feather (node) and the pouch gateway (RW612). He has already run v0.2.0 on the ReefWatch solar board (`hardware\archive\nrf54l15_v3`, nRF54L15 + nPM1300 + AEM10330) as a Pouch node, with an nRF9160 DK as the gateway. This note collects that work, what is on disk, and what the feather and gateway firmware need. Nothing was built in this session.
+
+## The solar board firmware (github.com/wischmi2/nrf54l15_solar_pouch)
+
+Five commits, 2026-10-08 to 2026-10-17. Local path on the laptop: `C:\Users\Brian\pouch_nrf54l15_v3`. SDK: NCS **v3.4.0** at `C:\ncs\pouch-ncs` (laptop; not on this desktop). Build target `nrf54l15dk/nrf54l15/cpuapp` plus `boards\nrf54l15dk_nrf54l15_cpuapp.overlay` (no custom board definition). App is golioth/pouch v0.2.0 `examples/zephyr/ble_gatt` with these changes:
+
+- `src\solar_status.c`: nPM1300 snapshot thread; uplink is one JSON object on `.s/sensor` (`vbat_mv`, `soc_pct`, `ibat_ma`, `charge`, `vbus`, `usb_cc`, `source`, `aem`, `aem_window`, `vbat_rise_mv`). AEM10330 thresholds 4.05 / 3.50 / 3.00 V.
+- Gateway sharing: sync-request flag set for 30 s (`CONFIG_EXAMPLE_ADV_WINDOW_S`), then clear for 300 s (`CONFIG_EXAMPLE_SYNC_PERIOD_S`), so one gateway can serve several nodes. Advertising restarts after a disconnect.
+- prj.conf: device name `Pouch_v3`; RTT logging (deferred, drop mode, 8 KB up buffer); shell, console, serial and MCUmgr all off (the shell's 10 ms RTT poll keeps the CPU out of idle); `CONFIG_NRF_APPROTECT_DISABLE` and `CONFIG_NRF_SECURE_APPROTECT_DISABLE`; Pouch GATT/transport debug logs on.
+- sysbuild: MCUboot; `CONFIG_LTO_SINGLE_THREADED=y` (parallel LTO loses objects on Windows).
+
+### Status as of 2026-10-17 (from its README)
+
+- Node boots, loads its credentials from LittleFS, initialises Pouch and advertises for a gateway. RTT works.
+- **No gateway session has completed.** The 9160 DK gateway (pouch v0.2.0 layout: gateway on the nRF52840, `ncs-serial-modem` on the nRF9160) brings up the modem PPP link, then fails DTLS to `coap.golioth.io:5684` (`-113`) and later DNS (`-101`). So the node side is proven to boot and advertise; the end-to-end path to Golioth is not.
+- The image on the board is still a debug build (fast advertising, 10 s heartbeat), which draws more than the panel's ~0.1 mA.
+- The device certificate `nrf54l15_v3_solar` was valid **2026-10-09 to 2026-11-06, so it has expired** (today is 2026-11-13). A new one is needed before the next try.
+
+### Lessons that apply to the feather
+
+| Lesson | Solar board fix | Feather today |
+| --- | --- | --- |
+| No 32 kHz crystal: the DK default LFXO makes GRTC wait forever and `main` never runs | `&lfxo { status = "disabled"; }`, `CONFIG_CLOCK_CONTROL_NRF_K32SRC_RC=y`, `CONFIG_NRF_GRTC_TIMER_SOURCE_LFLPRC=y`, in the app **and** in MCUboot | **Missing.** X2 is DNP on the feather, but `nrf54l15_feather_nrf54l15_cpuapp.dts` leaves `&lfxo` enabled and no K32SRC_RC is set. Would hang at boot |
+| SCL is P1.03, an NFC pin | `&uicr { nfct-pins-as-gpios; }`, `&nfct { status = "disabled"; }`, in the app and in MCUboot | **Missing.** The feather uses the same P1.03 SCL; without this the PMIC I2C bus would not work |
+| MCUboot linked into the app slot (the sysbuild `mcuboot.overlay` replaces MCUboot's own `app.overlay`) | `chosen { zephyr,code-partition = &boot_partition; }` at the top of `sysbuild\mcuboot.overlay` | Not set up yet (no MCUboot) |
+| Access port locked once; `recover` wipes all NVM including the credentials | APPROTECT disable Kconfigs; always program with `chip_erase_mode=ERASE_NONE` | Add the same |
+| `west flash` fails on Windows (pouch runner imports `pty`/`termios`) | Build with west, program with `nrfutil device program ... --options chip_erase_mode=ERASE_NONE,verify=VERIFY_READ` (MCUboot hex at 0x0, then `zephyr.signed.hex` at 0x10000, no merged.hex) | `scripts\flash.ps1` needs the same |
+| J-Link V9.36 drops the link when the nRF54L15 sleeps | Use J-Link V9.82 | Same |
+| RTT auto-search misses the control block (KMU-reserved RAM at 0x20000000) | Fixed address from `_SEGGER_RTT` in `zephyr.map` (0x20002070 with the 8 KB buffer) | Same |
+| No UART, so the example's mcumgr provisioning can't be used | Build a LittleFS image with `littlefs-python` 0.19.0 (`/credentials/crt.der`, `/credentials/key.der`; block 4096 x 9, read/prog 16, cache 64, lookahead 32, cycles 512), write it as Intel hex at the storage partition (0x174000, 0x9000), `nrfutil device erase --pages 0x174000-0x17D000`, then program with ERASE_NONE. Never keep the hex (it holds the private key) | Same method works over the feather's TC2030 SWD. Answers the provisioning question for bench builds |
+| nPM1300 LEDs sink ~5 mA and latch across an nRF reset | LED modes `host`, then write CLR | Check the feather's LED wiring |
+
+Differences to keep: the solar board holds ANT_SEL **high** (external connector) and uses BUCK1 at 1.8 V for the RF switch. The feather holds ANT_SEL **low** (chip antenna AE1), BUCK1 stays off, the switch runs from VRF (LDO2, 2.5 V), and VSENS is LDO1. Keep the feather's own board definition (better than a DK overlay), and copy the solar board's LFXO/NFC/MCUboot/flash fixes into it.
 
 ## Two different "v0.2.0" releases
 
 | Repo | Tag | Date | What it is | SDK pinned |
 | --- | --- | --- | --- | --- |
-| golioth/pouch (node SDK) | v0.2.0, aa27b019 | 2026-07-23 | Node library and examples. Gateway code merged into this repo and rewritten on CoAP | `west-ncs.yml`: NCS v3.4-branch (f304598, Zephyr 4.4.0). `west-zephyr.yml`: Zephyr v4.4.0 + hal_nxp |
-| golioth/bluetooth-gateway (was pouch-gateway) | v0.2.0, 5ce2d8c9 | 2025-10-13 | Stand-alone gateway app (FRDM-RW612 Wi-Fi/Ethernet, Thingy:91 X, nRF9160 DK) | golioth-firmware-sdk v0.20.0 -> NCS v3.0.1; Pouch at 64ee488 (v0.1.0 + 8, 2025-09-24) |
+| golioth/pouch (node SDK) | v0.2.0, aa27b019 | 2026-07-23 | Node library and examples. Gateway code merged into this repo and rewritten on CoAP | `west-ncs.yml`: NCS v3.4-branch (Zephyr 4.4.0). `west-zephyr.yml`: Zephyr v4.4.0 + hal_nxp |
+| golioth/bluetooth-gateway (was pouch-gateway) | v0.2.0, 5ce2d8c9 | 2025-10-13 | Older stand-alone gateway app (FRDM-RW612, Thingy:91 X, nRF9160 DK) | golioth-firmware-sdk v0.20.0 -> NCS v3.0.1; Pouch 64ee488 (v0.1.0 + 8) |
 
-Upstream golioth/pouch has only two tags (v0.1.0, v0.2.0); main is v0.2.0 + 18 (CI, plus 2 fixes: SAR receiver stops ack retry on fatal bearer errors; over-long server-cert serial no longer silently succeeds).
+The solar board run used golioth/pouch v0.2.0 on both sides (node `ble_gatt`, 9160 DK gateway on the nRF52840 + serial modem). That is the pair to follow. bluetooth-gateway v0.2.0 is the older line and carries an older Pouch library; don't mix it with a v0.2.0 node.
 
-The gateway v0.2.0 release carries Pouch from before the node SDK v0.2.0. So "v0.2.0 on both" can mean two things:
-- (a) node on golioth/pouch v0.2.0 + gateway on golioth/bluetooth-gateway v0.2.0 (mixed Pouch library versions), or
-- (b) node and gateway both from golioth/pouch v0.2.0 (`examples/zephyr/ble_gatt` + `examples/zephyr/gateway`).
-
-Which pair ran on the solar board is not recorded in the exported files (see "Open questions").
+Upstream golioth/pouch has only v0.1.0 and v0.2.0; main is v0.2.0 + 18 (CI, plus 2 fixes: SAR receiver stops ack retry on fatal bearer errors; an over-long server-cert serial no longer silently succeeds).
 
 ## What is on disk
 
-Transfer drive `G:\My Drive\Transfer\golioth_pouch_v0.2.0\` (exported from Brian's laptop 2026-11-13, clean tag exports, no local edits or credentials):
-- `pouch_node_sdk\`: golioth/pouch v0.2.0.
-- `pouch_gateway\`: golioth/bluetooth-gateway v0.2.0.
-- `gateway_prebuilt_frdm_rw612\`: release v0.2.0 `frdm_rw612-wifi.hex/.elf`, `frdm_rw612-ethernet.hex`, J-Link scripts (`loadfile ... reset exit`).
-
-Desktop (this PC):
-- `C:\Users\Brian\pouch_gateway\`: west workspace, bluetooth-gateway v0.2.0 + 46 (6330d16, 2025-12-03, local edits to `gateway/CMakeLists.txt` and `gateway/src/main.c`), Pouch v0.1.0 + 18, NCS v3.1.1 (golioth-firmware-sdk v0.21.1 + 25). Has `nrf9160dk_nrf9160.hex` and `nrf9160dk_nrf52840.hex`, so this is most likely the 9160 DK gateway build. `pouch_gateway_clean\` is the same without the edits (v0.2.0 + 42).
-- `C:\Users\Brian\pouch-node-ws\`: node workspace, Brian's fork wischmi2/pouch at v0.1.0 + 17, NCS v3.0.1, with `build_ble_gatt`, `build_gateway`, `certs`.
-- `C:\Users\Brian\pouch-1\`: golioth/pouch main (v0.2.0 + 18). Untracked `nxp_rw612.crt.der/.key.der` in it (credentials, keep out of git).
-- `C:\Users\Brian\pouch_xiao_nrf54l15\`: Brian's fork (v0.1.0 + 244, June 2026), XIAO nRF54L15 node + FRDM-RW612 gateway working end to end. `docs\fix-cert-verify-2700-8.md` has the fix for `cert: Failed verifying server cert: 0x2700, 8`. `prebuilt-9160\` has Golioth's pouch v0.2.0 images for the 9160 DK (gateway on nRF52840, ncs-serial-modem on nRF9160, both 2026-07-23).
-- `C:\ncs\`: NCS v2.9.0 to v3.2.3 only. No v3.4 workspace, no Zephyr 4.4 workspace.
+- `G:\My Drive\Transfer\golioth_pouch_v0.2.0\` (laptop export 2026-11-13, clean tags, no credentials): `pouch_node_sdk\` = golioth/pouch v0.2.0; `pouch_gateway\` = golioth/bluetooth-gateway v0.2.0; `gateway_prebuilt_frdm_rw612\` = bluetooth-gateway release v0.2.0 RW612 Wi-Fi/Ethernet hex + J-Link scripts.
+- `C:\Users\Brian\pouch_xiao_nrf54l15\prebuilt-9160\`: Golioth's pouch v0.2.0 9160 DK images (gateway on the nRF52840, `ncs-serial-modem` on the nRF9160, 2026-07-23). Same layout as the solar board's gateway.
+- `C:\Users\Brian\pouch-1\`: golioth/pouch main (v0.2.0 + 18). Untracked `nxp_rw612.crt.der/.key.der` (credentials, keep out of git).
+- `C:\Users\Brian\pouch_gateway\`, `pouch_gateway_clean\`: older bluetooth-gateway v0.2.0 + 46/42 workspaces on NCS v3.1.1 (9160 DK, Pouch v0.1.0 + 18). Superseded.
+- `C:\Users\Brian\pouch_xiao_nrf54l15\`: XIAO nRF54L15 fork (v0.1.0 + 244, June 2026), worked end to end with an FRDM-RW612 gateway. `docs\fix-cert-verify-2700-8.md` has the `0x2700, 8` cert fix.
+- `C:\ncs\` on this desktop: NCS v2.9.0 to v3.2.3 only. NCS v3.4.0 (`C:\ncs\pouch-ncs`) exists on the laptop only.
 
 ## Gateway side
 
-Our gateway board is the Murata Type 2FR (NXP RW612), Wi-Fi only.
-- bluetooth-gateway v0.2.0: FRDM-RW612 Wi-Fi supported; Wi-Fi credentials by `settings set wifi/ssid`, `wifi/psk`; Golioth PSK by `settings set golioth/psk-id`, `golioth/psk`. Prebuilt hex is on the transfer drive.
-- golioth/pouch v0.2.0 `examples/zephyr/gateway`: `frdm_rw612` + `boards/frdm_rw612_wifi.conf` (Ethernet off), Wi-Fi by `wifi cred add` in the shell, credentials over mcumgr to `/lfs1/credentials/`. Builds on the Zephyr v4.4.0 manifest. nRF9160 DK now runs the gateway on the nRF52840 with `ncs-serial-modem` on the nRF9160 (the reverse of bluetooth-gateway, where the 9160 runs the gateway and the 52840 is an HCI controller).
-- Either way our board needs its own Zephyr board definition derived from `frdm_rw612` (pins, LCD on J5, LEDs, flash size of the 2FR module). Not written yet.
+Our gateway board is the Murata Type 2FR (NXP RW612), Wi-Fi only. Follow golioth/pouch v0.2.0 `examples/zephyr/gateway` on the Zephyr v4.4.0 manifest: `frdm_rw612` + `boards/frdm_rw612_wifi.conf`, Wi-Fi via `wifi cred add` in the shell, credentials over mcumgr to `/lfs1/credentials/` (the gateway has USB/UART, so this works as documented). Needs a board definition derived from `frdm_rw612` (pins, LCD on J5, LEDs, the 2FR module's flash). Not written yet.
+
+The 9160 DK cellular gateway is still failing DTLS/DNS. The RW612 Wi-Fi path avoids the modem, and the XIAO work proved RW612 gateway -> Golioth before.
 
 ## Feather node side
 
-Start from golioth/pouch v0.2.0 `examples/zephyr/ble_gatt`: BLE peripheral, Secure Connections enforced (passkey confirmation added in v0.2.0), MCUboot via sysbuild, credentials in LittleFS, Golioth settings + OTA, mcumgr over the UART console for provisioning.
-- No nRF54L board ships with the example (only `frdm_rw612` and `nrf52_bsim`), so the feather is our own port. Use `pouch_xiao_nrf54l15` as the reference for nRF54L15 partitions, MCUboot and the RF switch.
-- The feather has no UART (RTT and SWD only), so the example's provisioning path does not work as is. Options: mcumgr over BLE (SMP), an RTT shell, or credentials built into the image.
-- Existing `firmware\boards\nrf54l15_feather\` and `apps\feather_node\` code (nPM1300, fuel gauge, SENS_ID, ANT_SEL hog) carries over. nPM1300 devicetree property names were checked against NCS v3.2.3 and need a recheck on the SDK we pick.
-- X2 (32 kHz) is DNP, so set the LFCLK source to the internal RC before BLE.
-
-## SDK choice follows from the pair
-
-| Pair | Node SDK | Gateway SDK |
-| --- | --- | --- |
-| (a) mixed | NCS v3.4-branch (pouch v0.2.0) | NCS v3.0.1 per the tag, v3.1.1 as built on this PC |
-| (b) all golioth/pouch v0.2.0 | NCS v3.4-branch | Zephyr v4.4.0 (RW612) |
-
-Neither NCS v3.4 nor Zephyr 4.4 is installed on this PC. The `firmware\apps\feather_node\scripts\build.ps1` still names NCS v3.3.0.
+1. NCS v3.4.0 workspace on the desktop (match the laptop's `C:\ncs\pouch-ncs`).
+2. Port the solar board's app (`nrf54l15_solar_pouch`) onto the feather board definition: swap `solar_status.c` for the feather's PMIC/fuel gauge/SENS_ID code, add the LFXO-off/RC, NFC-pins, MCUboot overlay and APPROTECT fixes. Recheck nPM1300 devicetree properties on NCS v3.4 (last checked on v3.2.3).
+3. Provisioning on the bench: the solar board's LittleFS-image method over TC2030 SWD. For field units later, consider mcumgr over BLE.
+4. Low-power build: the 30 s / 300 s request pattern is in place; slow the advertising and drop the heartbeat before battery tests.
 
 ## Open questions for Brian
 
-1. Which pair ran on the solar board: node on golioth/pouch v0.2.0 (NCS v3.4) with the 9160 DK on bluetooth-gateway v0.2.0, or the 9160 DK on golioth/pouch v0.2.0 (gateway on nRF52840 + serial modem)?
-2. Which solar board was it (ReefWatch `nrf54l15_v3`, v2 SPV1040, or another), and where is its app/board code? The transfer export has no local edits, so the board definition, prj.conf changes, provisioning steps and any fixes are still on the laptop.
-3. Tag v0.2.0 exactly, or golioth/pouch main (v0.2.0 + 18) for the two fixes?
-4. Feather provisioning: mcumgr over BLE (recommended), RTT shell, or built-in credentials?
-5. Did the `0x2700, 8` cert error come back on v0.2.0, or is it fixed upstream?
+1. Get the 9160 DK gateway to Golioth first (DTLS `-113` / DNS `-101`), or go straight to the RW612 Wi-Fi gateway (FRDM-RW612 prebuilt now, our board later)?
+2. Tag v0.2.0 exactly (what the solar board ran) or main (v0.2.0 + 18, two fixes)?
+3. OK to install NCS v3.4.0 on the desktop (several GB), and to fix the two missing feather board-definition items (LFXO/RC, NFC pins) now? Both are firmware only, no hardware change.
+4. The solar board's certificate expired 2026-11-06; reissue for more tests on that board?
