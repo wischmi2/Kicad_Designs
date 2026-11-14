@@ -59,6 +59,8 @@ Upstream golioth/pouch has only v0.1.0 and v0.2.0; main is v0.2.0 + 18 (CI, plus
 
 ## Gateway side
 
+Decision 2026-11-13 (Brian): the gateway is built around the upcoming Murata LBES0ZZ2FR (Type 2FR, NXP RW612) module, which is what our gateway board uses. RW612 is not in the NCS manifest (no `hal_nxp`), so the gateway needs a separate `west-zephyr.yml` (Zephyr v4.4.0) workspace. Not set up yet.
+
 Our gateway board is the Murata Type 2FR (NXP RW612), Wi-Fi only. Follow golioth/pouch v0.2.0 `examples/zephyr/gateway` on the Zephyr v4.4.0 manifest: `frdm_rw612` + `boards/frdm_rw612_wifi.conf`, Wi-Fi via `wifi cred add` in the shell, credentials over mcumgr to `/lfs1/credentials/` (the gateway has USB/UART, so this works as documented). Needs a board definition derived from `frdm_rw612` (pins, LCD on J5, LEDs, the 2FR module's flash). Not written yet.
 
 The 9160 DK cellular gateway is still failing DTLS/DNS. The RW612 Wi-Fi path avoids the modem, and the XIAO work proved RW612 gateway -> Golioth before.
