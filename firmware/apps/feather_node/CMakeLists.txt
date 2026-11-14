@@ -1,3 +1,7 @@
+# Copyright (c) 2025 Golioth, Inc.
+#
+# SPDX-License-Identifier: Apache-2.0
+
 cmake_minimum_required(VERSION 3.20.0)
 
 # BOARD_ROOT = firmware (board defs in firmware/boards/) for non-sysbuild builds; sysbuild uses sysbuild/CMakeLists.txt
@@ -5,11 +9,15 @@ get_filename_component(FW_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/../.. ABSOLUTE)
 list(APPEND BOARD_ROOT ${FW_ROOT})
 
 find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
-
-project(soil_moisture_bringup)
+project(feather_node)
 
 target_sources(app PRIVATE
 	src/main.c
+	src/credentials.c
+	src/fatal_error.c
+	src/fw_update.c
+	src/ble_peripheral.c
+	src/feather_status.c
 	src/fuel_gauge.c
 )
 

@@ -10,10 +10,14 @@
 #include <zephyr/device.h>
 #include <zephyr/drivers/sensor.h>
 #include <zephyr/drivers/sensor/npm13xx_charger.h>
-#include <zephyr/sys/printk.h>
+#include <zephyr/logging/log.h>
 #include <zephyr/sys/util.h>
 
 #include <nrf_fuel_gauge.h>
+
+#include "fuel_gauge.h"
+
+LOG_MODULE_REGISTER(fuel_gauge, LOG_LEVEL_INF);
 
 /* nPM13xx CHARGER.BCHGCHARGESTATUS register bitmasks */
 #define NPM13XX_CHG_STATUS_COMPLETE_MASK BIT(1)
@@ -62,19 +66,19 @@ static int charge_status_inform(int32_t chg_status)
 	union nrf_fuel_gauge_ext_state_info_data state_info;
 
 	if (chg_status & NPM13XX_CHG_STATUS_COMPLETE_MASK) {
-		printk("Charge complete\n");
+		LOG_INF("Charge complete");
 		state_info.charge_state = NRF_FUEL_GAUGE_CHARGE_STATE_COMPLETE;
 	} else if (chg_status & NPM13XX_CHG_STATUS_TRICKLE_MASK) {
-		printk("Trickle charging\n");
+		LOG_INF("Trickle charging");
 		state_info.charge_state = NRF_FUEL_GAUGE_CHARGE_STATE_TRICKLE;
 	} else if (chg_status & NPM13XX_CHG_STATUS_CC_MASK) {
-		printk("Constant current charging\n");
+		LOG_INF("Constant current charging");
 		state_info.charge_state = NRF_FUEL_GAUGE_CHARGE_STATE_CC;
 	} else if (chg_status & NPM13XX_CHG_STATUS_CV_MASK) {
-		printk("Constant voltage charging\n");
+		LOG_INF("Constant voltage charging");
 		state_info.charge_state = NRF_FUEL_GAUGE_CHARGE_STATE_CV;
 	} else {
-		printk("Charger idle\n");
+		LOG_INF("Charger idle");
 		state_info.charge_state = NRF_FUEL_GAUGE_CHARGE_STATE_IDLE;
 	}
 
@@ -95,7 +99,7 @@ int fuel_gauge_init(const struct device *charger)
 	int32_t chg_status;
 	int ret;
 
-	printk("nRF Fuel Gauge version: %s\n", nrf_fuel_gauge_version);
+	LOG_INF("nRF Fuel Gauge version: %s", nrf_fuel_gauge_version);
 
 	ret = read_sensors(charger, &parameters.v0, &parameters.i0, &parameters.t0, &chg_status);
 	if (ret < 0) {
@@ -113,7 +117,7 @@ int fuel_gauge_init(const struct device *charger)
 
 	ret = nrf_fuel_gauge_init(&parameters, NULL);
 	if (ret < 0) {
-		printk("Error: Could not initialise fuel gauge\n");
+		LOG_ERR("Could not initialise fuel gauge");
 		return ret;
 	}
 
@@ -121,7 +125,7 @@ int fuel_gauge_init(const struct device *charger)
 					      &(union nrf_fuel_gauge_ext_state_info_data){
 						      .charge_current_limit = max_charge_current});
 	if (ret < 0) {
-		printk("Error: Could not set fuel gauge state\n");
+		LOG_ERR("Could not set fuel gauge state");
 		return ret;
 	}
 
@@ -129,13 +133,13 @@ int fuel_gauge_init(const struct device *charger)
 					      &(union nrf_fuel_gauge_ext_state_info_data){
 						      .charge_term_current = term_charge_current});
 	if (ret < 0) {
-		printk("Error: Could not set fuel gauge state\n");
+		LOG_ERR("Could not set fuel gauge state");
 		return ret;
 	}
 
 	ret = charge_status_inform(chg_status);
 	if (ret < 0) {
-		printk("Error: Could not set fuel gauge state\n");
+		LOG_ERR("Could not set fuel gauge state");
 		return ret;
 	}
 
@@ -144,60 +148,60 @@ int fuel_gauge_init(const struct device *charger)
 	return 0;
 }
 
-int fuel_gauge_update(const struct device *charger, bool vbus_connected)
+int fuel_gauge_read(const struct device *charger, struct fuel_gauge_sample *out)
+{
+	return read_sensors(charger, &out->voltage, &out->current, &out->temp, &out->chg_status);
+}
+
+int fuel_gauge_update(const struct device *charger, bool vbus_connected,
+		      struct fuel_gauge_sample *out)
 {
 	static int32_t chg_status_prev;
 
-	float voltage;
-	float current;
-	float temp;
-	float soc;
+	struct fuel_gauge_sample smp;
 	float tte;
 	float ttf;
 	float delta;
-	int32_t chg_status;
+	float current;
 	int ret;
 
-	ret = read_sensors(charger, &voltage, &current, &temp, &chg_status);
+	ret = read_sensors(charger, &smp.voltage, &smp.current, &smp.temp, &smp.chg_status);
 	if (ret < 0) {
-		printk("Error: Could not read from charger device\n");
+		LOG_ERR("Could not read from charger device");
 		return ret;
 	}
 	/* Zephyr sensor API convention for Gauge current is negative=discharging,
 	 * while nrf_fuel_gauge lib expects the opposite negative=charging
 	 */
-	current = -current;
+	current = -smp.current;
 
 	ret = nrf_fuel_gauge_ext_state_update(
 		vbus_connected ? NRF_FUEL_GAUGE_EXT_STATE_INFO_VBUS_CONNECTED
 			       : NRF_FUEL_GAUGE_EXT_STATE_INFO_VBUS_DISCONNECTED,
 		NULL);
 	if (ret < 0) {
-		printk("Error: Could not inform of state\n");
+		LOG_ERR("Could not inform of state");
 		return ret;
 	}
 
-	if (chg_status != chg_status_prev) {
-		chg_status_prev = chg_status;
+	if (smp.chg_status != chg_status_prev) {
+		chg_status_prev = smp.chg_status;
 
-		ret = charge_status_inform(chg_status);
+		ret = charge_status_inform(smp.chg_status);
 		if (ret < 0) {
-			printk("Error: Could not inform of charge status\n");
+			LOG_ERR("Could not inform of charge status");
 			return ret;
 		}
 	}
 
 	delta = (float)k_uptime_delta(&ref_time) / 1000.f;
 
-	/* Zephyr sensor API convention for Gauge current is negative=discharging,
-	 * while nrf_fuel_gauge lib expects the opposite negative=charging
-	 */
-	ret = nrf_fuel_gauge_process(voltage, current, temp, delta, &soc, NULL);
+	/* NCS v3.4: process/TTE/TTF return a status and give the value through a pointer. */
+	ret = nrf_fuel_gauge_process(smp.voltage, current, smp.temp, delta, &smp.soc, NULL);
 	if (ret < 0) {
-		printk("Error: Fuel gauge process failed\n");
+		LOG_ERR("Fuel gauge process failed");
 		return ret;
 	}
-	/* NCS v3.4: process/TTE/TTF return a status and give the value through a pointer. */
 	if (nrf_fuel_gauge_tte_get(&tte) < 0) {
 		tte = NAN;
 	}
@@ -205,8 +209,15 @@ int fuel_gauge_update(const struct device *charger, bool vbus_connected)
 		ttf = NAN;
 	}
 
-	printk("V: %.3f, I: %.3f, T: %.2f, ", (double)voltage, (double)current, (double)temp);
-	printk("SoC: %.2f, TTE: %.0f, TTF: %.0f\n", (double)soc, (double)tte, (double)ttf);
+	/* Integer logging: no float printf in the Pouch build. */
+	LOG_INF("V %d mV, I %d mA, T %d.%02d C, SoC %d.%02d %%, TTE %d s, TTF %d s",
+		(int)(smp.voltage * 1000.f), (int)(smp.current * 1000.f), (int)smp.temp,
+		(int)((smp.temp - (int)smp.temp) * 100.f), (int)smp.soc,
+		(int)((smp.soc - (int)smp.soc) * 100.f), isnan(tte) ? -1 : (int)tte, isnan(ttf) ? -1 : (int)ttf);
+
+	if (out != NULL) {
+		*out = smp;
+	}
 
 	return 0;
 }

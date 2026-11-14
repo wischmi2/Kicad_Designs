@@ -1,0 +1,73 @@
+/*
+ * MCUboot on the nRF54L15 feather.
+ * No 32 kHz crystal (X2 DNP) and SCL is P1.03, an NFC pin.
+ *
+ * This file replaces MCUboot's own app.overlay, so the bootloader must be
+ * pointed at boot_partition (RRAM 0x0) here. The board devicetree points
+ * zephyr,code-partition at slot0_partition (for the application), and without
+ * this MCUboot is linked into the application slot and the CPU never leaves 0x0.
+ */
+
+/ {
+	chosen {
+		zephyr,code-partition = &boot_partition;
+	};
+};
+
+&uicr {
+	nfct-pins-as-gpios;
+};
+
+&nfct {
+	status = "disabled";
+};
+
+&lfxo {
+	status = "disabled";
+};
+
+/*
+ * The nPM1300 and its I2C bus are only needed by the application. The board
+ * devicetree describes them, but MCUboot's minimal kernel (no multithreading)
+ * cannot link the nPM13xx MFD driver, so switch the bus and the SENS_ID ADC off here.
+ */
+&i2c21 {
+	status = "disabled";
+};
+
+&adc {
+	status = "disabled";
+};
+
+/* Disable the PMIC node and every child (their drivers are instantiated per child). */
+&npm1300_ek_pmic {
+	status = "disabled";
+};
+
+&npm1300_ek_gpio {
+	status = "disabled";
+};
+
+&npm1300_ek_regulators {
+	status = "disabled";
+};
+
+&npm1300_ek_buck2 {
+	status = "disabled";
+};
+
+&npm1300_ek_ldo1 {
+	status = "disabled";
+};
+
+&npm1300_ek_ldo2 {
+	status = "disabled";
+};
+
+&npm1300_ek_charger {
+	status = "disabled";
+};
+
+&npm1300_ek_leds {
+	status = "disabled";
+};
