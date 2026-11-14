@@ -60,5 +60,40 @@ python .\scripts\provision_credentials.py --crt c.der --key k.der --serial <J-Li
 
 `flash.ps1` has no default serial on purpose. Credentials (`*.der`, `*.pem`, credential hex) are gitignored and never committed. Details, sizes, warnings and the Pouch differences are in `apps\feather_node\README.md`.
 
+## SDK workspace (Zephyr v4.4.0 + Golioth Pouch, NXP RW612 gateway), set up 2026-11-13
+
+The gateway (`hardware\gateway`, Murata Type 2FR / LBES0ZZ2FR, NXP RW612, Wi-Fi only) uses a plain Zephyr workspace with the Pouch `west-zephyr.yml` manifest. NCS has no `hal_nxp`, so it can't share the feather's NCS workspace. Nothing here touches `C:\ncs\pouch-ncs` or `C:\ncs\v*`.
+
+| Item | Value |
+| --- | --- |
+| Toolchain | NCS v3.4.0 bundle `dcbdc366a1` (`nrfutil sdk-manager toolchain launch --ncs-version v3.4.0`), Zephyr SDK 1.0.1, GCC 14.3.0. Zephyr v4.4.0's own `SDK_VERSION` is 1.0.1, so no extra SDK install was needed. `zcbor` 0.9.1 is already in that Python (installed for the feather) |
+| Workspace | `C:\ncs\pouch-zephyr`. `git clone https://github.com/golioth/pouch pouch`, `git checkout 32ded9b` (golioth/pouch main, v0.2.0 + 18), `west init -l pouch --mf west-zephyr.yml`. (`west init -m <url> --mr <sha>` does not take a commit id.) |
+| `west update` | `-o=--depth=1 -n` (shallow, no tags). Zephyr is at tag `v4.4.0` (684c9e8f, `VERSION` 4.4.0) |
+| Patches | `west patch apply` reports "8 patches applied successfully" but applied nothing here: each patch's `apply-command` runs `bash -c 'if [ $(west config manifest.file) = "west-zephyr.yml" ] ...'` and `bash` inside the nrfutil toolchain shell has no `west`, so the test is false. Applied by hand in Git Bash instead: `cd C:\ncs\pouch-zephyr\zephyr; git am ../pouch/zephyr/patches/zephyr/zephyr/000*.patch` (8 commits on top of v4.4.0, HEAD 0b2959d2). The one that matters for the RW612 is 0008 (re-power TDDR PLL when enabling Ethernet after MCUboot); 0001-0007 are NSOS / BabbleSim only |
+| Blobs | `west blobs fetch hal_nxp` fetched the `rw61x` blobs (`rw61x_sb_wifi_a2.bin` 351,804 B, `rw61x_sb_ble_a2.bin`, `rw61x_sb_ble_15d4_combo_a2.bin`) and then stopped at an i.MX95 boot-firmware blob that needs a licence click-through. That licence was **not** accepted (not needed for RW612). The Wi-Fi blob is linked into the app image (`firmwares.ld`), so there is no separate flash step for it in this Zephyr version |
+
+`west list` (2026-11-13):
+
+```
+manifest      pouch                     32ded9b
+zephyr        zephyr                    v4.4.0 (684c9e8f) + 8 patches
+hal_nxp       modules/hal/nxp           2c2f28ac333e995d7279777409817c4b4f92c1ec
+cmsis_6       modules/hal/cmsis_6       30a859f44ef8ab4dc8f84b03ed586fd16ccf9d74
+hal_nordic    modules/hal/nordic        44fd3d44b15cb75f80a25b4679f91d2787e28664
+littlefs      modules/fs/littlefs       8f5ca347843363882619d8f96c00d8dbd88a8e79
+mbedtls       modules/crypto/mbedtls    a3e190fe44c78d1ba67f55979e1257328cc7d0d8
+mcuboot       bootloader/mcuboot        ee39e2d694bd827ffd1bebbce2f571a9154e6ec2
+picolibc      modules/lib/picolibc      01254932e8e81085817ed61fd858648584ffe37c
+segger        modules/debug/segger      50892fdbcf2f570e67baa72b8894a66b16946f72
+tf-psa-crypto modules/crypto/tf-psa-crypto          dc575a2ddcc8cb16275d24c42a52eaf79ebe2231
+trusted-firmware-m modules/tee/tf-m/trusted-firmware-m 9a4cb1a280b63a5e66bd469e82eb75f2b3e05a78
+zcbor         modules/lib/zcbor         9164bd18dcd88ff9d9ef98279501fc1093571017
+(plus nrf_hw_models and the BabbleSim components, unused)
+```
+
+Proof build (upstream, unmodified except the fix below): `pouch\examples\zephyr\gateway` for `frdm_rw612` with `-DEXTRA_CONF_FILE=boards/frdm_rw612_wifi.conf`, into `C:\ncs\pouch-builds\gw_frdm_proof` (outside the repo). Compiles and links with **no warnings**: flash 1,243,924 B (1.85 % of the 64 MB FRDM flash), RAM 569,804 B (57.96 % of 960 KB); SMU1/SMU2 are fixed regions.
+
+Windows problem in upstream: the gateway `CMakeLists.txt` generates `git_describe.h` by running a `.sh` script through `cmd /C`, which on Windows hangs the build forever (`Generating git_describe.h, always_run`). The proof build was finished after temporarily replacing that block with `execute_process(git describe ...)` + `file(WRITE ...)` in the pouch checkout (reverted afterwards; the checkout is clean at 32ded9b). Our own gateway app (`apps\pouch_gateway`) carries the same fix.
+
 Until 2026-11-10 this was `soil_moisture_fw\` at the repo root, with the board definitions in
 `soil_moisture_fw\boards\others\`. See `docs\reorg_2026-11-10.md`.
