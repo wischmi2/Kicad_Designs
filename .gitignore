@@ -54,3 +54,11 @@ _verify_orig/
 creds*.hex
 *creds*.hex
 feather-creds-*/
+
+# More credential files (gateway and nodes): never commit
+*.crt
+*.key
+*.p12
+*.pfx
+wifi_cred*
+*wifi*password*

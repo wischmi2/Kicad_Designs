@@ -131,5 +131,17 @@ Removed from the FRDM definition: Ethernet MAC/MDIO/KSZ8081 PHY, Arduino/mikroBU
 
 Not clear from the netlist / datasheets (not guessed, see the report for the list): whether `init.c`'s `iBuck = true` is right for our supply scheme, the exact flash part (QE sequence in the FCB, `deviceModeArg 0x200`), the LCD backlight drive, and the Wi-Fi TX power tables (Murata publishes region tables for the 2FR; the FRDM default WW table is used).
 
+## Gateway app (`apps\pouch_gateway`), built 2026-11-13
+
+`apps\pouch_gateway\` is Pouch `examples/zephyr/gateway` at 32ded9b built out of this repo (BOARD_ROOT = `firmware\`), with `boards\pouch_gateway.conf` for Wi-Fi (merged from `frdm_rw612.conf` + `frdm_rw612_wifi.conf`):
+
+```powershell
+cd C:\Personal-Agents\worktrees\nrf54l15-feather-branch\firmware\apps\pouch_gateway
+.\scripts\build.ps1                          # pouch_gateway and frdm_rw612 (Wi-Fi), pristine, into C:\ncs\pouch-builds\gateway_*
+.\scripts\build.ps1 -Target pouch_gateway    # our board only
+```
+
+Pristine builds, no warnings. `pouch_gateway`: flash 1,243,760 B (7.41 % of 16 MB), RAM 569,804 B (57.96 %). `frdm_rw612` Wi-Fi: flash 1,243,936 B (1.85 % of 64 MB), RAM 569,804 B. Flashing (J-Link Commander, printed in the app README, not run), Wi-Fi (`wifi cred add`) and Golioth credentials (mcumgr to `/lfs1/credentials/`) are in `apps\pouch_gateway\README.md`. Nothing has run on hardware; J4 (the shell UART) and J2 are DNP on Rev A.
+
 Until 2026-11-10 this was `soil_moisture_fw\` at the repo root, with the board definitions in
 `soil_moisture_fw\boards\others\`. See `docs\reorg_2026-11-10.md`.

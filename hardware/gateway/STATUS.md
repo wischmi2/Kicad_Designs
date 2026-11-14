@@ -73,6 +73,11 @@ Inputs: hardware\gateway\docs\lcd_module\MEASUREMENTS.md (Waveshare STEP): PH2.0
 - Guide: mechanical\ledger\assembly_guide_2026-11-01\ASSEMBLY.md. Report: shared\reports\2026-11-01-coordinator-enclosure-hardware.md.
 - Open: re-apply "Abyss navy PETG" to Front_Shell in Fusion (the agent set an approximate #1F2D4D).
 
+## Firmware (2026-11-13, build only)
+- Board definition pouch_gateway/rw612 (firmware\boards\pouch_gateway) and the Pouch gateway app (firmware\apps\pouch_gateway, golioth/pouch 32ded9b, Zephyr 4.4.0) build for this board and for the FRDM-RW612 (Wi-Fi), no warnings. Flash 1.24 MB of 16 MB, RAM 570 KB of 960 KB. Not flashed, not run: no board was attached.
+- Pin map read from this board's netlist (UART GPIO_24/26 on J4, LEDs GPIO_51/52/53, USER GPIO_25, LCD on LCDIC GPIO_44-49 + backlight GPIO_55 PWM); table in firmware\README.md. No hardware mismatch found.
+- Bring-up notes: J4 (shell UART, needed for Wi-Fi setup and mcumgr credential upload) and J2 are DNP, so fit a 3-pin header at J4 or there is no console (no USB console or RTT in the firmware yet). Boot depends on the flash configuration block copied from Murata's Type 2FR image; if it fails to boot, check that first (ISP via SW2 still works). Details and open questions in firmware\apps\pouch_gateway\README.md.
+
 ## Open work
 - Brian: decide the LCD stack (standoff length or LCD orientation, see LCD clearance), then approve new fab output (Gerbers + drill only; archive the old fab files first).
 - parts-sourcing: done 2026-10-28, see "BOM pricing" above. Open: schematic MPN fields, D1 land pattern check, J1 (LCSC only).
