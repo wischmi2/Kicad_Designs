@@ -6,7 +6,7 @@ nRF Connect SDK application for the nRF54L15 feather (`nrf54l15_feather/nrf54l15
 
 ## What it does
 
-- Boots through MCUboot (sysbuild), loads `/lfs1/credentials/crt.der` and `key.der` from LittleFS (storage partition RRAM `0x174000`, `0x9000`), starts Pouch and advertises as `Feather`.
+- Boots through MCUboot (sysbuild; OTA images run in test mode and confirm after one Pouch sync, see below), loads `/lfs1/credentials/crt.der` and `key.der` from LittleFS (storage partition RRAM `0x174000`, `0x9000`), starts Pouch and advertises as `Feather`.
 - Gateway sharing: the gateway-request flag is set for 30 s (`CONFIG_EXAMPLE_ADV_WINDOW_S`), then cleared for 300 s (`CONFIG_EXAMPLE_SYNC_PERIOD_S`), so one gateway can serve several nodes. Advertising restarts after a disconnect. The advertising is still the solar debug path (100-150 ms interval, always advertising); slow it and drop the 10 s heartbeat before battery tests.
 - `src\feather_status.c` samples the nPM1300 every 5 s (`CONFIG_FEATHER_STATUS_PERIOD_S`) on its own work queue: battery voltage, current, charger state, VBUS, and the Nordic fuel gauge state of charge. SENS_ID is read about once a minute (VSENS on for 50 ms).
 - On every Pouch uplink one JSON object goes to `.s/sensor`:
@@ -26,6 +26,7 @@ nRF Connect SDK application for the nRF54L15 feather (`nrf54l15_feather/nrf54l15
 | NFC pins | `&uicr { nfct-pins-as-gpios; }`, `&nfct` disabled (SCL is P1.03). In board file and MCUboot overlay |
 | MCUboot | `sysbuild\mcuboot.overlay` starts with `zephyr,code-partition = &boot_partition` (it replaces the MCUboot app.overlay), disables the nPM1300 nodes, I2C bus and ADC (the MCUboot kernel has no multithreading, so the nPM13xx driver does not link), same LFXO/NFC/RC settings. `sysbuild\mcuboot.conf` has `CONFIG_LTO_SINGLE_THREADED=y` (parallel LTO loses its temp objects on Windows; the app image is not built with LTO, so the option is not set there) |
 | Signing | MCUboot debug key (CMake warns). Pick a production key before shipping |
+| OTA confirm | `srcw_update.c`: upstream `ble_gatt` requests `BOOT_UPGRADE_PERMANENT` and never confirms, so a bad image could never revert. Here the upgrade is `BOOT_UPGRADE_TEST` and the new image calls `boot_write_img_confirmed()` (from the system work queue) after one Pouch sync in which the cloud answered: the OTA manifest was received and decoded, then `POUCH_EVENT_SESSION_END`. If that never happens MCUboot reverts at the next reset. A manifest for a newer version is ignored while the image is unconfirmed. See the section below |
 | Device name | `Feather` (`CONFIG_BT_DEVICE_NAME`) |
 
 ## SDK, build, flash
@@ -38,9 +39,15 @@ cd C:\Personal-Agents\worktrees\nrf54l15-feather-branch\firmware\apps\feather_no
 .\scripts\flash.ps1 -Serial <J-Link serial>   # MCUboot at 0x0, then zephyr.signed.hex, ERASE_NONE
 ```
 
-Sizes (2026-11-13, pristine build): app 309,668 B RRAM (43.5 % of the 712,560 B slot), 72,280 B RAM (27.6 %); MCUboot 39,024 B (61.5 % of 62 KB), 20,560 B RAM. Warnings in the build: Kconfig `BOOT_MAX_IMG_SECTORS` (MCUboot, also in the upstream example), `NRF_PLATFORM_LUMOS` deprecated (twice), CMake "default MCUboot signing key", `lto-wrapper: serial compilation of 2 LTRANS jobs` (benign). No application warnings. `soil_moisture/nrf54l15/cpuapp` still builds from the same sources (app 303,604 B, 72,040 B RAM, MCUboot 39,256 B / 21,776 B), also never run.
+Sizes (2026-11-13, pristine build, after the confirm change): app 310,124 B RRAM (43.5 % of the 712,560 B slot), 72,304 B RAM (27.6 %); MCUboot 39,024 B (61.5 % of 62 KB), 20,560 B RAM. Warnings in the build: Kconfig `BOOT_MAX_IMG_SECTORS` (MCUboot, also in the upstream example), `NRF_PLATFORM_LUMOS` deprecated (twice), CMake "default MCUboot signing key", `lto-wrapper: serial compilation of 2 LTRANS jobs` (benign). No application warnings. `soil_moisture/nrf54l15/cpuapp` still builds from the same sources (app 303,604 B, 72,040 B RAM, MCUboot 39,256 B / 21,776 B), also never run.
 
 `west flash` does not work on Windows (the pouch runner imports `pty` and `termios`), hence `flash.ps1` calls `nrfutil device program`. Use J-Link V9.82 (V9.36 drops the link when the nRF54L15 sleeps). Do not pass a chip erase and do not use `nrfutil device recover` once credentials are on the chip: both wipe the LittleFS partition. A locked access port is the only reason to recover.
+
+## OTA and image confirm (2026-11-13)
+
+OTA is Pouch's `golioth_sdk` (`CONFIG_GOLIOTH_OTA`), package name `CONFIG_EXAMPLE_FW_UPDATE_COMPONENT` (default `ble_gatt_example`; choose the real Golioth package name before the first release), version from the `VERSION` file (`APP_VERSION_STRING`, also the MCUboot image header). The image goes through the gateway, is written to `image-1` with `flash_img` (512 B buffer) and installed by MCUboot (NCS: swap using move). Details: `hardware\gateway\docs\OTA_and_Memfault.md` section 4.
+
+Confirm logic, checked 2026-11-13 against the upstream example: `ble_gatt/src/fw_update.c` (identical to the old copy here) requests a **permanent** upgrade and nothing in the Pouch tree calls `boot_write_img_confirmed()`, so the old code "never confirmed" and also could never roll back. Now: the OTA manifest handler records that the cloud answered; a `POUCH_EVENT_HANDLER` for `POUCH_EVENT_SESSION_END` submits a work item that confirms the image if it is still in test mode and the cloud answered. `POUCH_EVENT_SESSION_END` alone is not enough, because Pouch 32ded9b emits it for failed sessions too (the transport's success flag is dropped in `src/transport/endpoints/device/uplink.c`). Limits: a node that is not in a Golioth deployment may never get a manifest and so never confirm its first OTA image (check on the bench); a reset before the confirm reverts to the old image (intended). A directly flashed image counts as confirmed, so the call is a no-op for bench flashing. Build size effect: +456 B flash, +24 B RAM. Not run on hardware.
 
 ## Credentials (provisioning over SWD)
 

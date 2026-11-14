@@ -11,7 +11,7 @@ How firmware gets onto the gateway and the Pouch sensor nodes after they ship, a
 > - Node OTA = the same `golioth_sdk` OTA on the node (`examples/zephyr/ble_gatt/src/fw_update.c`), with the image blocks relayed by the gateway.
 > - Upstream writes the image to the secondary slot with `flash_img` and requests a **permanent** MCUboot upgrade, so it never reverts and never confirms. This repo changes both firmwares to request a **test** upgrade and confirm only after a health check (see 3.1 and 4).
 > - No Memfault code exists in Pouch 32ded9b. Memfault over Pouch is a possible route, not a supported one (5.2, 5.4).
-> - pSRAM is not needed for OTA: the image is streamed to flash through a 512-byte buffer, so the download costs about 0.5 KB of RAM (3.1, 7).
+> - pSRAM is not needed for OTA: the image is streamed to flash through a 512-byte buffer, so turning OTA on cost +720 B RAM and +2,140 B flash in the measured gateway build (3.1, 7).
 
 ---
 
@@ -113,7 +113,7 @@ The artifact is **`zephyr.signed.bin`** from the gateway build's `pouch_gateway`
 ### 3.3 What happens on the device
 
 1. The gateway syncs every 30 s. The cloud puts the manifest in the downlink. It does not push a notification; a newly assigned deployment is noticed at the next sync.
-2. `ota_manifest_receive()` compares current and target versions; if they differ it marks the component `DOWNLOADING`.
+2. `ota_manifest_receive()` compares current and target versions; if they differ (and the running image is already confirmed) it marks the component `DOWNLOADING`.
 3. The next sync's uplink reports `DOWNLOADING`, and the cloud streams the image as a downlink. Each block goes to `ota_fw_receive()`, which writes it to `image-1` through `flash_img`.
 4. On the last block the app requests a **test** upgrade and reboots.
 5. MCUboot verifies the signature and swaps.
@@ -202,8 +202,8 @@ Nodes have no IP connection, so they'd send Memfault chunks as Pouch uplink entr
 ## 7. Open items
 
 1. ~~VERIFY the Golioth Firmware SDK Kconfig and API names~~ Answered: Pouch `golioth_sdk` OTA, `CONFIG_GOLIOTH_OTA`, `GOLIOTH_OTA_COMPONENT` (3.1). Still to check on hardware: that Golioth accepts the package name and that the whole flow runs.
-2. Partition layout: **decided** for rev A: swap using move in the existing `image-0` / `image-1` layout, 3 MB slots, 128 KB MCUboot partition, details and the one fix in `firmware\apps\pouch_gateway\README.md`. The gateway app is 1.2 MB of the 3 MB slot.
-3. **pSRAM:** not needed. Today's gateway build uses none (the FRDM-RW612 8 MB APS6404L is disabled in its devicetree and removed from our board), RAM is 569,804 B of 960 KB (58 %). OTA download needs no extra buffer: `flash_img` plus `stream_flash` use one 512-byte write buffer, and the CoAP block buffers (2 x 1072 B) and the `pouch_buf` pool already exist. The measured RAM change with `GOLIOTH_OTA` is in the gateway README. The remaining pSRAM question (does the gateway run without it) is unproven on hardware but not an OTA issue.
+2. Partition layout: **decided and built** for rev A: the existing `image-0` / `image-1` layout, 3 MB slots, 128 KB MCUboot partition, Zephyr 4.4.0's default mode swap using offset (no scratch partition). No layout change was needed; details in `firmware\apps\pouch_gateway\README.md`. The gateway app is 1.2 MB of the 3 MB slot (40 %). The feather node uses NCS's swap using move.
+3. **pSRAM:** not needed. Today's gateway build uses none (the FRDM-RW612 8 MB APS6404L is disabled in its devicetree and removed from our board), RAM is 569,804 B of 960 KB (58 %). OTA download needs no extra buffer: `flash_img` plus `stream_flash` use one 512-byte write buffer, and the CoAP block buffers (2 x 1072 B) and the `pouch_buf` pool already exist. Measured (pristine builds 2026-11-13): turning on `GOLIOTH_OTA` + `IMG_MANAGER` + the update code cost **+720 B RAM (569,804 to 570,524 B, 58.04 %) and +2,140 B flash**; MCUboot itself is 59,804 B flash and 55,544 B RAM while it runs (not resident alongside the app). The remaining pSRAM question (does the gateway run without it) is unproven on hardware but not an OTA issue.
 4. "Healthy" for confirming the gateway image: **decided** (3.1). Review whether the first sync (up to 30 s after boot) is the right gate, and whether to add a watchdog so a hung image resets instead of waiting for a power cycle.
 5. **VERIFY** the cloud side of Memfault over Pouch: `.s/mflt` mapping to the `/mflt` pipeline path, and per-chunk energy on a node (5.2, 5.4).
 6. **VERIFY** that the cloud sends the OTA manifest on every session for a device inside a deployment (the feather node's confirm logic relies on it, 4).
