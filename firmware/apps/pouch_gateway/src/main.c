@@ -1,0 +1,462 @@
+/*
+ * Copyright (c) 2025 Golioth, Inc.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include <zephyr/bluetooth/bluetooth.h>
+#include <zephyr/bluetooth/conn.h>
+#include <zephyr/bluetooth/hci.h>
+#include <zephyr/net/net_if.h>
+#include <zephyr/net/net_mgmt.h>
+#include <zephyr/net/dhcpv4.h>
+#include <zephyr/drivers/gpio.h>
+
+#include <pouch/pouch.h>
+#include <pouch/uplink.h>
+#include <pouch/transport/bluetooth/gatt.h>
+#include <pouch/transport/certificate.h>
+#include <pouch/transport/coap/client.h>
+#include <pouch/transport/coap/gateway.h>
+
+#include <pouch/gateway/bt/bond.h>
+#include <pouch/gateway/bt/connect.h>
+#include <pouch/gateway/bt/scan.h>
+#include <pouch/gateway/cert.h>
+#include <pouch/gateway/cloud.h>
+#include <pouch/gateway/uplink.h>
+
+#include <golioth/settings_callbacks.h>
+
+#include "credentials.h"
+
+#if defined(CONFIG_WIFI)
+#include "wifi.h"
+#endif
+
+#include <git_describe.h>
+
+#include <zephyr/logging/log.h>
+LOG_MODULE_REGISTER(main);
+
+struct net_wait_data
+{
+    struct k_sem sem;
+    struct net_mgmt_event_callback cb;
+};
+
+static const struct gpio_dt_spec button = GPIO_DT_SPEC_GET_OR(DT_ALIAS(sw0), gpios, {});
+static struct gpio_callback button_cb_data;
+static struct bt_conn *default_conn;
+
+static const k_timeout_t bonding_timeout = K_SECONDS(30);
+static const bt_security_t bt_security =
+    IS_ENABLED(CONFIG_POUCH_GATEWAY_GATT_SCAN_FILTER_BONDED) ? BT_SECURITY_L4 : BT_SECURITY_L2;
+
+static void button_pressed(const struct device *dev, struct gpio_callback *cb, uint32_t pins)
+{
+    if (default_conn)
+    {
+        LOG_INF("Confirming passkey");
+        bt_conn_auth_passkey_confirm(default_conn);
+    }
+    else if (pouch_gateway_bonding_is_enabled())
+    {
+        LOG_WRN("Bonding already enabled");
+    }
+    else
+    {
+        pouch_gateway_bonding_enable(bonding_timeout);
+    }
+}
+
+static void do_uplink(void)
+{
+    const char *payload = "{\"temp\":22}";
+    pouch_uplink_entry_write(".s/sensor",
+                             POUCH_CONTENT_TYPE_JSON,
+                             payload,
+                             strlen(payload),
+                             POUCH_FOREVER);
+}
+POUCH_UPLINK_HANDLER(do_uplink);
+
+static int led_setting_cb(bool new_value)
+{
+    LOG_INF("Received LED setting: %d", (int) new_value);
+
+    return 0;
+}
+
+GOLIOTH_SETTINGS_HANDLER(LED, led_setting_cb);
+
+static void event_cb_handler(struct net_mgmt_event_callback *cb,
+                             uint64_t mgmt_event,
+                             struct net_if *iface)
+{
+    struct net_wait_data *wait = CONTAINER_OF(cb, struct net_wait_data, cb);
+
+    if (mgmt_event == cb->event_mask)
+    {
+        k_sem_give(&wait->sem);
+    }
+}
+
+static void wait_for_net_event(struct net_if *iface, uint64_t event)
+{
+    struct net_wait_data wait;
+
+    wait.cb.handler = event_cb_handler;
+    wait.cb.event_mask = event;
+
+    k_sem_init(&wait.sem, 0, 1);
+    net_mgmt_add_event_callback(&wait.cb);
+
+    k_sem_take(&wait.sem, K_FOREVER);
+
+    net_mgmt_del_event_callback(&wait.cb);
+}
+
+static void wait_for_network(void)
+{
+    struct net_if *iface = net_if_get_default();
+
+    if (!net_if_is_up(iface))
+    {
+        LOG_INF("Bringing up network interface (%p)", (void *) iface);
+        int ret = net_if_up(iface);
+        if ((ret < 0) && (ret != -EALREADY))
+        {
+            LOG_ERR("Failed to bring up network interface: %d", ret);
+            return;
+        }
+    }
+
+    if (IS_ENABLED(CONFIG_WIFI))
+    {
+        struct net_wait_data wait;
+
+        wait.cb.handler = event_cb_handler;
+        wait.cb.event_mask = NET_EVENT_IPV4_ADDR_ADD;
+        k_sem_init(&wait.sem, 0, 1);
+        net_mgmt_add_event_callback(&wait.cb);
+
+        IF_ENABLED(CONFIG_WIFI, (wifi_connect()));
+
+        if (IS_ENABLED(CONFIG_NET_DHCPV4))
+        {
+            net_dhcpv4_start(iface);
+        }
+
+        LOG_INF("Waiting to obtain IP address");
+        k_sem_take(&wait.sem, K_FOREVER);
+        net_mgmt_del_event_callback(&wait.cb);
+    }
+    else if (IS_ENABLED(CONFIG_NET_L2_ETHERNET) && IS_ENABLED(CONFIG_NET_DHCPV4))
+    {
+        net_dhcpv4_start(net_if_get_default());
+    }
+    else if (IS_ENABLED(CONFIG_MODEM))
+    {
+        LOG_INF("Waiting to obtain IP address");
+        wait_for_net_event(iface,
+                           IS_ENABLED(DNS_SERVER_IP_ADDRESSES) ? NET_EVENT_DNS_SERVER_ADD
+                                                               : NET_EVENT_IPV4_ADDR_ADD);
+    }
+}
+
+static void bt_connected(struct bt_conn *conn, uint8_t err)
+{
+    char addr[BT_ADDR_LE_STR_LEN];
+
+    bt_addr_le_to_str(bt_conn_get_dst(conn), addr, sizeof(addr));
+
+    if (err)
+    {
+        LOG_ERR("Failed to connect to %s %u %s", addr, err, bt_hci_err_to_str(err));
+
+        bt_conn_unref(conn);
+
+        pouch_gateway_scan_start();
+        return;
+    }
+
+    LOG_INF("Connected: %s", addr);
+    default_conn = conn;
+
+    err = bt_conn_set_security(conn, bt_security);
+    if (err)
+    {
+        LOG_ERR("Failed to set security (%d).", err);
+
+        bt_conn_disconnect(conn, BT_HCI_ERR_REMOTE_USER_TERM_CONN);
+        return;
+    }
+}
+
+static void bt_disconnected(struct bt_conn *conn, uint8_t reason)
+{
+    char addr[BT_ADDR_LE_STR_LEN];
+
+    default_conn = NULL;
+
+    bt_addr_le_to_str(bt_conn_get_dst(conn), addr, sizeof(addr));
+    LOG_INF("Disconnected: %s, reason 0x%02x %s", addr, reason, bt_hci_err_to_str(reason));
+
+    bt_conn_unref(conn);
+
+    pouch_gateway_scan_start();
+}
+
+static void on_gateway_end(struct bt_conn *conn)
+{
+    bt_conn_disconnect(conn, BT_HCI_ERR_REMOTE_USER_TERM_CONN);
+}
+
+static void security_changed(struct bt_conn *conn, bt_security_t level, enum bt_security_err err)
+{
+    if (err)
+    {
+        LOG_ERR("BT security change failed. Current level: %d, err: %s(%u)",
+                level,
+                bt_security_err_to_str(err),
+                err);
+
+        struct bt_conn_info info;
+        bt_conn_get_info(conn, &info);
+
+        bt_unpair(info.id, info.le.dst);
+        bt_conn_disconnect(conn, BT_HCI_ERR_INSUFFICIENT_SECURITY);
+    }
+    else
+    {
+        LOG_INF("BT security changed to level %u", level);
+
+        pouch_gateway_bt_start(conn, on_gateway_end);
+    }
+}
+
+BT_CONN_CB_DEFINE(conn_callbacks) = {
+    .connected = bt_connected,
+    .disconnected = bt_disconnected,
+    .security_changed = security_changed,
+};
+
+static void auth_cancel(struct bt_conn *conn)
+{
+    char addr[BT_ADDR_LE_STR_LEN];
+
+    bt_addr_le_to_str(bt_conn_get_dst(conn), addr, sizeof(addr));
+
+    LOG_INF("Pairing cancelled: %s", addr);
+}
+
+static void auth_passkey_confirm(struct bt_conn *conn, unsigned int passkey)
+{
+    char addr[BT_ADDR_LE_STR_LEN];
+    char passkey_str[7];
+
+    bt_addr_le_to_str(bt_conn_get_dst(conn), addr, sizeof(addr));
+
+    snprintk(passkey_str, 7, "%06u", passkey);
+
+    LOG_INF("Confirm passkey for %s: %s", addr, passkey_str);
+
+    if (IS_ENABLED(CONFIG_SAMPLE_POUCH_GATEWAY_BT_AUTO_CONFIRM))
+    {
+        LOG_INF("Confirming passkey");
+        bt_conn_auth_passkey_confirm(conn);
+    }
+}
+
+static void auth_passkey_display(struct bt_conn *conn, unsigned int passkey)
+{
+    char addr[BT_ADDR_LE_STR_LEN];
+    char passkey_str[7];
+
+    bt_addr_le_to_str(bt_conn_get_dst(conn), addr, sizeof(addr));
+
+    snprintk(passkey_str, 7, "%06u", passkey);
+
+    LOG_INF("Passkey for %s: %s", addr, passkey_str);
+}
+
+static struct bt_conn_auth_cb auth_cb = {
+    .cancel = auth_cancel,
+
+    .passkey_confirm =
+        IS_ENABLED(CONFIG_POUCH_GATEWAY_GATT_SCAN_FILTER_BONDED) ? auth_passkey_confirm : NULL,
+    .passkey_display =
+        IS_ENABLED(CONFIG_POUCH_GATEWAY_GATT_SCAN_FILTER_BONDED) ? auth_passkey_display : NULL,
+};
+
+static void pairing_complete(struct bt_conn *conn, bool bonded)
+{
+    LOG_INF("Pairing Complete");
+}
+
+static void pairing_failed(struct bt_conn *conn, enum bt_security_err reason)
+{
+    LOG_WRN("Pairing Failed (%d). Disconnecting.", reason);
+
+    bt_conn_disconnect(conn,
+                       (reason == BT_SECURITY_ERR_PAIR_NOT_ALLOWED) ? BT_HCI_ERR_PAIRING_NOT_ALLOWED
+                                                                    : BT_HCI_ERR_AUTH_FAIL);
+}
+
+static struct bt_conn_auth_info_cb auth_info_cb = {
+    .pairing_complete = pairing_complete,
+    .pairing_failed = pairing_failed,
+};
+
+int main(void)
+{
+    int err;
+
+    LOG_INF("Gateway Version: " STRINGIFY(GIT_DESCRIBE));
+    LOG_INF("Pouch BLE Transport Protocol Version: %d", POUCH_GATT_VERSION);
+
+    /* Load the Pouch device's identity (cert + key). */
+    struct pouch_config config = {0};
+
+    err = load_certificate(&config.certificate);
+    if (err)
+    {
+        LOG_ERR("Failed to load certificate (err %d)", err);
+        return 0;
+    }
+
+    config.private_key = load_private_key();
+    if (config.private_key == PSA_KEY_ID_NULL)
+    {
+        LOG_ERR("Failed to load private key");
+        return 0;
+    }
+
+    LOG_INF("Credentials loaded");
+
+    err = pouch_init(&config);
+    if (err)
+    {
+        LOG_ERR("Pouch init failed (err %d)", err);
+        return 0;
+    }
+
+    /* Load DTLS credentials for the CoAP transport. */
+    if (IS_ENABLED(CONFIG_POUCH_GATEWAY_CLOUD))
+    {
+        err = load_coap_server_ca(CONFIG_EXAMPLE_COAP_CLIENT_DTLS_CREDENTIALS);
+        if (err)
+        {
+            LOG_ERR("Failed to load server CA certificate (err %d)", err);
+            return 0;
+        }
+
+        err = load_coap_gw_device_crt(CONFIG_EXAMPLE_COAP_CLIENT_DTLS_CREDENTIALS);
+        if (err)
+        {
+            LOG_ERR("Failed to load device certificate (err %d)", err);
+            return 0;
+        }
+
+        err = load_coap_gw_device_key(CONFIG_EXAMPLE_COAP_CLIENT_DTLS_CREDENTIALS);
+        if (err)
+        {
+            LOG_ERR("Failed to load device key (err %d)", err);
+            return 0;
+        }
+
+        err = pouch_coap_client_init(CONFIG_EXAMPLE_COAP_CLIENT_DTLS_CREDENTIALS);
+        if (err)
+        {
+            LOG_ERR("Failed to initialize CoAP client transport: %d", err);
+            return err;
+        }
+
+        pouch_coap_gateway_init();
+    }
+
+    if (DT_HAS_ALIAS(sw0))
+    {
+        LOG_INF("Set up button at %s pin %d", button.port->name, button.pin);
+
+        err = gpio_pin_configure_dt(&button, GPIO_INPUT);
+        if (err < 0)
+        {
+            LOG_ERR("Could not initialize Button");
+        }
+
+        err = gpio_pin_interrupt_configure_dt(&button, GPIO_INT_EDGE_TO_ACTIVE);
+        if (err)
+        {
+            LOG_ERR("Error %d: failed to configure interrupt on %s pin %d",
+                    err,
+                    button.port->name,
+                    button.pin);
+            return 0;
+        }
+
+        gpio_init_callback(&button_cb_data, button_pressed, BIT(button.pin));
+        gpio_add_callback(button.port, &button_cb_data);
+    }
+
+    /* Wait for network and prime the cloud transport so the server
+     * certificate is available before any BLE peripheral connects.
+     */
+    if (IS_ENABLED(CONFIG_POUCH_GATEWAY_CLOUD))
+    {
+        wait_for_network();
+
+        while (true)
+        {
+            err = pouch_gateway_cloud_ensure_ready();
+            if (!err)
+            {
+                break;
+            }
+            LOG_WRN("Initial cloud transport setup failed: %d, will retry", err);
+            k_sleep(K_SECONDS(5));
+        }
+    }
+
+    pouch_gateway_cert_module_init();
+    pouch_gateway_uplink_module_init();
+
+    err = bt_enable(NULL);
+    if (err)
+    {
+        LOG_ERR("Bluetooth init failed (err %d)", err);
+        return err;
+    }
+
+    if (IS_ENABLED(CONFIG_BT_SMP))
+    {
+        bt_conn_auth_cb_register(&auth_cb);
+        bt_conn_auth_info_cb_register(&auth_info_cb);
+    }
+
+    LOG_INF("Bluetooth initialized");
+
+    if (IS_ENABLED(CONFIG_SAMPLE_POUCH_GATEWAY_BT_AUTO_BOND))
+    {
+        pouch_gateway_bonding_enable(K_FOREVER);
+    }
+
+    pouch_gateway_scan_start();
+
+    if (IS_ENABLED(CONFIG_POUCH_GATEWAY_CLOUD))
+    {
+        while (true)
+        {
+            k_sleep(K_SECONDS(CONFIG_EXAMPLE_COAP_CLIENT_SYNC_PERIOD_S));
+
+            err = pouch_coap_client_sync();
+            if (err)
+            {
+                LOG_WRN("CoAP sync failed: %d", err);
+            }
+        }
+    }
+
+    return 0;
+}
