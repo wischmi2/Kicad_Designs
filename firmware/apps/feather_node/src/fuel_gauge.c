@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
  */
 
+#include <math.h>
 #include <stdlib.h>
 
 #include <zephyr/kernel.h>
@@ -191,9 +192,18 @@ int fuel_gauge_update(const struct device *charger, bool vbus_connected)
 	/* Zephyr sensor API convention for Gauge current is negative=discharging,
 	 * while nrf_fuel_gauge lib expects the opposite negative=charging
 	 */
-	soc = nrf_fuel_gauge_process(voltage, -current, temp, delta, NULL);
-	tte = nrf_fuel_gauge_tte_get();
-	ttf = nrf_fuel_gauge_ttf_get();
+	ret = nrf_fuel_gauge_process(voltage, current, temp, delta, &soc, NULL);
+	if (ret < 0) {
+		printk("Error: Fuel gauge process failed\n");
+		return ret;
+	}
+	/* NCS v3.4: process/TTE/TTF return a status and give the value through a pointer. */
+	if (nrf_fuel_gauge_tte_get(&tte) < 0) {
+		tte = NAN;
+	}
+	if (nrf_fuel_gauge_ttf_get(&ttf) < 0) {
+		ttf = NAN;
+	}
 
 	printk("V: %.3f, I: %.3f, T: %.2f, ", (double)voltage, (double)current, (double)temp);
 	printk("SoC: %.2f, TTE: %.0f, TTF: %.0f\n", (double)soc, (double)tte, (double)ttf);

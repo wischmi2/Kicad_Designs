@@ -71,12 +71,26 @@
 	status = "okay";
 };
 
-/* X2 (32.768 kHz) is DNP on run 5. These nodes are kept from the soil_moisture file;
- * the LFCLK source is chosen in prj.conf / Kconfig, not here.
+/* X2 (32.768 kHz) is DNP on run 5, so the LFXO must stay off. With it enabled the GRTC
+ * system timer waits for a crystal that is not there and main() never runs. The low
+ * frequency clock is the internal LF RC (CONFIG_CLOCK_CONTROL_NRF_K32SRC_RC and
+ * CONFIG_NRF_GRTC_TIMER_SOURCE_LFLPRC in the board defconfig). Fit X2 and change both
+ * before using the LFXO.
  */
 &lfxo {
-	load-capacitors = "internal";
-	load-capacitance-femtofarad = <17000>;
+	status = "disabled";
+};
+
+/* SCL is P1.03 (U6.4), which is NFC pin 2 out of reset. Release the NFC pins to GPIO
+ * (UICR NFCPINS, written when the image is programmed) and disable the NFCT peripheral,
+ * otherwise the PMIC I2C clock never leaves the pad.
+ */
+&uicr {
+	nfct-pins-as-gpios;
+};
+
+&nfct {
+	status = "disabled";
 };
 
 &hfxo {
@@ -271,8 +285,13 @@
 
 		npm1300_ek_leds: leds {
 			compatible = "nordic,npm1300-led";
-			nordic,led0-mode = "error";
-			nordic,led1-mode = "charging";
+			/* Only LED0 (U2.25, LED1 via R14) is wired on the feather. Host mode keeps
+			 * the pin off until software lights it; "error"/"charging" modes drive the
+			 * pin by themselves and the pin sinks about 5 mA while lit. The latch
+			 * survives an nRF reset, so the app clears it at boot.
+			 */
+			nordic,led0-mode = "host";
+			nordic,led1-mode = "host";
 			nordic,led2-mode = "host";
 		};
 	};
