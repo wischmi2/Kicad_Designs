@@ -4,6 +4,8 @@ Board: feather_water_level_tc2030 (rev 0.2-TC2030, XM125 on B.Cu looking down) u
 Concept: Crown (Brian 2026-11-02). Mounting: dock ring on a 3 mm swappable plate, plus A6 Pad, A2 Span and A5 Expander (Brian 2026-11-03).
 First print: plain PETG, single material. TPU parts are separate bodies (A5 TPU ring) and the A6 gasket is cut sheet.
 
+**Corrections 2026-11-14 (measured for the assembly guide, `..ssembly_guide_2026-11-12\ASSEMBLY.md` section 2.1):** the sole posts have **no inserts**; the board stack is M2.5 x 10 nylon screws up from the window face into 8 mm M-F nylon standoffs, with nylon nuts on the feather (12 brass inserts in all: 4 hood plinth, 4 hood roof, 4 dock ring). Question 6 (H4 sole insert) is closed: nylon throughout. The 3 mm vent is in the +x (latch) end wall, not -x. Plate-to-ring screws must be M2.5 x 5 (a 6 mm one reaches the 5 mm hole floor).
+
 ## Fusion document and save problem
 - Working doc: `crown_stage1_housing` in Fish_Stuff / nRF54L15_Feather (lineage urn:adsk.wipprod:dm.lineage:BmJnnJRXSLi8PoxvlgyBbw). It's the stage-1 local backup, uploaded through the data API (v1).
 - Final model uploaded as `feather_water_level_enclosure_crown` (same folder, urn:adsk.wipprod:dm.lineage:42dpsZJhTVaUEhPj7zaevQ, v1). It holds all of stages 1-4.
