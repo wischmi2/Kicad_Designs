@@ -1,0 +1,48 @@
+{
+ "image": "hw_05_hood_corner_screws.png",
+ "width": 2400,
+ "height": 1500,
+ "note": "Sole (green window face) with the hood on top, seen from BELOW (iso-bottom-right, true isometric, transparent background). The 4 F2 stainless M2.5 x 6 socket head screws are pulled 20 mm straight down (screen: straight down) from their counterbored holes in the window face; insertion direction is +z (up, away from the viewer). arrow_to = pixel of the corner counterbore in the window face. The 4 other counterbores (about 1290,628 / 1481,738 / 808,908 / 996,1017) are the board-stack F5 holes, not F2. The screw nearest the middle (axis x=1345) goes to the hole at the top of the picture (1345,438); its head overlaps the F5 hole at (1290,628) only in projection. Hood sits above the sole (its flange shows blue); the F1 inserts in the hood plinth corners are hidden behind the sole.",
+ "labels": [
+  {
+   "text": "F2 screw M2.5 x 6 stainless (x4)",
+   "x": 589,
+   "y": 1045,
+   "side": "left",
+   "arrow_to": [589, 874]
+  },
+  {
+   "text": "F2 screw",
+   "x": 1055,
+   "y": 1315,
+   "side": "bottom",
+   "arrow_to": [1055, 1143]
+  },
+  {
+   "text": "F2 screw",
+   "x": 1345,
+   "y": 610,
+   "side": "right",
+   "arrow_to": [1345, 438]
+  },
+  {
+   "text": "F2 screw",
+   "x": 1811,
+   "y": 880,
+   "side": "right",
+   "arrow_to": [1811, 707]
+  },
+  {
+   "text": "sole, window face (underside), corner counterbores",
+   "x": 1000,
+   "y": 790,
+   "side": "top"
+  },
+  {
+   "text": "hood above (F1 inserts inside plinth corners)",
+   "x": 800,
+   "y": 640,
+   "side": "top"
+  }
+ ]
+}

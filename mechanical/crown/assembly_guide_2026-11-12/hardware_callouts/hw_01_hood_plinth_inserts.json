@@ -1,0 +1,42 @@
+{
+ "image": "hw_01_hood_plinth_inserts.png",
+ "width": 2400,
+ "height": 1500,
+ "note": "Hood seen from BELOW (iso-bottom-right, true isometric, transparent background), roof away from the viewer, open cavity facing the viewer. Only the hood and the 4 F1 inserts are shown (Sole, boards hidden). Insertion direction is +z (up into the plinth, away from the viewer): each brass insert is pulled 16 mm straight down (screen: straight down) from its 3.6 mm blind hole in the plinth bottom face. arrow_to = pixel of the hole opening. Holes are at hood plinth corners (-5, 10.52), (-5, -33.38), (66.3, 10.52), (66.3, -33.38) mm, i.e. left, bottom, top, right corner of the plinth frame in the picture. The two round stubs inside the cavity are roof boss undersides (F3 side), not F1 holes.",
+ "labels": [
+  {
+   "text": "F1 insert M2.5 x 4 brass (x4)",
+   "x": 545,
+   "y": 1050,
+   "side": "left",
+   "arrow_to": [545, 882]
+  },
+  {
+   "text": "F1 insert",
+   "x": 1045,
+   "y": 1340,
+   "side": "bottom",
+   "arrow_to": [1045, 1170]
+  },
+  {
+   "text": "F1 insert",
+   "x": 1355,
+   "y": 590,
+   "side": "right",
+   "arrow_to": [1355, 414]
+  },
+  {
+   "text": "F1 insert",
+   "x": 1855,
+   "y": 872,
+   "side": "right",
+   "arrow_to": [1855, 702]
+  },
+  {
+   "text": "hood plinth, bottom face (faces the sole)",
+   "x": 1400,
+   "y": 962,
+   "side": "bottom"
+  }
+ ]
+}

@@ -1,0 +1,54 @@
+{
+ "image": "hw_06_bonnet_screws.png",
+ "width": 2400,
+ "height": 1500,
+ "note": "Hood roof and bonnet from above (iso-top-right, true isometric, transparent background). Bonnet lifted 18 mm and the 4 F4 nylon screws lifted 36 mm, so each screw floats on its own vertical axis above its counterbored hole in the bonnet top (screen: straight down; screws pass through the bonnet and go on into the F3 inserts in the roof, visible as brass rings). Insertion direction is -z. arrow_to = pixel of the bonnet counterbore the screw goes into. Holes at (2, 3.5), (19, 3.5), (2, -26.3), (19, -26.3) mm: the left-most screw goes to the hole at the USB end plain side; each screw label sits on the screw shank.",
+ "labels": [
+  {
+   "text": "F4 screw M2.5 x 10 nylon (x4)",
+   "x": 807,
+   "y": 410,
+   "side": "left",
+   "arrow_to": [807, 516]
+  },
+  {
+   "text": "F4 screw",
+   "x": 961,
+   "y": 500,
+   "side": "left",
+   "arrow_to": [961, 603]
+  },
+  {
+   "text": "F4 screw",
+   "x": 1076,
+   "y": 255,
+   "side": "right",
+   "arrow_to": [1076, 361]
+  },
+  {
+   "text": "F4 screw",
+   "x": 1229,
+   "y": 335,
+   "side": "right",
+   "arrow_to": [1229, 449]
+  },
+  {
+   "text": "bonnet (battery hump), 5.5 mm counterbores",
+   "x": 1009,
+   "y": 478,
+   "side": "right"
+  },
+  {
+   "text": "F3 insert (already fitted)",
+   "x": 961,
+   "y": 880,
+   "side": "left"
+  },
+  {
+   "text": "hood roof",
+   "x": 1300,
+   "y": 890,
+   "side": "right"
+  }
+ ]
+}
