@@ -172,4 +172,4 @@ No LCSC numbers were added (DigiKey/Mouser are the sources for this board).
 
 ## Questions for Brian
 1. Flashing connection: soldered wires or a printed pogo jig (decision 4).
-- Crown assembly guide hardware rewrite 2026-11-14 (fusion-enclosure, Opus, 15 min): mechanical\crownssembly_guide_2026-11-12\ASSEMBLY.md now has a measured fastener map (F1-F14), hardware per sub-assembly, a 12-insert section, step-by-step fastener instructions and a to-buy list; 6 new section/close-up pictures. Board stack is nylon M2.5 x 10 + 8 mm M-F standoffs + nuts, no sole inserts; H4 nut flat toward AE1 (0.29 mm). Dock plate screws M2.5 x 5. No model or PCB change.
+- Crown assembly guide hardware rewrite 2026-11-14 (fusion-enclosure, Opus, 15 min): mechanical\crown\assembly_guide_2026-11-12\ASSEMBLY.md now has a measured fastener map (F1-F14), hardware per sub-assembly, a 12-insert section, step-by-step fastener instructions and a to-buy list; 6 new section/close-up pictures. Board stack is nylon M2.5 x 10 + 8 mm M-F standoffs + nuts, no sole inserts; H4 nut flat toward AE1 (0.29 mm). Dock plate screws M2.5 x 5. No model or PCB change.
