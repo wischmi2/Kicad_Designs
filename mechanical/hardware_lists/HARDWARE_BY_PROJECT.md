@@ -124,3 +124,50 @@ Source is `mechanical\bench_tray\NOTES.md` plus Amazon list items 10-11. There i
 
 DigiKey 2026-11-10 order: no Bench Tray items. The Tag-Connect TC2030-IDC (DigiKey TC2030-IDC-ND, $44.58 in the order file) is a programming tool, not enclosure hardware, and is not counted.
 
+## 5. Shared stock: items used by more than one project
+
+Demand is shown for two cases. **A** = one of each project (1 Tidemark node, 1 Ledger, 1 Crown, 1 Bench Tray). **B** = the 5-feather order (2 pH nodes in Tidemark + 3 water level nodes in Crown), plus 1 Ledger and 1 Bench Tray. In B each Crown has its own dock ring and A2, and the A6/A5 plates are built once per Crown.
+On hand = inventory.json (or the listing, for kit sub-items; marked "listing"), including items still arriving.
+
+| Stock | On hand | Tidemark + Perch (per node) | Crown (per node) | Other | Demand A | Demand B | Verdict |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| B0DPQK6RJZ M2.5 inserts | 100 | 8 | 12 (8 hood + 4 dock) | | 20 | 52 (16 + 36) | OK |
+| MCMASKE kit, 8 mm standoffs | 15 (arriving Nov 19) | 4 | 4 | | 8 | 20 (8 + 12) | **Short 5 in B** (OK in A, and OK up to 2 Tidemark + 2 Crown) |
+| MCMASKE kit, 6 mm standoffs | 15 (arriving Nov 19) | 4 | 0 | | 4 | 8 | OK |
+| MCMASKE kit, nylon M2.5 x 6 | 50 (arriving Nov 19) | 4 | 4 (16 if all plates stay built) | | 8 (20 worst) | 20 (56 worst: 8 + 48) | OK, except short by 6 in B if every plate stays built on every Crown |
+| MCMASKE kit, nylon M2.5 x 10 | 50 (listing) | 0 | 8 | | 8 | 24 | OK (listing only) |
+| MCMASKE kit, M2.5 nuts | not itemised | 0 | 4 | | 4 | 12 | Unknown (count not in inventory) |
+| B0GCSRG1WD M2.5 x 6 stainless | 0 in inventory (check orders); pack of 50 | 4 | 4 | | 8 | 20 | **Not owned**: one pack covers A and B if it was ordered or is bought |
+| B0GSRKXHFT silica 1 g | 0 in inventory (check orders); pack of 100 | 1 | 0 | | 1 | 2 | Not owned, one pack covers it |
+| B0F45VY7KK vent membrane | 100 | 1 | 0 | | 1 | 2 | OK |
+| B00QVB0ZG6 o-ring cord | 1 x 10 ft (arriving Nov 18) | 1 loop (~154 mm) | 0 | | 1 loop | 2 loops | OK (about 19 loops per 10 ft) |
+| HVAZI M4 kit B098QDHCDP, M4 x 25 | 20 (listing) | 1 | 0 | | 1 | 2 | OK |
+| HVAZI M4 kit, M4 x 10 | 20 (listing) | 2 | 4 printed (8 stock bars) | | 6 (10 stock) | 16 (28 stock bars) | OK with printed bars; **short 8 in B if all three Crowns use stock bars** |
+| HVAZI M4 kit, M4 x 12 | 20 (listing) | 0 | 2 | | 2 | 6 | OK |
+| HVAZI M4 kit, M4 nuts | 80 (listing) | 1 | 2 (A6) | | 3 | 8 | OK |
+| B097R2W2VS M6 nuts / B0DCZTKMDG M6 x 30 | 20 / 10 | 1 / 1 | 0 | | 1 / 1 | 2 / 2 | OK |
+| M2 inserts B08T7NDPQC | 100 | 0 | 0 | Ledger 8 | 8 | 8 | OK |
+| B0DLKCR1CQ M2 x 5 button head / B07Q36GBKY PT screws | 100 / 50 (arriving ~Nov 17) | 0 | 0 | Ledger 8 / 4 | 8 / 4 | 8 / 4 | OK |
+| HVAZI M3 kit B098QCD7TM (cart) | 0, in cart | 0 | 3 screws + 3 nuts (A5) | Bench Tray 4 if nylon M3 x 6 is accepted | 3 to 7 | 9 to 13 | OK if the listing contents hold (80 nuts, M3 x 6-25); not bought yet |
+| B0FDKYTMZ8 M3 inserts | 0 in inventory (check orders), pack of 100 | 0 | 0 | Bench Tray 4 (6) | 4 | 4 (6) | Not owned |
+| FFC Molex 0150200140 | 0 | 1 | 1 | | 2 | 5 | To buy: $3.82 each (1), $3.243 at 10 |
+| TPU filament | not tracked | 0 | A5 ring | Bench Tray feet (optional) | | | on hand |
+
+Notes: a Crown node shares the Tidemark's inserts, MCMASKE standoffs and screws, the stainless M2.5 x 6 pack, and the HVAZI M4 kit. Nothing is shared with the Ledger or Bench Tray except the M3 kit (cart) if nylon M3 x 6 is acceptable for the tray.
+
+## 6. Mismatches between guides, lists and inventory
+
+1. **Ledger inserts.** Amazon list item 1 and the Ledger ASSEMBLY.md name ruthex B088QJG676 (3.2 mm hole). inventory.json has B08T7NDPQC (in-saiL, 4 mm L x 3.6 mm OD), noted "bought in place of ruthex B088QJG676". The Ledger bosses have 3.2 mm holes (NOTES.md). A 3.6 mm OD insert normally needs a hole about its OD or a little under; check the in-saiL listing's recommended hole before heat-setting. If it asks for more than 3.2 mm, the Ledger model needs 3.4-3.6 mm holes or the ruthex inserts are needed after all. Guide and Amazon list were not updated.
+2. **Perch hardware, three sources disagree.** `perch_hardware_amazon_2026-11-05.md` (B0DCZTKMDG, B097R2W2VS, B098QDHCDP) is what inventory.json shows bought. The main Amazon list rows 13-17 and `tidemark_electronics_perch_2026-11-11.md` items 5a-5e (and the DigiKey CSV lines for them) replaced those with Essentra DigiKey parts. Those Essentra parts are not needed. The DigiKey CSV `tidemark_electronics_perch_digikey_2026-11-11.csv` would still add 6 Perch lines if uploaded as is (only the FFC line is still needed).
+3. **Amazon list is stale.** It says nothing was ordered; inventory.json shows 13 of its items delivered, arriving or substituted. Header total ($86) and items 1-9 do not reflect that. B0GCSRG1WD, B0GSRKXHFT, B0FDKYTMZ8 are on it and not in inventory.
+4. **Dates in inventory.json.** The file was last written 2026-11-11 17:59. Items marked "arriving Nov 13" (B08T7NDPQC M2 inserts, B0F2ZBN1K9 1/4-20 inserts) are past due today and probably delivered but not updated; Nov 17-19 items (B07Q36GBKY, B00QVB0ZG6 Nov 18, MCMASKE kit Nov 19) are still ahead. B0F2ZBN1K9 is not used by any enclosure here.
+5. **MCMASKE kit is treated as owned in the guides** (Tidemark ASSEMBLY.md, Crown ASSEMBLY.md "listed"). It arrives Nov 19, so nothing that uses standoffs, nylon M2.5 screws or M2.5 nuts can be built before then.
+6. **B0GCSRG1WD.** The Tidemark ASSEMBLY.md and Crown ASSEMBLY.md treat it as an Amazon-list item; it is not in inventory.json and not in the cart (Crown doc says the same).
+7. **Crown ASSEMBLY.md section 2.2 versus its cart note.** Section 2.2 says buy 8 Essentra M4 x 10 screws and M4 nuts at DigiKey; the cart note and this document use the owned HVAZI M4 kit (delivered Nov 11, contents from the listing, unmeasured). Inventory itself says "check the kit has a 25 mm length"; the Perch Amazon note says the kit has M4 x 6-30 mm, 20 each. Both are from the listing.
+8. **Crown pigtail.** Section 2.2 says PHR-2 housing + contacts + silicone wire; the cart has pre-crimped PVC leads (B0F6T5K1CW), so the silicone wire (B01F8PO7UK, $6.48) is optional.
+9. **Bench Tray.** NOTES.md lists "4 (+2 for a riser later)" M3 inserts; Amazon list item 10 says 4. NOTES says M3 x 6 (M3 x 5 also works); item 11 is still "to pick". The M3 insert page returned 503 on 2026-11-07 and again on 2026-11-14, so its price and OD (model uses a 4.1 mm hole, 5 mm OD) were never read.
+10. **Ledger W1.** Ledger ASSEMBLY.md says cable W1 is 60-80 mm "(in the gateway BOM)"; the BOM now uses the 102 mm ASPHSPH24K102 lead (20-40 mm over; per `cable_W1_wiring.md`, which also says gateway DESIGN_NOTES.md still shows the 152 mm lead and 1:1 wiring). The DigiKey upload has three versions (full 45 leads / 13 housings, lean 40 / 10, add-on); which one was uploaded is not recorded. Either covers 5 gateways.
+11. **Tidemark pigtail length.** ASSEMBLY.md assumes 60-80 mm; Molex 73230-7070 is 152.4 mm (guide row notes it). Coil room in the heel is not checked. Also the 602050 cell has no source at DigiKey or Mouser.
+12. **DigiKey 73230-7070.** The 2026-11-11 list says DigiKey 900-0732307070-ND, 0 stock, MOQ 200. The API today returns DigiKey 0732307070, stock 0, $23.88 listed. Mouser has 49 at $30.51. Use Mouser.
+13. **M3 nut thickness (Crown A5)** measured 2.84 mm by a reviewer against a 2.5 mm pocket: open bench check, not a list mismatch.
+
