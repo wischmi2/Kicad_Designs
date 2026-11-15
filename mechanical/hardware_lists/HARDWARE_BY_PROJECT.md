@@ -3,7 +3,82 @@
 Parts-sourcing check. One document for the four enclosure projects, compared against what Brian owns, the Amazon purchase list and the Amazon cart.
 Nothing was ordered or added to a cart. BOM Builder was read only.
 
-<!-- SUMMARY_PLACEHOLDER -->
+## Summary
+
+Counts are line items per project (one unit of each), tools excluded. "Owned" includes items still arriving (Tidemark 4, Ledger 1, Crown 4 lines, from the MCMASKE kit, the o-ring cord and the Ledger LCD screws). Est. cost = distributor and unordered-Amazon items that are certainly needed, excluding the cart and the check-orders items, which are shown in their own columns. Blank = no price available.
+
+| Project | Enclosure | Items needed | Owned | In cart | Check orders | Still to buy | Not tracked | Est. cost to buy |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| pH / ORP node (per node) | Tidemark + Perch | 17 | 11 (4 arriving) | 0 | 2 (B0GCSRG1WD $6.19, B0GSRKXHFT $5.84) | 3: FFC, pigtail, 602050 LiPo | 1 | $34.33 (FFC $3.82 + pigtail $30.51), LiPo unpriced (no source); check-orders items up to $12.03 more |
+| Pouch gateway | Ledger | 7 | 4 (1 arriving) | 0 | 2 (W1 housings and leads, in the 2026-11-10 DigiKey upload) | 0 | 1 | $0 (W1 contingency $3.75 if that order was not placed) |
+| Water level node | Crown (+ dock, A6, A2, A5) | 21 | 9 (4 arriving) | 6 ($39.60; $6.48 optional) | 1 (B0GCSRG1WD, shared with Tidemark) | 2: FFC, ASR00003 (+1 optional: UHMW bars) | 2 | $8.77 (FFC $3.82 + cell $4.95); cart $39.60; optional bars $63.04 |
+| Programming adapter | Bench Tray | 4 | 0 | 0 | 1 (B0FDKYTMZ8 M3 inserts, price unread) | 1: M3 x 6 button head (to pick) | 2 | blank (not priced) |
+| **One of each** | | 49 | 24 | 6 | 6 (5 distinct) | 6 | 6 | **$43.10 firm** (DigiKey $12.59 + Mouser $30.51); + cart $39.60 + check-orders $12.03 = $94.73; LiPo 602050, M3 inserts and M3 x 6 screws unpriced |
+
+Key points:
+- The Perch is fully covered by what is owned. The Essentra DigiKey lines for it are not needed.
+- Nothing for the Ledger is missing except confirming the W1 parts were ordered (the 2026-11-10 DigiKey upload has them for 5 gateways) and the in-saiL insert size.
+- Still to buy for one of each: 2 FFC cables, 1 pigtail, 1 ASR00003 cell, a 602050 cell (no source), M3 x 6 screws; plus the Amazon cart and the check-orders items.
+- Shared-stock shortfalls only appear at the 5-feather quantity (2 Tidemark + 3 Crown): the MCMASKE 8 mm standoffs (short 5), and the HVAZI M4 x 10 screws if all Crowns use stock bars (short 8).
+
+## Still need, by vendor (one of each project; read 2026-11-14)
+
+### Amazon (not ordered; Brian orders)
+
+| ASIN | Item | Qty | Price | For | Status |
+| --- | --- | --- | --- | --- | --- |
+| B0GCSRG1WD | M2.5 x 6 socket head, 304 stainless, pack of 50 | 1 pack | $6.19 | Tidemark 4 + Crown 4 | check orders, buy only if not already ordered |
+| B0GSRKXHFT | 1 g silica packets, pack of 100 | 1 pack | $5.84 | Tidemark 1 | check orders |
+| B0FDKYTMZ8 | M3 x 4 x 5 mm brass inserts, pack of 100 | 1 pack | blank (page 503) | Bench Tray 4-6 | check orders |
+| to pick | M3 x 6 button head socket, stainless | 4 | blank | Bench Tray | to buy; nylon M3 x 6 from the cart's HVAZI kit is the alternative |
+| B098QCD7TM | HVAZI M3 nylon kit | 1 | $9.99 | Crown A5 | in cart |
+| B0F6T5K1CW | Ulifebet JST PH 28 AWG leads, 60 pair | 1 | $9.99 | Crown pigtail | in cart |
+| B01F8PO7UK | BNTECHGO 28 AWG silicone wire, 10 ft | 1 | $6.48 | Crown (optional) | in cart |
+| B0BQD5QFP2 | 1/16 in neoprene pads, 4 x 4 in x 22 | 1 | $8.59 | Crown A6 gasket | in cart |
+| B0D29B9Z8G | Bull's-eye level vials, pack of 5 | 1 | $4.55 | Crown | in cart |
+| B07GBGSG1Y | UHMW bar 3/4 x 3/8 x 36 in (optional) | 2 | $31.52 each, $63.04 | Crown A2 stock version, rim over 430 mm only | optional |
+
+Amazon subtotals: check-orders priced items $12.03; cart $39.60 ($33.12 without the optional wire); unpriced M3 inserts and M3 screws; optional bars $63.04.
+Not needed: B088QJG676 (the in-saiL M2 inserts B08T7NDPQC replace it, subject to the hole-size check).
+
+### DigiKey
+
+| Qty | DigiKey PN | MPN | Unit | Line | For |
+| --- | --- | --- | --- | --- | --- |
+| 2 | 0150200140-ND | Molex 0150200140 | $3.82 | $7.64 | Tidemark 1 + Crown 1 (1,936 in stock; $3.243 at 10) |
+| 1 | 1832-1031-ND | TinyCircuits ASR00003 | $4.95 | $4.95 | Crown (103 in stock; Mouser 349 at $4.95) |
+
+DigiKey total $12.59 (shipping and tax not included; tariff flag on ASR00003). The FFC CSV for the Crown is `crown_digikey_2026-11-14.csv` (it has both lines for one Crown; raise the FFC to 2 if the Tidemark is bought at the same time). Contingency, only if the 2026-11-10 order was not placed: W1 for 1 gateway, 3 PHR-8 + 10 ASPHSPH24K102 = $3.75.
+
+### Mouser
+
+| Qty | MPN | Unit | Line | For |
+| --- | --- | --- | --- | --- |
+| 1 | Molex 73230-7070 (152.4 mm RG316, RA SMA plug, IP68 bulkhead jack; Mouser PN not read) | $30.51 | $30.51 | Tidemark pigtail (49 in stock) |
+
+Mouser total $30.51. Open: 152 mm is longer than the 60-80 mm the enclosure assumed.
+
+### Other / no source
+
+| Item | Qty | Note |
+| --- | --- | --- |
+| 602050 LiPo, JST PH 2-pin, red on U4 pad 1 | 1 per Tidemark | Not at DigiKey or Mouser; source open, price blank |
+| M3 x 6 button head stainless | 4 | Amazon, to pick |
+| Thin foam, adhesive ring or CA dots, cable ties, heat-shrink, TPU | some | Not tracked |
+
+### Totals (one of each project)
+
+| Vendor | Amount |
+| --- | --- |
+| DigiKey | $12.59 |
+| Mouser | $30.51 |
+| Amazon, check-orders items (priced) | $12.03 |
+| Amazon cart | $39.60 |
+| **Total** | **$94.73** ($88.25 without the optional silicone wire) |
+| Not included | shipping and tax, M3 inserts, M3 x 6 screws, 602050 cell, optional UHMW bars ($63.04), 4 more FFC/pigtail/cell sets per extra node |
+
+For N Tidemark nodes add N x ($3.82 FFC + $30.51 pigtail + one 602050 cell) and the standoff and M4 shortages listed in the shared-stock section.
+
 
 ## Sources and how status was decided
 
@@ -159,7 +234,7 @@ Notes: a Crown node shares the Tidemark's inserts, MCMASKE standoffs and screws,
 
 1. **Ledger inserts.** Amazon list item 1 and the Ledger ASSEMBLY.md name ruthex B088QJG676 (3.2 mm hole). inventory.json has B08T7NDPQC (in-saiL, 4 mm L x 3.6 mm OD), noted "bought in place of ruthex B088QJG676". The Ledger bosses have 3.2 mm holes (NOTES.md). A 3.6 mm OD insert normally needs a hole about its OD or a little under; check the in-saiL listing's recommended hole before heat-setting. If it asks for more than 3.2 mm, the Ledger model needs 3.4-3.6 mm holes or the ruthex inserts are needed after all. Guide and Amazon list were not updated.
 2. **Perch hardware, three sources disagree.** `perch_hardware_amazon_2026-11-05.md` (B0DCZTKMDG, B097R2W2VS, B098QDHCDP) is what inventory.json shows bought. The main Amazon list rows 13-17 and `tidemark_electronics_perch_2026-11-11.md` items 5a-5e (and the DigiKey CSV lines for them) replaced those with Essentra DigiKey parts. Those Essentra parts are not needed. The DigiKey CSV `tidemark_electronics_perch_digikey_2026-11-11.csv` would still add 6 Perch lines if uploaded as is (only the FFC line is still needed).
-3. **Amazon list is stale.** It says nothing was ordered; inventory.json shows 13 of its items delivered, arriving or substituted. Header total ($86) and items 1-9 do not reflect that. B0GCSRG1WD, B0GSRKXHFT, B0FDKYTMZ8 are on it and not in inventory.
+3. **Amazon list is stale.** It says nothing was ordered; inventory.json shows 8 of items 1-12 delivered, arriving or substituted (1, 2, 3, 4, 6, 7, 9, 12) and rows 13-17 replaced by other purchases. Header total ($86) and items 1-9 do not reflect that. B0GCSRG1WD, B0GSRKXHFT, B0FDKYTMZ8 are on it and not in inventory.
 4. **Dates in inventory.json.** The file was last written 2026-11-11 17:59. Items marked "arriving Nov 13" (B08T7NDPQC M2 inserts, B0F2ZBN1K9 1/4-20 inserts) are past due today and probably delivered but not updated; Nov 17-19 items (B07Q36GBKY, B00QVB0ZG6 Nov 18, MCMASKE kit Nov 19) are still ahead. B0F2ZBN1K9 is not used by any enclosure here.
 5. **MCMASKE kit is treated as owned in the guides** (Tidemark ASSEMBLY.md, Crown ASSEMBLY.md "listed"). It arrives Nov 19, so nothing that uses standoffs, nylon M2.5 screws or M2.5 nuts can be built before then.
 6. **B0GCSRG1WD.** The Tidemark ASSEMBLY.md and Crown ASSEMBLY.md treat it as an Amazon-list item; it is not in inventory.json and not in the cart (Crown doc says the same).

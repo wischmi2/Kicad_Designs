@@ -13,5 +13,6 @@ The Fusion models themselves live in Autodesk Fusion; these are the exports. Boa
 | `bench_tray\` | Programming adapter | Bench Tray print draft and NOTES.md |
 | `concepts\<product>\` | feather, gateway, prog_adapter, water_level | Early concept rounds (SVG sketches, concepts.md, index.html) |
 | `hardware_lists\` | all | Screws, inserts, standoffs (Amazon and McMaster lists) |
+| `hardware_lists\HARDWARE_BY_PROJECT.md` | all | Hardware per project (Tidemark+Perch, Ledger, Crown, Bench Tray) against owned stock, the Amazon list and cart, with the still-to-buy list (2026-11-14) |
 
 Notes inside these folders still name their old `shared\design\...` locations; translate with the mapping in `docs\reorg_2026-11-10.md`.
