@@ -1,0 +1,42 @@
+{
+ "image": "hw_02_hood_roof_inserts.png",
+ "width": 2400,
+ "height": 1500,
+ "note": "Hood seen from above (iso-top-right, true isometric, transparent background). Only the hood and the 4 F3 inserts are shown (Sole, boards, bonnet hidden). Insertion direction is -z: each brass insert floats 22 mm straight above its 3.6 mm blind hole in the roof top face (screen: straight down). Arrow runs from the piece label to arrow_to = pixel of the hole centre. The 4 holes are at roof (2, 3.5), (19, 3.5), (2, -26.3), (19, -26.3) mm. The larger hole left of the key hole (about 820,715) is the 4 mm battery-lead hole, not an insert hole. The hood print includes the plinth flange; the flat ledge round the hood is the hood plinth flange.",
+ "labels": [
+  {
+   "text": "F3 insert M2.5 x 4 brass (x4)",
+   "x": 731,
+   "y": 413,
+   "side": "left",
+   "arrow_to": [731, 661]
+  },
+  {
+   "text": "F3 insert",
+   "x": 914,
+   "y": 520,
+   "side": "left",
+   "arrow_to": [914, 767]
+  },
+  {
+   "text": "F3 insert",
+   "x": 1052,
+   "y": 228,
+   "side": "top",
+   "arrow_to": [1052, 476]
+  },
+  {
+   "text": "F3 insert",
+   "x": 1235,
+   "y": 333,
+   "side": "right",
+   "arrow_to": [1235, 581]
+  },
+  {
+   "text": "hood roof, top face (push inserts in from here)",
+   "x": 1500,
+   "y": 760,
+   "side": "right"
+  }
+ ]
+}
