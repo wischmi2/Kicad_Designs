@@ -555,6 +555,8 @@ No screw is too short, no hole is the wrong size for its insert (3.6 mm for the 
 
 ## 12. Hardware to buy (not on any list yet, or more needed)
 
+Owned / in cart / to-buy check for everything below, with live DigiKey/Mouser stock and the order-now totals (2026-11-14): `..\..\hardware_lists\crown_2026-11-14.md`.
+
 For one Crown with one of each plate. Packs as sold at the source named; DigiKey part numbers for the Essentra screws were not read, order by MPN.
 
 | Item | Qty needed | Source | Pack | Note |
