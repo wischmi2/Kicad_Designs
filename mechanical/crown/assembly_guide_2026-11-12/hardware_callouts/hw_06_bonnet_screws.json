@@ -9,28 +9,40 @@
    "x": 807,
    "y": 410,
    "side": "left",
-   "arrow_to": [807, 516]
+   "arrow_to": [
+    807,
+    516
+   ]
   },
   {
-   "text": "F4 screw",
+   "text": "",
    "x": 961,
    "y": 500,
    "side": "left",
-   "arrow_to": [961, 603]
+   "arrow_to": [
+    961,
+    603
+   ]
   },
   {
-   "text": "F4 screw",
+   "text": "",
    "x": 1076,
    "y": 255,
    "side": "right",
-   "arrow_to": [1076, 361]
+   "arrow_to": [
+    1076,
+    361
+   ]
   },
   {
-   "text": "F4 screw",
+   "text": "",
    "x": 1229,
    "y": 335,
    "side": "right",
-   "arrow_to": [1229, 449]
+   "arrow_to": [
+    1229,
+    449
+   ]
   },
   {
    "text": "bonnet (battery hump), 5.5 mm counterbores",

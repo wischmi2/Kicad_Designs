@@ -9,28 +9,40 @@
    "x": 545,
    "y": 1050,
    "side": "left",
-   "arrow_to": [545, 882]
+   "arrow_to": [
+    545,
+    882
+   ]
   },
   {
-   "text": "F1 insert",
+   "text": "",
    "x": 1045,
    "y": 1340,
    "side": "bottom",
-   "arrow_to": [1045, 1170]
+   "arrow_to": [
+    1045,
+    1170
+   ]
   },
   {
-   "text": "F1 insert",
+   "text": "",
    "x": 1355,
    "y": 590,
    "side": "right",
-   "arrow_to": [1355, 414]
+   "arrow_to": [
+    1355,
+    414
+   ]
   },
   {
-   "text": "F1 insert",
+   "text": "",
    "x": 1855,
    "y": 872,
    "side": "right",
-   "arrow_to": [1855, 702]
+   "arrow_to": [
+    1855,
+    702
+   ]
   },
   {
    "text": "hood plinth, bottom face (faces the sole)",

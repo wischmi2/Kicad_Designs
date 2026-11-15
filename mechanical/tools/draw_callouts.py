@@ -63,7 +63,9 @@ def overlaps(a, b, pad=6):
 def render(json_path, out_dir):
     with open(json_path, encoding="utf-8") as f:
         spec = json.load(f)
-    img = Image.open(os.path.join(os.path.dirname(json_path), spec["image"])).convert("RGB")
+    src = Image.open(os.path.join(os.path.dirname(json_path), spec["image"])).convert("RGBA")
+    img = Image.new("RGB", src.size, WHITE)
+    img.paste(src, mask=src.split()[3])
     crop = spec.get("crop")
     ox, oy = 0, 0
     if crop:
@@ -102,6 +104,18 @@ def render(json_path, out_dir):
             p0 = (lab["x"], lab["y"])
             arrow(d, p0, (p0[0] + dx / L * n, p0[1] + dy / L * n), RED, lw, 22 * scale)
 
+    # Points a label box must not cover: every labelled piece and every hole.
+    keep_clear = []
+    for lab in labels:
+        keep_clear.append((lab["x"], lab["y"]))
+        if "arrow_to" in lab:
+            keep_clear.append(tuple(lab["arrow_to"]))
+    clear_r = 40 * scale
+
+    def covers(box):
+        return any(box[0] - clear_r < px < box[2] + clear_r and box[1] - clear_r < py < box[3] + clear_r
+                   for px, py in keep_clear)
+
     placed = []
     for lab in labels:
         if not lab.get("text"):
@@ -113,7 +127,8 @@ def render(json_path, out_dir):
         box = (bx, by, bx + tw, by + th)
         # Try pushing the box further out, then sliding it across the leader axis.
         tries = [(offset + k * 45 * scale, 0) for k in range(5)]
-        tries += [(offset, s * k * (th + 8 * scale)) for k in range(1, 6) for s in (1, -1)]
+        tries += [(offset, s * k * (th + 8 * scale)) for k in range(1, 9) for s in (1, -1)]
+        fallback = None
         for off, shift in tries:
             bx, by = place_box(lab, tw, th, off, W, H)
             if lab.get("side", "right") in ("left", "right"):
@@ -121,9 +136,15 @@ def render(json_path, out_dir):
             else:
                 bx = min(max(bx + shift, 4), W - tw - 4)
             cand = (bx, by, bx + tw, by + th)
-            if not any(overlaps(cand, p) for p in placed):
+            if any(overlaps(cand, p) for p in placed):
+                continue
+            if fallback is None:
+                fallback = cand
+            if not covers(cand):
                 box = cand
                 break
+        else:
+            box = fallback or box
         placed.append(box)
         cx = min(max(lab["x"], box[0]), box[2])
         cy = min(max(lab["y"], box[1]), box[3])

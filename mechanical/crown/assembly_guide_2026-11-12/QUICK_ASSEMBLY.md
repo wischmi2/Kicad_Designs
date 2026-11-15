@@ -15,6 +15,8 @@ Short version. Full details, checks and reasons are in [ASSEMBLY.md](ASSEMBLY.md
 | E | Stainless socket screw M2.5 x 6 | 4 | Sole to hood corners |
 | F | Nylon screw M2.5 x 5 (6 mm, cut 1 mm off) | 4 | Dock plate to ring |
 
+Pictures: blue arrow = where each piece goes. The mounting-plate screws (step 9) are not drawn in the model yet.
+
 Tools: soldering iron (220-230 C), 2.0 mm hex key, small screwdriver, 5 mm nut driver, flush cutters.
 
 ---
@@ -25,15 +27,15 @@ Iron at 220-230 C. Insert upright, push lightly, stop **flush**. Press flat with
 
 **1a. Hood plinth, 4, from the bottom face**
 
-<!-- HW:hw_01_hood_plinth_inserts -->
+<img src="hardware_callouts/labelled/hw_01_hood_plinth_inserts_labelled.png" width="640" alt="hw_01_hood_plinth_inserts">
 
 **1b. Hood roof, 4, from the top face. Don't push past flush (0.5 mm floor).**
 
-<!-- HW:hw_02_hood_roof_inserts -->
+<img src="hardware_callouts/labelled/hw_02_hood_roof_inserts_labelled.png" width="640" alt="hw_02_hood_roof_inserts">
 
 **1c. Dock ring, 4, from the bottom face**
 
-<!-- HW:hw_03_dock_ring_inserts -->
+<img src="hardware_callouts/labelled/hw_03_dock_ring_inserts_labelled.png" width="640" alt="hw_03_dock_ring_inserts">
 
 ## 2. Cut the dock screws [4]
 
@@ -47,7 +49,7 @@ Cut 1 mm off four M2.5 x 6 nylon screws so they are 5 mm. Bag F. A 6 mm screw bo
 4. Feather onto the studs, 4 nylon nuts on top.
 5. **H4 nut: a flat faces the antenna (AE1).**
 
-<!-- HW:hw_04_board_stack -->
+<img src="hardware_callouts/labelled/hw_04_board_stack_labelled.png" width="640" alt="hw_04_board_stack">
 
 ## 4. Key and light pipe [step 4]
 
@@ -61,7 +63,7 @@ Push into the hood from inside.
 2. Stack into the hood, pigtail up through the 4 mm roof hole, USB-C into its tunnel.
 3. 4 x M2.5 x 6 stainless from the window face, corner holes. Snug, cross pattern. Don't crank.
 
-<!-- HW:hw_05_hood_corner_screws -->
+<img src="hardware_callouts/labelled/hw_05_hood_corner_screws_labelled.png" width="640" alt="hw_05_hood_corner_screws">
 
 ## 6. Battery and bonnet (bag B) [step 6]
 
@@ -69,7 +71,7 @@ Push into the hood from inside.
 2. Cell on its pad, joints tucked beside it.
 3. Bonnet on. 4 x M2.5 x 10 nylon from the top, finger tight.
 
-<!-- HW:hw_06_bonnet_screws -->
+<img src="hardware_callouts/labelled/hw_06_bonnet_screws_labelled.png" width="640" alt="hw_06_bonnet_screws">
 
 <img src="step_00_crown_complete.png" width="420" alt="Crown complete">
 
@@ -77,7 +79,7 @@ Push into the hood from inside.
 
 Ring bottom up, plate on it top down. 4 x M2.5 x **5** nylon, finger tight.
 
-<!-- HW:hw_07_dock_plate_screws -->
+<img src="hardware_callouts/labelled/hw_07_dock_plate_screws_labelled.png" width="640" alt="hw_07_dock_plate_screws">
 
 ## 8. Crown into the dock [step 9]
 
@@ -91,15 +93,15 @@ Fix the plate to the container first, then the ring (7), then the Crown (8).
 
 **A6 Pad (hole 25-33 mm):** gasket ring under the plate, then foam tape or 2 x M4 nylon screws and nuts through the ears. Snug only.
 
-<!-- HW:hw_08_a6_ears -->
+<img src="step_12_a6_pad_fitted.png" width="420" alt="A6 pad">
 
 **A2 Span (can, lid off):** bars into the clips, M4 x 10 nylon up through each clip into the bar. Tongues go outside the rim.
 
-<!-- HW:hw_09_a2_clips -->
+<img src="step_13_a2_span_underside.png" width="420" alt="A2 clips from below">
 
 **A5 Expander (hole 50.5 mm+):** TPU ring on the tube, nuts in the compression ring, 3 x M3 x 12 from the top. Tighten evenly until the gap closes.
 
-<!-- HW:hw_10_a5_squeeze -->
+<img src="step_15_a5_expander_underside.png" width="420" alt="A5 from below">
 
 ## Taking it apart
 

@@ -1,0 +1,146 @@
+{
+ "image": "hw_04_board_stack.png",
+ "width": 2400,
+ "height": 1500,
+ "note": "Board stack exploded along z, seen from above (iso-top-right, true isometric, transparent background). Bottom to top: 4 F5 nylon M2.5 x 10 screws (pulled 22 mm below the sole), sole (45 % opaque so the screws show through; the 4 posts are the rings), radar board (lifted 10 mm, 45 % opaque), 4 F6 nylon M2.5 M-F 8 mm standoffs (lifted 20 mm, female end down, 6 mm stud up), feather (lifted 30 mm, dark blue, top), 4 F7 nylon nuts (lifted 42 mm). Insertion direction of the screws is +z (up, from the window face through sole post and radar board into the standoff female end); standoffs go up through the radar board holes into the feather holes; nuts go down onto the studs. Every piece of one position H1..H4 sits on ONE vertical (screen-vertical) axis line: H1 x=901, H2 x=1045, H3 x=1270, H4 x=1414. arrow_to for a screw is the hole in the sole window face (the underside; it is seen through the translucent sole), for a standoff the hole in the radar board, for a nut the hole in the feather. H positions: H1 (2.54,-2.54) USB end plain side, H2 (2.54,-20.32) USB end key side, H3 (48.26,-2.54) far end plain side, H4 (48.26,-20.32) far end key side (antenna corner, AE1 is just beyond H4; the nut flat faces AE1).",
+ "labels": [
+  {
+   "text": "F7 nut M2.5 nylon (x4)",
+   "x": 901,
+   "y": 275,
+   "side": "left",
+   "arrow_to": [
+    902,
+    410
+   ]
+  },
+  {
+   "text": "H2",
+   "x": 1045,
+   "y": 191,
+   "side": "top",
+   "arrow_to": [
+    1045,
+    327
+   ]
+  },
+  {
+   "text": "H3",
+   "x": 1270,
+   "y": 497,
+   "side": "right",
+   "arrow_to": [
+    1270,
+    628
+   ]
+  },
+  {
+   "text": "H4 nut: flat toward AE1",
+   "x": 1414,
+   "y": 405,
+   "side": "right",
+   "arrow_to": [
+    1414,
+    543
+   ]
+  },
+  {
+   "text": "F6 standoff M2.5 M-F 8 mm nylon (x4)",
+   "x": 901,
+   "y": 545,
+   "side": "left",
+   "arrow_to": [
+    902,
+    685
+   ]
+  },
+  {
+   "text": "",
+   "x": 1045,
+   "y": 470,
+   "side": "left",
+   "arrow_to": [
+    1045,
+    600
+   ]
+  },
+  {
+   "text": "",
+   "x": 1270,
+   "y": 775,
+   "side": "right",
+   "arrow_to": [
+    1270,
+    897
+   ]
+  },
+  {
+   "text": "",
+   "x": 1414,
+   "y": 690,
+   "side": "right",
+   "arrow_to": [
+    1414,
+    813
+   ]
+  },
+  {
+   "text": "F5 screw M2.5 x 10 nylon (x4)",
+   "x": 901,
+   "y": 985,
+   "side": "left",
+   "arrow_to": [
+    901,
+    844
+   ]
+  },
+  {
+   "text": "",
+   "x": 1045,
+   "y": 900,
+   "side": "left",
+   "arrow_to": [
+    1045,
+    761
+   ]
+  },
+  {
+   "text": "",
+   "x": 1270,
+   "y": 1190,
+   "side": "bottom",
+   "arrow_to": [
+    1270,
+    1057
+   ]
+  },
+  {
+   "text": "",
+   "x": 1414,
+   "y": 1110,
+   "side": "right",
+   "arrow_to": [
+    1414,
+    974
+   ]
+  },
+  {
+   "text": "feather (top)",
+   "x": 1180,
+   "y": 395,
+   "side": "top"
+  },
+  {
+   "text": "radar board (water level)",
+   "x": 1330,
+   "y": 780,
+   "side": "right"
+  },
+  {
+   "text": "sole with 4 posts",
+   "x": 1500,
+   "y": 1040,
+   "side": "right"
+  }
+ ]
+}

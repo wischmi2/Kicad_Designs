@@ -1,0 +1,54 @@
+{
+ "image": "hw_03_dock_ring_inserts.png",
+ "width": 2400,
+ "height": 1500,
+ "note": "Dock ring seen from BELOW (iso-bottom-right, true isometric, transparent background): the face the plate sits against faces the viewer, the 4 corner bosses (9 mm OD) carry the 3.6 mm blind holes. Insertion direction is +z (up into the boss, away from the viewer): each F8 brass insert is pulled 16 mm straight down (screen: straight down) from its hole. arrow_to = pixel of the hole opening in the boss bottom face. Boss positions (ring local): (-12, 17.5) left in the picture, (-12, -40.36) bottom, (73.3, 17.5) top, (73.3, -40.36) right. The two hook tongues and latch at the far end are the other features seen on the ring.",
+ "labels": [
+  {
+   "text": "F8 insert M2.5 x 4 brass (x4)",
+   "x": 415,
+   "y": 975,
+   "side": "left",
+   "arrow_to": [
+    415,
+    850
+   ]
+  },
+  {
+   "text": "",
+   "x": 1050,
+   "y": 1335,
+   "side": "bottom",
+   "arrow_to": [
+    1050,
+    1216
+   ]
+  },
+  {
+   "text": "",
+   "x": 1350,
+   "y": 432,
+   "side": "right",
+   "arrow_to": [
+    1350,
+    309
+   ]
+  },
+  {
+   "text": "",
+   "x": 1985,
+   "y": 800,
+   "side": "right",
+   "arrow_to": [
+    1985,
+    675
+   ]
+  },
+  {
+   "text": "dock ring, bottom face (plate seat)",
+   "x": 900,
+   "y": 562,
+   "side": "top"
+  }
+ ]
+}

@@ -1,0 +1,60 @@
+{
+ "image": "hw_07_dock_plate_screws.png",
+ "width": 2400,
+ "height": 1500,
+ "note": "Dock ring (purple, top) and blank dock plate (tan, lifted out 12 mm below the ring) seen from BELOW (iso-bottom-right, true isometric, transparent background). The 4 F9 nylon plate screws are pulled 30 mm straight down (screen: straight down) from the 5.2 mm counterbores in the plate underside; insertion direction is +z (up through plate into the F8 inserts in the ring bosses, which are hidden above the plate). arrow_to = pixel of the counterbore opening in the plate underside. CAUTION: the model has no M2.5 x 5 screw; the picture reuses the 6 mm stainless-style socket screw body drawn in off-white. The real F9 is a nylon M2.5 x 5 pan head screw (kit M2.5 x 6 with 1 mm cut off). The round hole in the plate is the radar aperture; the same four-point layout applies to the A6, A2 and A5 plates.",
+ "labels": [
+  {
+   "text": "F9 screw M2.5 x 5 nylon (x4)",
+   "x": 520,
+   "y": 990,
+   "side": "left",
+   "arrow_to": [
+    520,
+    905
+   ]
+  },
+  {
+   "text": "",
+   "x": 1070,
+   "y": 1310,
+   "side": "bottom",
+   "arrow_to": [
+    1070,
+    1222
+   ]
+  },
+  {
+   "text": "",
+   "x": 1330,
+   "y": 525,
+   "side": "right",
+   "arrow_to": [
+    1330,
+    437
+   ]
+  },
+  {
+   "text": "",
+   "x": 1880,
+   "y": 845,
+   "side": "right",
+   "arrow_to": [
+    1880,
+    752
+   ]
+  },
+  {
+   "text": "dock plate, underside (5.2 mm counterbores)",
+   "x": 1500,
+   "y": 800,
+   "side": "right"
+  },
+  {
+   "text": "dock ring above (F8 inserts in the bosses)",
+   "x": 900,
+   "y": 515,
+   "side": "top"
+  }
+ ]
+}

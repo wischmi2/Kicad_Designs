@@ -9,28 +9,40 @@
    "x": 731,
    "y": 413,
    "side": "left",
-   "arrow_to": [731, 661]
+   "arrow_to": [
+    731,
+    661
+   ]
   },
   {
-   "text": "F3 insert",
+   "text": "",
    "x": 914,
    "y": 520,
    "side": "left",
-   "arrow_to": [914, 767]
+   "arrow_to": [
+    914,
+    767
+   ]
   },
   {
-   "text": "F3 insert",
+   "text": "",
    "x": 1052,
    "y": 228,
    "side": "top",
-   "arrow_to": [1052, 476]
+   "arrow_to": [
+    1052,
+    476
+   ]
   },
   {
-   "text": "F3 insert",
+   "text": "",
    "x": 1235,
    "y": 333,
    "side": "right",
-   "arrow_to": [1235, 581]
+   "arrow_to": [
+    1235,
+    581
+   ]
   },
   {
    "text": "hood roof, top face (push inserts in from here)",

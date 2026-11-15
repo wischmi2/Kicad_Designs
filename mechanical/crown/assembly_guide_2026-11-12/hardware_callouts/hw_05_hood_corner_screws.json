@@ -9,28 +9,40 @@
    "x": 589,
    "y": 1045,
    "side": "left",
-   "arrow_to": [589, 874]
+   "arrow_to": [
+    589,
+    874
+   ]
   },
   {
-   "text": "F2 screw",
+   "text": "",
    "x": 1055,
    "y": 1315,
    "side": "bottom",
-   "arrow_to": [1055, 1143]
+   "arrow_to": [
+    1055,
+    1143
+   ]
   },
   {
-   "text": "F2 screw",
+   "text": "",
    "x": 1345,
    "y": 610,
    "side": "right",
-   "arrow_to": [1345, 438]
+   "arrow_to": [
+    1345,
+    438
+   ]
   },
   {
-   "text": "F2 screw",
+   "text": "",
    "x": 1811,
    "y": 880,
    "side": "right",
-   "arrow_to": [1811, 707]
+   "arrow_to": [
+    1811,
+    707
+   ]
   },
   {
    "text": "sole, window face (underside), corner counterbores",

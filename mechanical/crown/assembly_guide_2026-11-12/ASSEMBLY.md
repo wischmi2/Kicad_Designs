@@ -231,6 +231,19 @@ All 12 are the same insert: M2.5, 4 mm long, 4 mm OD, brass (B0DPQK6RJZ). All ho
 
 How to set each one:
 
+<img src="hardware_callouts/labelled/hw_01_hood_plinth_inserts_labelled.png" width="640" alt="hw_01_hood_plinth_inserts">
+
+*Group A: F1 inserts into the plinth bottom face.*
+
+<img src="hardware_callouts/labelled/hw_02_hood_roof_inserts_labelled.png" width="640" alt="hw_02_hood_roof_inserts">
+
+*Group B: F3 inserts into the roof top face.*
+
+<img src="hardware_callouts/labelled/hw_03_dock_ring_inserts_labelled.png" width="640" alt="hw_03_dock_ring_inserts">
+
+*Group C: F8 inserts into the dock ring bottom face.*
+
+
 1. Iron at **220-230 C** for PETG. Let it settle for a minute after switching on.
 2. Put the insert on the hole, small (pilot) end down, by hand or with tweezers. It must stand upright before you heat it.
 3. Put the iron tip into the insert and let the heat do the work: push lightly, straight down, along the hole axis. It should sink in 3-5 s. If it needs force, wait longer; do not lean on it.
@@ -292,6 +305,11 @@ If an insert goes in crooked, reheat it, pull it out with the iron still in it (
 
 *Section through H1 (right) and H3 (left), seen from the plain side. From the bottom: the M2.5 x 10 nylon screw head sits in the sole counterbore (blue, window face at the bottom), its shank goes up through the sole post and the radar board (lower board) into the 8 mm standoff. The feather (upper board) sits on the standoff, and the nylon nut on top of the feather holds it; the stud stands about 2.4 mm above the nut. The dark square inside each standoff is the empty part of its bore above the screw tip. The battery hump is at the top right.*
 
+
+<img src="hardware_callouts/labelled/hw_04_board_stack_labelled.png" width="640" alt="hw_04_board_stack">
+
+*Board stack, exploded: F5 screws up through the sole posts, radar board, F6 standoffs, feather, F7 nuts (H4 nut flat toward AE1).*
+
 ### Step 3. FFC into the radar board, then the feather onto the standoffs (4 x M2.5 nylon nuts)
 **Pieces:** feather, 14-way FFC (30 mm, Type D), 4 x M2.5 nylon nuts.
 
@@ -349,6 +367,11 @@ Turn the hood roof down. Push the key (7.4 mm hole) and the light pipe (2.7 mm h
 
 *Section through the plain-side corner screws (USB end on the right). Each M2.5 x 6 socket head sits in its counterbore in the sole (blue, bottom), passes 1.3 mm of sole and screws into the brass insert in the plinth (pink). The insert hole goes 1 mm beyond the insert; the screw tip stops 0.3 mm short of its floor.*
 
+
+<img src="hardware_callouts/labelled/hw_05_hood_corner_screws_labelled.png" width="640" alt="hw_05_hood_corner_screws">
+
+*F2 stainless corner screws up through the sole into the F1 plinth inserts.*
+
 ### Step 6. Splice the cell, battery into the hump, bonnet on (4 x M2.5 x 10 nylon from the top)
 **Pieces:** TinyCircuits ASR00003 cell, 2 small heat-shrink sleeves, bonnet, 4 x M2.5 x 10 nylon pan head screws.
 
@@ -375,6 +398,11 @@ Lead path measured in Fusion and from the JST datasheet on 2026-11-12 (`..\batte
 <img src="step_05b_section_bonnet_screws.png" width="700" alt="step_05b_section_bonnet_screws.png">
 
 *Section through the two plain-side bonnet screws (USB end on the right). Each M2.5 x 10 nylon screw drops through the bonnet's screw boss (yellow) into the brass insert at the top of a roof boss (pink, hanging under the roof). The cell (grey) lies between the bosses. The boards and their standoffs are seen behind the cut.*
+
+
+<img src="hardware_callouts/labelled/hw_06_bonnet_screws_labelled.png" width="640" alt="hw_06_bonnet_screws">
+
+*F4 nylon screws down through the bonnet into the F3 roof inserts.*
 
 ### Step 7. Check the Crown
 The USB-C connector is in the USB end wall (a tunnel in the hood); the 3 mm round vent is in the far end wall (checked in the hood STL; NOTES.md says -x, which is wrong). The key sits just under the hump edge.
@@ -409,6 +437,11 @@ Hardware count when done: 8 screws in the window face (4 socket head at the corn
 <img src="step_07b_section_dock_ring_boss.png" width="700" alt="step_07b_section_dock_ring_boss.png">
 
 *Section through the two plain-side ring bosses, with the A6 Pad fitted (pink, bottom) and the Crown in the ring. Each boss (yellow) has a 3.6 x 5 mm insert hole from its bottom face (dark); the plate has a 5.2 mm counterbore from below and a 2.9 mm hole through its last 1 mm. The ring screws are not drawn in the model. With the insert flush, a 6 mm screw would end exactly at the top of the dark hole; a 5 mm screw ends 1 mm below it.*
+
+
+<img src="hardware_callouts/labelled/hw_07_dock_plate_screws_labelled.png" width="640" alt="hw_07_dock_plate_screws">
+
+*F9 5 mm nylon screws up through the plate into the F8 ring inserts (the model reuses a socket-head body for the screw).*
 
 ### Step 9. Crown into the dock. PROVISIONAL (polarity chamfer, off-centre latch)
 
