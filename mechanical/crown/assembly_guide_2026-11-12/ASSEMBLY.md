@@ -1,5 +1,7 @@
 # Crown water-level enclosure (first PETG draft): assembly guide
 
+Short step-by-step version with hardware pictures: [QUICK_ASSEMBLY.md](QUICK_ASSEMBLY.md).
+
 2026-11-12, hardware rewrite 2026-11-14. Board: `feather_water_level_tc2030` (XM125 radar on its underside) under the nRF54L15 feather. Model: Fusion `feather_water_level_enclosure_crown` v1 (all of stages 1-4). Parts, sizes and clearances are in `..\print_draft_2026-11-11\NOTES.md`. STLs are in `..\print_draft_2026-11-11\`.
 
 **What changed on 2026-11-14:** every hole, counterbore, insert and fastener was measured in the Fusion model (section 2.1). The hardware is now given per hole: size, length, which side it goes in from and where it comes from. Most PROVISIONAL marks are closed; the ones left are listed in section 11 with the reason. Two fit problems were found (section 10); neither needs a model change if you follow the steps.
