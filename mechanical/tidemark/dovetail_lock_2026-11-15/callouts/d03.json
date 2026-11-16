@@ -1,0 +1,8 @@
+{"image": "../dovetail_03_seated.png", "width": 1200, "height": 900, "labels": [
+{"text": "upper lug (in slot)", "x": 748, "y": 375, "side": "left"},
+{"text": "lower lug (in slot)", "x": 748, "y": 487, "side": "left"},
+{"text": "detent click", "x": 748, "y": 501, "side": "right"},
+{"text": "bottom stop", "x": 748, "y": 507, "side": "bottom"},
+{"text": "sump wall", "x": 820, "y": 450, "side": "right"},
+{"text": "weight holds it down", "x": 700, "y": 300, "side": "top", "arrow_to": [700, 345]}
+]}

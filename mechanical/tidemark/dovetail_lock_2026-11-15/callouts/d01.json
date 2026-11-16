@@ -1,0 +1,11 @@
+{"image": "../dovetail_01_rail_and_slot.png", "width": 1200, "height": 900, "labels": [
+{"text": "Perch saddle", "x": 470, "y": 600, "side": "left"},
+{"text": "upper window", "x": 330, "y": 225, "side": "left"},
+{"text": "lower window", "x": 340, "y": 315, "side": "left"},
+{"text": "slot (lower lug seats here)", "x": 345, "y": 365, "side": "left"},
+{"text": "bottom stop", "x": 345, "y": 390, "side": "left"},
+{"text": "node sleeve (back)", "x": 760, "y": 200, "side": "top"},
+{"text": "upper lug", "x": 648, "y": 268, "side": "right"},
+{"text": "lower lug + detent groove", "x": 648, "y": 372, "side": "right"},
+{"text": "", "x": 300, "y": 190, "arrow_to": [300, 290]}
+]}

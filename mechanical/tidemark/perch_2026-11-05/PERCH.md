@@ -2,6 +2,10 @@
 
 Status: CHOSEN by Brian 2026-11-05 (Perch for now, Berth parked). Model and STLs done (v22-v24); open questions below.
 
+## 2026-11-15: dovetail lock replaces the cleat pocket
+
+The saddle's cleat pocket has been replaced by a top-drop dovetail slot (Fusion v28-v32): two entry windows, a closed 45 deg bottom stop, and a flex-finger detent. The sleeve gets a matching two-lug rail, and the 12 mm RimClip gets the same slot. To hang the node now: lift until it stops (about 12 mm), push back, let it drop and click. The saddle's clamp, leg, rail, Collet and pads did not change. The back plate gained a small 45 deg plinth relief at its lower inner edge. Saddle STL: `..\dovetail_lock_2026-11-15\tidemark_perch_saddle_dovetail_PETG_side-down.stl`. It replaces `tidemark_perch_saddle_PETG_side-down.stl` in this folder; the coordinator moves the old file. The cleat-pocket rows below ("Cleat pocket", "+X cheek", install step 5, the "Cleat" load line) describe the old v22 saddle. Details, dimensions, checks and fitting steps: `..\dovetail_lock_2026-11-15\DOVETAIL.md`.
+
 Fusion document: `nrf54l15_feather_enclosure_tidemark` (project Fish_Stuff / nRF54L15_Feather), started from v21.
 Versions: **v22** = stage 1 (Perch components modelled), **v23** = stage 2 (print STLs exported from temporary rotations, rotations deleted again; geometry as v22), **v24** = stage 3 (renders and the Perch STEP; view and visibility state only, geometry as v22).
 Perch is added as new components. The sleeve, foot cap, sled and the existing 12 mm RimClip were not changed. The RimClip sits in the same place as the Perch saddle, so it is hidden (view state only) and left out of the Perch interference runs. LeafFrame is hidden too: it lies flat beside the model at X 60-160 and touches the reference wall slab.
@@ -107,7 +111,7 @@ No metal near the water: everything in or over the sump is PETG or nylon.
 2. Turn the thumbscrew in from the sump side until about 3 mm of thread shows in the pad pocket on the wall side. Push the pad on (its blind hole is 6.0 x 3 deep). A dab of silicone keeps it on while the saddle is off the wall; once clamped, the wall traps it.
 3. Slide the Collet onto the rail from the bottom end of the leg. Screw a stop (M4 x 10) into the chosen hole; the middle setting is the 4th hole from the bottom (Z -45). Let the Collet sit on that stop, then fit the second stop 3 holes higher.
 4. Back the thumbscrew out. Hang the saddle over the sump rim with the back plate outside, so that both outside pads touch the outside face of the wall. Tighten the thumbscrew finger-tight. Do not use a tool: about 50-100 N is plenty.
-5. Hang the node as on the RimClip. Hold it with its back about 3 mm in front of the back plate and the cleat just above the pocket, move it back, and let it drop about 3 mm onto the lip.
+5. Hang the node as on the RimClip. Hold it with its back about 3 mm in front of the back plate and the cleat just above the pocket, move it back, and let it drop about 3 mm onto the lip. (Since 2026-11-15, dovetail lock: lift the node about 12 mm above its final place, push its two back blocks into the two open pockets, and let it drop until it clicks and stops. See ..\dovetail_lock_2026-11-15\DOVETAIL.md.)
 6. Push the probe in from above through the Collet, tip first, until its top is about 8 mm above the Collet. Tighten the M4 clamp lightly; the probe must not turn by hand. Slide the o-ring down onto the Collet as the depth mark.
 7. Cable route (1 m probe cable to the boot under the node's heel):
    - Up from the probe top and snap the cable into C1 on the leg's +X side.

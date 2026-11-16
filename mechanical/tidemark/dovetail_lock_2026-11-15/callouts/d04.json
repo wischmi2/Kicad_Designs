@@ -1,0 +1,9 @@
+{"image": "../dovetail_04_section.png", "width": 1200, "height": 900, "labels": [
+{"text": "sump wall", "x": 600, "y": 150, "side": "top"},
+{"text": "Perch saddle", "x": 330, "y": 400, "side": "left"},
+{"text": "node sleeve", "x": 600, "y": 700, "side": "bottom"},
+{"text": "dovetail lug", "x": 600, "y": 445, "side": "bottom"},
+{"text": "45 deg flank", "x": 490, "y": 445, "side": "left"},
+{"text": "45 deg flank", "x": 710, "y": 445, "side": "right"},
+{"text": "detent finger (flex slot)", "x": 750, "y": 382, "side": "right"}
+]}

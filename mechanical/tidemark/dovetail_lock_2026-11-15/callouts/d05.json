@@ -1,0 +1,11 @@
+{"image": "../dovetail_05_section_side.png", "width": 900, "height": 1200, "labels": [
+{"text": "node sleeve", "x": 200, "y": 700, "side": "left"},
+{"text": "saddle", "x": 650, "y": 180, "side": "top"},
+{"text": "upper window", "x": 450, "y": 420, "side": "left"},
+{"text": "upper lug", "x": 450, "y": 540, "side": "left"},
+{"text": "backup shelf", "x": 450, "y": 585, "side": "right"},
+{"text": "lower window", "x": 450, "y": 660, "side": "left"},
+{"text": "lower lug", "x": 450, "y": 790, "side": "left"},
+{"text": "detent bump", "x": 478, "y": 805, "side": "right"},
+{"text": "main bottom stop", "x": 448, "y": 840, "side": "right"}
+]}

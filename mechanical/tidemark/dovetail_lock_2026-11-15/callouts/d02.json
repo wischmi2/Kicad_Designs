@@ -1,0 +1,9 @@
+{"image": "../dovetail_02_approach.png", "width": 1200, "height": 900, "labels": [
+{"text": "node (lifted)", "x": 600, "y": 280, "side": "top"},
+{"text": "Perch saddle", "x": 920, "y": 240, "side": "top"},
+{"text": "upper lug", "x": 716, "y": 330, "side": "left"},
+{"text": "lower lug", "x": 716, "y": 440, "side": "left"},
+{"text": "1. push in 8 mm", "x": 660, "y": 385, "side": "left", "arrow_to": [745, 385]},
+{"text": "2. drop 12 mm", "x": 800, "y": 330, "side": "right", "arrow_to": [800, 395]},
+{"text": "bottom stop (hidden)", "x": 750, "y": 507, "side": "right"}
+]}
